@@ -44,6 +44,20 @@ RETRANSCODE (existing HLS → MP4, op 1C)
   hlsAsset already set by the live transcoder at ENDED, so 1C does NOT call stream-status)
 ```
 
+## Serving combos & trust boundary
+
+The arcs above assume the **signed** combo. There are two, and they differ in whether playback is protected
+at the CDN — see `GLOSSARY.md` → "Storage & serving combos" for the full table.
+
+- **B2 + Bunny (signed):** every fetch needs a **Playback URL token**; `nodejs-server`/`/playback` is in the
+  path. `storageProvider:'b2'` (live transcoder routing) / `hls-to-mp4-container-b2` (recorded retranscode).
+- **R2 (unauthenticated):** files served from `R2_PUBLIC_DOMAIN`, no token, no `/playback` — content
+  protection is bypassed at the CDN. `storageProvider:'r2'` / `hls-to-mp4-container`. Lives on a separate
+  branch; which combo is live is env-driven (`STORAGE_*` present ⇒ signed B2, else R2 fallback).
+
+A slice that touches playback auth **must** state which combo it targets — the `/playback`, Playback URL
+token, and CDN-403 reasoning only apply to B2 + Bunny.
+
 ## Where the per-repo maps pick up
 
 - livestream: `repos/livestream/Transcoding.md` (ffmpeg/NVENC), `repos/livestream/docs/plans/` (phases)
