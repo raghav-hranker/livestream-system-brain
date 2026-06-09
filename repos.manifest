@@ -1,0 +1,12 @@
+# repos.manifest — the services that make up the system, and the shared slice branch.
+#
+# ACTIVE_BRANCH  <branch>          the branch every repo sits on for the current vertical slice
+# <name>  <remote-url>             one line per service repo
+#
+# Edit ACTIVE_BRANCH via `./scripts/sync-branches.sh <branch>` (it rewrites this line), not by hand.
+
+ACTIVE_BRANCH  claude/zealous-bardeen-45dtkg
+
+livestream        https://github.com/raghav-hranker/livestream.git
+nodejs-server     https://github.com/raghav-hranker/nodejs-server.git
+video-transcoder  https://github.com/raghav-hranker/video-transcoder.git
