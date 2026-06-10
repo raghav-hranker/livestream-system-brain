@@ -6,7 +6,7 @@ definition; this file never restates it. If a term lives entirely inside one rep
 
 | Term | One line | Authoritative def | Touched by |
 |---|---|---|---|
-| **`hlsAsset`** | `{bucket,key}` on the `Class` that `/playback` signs into a streamable URL. | `repos/nodejs-server/CONTEXT.md` (reader/owner) | written by livestream (live ended) + video-transcoder (1A secured) |
+| **`hlsAsset`** | `{bucket,key}` on the `Class` that `/playback` signs into a streamable URL. `bucket` ∈ `live` \| `recorded` \| `live-vod`. | `repos/nodejs-server/CONTEXT.md` (reader/owner) | written by livestream (live `ended`, then a deferred 2nd `ended` flipping to `live-vod`) + video-transcoder (1A secured) |
 | **stream-status webhook** | `PUT /api/classes/{classId}/stream-status` — the only secured writer of `hlsAsset`. | `repos/video-transcoder/CONTEXT.md` + `MAP.md` | livestream, video-transcoder (writers); nodejs-server (reader) |
 | **Recordings webhook** | Reports the MP4 rendition set (`recordings-prerecorded`). | `repos/video-transcoder/CONTEXT.md` | video-transcoder (writer); nodejs-server (reader) |
 | **Class-link callback** | Unsecure-only HLS report (PHP / nodejs LMS variants). | `repos/video-transcoder/CONTEXT.md` | video-transcoder (writer) |
@@ -16,7 +16,8 @@ definition; this file never restates it. If a term lives entirely inside one rep
 | **Playback URL token** | Short-lived signed CDN credential, scoped to one class's Token path. | `repos/nodejs-server/CONTEXT.md` | nodejs-server (mints), livestream ui (consumes) |
 | **Auth access token** / **Streamer token** | JWT proving the viewer; Streamer token bypasses the entitlement check on one class. | `repos/nodejs-server/CONTEXT.md` | nodejs-server (issues/validates), livestream ui (presents) |
 | **recorded bucket** | VOD MP4/HLS store (`recordedvideos-hranker-v2`), **B2 origin + Bunny CDN, signed** (Playback URL token). | `repos/video-transcoder/CONTEXT.md` | video-transcoder (writes), nodejs-server (signs) |
-| **Live bucket** | Live-segment store, **B2 origin + Bunny CDN, signed**, distinct from `recorded`. | `repos/livestream/docs/plans/` | livestream (writes), nodejs-server (signs) |
+| **Live bucket** | Live-segment store + live edge: **Bunny Storage zone origin** (`LIVE_STORAGE_*`) + Bunny CDN, signed. **Not B2** — kept hot for live-edge freshness. | `repos/livestream/CONTEXT.md` | livestream (writes), nodejs-server (signs) |
+| **`live-vod` bucket** | Finished live-class VODs on **B2 origin + own signed Bunny zone** (`BUNNY_LIVE_VOD_*`). Third `hlsAsset.bucket` value beside `live`/`recorded`; cheaper egress than the Bunny live zone. Live-zone copy is retained (backup), not deleted. | `repos/livestream/CONTEXT.md` + `repos/livestream/docs/plans/adr/0002-finished-vod-served-from-b2.md` | livestream (uploads + flips `hlsAsset` on a deferred 2nd `ended`), nodejs-server (signs) |
 | **R2 serving combo** (unauthenticated) | Alternative serving mode: object store **Cloudflare R2**, served from `R2_PUBLIC_DOMAIN` with **no signed URL and no Bunny security key** — publicly fetchable, content protection bypassed at the CDN. | `repos/livestream/backend/lib/ecs.js` (storage routing) + `repos/video-transcoder/MAP.md` (`storageProvider`) | livestream (routes `storageProvider:'r2'`), video-transcoder (`hls-to-mp4-container` R2 image), nodejs-server (**not** involved — no `/playback` mint) |
 
 ## Storage & serving combos (and which carry auth)
