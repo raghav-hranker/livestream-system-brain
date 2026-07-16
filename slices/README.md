@@ -29,3 +29,4 @@ A playbook **references**, never restates. Link into `SYSTEM.md`, `GLOSSARY.md`,
 
 ## Existing playbooks
 - [`secured-prerecorded-playback.md`](./secured-prerecorded-playback.md)
+- [`client-launch-v2.md`](./client-launch-v2.md)

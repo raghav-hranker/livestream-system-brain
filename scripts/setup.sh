@@ -14,7 +14,7 @@ manifest_lines() { awk '!/^#/ && !/^ACTIVE_BRANCH/ && NF {print $1, $2}' "$MANIF
 
 while read -r name url; do
   [ -z "${name:-}" ] && continue
-  if [ -d "$BRAIN_DIR/../$name/.git" ] || [ -d "$BRAIN_DIR/repos/$name/.git" ]; then
+  if [ -e "$BRAIN_DIR/../$name/.git" ] || [ -e "$BRAIN_DIR/repos/$name/.git" ]; then
     echo "ok    $name (present)"
   else
     echo "clone $name <- $url"

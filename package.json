@@ -1,0 +1,12 @@
+{
+  "name": "system-brain",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "task": "node scripts/sandcastle/run-task.mjs"
+  },
+  "devDependencies": {
+    "@ai-hero/sandcastle": "^0.12.0",
+    "zod": "^4.4.3"
+  }
+}

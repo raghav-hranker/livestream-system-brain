@@ -5,7 +5,7 @@
 #
 # Edit ACTIVE_BRANCH via `./scripts/sync-branches.sh <branch>` (it rewrites this line), not by hand.
 
-ACTIVE_BRANCH  claude/zealous-bardeen-45dtkg
+ACTIVE_BRANCH  launch/quicktricks-v2
 
 livestream        https://github.com/raghav-hranker/livestream.git
 nodejs-server     https://github.com/raghav-hranker/nodejs-server.git

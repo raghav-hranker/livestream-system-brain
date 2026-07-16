@@ -8,7 +8,7 @@ between them. This file is **wiring + ownership only**; for the language of each
 
 | Service | Role | Key surfaces | Owns |
 |---|---|---|---|
-| **livestream** | The *live* transcoder. OBS/webcam → Node backend, GPU NVENC (`backend/classes/FfmpegPool.js`, `PubSubManager.js`) → live HLS → Live bucket (B2 + Bunny). Next.js `ui/` is the viewer. | `backend/` (live transcode + upload), `ui/` (player) | Producing live HLS; setting `hlsAsset` on stream **ended** |
+| **livestream** | The *live* transcoder. OBS/webcam → Node backend, GPU NVENC (`backend/classes/FfmpegPool.js`, `PubSubManager.js`) → live HLS → Live bucket (B2 + Bunny). The in-repo Next.js `ui/` is **outdated and unused** — the production viewer is a separate UI repo connected to the livestream backend (not tracked in `repos.manifest` yet). | `backend/` (live transcode + upload) | Producing live HLS; setting `hlsAsset` on stream **ended** |
 | **video-transcoder** | The *recorded/VOD* transcoder. Intake listener → Redis → GPU job-manager → containers. Ops **1A** HLS conversion, **1B** MP4 renditions, **1C** HLS→MP4 retranscode. | `src/` (intake), `gpu-server/` (job-manager + workers), `container/` | Producing VOD HLS + MP4 renditions; reporting them |
 | **nodejs-server** | *Video Content Protection*. Authorizes a viewer and mints short-lived signed CDN URLs. Holds `Class.hlsAsset`, validates Auth/Streamer tokens + entitlement. | `/playback`, `/stream-status`, recordings routes | `Class.hlsAsset` (single source); minting **Playback URL tokens** |
 
@@ -19,10 +19,11 @@ the two transcoders are the writers.
 
 | Contract | Wire | Writer(s) | Reader | Notes |
 |---|---|---|---|---|
-| **stream-status webhook** | `PUT /api/classes/{classId}/stream-status` + `X-Transcoder-Secret`, body `{streamStatus, hlsAsset:{bucket,key}}` | livestream (live `ended`) **and** video-transcoder (1A, secured) | nodejs-server | The **only** secured writer of `Class.hlsAsset`. Both transcoders use the *same* `ended` contract. |
+| **stream-status webhook** | `PUT /api/classes/{classId}/stream-status` + `X-Transcoder-Secret`, body `{streamStatus, hlsAsset:{bucket,key}}` | livestream (live `ended`) **and** video-transcoder (1A, secured) | nodejs-server | The **only** secured writer of `Class.hlsAsset`. Both transcoders use the *same* `ended` contract. Delivery is **at-least-once** (`docs/adr/0002`): producer retries latest-transition-per-class from Redis; LMS sweeps stale transient statuses. |
 | **Recordings webhook** | secured `POST /api/classes/recordings-prerecorded` `{bucket,key}` + secret; unsecure `POST /recordings-prerecorded` `{url,quality,size}` | video-transcoder (1B, 1C) | nodejs-server | MP4 set only, no HLS. Replaces `mp4Recordings` wholesale. |
 | **Class-link callback** | PHP `…/admin/api/update-online-class-link`; nodejs `PUT /classes/{classId}` `{class_link}` | video-transcoder (1A, **unsecure** only) | LMS | Replaced by the stream-status webhook for secured customers. |
 | **Playback (mint)** | `PUT /api/classes/{classId}/playback` → signed CDN URL (`?token=…&expires=…`) | — | livestream `ui/` player (consumer) | nodejs-server signs from `Class.hlsAsset`. No `hlsAsset` ⇒ `/playback` 404s. |
+| **Private-mode write** *(planned)* | `PATCH /api/classes/{classId}/private-mode` + `X-Transcoder-Secret`, body `{isPrivate}` | livestream (host toggle via class-UI socket) | nodejs-server | `isPrivate` is LMS-owned but **dual-writable**: LMS admin UI writes it directly, livestream writes via this endpoint. Endpoint does not exist yet — `classClient.setPrivateMode` currently targets a dead `/api/internal/...` URL. |
 | **Transcoder secret** | header `X-Transcoder-Secret` ⇄ env `TRANSCODER_WEBHOOK_SECRET` | transcoders send | nodejs-server checks | **Per secured customer**, gates *both* webhooks. Never global. |
 
 ## End-to-end arcs
@@ -42,6 +43,11 @@ RECORDED (source MP4 upload)
 RETRANSCODE (existing HLS → MP4, op 1C)
   job pushed directly to Redis → hls-to-mp4 worker → Recordings webhook (MP4 only;
   hlsAsset already set by the live transcoder at ENDED, so 1C does NOT call stream-status)
+
+  livestream is ENQUEUE-ONLY in this arc: it hands the worker its ingredients (signed input, ids)
+  and drops out. MP4 reporting is video-transcoder → LMS direct — livestream is never a recordings
+  relay. (Its legacy relay — POST /recording, classClient.attachRecording, CALLBACK_API_ENDPOINT —
+  is dead code slated for deletion; the endpoint it forwards to never existed.)
 ```
 
 ## Serving combos & trust boundary

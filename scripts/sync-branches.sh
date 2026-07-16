@@ -14,10 +14,10 @@ MANIFEST="$BRAIN_DIR/repos.manifest"
 active_branch() { awk '/^ACTIVE_BRANCH/{print $2; exit}' "$MANIFEST"; }
 repo_names()    { awk '!/^#/ && !/^ACTIVE_BRANCH/ && NF {print $1}' "$MANIFEST"; }
 
-resolve() { # name -> path (empty if not found)
+resolve() { # name -> path (empty if not found); -e not -d: a linked worktree's .git is a file
   local n="$1"
-  if [ -d "$BRAIN_DIR/repos/$n/.git" ]; then echo "$BRAIN_DIR/repos/$n"
-  elif [ -d "$BRAIN_DIR/../$n/.git" ]; then (cd "$BRAIN_DIR/../$n" && pwd)
+  if [ -e "$BRAIN_DIR/repos/$n/.git" ]; then echo "$BRAIN_DIR/repos/$n"
+  elif [ -e "$BRAIN_DIR/../$n/.git" ]; then (cd "$BRAIN_DIR/../$n" && pwd)
   fi
 }
 
