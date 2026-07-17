@@ -112,7 +112,7 @@ const PLANS = {
       "01": {
         legs: [
           { repo: "nodejs-server", focus: "Build ONLY the nodejs-server half: the document-storage module (private-B2 config/client, server-generated opaque keys, validation incl. size/MIME/%PDF- signature, normalized errors) and the retargeted multipart POST /api/pdfs create that persists pdfAsset (bucket literal 'documents') with NO new public uploadPdf URL, plus its tests. The admin-dashboard form/hooks/types are a separate leg." },
-          { repo: "admin-dashboard", focus: "Build ONLY the admin-dashboard half: PdfForm keeps submitting multipart uploadPdf as a File; split write/form types from catalogue/read types (responses carry no uploadPdf URL); remove the URL-decoding follow-up mutation; render the derived asset state from the sanitized response and refetch the catalogue. The backend create route is a separate leg." },
+          { repo: "admin-dashboard", focus: "Build ONLY the admin-dashboard half: PdfForm keeps submitting multipart uploadPdf as a File; split write/form types from catalogue/read types (responses carry no uploadPdf URL); remove the URL-decoding follow-up mutation; render the derived asset state from the sanitized response and refetch the catalogue. The backend create route is a separate leg. NOTE: this repo currently has NO test runner — bootstrap vitest (+ @testing-library/react, jsdom) with a `test` script in this leg, minimally and following Next.js conventions; later tasks depend on it existing." },
         ],
         docs: PDFUP_DOCS,
       },
