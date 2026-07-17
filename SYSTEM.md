@@ -10,12 +10,13 @@ between them. This file is **wiring + ownership only**; for the language of each
 |---|---|---|---|
 | **livestream** | The *live* transcoder. OBS/webcam → Node backend, GPU NVENC (`backend/classes/FfmpegPool.js`, `PubSubManager.js`) → live HLS → Live bucket (B2 + Bunny). The in-repo Next.js `ui/` is **outdated and unused** — the production viewer is a separate UI repo connected to the livestream backend (not tracked in `repos.manifest` yet). | `backend/` (live transcode + upload) | Producing live HLS; setting `hlsAsset` on stream **ended** |
 | **video-transcoder** | The *recorded/VOD* transcoder. Intake listener → Redis → GPU job-manager → containers. Ops **1A** HLS conversion, **1B** MP4 renditions, **1C** HLS→MP4 retranscode. | `src/` (intake), `gpu-server/` (job-manager + workers), `container/` | Producing VOD HLS + MP4 renditions; reporting them |
-| **nodejs-server** | *Video Content Protection*. Authorizes a viewer and mints short-lived signed CDN URLs. Holds `Class.hlsAsset`, validates Auth/Streamer tokens + entitlement. | `/playback`, `/stream-status`, recordings routes | `Class.hlsAsset` (single source); minting **Playback URL tokens** |
+| **nodejs-server** | *Video Content Protection* + *Document Content Protection*. Authorizes a viewer and mints short-lived signed CDN URLs. Holds `Class.hlsAsset` and `Pdf.pdfAsset`, validates Auth/Streamer tokens + entitlement. | `/playback`, `/stream-status`, recordings routes, PDF `/access` routes | `Class.hlsAsset` + `Pdf.pdfAsset` (single sources); minting **Playback URL tokens** + signed PDF access URLs |
+| **admin-dashboard** | The admin control plane (Next.js). Admins author LMS content — Classes, Courses, PDFs — against nodejs-server's admin API (admin JWT). Browser side of the PDF upload contracts; consumer of the signed PDF `/access` mints for Preview/Download. | `components/admin/`, `hooks/api/`, `app/api/` | Admin UX only — no server-authoritative state; everything persists in nodejs-server |
 
 ## The contracts between them (what the brain watches)
 
 These are the boundaries a vertical slice crosses. **nodejs-server is the reader/owner of all of them;**
-the two transcoders are the writers.
+the writers are the two transcoders (video contracts) and admin-dashboard (PDF contracts).
 
 | Contract | Wire | Writer(s) | Reader | Notes |
 |---|---|---|---|---|
@@ -25,6 +26,9 @@ the two transcoders are the writers.
 | **Playback (mint)** | `PUT /api/classes/{classId}/playback` → signed CDN URL (`?token=…&expires=…`) | — | livestream `ui/` player (consumer) | nodejs-server signs from `Class.hlsAsset`. No `hlsAsset` ⇒ `/playback` 404s. |
 | **Private-mode write** *(planned)* | `PATCH /api/classes/{classId}/private-mode` + `X-Transcoder-Secret`, body `{isPrivate}` | livestream (host toggle via class-UI socket) | nodejs-server | `isPrivate` is LMS-owned but **dual-writable**: LMS admin UI writes it directly, livestream writes via this endpoint. Endpoint does not exist yet — `classClient.setPrivateMode` currently targets a dead `/api/internal/...` URL. |
 | **Transcoder secret** | header `X-Transcoder-Secret` ⇄ env `TRANSCODER_WEBHOOK_SECRET` | transcoders send | nodejs-server checks | **Per secured customer**, gates *both* webhooks. Never global. |
+| **PDF access (mint)** | `GET /api/admin/pdfs/{pdfId}/access` (admin) · `GET /api/courses/{courseId}/pdfs/{pdfId}/access` · `GET /api/classes/{classId}/pdfs/{pdfId}/access` (entitled viewer) → signed Bunny URL | — | admin-dashboard + student clients (consumers) | nodejs-server signs from `Pdf.pdfAsset` (`documents` zone). PDF analogue of Playback (mint): no `pdfAsset` ⇒ nothing to sign. See `repos/nodejs-server/docs/adr/0002-documents-zone-and-exact-file-tokens.md`. |
+| **PDF write (single)** | `POST /api/pdfs` / `PUT /api/pdfs/{id}`, multipart, file field `uploadPdf` + admin JWT | admin-dashboard | nodejs-server | Being retargeted: bytes go to private B2 (`documents`), record gets `pdfAsset`, **no new public `uploadPdf` URL**. Metadata-only update keeps the current asset. PRD: `docs/plans/prd-secure-pdf-upload.md`; hops: `slices/secure-pdf-upload.md`. |
+| **PDF upload session** *(planned)* | `POST /api/admin/pdf-upload-sessions` (+ per-file `upload-target` / `complete`; retry = fresh `upload-target`) + admin JWT; bytes go browser → B2 via short-lived **single-object** presigned `PUT` (15-min TTL) | admin-dashboard | nodejs-server | Bulk path — Node is control plane only, never relays bytes. Completion is server-verified (`HeadObject` + mandatory `%PDF-` range-read) and idempotent. Decision: `docs/adr/0005-bulk-pdf-uploads-use-presigned-put.md`; contract: `docs/plans/prd-secure-pdf-upload.md` + `slices/secure-pdf-upload.md`. |
 
 ## End-to-end arcs
 
@@ -48,6 +52,14 @@ RETRANSCODE (existing HLS → MP4, op 1C)
   and drops out. MP4 reporting is video-transcoder → LMS direct — livestream is never a recordings
   relay. (Its legacy relay — POST /recording, classClient.attachRecording, CALLBACK_API_ENDPOINT —
   is dead code slated for deletion; the endpoint it forwards to never existed.)
+
+PDF (admin upload → signed read)
+  single: admin-dashboard PdfForm → POST /api/pdfs (multipart) → nodejs-server stores bytes in
+     private B2 (documents zone) → Pdf.pdfAsset   (no new public uploadPdf URL)
+  bulk (planned): session create → per-file presigned B2 PUT (browser → B2 direct) → complete
+     (nodejs-server verifies HeadObject + %PDF-) → Pdf.pdfAsset
+  reader → GET …/pdfs/{pdfId}/access → nodejs-server signs pdfAsset → Bunny CDN
+     (unsigned fetch of the documents zone ⇒ 403)
 ```
 
 ## Serving combos & trust boundary
@@ -68,4 +80,7 @@ token, and CDN-403 reasoning only apply to B2 + Bunny.
 
 - livestream: `repos/livestream/Transcoding.md` (ffmpeg/NVENC), `repos/livestream/docs/plans/` (phases)
 - video-transcoder: `repos/video-transcoder/MAP.md` (surfaces + 1A/1B/1C flows), `…/CONTEXT.md`
-- nodejs-server: `repos/nodejs-server/CONTEXT.md` (token taxonomy), `…/docs/adr/`
+- nodejs-server: `repos/nodejs-server/CONTEXT.md` (token taxonomy), `…/docs/adr/`,
+  `…/docs/plans/prd-secure-pdf-delivery.md` (PDF signing/serializers/migration)
+- admin-dashboard: `../admin-dashboard/CONTEXT.md`; PDF surfaces live in
+  `components/admin/{PdfForm,PdfsDashboard,BulkUploadPdfsSheet}.tsx`, `hooks/api/use-pdfs.ts`, `types/pdf.ts`

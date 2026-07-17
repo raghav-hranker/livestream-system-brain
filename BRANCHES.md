@@ -5,13 +5,14 @@ If livestream is on `feat/x` but video-transcoder is on `main`, half the slice i
 half and the contract between them looks broken even when the code is right.
 
 ## The rule
-- **One shared feature branch per slice**, identical name across `livestream`, `nodejs-server`, `video-transcoder`.
+- **One shared feature branch per slice**, identical name across `livestream`, `nodejs-server`, `video-transcoder`, `admin-dashboard`.
 - The active name is **data**, not prose: it lives in [`repos.manifest`](./repos.manifest) as `ACTIVE_BRANCH`.
 - Single-repo work that is *not* part of a slice can use that repo's own branch freely — the shared-branch
   rule only binds work that crosses a contract boundary.
 
 ## Current active branch
-`claude/zealous-bardeen-45dtkg` (authoritative value is `ACTIVE_BRANCH` in `repos.manifest`).
+Read `ACTIVE_BRANCH` in [`repos.manifest`](./repos.manifest) — it is the only authoritative copy
+(a literal here already went stale once).
 
 ## Commands
 ```sh
