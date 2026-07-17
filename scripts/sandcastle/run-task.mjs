@@ -197,11 +197,12 @@ ${inlined ? `\n=== GOVERNING DOCS ===\n${inlined}` : ""}`;
 
 const [rawId, ...flags] = process.argv.slice(2);
 const merge = flags.includes("--merge");
+const legFilter = flags.find((f) => f.startsWith("--leg="))?.slice("--leg=".length);
 const [planName, nn] = rawId?.includes(":") ? rawId.split(":") : ["launch", rawId];
 const plan = PLANS[planName];
 const task = plan?.tasks[nn];
 if (!plan || !task) {
-  console.error(`Usage: npm run task [<plan>:]<nn> [-- --merge]
+  console.error(`Usage: npm run task [<plan>:]<nn> [-- --merge] [--leg=<repo>]
 Plans: ${Object.entries(PLANS).map(([k, p]) => `${k} (${p.name}: ${Object.keys(p.tasks).join(", ")})`).join(" · ")}
 ${plan ? plan.notAgentTasks : PLANS.launch.notAgentTasks}`);
   process.exit(1);
@@ -224,9 +225,16 @@ function propagateEnv(repoPath) {
   }
 }
 
+// --leg=<repo> re-runs a single leg (e.g. after a killed run whose other leg already landed).
+const legs = legFilter ? task.legs.filter((l) => l.repo === legFilter) : task.legs;
+if (!legs.length) {
+  console.error(`--leg=${legFilter} matches no leg of ${planName}:${nn} (legs: ${task.legs.map((l) => l.repo).join(", ")})`);
+  process.exit(1);
+}
+
 // Branch guard: every leg's host repo must sit on the plan's base branch.
 const baseBranch = plan.baseBranch();
-for (const leg of task.legs) {
+for (const leg of legs) {
   const repoPath = resolveRepo(leg.repo);
   const cur = sh("git branch --show-current", repoPath);
   if (cur !== baseBranch) {
@@ -239,14 +247,14 @@ mkdirSync(path.join(BRAIN, ".sandcastle/logs"), { recursive: true });
 const branch = `${plan.branchPrefix}${nn}`;
 
 if (flags.includes("--dry-run")) {
-  for (const leg of task.legs) {
+  for (const leg of legs) {
     console.log(`would run: ${planName}:${nn} · ${leg.repo} (${resolveRepo(leg.repo)}) · branch ${branch} · prompt ${buildPrompt(plan, nn, task, leg).length} chars`);
   }
   console.log("dry run: guards passed, no agent spawned.");
   process.exit(0);
 }
 
-for (const leg of task.legs) {
+for (const leg of legs) {
   const repoPath = resolveRepo(leg.repo);
   propagateEnv(repoPath);
   console.log(`\n▶ ${planName}:${nn} · ${leg.repo} · worktree branch ${branch} (model ${MODEL})`);
