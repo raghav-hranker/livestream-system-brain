@@ -32,3 +32,24 @@ a known-good presigning recipe that slice #4 codifies, plus notes on any B2 S3-e
 - Story 27: upload credentials limited to one method, one object, a short time
 - Story 28: B2 account credentials remain server-only
 - Story 30: unsigned reads remain forbidden
+
+## Execution notes — 2026-07-17
+
+Pre-spike credential audit:
+
+- The `phonetics` test VM has the Bunny documents-zone read/signing variables but no B2 write
+  variables, so task 01 cannot yet run its deployed create acceptance there.
+- An older B2 key exists on `test-uday`, but `b2_authorize_account` reports that it is not bucket- or
+  prefix-restricted and includes account-wide key/bucket administration and deletion capabilities.
+  It must **not** be copied to `phonetics` or used by the upload service.
+- Create a server-only application key restricted to the physical bucket
+  `hranker-private-assets`, preferably to the `pdfs/` prefix, with only the capabilities needed by
+  the upload design. Task 01 needs object write; task 04 completion additionally needs object
+  metadata/read-range verification. Do not grant key management, bucket management, or deletion.
+- Install the safe key on `phonetics` as `B2_ACCESS_KEY_ID` and `B2_SECRET_ACCESS_KEY`, plus
+  `B2_S3_ENDPOINT` (or `B2_ENDPOINT`) and `B2_REGION`. `B2_DOCUMENTS_BUCKET` may be set explicitly;
+  otherwise the backend defaults it to `hranker-private-assets`. The deploy script must preserve
+  these variables across redeploys.
+
+Still awaiting the HITL origin decision: record the exact production/admin preview origins before
+changing B2 CORS. Do not use `*`.
