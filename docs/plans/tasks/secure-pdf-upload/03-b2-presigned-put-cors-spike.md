@@ -53,3 +53,22 @@ Pre-spike credential audit:
 
 Still awaiting the HITL origin decision: record the exact production/admin preview origins before
 changing B2 CORS. Do not use `*`.
+
+## Key strategy (settled 2026-07-20)
+
+Everything for this client lives on **B2** (no R2). One app key per **consumer × bucket × purpose**,
+named `<consumer>-<bucket/zone>-<purpose>[-<env>]` (e.g. `lms-private-assets-pdf-upload-phonetics`).
+B2 app keys can scope to at most one bucket, which enforces the split. Rules:
+
+- Master key: password manager only, used solely to create/revoke app keys. Never on a server.
+- No `deleteFiles`, key-management, or bucket-management capability on any server-held key.
+  GC/cleanup jobs get a short-lived (`--duration`) ops key minted for the occasion.
+- The **public assets bucket** (images/banners; bucket set to public) gets its own key too —
+  e.g. `lms-public-assets-image-upload-<env>`, scoped to that bucket, `writeFiles,readFiles,listFiles`.
+  Public readability is a bucket property; the write key stays as narrow as the private one.
+- Per-environment keys (`-phonetics` vs `-prod`) so a test box can be revoked without touching prod.
+- Key IDs (not secrets) are recorded here as minted, so the console key list stays auditable.
+- After the restricted upload key works: **delete the account-wide key from test-uday**.
+
+Mint for task 01/04:
+`b2 key create --bucket hranker-private-assets --name-prefix pdfs/ lms-private-assets-pdf-upload-phonetics listFiles,readFiles,writeFiles`
