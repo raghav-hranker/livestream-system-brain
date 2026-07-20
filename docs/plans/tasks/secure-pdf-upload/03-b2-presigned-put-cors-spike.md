@@ -85,3 +85,55 @@ never left that box): keyId `0052b3cdedeb6890000000005`, bucket `hranker-private
 **Still pending (the actual spike):** the admin-dashboard production/preview origin list and the B2
 CORS rule for browser `PUT` (task 04 gate) — and, once confident, deleting the account-wide key from
 test-uday (a prod `-prod` upload key must be minted before prod deploy).
+
+## Execution notes — 2026-07-20 (spike complete: CORS + browser PUT verified)
+
+**Origin decision (user):** `http://localhost:3000` only for now — the dashboard runs locally against
+the phonetics tunnel. The prod origin gets added to the same rule alongside the `-prod` key mint,
+which is already a pre-prod-deploy step.
+
+**CORS rule applied** via native `b2_update_bucket` from test-uday (account key never left the box;
+bucket had **no** pre-existing rules). Bucket `hranker-private-assets` (`allPrivate`), exact rule:
+
+```json
+[{
+  "corsRuleName": "adminDashboardPdfPut",
+  "allowedOrigins": ["http://localhost:3000"],
+  "allowedOperations": ["s3_put"],
+  "allowedHeaders": ["content-type"],
+  "exposeHeaders": ["etag"],
+  "maxAgeSeconds": 3600
+}]
+```
+
+**All acceptance criteria verified:**
+
+- Preflight from `http://localhost:3000` → 200, `allow-methods: PUT`, `allow-headers: content-type`,
+  `max-age: 3600`. Preflight from a foreign origin → 403.
+- Real browser XHR `PUT` (Chrome, page on `localhost:3000`, real `%PDF-` blob) → **200 + ETag**, XHR
+  upload-progress events fired. Presigned server-side on phonetics with the restricted upload key.
+- Expired URL (1s TTL) → 401 `UnauthorizedAccess`. Same signature on a different key → 403
+  `SignatureDoesNotMatch`. `GET`/`DELETE` with the PUT credential → 403 (method is signed).
+- Server-side `HeadObject` OK (209 bytes, `application/pdf`), range-read confirms `%PDF-` magic.
+- Unsigned reads denied: direct B2 → 401, Bunny documents zone (`hranker-private-assets.b-cdn.net`) → 403.
+- No durable credential ever reached the browser; only the 15-min single-object URL did.
+
+**Findings for task 04 (the presigning recipe):**
+
+1. **Payload hash must be `UNSIGNED-PAYLOAD`.** A hand-rolled `@smithy/signature-v4` `presign()`
+   defaults the payload hash to the empty-body SHA → every `PUT` with a body fails 403
+   `SignatureDoesNotMatch`. Use `@aws-sdk/s3-request-presigner` (it sets
+   `X-Amz-Content-Sha256=UNSIGNED-PAYLOAD`, hoisted into the query, `SignedHeaders=host`,
+   content-type unsigned) — do not hand-roll.
+2. **B2 error responses carry no CORS headers** → the browser sees an opaque failure (`status 0`),
+   and XHR upload progress hits 100% *before* the failure surfaces. Client rule: progress is not
+   success; only the completion status is truth; treat opaque failures as retryable with a **fresh**
+   upload-target (the browser cannot distinguish expired vs transient).
+3. Virtual-host-style URL (`<bucket>.s3.us-east-005.backblazeb2.com`) works with B2 + presigning.
+4. `content-type` stays unsigned but the browser still sends it — the CORS rule must (and does)
+   allow it. Only `etag` needs exposing for the client to read the upload result.
+5. Spike object left at `pdfs/UPLOADCHECK-cors-spike.pdf` (UPLOADCHECK fixture convention; the
+   upload key has no delete capability, by design).
+
+**Remaining (deferred, pre-prod):** add the prod origin to the CORS rule; mint the `-prod` upload
+key; delete the account-wide key from test-uday.
