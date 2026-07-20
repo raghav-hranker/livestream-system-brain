@@ -28,3 +28,12 @@ The admin-dashboard edit form sends no file unless one is chosen, and renders th
 - Story 5: edit metadata without selecting the file again
 - Story 6: replace the file on an existing PDF
 - Story 7: replacing a legacy PDF makes the record ready on private storage
+## Execution notes — 2026-07-20
+
+Merged in both repos (nodejs-server `116449d0`+`2661e290` under merge `d4b3963b`; admin-dashboard
+`0a47184` under merge `8ad9f78` — leg commit rewritten once to strip a Co-Authored-By trailer, runner
+now instructs agents not to add them). nodejs-server 435/435, admin-dashboard vitest + 36/36 green.
+**Backend integrated acceptance PASSED on phonetics** (part of `upload-accept-checks.js`):
+metadata-only edit preserves `pdfAsset` byte-for-byte; replacement swaps to a new key, previous B2
+object retained, admin mint serves the new bytes. Admin form behavior (optional file input,
+metadata-only submit) covered by the leg's component/hook tests.

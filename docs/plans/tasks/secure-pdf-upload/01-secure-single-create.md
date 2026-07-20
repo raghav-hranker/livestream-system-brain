@@ -62,5 +62,10 @@ admin-dashboard `95f2594` + `ec94094`). Verification so far:
   findings: create-handler 500 catch still echoes raw non-storage error messages (pre-existing
   pattern, never credentials); title uniqueness remains check-then-act (pre-existing).
 - Suites green post-merge: nodejs-server 419/419 (node:test), admin-dashboard vitest + 36/36 node:test.
-- **Deployed integrated acceptance still NOT run** — blocked on the restricted B2 upload key
-  (see `03-b2-presigned-put-cors-spike.md` execution notes); phonetics has read/sign env only.
+- **Integrated acceptance PASSED 2026-07-20** on phonetics (deploy `37046d5e`): all slice E2E §1–2
+  checks green — create 201 sanitized, `pdfAsset.bucket='documents'`, key `pdfs/<48hex>.pdf`, B2
+  object verified, no `uploadPdf` on the record, unsigned Bunny 403, admin `/access` mint serves the
+  exact bytes. Re-runnable: `~/quicktricks-lms/upload-accept-checks.js` (UPLOADCHECK fixtures).
+  Two deployment-only defects found and fixed on the way: Node's happy-eyeballs 250ms connect budget
+  killed every B2 PUT from the box (`37046d5e`), and the redeploy env-wipe trap (see slice
+  failure cheatsheet).

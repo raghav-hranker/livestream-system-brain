@@ -72,3 +72,16 @@ B2 app keys can scope to at most one bucket, which enforces the split. Rules:
 
 Mint for task 01/04:
 `b2 key create --bucket hranker-private-assets --name-prefix pdfs/ lms-private-assets-pdf-upload-phonetics listFiles,readFiles,writeFiles`
+
+## Execution notes — 2026-07-20 (key minted)
+
+`lms-private-assets-pdf-upload-phonetics` minted via the B2 native API from test-uday (account key
+never left that box): keyId `0052b3cdedeb6890000000005`, bucket `hranker-private-assets`, prefix
+`pdfs/`, caps `listFiles,readFiles,writeFiles`. Installed on phonetics in `~/.quicktricks-lms-secrets`
+(the file the deploy script preserves) as `B2_ACCESS_KEY_ID`/`B2_SECRET_ACCESS_KEY` +
+`B2_S3_ENDPOINT=https://s3.us-east-005.backblazeb2.com`, `B2_REGION=us-east-005`,
+`B2_DOCUMENTS_BUCKET`. Verified working by the task-01/02 integrated acceptance.
+
+**Still pending (the actual spike):** the admin-dashboard production/preview origin list and the B2
+CORS rule for browser `PUT` (task 04 gate) — and, once confident, deleting the account-wide key from
+test-uday (a prod `-prod` upload key must be minted before prod deploy).

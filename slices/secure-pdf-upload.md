@@ -136,3 +136,10 @@ browser-supplied hash). Don't reopen these silently — amend the PRD/ADR first.
 - **Duplicate PDF records from one file** → completion idempotency broken — check the session+file unique
   constraint before blaming the frontend retry loop.
 - **New records still carry `uploadPdf` URLs** → hop 2 regression; that field is legacy read-only.
+- **Every B2 upload from a deployed box dies ETIMEDOUT while `curl` to the S3 endpoint works** →
+  Node ≥20 happy-eyeballs gives each connect attempt 250ms; the B2 us-east handshake takes ~290ms
+  from India. Fixed in the document-storage client (`autoSelectFamilyAttemptTimeout: 5000`); any
+  *other* Node process talking to B2 needs the same agent option.
+- **Read-side mint breaks after a phonetics redeploy** (`BUNNY_DOCUMENTS_*` gone) → the deploy script
+  regenerates `.env.production` from `~/nodejs-server/.env` + `~/.quicktricks-lms-secrets`; vars added
+  only to the generated file are wiped. Persist box-specific env in `~/.quicktricks-lms-secrets`.

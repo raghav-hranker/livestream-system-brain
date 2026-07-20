@@ -185,7 +185,8 @@ guard is satisfied by the runner; do not switch branches.
 ${leg.focus ? `This task spans two repos. Your leg covers ONLY the ${leg.repo} half:\n${leg.focus}\n` : ""}
 ${docsSection} Follow the repo's own conventions and
 CLAUDE.md/CONTEXT.md if present. Write the tests the spec's acceptance criteria call for and
-run the repo's test suite. Commit all work with clear messages as you go.
+run the repo's test suite. Commit all work with clear messages as you go. Never add
+Co-Authored-By or any other trailer to commit messages.
 
 When every acceptance criterion belonging to this repo's half is met and the tests pass,
 output exactly: ${COMPLETION}
