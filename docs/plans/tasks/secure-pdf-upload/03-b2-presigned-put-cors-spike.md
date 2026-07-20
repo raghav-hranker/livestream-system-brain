@@ -137,3 +137,16 @@ bucket had **no** pre-existing rules). Bucket `hranker-private-assets` (`allPriv
 
 **Remaining (deferred, pre-prod):** add the prod origin to the CORS rule; mint the `-prod` upload
 key; delete the account-wide key from test-uday.
+
+## Execution notes — 2026-07-20 (decision: no separate `-prod` upload key)
+
+**User decision, overriding the per-environment-key rule above for this client:** no separate
+`-prod` upload key will be minted. The existing `lms-private-assets-pdf-upload-phonetics` key
+(keyId `0052b3cdedeb6890000000005`) serves production too. The pre-prod checklist therefore
+shrinks to:
+
+1. Add the production dashboard origin to the `adminDashboardPdfPut` CORS rule.
+2. Delete the account-wide key from test-uday.
+
+The `-env` suffix in the key name is now historical — treat the key as the single upload
+credential for `hranker-private-assets`/`pdfs/`, not as phonetics-scoped.
