@@ -47,3 +47,20 @@ per-repo base branches in `slices/secure-pdf-upload.md`. Done only when the inte
 - Story 34: single and bulk converge on the same `pdfAsset` contract
 - Story 35: storage details behind one document-storage module
 - Story 36: frontend form types separated from backend read models
+## Execution notes — 2026-07-20
+
+Merged in both repos (nodejs-server merge `5734c53a` + follow-ups `bc8ec52d`, `7476308c`;
+admin-dashboard `95f2594` + `ec94094`). Verification so far:
+
+- Code review of the nodejs-server diff (`94c206d3..`): **safe to build on** — no credential leaks
+  (keys never logged/serialized; provider failures normalized detail-free and test-pinned), contract
+  faithful (`pdfAsset.bucket` is the logical `documents` alias, asserted ≠ physical bucket; no
+  fetchable URL in the 201 response or persisted doc), failure ordering per PRD (storage failure ⇒
+  502 + **no record inserted**; DB failure after PUT ⇒ documented orphan). No commit touches `dist/`.
+- Review finding M1 fixed in `7476308c`: shared `pdfUpload` middleware was built at module eval,
+  binding the multer byte limit before dotenv ran — now lazy, with a regression test. Minor accepted
+  findings: create-handler 500 catch still echoes raw non-storage error messages (pre-existing
+  pattern, never credentials); title uniqueness remains check-then-act (pre-existing).
+- Suites green post-merge: nodejs-server 419/419 (node:test), admin-dashboard vitest + 36/36 node:test.
+- **Deployed integrated acceptance still NOT run** — blocked on the restricted B2 upload key
+  (see `03-b2-presigned-put-cors-spike.md` execution notes); phonetics has read/sign env only.
