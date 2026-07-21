@@ -1,11 +1,12 @@
 # System Brain — Hranker platform
 
-This repo is the **brain** for a system that spans four independently-deployed repos:
+This repo is the **brain** for a system that spans five independently-deployed repos:
 
 - **livestream** — live streaming (OBS/webcam → GPU HLS → Live bucket/CDN; the *live* transcoder)
 - **video-transcoder** — recorded/VOD transcoding (intake → GPU job-manager → containers; ops 1A/1B/1C)
 - **nodejs-server** — *Content Protection*: the LMS API that holds `Class.hlsAsset` / `Pdf.pdfAsset` and mints signed playback + PDF-access URLs
-- **admin-dashboard** — the admin control plane (Next.js): authors Classes/Courses/PDFs against nodejs-server's admin API; browser side of the PDF upload contracts
+- **admin-dashboard** — the admin control plane (Next.js): authors Classes/Courses/PDFs against nodejs-server's admin API; browser side of the PDF upload contracts; mints the Streamer token and hands off to **ls**
+- **ls** — the production livestream viewer/player UI (Next.js): presents the token to `/playback`, renders live + VOD HLS (replaces livestream's dead in-repo `ui/`)
 
 It owns **only the cross-cutting layer** — the whole-system map, the shared boundary vocabulary, and the
 vertical-slice playbooks. Per-repo truth stays in each repo's own `CONTEXT.md` / `MAP.md` / `docs/`.
