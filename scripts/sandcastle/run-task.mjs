@@ -50,6 +50,13 @@ const PDFUP_DOCS = [
   "docs/adr/0005-bulk-pdf-uploads-use-presigned-put.md",
   "slices/secure-pdf-upload.md",
 ];
+// Governing docs for the secure-video-upload-b2 plan: the PRD lives in the brain; ADR 0004
+// lives in admin-dashboard (committed on the base branch, so the worktree has it too) but is
+// inlined anyway so the prompt is self-contained.
+const VIDUP_DOCS = [
+  "docs/plans/prd-secure-video-upload-b2.md",
+  "../admin-dashboard/docs/adr/0004-video-uploads-move-to-b2-multipart.md",
+];
 const PLANS = {
   launch: {
     name: "client-launch-v2",
@@ -158,6 +165,19 @@ const PLANS = {
         ],
         docs: PDFUP_DOCS,
       },
+    },
+  },
+  vidup: {
+    name: "secure-video-upload-b2",
+    taskDir: () => path.join(BRAIN, "docs/plans/tasks/secure-video-upload-b2"),
+    baseBranch: () => "launch/quicktricks-v2", // pinned per the task README (shared slice branch)
+    branchGuardHint: "Checkout launch/quicktricks-v2 in admin-dashboard.",
+    branchPrefix: "sandcastle/vidup-task-",
+    notAgentTasks:
+      "Tasks 01 (tracer spike), 04 (env registration), 05–06 (E2E) are HITL — only 02 and 03 are agent tasks.",
+    tasks: {
+      "02": { legs: [{ repo: "admin-dashboard" }], docs: VIDUP_DOCS },
+      "03": { legs: [{ repo: "admin-dashboard" }], docs: VIDUP_DOCS },
     },
   },
 };
