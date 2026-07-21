@@ -1,6 +1,7 @@
 # Tasks: Client Launch v2 — Room-less Streaming System
 
-> Other task sets live in subdirectories: [`secure-pdf-upload/`](./secure-pdf-upload/README.md).
+> Other task sets live in subdirectories: [`secure-pdf-upload/`](./secure-pdf-upload/README.md),
+> [`secure-video-upload-b2/`](./secure-video-upload-b2/README.md).
 
 Vertical-slice breakdown of [the PRD](../prd-client-launch-v2.md). Each task is a tracer bullet —
 a thin, complete, independently-verifiable path — and names its target repo(s) plus the governing

@@ -1,5 +1,10 @@
 # Tasks: Secure PDF upload — single + bulk
 
+> **Status (2026-07-21): code complete.** Tasks 01–08 merged + integrated on the slice branch in
+> both repos; local suites green. Remaining: HITL deploy-to-phonetics + browser E2E (task-04
+> pattern); branches local-only, not pushed. Kept in place as history — task 03 holds the settled
+> B2 credential/CORS scheme that ADR 0004 (admin-dashboard) and the video-upload slice reference.
+
 Tracer-bullet breakdown of [the PRD](../../prd-secure-pdf-upload.md), governed by
 [ADR 0005](../../../adr/0005-bulk-pdf-uploads-use-presigned-put.md). The cross-repo wiring map and
 failure cheatsheet is [`slices/secure-pdf-upload.md`](../../../../slices/secure-pdf-upload.md).
