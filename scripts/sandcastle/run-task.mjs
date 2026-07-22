@@ -86,6 +86,18 @@ const PLANS = {
       "07": { legs: [{ repo: "livestream" }], docs: [LAUNCH_SLICE] },
       "08": { legs: [{ repo: "livestream" }], docs: ["docs/adr/0004-architecture-ships-greenfield-per-client.md", LAUNCH_SLICE] },
       "09": { legs: [{ repo: "livestream" }], docs: ["docs/adr/0004-architecture-ships-greenfield-per-client.md"] },
+      "11": { legs: [{ repo: "livestream" }], docs: ["SYSTEM.md", LAUNCH_SLICE] },
+      "12": {
+        legs: [{
+          repo: "ls",
+          focus: "The task-11 backend emit this task consumes is now implemented; its wire contract is: on joinRoom the backend emits `privateModeUpdate` with payload `{ isPrivate: boolean }` to just the joining socket (the same event name the host-toggle broadcast already uses, so one client handler covers both); a message blocked by private mode comes back to the sender as `userMsgError` with `{ message, code: 'PRIVATE_MODE' }`. Build against exactly these events.",
+        }],
+        docs: [
+          "docs/adr/0004-architecture-ships-greenfield-per-client.md",
+          "../ls/docs/adr/0003-render-driven-by-lms-not-socket-status.md",
+          LAUNCH_SLICE,
+        ],
+      },
     },
   },
   pdf: {
