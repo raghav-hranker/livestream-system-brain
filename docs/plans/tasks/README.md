@@ -23,7 +23,13 @@ architecture.
 | 07 | [Delete the recordings relay and dead setStreamStatus](07-delete-recordings-relay.md) | AFK | livestream | 01 |
 | 08 | [Delete the Room model, room routes, and in-repo viewer UI](08-delete-room-era-code.md) | AFK | livestream | 01 |
 | 09 | [Fail-fast boot validation for LMS config](09-fail-fast-boot-validation.md) | AFK | livestream | 01 |
-| 10 | [Launch acceptance run](10-launch-acceptance-run.md) | HITL | all + production | 02–09 |
+| 10 | [Launch acceptance run](10-launch-acceptance-run.md) | HITL | all + production | 02–09, 11–12 |
+| 11 | [Private-mode join bootstrap + server-side enforcement](11-private-mode-join-bootstrap-enforcement.md) | AFK | livestream | 05 |
+| 12 | [ls viewer: room-less realignment](12-ls-roomless-realignment.md) | AFK | ls | 08, 11 |
+
+Tasks 11–12 were added 2026-07-22 from the room-sync design session (see
+`secure-video-upload-b2/05-…` execution notes): 11 closes the private-mode late-join and
+forged-`userMsg` seams; 12 removes the viewer's last `/room` dependence.
 
 Parallelism: once 01 lands, tasks 04–09 are all grabbable concurrently; 03 follows 02.
 Task 10 is the only human-in-the-loop gate (production branches, DB grants, live OBS run).
