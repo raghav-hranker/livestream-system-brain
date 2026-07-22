@@ -98,6 +98,16 @@ const PLANS = {
           LAUNCH_SLICE,
         ],
       },
+      // Legs run in array order — the LMS routes must exist before the ls repoint,
+      // and livestream's deletion comes last so notes never go dark mid-task.
+      "13": {
+        legs: [
+          { repo: "nodejs-server", focus: "Build ONLY the nodejs-server leg: the Note model and the class-scoped notes routes (GET/POST /api/classes/:classId/notes, PUT/DELETE /api/notes/:noteId) behind the existing viewer-token validation, identity always derived from the token (userId never read from body/query), owner-only update/delete, plus the spec's tests. The ls repoint and livestream deletion are separate legs." },
+          { repo: "ls", focus: "Build ONLY the ls leg: repoint lib/api/notes.ts from LIVESTREAM_BACKEND_URL to LMS_BASE_URL with the new /api/classes/:classId/notes + /api/notes/:noteId paths, send the same token the viewer presents to /playback in the Authorization header, and drop userId from the request types/payloads (types/notes.ts). The LMS routes already exist (built in a prior leg); the livestream deletion is a separate leg." },
+          { repo: "livestream", focus: "Build ONLY the livestream leg: delete backend/routes/notes.js, the Note model + notesSchema in backend/db/model.js, and the notes mount in backend/app.js; remove uploadMediaToS3 from backend/lib/fileUpload.js only if notes was its last caller. The LMS replacement and ls repoint already landed in prior legs. Full suite stays green." },
+        ],
+        docs: ["SYSTEM.md"],
+      },
     },
   },
   pdf: {
