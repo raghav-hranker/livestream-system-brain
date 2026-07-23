@@ -42,6 +42,34 @@ drain, caching, course/progress fixes) absent from the slice branch. This is a r
 This merge **also lands the pending PDF-delivery and PDF-upload prod merge** — one merge closes both
 ledgers.
 
+### Phase 1 status: MERGED LOCALLY 2026-07-23 — awaiting review, NOT pushed
+
+Branch `merge/quicktricks-prod-x-launch-v2` @ `0a827dd6` (worktree
+`system-brain/repos/.merge/nodejs-server-prodmerge`; the user's `quicktricks-prod` checkout at
+`~/Projects/nodejs-server-quickstricks` untouched). `tsc --noEmit` clean, dist rebuilt.
+Suite: 871 tests, 858 pass — the 13 failures (streak screen/journeys, notification redirection)
+fail **identically on the prod baseline**: pre-existing, zero merge regressions.
+
+Background: prod had carried an early cut of the video-protection slices and reverted them on
+2026-05-07 (`8b5d972e` + 3 siblings); this merge re-lands the mature v2 form.
+
+**Decisions made in the merge — review before push:**
+
+1. **mp4Recordings union shape** — stored entries are secured `{bucket,key,quality}` (signed) OR
+   legacy APX `{url,quality}` (served verbatim, R2-public). Secured webhook stays strict at the
+   edge; `/playback`+`/downloads` filter to signable entries, so APX-only classes 404 on
+   `/downloads` (they serve via `class_link`/prod listing instead).
+2. **Class serializer** — v2's hlsAsset/mp4Recordings stripping restored, but stored APX
+   `class_link` wins over the `link` alias.
+3. **Admin-writable `streamStatus`** — kept (APX/backfill needs it) but constrained to the
+   lifecycle enum; secured webhook remains the authoritative writer.
+4. **`/users/refresh-token`** — v2's expiry-tolerant handler kept and prod's `authenticateToken`
+   mount dropped (it rejected the expired tokens the route exists to refresh; session-liveness
+   check gates instead).
+5. **Nullable PDF topic** (prod) threaded through v2's create/update/upload-session seams.
+6. Cron roster is the union; `Pdf.createIndexes()` on boot retained (autoIndex is broken on the
+   deploy box — proven during pdf-upload).
+
 ## Phase 2 — Environment prerequisites (before the LMS deploy)
 
 The LMS starts rejecting unauthenticated transcoder writes the moment Phase 1 deploys, so these come first:
