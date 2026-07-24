@@ -156,7 +156,8 @@ The LMS starts rejecting unauthenticated transcoder writes the moment Phase 1 de
   zone — it's what `/downloads` and backfilled APX `/playback` sign against. Same footgun class
   as the live pairing above.
 - **Mongo guardrail (ADR-0003):** livestream's DB user read-only on `classes`; prove it — a write from
-  that user must fail.
+  that user must fail. **DONE 2026-07-24 for the launch-test db** (see Phase-2 status); the role is
+  scoped to `quicktricks-launch-test`, so the prod cutover must re-grant the same shape on the prod db.
 - **Fresh client DB (ADR-0004):** zero `Room` documents, no migration/backfill executed.
 
 ### Phase 2 status: livestream box UP on phonetics pairing (2026-07-24)
@@ -219,12 +220,28 @@ client intentionally stays on the shared cluster via `GPU_REDIS_*`. NB: the boot
 `Socket already opened` / `recoverPending` error in pm2 logs is a pre-existing benign
 connect race (present on pre-fix boots too).
 
+**Leak containment evidence (2026-07-24, post-fix):** quicktricks log has zero `Received endStream`
+lines since the fixed build booted (10:29:06Z); GPU log has zero new signed `livestream-hranker-v2`
+jobs after the last pre-fix one (10:22:20Z); phonetics' foreign-classId stream-status PUTs end at
+`132650` (the 10:22Z event). The last pre-fix bogus job (`hls-1784888536125-132650`) failed all 4
+conversions as expected, and its legacy twin (`hls-1784888635109-132650`, tenant-enqueued, unsigned
+input) succeeded 4/4 → **no tenant lost work across the whole incident.** Final observation (a
+foreign stream-end occurring *after* 10:29:06Z with quicktricks silent) pending — a `/695` toppers
+stream that started 10:35:55Z is being watched for its end.
+
+**Mongo guardrail DONE (2026-07-24):** user `quicktricks-livestream` + role
+`quicktricksLivestreamRole` (created in `admin` on the shared 148.113.x replica set): `find` on
+`classes` only; `find/insert/update/remove/createIndex` on livestream's own collections
+(`messages`, `polls`, `notes`, `bans`, `reports`); nothing else. Proven live: classes read OK,
+classes write → `not authorized`, own-collection insert+delete OK, boot-time `notes` index OK.
+Box `.env` `DB_URI` swapped off the cluster-admin user (backup `.env.bak-guardrail-20260724`),
+pm2 restarted clean 11:11:48Z. Script kept at `~/mongo-guardrail.sh` on the box — rerun with the
+prod db name at cutover (role privileges are db-scoped to `quicktricks-launch-test` today).
+
 **Phase-2 items still open:**
 1. **Smoke test** (OBS push → stream-status on phonetics → stream-end 1C → recordings webhook →
    signed playback) — needs a user OBS push to `rtmp://34.131.52.223:8937/472/<classId>`.
-2. **Mongo guardrail not yet applied** — box uses the admin Mongo user (rehearsal); create the
-   read-only-on-`classes` livestream user + prove-write-fails before prod (ADR-0003).
-3. **Browser-facing TLS/wss (deferred by user: open up + add a domain when required)** — 8082 is
+2. **Browser-facing TLS/wss (deferred by user: open up + add a domain when required)** — 8082 is
    plain HTTP, fine for localhost `ls` dev; an https `ls` deploy needs nginx+TLS. LMS 5100
    external access is firewalled to the GPU server's IP only — browser acceptance needs the
    tester's IP or a tunnel.
