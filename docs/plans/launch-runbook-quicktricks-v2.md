@@ -55,8 +55,10 @@ regenerated from the slice branch's v3 lock against the merged `package.json`). 
 merged tip: cutover-checks 11/11, upload-accept-checks all-pass, merged cron union scheduled, all
 8 `pdfs` indexes present, stream-status/private-mode secret middleware (401 without / passes
 with), fixture class `processing`→425 then `ended`+`hlsAsset`→200 signed recorded-zone URL.
-`quicktricks-prod` itself not fast-forwarded yet; the six merge decisions below still await
-formal sign-off (decisions 5–6 unvalidated by targeted tests).
+`quicktricks-prod` itself not fast-forwarded yet. All six merge decisions below now carry
+per-decision VALIDATED evidence (1–4 code+test-verified @ `dea07469` on 2026-07-24, incl. the
+exhaustive streamStatus-writer trace; 5–6 validated+fixed @ `8a679d54`) — awaiting the user's
+formal sign-off only.
 
 ### Phase 1 history: MERGED LOCALLY 2026-07-23
 
@@ -83,13 +85,34 @@ Background: prod had carried an early cut of the video-protection slices and rev
    sanctioned no-video category). The backfill strips the url fields outright (pre-launch, no
    consumers — user decision 2026-07-24); after it commits, the union tolerance itself is
    removable (cleanup ledger: tighten `Mp4RecordingSubSchema` back to bucket+key-only).
+   **VALIDATED 2026-07-24 @ `dea07469` (code+tests):** union sub-schema + `pre('validate')`
+   either-shape guard (`src/types/assetRef.ts:60-78`), webhook still strict bucket+key
+   (`recordingItemSchema` `.strict()`, `classSchemas.ts:164-179`), authz loader filters to
+   `isSignableMp4Recording` (`classAccessAuthz.ts:193`) so `/playback` (`playbackController.ts:170`)
+   and `/downloads` (empty → 404, `downloadsController.ts:79`) only ever sign bucket+key.
 2. **Class serializer** — v2's hlsAsset/mp4Recordings stripping restored, but stored APX
    `class_link` wins over the `link` alias.
+   **VALIDATED 2026-07-24 @ `dea07469` (code+tests):** both `toJSON` and `toObject` transforms
+   delete `hlsAsset`+`mp4Recordings` and apply `ret.class_link = ret.class_link ?? ret.link ?? ''`
+   (`src/models/Class.ts:260-284`); `streamStatus` survives serialization
+   (streamStatusSchema.test.ts "toJSON/toObject does not strip streamStatus" both green).
 3. **Admin-writable `streamStatus`** — kept (APX/backfill needs it) but constrained to the
    lifecycle enum; secured webhook remains the authoritative writer.
+   **VALIDATED 2026-07-24 @ `dea07469` (code+tests+exhaustive writer trace):** enum at the edge
+   (`classSchemas.ts:107`) + model (`Class.ts:257`). Writer census: the only paths that set
+   `streamStatus` are the secured webhook, admin create/update, and bulk-create — all four gated
+   by `z.enum(STREAM_STATUSES)`. Every APX flow (`apxPortingService.ts` create,
+   `backfillApxVideoAssets.ts`, `apxAssetKeyBackfillRunner.ts`, `apxPdfNotePortService.ts`) leaves
+   the field unset; `staleStreamSweep` is read-only. No raw `$set`/`insertMany` writes it anywhere,
+   so no prod APX flow can send a non-enum value (a hypothetical legacy caller would now 400 at
+   the edge, not 500 on save) — closes the handoff's open verification.
 4. **`/users/refresh-token`** — v2's expiry-tolerant handler kept and prod's `authenticateToken`
    mount dropped (it rejected the expired tokens the route exists to refresh; session-liveness
    check gates instead).
+   **VALIDATED 2026-07-24 @ `dea07469` (code+tests):** route mounted bare
+   (`userRoutes.ts:259`), handler decodes ignoring expiry via `refreshAccessToken` +
+   `isSessionActive` gate (`userController.ts:429-458`, `services/tokenRefresh.ts`); all 6
+   tokenRefresh tests green (expired+active mints; terminated session 401s).
 5. **Nullable PDF topic** (prod) threaded through v2's create/update/upload-session seams.
    **VALIDATED + FIXED 2026-07-24 @ `8a679d54`:** the merge had threaded zod + service but
    missed the bulk seam — `PdfUploadSession` metadata still required topic (topic-less create
