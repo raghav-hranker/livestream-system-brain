@@ -24,7 +24,7 @@ the writers are the two transcoders (video contracts) and admin-dashboard (PDF c
 | **stream-status webhook** | `PUT /api/classes/{classId}/stream-status` + `X-Transcoder-Secret`, body `{streamStatus, hlsAsset:{bucket,key}}` | livestream (live `ended`) **and** video-transcoder (1A, secured) | nodejs-server | The **only** secured writer of `Class.hlsAsset`. Both transcoders use the *same* `ended` contract. Delivery is **at-least-once** (`docs/adr/0002`): producer retries latest-transition-per-class from Redis; LMS sweeps stale transient statuses. |
 | **Recordings webhook** | secured `POST /api/classes/recordings-prerecorded` `{bucket,key}` + secret; unsecure `POST /recordings-prerecorded` `{url,quality,size}` | video-transcoder (1B, 1C) | nodejs-server | MP4 set only, no HLS. Replaces `mp4Recordings` wholesale. |
 | **Class-link callback** | PHP `…/admin/api/update-online-class-link`; nodejs `PUT /classes/{classId}` `{class_link}` | video-transcoder (1A, **unsecure** only) | LMS | Replaced by the stream-status webhook for secured customers. |
-| **Playback (mint)** | `PUT /api/classes/{classId}/playback` → signed CDN URL (`?token=…&expires=…`) | — | livestream `ui/` player (consumer) | nodejs-server signs from `Class.hlsAsset`. No `hlsAsset` ⇒ `/playback` 404s. |
+| **Playback (mint)** | `GET /api/classes/{classId}/playback` (Auth or Streamer token) → signed CDN URL (`?token=…&expires=…`) | — | **ls** viewer (consumer) | nodejs-server signs from `Class.hlsAsset`. No `hlsAsset` ⇒ `/playback` 404s; `preparing`/`processing` ⇒ 425. |
 | **Private-mode write** | `PATCH /api/classes/{classId}/private-mode` + `X-Transcoder-Secret`, body `{isPrivate}` | livestream (host toggle via class-UI socket) | nodejs-server | `isPrivate` is LMS-owned but **dual-writable**: LMS admin UI writes it directly, livestream writes via this endpoint. LMS side landed on `launch/quicktricks-v2`; livestream's `classClient.setPrivateMode` still targets the dead `/api/internal/...` URL — repoint is launch task 05. Late-join bootstrap: `joinRoom` emits current `isPrivate` to the joining socket, and `userMsg` enforces it server-side (launch task 11). |
 | **Transcoder secret** | header `X-Transcoder-Secret` ⇄ env `TRANSCODER_WEBHOOK_SECRET` | transcoders send | nodejs-server checks | **Per secured customer**, gates *both* webhooks. Never global. |
 | **PDF access (mint)** | `GET /api/admin/pdfs/{pdfId}/access` (admin) · `GET /api/courses/{courseId}/pdfs/{pdfId}/access` · `GET /api/classes/{classId}/pdfs/{pdfId}/access` (entitled viewer) → signed Bunny URL | — | admin-dashboard + student clients (consumers) | nodejs-server signs from `Pdf.pdfAsset` (`documents` zone). PDF analogue of Playback (mint): no `pdfAsset` ⇒ nothing to sign. See `repos/nodejs-server/docs/adr/0002-documents-zone-and-exact-file-tokens.md`. |
@@ -37,13 +37,13 @@ the writers are the two transcoders (video contracts) and admin-dashboard (PDF c
 LIVE
   OBS → livestream backend (GPU HLS) → Live bucket (B2+Bunny)
        └ on ENDED → stream-status webhook → nodejs-server sets Class.hlsAsset
-  viewer → livestream ui → PUT /playback → nodejs-server signs hlsAsset → CDN → playback
+  viewer → ls → GET /playback → nodejs-server signs hlsAsset → CDN → playback
 
 RECORDED (source MP4 upload)
   upload → video-transcoder intake (src/) → Redis → job-manager → container/
      1A HLS  → secured: stream-status webhook (sets hlsAsset)   | unsecure: Class-link callback
      1B MP4  → Recordings webhook
-  viewer path identical to live: PUT /playback → sign hlsAsset → CDN
+  viewer path identical to live: GET /playback → sign hlsAsset → CDN
 
 RETRANSCODE (existing HLS → MP4, op 1C)
   job pushed directly to Redis → hls-to-mp4 worker → Recordings webhook (MP4 only;

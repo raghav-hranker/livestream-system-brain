@@ -27,7 +27,7 @@ Vocabulary: `GLOSSARY.md`. Wiring: `SYSTEM.md`. Branch: all repos on `ACTIVE_BRA
    - Definitions: `repos/nodejs-server/CONTEXT.md` (token/credential taxonomy).
 
 3. **nodejs-server — sign on `/playback`.**
-   - `PUT /api/classes/{classId}/playback` mints a **Playback URL token** from `Class.hlsAsset`. No `hlsAsset`
+   - `GET /api/classes/{classId}/playback` mints a **Playback URL token** from `Class.hlsAsset`. No `hlsAsset`
      ⇒ 404. A **Streamer token** bypasses the entitlement check; a student token must pass it.
 
 4. **livestream `ui/` — play and refresh.**
@@ -43,7 +43,7 @@ Vocabulary: `GLOSSARY.md`. Wiring: `SYSTEM.md`. Branch: all repos on `ACTIVE_BRA
 1. Submit a secured-customer source MP4 through the recorded intake.
 2. Confirm 1A finishes and `stream-status` is called with `hlsAsset.bucket = recorded`.
 3. Confirm `Class.hlsAsset` is set in nodejs-server.
-4. `PUT /playback` as an entitled viewer → expect a signed URL (not 404).
+4. `GET /playback` as an entitled viewer → expect a signed URL (not 404).
 5. Fetch the signed URL from the CDN → 200; let the token expire → CDN 403 → player re-mints.
 
 ## Failure-surface cheatsheet (from nodejs-server CONTEXT)

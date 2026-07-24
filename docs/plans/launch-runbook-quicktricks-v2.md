@@ -42,7 +42,20 @@ drain, caching, course/progress fixes) absent from the slice branch. This is a r
 This merge **also lands the pending PDF-delivery and PDF-upload prod merge** — one merge closes both
 ledgers.
 
-### Phase 1 status: MERGED LOCALLY 2026-07-23 — awaiting review, NOT pushed
+### Phase 1 status: PUSHED + PHONETICS-VERIFIED 2026-07-24 (prod still untouched)
+
+Branch pushed to origin @ `3cf02720` = `274272f3` + a lockfile fix (the merge had taken prod's
+v2 `package-lock.json`, which lacks chokidar's optional `fsevents` entry — box `npm ci` refused;
+regenerated from the slice branch's v3 lock against the merged `package.json`). Deployed to the
+**phonetics test box** (user decision: phonetics first, test-uday/prod later) via
+`~/deploy-quicktricks-lms.sh` (now takes a `BRANCH=` override). All box verification green on the
+merged tip: cutover-checks 11/11, upload-accept-checks all-pass, merged cron union scheduled, all
+8 `pdfs` indexes present, stream-status/private-mode secret middleware (401 without / passes
+with), fixture class `processing`→425 then `ended`+`hlsAsset`→200 signed recorded-zone URL.
+`quicktricks-prod` itself not fast-forwarded yet; the six merge decisions below still await
+formal sign-off (decisions 5–6 unvalidated by targeted tests).
+
+### Phase 1 history: MERGED LOCALLY 2026-07-23
 
 Branch `merge/quicktricks-prod-x-launch-v2` @ `0a827dd6` (worktree
 `system-brain/repos/.merge/nodejs-server-prodmerge`; the user's `quicktricks-prod` checkout at
