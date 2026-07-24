@@ -55,10 +55,13 @@ regenerated from the slice branch's v3 lock against the merged `package.json`). 
 merged tip: cutover-checks 11/11, upload-accept-checks all-pass, merged cron union scheduled, all
 8 `pdfs` indexes present, stream-status/private-mode secret middleware (401 without / passes
 with), fixture class `processing`→425 then `ended`+`hlsAsset`→200 signed recorded-zone URL.
-`quicktricks-prod` itself not fast-forwarded yet. All six merge decisions below now carry
-per-decision VALIDATED evidence (1–4 code+test-verified @ `dea07469` on 2026-07-24, incl. the
-exhaustive streamStatus-writer trace; 5–6 validated+fixed @ `8a679d54`) — awaiting the user's
-formal sign-off only.
+All six merge decisions carry per-decision VALIDATED evidence (1–4 code+test-verified @
+`dea07469` on 2026-07-24, incl. the exhaustive streamStatus-writer trace; 5–6 validated+fixed
+@ `8a679d54`). **USER SIGN-OFF given 2026-07-24 → Gate 2 EXECUTED: `origin/quicktricks-prod`
+fast-forwarded `d3621664` → `dea07469`** (ref push, no working tree touched; the user's
+`~/Projects/nodejs-server-quickstricks` worktree still holds the local branch at `d3621664` —
+`git pull --ff-only` there to sync). Prod DEPLOY remains gated on the livestream 4× stream-end
+cleanup fix.
 
 ### Phase 1 history: MERGED LOCALLY 2026-07-23
 
