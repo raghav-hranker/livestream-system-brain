@@ -182,17 +182,28 @@ quicktricks runs side-by-side from a **separate checkout** `~/quicktricks-livest
   (toppers uses remote Redis Cloud — no collision).
 - Boot log clean: RTMP 8937, server 8082, Mongo + Redis connected, 0 restarts.
 
+**1C corrected (2026-07-24, user):** Cloud Run is DEAD — 1C goes to the **common GPU server**
+(= the video-transcoder box, the Hetzner host `178.63.88.34` already firewall-allowed into
+phonetics:5100). `ecs.js` already enqueued to its Redis `queue:critical`; two real gaps fixed on
+the slice branch (`5b7f9d4` + `5c70d96`, pushed, 99/99 tests): the job payload never carried
+`apiUrl` (the secured recordings report's target — `LMS_PUBLIC_BASE_URL` wins over `LMS_BASE_URL`
+since the GPU server reaches the LMS from outside the VPC, via phonetics ext IP
+`34.126.210.209:5100`), and the queue client now takes dedicated `GPU_REDIS_*` (fallback
+`REDIS_*`) so the app Redis stays box-local. Box env rewired (GPU_REDIS_* = the shared Redis
+Cloud instance toppers uses — PONG verified; dead GCP block dropped), restarted clean.
+
 **Phase-2 items still open:**
-1. **1C enqueue BLOCKED:** GCP key json sits in `/root/livestream-gpu/` (unreadable as `raghav`)
-   and the VM SA lacks cloud-platform scope — stream-end HLS→MP4 job trigger will fail until a
-   readable key is provided (needs user sudo). Live streaming/stream-status/playback unaffected.
+1. **GPU server (video-transcoder box) config** — needs, per its secured-guard contract:
+   quicktricks' clientId in `SECURED_CLIENTS` + `TRANSCODER_SECRET_<clientId>=` the new rotated
+   secret; confirm the job-manager consumes the same Redis Cloud queue and the
+   `hls-to-mp4-container-b2` image is present. Shared prod infra serving other clients — user
+   green-light + access needed. Quicktricks clientId presumed **472** (APX key prefix) — confirm.
 2. **Mongo guardrail not yet applied** — box uses the admin Mongo user (rehearsal); create the
-   read-only-on-`classes` livestream user + prove-write-fails before prod.
-3. **Browser-facing TLS/wss:** 8082 is plain HTTP — fine for localhost `ls` dev, but an https
-   `ls` deploy needs an nginx+TLS proxy (box nginx currently only serves toppers'
-   `test.topperswisdom.com`). Also LMS 5100 external access is firewalled to one IP
-   (`178.63.88.34`) — browser acceptance needs the tester's IP or a tunnel.
-4. video-transcoder box env (`LMS_BASE_URL` + new secret) — box not yet designated this session.
+   read-only-on-`classes` livestream user + prove-write-fails before prod (ADR-0003).
+3. **Browser-facing TLS/wss (deferred by user: open up + add a domain when required)** — 8082 is
+   plain HTTP, fine for localhost `ls` dev; an https `ls` deploy needs nginx+TLS. LMS 5100
+   external access is firewalled to the GPU server's IP only — browser acceptance needs the
+   tester's IP or a tunnel.
 
 ## Phase 3 — Lockstep deploy order
 
