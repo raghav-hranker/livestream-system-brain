@@ -12,9 +12,12 @@ State audited 2026-07-22 from the actual checkouts (`sync-branches.sh status` cl
 
 ## Phase 0 — Push the slice branches (blocker for deploy phases)
 
-> **ON HOLD (2026-07-22, user decision):** no pushes yet — other devs must not pull these branches
-> into their work before the launch window. Phase 1 proceeds on a **local** merge branch; Phase 0
-> executes immediately before Phase 3 when the user green-lights it.
+> **DONE (2026-07-24, user green-light — all four):** livestream pushed @ `989186f`, admin-dashboard
+> pushed @ `a07322e`, ls branch first-published to `livestream-secure` @ `5395741` (tracking set),
+> brain `main` pushed @ `997572a`. Uncommitted working trees stayed local by design: admin-dashboard
+> ApxBulkMigrate/use-apx-courses (~470 lines, undecided) and ls `config/BaseConstants.ts` (3 lines).
+> Brain `origin` was repointed from `git@github.com:` to the `git@raghav-hranker:` SSH alias (the
+> GitHub key lives under that host alias; the plain host got publickey-denied).
 
 | Repo | State vs remote | Action |
 |---|---|---|
