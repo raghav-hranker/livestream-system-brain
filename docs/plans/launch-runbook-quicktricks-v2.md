@@ -64,8 +64,9 @@ Background: prod had carried an early cut of the video-protection slices and rev
    unsigned CDN probe — video-transcoder ADR-0003/0004's "R2 interim" record is stale, corrected
    there). The union tolerance exists only until the Phase-1.5 backfill enriches every entry to
    bucket+key; end-state = every non-YouTube class signable (YouTube redirects are the one
-   sanctioned no-video category). The url fields become removable after the client moves to
-   `/playback`//`downloads` mints.
+   sanctioned no-video category). The backfill strips the url fields outright (pre-launch, no
+   consumers — user decision 2026-07-24); after it commits, the union tolerance itself is
+   removable (cleanup ledger: tighten `Mp4RecordingSubSchema` back to bucket+key-only).
 2. **Class serializer** — v2's hlsAsset/mp4Recordings stripping restored, but stored APX
    `class_link` wins over the `link` alias.
 3. **Admin-writable `streamStatus`** — kept (APX/backfill needs it) but constrained to the
@@ -86,21 +87,23 @@ The old "/downloads options (a/b/c)" question dissolves: no bytes move, this is 
 backfill**.
 
 - **Script:** `src/scripts/backfillApxVideoAssets.ts` (nodejs-server, on the merge branch).
-  Dry-run by default, `--commit` to persist, idempotent. It **enriches in place** — adds
-  `bucket:'recorded'` + `key` alongside the kept `url`, sets `hlsAsset` from the link — so the
-  current client's `class_link` path keeps working during the transition (zero-downtime by
-  construction). It does **not** write `streamStatus` (undefined falls through `/playback`'s
+  Dry-run by default, `--commit` to persist, idempotent. It rewrites straight to the **clean
+  final shape** (user decision 2026-07-24: pre-launch, nobody consumes the url path, so no
+  transition period): entries become `{bucket:'recorded', key, quality, size}` — `url` and
+  ingest-era subdoc `_id` dropped, aliased duplicates deduped with quality re-derived from the
+  filename (the APX ladder pointed `144p`→`240p.mp4`, `720p`→`480p.mp4`) — and `hlsAsset` is set
+  from the link. It does **not** write `streamStatus` (undefined falls through `/playback`'s
   readiness gate; only `preparing`/`processing` 425) — `streamStatus` stays webhook-owned.
 - **Dry-run vs prod (`quicktricksdb`) 2026-07-24:** scanned 7,514 · planned 7,083 (all get
-  `hlsAsset`; 7,055 also mp4-enrich; the 28 hls-only classes get playback but no downloads) ·
-  322 YouTube skipped · 109 anomalies (no hls link — titles are largely "(Internet Error)" /
-  "(Class with Error)" / test entries, broken at the APX source) · **zero wrong-host or
-  unparseable URLs**.
+  `hlsAsset`; 7,055 also mp4-rewrite, 35,275 entries → 21,165 deduped = 3 real files/class;
+  the 28 hls-only classes get playback but no downloads) · 322 YouTube skipped · 109 anomalies
+  (no hls link — titles are largely "(Internet Error)" / "(Class with Error)" / test entries,
+  broken at the APX source) · **zero wrong-host or unparseable URLs**.
 - **Execution:** runs in Phase 3 after the LMS deploy (needs the merged tip live to verify mints).
-- **Anomaly triage (parallel, non-gating):** the 109 no-link + data quirks (quality labels
-  collapsed: the `144p` entry points at `240p.mp4`, `720p` at `480p.mp4` — kept verbatim by the
-  backfill) — decide dead/re-ingest/delete per batch.
-- **Success criterion:** zero url-only entries remain on non-YouTube classes.
+- **Anomaly triage (parallel, non-gating):** the 109 no-link classes — decide
+  dead/re-ingest/delete per batch.
+- **Success criterion:** zero url-shaped fields remain; every non-YouTube video class carries
+  `hlsAsset` + clean bucket+key recordings.
 
 ## Phase 2 — Environment prerequisites (before the LMS deploy)
 
@@ -130,9 +133,10 @@ The LMS starts rejecting unauthenticated transcoder writes the moment Phase 1 de
    a refusal to boot here is the guardrail working, not a regression.
 4. admin-dashboard + ls.
 5. **APX backfill (Phase 1.5 script, added 2026-07-24):** dry-run once more against the live tip,
-   then `--commit`; verify counts (success criterion: 0 url-only entries on non-YouTube classes)
-   and spot-check one backfilled class end-to-end — `/playback` 200 with a signed URL that plays,
-   `/downloads` 200 with signed renditions, and the old `class_link` path still serving.
+   then `--commit`; verify counts (success criterion: zero url-shaped fields remain; every
+   non-YouTube video class carries `hlsAsset` + clean bucket+key recordings) and spot-check one
+   backfilled class end-to-end — `/playback` 200 with a signed URL that plays, `/downloads` 200
+   with signed renditions. Then flip the recorded zone (Phase 5).
 
 ## Phase 4 — Acceptance run (merged checklist)
 
@@ -159,20 +163,17 @@ Against a test class, in order:
 
 Failures → [`slices/client-launch-v2.md`](../../slices/client-launch-v2.md) failure-surface cheatsheet.
 
-## Phase 5 — Recorded-zone token-auth cutover (added 2026-07-24; separately gated)
+## Phase 5 — Recorded-zone token-auth cutover (added 2026-07-24; part of the launch tail)
 
 Enabling token auth on the `recordedvideos-hranker-v2` pull zone is what actually closes the APX
-protection gap — today the zone is **open** (unsigned fetch = 200, probed 2026-07-24) and every
-APX `class_link`/`url` fetch is unauthenticated. But flipping it instantly 403s all unsigned
-fetches, so it may only happen after **both**:
+protection gap — today the zone is **open** (unsigned fetch = 200, probed 2026-07-24).
 
-1. the Phase-1.5/3 backfill is committed and verified, **and**
-2. the student-facing client actually plays through `/playback`//`downloads` mints instead of raw
-   `class_link` (live-zone protection is independent and ships with Phase 3 regardless).
-
-If (2) is not true at launch, this phase is **explicitly deferred** to the client-app workstream
-and the launch ships with the APX gap as a known, accepted interim — a conscious decision, not an
-omission. Do not flip the zone as part of Phase 3.
+**Re-scoped 2026-07-24 (user decision):** quicktricks is pre-launch with no consumers on the
+unsigned url path, so there is no client-migration gate and no deferral. Flip the zone **after
+Phase 3 step 5 (backfill committed + verified) and before/with the Phase 4 acceptance run**, so
+the acceptance's APX spot-check (Phase 4 step 7) proves playback + downloads against the locked
+zone. Only ordering constraint that remains: backfill first — flipping earlier leaves nothing
+signable for APX classes and `/playback` 404s them.
 
 ## Tracked in parallel (not gating the launch)
 
@@ -184,5 +185,8 @@ omission. Do not flip the zone as part of Phase 3.
 - **Cleanup ledger:** `bulk_e2e_*` test classes, tracer objects, temporary firewall rule (see
   vidup tasks 04/06 notes).
 - **APX anomaly triage (2026-07-24):** 109 no-link classes (source-broken/test entries) + 28
-  hls-only (no MP4s) — dead / re-ingest / delete per batch; plus the collapsed quality labels
-  quirk. See Phase 1.5.
+  hls-only (no MP4s) — dead / re-ingest / delete per batch. See Phase 1.5.
+- **Schema tighten post-backfill (2026-07-24):** once the backfill commits and its success
+  criterion holds, remove the transitional url tolerance — `Mp4RecordingSubSchema` back to
+  bucket+key-required, drop `LegacyMp4RecordingRef`/the `pre('validate')` either-or guard, and
+  the `isSignableMp4Recording` filters become invariant checks.
