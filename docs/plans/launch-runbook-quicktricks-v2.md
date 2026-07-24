@@ -55,10 +55,17 @@ Background: prod had carried an early cut of the video-protection slices and rev
 
 **Decisions made in the merge — review before push:**
 
-1. **mp4Recordings union shape** — stored entries are secured `{bucket,key,quality}` (signed) OR
-   legacy APX `{url,quality}` (served verbatim, R2-public). Secured webhook stays strict at the
-   edge; `/playback`+`/downloads` filter to signable entries, so APX-only classes 404 on
-   `/downloads` (they serve via `class_link`/prod listing instead).
+1. **mp4Recordings union shape — TRANSITIONAL, not a permanent category (reworded 2026-07-24).**
+   Stored entries are secured `{bucket,key,quality}` (signed) or url-shaped `{url,quality}`
+   (served verbatim). Secured webhook stays strict at the edge; `/playback`+`/downloads` filter
+   to signable entries. **Greenfield framing:** quicktricks has no "legacy" data — the url shape
+   is our own APX-ingest interim write, and the bytes already sit on the recorded **B2** zone
+   (`recordedvideos-hranker-v2.b-cdn.net`; verified 2026-07-24 in prod Mongo `quicktricksdb` +
+   unsigned CDN probe — video-transcoder ADR-0003/0004's "R2 interim" record is stale, corrected
+   there). The union tolerance exists only until the Phase-1.5 backfill enriches every entry to
+   bucket+key; end-state = every non-YouTube class signable (YouTube redirects are the one
+   sanctioned no-video category). The url fields become removable after the client moves to
+   `/playback`//`downloads` mints.
 2. **Class serializer** — v2's hlsAsset/mp4Recordings stripping restored, but stored APX
    `class_link` wins over the `link` alias.
 3. **Admin-writable `streamStatus`** — kept (APX/backfill needs it) but constrained to the
@@ -69,6 +76,31 @@ Background: prod had carried an early cut of the video-protection slices and rev
 5. **Nullable PDF topic** (prod) threaded through v2's create/update/upload-session seams.
 6. Cron roster is the union; `Pdf.createIndexes()` on boot retained (autoIndex is broken on the
    deploy box — proven during pdf-upload).
+
+## Phase 1.5 — APX video-asset metadata backfill (added 2026-07-24)
+
+**Discovery:** all APX renditions already live on the recorded B2 zone
+(`recordedvideos-hranker-v2.b-cdn.net`, keys `472/<classId>/{hls/master.m3u8,mp4/<q>.mp4}`) —
+only the Mongo shape is ingest-era (`{url}` entries + `link`, no `hlsAsset`, no `{bucket,key}`).
+The old "/downloads options (a/b/c)" question dissolves: no bytes move, this is a **pure metadata
+backfill**.
+
+- **Script:** `src/scripts/backfillApxVideoAssets.ts` (nodejs-server, on the merge branch).
+  Dry-run by default, `--commit` to persist, idempotent. It **enriches in place** — adds
+  `bucket:'recorded'` + `key` alongside the kept `url`, sets `hlsAsset` from the link — so the
+  current client's `class_link` path keeps working during the transition (zero-downtime by
+  construction). It does **not** write `streamStatus` (undefined falls through `/playback`'s
+  readiness gate; only `preparing`/`processing` 425) — `streamStatus` stays webhook-owned.
+- **Dry-run vs prod (`quicktricksdb`) 2026-07-24:** scanned 7,514 · planned 7,083 (all get
+  `hlsAsset`; 7,055 also mp4-enrich; the 28 hls-only classes get playback but no downloads) ·
+  322 YouTube skipped · 109 anomalies (no hls link — titles are largely "(Internet Error)" /
+  "(Class with Error)" / test entries, broken at the APX source) · **zero wrong-host or
+  unparseable URLs**.
+- **Execution:** runs in Phase 3 after the LMS deploy (needs the merged tip live to verify mints).
+- **Anomaly triage (parallel, non-gating):** the 109 no-link + data quirks (quality labels
+  collapsed: the `144p` entry points at `240p.mp4`, `720p` at `480p.mp4` — kept verbatim by the
+  backfill) — decide dead/re-ingest/delete per batch.
+- **Success criterion:** zero url-only entries remain on non-YouTube classes.
 
 ## Phase 2 — Environment prerequisites (before the LMS deploy)
 
@@ -82,6 +114,10 @@ The LMS starts rejecting unauthenticated transcoder writes the moment Phase 1 de
 - **Bunny key pairing (GLOSSARY footgun):** `BUNNY_LIVE_SECURITY_KEY` + `BUNNY_LIVE_CDN_BASE` must
   match the live pull zone in **both** livestream and nodejs-server `.env`s — a stale CDN base 404s
   with a valid token; a key mismatch 403s.
+- **Recorded-zone pairing (added 2026-07-24):** `BUNNY_RECORDED_SECURITY_KEY` +
+  `BUNNY_RECORDED_CDN_BASE` in the LMS env must pair with the `recordedvideos-hranker-v2` pull
+  zone — it's what `/downloads` and backfilled APX `/playback` sign against. Same footgun class
+  as the live pairing above.
 - **Mongo guardrail (ADR-0003):** livestream's DB user read-only on `classes`; prove it — a write from
   that user must fail.
 - **Fresh client DB (ADR-0004):** zero `Room` documents, no migration/backfill executed.
@@ -93,6 +129,10 @@ The LMS starts rejecting unauthenticated transcoder writes the moment Phase 1 de
 3. LMS (`quicktricks-prod` merged tip). Boot validation (launch task 09) fail-fasts on missing wiring —
    a refusal to boot here is the guardrail working, not a regression.
 4. admin-dashboard + ls.
+5. **APX backfill (Phase 1.5 script, added 2026-07-24):** dry-run once more against the live tip,
+   then `--commit`; verify counts (success criterion: 0 url-only entries on non-YouTube classes)
+   and spot-check one backfilled class end-to-end — `/playback` 200 with a signed URL that plays,
+   `/downloads` 200 with signed renditions, and the old `class_link` path still serving.
 
 ## Phase 4 — Acceptance run (merged checklist)
 
@@ -112,10 +152,27 @@ Against a test class, in order:
    `privateModeUpdate`; a **late joiner** receives current `isPrivate` on join; a forged `userMsg`
    during private mode is rejected server-side (launch task 11 checks).
 6. **Fallback:** `LIVE_UPLOAD_ENABLED=false`, restart, disk-serving works; revert to upload mode.
-7. Record results; tick the acceptance boxes in brain task 10 and livestream tasks 06/11; commit the
+7. **APX spot-check (added 2026-07-24):** from a real client, one backfilled APX class plays via
+   the token path and its downloads mint + fetch.
+8. Record results; tick the acceptance boxes in brain task 10 and livestream tasks 06/11; commit the
    brain docs.
 
 Failures → [`slices/client-launch-v2.md`](../../slices/client-launch-v2.md) failure-surface cheatsheet.
+
+## Phase 5 — Recorded-zone token-auth cutover (added 2026-07-24; separately gated)
+
+Enabling token auth on the `recordedvideos-hranker-v2` pull zone is what actually closes the APX
+protection gap — today the zone is **open** (unsigned fetch = 200, probed 2026-07-24) and every
+APX `class_link`/`url` fetch is unauthenticated. But flipping it instantly 403s all unsigned
+fetches, so it may only happen after **both**:
+
+1. the Phase-1.5/3 backfill is committed and verified, **and**
+2. the student-facing client actually plays through `/playback`//`downloads` mints instead of raw
+   `class_link` (live-zone protection is independent and ships with Phase 3 regardless).
+
+If (2) is not true at launch, this phase is **explicitly deferred** to the client-app workstream
+and the launch ships with the APX gap as a known, accepted interim — a conscious decision, not an
+omission. Do not flip the zone as part of Phase 3.
 
 ## Tracked in parallel (not gating the launch)
 
@@ -126,3 +183,6 @@ Failures → [`slices/client-launch-v2.md`](../../slices/client-launch-v2.md) fa
   `/api/v1/room*`. Post-launch cleanup.
 - **Cleanup ledger:** `bulk_e2e_*` test classes, tracer objects, temporary firewall rule (see
   vidup tasks 04/06 notes).
+- **APX anomaly triage (2026-07-24):** 109 no-link classes (source-broken/test entries) + 28
+  hls-only (no MP4s) — dead / re-ingest / delete per batch; plus the collapsed quality labels
+  quirk. See Phase 1.5.
