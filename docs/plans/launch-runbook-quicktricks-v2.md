@@ -238,10 +238,39 @@ Box `.env` `DB_URI` swapped off the cluster-admin user (backup `.env.bak-guardra
 pm2 restarted clean 11:11:48Z. Script kept at `~/mongo-guardrail.sh` on the box — rerun with the
 prod db name at cutover (role privileges are db-scoped to `quicktricks-launch-test` today).
 
+**SMOKE TEST DONE (2026-07-24, class `6a631202d6a9e3a87aae1790`, db `quicktricks-launch-test`):**
+the full arc passed — OBS in (11:18:59Z) → `preparing`→`live` PUT carrying `hlsAsset` → segments +
+4 quality playlists to Bunny SG during stream (~400ms/segment) → signed live playback 200 /
+unsigned 403 → OBS bounce: `reconnecting`→`live` same key, 245.7s offset, uploads resumed →
+frontend Stop via class-UI socket (ls repointed to the box socket) → `processing` → `ended` with
+`playlist-mpl-vod.m3u8` → signed 1C enqueue → GPU claim, secret injected, `hls-to-mp4-b2-secure`
+spawn → 4/4 NVENC renditions (297s VOD) → B2 upload to `recordedvideos-hranker-v2` →
+**recordings webhook 200 (after fixes below)** → `mp4Recordings` count 4 + duration → signed VOD
+playback 200 / unsigned 403. Two real bugs found by the test:
+
+1. **LMS merge regression (FIXED + deployed):** the prod merge kept prod's legacy
+   `setMp4Recordings` (url-shape validation) — every secured `{bucket,key}` report 500'd
+   ("Invalid recording format"), containers failed after 5 attempts. Fix `d6f0bb02` restores the
+   slice's zod controller + the dropped `recordingsWebhook.test.ts` (10/10); follow-up `dea07469`
+   adds `validateModifiedOnly` on the webhook save (full-doc validation 500'd because the
+   admin-authored test class lacks prod-required `section/category/mainCategory/teacherName`).
+   Both on `merge/quicktricks-prod-x-launch-v2`, phonetics-deployed; report re-sent from the GPU
+   box → 200 count 4. **Gate-2 note: the ff target is now `dea07469`, not `8a679d54`.**
+   Follow-up (admin-dashboard, non-gating): class create produced a doc missing those four
+   prod-required fields — align the dashboard create with the merged model.
+2. **livestream duplicate/stale stream-end cleanup (OPEN — fix before prod):** one stream end ran
+   full cleanup FOUR times (4 identical 1C jobs, 4× GPU work, quadruple webhooks/PUTs). Two
+   mechanisms: (a) frontend `endStream` runs cleanup directly AND the instance receives its own
+   Redis `endStream` publish and cleans up again; (b) grace timers are never cancelled on explicit
+   stop and `isInGracePeriod` checks a bare key with no session identity — the 11:23:07 bounce
+   timer fired at 11:33:07 and matched the 11:24:26 drop's key; that drop's own timer fired at
+   11:34:26. Fix shape: dedupe cleanup per stream session (originator skips self-received event)
+   + cancel/invalidate grace timers on explicit end (session token in the grace key).
+   End state stayed correct (idempotent same-key writes) — this is a cost/noise bug, not
+   corruption. Residue: 4 failed 472 job docs in the GPU manager Mongo (cleanup ledger).
+
 **Phase-2 items still open:**
-1. **Smoke test** (OBS push → stream-status on phonetics → stream-end 1C → recordings webhook →
-   signed playback) — needs a user OBS push to `rtmp://34.131.52.223:8937/472/<classId>`.
-2. **Browser-facing TLS/wss (deferred by user: open up + add a domain when required)** — 8082 is
+1. **Browser-facing TLS/wss (deferred by user: open up + add a domain when required)** — 8082 is
    plain HTTP, fine for localhost `ls` dev; an https `ls` deploy needs nginx+TLS. LMS 5100
    external access is firewalled to the GPU server's IP only — browser acceptance needs the
    tester's IP or a tunnel.
