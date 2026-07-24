@@ -88,6 +88,16 @@ Background: prod had carried an early cut of the video-protection slices and rev
    mount dropped (it rejected the expired tokens the route exists to refresh; session-liveness
    check gates instead).
 5. **Nullable PDF topic** (prod) threaded through v2's create/update/upload-session seams.
+   **VALIDATED + FIXED 2026-07-24 @ `8a679d54`:** the merge had threaded zod + service but
+   missed the bulk seam — `PdfUploadSession` metadata still required topic (topic-less create
+   500'd at save), the pinned contract typed it required, and `fromFileDoc` coerced null to
+   `"null"`. Data ground truth (prod `quicktricksdb`): all 7,500 PDFs APX-ported, 5,917 with
+   topic, 1,583 explicitly `topic: null` — nullable is the correct end state, bulk included.
+   Fixed all four spots + model-level schema tests (in-memory harness can't see mongoose
+   validators). Suite 876/863 (same 13 pre-existing fails). Phonetics live E2E: topic-less
+   session → PUT → complete → `Pdf.topic: null` → signed `/access` fetch, all pass.
+   Follow-up (admin-dashboard, non-gating): bulk sheet must stop requiring topic client-side;
+   the "required" label on single create is cosmetic.
 6. Cron roster is the union; `Pdf.createIndexes()` on boot retained (autoIndex is broken on the
    deploy box — proven during pdf-upload).
 
