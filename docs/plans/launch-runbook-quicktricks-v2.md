@@ -100,6 +100,14 @@ Background: prod had carried an early cut of the video-protection slices and rev
    the "required" label on single create is cosmetic.
 6. Cron roster is the union; `Pdf.createIndexes()` on boot retained (autoIndex is broken on the
    deploy box — proven during pdf-upload).
+   **VALIDATED 2026-07-24 @ `8a679d54`:** cron file roster = exact union of both parents and
+   every file byte-identical to a parent (prod's evolved copies won where both changed —
+   razorpayOrderSync, both notification schedulers); boot registrations = prod's 12 active +
+   slice's staleStreamSweep + pdfUploadSessionCleanup, commented-out set identical to prod's
+   (no drops, no dupes, nothing re-enabled); matches the phonetics boot log (14 scheduled)
+   line-for-line; 28/28 on the two v2 cron test suites; `Pdf.createIndexes()` call identical
+   to the slice fix, all 8 `pdfs` indexes verified live on the box. **All six decisions now
+   validated — Phase-1 sign-off is evidence-complete.**
 
 ## Phase 1.5 — APX video-asset metadata backfill (added 2026-07-24)
 
