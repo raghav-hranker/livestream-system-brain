@@ -192,12 +192,36 @@ since the GPU server reaches the LMS from outside the VPC, via phonetics ext IP
 `REDIS_*`) so the app Redis stays box-local. Box env rewired (GPU_REDIS_* = the shared Redis
 Cloud instance toppers uses — PONG verified; dead GCP block dropped), restarted clean.
 
+**GPU server config DONE (2026-07-24, via `ssh -i mridulm root@178.63.88.34`):** the box already
+carried `SECURED_CLIENTS=408,472`, a full `'472'` (Quickticks/APX) block in `client-config.js`
+(clientId **472 confirmed** by the box itself), `HLS_B2_IMAGE=hls-to-mp4-b2-secure:latest`
+(image present; the runbook's `hls-to-mp4-container-b2` is the *repo dir* name), and its Redis =
+the same Redis Cloud instance the box `GPU_REDIS_*` enqueues to (host/port matched). The one gap:
+`TRANSCODER_SECRET_472` still held the **pre-rotation** value (`.env` edited Jul 21, rotation came
+later) — replaced with the rotated secret (sha256-verified identical to phonetics secrets file +
+`.env.production` + livestream box; value never printed), `.env.bak-20260724` kept, pm2
+`b2-secure-job-manager` restarted clean (in-flight foreign container unharmed, `[SCHEDULE] Client
+472 effective limit -> 3` on boot).
+
+**Cross-tenant Redis leak found + fixed (2026-07-24, `dbda616` livestream repo):** the GPU-server
+log showed the quicktricks backend enqueueing **bogus signed 1C jobs for foreign clients**
+(561/552/168 — all 404-failing on the moved live origin) and webhooking foreign classIds at
+phonetics. Root cause: `PubSubManager.js` **hardcoded the shared Redis Cloud cluster** (creds in
+source!), so every deployment of the codebase shared one `rtmp:endStream` bus, one
+`rtmp:session/blocked` keyspace, one socket.io adapter, and the pending stream-status store — the
+quicktricks instance received *toppers'* stream-end events and ran full cleanup for them (the June-9
+signed jobs in the GPU log are the same mechanism during the June experiment). Fix: app-Redis is
+env-driven (`REDIS_HOST/PORT/USERNAME/PASSWORD`; password follows the host source so a passwordless
+local Redis isn't sent the fallback secret; hardcoded cluster only as no-env legacy fallback). The
+quicktricks box `.env` already had `REDIS_HOST=127.0.0.1` → whole app plane now on box-local Redis
+(verified live: `rtmp:endStream` + socket.io channels on 127.0.0.1). 103/103 tests. The GPU queue
+client intentionally stays on the shared cluster via `GPU_REDIS_*`. NB: the boot-time
+`Socket already opened` / `recoverPending` error in pm2 logs is a pre-existing benign
+connect race (present on pre-fix boots too).
+
 **Phase-2 items still open:**
-1. **GPU server (video-transcoder box) config** — needs, per its secured-guard contract:
-   quicktricks' clientId in `SECURED_CLIENTS` + `TRANSCODER_SECRET_<clientId>=` the new rotated
-   secret; confirm the job-manager consumes the same Redis Cloud queue and the
-   `hls-to-mp4-container-b2` image is present. Shared prod infra serving other clients — user
-   green-light + access needed. Quicktricks clientId presumed **472** (APX key prefix) — confirm.
+1. **Smoke test** (OBS push → stream-status on phonetics → stream-end 1C → recordings webhook →
+   signed playback) — needs a user OBS push to `rtmp://34.131.52.223:8937/472/<classId>`.
 2. **Mongo guardrail not yet applied** — box uses the admin Mongo user (rehearsal); create the
    read-only-on-`classes` livestream user + prove-write-fails before prod (ADR-0003).
 3. **Browser-facing TLS/wss (deferred by user: open up + add a domain when required)** — 8082 is
