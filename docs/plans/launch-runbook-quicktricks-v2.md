@@ -159,6 +159,41 @@ The LMS starts rejecting unauthenticated transcoder writes the moment Phase 1 de
   that user must fail.
 - **Fresh client DB (ADR-0004):** zero `Room` documents, no migration/backfill executed.
 
+### Phase 2 status: livestream box UP on phonetics pairing (2026-07-24)
+
+**Box designated by user: `livestream-testing-raghav`** (gcloud, `asia-south2-c`,
+`genial-analogy-477417-r7`, ext IP `34.131.52.223`). The box also runs the **toppers** client's
+Room-era instance (`~/livestream`, pm2 `livestream-topper`, RTMP 1935) — untouched by user decision;
+quicktricks runs side-by-side from a **separate checkout** `~/quicktricks-livestream` (pm2
+`quicktricks-livestream`, RTMP **8937**, HTTP/socket **8082**; both ports firewall-open; pm2 saved).
+
+- **Live origin decision (user): Bunny Storage SG**, per the experiment's conclusion — merged the
+  env-gated `livestream-bunny-only` commits into `launch/quicktricks-v2` @ `3ec7f64` (pushed;
+  99/99 backend tests green). `LIVE_STORAGE_*` → SG zone `livestream-hranker-v2`; CDN pairing
+  `BUNNY_LIVE_CDN_BASE=https://livestream-hranker-v2.b-cdn.net` set identically in the box `.env`
+  and phonetics LMS (`.env.production` + `~/.quicktricks-lms-secrets`). NB the **B2** live bucket
+  is the reversed name `hranker-livestream-v2` — kept as `S3_BUCKET_NAME` fallback.
+- **`TRANSCODER_WEBHOOK_SECRET` rotated** (user: fresh per-customer value) on phonetics (secrets
+  file + env, app restarted) and paired on the box. Proven: 401 without, auth-pass with, from the
+  box over VPC-internal `LMS_BASE_URL=http://10.190.0.11:5100`.
+- `JWT_SECRET_KEY` (socket auth, `role:'teacher'`→host) = LMS `STREAMER_JWT_SECRET`. `DB_URI` →
+  same cluster/db as the LMS (`quicktricks-launch-test`; the LMS URI's `adminPanelDB` path is
+  overridden by its `DB_NAME` env — verified live: 11 classes/15 pdfs fixtures). Redis box-local
+  (toppers uses remote Redis Cloud — no collision).
+- Boot log clean: RTMP 8937, server 8082, Mongo + Redis connected, 0 restarts.
+
+**Phase-2 items still open:**
+1. **1C enqueue BLOCKED:** GCP key json sits in `/root/livestream-gpu/` (unreadable as `raghav`)
+   and the VM SA lacks cloud-platform scope — stream-end HLS→MP4 job trigger will fail until a
+   readable key is provided (needs user sudo). Live streaming/stream-status/playback unaffected.
+2. **Mongo guardrail not yet applied** — box uses the admin Mongo user (rehearsal); create the
+   read-only-on-`classes` livestream user + prove-write-fails before prod.
+3. **Browser-facing TLS/wss:** 8082 is plain HTTP — fine for localhost `ls` dev, but an https
+   `ls` deploy needs an nginx+TLS proxy (box nginx currently only serves toppers'
+   `test.topperswisdom.com`). Also LMS 5100 external access is firewalled to one IP
+   (`178.63.88.34`) — browser acceptance needs the tester's IP or a tunnel.
+4. video-transcoder box env (`LMS_BASE_URL` + new secret) — box not yet designated this session.
+
 ## Phase 3 — Lockstep deploy order
 
 1. Env vars everywhere (Phase 2).
