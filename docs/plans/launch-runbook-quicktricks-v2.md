@@ -284,15 +284,22 @@ playback 200 / unsigned 403. Two real bugs found by the test:
    box → 200 count 4. **Gate-2 note: the ff target is now `dea07469`, not `8a679d54`.**
    Follow-up (admin-dashboard, non-gating): class create produced a doc missing those four
    prod-required fields — align the dashboard create with the merged model.
-2. **livestream duplicate/stale stream-end cleanup (OPEN — fix before prod):** one stream end ran
+2. **livestream duplicate/stale stream-end cleanup (FIXED in code 2026-07-26 @ livestream
+   `6cff30e`, task `docs/plans/tasks/14-stream-end-cleanup-dedupe.md` — NOT yet pushed/deployed;
+   deploy to the box + a stop-after-OBS-close re-check remain):** one stream end ran
    full cleanup FOUR times (4 identical 1C jobs, 4× GPU work, quadruple webhooks/PUTs). Two
    mechanisms: (a) frontend `endStream` runs cleanup directly AND the instance receives its own
    Redis `endStream` publish and cleans up again; (b) grace timers are never cancelled on explicit
    stop and `isInGracePeriod` checks a bare key with no session identity — the 11:23:07 bounce
    timer fired at 11:33:07 and matched the 11:24:26 drop's key; that drop's own timer fired at
-   11:34:26. Fix shape: dedupe cleanup per stream session (originator skips self-received event)
-   + cancel/invalidate grace timers on explicit end (session token in the grace key).
-   End state stayed correct (idempotent same-key writes) — this is a cost/noise bug, not
+   11:34:26. Fix landed (scope A+B+C, user-approved): A = `originId`/`INSTANCE_ID` own-echo skip
+   on the `rtmp:endStream` bus (no-originId messages still handled); B = uuid-tokenized grace keys
+   — the 10-min timer fires only if its own token is still the active key value — plus
+   `cancelGracePeriod` on both explicit-end paths next to `blockStreamReconnect`; C = atomic
+   `SET rtmp:finalize:<StreamPath> <INSTANCE_ID> NX EX 900` claim gating the global finalization
+   (processing/ended writes + VOD/1C POST); local teardown stays unconditional. Suite 118/118
+   (15 new tests across streamEndDedupe{,Lifecycle}.test.js).
+   End state stayed correct (idempotent same-key writes) — this was a cost/noise bug, not
    corruption. Residue: 4 failed 472 job docs in the GPU manager Mongo (cleanup ledger).
 
 **Phase-2 items still open:**
