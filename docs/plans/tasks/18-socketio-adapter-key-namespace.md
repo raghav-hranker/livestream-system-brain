@@ -160,3 +160,35 @@ source that string proved to be the right one. They stand as regression guards o
   the shared cluster from other deployments (would need a prod Redis read). Irrelevant to correctness here —
   we simply stop using that keyspace — but it is what the flip would have merged into.
 - `createShardedAdapter` and Redis ACLs remain unevaluated (explicitly out of scope; deep-dive handoff threads).
+
+## Live verification (2026-07-27, box @ a04747e — the REDIS_HOST flip itself)
+
+Executed with the flip as one restart (user green-light): box pulled `a04747e`, app-plane
+`REDIS_HOST/PORT/USERNAME/PASSWORD` set to the shared Redis Cloud cluster
+(`redis-19504.c45830.ap-south-1-mz.ec2.cloud.rlrcp.com`; values copied server-side from the box's
+own `GPU_REDIS_*` — never left the box; backup `.env.bak-redisflip-20260727`), single pm2 restart
+12:19:05Z. Boot log: `Redis adapter has been set for Socket.IO`, pending recovery on namespace
+`10.190.0.11-5100`, only the known-benign connect-race noise.
+
+- **Adapter isolation proven on the real bus:** `PUBSUB CHANNELS socket.io*` on the shared cluster
+  shows our namespaced family (`socket.io:10.190.0.11-5100-request#/#`, `…-response#/#`) coexisting
+  with other tenants' default-key family (`socket.io-request#/#`, `socket.io-response#/#…`);
+  `PUBSUB NUMPAT` = 2 (the two broadcast patterns). The "not checked against a live Redis" caveat
+  above is now closed: default-key deployments ARE active on the cluster — the merge was real and
+  we are outside it. PASS
+- **Task-17 guard on the real bus:** fabricated foreign `rtmp:endStream` published on the shared
+  cluster reached **9 subscribers**; our box logged `Ignoring … no local session and no local
+  resources`, zero writes. Probe side-effect: one older unguarded tenant wrote
+  `rtmp:blocked:/999/000000000000000000000000` (the fake path) — deleted as self-created residue.
+  PASS
+- **Foreign-pending audit:** boot logged no ignored-keys line; full 3,140,929-key SCAN of the
+  cluster (node script using the backend's redis client; the box redis-cli lacks `--count` and a
+  default scan crawls) confirmed `streamStatus:pending*` = **0** — the audit's silence was
+  truthful, and the cleanup-ledger's "orphaned shared-cluster pending keys" item is CLOSED.
+  Bonus census: `rtmp:blocked` = **3,853 keys** (task 17's unbounded-growth finding, quantified —
+  stays on the ledger).
+
+Box lore: non-interactive ssh has no node on PATH — bare `pm2 restart` fails with
+`/usr/bin/env: 'node': No such file or directory` and it is easy to mistake stale logs for a boot;
+prefix `PATH=/home/raghav/.nvm/versions/node/v24.15.0/bin:$PATH` and verify via `pm2 ls` uptime.
+One-off node scripts must sit inside `backend/` for `require()` to resolve.
