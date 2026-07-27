@@ -27,6 +27,15 @@ architecture.
 | 11 | [Private-mode join bootstrap + server-side enforcement](11-private-mode-join-bootstrap-enforcement.md) | AFK | livestream | 05 |
 | 12 | [ls viewer: room-less realignment](12-ls-roomless-realignment.md) | AFK | ls | 08, 11 |
 | 13 | [Notes move to the LMS](13-notes-move-to-lms.md) | AFK | nodejs-server + ls + livestream | 12 |
+| 14 | [Stream-end cleanup dedupe](14-stream-end-cleanup-dedupe.md) | AFK | livestream | — |
+| 15 | [Final-segment reconciliation at stream end](15-stream-end-final-segment-reconciliation.md) | AFK | livestream | — |
+| 16 | [Post-stop re-finalization guard](16-post-stop-refinalization-guard.md) | AFK | livestream | 14 |
+| 17 | [Shared-Redis ownership guard](17-shared-redis-ownership-guard.md) | AFK | livestream | — |
+
+Tasks 15–17 were added 2026-07-27 from the prod acceptance run: 15 fixes the missing-last-segment
+VOD 404 (upload mode skips the end-of-stream bulk upload with no reconciliation), 16 closes the
+post-TTL Stop re-finalization gap task 14's 900s claim leaves open, and 17 is the ownership guard
+that gates the shared-Redis (`REDIS_HOST`) scaling flip.
 
 Tasks 11–12 were added 2026-07-22 from the room-sync design session (see
 `secure-video-upload-b2/05-…` execution notes): 11 closes the private-mode late-join and
