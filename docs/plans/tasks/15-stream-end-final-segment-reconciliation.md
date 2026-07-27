@@ -69,15 +69,84 @@ unusable, rebuild + re-upload `playlist-vod.m3u8`/quality VOD playlists without 
 
 ## Acceptance criteria
 
-- [ ] Root cause pinned with box evidence (disk state + `[live-upload-timing]` log lines), recorded in execution notes
-- [ ] Upload mode: stream end with a segment that missed live upload → reconciliation uploads it before VOD playlists are built; playlists reference it; 1C input is complete
-- [ ] Upload mode: a genuinely unusable final segment is excluded from every generated VOD playlist (no 404-able reference)
-- [ ] In-flight final-segment uploads are awaited before `executeManifestFiles` runs
-- [ ] Disk mode behavior unchanged (bulk `uploadDirectoryToS3` path untouched)
-- [ ] Jest tests beside the existing suites (`jest tests/`, currently 118/118 — must stay green): reconciliation uploads a missing referenced segment; drops an unusable one from the VOD playlist; awaits pending uploads
-- [ ] No change to the 1C payload shape, webhook contracts, or `storageProvider` routing
-- [ ] Prod repair commands for the acceptance class prepared and printed, **not executed**
+- [x] Root cause pinned with box evidence (disk state + `[live-upload-timing]` log lines), recorded in execution notes
+- [x] Upload mode: stream end with a segment that missed live upload → reconciliation uploads it before VOD playlists are built; playlists reference it; 1C input is complete
+- [x] Upload mode: a genuinely unusable final segment is excluded from every generated VOD playlist (no 404-able reference)
+- [x] In-flight final-segment uploads are awaited before `executeManifestFiles` runs
+- [x] Disk mode behavior unchanged (bulk `uploadDirectoryToS3` path untouched)
+- [x] Jest tests beside the existing suites (`jest tests/`, currently 118/118 — must stay green): reconciliation uploads a missing referenced segment; drops an unusable one from the VOD playlist; awaits pending uploads
+- [x] No change to the 1C payload shape, webhook contracts, or `storageProvider` routing
+- [x] Prod repair commands for the acceptance class prepared and printed, **not executed**
 
 ## User stories covered
 
 - A student opens the recording right after class and it plays to the end — the last seconds of the teacher's goodbye are not a fatal "Network error".
+
+## Execution notes (2026-07-27)
+
+**Confirmed root cause — two mechanisms, both "the VOD playlist is built from disk with
+zero awareness of the bucket".** The suspected mechanism in the task body is half the story;
+the fatal half is a *re-run*.
+
+Box: `livestream-testing-raghav`, deployed at `6cff30e`. Stream dir
+`/home/ubuntu/shared/livestream-files/472/6a6709edd1058d4e2cdb61c9`, log
+`~/.pm2/logs/quicktricks-livestream-out.log`.
+
+*Disk state* — `segment_85.ts` exists in **all four** quality folders and is a **complete,
+usable** final segment, not a SIGKILL truncation: q0 = 256,056 B for `#EXTINF:1.251333` (the
+neighbours are ~475 KB for 4.004 s — same ~1.6 Mbps). It is the last segment; there is no
+`segment_86`.
+
+*Timeline (all 2026-07-27 UTC)*
+
+| Time | Event |
+|---|---|
+| 07:45:46.080 | ffmpeg writes `0/segment_84.ts` |
+| 07:45:46.xx | `endStream triggered from frontend` → `Killing FFmpeg processes … keeping file watchers alive` → SIGKILL |
+| 07:45:46.964 | ffmpeg's dying flush writes `segment_85.ts` (×4) **and** appends it to the live quality playlists (disk 7,543 B) |
+| 07:45:46 | `POST /api/v1/stream/` → `running executeManifestFiles` — reads the live playlist **before** that append lands |
+| 07:45:46–47 | last live-playlist upload is **7,457 B** (the pre-`segment_85` version); VOD playlists uploaded at **2,567 B** — 85 segments, ending at `segment_84`, **consistent with the bucket** |
+| 07:45:47 | `Closing file watchers … after VOD generation` — chokidar `awaitWriteFinish` (500 ms) had **not** fired for `segment_85`, so its `add` never ran |
+| 07:45:50 | `0/segment_84.ts` upload finally completes (`ms: 4006`) — **3 s after** the watchers were closed and after the VOD playlists were already uploaded |
+| 08:06:46 | a **second** `endStream triggered from frontend`; `doStreamCleanup` runs again, wins the finalize claim again (the claim is per-end, not once-per-class-forever), and POSTs `/api/v1/stream/` again |
+| 08:06:47 | `executeManifestFiles` re-reads the **disk** live playlist — which now *does* contain `segment_85` — and uploads VOD playlists of **2,596 B** referencing `segment_85.ts`, which was never uploaded and whose watchers had been closed 21 minutes earlier |
+
+*Log evidence* — `grep '[live-upload-timing]' … | grep 6a6709edd1058d4e2cdb61c9` has **zero**
+lines for `segment_85.ts` in any quality (4,640 log lines cover the whole session; the identical
+grep for the 05:45 class `6a631202d6a9e3a87aae1790` does show all four `segment_85` uploads —
+that stream ran on and the watcher caught up).
+
+*Bucket evidence* — signed HEADs against `livestream-hranker-v2.b-cdn.net` (path-embedded
+`bcdn_token`, `BUNNY_LIVE_SECURITY_KEY` from the box `.env`):
+
+```
+200  472/6a6709edd1058d4e2cdb61c9/0/segment_84.ts
+404  472/6a6709edd1058d4e2cdb61c9/{0,1,2,3}/segment_85.ts     ← all four
+200  472/6a6709edd1058d4e2cdb61c9/0/playlist-vod.m3u8         ← the 2,596 B one that references it
+```
+
+So the 07:45 build was self-consistent; **the 08:06 re-run is what published the 404-able
+reference**. A fix that only tightened the watcher/close race would not have prevented this —
+reconciliation against the bucket does, on both the first run and every re-run.
+
+**Fix shipped** — livestream `468199a6`, branch `launch/quicktricks-v2`, 118 → **136/136** green.
+`backend/lib/segmentReconciler.js` (new) proves every segment the live playlists reference exists
+in the Live bucket, uploads the missing ones from disk, and reports only the genuinely unusable
+ones (absent/zero-byte on disk, or repair upload failed) for exclusion; `objectExistsInS3`
+(`lib/fileUpload.js`) returns true/false only on a definitive answer and re-throws anything else,
+so a storage blip can never truncate a recording; `waitForPendingSegmentUploads`
+(`lib/watchers.js`, bounded 15 s) settles in-flight uploads first; `executeManifestFiles`
+(`lib/hls.js`) takes an optional exclusion set. Wired into the **upload-mode branch only** of
+`routes/stream.js`, before `executeManifestFiles`, wrapped in try/catch so a reconciliation
+failure degrades to today's behaviour. Disk mode, the 1C payload, `runEcsTask`, the webhooks and
+`storageProvider` routing are untouched; `rtmpserver-2.js` is untouched.
+
+**Not verified:** the fix is committed but **not deployed** — no end-to-end run on the box (prod
+is live; deploy is the parent session's call). `[reconcile]` log lines therefore do not exist in
+prod yet.
+
+**Prod repair for `6a6709edd1058d4e2cdb61c9` — PREPARED, NOT EXECUTED.** `segment_85.ts` is
+complete and on disk in all four qualities, so the correct repair is to upload it, not to rebuild
+the playlists (the published VOD playlists already reference it and are otherwise correct). Files
+are deleted 24 h after stream end (~07:45 on 2026-07-28) — repair before then or the segment is
+gone. Commands are in the task-15 agent report.

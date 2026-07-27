@@ -46,14 +46,78 @@ proceed with the normal end path. The guard only short-circuits on a positive te
 
 ## Acceptance criteria
 
-- [ ] Stop clicked after the finalize-claim TTL on an `ended` class: no VOD POST, no 1C job, no `processing`/`ended` webhooks, no session/ffmpeg action
-- [ ] That same Stop still emits `streamUpdate` with the cached status to the room and acks `streamEnded` to the caller
-- [ ] Redis-event path with cached `ended` status: cleanup skipped
-- [ ] First/normal stream end unchanged (cache reads `live` or is absent → full path runs exactly once, task 14 semantics intact)
-- [ ] Cache-miss behaves as today (no new hard dependency on the key existing)
-- [ ] Jest tests beside the task-14 `streamEndDedupe*` suites (`jest tests/`, currently 118/118 — must stay green): terminal-status skip + re-emit; non-terminal passthrough; cache-miss passthrough
-- [ ] No change to webhook contracts or the task-14 claim/echo/grace mechanics
+- [x] Stop clicked after the finalize-claim TTL on an `ended` class: no VOD POST, no 1C job, no `processing`/`ended` webhooks, no session/ffmpeg action
+- [x] That same Stop still emits `streamUpdate` with the cached status to the room and acks `streamEnded` to the caller
+- [x] Redis-event path with cached `ended` status: cleanup skipped
+- [x] First/normal stream end unchanged (cache reads `live` or is absent → full path runs exactly once, task 14 semantics intact)
+- [x] Cache-miss behaves as today (no new hard dependency on the key existing)
+- [x] Jest tests beside the task-14 `streamEndDedupe*` suites (`jest tests/`, currently 118/118 — must stay green): terminal-status skip + re-emit; non-terminal passthrough; cache-miss passthrough
+- [x] No change to webhook contracts or the task-14 claim/echo/grace mechanics
 
 ## User stories covered
 
 - A teacher with a stale tab clicks Stop on a class that ended twenty minutes ago: nothing re-runs, no duplicate GPU job is billed, and their tab immediately converges to "ended".
+
+## Execution notes
+
+**Landed** on `launch/quicktricks-v2` in `livestream` as `5582c6e`
+(`fix(rtmp): guard stream end against re-finalizing an already-ended class`), on top of task 15's
+`468199a`. Suite went 136/136 → **152/152** (16 new). No pushes, no deploys, no prod writes.
+
+### What was built
+
+- **New `backend/lib/streamEndGuard.js`** — the guard, extracted as its own module rather than inlined
+  in `rtmpserver-2.js`, following the `lib/streamStatusHydration.js` precedent (same shape: a small
+  cache-reading resolver for an `rtmpserver-2.js` concern, unit-tested at its public interface, since
+  `rtmpserver-2.js` itself boots a whole server on require and is not loadable under Jest). Exports:
+  - `getFinalizedStatus(classId)` — reads `getCachedStatus` (`streamStatus:current:<classId>`,
+    `CURRENT_PREFIX`) and returns the value **only if terminal**, else `null`.
+  - `skipRedundantStop(classId, { io, socket })` — returns `true` when the caller must skip the end
+    path; on skip it re-emits `io.to(classId).emit("streamUpdate", <cached>)` and acks
+    `socket.emit("streamEnded", { success: true })`. Both collaborators optional.
+  - `TERMINAL_STATUSES = new Set(['processing', 'ended'])`.
+- **`backend/rtmpserver-2.js`** — 18 added lines, no deletions, in exactly two places:
+  - **frontend `endStream` socket handler**: the check sits immediately after `StreamPath` is computed
+    and **before** `blockStreamReconnect` / `cancelGracePeriod` / the `try` block — so on a skip nothing
+    is blocked, no session is stopped, no Redis event is published and `doStreamCleanup` is never
+    reached. Called with `{ io, socket }` so the room converges and the caller is acked.
+  - **`rtmp:endStream` Redis-subscriber handler**: the check sits immediately after the task-14
+    own-echo `originId` skip and before `blockStreamReconnect`. Called with **no `io`/`socket`** —
+    per spec, the originating box owns the room broadcast and the socket ack, so re-emitting from every
+    subscribing box would only duplicate it.
+
+### Deviations / judgement calls
+
+- **New file, not an inline guard.** The spec described the logic sitting "at the top of the handler";
+  the logic *is* invoked there, but lives in `lib/streamEndGuard.js`. Reason: testability — the
+  acceptance criteria demand Jest coverage of the re-emit and ack, which is unreachable if the code is
+  inline in an un-requireable server file. Same trade already made for `resolveStreamStatus`.
+- **Fails open on a Redis error**, not just on a missing key. The spec only called out cache *miss*;
+  a read *failure* is treated identically (logged, returns `null`, normal end path proceeds). The guard
+  may only short-circuit on a positive terminal status, never on absence of information — otherwise a
+  Redis hiccup would leave a box unable to end a stream at all. Covered by two tests.
+- **Task-15 and task-17 surfaces untouched**, as instructed: no edits to `routes/stream.js`,
+  `lib/hls.js`, `lib/segmentReconciler.js`, `lib/watchers.js`, or the pending-retry/recovery machinery
+  in `streamStatusUpdater.js` (imported read-only via `getCachedStatus`). The subscriber diff is the
+  early-exit only — task 17's ownership-logic edit lands on a clean adjacent region.
+
+### Test coverage (`backend/tests/streamEndGuard.test.js`, 16 tests)
+
+Mocking follows the task-14 / hydration convention (`jest.mock('../lib/streamStatusUpdater')`; no
+Redis, no network). Cases: `ended`/`processing` terminal; `live`/`preparing`/`reconnecting` non-terminal;
+cache miss; Redis read failure; socket-path skip asserting both the `streamUpdate` re-emit and the
+`streamEnded` ack; socket-path passthrough asserting **nothing** is emitted; Redis-path skip and
+passthrough with no collaborators.
+
+### Not verified here
+
+- **Runtime/prod behaviour.** Verification is unit-level only — no deploy, no box run, no second-Stop
+  replay against a real class. The end-to-end criterion ("no VOD POST, no 1C job, no webhooks") is
+  established by construction (the guard returns before `doStreamCleanup` is reached, and
+  `doStreamCleanup` is the sole caller of all three) plus the task-14 lifecycle suite, not by observation.
+- **`streamStatus:current:<classId>` is actually populated at the moment of a real second Stop.** The
+  guard depends on `updateStreamStatus(classId, 'ended')` having write-through-cached before the second
+  click. That holds by code inspection (`cacheCurrentStatus` fires on every reporter fire, independent of
+  LMS delivery success) but was not confirmed against the prod Redis for the 2026-07-27 incident class.
+- **Cross-box skip under a real Redis adapter** — the subscriber early-exit is unit-tested, not
+  exercised with two live instances.
