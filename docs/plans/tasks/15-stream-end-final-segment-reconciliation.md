@@ -150,3 +150,10 @@ complete and on disk in all four qualities, so the correct repair is to upload i
 the playlists (the published VOD playlists already reference it and are otherwise correct). Files
 are deleted 24 h after stream end (~07:45 on 2026-07-28) — repair before then or the segment is
 gone. Commands are in the task-15 agent report.
+
+## Live verification (2026-07-27, box @ b2412ed, class 6a6738d2b604444bc220fe81)
+
+Real OBS run reproduced the race organically: final `segment_26` was still mid-upload at Stop
+(`Waiting for 1 segment upload(s)…`); finalization awaited it, reconciler HEAD-verified all
+references silently (no repairs needed), VOD playlists end at segment_26. External check: all 27
+segments signed-200 (q0) + segment_26 200 in all 4 qualities; unsigned 403. PASS.

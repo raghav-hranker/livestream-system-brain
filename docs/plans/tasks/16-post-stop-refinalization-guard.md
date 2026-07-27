@@ -121,3 +121,10 @@ passthrough with no collaborators.
   LMS delivery success) but was not confirmed against the prod Redis for the 2026-07-27 incident class.
 - **Cross-box skip under a real Redis adapter** — the subscriber early-exit is unit-tested, not
   exercised with two live instances.
+
+## Live verification (2026-07-27, box @ b2412ed, class 6a6738d2b604444bc220fe81)
+
+`rtmp:finalize` key deleted manually to strip the task-14 claim, then two real Stop clicks
+(11:11:01, 11:11:24): both logged `Skipping stream end … already finalized (cached status: ended)`,
+finalize key never re-created, no VOD rebuild, no webhooks, GPU manager shows exactly 1 job for
+the class. PASS.

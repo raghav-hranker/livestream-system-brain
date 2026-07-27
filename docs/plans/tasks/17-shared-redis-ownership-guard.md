@@ -140,3 +140,10 @@ Every key below is keyed by StreamPath (`/<clientId>/<classId>`) or `classId`, i
 
 - No runtime/on-box verification: no deploy, no `REDIS_HOST` change, no prod Redis reads or writes (out of scope per the task). The multi-box behaviour is covered at the unit level only.
 - The count of legacy `streamStatus:pending:<classId>` keys actually sitting on the deployed box was **not** measured (that would need a prod Redis read). The first boot after deploy logs it.
+
+## Live verification (2026-07-27, box @ b2412ed)
+
+Boot: namespace resolved `10.190.0.11-5100` from LMS_BASE_URL (no new env). Fabricated foreign
+`rtmp:endStream` published on box Redis (`/999/000000000000000000000000`): subscriber logged
+`Ignoring endStream event … no local session and no local resources` — zero writes, zero cleanup.
+PASS (shared-cluster flip still pending, with the socket.io adapter key prefix).
