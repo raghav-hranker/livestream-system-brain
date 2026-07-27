@@ -308,6 +308,15 @@ playback 200 / unsigned 403. Two real bugs found by the test:
    external access is firewalled to the GPU server's IP only — browser acceptance needs the
    tester's IP or a tunnel.
 
+### Phase 2 prod status: PREREQS CLEARED 2026-07-27
+
+Recon found phonetics `quicktricks-lms` **already running `dea07469`** (the prod target) with all
+secrets + both Bunny pairings set — so the prod cutover collapsed to a lockstep DB flip; the
+transcoder/GPU env needed no changes (same LMS box/port/secret). Fresh-DB check PASSED (no `rooms`
+collection in `quicktricksdb`). **USER DECISION: the prod guardrail re-grant is SKIPPED — the
+livestream box connects with the admin Mongo user "for now"**; `~/mongo-guardrail-prod.sh` (extends
+the role to both dbs, no env swap, verify included) stays staged on the box if wanted later.
+
 ## Phase 3 — Lockstep deploy order
 
 1. Env vars everywhere (Phase 2).
@@ -320,6 +329,23 @@ playback 200 / unsigned 403. Two real bugs found by the test:
    non-YouTube video class carries `hlsAsset` + clean bucket+key recordings) and spot-check one
    backfilled class end-to-end — `/playback` 200 with a signed URL that plays, `/downloads` 200
    with signed renditions. Then flip the recorded zone (Phase 5).
+
+### Phase 3 status: PROD CUTOVER EXECUTED 2026-07-27 (steps 1–5 done)
+
+- **Lockstep DB flip (user green-light, minimal — no rebuild):** phonetics `DB_NAME` →
+  `quicktricksdb` (backup `.env.production.bak-testlane-20260727`; boot `MongoDB Connected -
+  production`, health 200, serving APX data) + livestream box `DB_URI` → admin user with
+  `quicktricksdb` path (backup `.env.bak-prodflip-20260727`; boot clean RTMP 8937 / 8082 / Redis).
+  Test lane abandoned (db inert, revivable); box test-era Redis keys cleared — the pending
+  retry store was **empty** pre-flip, so no stale webhooks could replay at prod.
+- **Backfill dry-run re-run matched the 07-24 baseline exactly, then `--commit`:** 7,083 modified;
+  success criterion HOLDS — 0 url-shaped non-YouTube entries, 7,083 `hlsAsset`, 7,055 clean
+  3-file mp4 sets (21,165 entries). Spot-check: Streamer-token `/playback` 200 → signed
+  recorded-zone URL → CDN fetch 200 (class `6a43a409633cbd85b6f113ba`). `/downloads` under a
+  Streamer token 401s **by design** (`authenticateToken` user path only) — real-client check
+  folds into Phase 4 step 7.
+- Stray non-APX prod class `fngf` (`6a5f1f3a617b32899fe69f55`, no assets, created 07-21) is
+  outside backfill scope — cleanup-ledger candidate.
 
 ## Phase 4 — Acceptance run (merged checklist)
 
@@ -357,6 +383,12 @@ Phase 3 step 5 (backfill committed + verified) and before/with the Phase 4 accep
 the acceptance's APX spot-check (Phase 4 step 7) proves playback + downloads against the locked
 zone. Only ordering constraint that remains: backfill first — flipping earlier leaves nothing
 signable for APX classes and `/playback` 404s them.
+
+**DONE 2026-07-27 (user flipped in the Bunny panel, post-backfill):** post-flip probes on the
+backfilled class — signed `master.m3u8` **200** (first true proof `BUNNY_RECORDED_SECURITY_KEY`
+matches the zone key; with auth off, tokens were ignored), unsigned HLS **403**, unsigned MP4
+**403**. The recorded zone is locked; the APX protection gap is closed. Remaining: the Phase-4
+acceptance run (real OBS class on prod + real-client APX spot-check against the locked zone).
 
 ## Tracked in parallel (not gating the launch)
 
