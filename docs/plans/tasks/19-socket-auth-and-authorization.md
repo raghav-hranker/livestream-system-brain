@@ -2,6 +2,11 @@
 
 **Type**: AFK
 **Repo**: livestream (phase A) · nodejs-server + ls (phase B)
+**Status**: Phase A EXECUTED 2026-08-04 — livestream `3f1425a` on `launch/quicktricks-v2`, suite 191→237
+(unit + real-handler-path wiring tests). Deploy user-gated; box env already holds `JWT_SECRET_KEY`
+(verified 2026-07-27) so the new boot gate is satisfied. One deviation: the `pinMessage` READ path
+(no `messageId`) stays joined-room-bound instead of host-only — late-joining viewers fetch the current
+pin through it; pin/unpin WRITES are host-only. Phase B not started.
 **Blocked by**: nothing — phase A is livestream-only and ships independently
 **Governing docs**: [security preflight](../security-preflight-quicktricks-v2.md) (§S1-1 is the finding this closes) · [GLOSSARY token taxonomy](../../../GLOSSARY.md) · `repos/nodejs-server/CONTEXT.md`
 
@@ -201,17 +206,17 @@ depending on the 12h URL-borne Streamer token, and anonymous sockets disappear e
 
 ## Acceptance criteria — phase A
 
-- [ ] `io.use()` middleware sets a frozen `socket.principal`; no handler reads `socket.role`/`socket.userId` from a payload afterwards
-- [ ] A Streamer token for class A cannot host class B (join denied)
-- [ ] A token that fails verification does not silently become a viewer: `authState` is emitted, the reason is logged and metered, and no host capability is granted
-- [ ] `JWT_SECRET_KEY` is in `validateBootConfig` (boot fails without it) with a test alongside `tests/validateBootConfig.test.js`
-- [ ] An anonymous socket emitting `endStream` / `stopRecording` / `binarystream` / `banUser` / `deleteMessage` / `pinMessage` / `unpinMessage` / `updateUrl` / `streamComplete` gets a typed denial and **nothing runs** — verified against the real handler path, not just the helper
-- [ ] Joining with `userId === roomId` from a non-host is denied; `userListUpdate` reaches only sockets in `host:sessions:<classId>`
-- [ ] `privateMsg` sends as the socket's identity regardless of payload; `voteSubmit` dedupes on socket identity; `privateMessageHistory` is denied for anonymous and unchanged for host
-- [ ] `userMsg`, `messageHistory`, `getMediaMessages` operate on `socket.roomId`, ignoring payload room/class ids
-- [ ] Existing behaviour preserved for the real teacher flow: OBS start → live → Stop → `ended` + VOD, private-mode toggle, chat, pins, polls (tasks 11/14/15/16/17 semantics all intact)
-- [ ] Jest suite green (`cd backend && npx jest tests/`, 191/191 at `a04747e`) with new `tests/socketIdentity.test.js` + `tests/socketAuthz.test.js` following the `privateMode.test.js` mocking pattern
-- [ ] No new LMS round trip on any hot path (identity is claims-only; the LMS is not consulted per event)
+- [x] `io.use()` middleware sets a frozen `socket.principal`; no handler reads `socket.role`/`socket.userId` from a payload afterwards
+- [x] A Streamer token for class A cannot host class B (join denied)
+- [x] A token that fails verification does not silently become a viewer: `authState` is emitted, the reason is logged and metered, and no host capability is granted
+- [x] `JWT_SECRET_KEY` is in `validateBootConfig` (boot fails without it) with a test alongside `tests/validateBootConfig.test.js`
+- [x] An anonymous socket emitting `endStream` / `stopRecording` / `binarystream` / `banUser` / `deleteMessage` / `pinMessage` / `unpinMessage` / `updateUrl` / `streamComplete` gets a typed denial and **nothing runs** — verified against the real handler path, not just the helper
+- [x] Joining with `userId === roomId` from a non-host is denied; `userListUpdate` reaches only sockets in `host:sessions:<classId>`
+- [x] `privateMsg` sends as the socket's identity regardless of payload; `voteSubmit` dedupes on socket identity; `privateMessageHistory` is denied for anonymous and unchanged for host
+- [x] `userMsg`, `messageHistory`, `getMediaMessages` operate on `socket.roomId`, ignoring payload room/class ids
+- [x] Existing behaviour preserved for the real teacher flow: OBS start → live → Stop → `ended` + VOD, private-mode toggle, chat, pins, polls (tasks 11/14/15/16/17 semantics all intact)
+- [x] Jest suite green (`cd backend && npx jest tests/`, 191/191 at `a04747e`) with new `tests/socketIdentity.test.js` + `tests/socketAuthz.test.js` following the `privateMode.test.js` mocking pattern
+- [x] No new LMS round trip on any hot path (identity is claims-only; the LMS is not consulted per event)
 
 ## Acceptance criteria — phase B
 
