@@ -3,7 +3,7 @@
 **Type**: AFK (diagnosis on the box is read-only; prod repair is HITL)
 **Blocked by**: — (found in the 2026-07-27 prod acceptance run; breaks VOD playback for real viewers)
 **Repo**: livestream
-**Governing docs**: [launch runbook, Phase-4 prod findings](../launch-runbook-quicktricks-v2.md) · upload-mode decision: livestream ADR 0001 (live watcher uploads; end-of-stream bulk upload skipped)
+**Governing docs**: [launch runbook, Phase-4 prod findings](../../launch-runbook-quicktricks-v2.md) · upload-mode decision: livestream ADR 0001 (live watcher uploads; end-of-stream bulk upload skipped)
 
 > **Branch guard:** verify `git branch --show-current` matches `ACTIVE_BRANCH` in
 > `system-brain/repos.manifest` before reading or changing anything. Ignore `.claude/worktrees/*`.

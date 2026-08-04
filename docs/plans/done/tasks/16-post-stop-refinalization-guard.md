@@ -3,7 +3,7 @@
 **Type**: AFK
 **Blocked by**: 14 (landed — this closes the residual gap its 900s claim TTL leaves open)
 **Repo**: livestream
-**Governing docs**: [launch runbook, Phase-4 prod findings](../launch-runbook-quicktricks-v2.md) · [task 14](./14-stream-end-cleanup-dedupe.md) (run-once claim design)
+**Governing docs**: [launch runbook, Phase-4 prod findings](../../launch-runbook-quicktricks-v2.md) · [task 14](./14-stream-end-cleanup-dedupe.md) (run-once claim design)
 
 > **Branch guard:** verify `git branch --show-current` matches `ACTIVE_BRANCH` in
 > `system-brain/repos.manifest` before reading or changing anything. Ignore `.claude/worktrees/*`.

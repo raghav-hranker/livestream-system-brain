@@ -3,7 +3,7 @@
 **Type**: AFK
 **Blocked by**: #01 — Pin the deployable branch pairing
 **Repo**: livestream
-**Governing docs**: [PRD](../prd-client-launch-v2.md) · [ADR-0004](../../adr/0004-architecture-ships-greenfield-per-client.md) (per-client env: `LMS_BASE_URL`, `TRANSCODER_WEBHOOK_SECRET`, LMS Mongo URI are single-valued per instance)
+**Governing docs**: [PRD](../../prd-client-launch-v2.md) · [ADR-0004](../../../adr/0004-architecture-ships-greenfield-per-client.md) (per-client env: `LMS_BASE_URL`, `TRANSCODER_WEBHOOK_SECRET`, LMS Mongo URI are single-valued per instance)
 
 > **Branch guard:** verify `git branch --show-current` matches `ACTIVE_BRANCH` in
 > `system-brain/repos.manifest` before reading or changing anything. Ignore `.claude/worktrees/*`.

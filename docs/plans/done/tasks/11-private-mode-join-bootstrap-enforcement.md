@@ -3,7 +3,7 @@
 **Type**: AFK
 **Blocked by**: #05 — Private-mode endpoint + repoint the livestream client
 **Repo**: livestream
-**Governing docs**: [PRD](../prd-client-launch-v2.md) · [SYSTEM.md contract table, *Private-mode write* row](../../../SYSTEM.md) · decision record: grilling session 2026-07-22 (vidup task 05 execution notes)
+**Governing docs**: [PRD](../../prd-client-launch-v2.md) · [SYSTEM.md contract table, *Private-mode write* row](../../../../SYSTEM.md) · decision record: grilling session 2026-07-22 (vidup task 05 execution notes)
 
 > **Branch guard:** verify `git branch --show-current` matches `ACTIVE_BRANCH` in
 > `system-brain/repos.manifest` before reading or changing anything. Ignore `.claude/worktrees/*`.

@@ -5,7 +5,7 @@
 **Repo**: livestream
 **Governing docs**: [task 17](./17-shared-redis-ownership-guard.md) §C execution notes (the audit
 finding this closes) · `/tmp/handoff-socketio-adapter-mesh-deep-dive.md` (concept walkthrough) ·
-[launch runbook](../launch-runbook-quicktricks-v2.md)
+[launch runbook](../../launch-runbook-quicktricks-v2.md)
 
 > **Branch guard:** verify `git branch --show-current` matches `ACTIVE_BRANCH` in
 > `system-brain/repos.manifest` before reading or changing anything. Ignore `.claude/worktrees/*`.

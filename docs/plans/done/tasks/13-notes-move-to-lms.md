@@ -3,7 +3,7 @@
 **Type**: AFK
 **Blocked by**: #12 — ls room-less realignment (merged)
 **Repo**: nodejs-server + ls + livestream (three legs, in that order)
-**Governing docs**: [SYSTEM.md ownership principle — LMS owns content/policy, livestream is the real-time plane](../../../SYSTEM.md) · decision record: notes-home discussion 2026-07-22
+**Governing docs**: [SYSTEM.md ownership principle — LMS owns content/policy, livestream is the real-time plane](../../../../SYSTEM.md) · decision record: notes-home discussion 2026-07-22
 
 > **Branch guard:** verify `git branch --show-current` matches `ACTIVE_BRANCH` in
 > `system-brain/repos.manifest` before reading or changing anything. Ignore `.claude/worktrees/*`.

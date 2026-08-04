@@ -3,7 +3,7 @@
 **Type**: AFK
 **Blocked by**: #08 — Delete the Room model + room routes; #11 — join bootstrap (consumes its emit)
 **Repo**: ls
-**Governing docs**: [PRD](../prd-client-launch-v2.md) · [ADR-0004](../../adr/0004-architecture-ships-greenfield-per-client.md) · ls repo ADR 0003 (render driven by LMS)
+**Governing docs**: [PRD](../../prd-client-launch-v2.md) · [ADR-0004](../../../adr/0004-architecture-ships-greenfield-per-client.md) · ls repo ADR 0003 (render driven by LMS)
 
 > **Branch guard:** verify `git branch --show-current` matches `ACTIVE_BRANCH` in
 > `system-brain/repos.manifest` before reading or changing anything. Ignore `.claude/worktrees/*`.

@@ -3,7 +3,7 @@
 **Type**: AFK (code + tests only; the `REDIS_HOST` flip itself is a HITL deploy step, NOT this task)
 **Blocked by**: — (prerequisite for the scaling architecture; blocks the shared-Redis env flip)
 **Repo**: livestream
-**Governing docs**: [launch runbook](../launch-runbook-quicktricks-v2.md) · 2026-07-24 cross-tenant-leak finding (session notes / handoff-3 §4) · task 02 (pending-retry store), task 14 (echo/claim mechanics)
+**Governing docs**: [launch runbook](../../launch-runbook-quicktricks-v2.md) · 2026-07-24 cross-tenant-leak finding (session notes / handoff-3 §4) · task 02 (pending-retry store), task 14 (echo/claim mechanics)
 
 > **Branch guard:** verify `git branch --show-current` matches `ACTIVE_BRANCH` in
 > `system-brain/repos.manifest` before reading or changing anything. Ignore `.claude/worktrees/*`.

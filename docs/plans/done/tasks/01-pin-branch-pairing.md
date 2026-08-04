@@ -3,7 +3,7 @@
 **Type**: AFK
 **Blocked by**: None — can start immediately
 **Repos**: nodejs-server, livestream, video-transcoder, system-brain
-**Governing docs**: [PRD](../prd-client-launch-v2.md) · [slice § Branch mechanics](../../../slices/client-launch-v2.md) · [BRANCHES.md](../../../BRANCHES.md)
+**Governing docs**: [PRD](../../prd-client-launch-v2.md) · [slice § Branch mechanics](../../../../slices/client-launch-v2.md) · [BRANCHES.md](../../../../BRANCHES.md)
 
 ## What to build
 

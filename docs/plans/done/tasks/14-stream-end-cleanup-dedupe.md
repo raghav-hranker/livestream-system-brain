@@ -3,7 +3,7 @@
 **Type**: AFK
 **Blocked by**: — (fix-before-prod gate for the quicktricks launch; see runbook "Phase-4 findings")
 **Repo**: livestream
-**Governing docs**: [launch runbook, OBS smoke-test findings #2](../launch-runbook-quicktricks-v2.md) · design decision: grilling session 2026-07-24 (scope A+B+C approved by user)
+**Governing docs**: [launch runbook, OBS smoke-test findings #2](../../launch-runbook-quicktricks-v2.md) · design decision: grilling session 2026-07-24 (scope A+B+C approved by user)
 
 > **Branch guard:** verify `git branch --show-current` matches `ACTIVE_BRANCH` in
 > `system-brain/repos.manifest` before reading or changing anything. Ignore `.claude/worktrees/*`.

@@ -3,7 +3,7 @@
 **Type**: AFK
 **Blocked by**: #01 — Pin the deployable branch pairing
 **Repo**: nodejs-server
-**Governing docs**: [PRD](../prd-client-launch-v2.md) · [ADR-0002](../../adr/0002-stream-status-at-least-once.md) · [slice § Build 3](../../../slices/client-launch-v2.md)
+**Governing docs**: [PRD](../../prd-client-launch-v2.md) · [ADR-0002](../../../adr/0002-stream-status-at-least-once.md) · [slice § Build 3](../../../../slices/client-launch-v2.md)
 
 > **Branch guard:** verify `git branch --show-current` matches `ACTIVE_BRANCH` in
 > `system-brain/repos.manifest` before reading or changing anything. Ignore `.claude/worktrees/*`.

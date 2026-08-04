@@ -3,7 +3,7 @@
 **Type**: AFK
 **Blocked by**: #02 — StreamStatusReporter: at-least-once retry
 **Repo**: livestream
-**Governing docs**: [PRD](../prd-client-launch-v2.md) · [ADR-0003](../../adr/0003-livestream-reads-class-via-shared-mongo.md) · [slice § Build 2](../../../slices/client-launch-v2.md)
+**Governing docs**: [PRD](../../prd-client-launch-v2.md) · [ADR-0003](../../../adr/0003-livestream-reads-class-via-shared-mongo.md) · [slice § Build 2](../../../../slices/client-launch-v2.md)
 
 > **Branch guard:** verify `git branch --show-current` matches `ACTIVE_BRANCH` in
 > `system-brain/repos.manifest` before reading or changing anything. Ignore `.claude/worktrees/*`.

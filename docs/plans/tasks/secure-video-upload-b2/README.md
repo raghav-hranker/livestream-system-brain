@@ -12,12 +12,12 @@ not a task here.
 
 | # | Task | Type | Repo(s) | Blocked by |
 |---|---|---|---|---|
-| 01 | [B2 multipart tracer spike](01-b2-multipart-tracer-spike.md) | HITL | infra + brain | None |
-| 02 | [B2 storage module + unit tests](02-b2-storage-module.md) | AFK | admin-dashboard | None (parallel to 01) |
-| 03 | [Route flip + contract tests](03-route-flip-contract-tests.md) | AFK | admin-dashboard | 02 |
-| 04 | [Secured-customer registration (472)](04-secured-registration.md) | HITL | video-transcoder + nodejs-server env | 01 |
-| 05 | [Config repoint + single-upload E2E](05-config-repoint-single-e2e.md) | HITL | admin-dashboard + ls | 03, 04 |
-| 06 | [Bulk E2E + prerecorded-arc smoke](06-bulk-e2e-smoke.md) | HITL | all | 05 |
+| 01 | [B2 multipart tracer spike](../../done/tasks/secure-video-upload-b2/01-b2-multipart-tracer-spike.md) | HITL | infra + brain | None |
+| 02 | [B2 storage module + unit tests](../../done/tasks/secure-video-upload-b2/02-b2-storage-module.md) | AFK | admin-dashboard | None (parallel to 01) |
+| 03 | [Route flip + contract tests](../../done/tasks/secure-video-upload-b2/03-route-flip-contract-tests.md) | AFK | admin-dashboard | 02 |
+| 04 | [Secured-customer registration (472)](../../done/tasks/secure-video-upload-b2/04-secured-registration.md) | HITL | video-transcoder + nodejs-server env | 01 |
+| 05 | [Config repoint + single-upload E2E](../../done/tasks/secure-video-upload-b2/05-config-repoint-single-e2e.md) | HITL | admin-dashboard + ls | 03, 04 |
+| 06 | [Bulk E2E + prerecorded-arc smoke](../../done/tasks/secure-video-upload-b2/06-bulk-e2e-smoke.md) | HITL | all | 05 |
 | 07 | [Repoint processing-state read path to B2](07-processing-panel-b2-repoint.md) | AFK | admin-dashboard | None (follow-up from 06) |
 
 **Status 2026-07-22: tasks 01–06 DONE** — full slice verified E2E (single + bulk, signed

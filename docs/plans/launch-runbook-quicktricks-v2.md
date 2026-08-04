@@ -285,7 +285,7 @@ playback 200 / unsigned 403. Two real bugs found by the test:
    Follow-up (admin-dashboard, non-gating): class create produced a doc missing those four
    prod-required fields — align the dashboard create with the merged model.
 2. **livestream duplicate/stale stream-end cleanup (FIXED in code 2026-07-26 @ livestream
-   `6cff30e`, task `docs/plans/tasks/14-stream-end-cleanup-dedupe.md` — NOT yet pushed/deployed;
+   `6cff30e`, task `docs/plans/done/tasks/14-stream-end-cleanup-dedupe.md` — NOT yet pushed/deployed;
    deploy to the box + a stop-after-OBS-close re-check remain):** one stream end ran
    full cleanup FOUR times (4 identical 1C jobs, 4× GPU work, quadruple webhooks/PUTs). Two
    mechanisms: (a) frontend `endStream` runs cleanup directly AND the instance receives its own

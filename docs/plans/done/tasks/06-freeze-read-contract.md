@@ -3,7 +3,7 @@
 **Type**: AFK
 **Blocked by**: #01 — Pin the deployable branch pairing (soft: prefer after #03 so the projection shrink lands on the fallback-only read)
 **Repos**: nodejs-server + livestream (cross-repo — same launch branch in both)
-**Governing docs**: [PRD](../prd-client-launch-v2.md) · [ADR-0003](../../adr/0003-livestream-reads-class-via-shared-mongo.md) · [slice § Build 5–6](../../../slices/client-launch-v2.md)
+**Governing docs**: [PRD](../../prd-client-launch-v2.md) · [ADR-0003](../../../adr/0003-livestream-reads-class-via-shared-mongo.md) · [slice § Build 5–6](../../../../slices/client-launch-v2.md)
 
 > **Branch guard:** verify `git branch --show-current` matches `ACTIVE_BRANCH` in
 > `system-brain/repos.manifest` in BOTH repos before reading or changing anything.
