@@ -3,10 +3,14 @@
 **Type**: AFK
 **Repo**: livestream (phase A) · nodejs-server + ls (phase B)
 **Status**: Phase A EXECUTED 2026-08-04 — livestream `3f1425a` on `launch/quicktricks-v2`, suite 191→237
-(unit + real-handler-path wiring tests). Deploy user-gated; box env already holds `JWT_SECRET_KEY`
-(verified 2026-07-27) so the new boot gate is satisfied. One deviation: the `pinMessage` READ path
+(unit + real-handler-path wiring tests). One deviation: the `pinMessage` READ path
 (no `messageId`) stays joined-room-bound instead of host-only — late-joining viewers fetch the current
 pin through it; pin/unpin WRITES are host-only. Phase B not started.
+**2026-08-05 — DEPLOY HELD**: an external review of phase A surfaced deploy-blocking findings, verified
+against the code (see [Phase A remediation](#phase-a-remediation-2026-08-05--pre-deploy) below). Do not
+deploy `3f1425a` until remediation R1–R4 land. Also learned: livestream runs as **two instances**
+(OBS/ingest box + socket-domain box, same code, shared Redis) — deploys, the `JWT_SECRET_KEY` boot gate,
+and live verification apply to BOTH boxes; only one box's env was ever verified (2026-07-27).
 **Blocked by**: nothing — phase A is livestream-only and ships independently
 **Governing docs**: [security preflight](../security-preflight-quicktricks-v2.md) (§S1-1 is the finding this closes) · [GLOSSARY token taxonomy](../../../GLOSSARY.md) · `repos/nodejs-server/CONTEXT.md`
 
@@ -162,6 +166,78 @@ A per-socket token bucket on `userMsg` / `privateMsg` / `voteSubmit` / `getMedia
 `maxHttpBufferSize` from `1e7` (`rtmpserver-2.js:57` — its `// 100MB` comment is wrong; it is 10 MB) to
 the smallest size the `binarystream` webcam chunk path actually needs. `binarystream` is host-only after
 A5, so the large frame budget no longer has to be open to everyone.
+
+## Phase A remediation (2026-08-05) — pre-deploy
+
+An external agent review of `3f1425a` produced 12 findings; each was verified against the code
+(`rtmpserver-2.js`, `lib/socketAuthz.js`, `lib/socketIdentity.js`, `ls/lib/hooks/useSocket.ts`).
+Triage below. **R1–R4 block the deploy**; R5 riders are folded in because they're cheap; the backlog
+items move to phase B or the ledger.
+
+### Blocking — livestream
+
+- [ ] **R1 — payload armor.** Every handler destructures its payload in the signature
+  (`async ({ roomId, data }) =>`), so an event emitted with no/null/scalar payload throws **before any
+  authz gate runs**; the backend has **no** `unhandledRejection`/`uncaughtException` handler, so on
+  Node ≥15 one emit from an anonymous socket kills the process (and SIGTERM orphans live streams —
+  phase A turned the `endStream` hole into a crash-the-box hole). Fix: validate payloads before
+  destructuring (small `lib/` helper), typed `INVALID_PAYLOAD` denial, plus a process-level rejection
+  safety net. Tests: missing/null/scalar/malformed payload matrix through the real handler path.
+- [ ] **R2 — `userMsg` identity binding.** The handler spreads `...data` unchanged and broadcasts
+  `data.userId` (`rtmpserver-2.js:607-645`); a joined viewer can post as the teacher. This was a **spec
+  gap**: the A5 table listed `userMsg` as room-bound only, though the background table named teacher
+  impersonation as a target bug. Fix: `requireSelf`-resolve the sender, overwrite stored + broadcast
+  `userId`/`userName` from the socket, deny conflicting payload identity. Amend the A5 table:
+  `userMsg` is room-bound **and identity-bound**.
+
+### Blocking — ls (same branch, cross-repo slice)
+
+- [ ] **R3 — bootstrap event order.** `useSocket.ts` emits `pinMessage` (:106) and `getMediaMessages`
+  (:112) in the mount effect, before `joinRoom` (:168) fires from the connected effect — post-deploy
+  both get `NOT_JOINED` and the client never retries, so the pin/media bootstrap breaks for every
+  user (defeating the spec's own late-joiner accommodation). Fix: join first (ack or reorder), then
+  request pin/media/histories.
+- [ ] **R4 — surface auth failures.** `ls` has no listener for `authState` / `authzError` /
+  `joinRoomError` (its `error` handler is empty) — the phase A "teacher sees an explicit failure" goal
+  terminates at the server. Fix: handle these events; a denied teacher join must show a blocking error,
+  not a half-working screen.
+
+### Riders (fold into the same commits)
+
+- [ ] **R5a** — `leaveRoom` clears `socket.roomId`/`userId`/`presenceUserId` + deregisters the Redis
+  socket; subsequent room-bound events get `NOT_JOINED`. (Not a phase A security hole — joining is
+  free — but becomes one in phase B.)
+- [ ] **R5b** — repeat `joinRoom`: same-room idempotent; different-room joins leave + clean the
+  previous room first.
+- [ ] **R5c** — stop error-logging `invalid_signature` in phase A: `ls` sends the URL token for
+  everyone, so every legitimate student (Auth token, unverifiable here by design) currently logs an
+  error and pollutes the failure metric. Downgrade to info + separate metric until phase B.
+- [ ] **R5d** — host principal requires non-empty `userId` + `classId` claims; pin
+  `jwt.verify(..., { algorithms: ['HS256'] })`. (Low: a claims-light teacher token is already denied
+  at join by A2, and forging requires the secret.)
+- [ ] **R5e** — rate limiter buckets become `Map<socketId, Map<event, bucket>>` so `drop()` is O(1)
+  per disconnect instead of a full-map scan.
+
+### Deferred (not phase A blockers)
+
+- **Join/read rate limits + connection/IP limiting** — hardening, phase B era.
+- **Roster fan-out rebuilds the full viewer hash per join/leave** — pre-existing, not a phase A
+  regression; fix with deltas + `HLEN` during phase B / scale work.
+- **Stale Redis socket IDs after crash** — pre-existing; the clean fix (host fan-out via an internal
+  socket.io room so the adapter owns membership lifecycle) belongs to phase B.
+- Review's remaining asks (reconnect-storm/load tests, leaked watcher timers in the suite) → cleanup
+  ledger.
+
+### Deploy sequencing (supersedes the single-box instructions above)
+
+Livestream runs as **two instances of the same code** — an OBS/RTMP ingest+transcode box and a
+socket-domain box, shared Redis. Only after R1–R4: deploy `812cd84` + `3f1425a` + remediation to
+**both** boxes (verify `JWT_SECRET_KEY` on the second box first — boot now fails without it) and ship
+the ls change. Live-verify across the real two-box path: host controls from the socket box reach the
+ingest box's ffmpeg; anonymous `endStream` denied; malformed-payload emit does **not** kill the
+process; pin/media bootstrap works; `/live` 404s on both boxes. Then: probe the second box's exposure
+(preflight only audited 34.131.52.223) and split the untagged `selecitonway` firewall rule per-instance
+(RTMP closed on the socket box, 8082 narrowed on the ingest box).
 
 ## Phase B — the Realtime token (cross-repo; gates any student rollout)
 
