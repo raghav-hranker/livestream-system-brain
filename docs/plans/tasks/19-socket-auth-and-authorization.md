@@ -6,9 +6,12 @@
 (unit + real-handler-path wiring tests). One deviation: the `pinMessage` READ path
 (no `messageId`) stays joined-room-bound instead of host-only — late-joining viewers fetch the current
 pin through it; pin/unpin WRITES are host-only. Phase B not started.
-**2026-08-05 — DEPLOY HELD**: an external review of phase A surfaced deploy-blocking findings, verified
-against the code (see [Phase A remediation](#phase-a-remediation-2026-08-05--pre-deploy) below). Do not
-deploy `3f1425a` until remediation R1–R4 land. Also learned: livestream runs as **two instances**
+**2026-08-05 — REMEDIATION EXECUTED, deploy still user-gated.** R1–R5 all landed and are merged into
+`launch/quicktricks-v2`: livestream `8c215ea` (merge of `sandcastle/task-19`; suite 237→**288**) and
+ls `75f261e` (suite **72** green, `tsc --noEmit` clean). Nothing is pushed. Phase A is now considered
+deployable pending the two-box sequencing below. Original hold context: an external review of phase A
+surfaced deploy-blocking findings, verified against the code (see
+[Phase A remediation](#phase-a-remediation-2026-08-05--pre-deploy) below). Also learned: livestream runs as **two instances**
 (OBS/ingest box + socket-domain box, same code, shared Redis) — deploys, the `JWT_SECRET_KEY` boot gate,
 and live verification apply to BOTH boxes; only one box's env was ever verified (2026-07-27).
 **Blocked by**: nothing — phase A is livestream-only and ships independently
@@ -176,14 +179,14 @@ items move to phase B or the ledger.
 
 ### Blocking — livestream
 
-- [ ] **R1 — payload armor.** Every handler destructures its payload in the signature
+- [x] **R1 — payload armor.** Every handler destructures its payload in the signature
   (`async ({ roomId, data }) =>`), so an event emitted with no/null/scalar payload throws **before any
   authz gate runs**; the backend has **no** `unhandledRejection`/`uncaughtException` handler, so on
   Node ≥15 one emit from an anonymous socket kills the process (and SIGTERM orphans live streams —
   phase A turned the `endStream` hole into a crash-the-box hole). Fix: validate payloads before
   destructuring (small `lib/` helper), typed `INVALID_PAYLOAD` denial, plus a process-level rejection
   safety net. Tests: missing/null/scalar/malformed payload matrix through the real handler path.
-- [ ] **R2 — `userMsg` identity binding.** The handler spreads `...data` unchanged and broadcasts
+- [x] **R2 — `userMsg` identity binding.** The handler spreads `...data` unchanged and broadcasts
   `data.userId` (`rtmpserver-2.js:607-645`); a joined viewer can post as the teacher. This was a **spec
   gap**: the A5 table listed `userMsg` as room-bound only, though the background table named teacher
   impersonation as a target bug. Fix: `requireSelf`-resolve the sender, overwrite stored + broadcast
@@ -192,30 +195,30 @@ items move to phase B or the ledger.
 
 ### Blocking — ls (same branch, cross-repo slice)
 
-- [ ] **R3 — bootstrap event order.** `useSocket.ts` emits `pinMessage` (:106) and `getMediaMessages`
+- [x] **R3 — bootstrap event order.** `useSocket.ts` emits `pinMessage` (:106) and `getMediaMessages`
   (:112) in the mount effect, before `joinRoom` (:168) fires from the connected effect — post-deploy
   both get `NOT_JOINED` and the client never retries, so the pin/media bootstrap breaks for every
   user (defeating the spec's own late-joiner accommodation). Fix: join first (ack or reorder), then
   request pin/media/histories.
-- [ ] **R4 — surface auth failures.** `ls` has no listener for `authState` / `authzError` /
+- [x] **R4 — surface auth failures.** `ls` has no listener for `authState` / `authzError` /
   `joinRoomError` (its `error` handler is empty) — the phase A "teacher sees an explicit failure" goal
   terminates at the server. Fix: handle these events; a denied teacher join must show a blocking error,
   not a half-working screen.
 
 ### Riders (fold into the same commits)
 
-- [ ] **R5a** — `leaveRoom` clears `socket.roomId`/`userId`/`presenceUserId` + deregisters the Redis
+- [x] **R5a** — `leaveRoom` clears `socket.roomId`/`userId`/`presenceUserId` + deregisters the Redis
   socket; subsequent room-bound events get `NOT_JOINED`. (Not a phase A security hole — joining is
   free — but becomes one in phase B.)
-- [ ] **R5b** — repeat `joinRoom`: same-room idempotent; different-room joins leave + clean the
+- [x] **R5b** — repeat `joinRoom`: same-room idempotent; different-room joins leave + clean the
   previous room first.
-- [ ] **R5c** — stop error-logging `invalid_signature` in phase A: `ls` sends the URL token for
+- [x] **R5c** — stop error-logging `invalid_signature` in phase A: `ls` sends the URL token for
   everyone, so every legitimate student (Auth token, unverifiable here by design) currently logs an
   error and pollutes the failure metric. Downgrade to info + separate metric until phase B.
-- [ ] **R5d** — host principal requires non-empty `userId` + `classId` claims; pin
+- [x] **R5d** — host principal requires non-empty `userId` + `classId` claims; pin
   `jwt.verify(..., { algorithms: ['HS256'] })`. (Low: a claims-light teacher token is already denied
   at join by A2, and forging requires the secret.)
-- [ ] **R5e** — rate limiter buckets become `Map<socketId, Map<event, bucket>>` so `drop()` is O(1)
+- [x] **R5e** — rate limiter buckets become `Map<socketId, Map<event, bucket>>` so `drop()` is O(1)
   per disconnect instead of a full-map scan.
 
 ### Deferred (not phase A blockers)
