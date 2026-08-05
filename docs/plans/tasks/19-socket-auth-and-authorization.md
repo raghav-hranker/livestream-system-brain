@@ -5,7 +5,8 @@
 **Status**: Phase A EXECUTED 2026-08-04 — livestream `3f1425a` on `launch/quicktricks-v2`, suite 191→237
 (unit + real-handler-path wiring tests). One deviation: the `pinMessage` READ path
 (no `messageId`) stays joined-room-bound instead of host-only — late-joining viewers fetch the current
-pin through it; pin/unpin WRITES are host-only. Phase B not started.
+pin through it; pin/unpin WRITES are host-only. Phase B: **spec finalized 2026-08-05, not implemented**
+— A+B deploy together in one window (B5).
 **2026-08-05 — REMEDIATION EXECUTED, deploy still user-gated.** R1–R5 all landed and are merged into
 `launch/quicktricks-v2`: livestream `8c215ea` (merge of `sandcastle/task-19`; suite 237→**288**) and
 ls `75f261e` (suite **72** green, `tsc --noEmit` clean). Nothing is pushed. Phase A is now considered
@@ -231,6 +232,30 @@ items move to phase B or the ledger.
 - Review's remaining asks (reconnect-storm/load tests, leaked watcher timers in the suite) → cleanup
   ledger.
 
+Second-opinion review of the executed remediation (2026-08-05, this repo's session) confirmed R1–R5
+correct and re-ran both suites; a counter-review's NO-GO probes were each verified and none reopen
+R1–R4. Additions to this ledger from that pass:
+
+- **R5b gap — same-room rejoin under a DIFFERENT userId** hits neither the idempotence guard nor the
+  different-room cleanup: the old identity's Redis socket entry + roster slot leak (disconnect cleans
+  only the current `socket.userId`), viewer count inflates. Ghost-minting is equivalent to free
+  anonymous joins in phase A, so not a blocker — but it becomes an integrity hole the moment phase B
+  makes identity cost something. Adjacent: concurrent different-room joins and a disconnect racing
+  mid-`leaveRoom` can double-run/interleave cleanup (roster + metrics skew only).
+- **ls chat identity is timing-coupled** — `Chat.tsx:105` stamps `data.userId` from its OWN
+  `useLocalStorage('userId')` instance, while the join identity is the token-derived id; they agree
+  only because the page effect writes localStorage before Chat mounts behind the loading screens.
+  R2 turned any drift from mislabeling into IDENTITY_MISMATCH → message silently dropped (console-only
+  warn). Fix (cheap, do with phase B or sooner): `useSocket` returns the userId it joined with; Chat
+  takes it as a prop.
+- **Cheap hardenings, optional pre-deploy:** `.catch` inside `guardPayload` routing handler rejections
+  to `deny()` (today they land in the process net, caller gets no error); `endStream` requires
+  `clientId` (a host emitting `{}` reaches cleanup with `/undefined/<classId>` instead of a typed
+  denial — host-only, own class, robustness not security).
+- Students still emit `privateMessageHistory` at bootstrap and are always denied (accepted phase A
+  regression) — expect `socket_authz_denied_privateMessageHistory` to grow with every student join;
+  it is not an attack signature.
+
 ### Deploy sequencing (supersedes the single-box instructions above)
 
 Livestream runs as **two instances of the same code** — an OBS/RTMP ingest+transcode box and a
@@ -238,40 +263,143 @@ socket-domain box, shared Redis. Only after R1–R4: deploy `812cd84` + `3f1425a
 **both** boxes (verify `JWT_SECRET_KEY` on the second box first — boot now fails without it) and ship
 the ls change. Live-verify across the real two-box path: host controls from the socket box reach the
 ingest box's ffmpeg; anonymous `endStream` denied; malformed-payload emit does **not** kill the
-process; pin/media bootstrap works; `/live` 404s on both boxes. Then: probe the second box's exposure
+process; pin/media bootstrap works; **a chat send broadcasts as BOTH teacher and student** (the R2
+identity check depends on ls's timing-coupled localStorage identity — see the ledger above); `/live`
+404s on both boxes. Then: probe the second box's exposure
 (preflight only audited 34.131.52.223) and split the untagged `selecitonway` firewall rule per-instance
 (RTMP closed on the socket box, 8082 narrowed on the ingest box).
 
 ## Phase B — the Realtime token (cross-repo; gates any student rollout)
 
+*Spec finalized 2026-08-05 after design review (agent handoff `/tmp/handoff-socket-auth-phase-b-pointers.md`
+triaged; all open decisions resolved with user). Supersedes the sketch that previously lived here.*
+
 Phase A leaves one hole open by construction: **livestream cannot tell a real viewer from an anonymous
 one**, because entitlement lives in the LMS and the LMS login secret must not be copied onto this box.
 Solve it the same way playback was solved — the LMS decides, and hands out a short-lived scoped credential.
 
-**New contract — Realtime token (mint):** `GET /api/classes/{classId}/realtime-token`
+**The pattern in one line:** signature checks are portable, context isn't — so the *long* credential
+(Auth/Streamer token) is verified once per connection at the LMS, next to the data that can veto it
+(sessions, orders, class state), and the edge only ever verifies a short-lived ticket that carries its
+context as claims.
 
-- nodejs-server, behind the existing `authenticateUserOrStreamer` middleware
-  (`src/middleware/authMiddleware.ts:109`), which already accepts either an Auth access token or a
-  Streamer token **and** checks login-session revocation — something livestream can never do locally.
-- Runs the **same** `authorizeClassAccess({ userId, isAdmin, classId, accessKind: 'play' })`
-  (`src/services/classAccessAuthz.ts:65`) that `/playback` runs, so chat entitlement and video
-  entitlement cannot drift apart.
-- Returns a short-lived HS256 JWT (TTL ~10 min) with claims `{ classId, userId, role: 'host'|'viewer',
-  name?, jti }`, signed with a **new** shared secret `REALTIME_TOKEN_SECRET` — distinct from both
-  `JWT_SECRET` and `STREAMER_JWT_SECRET`, so livestream verifies realtime access without holding any
-  credential that can forge a login or a playback mint.
+### B1. New contract — Realtime token (mint): `GET /api/classes/{classId}/realtime-token`
 
-**livestream:** verify the ticket in the A1 middleware; `classId` claim must equal the joined room;
-`role` claim selects host vs viewer. Then flip the default to **reject unauthenticated handshakes**,
-behind an env flag (`REALTIME_AUTH_REQUIRED`) so the flip is staged rather than a cliff.
+nodejs-server, behind the existing `authenticateUserOrStreamer` middleware
+(`src/middleware/authMiddleware.ts:109`) — accepts either an Auth access token or a Streamer token and
+checks login-session revocation, something livestream can never do locally. Then runs the **same**
+`authorizeClassAccess({ userId, isAdmin, classId, accessKind: 'play' })`
+(`src/services/classAccessAuthz.ts:65`) that `/playback` runs.
 
-**ls:** fetch the ticket immediately before `io(...)` (it already holds the LMS token and already calls
-`/playback` with it), pass it as `auth.token`, and on a `connect_error` carrying an `AUTH_*` reason,
-re-mint once and retry. Note the TTL only affects **connect**: an established socket is not re-checked,
-so a 10-minute ticket does not mean a 10-minute class.
+**Policy layering (decided):** the shared seam (`authenticateUserOrStreamer` + `authorizeClassAccess`)
+is where entitlement rules live — a rule added there gates playback AND room entry together, so chat and
+video entitlement cannot drift. Socket-only rules live in this endpoint. `accessKind` is the escape
+hatch if the two must ever intentionally differ.
 
-Once phase B lands, `privateMessageHistory` is restored for viewers (proven identity), the socket stops
-depending on the 12h URL-borne Streamer token, and anonymous sockets disappear entirely.
+**Host issuance (decided):** only a valid **class-scoped Streamer token** mints `role:'host'`. Every
+Auth access token mints `viewer` — **including admins**, whose `authorizeClassAccess` entitlement bypass
+must not leak into socket host capability.
+
+**Ticket:** HS256 JWT, TTL **10 min**, signed with a **new** `REALTIME_TOKEN_SECRET` (distinct from
+`JWT_SECRET` and `STREAMER_JWT_SECRET`; in both repos' env validation / boot gates). Claims:
+
+- `userId`, `classId` (strings, required, non-empty)
+- `role: 'host' | 'viewer'` (required)
+- `name` — display name from the **LMS user record** (host: teacher name from the Streamer token's
+  `className`-adjacent claims or LMS lookup) — becomes the spoof-proof chat display name
+- `jti`, `iss`, `aud`, `iat`, `exp` — `jti` is **audit/correlation only** (no replay store; documented)
+
+Response `Cache-Control: no-store`; the ticket never appears in URLs or logs. **No secret rotation
+machinery now (decided)** — single secret, no `kid` ring; rotation = coordinated env change.
+
+**Mint-path latency (required work, not optional):** the mint is once-per-connection, never per event —
+but with **no class-size limits (decided)**, the remint herd after a socket-box restart is unbounded, so:
+run the course-placement and order reads **concurrently** once the class is known (preserving the exact
+shared entitlement rule); verify/add compound indexes for `Order { userId, orderStatus }` and
+`CourseClass { class, isActive, status }`; instrument total mint latency + session/class/course/order
+sub-spans.
+
+### B2. livestream — verify the ticket, one code path
+
+- A1 middleware verifies **Realtime tickets** with `REALTIME_TOKEN_SECRET`: `algorithms:['HS256']`,
+  required-claim validation (non-empty `userId`/`classId`, known `role`, `iss`/`aud`), small documented
+  clock skew. `classId` claim must equal the joined room; `role` selects host vs viewer.
+- **Dual verification during migration:** accept Realtime tickets AND legacy Streamer tokens while
+  `REALTIME_AUTH_REQUIRED=false`, so the two boxes + ls need not deploy atomically. Legacy acceptance is
+  removed after live verification (B5 step 7).
+- `REALTIME_AUTH_REQUIRED=true` ⇒ reject handshakes without a valid ticket **before** `connection`
+  handlers install, via structured `connect_error` with `error.data.code` ∈
+  `{ AUTH_REQUIRED, AUTH_EXPIRED, AUTH_INVALID }` (join-time class mismatch stays a join denial). The
+  client never parses message strings. **The flag is effectively the secured/unsecure customer axis**
+  (per-deployment env, like the Transcoder secret): quicktricks runs ON from day one (ls is not in prod —
+  no migration population); unsecure deployments stay off with phase A semantics.
+- Once required: the anonymous-downgrade path dies, and the **R5c logging downgrade is deleted** — with
+  every socket presenting a verifiable ticket, `invalid_signature` is unambiguous and alarming again.
+- `privateMessageHistory` is **restored for viewers** (identity now proven); denial matrix updated.
+- `STREAMER_JWT_SECRET`/`JWT_SECRET_KEY` comes OFF both boxes after legacy acceptance is removed —
+  box compromise stops being a host-forgery event.
+- **Ledger folds (this phase, before the flip):** same-room rejoin under a different userId must clean
+  up the previous identity (ghost-minting becomes an integrity hole once identity costs something);
+  `guardPayload` gains a `.catch` routing handler rejections to `deny()`; `endStream` requires
+  `clientId`; hot-path `console.log` stripping in `userMsg`/`joinRoom` (latency rider).
+
+### B3. ls — mint before connect; useSocket becomes a connection state machine
+
+**Rewrite decided, contract frozen:** `useSocket` keeps its exact signature and return shape
+(`socket, streamUpdate, messageHistory, authError, …` — page.tsx/Chat barely change), but its internals
+become a pure connection state machine in `lib/room/` (same pattern as `socketAuth.ts`: pure module,
+vitest-covered; the hook is a thin React adapter). Rationale: phase B's mint/retry/backoff state cannot
+be safely layered onto the current effect soup (`forceNew:true`, three uncoordinated
+`useLocalStorage('userId')` reads, join/leave emitted from effect dep changes, empty error handlers).
+
+Machine requirements:
+
+- Mint immediately before connecting, via socket.io's **`auth` callback form** — a fresh ticket per
+  connection attempt, so the minute-40 network blip reconnects cleanly without the `connect_error`
+  round-trip.
+- **One in-flight mint** per socket; concurrent failures share it. `AbortController` so
+  navigation/unmount cannot complete a stale mint.
+- On `AUTH_*` `connect_error`: re-mint once and retry; the "once" budget is per failed connection cycle
+  and **resets after a successful connect**. **No retry loop on mint 401/403** — 401 surfaces as session
+  recovery, 403 as "not entitled"; network/5xx gets bounded retry.
+- **Jitter + backoff** on reconnect so a socket-box restart does not stampede the LMS (this is the
+  no-class-size-limit protection).
+- Ticket expiry never disconnects an established socket; a later reconnect just mints fresh.
+- **Identity comes off the ticket** — the machine holds `userId`/`name` from the minted ticket's claims
+  and passes them down; Chat takes identity as a prop. This deletes the three-way
+  `useLocalStorage('userId')` coupling (the phase A ledger's chat-identity finding) at the root.
+- `authError` surface extends to the new `connect_error` codes (blocking screen, same as R4's).
+
+**External hop (user-owned, outside the brain's five repos):** the student LMS frontend must construct
+the ls class link with the student's Auth token attached (same convention as admin-dashboard's teacher
+handoff). Without it students arrive credential-less and the flip locks them out. Token-in-URL remains a
+known wart for BOTH paths — deferred to the one-time-handoff-code task, unchanged.
+
+### B4. brain
+
+- GLOSSARY: **Realtime token** entry beside Playback URL token (mint contract, TTL semantics, the
+  demotion of the Streamer token from socket credential to mint input).
+- SYSTEM.md: contract row `Realtime token (mint)` — `GET /api/classes/{classId}/realtime-token`,
+  writer —, reader ls; plus the arcs update (socket handshake now shows the ticket exchange).
+
+### B5. Rollout order (A and B deploy in ONE window — decided)
+
+Phase A (`8c215ea`/`75f261e`) and phase B ship together; the sequencing below subsumes the phase A
+two-box instructions above, which still govern the phase A verification items.
+
+1. Generate `REALTIME_TOKEN_SECRET`; provision on nodejs-server + **both** livestream boxes.
+2. Deploy nodejs-server mint endpoint (inert until called).
+3. Deploy livestream (phase A + B) to both boxes: dual verification, `REALTIME_AUTH_REQUIRED=false`.
+4. Deploy ls (phase A + B): mints and sends Realtime tickets.
+5. Live-verify the full matrix (phase A items + mint/handshake path + chat as teacher AND student).
+6. Flip `REALTIME_AUTH_REQUIRED=true` on both boxes in one coordinated window.
+7. Remove legacy Streamer-token handshake acceptance; drop `JWT_SECRET_KEY` from both boxes' env.
+
+Prerequisite for step 6: the student LMS frontend link change (user-owned) is live.
+
+Once phase B lands: anonymous sockets disappear, students have proven identity, the socket no longer
+depends on the 12h URL-borne Streamer token, and a leaked teacher link must pass a live LMS check on
+every connect.
 
 ## Explicitly out of scope
 
@@ -299,12 +427,57 @@ depending on the 12h URL-borne Streamer token, and anonymous sockets disappear e
 
 ## Acceptance criteria — phase B
 
-- [ ] `GET /api/classes/{classId}/realtime-token` reuses `authenticateUserOrStreamer` + `authorizeClassAccess(accessKind:'play')`; a non-entitled user gets 403, a Streamer token for another class gets 403
-- [ ] `REALTIME_TOKEN_SECRET` is distinct from `JWT_SECRET` and `STREAMER_JWT_SECRET` in both repos' env validation
-- [ ] livestream rejects handshakes without a valid ticket when `REALTIME_AUTH_REQUIRED=true`, and the flag defaults off until `ls` ships the mint call
-- [ ] `ls` mints before connecting and re-mints once on an `AUTH_*` `connect_error`
-- [ ] An established socket survives ticket expiry (no mid-class disconnect)
-- [ ] GLOSSARY gains **Realtime token** as a cross-repo term next to Playback URL token; SYSTEM.md gains the contract row
+### nodejs-server (mint)
+
+- [ ] `GET /api/classes/{classId}/realtime-token` reuses `authenticateUserOrStreamer` +
+      `authorizeClassAccess(accessKind:'play')` — the shared seam, never duplicated order logic
+- [ ] 401: absent/invalid/expired Auth token; revoked login session. 403: non-entitled viewer;
+      Streamer token for another class. Success: free class, entitled paid class, correct-class Streamer
+- [ ] Only a class-scoped Streamer token mints `role:'host'`; an **admin Auth token mints `viewer`**
+- [ ] Exact claims asserted (`userId`, `classId`, `role`, `name`, `jti`, `iss`, `aud`, `exp` ≈ 10 min),
+      HS256 only, `Cache-Control: no-store`, no ticket/secret in logs
+- [ ] `REALTIME_TOKEN_SECRET` distinct from `JWT_SECRET` and `STREAMER_JWT_SECRET`; in env validation
+- [ ] Course-placement + order reads run concurrently; compound indexes verified/added for
+      `Order { userId, orderStatus }` and `CourseClass { class, isActive, status }`; mint latency +
+      sub-spans instrumented
+
+### livestream (verify)
+
+- [ ] Dual verifier: legacy Streamer token AND Realtime ticket both accepted while
+      `REALTIME_AUTH_REQUIRED=false`; flag on ⇒ missing/invalid/expired ticket fails **before**
+      `connection` handlers install, with `connect_error` `data.code` ∈
+      `{AUTH_REQUIRED, AUTH_EXPIRED, AUTH_INVALID}`
+- [ ] Ticket validation: HS256 pinned, `iss`/`aud`/claim-shape checked, `classId` must equal the joined
+      room, `role` selects capability; expired/malformed/wrong-audience each get the right code
+- [ ] An established socket survives ticket expiry (no mid-class disconnect); no event handler performs
+      an LMS call (hot path stays local)
+- [ ] `privateMessageHistory` restored for viewers; R5c logging downgrade deleted once the flag is on
+- [ ] Ledger folds landed: same-room/different-userId rejoin cleans up the previous identity;
+      `guardPayload` catches handler rejections into `deny()`; `endStream` requires `clientId`;
+      `userMsg`/`joinRoom` hot-path `console.log`s stripped
+- [ ] Two-box topology verified: host controls from the socket box reach the ingest box's ffmpeg with
+      auth on
+
+### ls (connection state machine)
+
+- [ ] `useSocket` return contract unchanged (page.tsx/Chat diffs minimal); internals are a pure machine
+      in `lib/room/`, vitest-covered
+- [ ] Mint via `auth` callback form — fresh ticket per connection attempt; mint success before first
+      connect; reconnect after ticket expiry works without user-visible error
+- [ ] One in-flight mint shared by concurrent attempts; AbortController cancels on unmount/navigation
+- [ ] One re-mint per failed connection cycle on `AUTH_*` codes, budget resets after success; **no
+      retry loop on 401/403** (401 → session recovery surface, 403 → not-entitled surface); bounded
+      retry with jitter/backoff on network/5xx (stampede protection — no class-size limits exist)
+- [ ] Chat identity comes from the ticket claims as a prop — the `useLocalStorage('userId')`
+      three-instance coupling is deleted
+- [ ] `authError` blocking screen covers the new `connect_error` codes
+
+### brain
+
+- [ ] GLOSSARY gains **Realtime token** next to Playback URL token; SYSTEM.md gains the contract row +
+      arc update
+- [ ] Rollout executed in the B5 order; step 6 (flag flip) blocked on the user-owned student-frontend
+      link change
 
 ## User stories covered
 

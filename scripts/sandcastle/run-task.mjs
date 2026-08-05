@@ -109,7 +109,7 @@ const PLANS = {
         docs: ["SYSTEM.md"],
       },
       // Task 19 is PHASE A REMEDIATION ONLY (see the spec's "Phase A remediation" section).
-      // Phase A itself already shipped as livestream 3f1425a; phase B must NOT be started.
+      // Phase A itself already shipped as livestream 3f1425a; phase B is task 19b below.
       "19": {
         maxIterations: 10,
         legs: [
@@ -168,6 +168,128 @@ const PLANS = {
           },
         ],
         docs: [],
+      },
+      // Task 19b is PHASE B (Realtime token). Three legs, run ONE AT A TIME with
+      // `--leg=<repo>` and an independent review between legs (nodejs-server →
+      // livestream → ls). The 19b charter pins the cross-leg wire shapes; the
+      // governing B1–B5 spec + acceptance criteria live in the task 19 doc (inlined).
+      "19b": {
+        maxIterations: 12,
+        legs: [
+          {
+            repo: "nodejs-server",
+            focus:
+              "SCOPE: implement ONLY section B1 of the phase B spec (the realtime-token mint endpoint) plus its " +
+              "acceptance criteria block ('nodejs-server (mint)'). The livestream verifier (B2) and ls client (B3) are " +
+              "separate legs — do not touch them; do not add socket.io code anywhere.\n" +
+              "Build: GET /api/classes/{classId}/realtime-token behind the EXISTING authenticateUserOrStreamer " +
+              "middleware (src/middleware/authMiddleware.ts:109) and the EXISTING authorizeClassAccess " +
+              "(src/services/classAccessAuthz.ts:65, accessKind:'play') — reuse the shared seam, never duplicate " +
+              "entitlement/order logic. Closest controller pattern: src/controllers/playbackController.ts:75, " +
+              "including its Streamer class-scope check. Route registration: src/routes/classRoutes.ts.\n" +
+              "Host issuance rule (security-critical): role:'host' ONLY when the caller presented a valid Streamer " +
+              "token whose classId claim equals the requested class. EVERY Auth access token mints role:'viewer' — " +
+              "including admins; authorizeClassAccess's admin entitlement bypass must not leak into host capability. " +
+              "Write the test proving an admin Auth token mints viewer.\n" +
+              "Ticket: HS256 JWT, exp 10 minutes, claims { userId, classId, role, name, jti, iss:'lms', " +
+              "aud:'livestream-socket', iat, exp } per the 19b charter's wire pins; name comes from the LMS user " +
+              "record for viewers and the Streamer token's claims for hosts. Response: 200 " +
+              "{ token, expiresIn: 600 } with Cache-Control: no-store. Never log the ticket or the secret. " +
+              "REALTIME_TOKEN_SECRET goes into the repo's env validation, must be present and distinct from " +
+              "JWT_SECRET and STREAMER_JWT_SECRET. No rotation machinery (no kid, no dual keys) — decided.\n" +
+              "Performance (required, not optional): once the class is loaded, run the course-placement and order " +
+              "entitlement reads CONCURRENTLY while preserving the exact shared entitlement rule; verify or add " +
+              "compound indexes matching Order { userId, orderStatus } and CourseClass { class, isActive, status }; " +
+              "instrument total mint latency plus session/class/course/order sub-spans using the repo's existing " +
+              "observability pattern.\n" +
+              "Test matrix (all required): 401 absent/invalid/expired Auth token; 401 revoked login session; " +
+              "403 non-entitled viewer; 403 Streamer token for another class; success for free class, entitled paid " +
+              "class, correct-class Streamer; admin-mints-viewer; exact claims/TTL/alg/iss/aud asserted; no-store " +
+              "header; endpoint uses the shared authorization seam (assert by spy/refactor-proof test, not by reading " +
+              "the source).",
+          },
+          {
+            repo: "livestream",
+            focus:
+              "SCOPE: implement ONLY section B2 of the phase B spec (ticket verification + the ledger folds) plus its " +
+              "acceptance criteria block ('livestream (verify)'). The LMS mint endpoint (B1) and ls client (B3) are " +
+              "separate legs — do not touch them. Phase A + remediation are ALREADY SHIPPED in this worktree " +
+              "(8c215ea: lib/socketIdentity.js, lib/socketAuthz.js, lib/socketPayload.js, the io.use() wiring and " +
+              "per-event guards in rtmpserver-2.js, and their tests) — read them first; extend, do not rebuild.\n" +
+              "Dual verification in the A1 middleware: (1) a Realtime ticket — HS256 pinned, secret " +
+              "REALTIME_TOKEN_SECRET, required claims userId/classId/role/iss:'lms'/aud:'livestream-socket' " +
+              "validated for type and non-emptiness, small documented clock skew; role selects host vs viewer " +
+              "principal; classId claim must equal the joined room at joinRoom (existing HOST_CLASS_MISMATCH-style " +
+              "denial, now for BOTH roles). (2) While env REALTIME_AUTH_REQUIRED=false (default), a legacy Streamer " +
+              "token (existing JWT_SECRET_KEY path) is still accepted and anonymous sockets still connect — exact " +
+              "phase A semantics preserved. When REALTIME_AUTH_REQUIRED=true: a handshake without a valid ticket is " +
+              "REJECTED before any connection handler runs, via next(err) with err.data = { code } and code in " +
+              "{ AUTH_REQUIRED, AUTH_EXPIRED, AUTH_INVALID } (the 19b charter's wire pins); the anonymous principal " +
+              "path is unreachable; a VERIFIED viewer principal exists (kind:'viewer', identity from ticket claims) " +
+              "and privateMessageHistory is allowed for a viewer reading THEIR OWN history (self-scoped, from the " +
+              "principal, never the payload) while remaining denied for host-impersonation attempts; the R5c " +
+              "invalid_signature log downgrade is removed on this path (an unverifiable token IS alarming when " +
+              "tickets are required). REALTIME_TOKEN_SECRET joins validateBootConfig; JWT_SECRET_KEY stays for now " +
+              "(legacy acceptance is removed only after live verification, per B5 step 7 — out of scope here).\n" +
+              "Established sockets are never re-checked: ticket exp gates the HANDSHAKE only; write the test proving " +
+              "a connected socket survives claim expiry. No handler may call the LMS — identity stays claims-only.\n" +
+              "Ledger folds (required, from the spec's remediation-ledger additions): (a) joinRoom same-room rejoin " +
+              "under a DIFFERENT userId must clean up the previous identity exactly like the different-room branch " +
+              "(remove old Redis socket entry, host keyspace entry if host, handleUserLeave, then register the new " +
+              "identity once); (b) guardPayload catches handler promise rejections and routes them to deny() with a " +
+              "typed INTERNAL_ERROR denial plus metric (the process safety net stays as last resort); (c) endStream " +
+              "requires a non-empty clientId — missing means a typed INVALID_PAYLOAD denial, never a " +
+              "/undefined/<classId> StreamPath; (d) strip the hot-path console.log/DEBUG dumps from userMsg and " +
+              "joinRoom (full-message and payload dumps) — keep error/warn logs.\n" +
+              "Tests: extend tests/socketHandlerGates.test.js (boots the REAL rtmpserver-2.js with process boundaries " +
+              "mocked) for the flag-on rejection matrix (missing/expired/malformed/wrong-aud tickets → the right " +
+              "AUTH_* code, before connection handlers), dual-accept while flag off, viewer principal capabilities, " +
+              "self-scoped privateMessageHistory, and the ledger folds. Jest rule in this repo: any variable a " +
+              "jest.mock() factory closes over must be named mock*. Full suite (cd backend && npx jest tests/) stays " +
+              "green — 288 passing before your changes.",
+          },
+          {
+            repo: "ls",
+            focus:
+              "SCOPE: implement ONLY section B3 of the phase B spec (mint-before-connect + the useSocket connection " +
+              "state machine rewrite) plus its acceptance criteria block ('ls (connection state machine)'). The LMS " +
+              "endpoint (B1) and livestream verifier (B2) already exist in their repos — build against the 19b " +
+              "charter's wire pins EXACTLY: GET {LMS}/api/classes/{classId}/realtime-token with " +
+              "Authorization: Bearer <the token ls already holds from the URL>, 200 { token, expiresIn }, 401/403 " +
+              "terminal; socket.io auth.token carries the ticket; connect_error err.data.code in " +
+              "{ AUTH_REQUIRED, AUTH_EXPIRED, AUTH_INVALID }. Follow the existing LMS-call pattern in lib/playback/ " +
+              "and lib/api/.\n" +
+              "REWRITE, CONTRACT FROZEN: useSocket keeps its exact signature and return shape (socket, streamUpdate, " +
+              "fileGenerated, totalUsers, usersList, latestUserJoined, messageHistory, requestMessageHistory, " +
+              "authState, authError, lastAuthzError) so page.tsx and Chat barely change — but its internals become a " +
+              "pure connection state machine module in lib/room/ (same pattern as lib/room/socketAuth.ts: pure " +
+              "functions/machine, vitest-covered, no React imports), with the hook as a thin adapter. The current " +
+              "effect soup (forceNew:true, three uncoordinated useLocalStorage('userId') reads, join/leave emitted " +
+              "from effect dep changes, empty error handlers) must not survive the rewrite.\n" +
+              "Machine requirements (all from the spec): mint via socket.io's auth CALLBACK form so every connection " +
+              "attempt fetches a fresh ticket (a reconnect after ticket expiry works with no user-visible error); " +
+              "ONE in-flight mint per socket, shared by concurrent attempts; AbortController cancels stale mints on " +
+              "unmount/navigation; on an AUTH_* connect_error re-mint once and retry, budget per failed connection " +
+              "cycle, reset after a successful connect; mint 401 → blocking session-recovery error surface, 403 → " +
+              "blocking not-entitled surface, NO retry loop on either; network/5xx → bounded retry with jitter + " +
+              "backoff (stampede protection — there are no class-size limits); established-socket behavior unchanged " +
+              "by ticket expiry. Preserve the R3 join-first bootstrap ordering (emitRoomBootstrap) and the R4 " +
+              "authState/authzError/joinRoomError surfacing — extend authError to also cover the AUTH_* " +
+              "connect_error codes as blocking states.\n" +
+              "Identity: the machine holds userId and name FROM THE MINTED TICKET'S CLAIMS (decode payload " +
+              "client-side, no verification needed) and the hook exposes them; Chat receives identity as a prop " +
+              "from the page instead of its own useLocalStorage('userId') read — delete that coupling (the phase A " +
+              "ledger's chat-identity finding). joinRoom and userMsg payloads carry the ticket-derived identity so " +
+              "the server's requireSelf binding always passes.\n" +
+              "No ls-side legacy/fallback path: the livestream backend's dual verification covers rollout " +
+              "compatibility — ls always mints. A failed mint is a surfaced error state, never a silent fallback to " +
+              "the URL token as socket credential.\n" +
+              "Tests: vitest the machine exhaustively (mint success/401/403/5xx, retry budgets and reset, single " +
+              "in-flight mint under concurrent attempts, abort on unmount, jitter bounds, AUTH_* code handling, " +
+              "identity extraction from ticket) plus keep the existing 72 tests green and tsc --noEmit clean.",
+          },
+        ],
+        docs: ["docs/plans/tasks/19-socket-auth-and-authorization.md"],
       },
     },
   },
