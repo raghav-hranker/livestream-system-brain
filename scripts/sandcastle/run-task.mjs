@@ -108,6 +108,67 @@ const PLANS = {
         ],
         docs: ["SYSTEM.md"],
       },
+      // Task 19 is PHASE A REMEDIATION ONLY (see the spec's "Phase A remediation" section).
+      // Phase A itself already shipped as livestream 3f1425a; phase B must NOT be started.
+      "19": {
+        maxIterations: 10,
+        legs: [
+          {
+            repo: "livestream",
+            focus:
+              "SCOPE: implement ONLY the 'Phase A remediation (2026-08-05) — pre-deploy' section of the spec, " +
+              "items R1, R2 and R5a–R5e. Everything else in the spec is context, NOT work:\n" +
+              "  * Phase A itself is ALREADY IMPLEMENTED in this worktree (commit 3f1425a: lib/socketIdentity.js, " +
+              "lib/socketAuthz.js, the io.use() wiring and per-event guards in rtmpserver-2.js, tests/socketIdentity.test.js, " +
+              "tests/socketAuthz.test.js, tests/socketHandlerGates.test.js). Do NOT rebuild it, do NOT redesign it — " +
+              "read it first, then fix the specific defects R1/R2/R5 name.\n" +
+              "  * Phase B (the Realtime token, REALTIME_TOKEN_SECRET, the nodejs-server mint endpoint) is OUT OF SCOPE. " +
+              "Do not implement any part of it, and do not add REALTIME_* config.\n" +
+              "  * R3 and R4 are the ls repo's half and are handled by a separate leg — do not touch ls.\n" +
+              "R1 is the priority: handlers destructure their payload in the signature, so an event emitted with a " +
+              "missing/null/scalar/malformed payload throws before any authz gate runs, and the backend has no " +
+              "unhandledRejection/uncaughtException handler — one emit from an anonymous socket can kill the process. " +
+              "R2 is a real authz gap: userMsg spreads `...data` and broadcasts `data.userId`, so a joined viewer can " +
+              "post as the teacher; bind the sender to the socket identity via requireSelf and overwrite the stored and " +
+              "broadcast userId/userName. Follow the existing house pattern exactly: pure logic in backend/lib/, " +
+              "unit tests with mocked boundaries, thin guards at the call sites in rtmpserver-2.js, typed denials emitted " +
+              "and metered via deny(). Extend tests/socketHandlerGates.test.js (it boots the REAL rtmpserver-2.js with " +
+              "every process boundary mocked) with the malformed-payload matrix and a public-chat impersonation test — " +
+              "the acceptance bar is 'verified against the real handler path, not just the helper'. Note jest's rule in " +
+              "this repo: any variable a jest.mock() factory closes over must be named mock*. The whole suite " +
+              "(cd backend && npx jest tests/) must stay green — it was 237 passing before your changes.",
+          },
+          {
+            repo: "ls",
+            focus:
+              "SCOPE: implement ONLY items R3 and R4 of the spec's 'Phase A remediation (2026-08-05) — pre-deploy' " +
+              "section. The livestream server half (R1, R2, R5) is a separate leg — do not touch it — and phase B " +
+              "(the Realtime token) is OUT OF SCOPE.\n" +
+              "Context: the livestream backend now enforces per-event authorization. Events emitted before a successful " +
+              "joinRoom are rejected with a typed denial, so lib/hooks/useSocket.ts breaks post-deploy: it emits " +
+              "`pinMessage` and `getMediaMessages` in the mount effect, while `joinRoom` is only emitted later from the " +
+              "connected/roomId effect. Both now come back denied and are never retried, so the pinned-message and media " +
+              "bootstrap silently fail for every user.\n" +
+              "R3: request pin, media and histories only AFTER a successful join — reorder them into the join effect " +
+              "(and/or gate them on a join acknowledgement) so the emit order is join-first. Keep the existing behaviour " +
+              "otherwise: the same event names and payload shapes, and the teacher/student split on privateMessageHistory.\n" +
+              "R4: the client currently listens to NONE of the server's auth/authz channels (its `error` handler is an " +
+              "empty function). Add handlers for `authState` ({ authenticated: boolean, reason?, role? }, emitted once on " +
+              "connect), `authzError` ({ code, event, message } — the mirror channel every denial is emitted on) and " +
+              "`joinRoomError` ({ code, message } — codes include HOST_CLASS_MISMATCH and IDENTITY_RESERVED). Surface a " +
+              "blocking, visible error for a teacher whose authentication or join was denied — the teacher UI must not " +
+              "appear successfully connected after a denied join. Expose the state through the hook so the consuming " +
+              "components can render it.\n" +
+              "Known-expected in phase A: a student's LMS Auth token cannot be verified by the livestream box by design, " +
+              "so a non-teacher receives authState { authenticated: false, reason: 'invalid_signature' } and this is NORMAL " +
+              "— it must NOT be surfaced as a blocking error for viewers. Only a teacher/streamer connection failing " +
+              "authentication, or any denied join, is a hard error.\n" +
+              "Follow the repo's own conventions; if it has a test runner, cover the new event order and the auth-error " +
+              "state, otherwise keep the change tight and typed.",
+          },
+        ],
+        docs: [],
+      },
     },
   },
   pdf: {
@@ -307,7 +368,7 @@ for (const leg of legs) {
     cwd: repoPath,
     prompt: buildPrompt(plan, nn, task, leg),
     branchStrategy: { type: "branch", branch },
-    maxIterations: 6,
+    maxIterations: task.maxIterations ?? 6,
     completionSignal: COMPLETION,
     logging: { type: "file", path: path.join(BRAIN, `.sandcastle/logs/${planName}-task-${nn}-${leg.repo}.log`) },
   });
