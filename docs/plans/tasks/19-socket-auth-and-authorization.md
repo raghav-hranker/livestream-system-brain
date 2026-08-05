@@ -441,21 +441,21 @@ every connect.
       `Order { userId, orderStatus }` and `CourseClass { class, isActive, status }`; mint latency +
       sub-spans instrumented
 
-### livestream (verify)
+### livestream (verify) — DONE 2026-08-05, merged `ae0f02c` (leg `535ecd6`), suite 288→326; review clean (no defects). Notes: success meters ride `incrementErrors` (cosmetic); `REALTIME_TOKEN_SECRET` is now a boot requirement on EVERY livestream deploy incl. flag-off boxes
 
-- [ ] Dual verifier: legacy Streamer token AND Realtime ticket both accepted while
+- [x] Dual verifier: legacy Streamer token AND Realtime ticket both accepted while
       `REALTIME_AUTH_REQUIRED=false`; flag on ⇒ missing/invalid/expired ticket fails **before**
       `connection` handlers install, with `connect_error` `data.code` ∈
       `{AUTH_REQUIRED, AUTH_EXPIRED, AUTH_INVALID}`
-- [ ] Ticket validation: HS256 pinned, `iss`/`aud`/claim-shape checked, `classId` must equal the joined
+- [x] Ticket validation: HS256 pinned, `iss`/`aud`/claim-shape checked, `classId` must equal the joined
       room, `role` selects capability; expired/malformed/wrong-audience each get the right code
-- [ ] An established socket survives ticket expiry (no mid-class disconnect); no event handler performs
+- [x] An established socket survives ticket expiry (no mid-class disconnect); no event handler performs
       an LMS call (hot path stays local)
-- [ ] `privateMessageHistory` restored for viewers; R5c logging downgrade deleted once the flag is on
-- [ ] Ledger folds landed: same-room/different-userId rejoin cleans up the previous identity;
+- [x] `privateMessageHistory` restored for viewers; R5c logging downgrade deleted once the flag is on
+- [x] Ledger folds landed: same-room/different-userId rejoin cleans up the previous identity;
       `guardPayload` catches handler rejections into `deny()`; `endStream` requires `clientId`;
       `userMsg`/`joinRoom` hot-path `console.log`s stripped
-- [ ] Two-box topology verified: host controls from the socket box reach the ingest box's ffmpeg with
+- [x] Two-box topology verified: host controls from the socket box reach the ingest box's ffmpeg with
       auth on
 
 ### ls (connection state machine)
