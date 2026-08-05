@@ -427,17 +427,17 @@ every connect.
 
 ## Acceptance criteria — phase B
 
-### nodejs-server (mint)
+### nodejs-server (mint) — DONE 2026-08-05, merged `8600a2f1` (leg `c6f6315` + review fix `3527470`), suite 509→536
 
-- [ ] `GET /api/classes/{classId}/realtime-token` reuses `authenticateUserOrStreamer` +
+- [x] `GET /api/classes/{classId}/realtime-token` reuses `authenticateUserOrStreamer` +
       `authorizeClassAccess(accessKind:'play')` — the shared seam, never duplicated order logic
-- [ ] 401: absent/invalid/expired Auth token; revoked login session. 403: non-entitled viewer;
+- [x] 401: absent/invalid/expired Auth token; revoked login session. 403: non-entitled viewer;
       Streamer token for another class. Success: free class, entitled paid class, correct-class Streamer
-- [ ] Only a class-scoped Streamer token mints `role:'host'`; an **admin Auth token mints `viewer`**
-- [ ] Exact claims asserted (`userId`, `classId`, `role`, `name`, `jti`, `iss`, `aud`, `exp` ≈ 10 min),
+- [x] Only a class-scoped Streamer token mints `role:'host'`; an **admin Auth token mints `viewer`**
+- [x] Exact claims asserted (`userId`, `classId`, `role`, `name`, `jti`, `iss`, `aud`, `exp` ≈ 10 min),
       HS256 only, `Cache-Control: no-store`, no ticket/secret in logs
-- [ ] `REALTIME_TOKEN_SECRET` distinct from `JWT_SECRET` and `STREAMER_JWT_SECRET`; in env validation
-- [ ] Course-placement + order reads run concurrently; compound indexes verified/added for
+- [x] `REALTIME_TOKEN_SECRET` distinct from `JWT_SECRET` and `STREAMER_JWT_SECRET`; in env validation
+- [x] Course-placement + order reads run concurrently; compound indexes verified/added for
       `Order { userId, orderStatus }` and `CourseClass { class, isActive, status }`; mint latency +
       sub-spans instrumented
 
