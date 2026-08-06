@@ -25,6 +25,7 @@ the writers are the two transcoders (video contracts) and admin-dashboard (PDF c
 | **Recordings webhook** | secured `POST /api/classes/recordings-prerecorded` `{bucket,key}` + secret; unsecure `POST /recordings-prerecorded` `{url,quality,size}` | video-transcoder (1B, 1C) | nodejs-server | MP4 set only, no HLS. Replaces `mp4Recordings` wholesale. |
 | **Class-link callback** | PHP `…/admin/api/update-online-class-link`; nodejs `PUT /classes/{classId}` `{class_link}` | video-transcoder (1A, **unsecure** only) | LMS | Replaced by the stream-status webhook for secured customers. |
 | **Playback (mint)** | `GET /api/classes/{classId}/playback` (Auth or Streamer token) → signed CDN URL (`?token=…&expires=…`) | — | **ls** viewer (consumer) | nodejs-server signs from `Class.hlsAsset`. No `hlsAsset` ⇒ `/playback` 404s; `preparing`/`processing` ⇒ 425. |
+| **Realtime token (mint)** | `GET /api/classes/{classId}/realtime-token` (Auth or Streamer token) → `{ token, expiresIn: 600 }`, an HS256 socket ticket (`REALTIME_TOKEN_SECRET`) | — | **ls** (exchanges before every socket connect; livestream verifies the ticket at the handshake) | Socket analogue of Playback (mint) — same `authenticateUserOrStreamer` + `authorizeClassAccess` seam, so chat and video entitlement cannot drift. Streamer token ⇒ `role:'host'` (own class only); every Auth token ⇒ `viewer`. TTL gates the handshake only. `REALTIME_AUTH_REQUIRED` on livestream = secured/unsecure axis (off ⇒ phase A dual-accept). See task 19 doc phase B. |
 | **Private-mode write** | `PATCH /api/classes/{classId}/private-mode` + `X-Transcoder-Secret`, body `{isPrivate}` | livestream (host toggle via class-UI socket) | nodejs-server | `isPrivate` is LMS-owned but **dual-writable**: LMS admin UI writes it directly, livestream writes via this endpoint. LMS side landed on `launch/quicktricks-v2`; livestream's `classClient.setPrivateMode` still targets the dead `/api/internal/...` URL — repoint is launch task 05. Late-join bootstrap: `joinRoom` emits current `isPrivate` to the joining socket, and `userMsg` enforces it server-side (launch task 11). |
 | **Transcoder secret** | header `X-Transcoder-Secret` ⇄ env `TRANSCODER_WEBHOOK_SECRET` | transcoders send | nodejs-server checks | **Per secured customer**, gates *both* webhooks. Never global. |
 | **PDF access (mint)** | `GET /api/admin/pdfs/{pdfId}/access` (admin) · `GET /api/courses/{courseId}/pdfs/{pdfId}/access` · `GET /api/classes/{classId}/pdfs/{pdfId}/access` (entitled viewer) → signed Bunny URL | — | admin-dashboard + student clients (consumers) | nodejs-server signs from `Pdf.pdfAsset` (`documents` zone). PDF analogue of Playback (mint): no `pdfAsset` ⇒ nothing to sign. See `repos/nodejs-server/docs/adr/0002-documents-zone-and-exact-file-tokens.md`. |
@@ -38,6 +39,8 @@ LIVE
   OBS → livestream backend (GPU HLS) → Live bucket (B2+Bunny)
        └ on ENDED → stream-status webhook → nodejs-server sets Class.hlsAsset
   viewer → ls → GET /playback → nodejs-server signs hlsAsset → CDN → playback
+  socket → ls → GET /realtime-token (Auth/Streamer in, 10-min ticket out)
+           → socket.io handshake presents ticket → livestream verifies locally → room
 
 RECORDED (source MP4 upload)
   upload → video-transcoder intake (src/) → Redis → job-manager → container/

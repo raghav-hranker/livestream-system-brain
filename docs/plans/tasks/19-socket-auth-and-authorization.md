@@ -458,25 +458,25 @@ every connect.
 - [x] Two-box topology verified: host controls from the socket box reach the ingest box's ffmpeg with
       auth on
 
-### ls (connection state machine)
+### ls (connection state machine) — DONE 2026-08-06, merged `5c2fab7` (leg `800dce8`), suite 72→112 + tsc clean; review clean (notes: LiveCamera second-socket double-mint = cleanup candidate; pre-identity send window returns empty userId ~1s)
 
-- [ ] `useSocket` return contract unchanged (page.tsx/Chat diffs minimal); internals are a pure machine
+- [x] `useSocket` return contract unchanged (page.tsx/Chat diffs minimal); internals are a pure machine
       in `lib/room/`, vitest-covered
-- [ ] Mint via `auth` callback form — fresh ticket per connection attempt; mint success before first
+- [x] Mint via `auth` callback form — fresh ticket per connection attempt; mint success before first
       connect; reconnect after ticket expiry works without user-visible error
-- [ ] One in-flight mint shared by concurrent attempts; AbortController cancels on unmount/navigation
-- [ ] One re-mint per failed connection cycle on `AUTH_*` codes, budget resets after success; **no
+- [x] One in-flight mint shared by concurrent attempts; AbortController cancels on unmount/navigation
+- [x] One re-mint per failed connection cycle on `AUTH_*` codes, budget resets after success; **no
       retry loop on 401/403** (401 → session recovery surface, 403 → not-entitled surface); bounded
       retry with jitter/backoff on network/5xx (stampede protection — no class-size limits exist)
-- [ ] Chat identity comes from the ticket claims as a prop — the `useLocalStorage('userId')`
+- [x] Chat identity comes from the ticket claims as a prop — the `useLocalStorage('userId')`
       three-instance coupling is deleted
-- [ ] `authError` blocking screen covers the new `connect_error` codes
+- [x] `authError` blocking screen covers the new `connect_error` codes
 
 ### brain
 
-- [ ] GLOSSARY gains **Realtime token** next to Playback URL token; SYSTEM.md gains the contract row +
-      arc update
-- [ ] Rollout executed in the B5 order; step 6 (flag flip) blocked on the user-owned student-frontend
+- [x] GLOSSARY gains **Realtime token** next to Playback URL token; SYSTEM.md gains the contract row +
+      arc update (2026-08-06)
+- [x] Rollout executed in the B5 order; step 6 (flag flip) blocked on the user-owned student-frontend
       link change
 
 ## User stories covered
