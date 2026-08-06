@@ -401,6 +401,59 @@ Once phase B lands: anonymous sockets disappear, students have proven identity, 
 depends on the 12h URL-borne Streamer token, and a leaked teacher link must pass a live LMS check on
 every connect.
 
+### B5 execution record — steps 1–5 DONE 2026-08-06; 6–7 pending the student-link change
+
+Topology correction disclosed by the user at deploy time: the quicktricks deployment is a **single
+livestream box**, not the two-box split (that split is the *other tenant's* prod on the same machine —
+`~/livestream` / pm2 `livestream-topper`, hands off). Deployed surfaces:
+
+| Where | What | Evidence |
+|---|---|---|
+| `phonetics` box (34.126.210.209), pm2 `quicktricks-lms`, `~/quicktricks-lms` | nodejs-server `8600a2f1` via `~/deploy-quicktricks-lms.sh` | boot gate passed; unauth mint → 401; Streamer-token mint → 200 + `Cache-Control: no-store` + exact charter claims (600s, `jti`, `iss`/`aud` pins) |
+| `livestream-testing-raghav` box (34.131.52.223), pm2 `quicktricks-livestream`, `~/quicktricks-livestream` | livestream `ae0f02c`, `REALTIME_AUTH_REQUIRED=false` | boot green with new secret; `/live` still 404; socket path `/ws/socket.io/` on :8082 |
+| Vercel | ls `5c2fab7` (autodeploy on push) | teacher flow browser-verified by user (mints firing, no-token regression correct) |
+
+Secret provisioning: `REALTIME_TOKEN_SECRET` lives in the phonetics box's persisted
+`~/.quicktricks-lms-secrets` (survives the deploy script's env rebuild), the livestream box's
+`backend/.env`, and locally at brain `.secrets-realtime-token` (mode 600) — same value, never printed.
+
+Step-5 verify matrix closed 2026-08-06, all green: host ticket handshake → `authState {role:host}`;
+synthetic student Auth token vs paid class → 403 "not enrolled", vs free class → 200 `role:viewer`
+(name falls back to `'Viewer'` — the test DB has no student user records; the probe flipped one class
+`isFree` and reverted it); viewer ticket handshake → `authState {role:viewer}`; anonymous connect
+accepted (dual-accept, flag off); garbage ticket degrades to `{authenticated:false, reason:malformed}`.
+Known cosmetic: the LMS test instance strips `REDIS_*` by design (localhost ECONNREFUSED spam), and
+the livestream boot logs a self-resolving "Socket already opened" PubSub reconnection race.
+
+### The student class link — contract for the LMS frontend teams (website + app)
+
+The gate on step 6, settled with the user 2026-08-06. The student LMS frontends (user-owned, NOT one
+of the brain's five repos) open the ls player page with the student's login JWT on the URL:
+
+```
+https://<ls-host>/<clientId>/<classId>/?token=<student's current Auth access token>
+```
+
+- **Built at click time, never stored.** The teacher's link can live in `class_link` because the
+  Streamer token is class-scoped; a student JWT is per-user/per-session, so the frontend appends the
+  freshest JWT it holds when the student clicks (a stale one 401s the mints → session-recovery screen).
+- **`<clientId>` must match the teacher's** (the customer id, not the student's id) — a Streamer token
+  overrides it from claims, a student JWT carries no such claim, so the path value is used as-is and a
+  mismatch addresses a different room.
+- **One token, three roles for it:** the JWT on the page URL is only ever a *mint input*. ls exchanges
+  it at `/playback` (signed CDN URL — Bunny token baked in server-side) and `/realtime-token` (10-min
+  socket ticket). The JWT never appears on a video URL; the Bunny token never appears on the page URL.
+- **App caveat:** appending the token is sufficient only if the app opens ls (webview/browser). A
+  native player+chat would have to call the two mint endpoints itself and present the ticket at the
+  socket handshake — confirm which pattern the app uses BEFORE the flip, because after it a ticketless
+  socket is rejected (`connect_error` `AUTH_REQUIRED`).
+
+Flip-day checklist (steps 6–7, after a real student click-through succeeds): set
+`REALTIME_AUTH_REQUIRED=true` in the livestream box's `backend/.env`, restart pm2
+`quicktricks-livestream`, re-probe (ticketless → `connect_error AUTH_REQUIRED`; ticketed → joins;
+`/live` → 404), then delete the legacy Streamer-token handshake acceptance and drop `JWT_SECRET_KEY`
+from the box env. Firewall tail (per-box narrowing) follows per "Deploy sequencing" above.
+
 ## Explicitly out of scope
 
 - Moving the **Streamer token out of the URL query string** (`admin-dashboard/components/ClassesDashboard.tsx:143-149`
