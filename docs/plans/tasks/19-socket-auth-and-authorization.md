@@ -248,6 +248,13 @@ R1–R4. Additions to this ledger from that pass:
   R2 turned any drift from mislabeling into IDENTITY_MISMATCH → message silently dropped (console-only
   warn). Fix (cheap, do with phase B or sooner): `useSocket` returns the userId it joined with; Chat
   takes it as a prop.
+  **Follow-up (2026-09-05):** the Chat fix landed with B3, but the **poll launch emit** in the page
+  (`handleLaunchPoll`) was missed — it still stamped `data.userId` from the Streamer token's
+  `clientId.customer_id`, while the host principal is the `userId` claim (= classId). Every poll since
+  the R2 deploy was denied IDENTITY_MISMATCH and dropped; invisible because the page toasted only
+  PRIVATE_MODE and the Polls sidebar rendered optimistically. Fixed in ls `13da9d0` (poll emit uses
+  `chatUserId`; every non-CHAT_MUTED `userMsgError` now toasts). Rule: **any `userMsg`/`privateMsg`
+  emit must stamp the ticket identity from `useSocket`, never the URL param or a token sub-claim.**
 - **Cheap hardenings, optional pre-deploy:** `.catch` inside `guardPayload` routing handler rejections
   to `deny()` (today they land in the process net, caller gets no error); `endStream` requires
   `clientId` (a host emitting `{}` reaches cleanup with `/undefined/<classId>` instead of a typed
