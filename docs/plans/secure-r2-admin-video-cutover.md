@@ -80,3 +80,23 @@ Local checkout inspection is evidence of available code, not proof of deployed c
   The touched transcoder is already on the shared branch; the admin deploy fork uses
   the documented fork exception. No live-service checkout was forced or edited.
 - No remote configuration, production queue, image, or deployment was changed.
+
+### Shared-server reconciliation — 2026-09-10
+
+After read-only investigation of `178.63.88.34`, the user authorized carrying its
+production changes into the secure-intake candidate. Transcoder commit `6af515c`
+preserves those changes and adds compatibility coverage; provenance, fixes and
+release boundaries are recorded in the authoritative
+[transcoder runbook](../../repos/video-transcoder/docs/plans/secure-r2-admin-video-cutover.md#shared-server-changes-carried-into-the-release-candidate-2026-09-10).
+
+Build passed and full transcoder suite passed **218/218, zero failures or skips**.
+Log: `/private/tmp/secure-r2-merged-tests.log`. The candidate was committed locally;
+no push, production image build, configuration change or process restart occurred.
+The admin commit and its previously recorded validation caveats are unchanged.
+
+The [server investigation](secure-r2-deployment-investigation-2026-09-10.md) remains
+the point-in-time operational inventory. Its pending compatibility-test section
+is superseded by the new service runbook record; runtime deployment/canary gates
+are still pending. Shared-branch sync again stopped at the already-occupied live
+worktree; the touched transcoder remains on the manifest branch, and no other
+worktree was forced or switched.
