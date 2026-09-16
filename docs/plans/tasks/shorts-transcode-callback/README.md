@@ -18,12 +18,12 @@ rejected options, none of which are repeated here.
 
 | # | Task | Type | Repo(s) | Blocked by |
 |---|---|---|---|---|
-| 00 | [Audit the listener box against the branch](00-audit-listener-deploy-state.md) | HITL | video-transcoder + listener box | — |
+| 00 | [Audit the listener box against the branch](00-audit-listener-deploy-state.md) — **DONE 2026-09-17; D1–D7 open** | HITL | video-transcoder + listener box | — |
 | 01 | [LMS: transcode-complete endpoint + 24h sweeper](01-lms-transcode-complete-endpoint.md) | AFK | quicktricks-backend | — |
 | 02 | [Listener: per-(queue, client) job profile](02-listener-job-profile.md) | AFK | video-transcoder `src/` | — |
 | 03 | [Manager: profile → container env, guard rows](03-manager-profile-env.md) | AFK | video-transcoder `gpu-server/` | 02 (shape only) |
 | 04 | [Container: reporter owns the contract; callback; MP4 skip](04-container-callback-reporter.md) | AFK | video-transcoder `container/` | 03 (env names only) |
-| 05 | [Deploy in order + acceptance run](05-deploy-and-acceptance.md) | HITL | all + production | 00–04 |
+| 05 | [Deploy in order + acceptance run](05-deploy-and-acceptance.md) — **BLOCKED on D1–D7; the deploy plan in this file is wrong, see the audit** | HITL | all + production | 00–04 |
 | 06 | [Admin: dialog polls the LMS; delete the R2 read path](06-admin-dialog-lms-polling.md) — **code done `614de12`, unpushed** | AFK | quicktricks-admin | 01 |
 | 07 | [Remove the admin `videoStatus` PATCH arm](07-remove-admin-status-arm.md) | AFK | quicktricks-backend | 05, 06 |
 | 08 | [Docs: two axes land in glossary, SYSTEM, slice, transcoder CONTEXT](08-docs-two-axes.md) | AFK | brain + video-transcoder | 05 |

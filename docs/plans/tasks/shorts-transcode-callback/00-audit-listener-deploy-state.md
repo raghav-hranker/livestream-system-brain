@@ -1,7 +1,14 @@
 # Audit the listener box against the branch
 
 **Type:** HITL  
-**Status:** `ready-for-human`  
+**Status:** DONE 2026-09-17 (read-only, nothing changed). Result table appended to
+[`docs/plans/secure-r2-deployment-staging-2026-09-10.md`](../../secure-r2-deployment-staging-2026-09-10.md)
+as "2026-09-17 — Task 00 audit of the transcoder box". **Seven owner decisions (D1–D7) are open and
+task 05 stays blocked until they are answered** — the premise of this task was wrong in three ways:
+the box is on `feat/apx-passthrough-472` (37 commits AHEAD of the slice branch, which it fully
+contains), the shorts queue is served by a release dir running our own unpushed `6af515c` (the
+listener WAS activated, 2026-09-11), and the manager checkout carries an unversioned 139-line Lua
+dedupe feature.  
 **ADR:** [0007](../../../adr/0007-shorts-readiness-via-transcode-callback.md) decision 9
 
 ## Why this is a hard gate
