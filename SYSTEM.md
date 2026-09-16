@@ -117,7 +117,7 @@ at the CDN — see `GLOSSARY.md` → "Storage & serving combos" for the full tab
   branch; which combo is live is env-driven (`STORAGE_*` present ⇒ signed B2, else R2 fallback).
 
 **Shorts are the exception to all of the above.** They ride the *public* output bucket
-(`recordedvideos-hranker`, `recordedvideos.hranker.com`) with no token of any kind — by design, because
+(`recordedvideos-hranker`, served on the listener's `CF_HRANKER_CDN_DOMAIN`) with no token of any kind — by design, because
 a share link that expires is not a share link. Nothing in this section applies to them: no combo, no
 Playback URL token, no 403-on-expiry, no `/playback`. See ADR-0006.
 

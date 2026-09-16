@@ -87,10 +87,31 @@ admin unchanged at 116 pre-existing errors.
 code now reads, none of it currently set anywhere:
 
 - **admin (Vercel):** `SHORTS_UPLOAD_ENDPOINT`, `SHORTS_UPLOAD_BUCKET=tempvideos-hranker`,
-  `SHORTS_UPLOAD_KEY_ID`, `SHORTS_UPLOAD_KEY_SECRET`,
-  `SHORTS_PUBLIC_BASE_URL=https://recordedvideos.hranker.com`, optional `SHORTS_OUTPUT_BUCKET`
+  `SHORTS_UPLOAD_KEY_ID`, `SHORTS_UPLOAD_KEY_SECRET`, `SHORTS_PUBLIC_BASE_URL`,
+  optional `SHORTS_OUTPUT_BUCKET=recordedvideos-hranker`
 - **LMS (prod box):** `SHORTS_PUBLIC_BASE_URL` — **must match the admin's**, or the admin marks a short
   `ready` that the app cannot fetch
+
+> **Corrected 2026-09-16 after reading the listener source** (`repos/video-transcoder/src/intake-routing.js`,
+> `src/index.ts`, `test/listener-compatibility.test.js`). Two values this slice previously stated
+> loosely, and both are load-bearing:
+>
+> **1. Client 472's public lane is on the MIRROR R2 account, not the primary.** `tempvideos-hranker`
+> exists in *both* accounts, each with its own queue. 472 is routed by the queue
+> `CF_HRANKER_BACKUP_QUEUE_ID` (`0890629d0e5f42f6b9acee47ee3116cc`), which `assembleCloudflareQueues`
+> attaches to the **backup/mirror** account — the source comment says so outright: "isolating client
+> 472's storage". Mirror account `1ff6f2000c9aa34ca2ec88c066af092a`; primary is
+> `025b7cddaf43305b7f846a9a51c125fb`. So `SHORTS_UPLOAD_ENDPOINT` must be the **mirror** R2 host, and
+> the credential must be the mirror's. Writing to the *primary* account's identically-named
+> `tempvideos-hranker` is the silent-failure mode: same bucket name, different account, different queue.
+>
+> **2. `SHORTS_PUBLIC_BASE_URL` is NOT reliably `recordedvideos.hranker.com`.** For lane-3 jobs (472's)
+> the CDN is `route.cdnDomain || cloudfrontDomain` (`src/index.ts:204`), and `route.cdnDomain` is the
+> deployed listener's **`CF_HRANKER_CDN_DOMAIN`**. `recordedvideos.hranker.com` is only the
+> `cloudfrontDomains.default` fallback used when that env is unset — and the repo's own compatibility
+> fixture sets it to `https://recordedvideos.hranker**.org**`. **Read the live value off the listener
+> box before setting anything.** Guessing wrong gives a `link` that 404s while everything else looks
+> healthy.
 
 Also still unverified: the public intake bucket needs **CORS** (`s3_put`, `etag` in `exposeHeaders`,
 this admin origin) for the browser multipart PUTs, and the public host needs

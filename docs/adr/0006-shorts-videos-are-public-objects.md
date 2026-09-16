@@ -35,9 +35,17 @@ fix is to give shorts back the lane they were written for.
 |---|---|---|
 | intake bucket | `tempvideos-recorded-v2` | `tempvideos-hranker` |
 | output bucket | `recordedvideos-hranker-v2` | `recordedvideos-hranker` |
-| CDN | signed, token required | `https://recordedvideos.hranker.com`, public |
+| CDN | signed, token required | public; host is the listener's `CF_HRANKER_CDN_DOMAIN` (see note) |
 | report | `stream-status` → `hlsAsset` → `/playback` | `updateClassLinkApi`, a plain public URL |
 | admin env | `R2_VIDEO_UPLOAD_*` (`lib/video-storage.ts`) | `upload_bucket` + `CLOUDFLARE_PUBLIC_URL` (`lib/s3.ts`) |
+
+> **Note (2026-09-16, from the listener source).** Client 472's public lane rides the **mirror** R2
+> account (`CF_HRANKER_BACKUP_QUEUE_ID`, attached to the backup account in
+> `src/intake-routing.js:assembleCloudflareQueues`), not the primary — `tempvideos-hranker` exists in
+> both accounts under the same name. And the served host for that lane is the deployed listener's
+> `CF_HRANKER_CDN_DOMAIN`, which *overrides* the `recordedvideos.hranker.com` default
+> (`src/index.ts:204`); the repo's compatibility fixture uses `recordedvideos.hranker.org`. Both must be
+> read off the deployment, not assumed. See `slices/public-shorts-video.md` → "Env still to set".
 
 ## Decisions
 
