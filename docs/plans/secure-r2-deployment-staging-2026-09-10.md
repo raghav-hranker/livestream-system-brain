@@ -371,3 +371,22 @@ behind `origin/feat/apx-passthrough-472`; its 7 are subject-duplicates of origin
 `client-config.js` is byte-identical, so the box is effectively just missing origin's drm-worker and
 mirror-progress work. Deploying this branch there therefore also lands those — which is a change to
 APX behaviour on that box and needs its own sign-off.
+
+### 2026-09-17 — D4–D7 decided; transcoder side deployed/staged, LMS step pending
+
+Owner decisions (one pass): **D4** new release dir + repoint pm2 29 · **D5** merge the box-only
+`fix/r2-download-resume` (the branch behind the image pm2 29 pins today, based on `6af515c`) into the
+integration line and build `cf-20260917` from it, pinned via `VIDEO_PROCESSOR_IMAGE` — no manager code
+change, `:latest` untouched · **D6** leave the 561 overlap · **D7** env in the release's `listener.env` ·
+**D-new** narrow file copy for the manager (no APX drm-worker/mirror-progress ride-along, no git ops in
+that checkout).
+
+Finding that changed D5: `video-processor:r2-download-resume-v1` (promoted 2026-09-14, digest
+`90e220e3…`) was built from `fix/r2-download-resume` (`fe805c4..ff5bbdf`, in a bundle under
+`/root/releases/r2-download-resume-v1/`, in no remote). Building from `d95b4e1` alone would have dropped
+resumable source downloads + incomplete-output rejection for every pm2-29 job. Merged as `5524809`
+(conflict: kept the reporter seam over the resume side's direct SECURED branch; the deliberate unsecure
+class-link 404 swallow stays). 432/0, tsc clean, pushed.
+
+State per step is in [task 05 → Deploy state](tasks/shorts-transcode-callback/05-deploy-and-acceptance.md).
+Manager caveat recorded there: the pre-copy backup failed, so rollback is to the origin-apx bytes.
