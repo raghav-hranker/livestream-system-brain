@@ -310,3 +310,64 @@ Better than the predecessor handoff claimed, on the lane that matters:
 | **D7** | New env (`CF_HRANKER_REPORT_CALLBACK_URL_472`, `CF_HRANKER_MP4_RENDITIONS_472`) goes in the **release's `listener.env`**, not `/root/video-transcoder/.env` — confirm. | Wrong file = absent profile = today's behaviour, silently. |
 
 Nothing above was acted on. The box is in exactly the state it was found in.
+
+### 2026-09-17 — D1/D2/D3 resolved: the slice merged INTO the APX line
+
+Per the owner decision ("merge your branch to the 37 commit branch, no regression"), the direction is
+slice → APX, not the reverse. Branch **`integration/shorts-callback-on-apx`**, worktree
+`/private/tmp/vt-apx-integration`, based on `origin/feat/apx-passthrough-472` (`1a660ac`). **Not pushed.**
+
+| commit | what |
+|---|---|
+| `754d60f` | `feat(apx-mirror)`: the box's uncommitted opt-in R2 dual-write for 472, 3-way rebased onto origin's `mirror-deps.js` (13 lines of drift) |
+| `d95b4e1` | the merge of `e3c5938` (13 commits: secure R2 intake, 1C folder-token fix, ADR-0007 job profile + callback) |
+
+**D1 — the Lua job dedupe: nothing to recover; the audit's "exists in no branch" was wrong.**
+`launch/quicktricks-v2` already carries it via `6af515c` ("preserve production transcoder behavior in
+secure R2 release") in a *later* form that adds `storageEndpoint` to the dedupe key — correct for the
+secure lane, where one bucket name can exist at two R2 endpoints. The merge brings that version in. A
+first attempt to re-commit the box's older copy was dropped rather than merged, so the branch does not
+carry two generations of the same feature. One deploy-time note: the key gains an endpoint segment, so
+in-flight `processing:dedupe` entries written by the running manager will not match new keys across the
+restart. Self-healing within one job's lifetime.
+
+**D2 — the APX R2 dual-write is genuinely box-only** (absent from `feat/apx-passthrough-472`,
+`launch/quicktricks-v2` and `origin/launch/quicktricks-v2`). Captured as `754d60f`. Inert unless
+`APX_R2_MIRROR_ENABLED=true` and client 472.
+
+**Conflicts — three, all resolved additively, no side's behaviour dropped:**
+`container/apis.js` (both imports live in the merged body) · `CONTEXT.md` ×2 (independent vocabulary;
+APX's *Mirror lifecycle* now follows *Job profile & reporting contract*, all three flagged-ambiguity
+bullets kept) · `src/index.ts` (both sides had added customer 57 with byte-identical values and the
+automatic merge kept both — `tsc` TS1117; redundant copy dropped).
+
+**One real merge regression, caught by our tests and fixed in the merge commit.** APX factored the
+complete-nodejs class-link call into `container/class-callbacks.js`, whose `fetchImpl` defaults to the
+global `fetch` of whichever realm loaded it — not `apis.js`'s. `apis.js` now passes its own `fetch` to
+both entry points. Invisible in production (one realm, one global), but it silently bypassed the
+module's injection seam, which is the seam the reporting-contract tests use to prove the unsecure wire
+bodies are byte-identical.
+
+**No-regression evidence**
+
+| ref | suite | tsc |
+|---|---|---|
+| `origin/feat/apx-passthrough-472` (pristine) | 290 pass / **2 fail** | — |
+| + `754d60f` (mirror recovery) | 290 pass / 2 fail — *identical, recovery is inert* | — |
+| `launch/quicktricks-v2` @ `e3c5938` | 283 pass / 0 fail | clean |
+| **merged `d95b4e1`** | **416 pass / 0 fail** | clean |
+
+The apx side's 2 pre-existing failures were stale assertions that client 472's daytime concurrency
+baseline is 3, after its own config commits raised it to 6; the merged `test/client-config.test.js`
+fixes them. No file present on either parent is missing from the merge (`git ls-tree` comm on both
+sides: empty). Capability markers from both lines verified present: `appendAliasedRendition`,
+`mirror-progress`, `apxDrmMirror`, `RENDITION_MODE`, `resolveMirrorTarget`, `processing:dedupe`,
+`resolveQueueProfile`, `REPORT_CALLBACK_URL`, `MP4_RENDITIONS`, `evaluateSecuredSpawn`,
+`intake-message`, `transcode-complete`. (`resolveRenditionPlan` is absent from both parents — origin's
+own `0655d2d` retired it.)
+
+**Still open: D4–D7** (deploy mechanics) and the push decision. Note the box is *itself* 7 ahead / 16
+behind `origin/feat/apx-passthrough-472`; its 7 are subject-duplicates of origin's config bumps and
+`client-config.js` is byte-identical, so the box is effectively just missing origin's drm-worker and
+mirror-progress work. Deploying this branch there therefore also lands those — which is a change to
+APX behaviour on that box and needs its own sign-off.
