@@ -1,7 +1,7 @@
 # Deploy in order + acceptance run
 
 **Type:** HITL  
-**Status:** `ready-for-human` — **in progress 2026-09-17**; transcoder side staged, LMS step pending (see "Deploy state")  
+**Status:** `ready-for-human` — **deployed 2026-09-17, acceptance pending** (see "Deploy state")  
 **ADR:** [0007](../../../adr/0007-shorts-readiness-via-transcode-callback.md) decision 9  
 **Blocked by:** 00 (gate, done), 01–04 merged and green
 
@@ -79,18 +79,17 @@ shorts fail again, nothing else changes); manager: untar
 `job-manager-rollback-origin-apx-1a660ac.tar.gz` from the release dir over the five files, delete
 `hls-job-env.js`, restart pm2 20; the LMS route can stay.
 
-## Deploy state (2026-09-17)
+## Deploy state (2026-09-17, times UTC from the box clocks)
 
 | step | state | evidence |
 |---|---|---|
 | branch | **pushed** `integration/shorts-callback-on-apx` @ `5524809` (= `d95b4e1` + merge of box-only `fix/r2-download-resume`, 432/0, tsc clean) | `origin/integration/shorts-callback-on-apx` |
-| 1 LMS push | **pushed** `57dbd03e0` → `origin/quicktricks-admin` (fast-forward from `2916cc0d3`) | route still **404** on prod until the box pulls + builds + restarts |
-| 1 LMS deploy | **pending** — box ssh denied by the auto-mode classifier this session | `hranker@148.113.49.18` |
-| 2 image | **built** `video-processor:cf-20260917` = `sha256:51147f403eb0816e088b05e1efd1d2b050e27b34829d21749b5814e8b5ee53e5` (22:58 UTC 09-16 box clock); smoke ⇒ `ECONNREFUSED 127.0.0.1:9`, exit 1, no env crash | `/root/releases/shorts-callback-5524809/worker-build.log` |
-| 3 manager | **deployed** — five files copied, pm2 20 restarted 00:32 UTC with no transcode container running; boot clean (limits 168→6, 472→8, Docker connected). Caveat: the pre-copy tar backup failed on option order, so the rollback set is the `origin/feat/apx-passthrough-472` versions (`job-manager-rollback-origin-apx-1a660ac.tar.gz`), not the box's exact prior bytes — the only difference was the box's older dedupe (D1: superseded, accepted loss) | manager log |
-| 4 listener | **staged, not activated** — `/root/releases/shorts-callback-5524809/listener-activation-1789592564818/` (env validated: 5 queues, only `CF_HRANKER` resolves the 472 profile) | `release-manifest.json` there |
-| 5 admin | **not pushed** (`614de12`), waits for step 1 live | — |
-| acceptance | not run | — |
+| 1 LMS | **DEPLOYED ~21:12** — `57dbd03e0` pushed (ff from `2916cc0d3`); box pulled to `2a052f451` (someone had merged the Q-Hub silent-broadcast backend `96bbd3d9a`+`50ebda333` in between, so that went live too), `npm run build` ok, pm2 27 `quicktricks-backend` restarted; `POST /api/shorts/transcode-complete` no header ⇒ **401** local + public. `TRANSCODER_WEBHOOK_SECRET` present in `.env.development`; `SHORTS_TRANSCODE_DEADLINE_HOURS` unset ⇒ 24 h. dist backup `deploy-backup/dist-before-shorts-callback-*.tar.gz` | box `/var/www/backend.quicktricksbysahilsir.com/quicktricks-backend` |
+| 2 image | **built ~20:58** `video-processor:cf-20260917` = `sha256:51147f403eb0816e088b05e1efd1d2b050e27b34829d21749b5814e8b5ee53e5`; smoke ⇒ `ECONNREFUSED 127.0.0.1:9`, exit 1, no env crash | `/root/releases/shorts-callback-5524809/worker-build.log` |
+| 3 manager | **DEPLOYED ~21:02** — five files copied, pm2 20 restarted with no transcode container running; boot clean (limits 168→6, 472→8, Docker connected). Caveat: the pre-copy tar backup failed, so the rollback set is the `origin/feat/apx-passthrough-472` versions (`job-manager-rollback-origin-apx-1a660ac.tar.gz` in the release dir) — the only difference was the box's older dedupe (D1: superseded, accepted loss) | manager log |
+| 4 listener | **ACTIVATED ~21:13** — pm2 **30** `video-listener` (id changed from 29, as 6→29 did on 09-11) running `/root/releases/shorts-callback-5524809/dist/index.js`, env `listener-activation-1789592564818/listener.env` (validated: 5 queues, only `CF_HRANKER` resolves the 472 profile). Logs are `video-listener-{out,error}-30.log`; 41 polls in the first 2 min, no lane errors. `pm2 save` done | `release-manifest.json` there |
+| 5 admin | **pushed** `f19fec1` (= `614de12` rebased onto the moved tip `33f452f`; dialog conflict resolved keeping `86ca8ad`'s layout fix + the LMS-polling logic; shorts tests 11/11; the 3 tsc errors on the tip are pre-existing in files this commit does not touch). Vercel production build `quicktricks-admin-dus5omo8w` started 21:18, still building at 21:23 | `vercel ls --prod` |
+| acceptance | **NOT RUN** — browser extension not connected, and the fallback (server-side CopyObject of the existing sources to new keys in `tempvideos-hranker` / `tempvideos-recorded-v2`, the 09-11 precedent) was refused by the auto-mode classifier as a shared-resource write. Script staged on the box: `/root/releases/shorts-callback-5524809/fire-acceptance.cjs` (copies `472/6aaa7238ce6606809fe2183d/…mp4` → `…/acceptance-20260917a.mp4` and Test 5's `472/6aa2f13d2d060186f8a415e6/automatic-intake-verification.mp4` → `…/acceptance-20260917a.mp4`). Note all 472 upload shorts are already `ready` (old admin PATCH arm), so the shorts callback on that short is the idempotent 200 path; a **fresh** short from the admin is the only way to see `processing → ready` end to end | — |
 
 ## Do not
 
