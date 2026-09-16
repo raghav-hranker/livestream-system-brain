@@ -1,7 +1,12 @@
 # Admin: dialog polls the LMS; delete the R2 read path
 
 **Type:** AFK  
-**Status:** `ready-for-agent`  
+**Status:** CODE DONE 2026-09-17 — `614de12` on `feat/shorts-dialog-lms-polling`
+(worktree `~/Projects/worktrees/qt-admin-shorts-poll`, off `origin/quicktricks-admin` @ `1b56559`),
+NOT pushed. 11 new tests green; full suite 156/168 with the same 12 failures as origin tip
+(LearnLibraryPriorityEditor 6, LearnLibraryDashboard 1, BannedUsersDashboard 5 — verified against a
+throwaway worktree at `1b56559`); `node --test lib/**` 131/131; `tsc` 115 errors vs the 116 baseline,
+none in touched files. Acceptance greps clean. Deviation: item 4 NOT done — see below.  
 **ADR:** [0007](../../../adr/0007-shorts-readiness-via-transcode-callback.md) decision 8  
 **Blocked by:** 01 deployed (the dialog needs `videoStatus`/`videoError` on `GET /api/shorts/:id`)
 
@@ -47,3 +52,31 @@ read-side fix (five files). It is superseded, not merged.
 - Keep a "re-check"/"mark ready" button. Read R2 from the browser or a route handler for readiness.
 - Push to `origin/quicktricks-admin` without fetch + rebase + build (the remote moves fast). No
   co-author trailers.
+
+
+## Result 2026-09-17
+
+Built as specified except item 4. What landed:
+
+- `useShortVideoStatus(id, { enabled })` polls `GET /api/shorts/:id` every 5 s and stops at
+  `ready`/`failed` and on unmount. The cadence decision is two pure functions,
+  `shortVideoPollInterval` / `shortsListPollInterval`, tested directly.
+- `useGetShorts` refetches while ANY row is `processing`; failed rows show `videoError` plus
+  "re-upload to try again".
+- No timeout changes state. Past 10 min the dialog copy only adds "the job may be queued behind
+  others"; `LONG_WAIT_MS` is derived per poll response, so the dialog runs no clock of its own.
+- Deleted `app/api/shorts_transcode/route.ts`, `readTranscodeState`, `publicHlsUrlFor`, and the
+  already-unreferenced `deleteShortObjects`. `SHORTS_PUBLIC_BASE_URL` and `SHORTS_OUTPUT_BUCKET` had
+  no remaining consumer and are no longer required by `shortsConfig()` — the admin's shorts
+  credential need is now write-only on `tempvideos-hranker`, which is what the scoped-token follow-up
+  should be scoped to.
+- Added `grid-cols-1` to the dialog (the shadcn grid/min-content trap; `SingleVideoUploadDialog`
+  already carries it on origin, this dialog did not).
+
+**Deviation — item 4 (public-upload copy) deliberately NOT done.** The amber "This video will be
+public" notice was removed on purpose by `5687d32` ("The admin team asked for the amber notice to
+go"), which postdates ADR-0006 and is a stakeholder decision this task was written without. Re-adding
+it would silently reverse that, so it was left out and raised instead. The now-false "keep this
+browser tab open until processing finishes" notice **was** removed — it is the opposite of what the
+dialog now does. Owner decision needed: restore the public notice, or let ADR-0006's disclosure
+requirement rest somewhere other than this dialog.
