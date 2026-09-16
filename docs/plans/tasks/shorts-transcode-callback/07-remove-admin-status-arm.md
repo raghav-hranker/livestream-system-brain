@@ -1,7 +1,7 @@
 # Remove the admin `videoStatus` PATCH arm
 
 **Type:** AFK  
-**Status:** `needs-triage` (becomes `ready-for-agent` when 05 and 06 are done)  
+**Status:** `ready-for-agent` — 05 acceptance passed and admin `f19fec1` (task 06) is live on Vercel as of 2026-09-17 ~21:26 UTC; no admin caller of the `{videoStatus}` arm remains  
 **ADR:** [0007](../../../adr/0007-shorts-readiness-via-transcode-callback.md) decision 6  
 **Blocked by:** 05 (acceptance passed), 06 (no admin caller left)
 

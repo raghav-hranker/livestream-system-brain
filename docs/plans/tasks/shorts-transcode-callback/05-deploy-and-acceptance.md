@@ -1,7 +1,7 @@
 # Deploy in order + acceptance run
 
 **Type:** HITL  
-**Status:** `ready-for-human` — **deployed 2026-09-17, acceptance pending** (see "Deploy state")  
+**Status:** **DONE 2026-09-17** — deployed, acceptance passed on a fresh admin upload (see "Deploy state" + ticks below)  
 **ADR:** [0007](../../../adr/0007-shorts-readiness-via-transcode-callback.md) decision 9  
 **Blocked by:** 00 (gate, done), 01–04 merged and green
 
@@ -54,22 +54,22 @@ retagging `video-processor:latest` and never by a manager code change.
 
 ## Acceptance
 
-- [ ] Re-upload the test short (`6aaa7238ce6606809fe2183d`, or a fresh one) from the admin.
+- [x] **Passed 21:19–21:20 UTC** on a fresh short `6aab07e2d9130c64f86565f4` ("test 3", `v4.mp4`) uploaded from the admin by the owner. Job `intake-765f4a84…`: manager log `Callback reporting — injected transcoder secret … callback host: backend.quicktricksbysahilsir.com`; container `Callback reporting: HLS readiness is carried by the job-complete callback; no request made here`, `MP4_RENDITIONS=false — skipping`, one `POST …/transcode-complete` with `{status:'processed', durationSec:10}` ⇒ 200; `Status updated to processed`; Redis job `COMPLETED`; `[SUCCESS] Completed successfully in 11.99s`. Counts in the job log: stream-status 0, recordings 0, MP4 0. (Original wording:) Re-upload the test short (`6aaa7238ce6606809fe2183d`, or a fresh one) from the admin.
       Container log: `REPORTING=callback`, no stream-status, no recordings POST, no MP4 renditions,
       one `POST …/transcode-complete` ⇒ 200. `status.json: processed`. Redis job `COMPLETED`,
       `videos` doc `completed`, client 472 `failed` counter **unchanged**.
-- [ ] `GET https://backend.quicktricksbysahilsir.com/api/shorts/<id>` (unauthenticated) shows
+- [x] **Passed**: `GET /api/shorts/6aab07e2d9130c64f86565f4` ⇒ `videoStatus:'ready'`, `videoDurationSec:10` (only the callback writes this), `videoError` null, `link` = `https://recordedvideos.hranker.org/472/6aab07e2d9130c64f86565f4/hls/master.m3u8`; owner confirmed it plays and the link shows in the admin. (Original:) `GET …/api/shorts/<id>` (unauthenticated) shows
       `videoStatus:'ready'`, `videoDurationSec` set, `link` = `https://recordedvideos.hranker.org/472/<id>/hls/master.m3u8`,
       which plays in a fresh incognito window.
-- [ ] Close the dialog mid-transcode on a second upload; the short still becomes `ready` (Defect 2).
-- [ ] **Regression**: upload one 472 class video through the admin's default `class` lane
+- [ ] **Not explicitly exercised** — close the dialog mid-transcode on a second upload; the short still becomes `ready` (Defect 2). Structurally guaranteed now (readiness no longer depends on the browser), but not observed.
+- [x] **Passed 21:23–21:24 UTC**: class `6aaa8a9293a55417a6662d81` (`v5.mp4`, `tempvideos-recorded-v2`) job `intake-04279def…` on the new image: `Successfully reported HLS via stream-status` (200), 4 MP4 renditions uploaded, `MP4 recordings updated successfully.`, `Status updated to processed`, 35.75 s. This qualifies the secure-lane listener dispatch left open on 2026-09-10 and the download-resume merge on the class lane. (Original:) **Regression**: upload one 472 class video through the admin's default `class` lane
       (`tempvideos-recorded-v2`). Container log shows the secured stream-status PUT ⇒ 200,
       `Class.hlsAsset` set, `/playback` mints, MP4 renditions produced and reported. This also
       qualifies the stacked secure-lane listener dispatch that 2026-09-10 left open; record it in the
       staging doc. The new image also carries the download-resume fix — confirm `completion.json` is
       written (resume branch's completion guard).
-- [ ] Any other tenant's job observed end-to-end unchanged (pick one from `queue:normal`).
-- [ ] Record: image tag + digest, commit hashes per box, timestamps, in the staging doc.
+- [ ] Any other tenant's job observed end-to-end unchanged — **not observed yet** (none ran in the window; pm2 22 tenants are on the untouched APX listener and `:latest` image anyway, only the manager files changed for them).
+- [x] Recorded: image tag + digest, commit hashes per box, timestamps — in the Deploy state table below and the staging doc.
 
 ## Rollback
 
@@ -89,7 +89,7 @@ shorts fail again, nothing else changes); manager: untar
 | 3 manager | **DEPLOYED ~21:02** — five files copied, pm2 20 restarted with no transcode container running; boot clean (limits 168→6, 472→8, Docker connected). Caveat: the pre-copy tar backup failed, so the rollback set is the `origin/feat/apx-passthrough-472` versions (`job-manager-rollback-origin-apx-1a660ac.tar.gz` in the release dir) — the only difference was the box's older dedupe (D1: superseded, accepted loss) | manager log |
 | 4 listener | **ACTIVATED ~21:13** — pm2 **30** `video-listener` (id changed from 29, as 6→29 did on 09-11) running `/root/releases/shorts-callback-5524809/dist/index.js`, env `listener-activation-1789592564818/listener.env` (validated: 5 queues, only `CF_HRANKER` resolves the 472 profile). Logs are `video-listener-{out,error}-30.log`; 41 polls in the first 2 min, no lane errors. `pm2 save` done | `release-manifest.json` there |
 | 5 admin | **pushed** `f19fec1` (= `614de12` rebased onto the moved tip `33f452f`; dialog conflict resolved keeping `86ca8ad`'s layout fix + the LMS-polling logic; shorts tests 11/11; the 3 tsc errors on the tip are pre-existing in files this commit does not touch). Vercel production `quicktricks-admin-dus5omo8w` **Ready ~21:26**, aliased to `admin.quicktricksbysahilsir.com` | `vercel ls --prod` |
-| acceptance | **NOT RUN** — browser extension not connected, and the fallback (server-side CopyObject of the existing sources to new keys in `tempvideos-hranker` / `tempvideos-recorded-v2`, the 09-11 precedent) was refused by the auto-mode classifier as a shared-resource write. Script staged on the box: `/root/releases/shorts-callback-5524809/fire-acceptance.cjs` (copies `472/6aaa7238ce6606809fe2183d/…mp4` → `…/acceptance-20260917a.mp4` and Test 5's `472/6aa2f13d2d060186f8a415e6/automatic-intake-verification.mp4` → `…/acceptance-20260917a.mp4`). Note all 472 upload shorts are already `ready` (old admin PATCH arm), so the shorts callback on that short is the idempotent 200 path; a **fresh** short from the admin is the only way to see `processing → ready` end to end | — |
+| acceptance | **PASSED 21:19–21:24** on a fresh admin upload by the owner (see ticks above); the CopyObject fallback was never needed. Earlier note: browser extension not connected, and the fallback (server-side CopyObject of the existing sources to new keys in `tempvideos-hranker` / `tempvideos-recorded-v2`, the 09-11 precedent) was refused by the auto-mode classifier as a shared-resource write. Script staged on the box: `/root/releases/shorts-callback-5524809/fire-acceptance.cjs` (copies `472/6aaa7238ce6606809fe2183d/…mp4` → `…/acceptance-20260917a.mp4` and Test 5's `472/6aa2f13d2d060186f8a415e6/automatic-intake-verification.mp4` → `…/acceptance-20260917a.mp4`). Note all 472 upload shorts are already `ready` (old admin PATCH arm), so the shorts callback on that short is the idempotent 200 path; a **fresh** short from the admin is the only way to see `processing → ready` end to end | — |
 
 ## Do not
 

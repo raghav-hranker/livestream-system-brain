@@ -390,3 +390,13 @@ class-link 404 swallow stays). 432/0, tsc clean, pushed.
 
 State per step is in [task 05 → Deploy state](tasks/shorts-transcode-callback/05-deploy-and-acceptance.md).
 Manager caveat recorded there: the pre-copy backup failed, so rollback is to the origin-apx bytes.
+
+### 2026-09-17 ~21:30 UTC — ADR-0007 live and accepted
+
+All five steps deployed (LMS `2a052f451` on pm2 27 · manager files on pm2 20 · listener release
+`shorts-callback-5524809` as pm2 **30** pinning `video-processor:cf-20260917` · admin `f19fec1` on Vercel).
+Acceptance on a fresh admin short (`6aab07e2d9130c64f86565f4`): callback contract only, no class-contract
+calls, no MP4 pass, LMS `ready` with `videoDurationSec`, plays. Class-lane regression on class
+`6aaa8a9293a55417a6662d81`: stream-status + recordings 200, 4 renditions — which also closes the
+2026-09-10 "secure-lane listener dispatch not qualified" gap. Details + remaining unticked items in
+[task 05](tasks/shorts-transcode-callback/05-deploy-and-acceptance.md).
