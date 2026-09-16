@@ -4,8 +4,8 @@ This repo is the **brain** for a system that spans five independently-deployed r
 
 - **livestream** — live streaming (OBS/webcam → GPU HLS → Live bucket/CDN; the *live* transcoder)
 - **video-transcoder** — recorded/VOD transcoding (intake → GPU job-manager → containers; ops 1A/1B/1C)
-- **nodejs-server** — *Content Protection*: the LMS API that holds `Class.hlsAsset` / `Pdf.pdfAsset` and mints signed playback + PDF-access URLs
-- **admin-dashboard** — the admin control plane (Next.js): authors Classes/Courses/PDFs against nodejs-server's admin API; browser side of the PDF upload contracts; mints the Streamer token and hands off to **ls**
+- **nodejs-server** — *Content Protection*: the LMS API that holds `Class.hlsAsset` / `Pdf.pdfAsset` and mints signed playback + PDF-access URLs. **Deploy note:** the *production* LMS is the fork **quicktricks-backend** (`abhi092515/quicktricks-backend`, local `../quicktricks-backend`, branch `quicktricks-admin`) — same contracts and docs (CONTEXT.md/ADRs carried over in the 2026-08 merge) plus the client team's admin features; nodejs-server is the upstream lineage + phonetics standby. The fork is **not** slice-branch-synced — see `repos.manifest`.
+- **admin-dashboard** — the admin control plane (Next.js): authors Classes/Courses/PDFs against nodejs-server's admin API; browser side of the PDF upload contracts; mints the Streamer token and hands off to **ls**. **Deploy note:** the production admin for the quicktricks line is the fork **quicktricks-admin** (`abhi092515/quicktricks-admin`, branch `quicktricks-admin`) — same fork discipline as quicktricks-backend; see `repos.manifest`.
 - **ls** — the production livestream viewer/player UI (Next.js): presents the token to `/playback`, renders live + VOD HLS (replaces livestream's dead in-repo `ui/`)
 
 It owns **only the cross-cutting layer** — the whole-system map, the shared boundary vocabulary, and the
@@ -41,3 +41,17 @@ otherwise half the slice lands on one branch and half on another. Before committ
 The active branch is data in `repos.manifest` (`ACTIVE_BRANCH`) — read it from there, not from prose.
 To move the whole system to a new slice branch: `./scripts/sync-branches.sh <new-branch>` (creates it in
 every repo and rewrites the manifest). Never hand-edit the branch name into prose — it goes stale.
+
+## Agent skills
+
+### Issue tracker
+
+PRDs and implementation plans are tracked as local Markdown under `docs/plans/`. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Workflow states use the standard `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, and `wontfix` vocabulary. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+This is a multi-context system: cross-repo language lives here, while per-repo definitions remain with their owning repos. See `docs/agents/domain.md`.

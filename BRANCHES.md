@@ -21,6 +21,15 @@ Read `ACTIVE_BRANCH` in [`repos.manifest`](./repos.manifest) — it is the only 
 ./scripts/sync-branches.sh <branch>   # start/switch the whole system to <branch> and update the manifest
 ```
 
+## The fork exception
+
+The **deploy forks** (see the commented registry in `repos.manifest`) do NOT follow the shared-branch
+rule. `quicktricks-backend` — the production LMS — is the client team's separate cloned repo living on
+**their** `quicktricks-admin` line; our work reaches it by explicit merge (as in the 2026-08-13 admin
+merge), never by `sync-branches.sh`. Same will apply to their admin-dashboard clone once recorded.
+Slice work on the LMS side therefore has two landing zones: the slice branch in `nodejs-server`
+(upstream/standby) and a coordinated merge into the fork for production.
+
 ## Why not git submodules?
 Submodules pin a *commit*, which goes stale on every push to an active branch and adds a commit-bump
 ritual to every change. For repos under active development we track a **branch name** (in the manifest)

@@ -31,3 +31,4 @@ A playbook **references**, never restates. Link into `SYSTEM.md`, `GLOSSARY.md`,
 - [`secured-prerecorded-playback.md`](./secured-prerecorded-playback.md)
 - [`client-launch-v2.md`](./client-launch-v2.md)
 - [`secure-pdf-upload.md`](./secure-pdf-upload.md)
+- [`media-stack-r2-cloudflare.md`](./media-stack-r2-cloudflare.md)

@@ -12,3 +12,26 @@ nodejs-server     https://github.com/raghav-hranker/nodejs-server.git
 video-transcoder  https://github.com/raghav-hranker/video-transcoder.git
 admin-dashboard   https://github.com/raghav-hranker/admin-dashboard.git
 ls                https://github.com/raghav-hranker/ls.git
+
+# ---- Deploy forks (commented on purpose: NOT branch-synced, excluded from sync-branches.sh) ----
+# The client team cloned our repos as SEPARATE repos (not branches), so the production line
+# lives in forks that follow their own branch discipline and are merged by agreement.
+#
+# quicktricks-backend  https://github.com/abhi092515/quicktricks-backend.git
+#   The PRODUCTION LMS (fork of nodejs-server + their admin features, merged 2026-08-13).
+#   Local: ../quicktricks-backend, branch quicktricks-admin (their line — never slice-synced).
+#   Prod: https://quicktricks.multistreaming.site -> test-uday box :5916.
+#   nodejs-server remains the upstream lineage + the phonetics standby deploy.
+#
+# quicktricks-admin  https://github.com/abhi092515/quicktricks-admin.git
+#   The client team's admin-dashboard fork (separate cloned repo, not a branch).
+#   Their line: branch quicktricks-admin — same discipline as the backend fork:
+#   merged by agreement, never slice-synced. Deploy target: not recorded yet.
+#
+# thedhronas  git@github.com:GontinaUdayKumar/thedhronas.git
+#   The STUDENT-FACING website (Next.js) — the client team's white-label repo:
+#   ONE BRANCH PER CUSTOMER (~330 tenant branches); the quicktricks line is branch
+#   quicktricksbysahilsir-new. Local: ../thedhronas. Never slice-synced.
+#   Live-class surface: pages/user/video-chat + video-notes-chat, socket hook
+#   src/lib/hooks/useSocket.ts — as of 2026-08-24 still LEGACY (anonymous connect,
+#   no realtime-token mint): the blocker for REALTIME_AUTH_REQUIRED=true.

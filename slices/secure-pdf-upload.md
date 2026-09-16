@@ -1,5 +1,12 @@
 # Slice: Secure PDF upload (single + bulk)
 
+**2026-09-11 R2 extension:** the user selected R2 `hranker-private-assets` and
+`assetsv2.hranker.org` for single and bulk PDFs. Backend implementation and the
+authoritative cutover checklist are prepared on fork branch `feat/r2-pdf-uploads`
+in [the isolated backend worktree](/private/tmp/quicktricks-pdf-r2/docs/plans/r2-pdf-upload-cutover.md).
+199 focused tests and typecheck pass; deployment and protected-host verification
+remain pending. The B2-specific narrative below describes the original slice.
+
 **Goal:** every newly created/replaced PDF lands in the private B2 `documents` zone as `Pdf.pdfAsset`,
 readable only via the signed `/access` routes; bulk upload works browser → B2 direct (presigned `PUT`),
 never as one giant multipart request through Node.
@@ -143,3 +150,12 @@ browser-supplied hash). Don't reopen these silently — amend the PRD/ADR first.
 - **Read-side mint breaks after a phonetics redeploy** (`BUNNY_DOCUMENTS_*` gone) → the deploy script
   regenerates `.env.production` from `~/nodejs-server/.env` + `~/.quicktricks-lms-secrets`; vars added
   only to the generated file are wiped. Persist box-specific env in `~/.quicktricks-lms-secrets`.
+
+### Serving-provider switches (2026-09-11)
+
+The user clarified that the requested extension is Bunny/Cloudflare **serving**
+selection, analogous to videos. PDFs reuse the prepared documents signer selector;
+public images now have a response-time selector in the same isolated backend worktree.
+Authoritative configuration, scope and activation checks:
+[backend asset CDN switch](/private/tmp/quicktricks-pdf-r2/docs/plans/asset-cdn-switch.md).
+Local only; deployment and CDN origin/edge verification remain pending.
