@@ -1,7 +1,9 @@
 # Tasks: Client Launch v2 — Room-less Streaming System
 
-> Other task sets live in subdirectories: [`secure-pdf-upload/`](./secure-pdf-upload/README.md),
-> [`secure-video-upload-b2/`](./secure-video-upload-b2/README.md).
+> Other task sets live in subdirectories: [`lms-owned-chat-moderation/`](./lms-owned-chat-moderation/README.md),
+> [`secure-pdf-upload/`](./secure-pdf-upload/README.md),
+> [`secure-video-upload-b2/`](./secure-video-upload-b2/README.md), and
+> [`shorts-transcode-callback/`](./shorts-transcode-callback/README.md) (ADR-0007, 2026-09-16).
 > Completed tasks are archived under [`../done/tasks/`](../done/tasks/) (same layout); the tables
 > below stay as the index and link there. Only open tasks live in this tree.
 

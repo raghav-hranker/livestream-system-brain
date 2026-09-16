@@ -1,8 +1,15 @@
 ---
-status: accepted
+status: accepted, partially superseded
+superseded-by: "ADR-0007 (decisions 1 and 4: video-transcoder is now edited, and readiness is reported by the transcoder's job-complete callback, not read from status.json by the admin)"
 ---
 
 # Shorts ride the existing public transcode lane
+
+> **2026-09-16:** the first real upload showed the "unsecure lane" here is two decisions, not one
+> (storage routing by intake bucket; reporting contract by the client's secured flag), so a secured
+> client's shorts fail on both existing contracts. Decisions 1 and 4 below are superseded by
+> [ADR-0007](./0007-shorts-readiness-via-transcode-callback.md). The core decision, shorts are public
+> objects with no token, stands.
 
 Shorts are promotional / discovery content: short vertical videos meant to be opened, shared and
 scraped. They are the one video class in the system that must **not** sit behind the content-protection
@@ -44,7 +51,8 @@ fix is to give shorts back the lane they were written for.
 > `src/intake-routing.js:assembleCloudflareQueues`), not the primary — `tempvideos-hranker` exists in
 > both accounts under the same name. And the served host for that lane is the deployed listener's
 > `CF_HRANKER_CDN_DOMAIN`, which *overrides* the `recordedvideos.hranker.com` default
-> (`src/index.ts:204`); the repo's compatibility fixture uses `recordedvideos.hranker.org`. Both must be
+> (`src/index.ts:204`). **Settled 2026-09-16 by reading `/root/video-transcoder/.env` on the listener box:
+> the live value is `https://recordedvideos.hranker.org`.** Both must be
 > read off the deployment, not assumed. See `slices/public-shorts-video.md` → "Env still to set".
 
 ## Decisions
