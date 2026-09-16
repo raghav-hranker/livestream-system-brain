@@ -1,14 +1,18 @@
 # Slice: Public shorts video
 
-**Goal:** a video uploaded in the Shorts section rides the existing **public/unsecure** transcode lane
-and is served from `https://recordedvideos.hranker.com` with no token and no `/playback` mint. Course
+**Goal:** a video uploaded in the Shorts section rides the existing **public** transcode lane
+and is served from `https://recordedvideos.hranker.org` with no token and no `/playback` mint. Course
 classes keep the secure lane untouched.
 
-**Why it's a slice:** it crosses the admin ⇄ LMS boundary (a new upload lane and a new Short shape) and
-it *removes* an accidental crossing into the secure transcoder lane. **video-transcoder itself is not
-edited** — the lane it needs already exists and other clients use it daily.
+**Why it's a slice:** it crosses the admin ⇄ LMS boundary (a new upload lane and a new Short shape),
+it *removes* an accidental crossing into the secure transcoder lane, and — since 2026-09-16 night —
+it crosses the transcoder ⇄ LMS boundary with a new **reporting contract** (the Shorts transcode
+callback) carried by a new per-(queue, client) **Job profile** in video-transcoder. The earlier claim
+that video-transcoder is not edited was wrong: see the status section below.
 
-**Governing doc:** `docs/adr/0006-shorts-videos-are-public-objects.md`.
+**Governing docs:** `docs/adr/0006-shorts-videos-are-public-objects.md` (public objects, stands) +
+`docs/adr/0007-shorts-readiness-via-transcode-callback.md` (readiness + job profile; supersedes
+0006 decisions 1 and 4). Tasks: `docs/plans/tasks/shorts-transcode-callback/`.
 
 **Repos:** production LMS `../quicktricks-backend` branch `quicktricks-admin` · production admin
 `../quicktricks-admin` branch `quicktricks-admin`. Both are deploy forks — NOT slice-branch-synced (see
@@ -32,23 +36,76 @@ ShortVideoUploadDialog  path = {customerId}/{shortId}
 ```
 ShortVideoUploadDialog  lane: 'public'
   → Uploader → /api/multipart_uploads (lane enum) → lib/s3.ts
-  → tempvideos-hranker                           ← the PUBLIC intake bucket
-  → unsecure lane (existing, unchanged)
-  → GPU 1A → recordedvideos-hranker/{customerId}/{shortId}/hls/master.m3u8
-  → (updateClassLinkApi 404s on a shortId — accepted noise)
+  → tempvideos-hranker                           ← the PUBLIC intake bucket: selects STORAGE/CDN only
+  → listener: job.config.profile = { reporting:{kind:'callback',url}, mp4:false }
+              (from CF_HRANKER_REPORT_CALLBACK_URL_472 / CF_HRANKER_MP4_RENDITIONS_472; one generic
+               resolver for every queue — a client with no env gets today's behaviour)
+  → manager guard: REPORTING=callback + TRANSCODER_SECRET_472, never SECURED=true, MP4_RENDITIONS=false
+  → GPU 1A only → recordedvideos-hranker/{customerId}/{shortId}/hls/master.m3u8
+  → container: ONE POST /api/shorts/transcode-complete { roomId, status, outputs.hls.key, durationSec }
+               (X-Transcoder-Secret; a 4xx is fatal to the job, like stream-status)
 
-readiness: poll {sourceKey}/status.json in tempvideos-hranker
-           processing → processed → HEAD master.m3u8 → ready
-                      → failed   → videoStatus 'failed'
+readiness: the LMS is the single writer of videoStatus
+           callback processed → ready   |  callback failed → failed (+ error)
+           no callback for 24h (never ran) → sweeper marks failed; a late 'processed' still wins
+           admin dialog polls GET /api/shorts/{id} for display only; no status.json, no HEAD, no PATCH
 
 read: GET /api/shorts → link = ${SHORTS_PUBLIC_BASE_URL}/${videoAsset.key}
       → public CDN, no token, relative segments resolve on the same host
 ```
 
-## Status — hops 1–8 implemented 2026-09-16 (not deployed)
+## Status — 2026-09-16 night: readiness redesigned (ADR-0007), NOT yet implemented
 
-Branch `feat/public-shorts-video` in both forks, off `origin/quicktricks-admin`, in worktrees
-`../worktrees/qt-backend-shorts` and `../worktrees/qt-admin-shorts`. **Committed, not pushed.**
+The first real upload (short `6aaa7238…`, client 472) played publicly within 25 s **and** was recorded
+`failed`, because "the unsecure lane" below is two decisions: the bucket selects storage/CDN, the
+client's secured flag selects the reporting contract. 472 is (correctly) secured, so the container
+reported `PUT /api/classes/{shortId}/stream-status` → 404 → fatal. Dropping the secret does not help:
+the unsecure recordings POST hits `requireTranscoderSecret` on the fork → 401, also unwrapped.
+
+Decided with the user (grill session; reasons and rejected options in ADR-0007):
+- video-transcoder **is** edited, in three deploy units, but stays product-ignorant: a per-(intake
+  queue, client) **job profile** from env, a third reporting contract `callback`, `mp4:false`.
+- The LMS gains `POST /api/shorts/transcode-complete` and becomes the **single writer** of
+  `videoStatus`; a 24 h sweeper only gives up. The admin dialog stops reading R2 and stops writing
+  status; its `{videoStatus}` PATCH arm is removed after acceptance. Predecessor "Defect 2" (closed
+  dialog ⇒ stuck `processing`) disappears rather than being patched.
+- Rollout is **gated on auditing the listener box**: `launch/quicktricks-v2` is 5 commits ahead,
+  unpushed (the secure R2 lane), and its shared dispatch was never qualified. Order: LMS → container
+  image → manager → listener + env → admin → acceptance (re-upload the test short; one 472 class
+  through the private lane) → remove the PATCH arm.
+
+Execution state lives in `docs/plans/tasks/shorts-transcode-callback/README.md`. The test short is
+fixed by **re-upload** once the lane lands (no admin JWT needed). The uncommitted admin read-side fix
+in `~/Projects/worktrees/qt-admin-shorts` is superseded and is to be discarded.
+
+The section below records the **shipped** state of hops 1–8 as of 2026-09-16 afternoon; its
+readiness claims (status.json + HEAD, dialog writes `ready`) describe what is deployed *today*, not
+the target.
+
+## Status — hops 1–8 implemented AND DEPLOYED 2026-09-16
+
+Landed on the production branch `quicktricks-admin` in both forks by fast-forward (rebased off
+`origin/quicktricks-admin` first; the remote had moved 5 commits on the backend, 2 on the admin).
+
+- **backend** `f5a0b4ab7` pushed → pulled on the prod box
+  (`hranker@148.113.49.18:/var/www/backend.quicktricksbysahilsir.com/quicktricks-backend`,
+  key `~/.ssh/hranker-webserver2-2`) → `pm2 restart quicktricks-backend` (id 27, new PID).
+  Rollback: `git reset --hard ff077ea48` on the box + restart.
+  Verified live: `GET /api/shorts` → 200, all records still serialize `link`.
+- **admin** `f54dfb8` pushed → Vercel production build auto-triggered and is **Ready**, holding
+  `admin.quicktricksbysahilsir.com` (deployment `quicktricks-admin-djadsk2i2`).
+  Rollback: promote `quicktricks-admin-5i51q5raa`.
+  **Runtime env verified from outside**, which is stronger than reading the Vercel dashboard:
+  `GET /api/shorts_transcode?sourceKey=472/<24hex>/probe.mp4` → `200`
+  `{"state":"unknown","playable":false,"playlistUrl":"https://recordedvideos.hranker.org/..."}`.
+  A 500 there would mean the env never loaded (`publicHlsUrlFor` throws outside the try block);
+  `state:"unknown"` rather than an error means the deployed credential really did authenticate
+  against the mirror bucket and find no `status.json` — not that it failed to reach it.
+
+`dist/` is tracked, so the box needs only `git pull` — no build there. After the rebase, `npx tsc`
+produced **no** dist drift (the committed build already matched) and reported only the two known
+missing-dep errors from the borrowed `node_modules`. Shorts tests green post-rebase: backend 27/27,
+admin lib 140/140.
 
 | Hop | Commit | Note |
 |---|---|---|
@@ -81,16 +138,41 @@ admin unchanged at 116 pre-existing errors.
    is how a caller stores the pre-transcode upload as if it were the video — the same class of bug as
    the bare object key. `getUploadLink()` is gone; the dialog reports the staging key instead.
 
-### Env still to set before this works (hop 6 is real work, not a confirmation)
+### Env (hop 6 was real work, not a confirmation) — DONE 2026-09-16, all 6 set
 
-`upload_bucket` / `CLOUDFLARE_PUBLIC_URL` turned out not to exist in the admin repo at all. What the
-code now reads, none of it currently set anywhere:
+`upload_bucket` / `CLOUDFLARE_PUBLIC_URL` turned out not to exist in the admin repo at all. The values
+below were read off the listener box (`/root/video-transcoder/.env`, `root@178.63.88.34`), which is the
+only authority for them — both traps recorded after this table fired exactly as predicted.
 
-- **admin (Vercel):** `SHORTS_UPLOAD_ENDPOINT`, `SHORTS_UPLOAD_BUCKET=tempvideos-hranker`,
-  `SHORTS_UPLOAD_KEY_ID`, `SHORTS_UPLOAD_KEY_SECRET`, `SHORTS_PUBLIC_BASE_URL`,
-  optional `SHORTS_OUTPUT_BUCKET=recordedvideos-hranker`
-- **LMS (prod box):** `SHORTS_PUBLIC_BASE_URL` — **must match the admin's**, or the admin marks a short
-  `ready` that the app cannot fetch
+**Set on Vercel production** (project `quicktricks-admin`), 2026-09-16:
+
+| Var | Value |
+|---|---|
+| `SHORTS_UPLOAD_ENDPOINT` | `https://1ff6f2000c9aa34ca2ec88c066af092a.r2.cloudflarestorage.com` (mirror account id; the box sets no `CF_BACKUP_R2_ENDPOINT` override, so the derived host stands) |
+| `SHORTS_UPLOAD_BUCKET` | `tempvideos-hranker` |
+| `SHORTS_PUBLIC_BASE_URL` | `https://recordedvideos.hranker.org` — the listener's `CF_HRANKER_CDN_DOMAIN`, **not** the `.com` default |
+| `SHORTS_OUTPUT_BUCKET` | `recordedvideos-hranker` (= the listener's `CF_HRANKER_UPLOAD_BUCKET`) |
+
+| `SHORTS_UPLOAD_KEY_ID` / `SHORTS_UPLOAD_KEY_SECRET` | the listener's `CF_BACKUP_ACCESS_KEY_ID` / `CF_BACKUP_SECRET_ACCESS_KEY`, reused (user decision) |
+
+**LMS prod box:** `SHORTS_PUBLIC_BASE_URL` set on `.env.development` (the live file) and restarted —
+done by the operator 2026-09-16. Box `hranker@148.113.49.18`, key `~/.ssh/hranker-webserver2-2`; note
+the ssh-agent's default `raghavsharma@hranker.com` key is **rejected** by that box, which also breaks
+`git ls-remote box` and therefore the commit → push → pull deploy flow until it is loaded.
+
+> **Credential decision + follow-up.** The mirror credential is the listener's own account-wide R2 key,
+> not a scoped token. Accepted trade-off: Vercel now holds write on every bucket in the mirror account,
+> including the public output bucket, and rotating it means touching the listener and Vercel together.
+> Follow-up: replace with a token scoped to Object Read & Write on `tempvideos-hranker` +
+> `recordedvideos-hranker`.
+
+**Intake CORS — was missing, fixed 2026-09-16.** The mirror's `tempvideos-hranker` had **no CORS
+configuration at all**, so every browser multipart PUT would have been blocked before a byte landed —
+the failure `lib/Uploader.ts:23` is written to explain. Applied `PUT` / `AllowedHeaders:*` /
+`ExposeHeaders:[ETag]` / 3600s for `admin.quicktricksbysahilsir.com`, `quicktricks.hrankerdesk.online`
+and `http://localhost:3000`. Verified by preflight: `OPTIONS` → `204` with
+`Access-Control-Allow-Methods: PUT`. The credential was also proven against the bucket
+(`head-bucket` → `BucketRegion: APAC`), which is the direct confirmation that trap 1 is cleared.
 
 > **Corrected 2026-09-16 after reading the listener source** (`repos/video-transcoder/src/intake-routing.js`,
 > `src/index.ts`, `test/listener-compatibility.test.js`). Two values this slice previously stated
@@ -105,7 +187,8 @@ code now reads, none of it currently set anywhere:
 > the credential must be the mirror's. Writing to the *primary* account's identically-named
 > `tempvideos-hranker` is the silent-failure mode: same bucket name, different account, different queue.
 >
-> **2. `SHORTS_PUBLIC_BASE_URL` is NOT reliably `recordedvideos.hranker.com`.** For lane-3 jobs (472's)
+> **2. `SHORTS_PUBLIC_BASE_URL` is NOT `recordedvideos.hranker.com` — it is `.org`.** *(Settled
+> 2026-09-16 by reading the listener box: `CF_HRANKER_CDN_DOMAIN=https://recordedvideos.hranker.org`.)* For lane-3 jobs (472's)
 > the CDN is `route.cdnDomain || cloudfrontDomain` (`src/index.ts:204`), and `route.cdnDomain` is the
 > deployed listener's **`CF_HRANKER_CDN_DOMAIN`**. `recordedvideos.hranker.com` is only the
 > `cloudfrontDomains.default` fallback used when that env is unset — and the repo's own compatibility
@@ -113,9 +196,10 @@ code now reads, none of it currently set anywhere:
 > box before setting anything.** Guessing wrong gives a `link` that 404s while everything else looks
 > healthy.
 
-Also still unverified: the public intake bucket needs **CORS** (`s3_put`, `etag` in `exposeHeaders`,
-this admin origin) for the browser multipart PUTs, and the public host needs
-`Access-Control-Allow-Origin` on `.m3u8`/`.ts` — without it hls.js fails everywhere except Safari.
+**Public-host CORS: verified 2026-09-16.** `https://recordedvideos.hranker.org` returns
+`access-control-allow-origin: *` (so does `.com`, with `etag` exposed) — hls.js will work outside Safari.
+Still unverified: the public **intake** bucket's CORS (`s3_put`, `etag` in `exposeHeaders`, this admin
+origin) for the browser multipart PUTs; checking it needs the mirror credential.
 
 ## The hops (in order)
 
@@ -161,11 +245,16 @@ this admin origin) for the browser multipart PUTs, and the public host needs
 ## Acceptance
 
 - Upload a short → it shows `processing`, then becomes playable; `link` is a plain
-  `https://recordedvideos.hranker.com/…/master.m3u8` that plays in a fresh incognito window with no
+  `https://recordedvideos.hranker.org/…/master.m3u8` that plays in a fresh incognito window with no
   token and no login.
-- The upload lands in `tempvideos-hranker`, **not** `tempvideos-recorded-v2`, and makes no
-  `stream-status` call.
+- The upload lands in `tempvideos-hranker`, **not** `tempvideos-recorded-v2`, and the job makes
+  **exactly one** LMS call: `POST /api/shorts/transcode-complete`. No `stream-status`, no
+  `recordings-prerecorded`, no class-link, no MP4 renditions. The job exits 0, `status.json` says
+  `processed`, and client 472's `failed` counter does not move (ADR-0007).
+- A short whose dialog was closed mid-transcode still becomes `ready`.
 - A class video upload is byte-for-byte unaffected — same bucket, same lane, same `hlsAsset`.
 - A YouTube-linked short created before this change is unchanged in the feed response.
-- A failed transcode lands `videoStatus:'failed'` and the admin says so rather than spinning forever.
+- A failed transcode lands `videoStatus:'failed'` **through the callback**, with the container's error
+  on the record, and the admin shows it rather than spinning forever. A job that never ran is marked
+  `failed` by the 24 h sweeper.
 - Replacing a short's video leaves no orphan HLS directory or staged source.
