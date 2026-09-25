@@ -84,7 +84,7 @@ without one gets guest results: nothing bought, only active courses.
 34. As the app developer, I want readiness (`streamStatus`, `hasPlayback`) kept separate from access (`canPlay`), so that I can show Upcoming, Live, Locked and Play correctly.
 35. As the app developer, I want `/playback` to remain the only enforcement, so that a stale `canPlay` fails safely with the same 403 handling I already have.
 36. As an operator, I want search's idea of "purchased" to come from the same code as the Entitlement check, so that a fix to ownership fixes both.
-37. As an operator, I want class search to load the searcher's orders only when a result actually needs them, so that most searches don't pay for an orders lookup.
+37. As an operator, I want class search to load the searcher's orders at most once per search, and never for a guest or a search with no class results, so that guests and empty searches don't pay for an orders lookup.
 
 ## Wire contract
 
@@ -120,8 +120,8 @@ The existing `SearchResult` envelope, in a new `classes` section of `POST /api/s
 - **Class searcher (new, DB-bound).** It implements the existing `Searcher` contract. It matches
   and ranks with the admin title-search module over `Class.title`, plus active placement titles
   as a fallback (never `apxTitle`), for active classes only. It over-fetches candidates, loads
-  their active placements and courses in batch, asks the viewer for owned courses only when some
-  candidate has an inactive course, runs the builder, and returns the top N that survive. Ties
+  their active placements and courses in batch, asks the viewer for owned courses once some
+  candidate has an attached course (every course needs `isPurchased`), runs the builder, and returns the top N that survive. Ties
   go to the newest class.
 - **Search plumbing (modified).** Searcher options gain an optional **viewer**: a lazily
   evaluated, memoised owned-course lookup, plus a guest viewer that owns nothing. The
@@ -140,8 +140,10 @@ The existing `SearchResult` envelope, in a new `classes` section of `POST /api/s
 - **No schema change.** Existing indexes cover the placement read by class (the compound
   index on class, isActive and status). The title-search module's per-collection spelling
   vocabulary cache is reused for classes.
-- **Performance.** At most one orders lookup per search request, and only when an inactive
-  course is involved. Placements and courses are loaded in two batched queries per request,
+- **Performance.** At most one orders lookup per search request, never for a guest, and
+  only when some candidate has an attached course. (Corrected 2026-09-25: the
+  first draft said "only when an inactive course is involved", which contradicts D4 —
+  an active bought course also needs `isPurchased`.) Placements and courses are loaded in two batched queries per request,
   never one per class.
 
 ## Testing Decisions

@@ -15,8 +15,9 @@ share one definition of "bought".
   as the `ENFORCE_ORDER_EXPIRY` flag decides for playback.
 - **Viewer.** Searcher options gain an optional viewer: a lazily evaluated, memoised owned-course
   lookup, plus a guest viewer that owns nothing. The orchestrator passes it through; other
-  searchers ignore it. The class searcher asks for owned courses **only** when a candidate has an
-  inactive course, so at most one orders lookup per request.
+  searchers ignore it. The class searcher asks for owned courses once some candidate has an
+  attached course (every attached course needs `isPurchased`, D4), and the viewer memoises it,
+  so at most one orders lookup per request and none for a guest.
 - **Identity.** Optional authentication on `POST /api/search`: a valid Bearer token sets the user,
   and a missing, invalid or expired token means guest (never a rejection). The controller builds
   the viewer **only** from the verified token's user. The body `userId` keeps its existing jobs
@@ -37,8 +38,10 @@ share one definition of "bought".
 - [ ] A request with only a body `userId` (no token) for the same student gets the guest view:
       no `isPurchased: true`, no inactive courses. The same holds for an invalid or expired token,
       which also must not error.
-- [ ] A search that returns no class with an inactive course performs no orders lookup (asserted
-      through a counting fake viewer, not by inspecting queries).
+- [ ] A signed-in search performs at most one orders lookup, and none when no candidate has an
+      attached course; a guest never performs one (asserted through a counting fake viewer).
+      *Corrected 2026-09-25: the first draft said "no lookup unless an inactive course is
+      returned", which contradicts D4 and the first criterion. The agent flagged it.*
 - [ ] Unit tests for the owned-courses function: direct, latest, active-plan grant, inactive plan
       ignored, expiry on/off, null expiry (prior art: the class access authz tests). The existing
       Entitlement check tests pass unchanged.

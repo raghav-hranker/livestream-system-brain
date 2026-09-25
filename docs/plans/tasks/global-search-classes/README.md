@@ -19,9 +19,9 @@ decisions (D1–D9) and wire contract rather than restating them. Glossary: fork
 
 | # | Task | Type | Blocked by |
 |---|---|---|---|
-| 01 | [Classes section, end to end (guest view)](01-classes-section-guest-view.md) | AFK | — |
-| 02 | [Purchases on class results, from a verified token only](02-purchases-verified-token-only.md) | AFK | 01 |
-| 03 | [Find a class by its course's title for it](03-placement-title-fallback.md) | AFK | 01 |
+| 01 | [Classes section, end to end (guest view)](01-classes-section-guest-view.md) | AFK | — · **done** `5aa5fdf88` (local) |
+| 02 | [Purchases on class results, from a verified token only](02-purchases-verified-token-only.md) | AFK | 01 · **done** `774a71b09` (local; AC5 corrected) |
+| 03 | [Find a class by its course's title for it](03-placement-title-fallback.md) | AFK | 01 · **done** `a759eb598` (local) + perf `110ad77c9` |
 | 04 | [Deploy and accept on prod](04-deploy-accept.md) | HITL | 01, 02, 03 |
 | 05 | [App-team guide for the classes section](05-app-team-guide.md) | HITL | 02 |
 
