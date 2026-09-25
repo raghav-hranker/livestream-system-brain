@@ -1,0 +1,868 @@
+{
+  "info": {
+    "name": "Global search — classes section (tasks 01–03)",
+    "description": "Contract checks for the classes section of POST /api/search, runnable against the prod read-only server (real data) or the local seeded bed. Setup: reference/postman/global-search-classes.README.md. Signed-in requests mint their own JWT with the LOCAL jwt_secret — point {{base}} only at the local test worktree, never at prod.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "0. Server up + capsules",
+      "item": [
+        {
+          "name": "Collections — Classes capsule only with SEARCH_CLASSES_CAPSULE_ENABLED",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200', () => pm.response.to.have.status(200));",
+                  "const slugs = pm.response.json().data.map((c) => c.slug);",
+                  "pm.test('all, courses first', () => pm.expect(slugs.slice(0, 2)).to.eql(['all', 'courses']));",
+                  "pm.test('Classes capsule is either absent (flag off, the default) or right after Courses', () =>",
+                  "  pm.expect(slugs.includes('classes') ? slugs[2] : 'absent').to.be.oneOf(['classes', 'absent']));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "description": "The capsule is hidden unless the server runs with SEARCH_CLASSES_CAPSULE_ENABLED=true (the app cannot render classes yet). The classes SECTION is always returned.",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/api/search/collections",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "search",
+                "collections"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "1. Guest — no token (body userId must never reveal purchases)",
+      "item": [
+        {
+          "name": "Guest · owned query (body userId = the buyer)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('guest owned: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('guest owned: sections in order, classes after courses', () => pm.expect(Object.keys(d)).to.eql([\"courses\",\"classes\",\"ebooks\",\"words\",\"editorials\",\"books\",\"tests\"]));",
+                  "const cl = Array.isArray(d.classes) ? d.classes : [];",
+                  "pm.test('guest owned: classes is an array within the limit', () => { pm.expect(d.classes).to.be.an('array'); pm.expect(cl.length).to.be.at.most(Number(pm.variables.get('limit'))); });",
+                  "pm.test('guest owned: at least one class found', () => pm.expect(cl.length).to.be.above(0));",
+                  "const bad = (rule, pred) => { const v = cl.filter((c) => !pred(c)).map((c) => c.id + ' ' + c.title); pm.test('guest owned: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "const rank = (x) => (x.isPurchased ? 0 : x.isFree ? 1 : 2);",
+                  "bad('envelope: type class, deepLink /classes/<id>', (c) => c.type === 'class' && c.deepLink === '/classes/' + c.id && typeof c.title === 'string');",
+                  "bad('no duplicate classes', (c) => cl.filter((o) => o.id === c.id).length === 1);",
+                  "bad('meta never carries Class.isLive or the asset', (c) => !('isLive' in c.meta) && !('hlsAsset' in c.meta));",
+                  "bad('streamStatus is a known state or null', (c) => [null,\"preparing\",\"live\",\"reconnecting\",\"processing\",\"ended\"].includes(c.meta.streamStatus));",
+                  "bad('hasPlayback / canPlay / isFree are booleans', (c) => ['hasPlayback', 'canPlay', 'isFree'].every((k) => typeof c.meta[k] === 'boolean'));",
+                  "bad('every class has at least one attached course', (c) => Array.isArray(c.meta.courses) && c.meta.courses.length > 0);",
+                  "bad('every attached course has the full field set', (c) => c.meta.courses.every((x) => [\"id\",\"title\",\"imageUrl\",\"deepLink\",\"price\",\"isLive\",\"isRecorded\",\"isActive\",\"isFree\",\"isPurchased\",\"classTitle\",\"startDate\",\"endDate\"].every((k) => k in x)));",
+                  "bad('no course attached twice', (c) => new Set(c.meta.courses.map((x) => x.id)).size === c.meta.courses.length);",
+                  "bad('an inactive course is attached only when bought', (c) => c.meta.courses.every((x) => x.isActive || x.isPurchased));",
+                  "bad('canPlay = class free OR any course free/bought', (c) => c.meta.canPlay === (c.meta.isFree || c.meta.courses.some((x) => x.isFree || x.isPurchased)));",
+                  "bad('courses ordered purchased → free → rest', (c) => c.meta.courses.every((x, i, a) => i === 0 || rank(a[i - 1]) <= rank(x)));",
+                  "bad('guest view: nothing purchased', (c) => c.meta.courses.every((x) => x.isPurchased === false));",
+                  "bad('guest view: no inactive course', (c) => c.meta.courses.every((x) => x.isActive === true));",
+                  "if (cl[0]) pm.collectionVariables.set('first_class_id', cl[0].id);",
+                  "pm.collectionVariables.set('guest_owned', JSON.stringify(cl.map((c) => c.id + ':' + c.meta.courses.map((x) => x.id + (x.isPurchased ? 'P' : '')).join(','))));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "description": "No Authorization header. The body carries the buyer's userId — it must NOT mark anything purchased or attach an inactive course.",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query_owned}}\",\n  \"userId\": \"{{user_id}}\",\n  \"limit\": \"{{limit}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Guest · typo tolerance (alligation → allegation/alligation)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('guest typo: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('guest typo: sections in order, classes after courses', () => pm.expect(Object.keys(d)).to.eql([\"courses\",\"classes\",\"ebooks\",\"words\",\"editorials\",\"books\",\"tests\"]));",
+                  "const cl = Array.isArray(d.classes) ? d.classes : [];",
+                  "pm.test('guest typo: classes is an array within the limit', () => { pm.expect(d.classes).to.be.an('array'); pm.expect(cl.length).to.be.at.most(Number(pm.variables.get('limit'))); });",
+                  "pm.test('guest typo: at least one class found', () => pm.expect(cl.length).to.be.above(0));",
+                  "const bad = (rule, pred) => { const v = cl.filter((c) => !pred(c)).map((c) => c.id + ' ' + c.title); pm.test('guest typo: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "const rank = (x) => (x.isPurchased ? 0 : x.isFree ? 1 : 2);",
+                  "bad('envelope: type class, deepLink /classes/<id>', (c) => c.type === 'class' && c.deepLink === '/classes/' + c.id && typeof c.title === 'string');",
+                  "bad('no duplicate classes', (c) => cl.filter((o) => o.id === c.id).length === 1);",
+                  "bad('meta never carries Class.isLive or the asset', (c) => !('isLive' in c.meta) && !('hlsAsset' in c.meta));",
+                  "bad('streamStatus is a known state or null', (c) => [null,\"preparing\",\"live\",\"reconnecting\",\"processing\",\"ended\"].includes(c.meta.streamStatus));",
+                  "bad('hasPlayback / canPlay / isFree are booleans', (c) => ['hasPlayback', 'canPlay', 'isFree'].every((k) => typeof c.meta[k] === 'boolean'));",
+                  "bad('every class has at least one attached course', (c) => Array.isArray(c.meta.courses) && c.meta.courses.length > 0);",
+                  "bad('every attached course has the full field set', (c) => c.meta.courses.every((x) => [\"id\",\"title\",\"imageUrl\",\"deepLink\",\"price\",\"isLive\",\"isRecorded\",\"isActive\",\"isFree\",\"isPurchased\",\"classTitle\",\"startDate\",\"endDate\"].every((k) => k in x)));",
+                  "bad('no course attached twice', (c) => new Set(c.meta.courses.map((x) => x.id)).size === c.meta.courses.length);",
+                  "bad('an inactive course is attached only when bought', (c) => c.meta.courses.every((x) => x.isActive || x.isPurchased));",
+                  "bad('canPlay = class free OR any course free/bought', (c) => c.meta.canPlay === (c.meta.isFree || c.meta.courses.some((x) => x.isFree || x.isPurchased)));",
+                  "bad('courses ordered purchased → free → rest', (c) => c.meta.courses.every((x, i, a) => i === 0 || rank(a[i - 1]) <= rank(x)));",
+                  "bad('guest view: nothing purchased', (c) => c.meta.courses.every((x) => x.isPurchased === false));",
+                  "bad('guest view: no inactive course', (c) => c.meta.courses.every((x) => x.isActive === true));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query_typo}}\",\n  \"userId\": \"{{user_id}}\",\n  \"limit\": \"{{limit}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Guest · words in any order",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('guest words: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('guest words: sections in order, classes after courses', () => pm.expect(Object.keys(d)).to.eql([\"courses\",\"classes\",\"ebooks\",\"words\",\"editorials\",\"books\",\"tests\"]));",
+                  "const cl = Array.isArray(d.classes) ? d.classes : [];",
+                  "pm.test('guest words: classes is an array within the limit', () => { pm.expect(d.classes).to.be.an('array'); pm.expect(cl.length).to.be.at.most(Number(pm.variables.get('limit'))); });",
+                  "pm.test('guest words: at least one class found', () => pm.expect(cl.length).to.be.above(0));",
+                  "const bad = (rule, pred) => { const v = cl.filter((c) => !pred(c)).map((c) => c.id + ' ' + c.title); pm.test('guest words: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "const rank = (x) => (x.isPurchased ? 0 : x.isFree ? 1 : 2);",
+                  "bad('envelope: type class, deepLink /classes/<id>', (c) => c.type === 'class' && c.deepLink === '/classes/' + c.id && typeof c.title === 'string');",
+                  "bad('no duplicate classes', (c) => cl.filter((o) => o.id === c.id).length === 1);",
+                  "bad('meta never carries Class.isLive or the asset', (c) => !('isLive' in c.meta) && !('hlsAsset' in c.meta));",
+                  "bad('streamStatus is a known state or null', (c) => [null,\"preparing\",\"live\",\"reconnecting\",\"processing\",\"ended\"].includes(c.meta.streamStatus));",
+                  "bad('hasPlayback / canPlay / isFree are booleans', (c) => ['hasPlayback', 'canPlay', 'isFree'].every((k) => typeof c.meta[k] === 'boolean'));",
+                  "bad('every class has at least one attached course', (c) => Array.isArray(c.meta.courses) && c.meta.courses.length > 0);",
+                  "bad('every attached course has the full field set', (c) => c.meta.courses.every((x) => [\"id\",\"title\",\"imageUrl\",\"deepLink\",\"price\",\"isLive\",\"isRecorded\",\"isActive\",\"isFree\",\"isPurchased\",\"classTitle\",\"startDate\",\"endDate\"].every((k) => k in x)));",
+                  "bad('no course attached twice', (c) => new Set(c.meta.courses.map((x) => x.id)).size === c.meta.courses.length);",
+                  "bad('an inactive course is attached only when bought', (c) => c.meta.courses.every((x) => x.isActive || x.isPurchased));",
+                  "bad('canPlay = class free OR any course free/bought', (c) => c.meta.canPlay === (c.meta.isFree || c.meta.courses.some((x) => x.isFree || x.isPurchased)));",
+                  "bad('courses ordered purchased → free → rest', (c) => c.meta.courses.every((x, i, a) => i === 0 || rank(a[i - 1]) <= rank(x)));",
+                  "bad('guest view: nothing purchased', (c) => c.meta.courses.every((x) => x.isPurchased === false));",
+                  "bad('guest view: no inactive course', (c) => c.meta.courses.every((x) => x.isActive === true));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query_words}}\",\n  \"userId\": \"{{user_id}}\",\n  \"limit\": \"{{limit}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Guest · other query",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('guest other: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('guest other: sections in order, classes after courses', () => pm.expect(Object.keys(d)).to.eql([\"courses\",\"classes\",\"ebooks\",\"words\",\"editorials\",\"books\",\"tests\"]));",
+                  "const cl = Array.isArray(d.classes) ? d.classes : [];",
+                  "pm.test('guest other: classes is an array within the limit', () => { pm.expect(d.classes).to.be.an('array'); pm.expect(cl.length).to.be.at.most(Number(pm.variables.get('limit'))); });",
+                  "const bad = (rule, pred) => { const v = cl.filter((c) => !pred(c)).map((c) => c.id + ' ' + c.title); pm.test('guest other: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "const rank = (x) => (x.isPurchased ? 0 : x.isFree ? 1 : 2);",
+                  "bad('envelope: type class, deepLink /classes/<id>', (c) => c.type === 'class' && c.deepLink === '/classes/' + c.id && typeof c.title === 'string');",
+                  "bad('no duplicate classes', (c) => cl.filter((o) => o.id === c.id).length === 1);",
+                  "bad('meta never carries Class.isLive or the asset', (c) => !('isLive' in c.meta) && !('hlsAsset' in c.meta));",
+                  "bad('streamStatus is a known state or null', (c) => [null,\"preparing\",\"live\",\"reconnecting\",\"processing\",\"ended\"].includes(c.meta.streamStatus));",
+                  "bad('hasPlayback / canPlay / isFree are booleans', (c) => ['hasPlayback', 'canPlay', 'isFree'].every((k) => typeof c.meta[k] === 'boolean'));",
+                  "bad('every class has at least one attached course', (c) => Array.isArray(c.meta.courses) && c.meta.courses.length > 0);",
+                  "bad('every attached course has the full field set', (c) => c.meta.courses.every((x) => [\"id\",\"title\",\"imageUrl\",\"deepLink\",\"price\",\"isLive\",\"isRecorded\",\"isActive\",\"isFree\",\"isPurchased\",\"classTitle\",\"startDate\",\"endDate\"].every((k) => k in x)));",
+                  "bad('no course attached twice', (c) => new Set(c.meta.courses.map((x) => x.id)).size === c.meta.courses.length);",
+                  "bad('an inactive course is attached only when bought', (c) => c.meta.courses.every((x) => x.isActive || x.isPurchased));",
+                  "bad('canPlay = class free OR any course free/bought', (c) => c.meta.canPlay === (c.meta.isFree || c.meta.courses.some((x) => x.isFree || x.isPurchased)));",
+                  "bad('courses ordered purchased → free → rest', (c) => c.meta.courses.every((x, i, a) => i === 0 || rank(a[i - 1]) <= rank(x)));",
+                  "bad('guest view: nothing purchased', (c) => c.meta.courses.every((x) => x.isPurchased === false));",
+                  "bad('guest view: no inactive course', (c) => c.meta.courses.every((x) => x.isActive === true));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query_other}}\",\n  \"userId\": \"{{user_id}}\",\n  \"limit\": \"{{limit}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Signed in — valid token for user_id",
+      "item": [
+        {
+          "name": "Signed in · owned query → purchased course first, canPlay",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const b64u = (w) => CryptoJS.enc.Base64.stringify(w).replace(/=+$/, '').replace(/\\+/g, '-').replace(/\\//g, '_');",
+                  "const enc = (o) => b64u(CryptoJS.enc.Utf8.parse(JSON.stringify(o)));",
+                  "const now = Math.floor(Date.now() / 1000);",
+                  "const sign = (payload, secret) => { const h = enc({ alg: 'HS256', typ: 'JWT' }); const p = enc(payload);",
+                  "  return h + '.' + p + '.' + b64u(CryptoJS.HmacSHA256(h + '.' + p, secret)); };",
+                  "const payload = { user_id: pm.variables.get('user_id'), email: 'postman@local', mobile: '0', iat: now - 120,",
+                  "  exp: now + 3600 };",
+                  "pm.variables.set('token', sign(payload, pm.variables.get('jwt_secret')));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('signed-in owned: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('signed-in owned: sections in order, classes after courses', () => pm.expect(Object.keys(d)).to.eql([\"courses\",\"classes\",\"ebooks\",\"words\",\"editorials\",\"books\",\"tests\"]));",
+                  "const cl = Array.isArray(d.classes) ? d.classes : [];",
+                  "pm.test('signed-in owned: classes is an array within the limit', () => { pm.expect(d.classes).to.be.an('array'); pm.expect(cl.length).to.be.at.most(Number(pm.variables.get('limit'))); });",
+                  "pm.test('signed-in owned: at least one class found', () => pm.expect(cl.length).to.be.above(0));",
+                  "const bad = (rule, pred) => { const v = cl.filter((c) => !pred(c)).map((c) => c.id + ' ' + c.title); pm.test('signed-in owned: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "const rank = (x) => (x.isPurchased ? 0 : x.isFree ? 1 : 2);",
+                  "bad('envelope: type class, deepLink /classes/<id>', (c) => c.type === 'class' && c.deepLink === '/classes/' + c.id && typeof c.title === 'string');",
+                  "bad('no duplicate classes', (c) => cl.filter((o) => o.id === c.id).length === 1);",
+                  "bad('meta never carries Class.isLive or the asset', (c) => !('isLive' in c.meta) && !('hlsAsset' in c.meta));",
+                  "bad('streamStatus is a known state or null', (c) => [null,\"preparing\",\"live\",\"reconnecting\",\"processing\",\"ended\"].includes(c.meta.streamStatus));",
+                  "bad('hasPlayback / canPlay / isFree are booleans', (c) => ['hasPlayback', 'canPlay', 'isFree'].every((k) => typeof c.meta[k] === 'boolean'));",
+                  "bad('every class has at least one attached course', (c) => Array.isArray(c.meta.courses) && c.meta.courses.length > 0);",
+                  "bad('every attached course has the full field set', (c) => c.meta.courses.every((x) => [\"id\",\"title\",\"imageUrl\",\"deepLink\",\"price\",\"isLive\",\"isRecorded\",\"isActive\",\"isFree\",\"isPurchased\",\"classTitle\",\"startDate\",\"endDate\"].every((k) => k in x)));",
+                  "bad('no course attached twice', (c) => new Set(c.meta.courses.map((x) => x.id)).size === c.meta.courses.length);",
+                  "bad('an inactive course is attached only when bought', (c) => c.meta.courses.every((x) => x.isActive || x.isPurchased));",
+                  "bad('canPlay = class free OR any course free/bought', (c) => c.meta.canPlay === (c.meta.isFree || c.meta.courses.some((x) => x.isFree || x.isPurchased)));",
+                  "bad('courses ordered purchased → free → rest', (c) => c.meta.courses.every((x, i, a) => i === 0 || rank(a[i - 1]) <= rank(x)));",
+                  "pm.test('signed-in owned: the signed-in user sees a purchased course', () => pm.expect(cl.some((c) => c.meta.courses.some((x) => x.isPurchased))).to.be.true);",
+                  "pm.test('signed-in owned: a class with a purchased course is playable', () => pm.expect(cl.filter((c) => c.meta.courses.some((x) => x.isPurchased)).every((c) => c.meta.canPlay)).to.be.true);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "description": "JWT minted in the pre-request with the LOCAL jwt_secret for {{user_id}}.",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query_owned}}\",\n  \"userId\": \"{{user_id}}\",\n  \"limit\": \"{{limit}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Signed in · other query (contract only)",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const b64u = (w) => CryptoJS.enc.Base64.stringify(w).replace(/=+$/, '').replace(/\\+/g, '-').replace(/\\//g, '_');",
+                  "const enc = (o) => b64u(CryptoJS.enc.Utf8.parse(JSON.stringify(o)));",
+                  "const now = Math.floor(Date.now() / 1000);",
+                  "const sign = (payload, secret) => { const h = enc({ alg: 'HS256', typ: 'JWT' }); const p = enc(payload);",
+                  "  return h + '.' + p + '.' + b64u(CryptoJS.HmacSHA256(h + '.' + p, secret)); };",
+                  "const payload = { user_id: pm.variables.get('user_id'), email: 'postman@local', mobile: '0', iat: now - 120,",
+                  "  exp: now + 3600 };",
+                  "pm.variables.set('token', sign(payload, pm.variables.get('jwt_secret')));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('signed-in other: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('signed-in other: sections in order, classes after courses', () => pm.expect(Object.keys(d)).to.eql([\"courses\",\"classes\",\"ebooks\",\"words\",\"editorials\",\"books\",\"tests\"]));",
+                  "const cl = Array.isArray(d.classes) ? d.classes : [];",
+                  "pm.test('signed-in other: classes is an array within the limit', () => { pm.expect(d.classes).to.be.an('array'); pm.expect(cl.length).to.be.at.most(Number(pm.variables.get('limit'))); });",
+                  "const bad = (rule, pred) => { const v = cl.filter((c) => !pred(c)).map((c) => c.id + ' ' + c.title); pm.test('signed-in other: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "const rank = (x) => (x.isPurchased ? 0 : x.isFree ? 1 : 2);",
+                  "bad('envelope: type class, deepLink /classes/<id>', (c) => c.type === 'class' && c.deepLink === '/classes/' + c.id && typeof c.title === 'string');",
+                  "bad('no duplicate classes', (c) => cl.filter((o) => o.id === c.id).length === 1);",
+                  "bad('meta never carries Class.isLive or the asset', (c) => !('isLive' in c.meta) && !('hlsAsset' in c.meta));",
+                  "bad('streamStatus is a known state or null', (c) => [null,\"preparing\",\"live\",\"reconnecting\",\"processing\",\"ended\"].includes(c.meta.streamStatus));",
+                  "bad('hasPlayback / canPlay / isFree are booleans', (c) => ['hasPlayback', 'canPlay', 'isFree'].every((k) => typeof c.meta[k] === 'boolean'));",
+                  "bad('every class has at least one attached course', (c) => Array.isArray(c.meta.courses) && c.meta.courses.length > 0);",
+                  "bad('every attached course has the full field set', (c) => c.meta.courses.every((x) => [\"id\",\"title\",\"imageUrl\",\"deepLink\",\"price\",\"isLive\",\"isRecorded\",\"isActive\",\"isFree\",\"isPurchased\",\"classTitle\",\"startDate\",\"endDate\"].every((k) => k in x)));",
+                  "bad('no course attached twice', (c) => new Set(c.meta.courses.map((x) => x.id)).size === c.meta.courses.length);",
+                  "bad('an inactive course is attached only when bought', (c) => c.meta.courses.every((x) => x.isActive || x.isPurchased));",
+                  "bad('canPlay = class free OR any course free/bought', (c) => c.meta.canPlay === (c.meta.isFree || c.meta.courses.some((x) => x.isFree || x.isPurchased)));",
+                  "bad('courses ordered purchased → free → rest', (c) => c.meta.courses.every((x, i, a) => i === 0 || rank(a[i - 1]) <= rank(x)));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query_other}}\",\n  \"userId\": \"{{user_id}}\",\n  \"limit\": \"{{limit}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Bad tokens → 200 + guest view, never an error",
+      "item": [
+        {
+          "name": "Expired token",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const b64u = (w) => CryptoJS.enc.Base64.stringify(w).replace(/=+$/, '').replace(/\\+/g, '-').replace(/\\//g, '_');",
+                  "const enc = (o) => b64u(CryptoJS.enc.Utf8.parse(JSON.stringify(o)));",
+                  "const now = Math.floor(Date.now() / 1000);",
+                  "const sign = (payload, secret) => { const h = enc({ alg: 'HS256', typ: 'JWT' }); const p = enc(payload);",
+                  "  return h + '.' + p + '.' + b64u(CryptoJS.HmacSHA256(h + '.' + p, secret)); };",
+                  "const payload = { user_id: pm.variables.get('user_id'), email: 'postman@local', mobile: '0', iat: now - 120,",
+                  "  exp: now - 60 };",
+                  "pm.variables.set('token', sign(payload, pm.variables.get('jwt_secret')));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('expired: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('expired: sections in order, classes after courses', () => pm.expect(Object.keys(d)).to.eql([\"courses\",\"classes\",\"ebooks\",\"words\",\"editorials\",\"books\",\"tests\"]));",
+                  "const cl = Array.isArray(d.classes) ? d.classes : [];",
+                  "pm.test('expired: classes is an array within the limit', () => { pm.expect(d.classes).to.be.an('array'); pm.expect(cl.length).to.be.at.most(Number(pm.variables.get('limit'))); });",
+                  "const bad = (rule, pred) => { const v = cl.filter((c) => !pred(c)).map((c) => c.id + ' ' + c.title); pm.test('expired: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "const rank = (x) => (x.isPurchased ? 0 : x.isFree ? 1 : 2);",
+                  "bad('envelope: type class, deepLink /classes/<id>', (c) => c.type === 'class' && c.deepLink === '/classes/' + c.id && typeof c.title === 'string');",
+                  "bad('no duplicate classes', (c) => cl.filter((o) => o.id === c.id).length === 1);",
+                  "bad('meta never carries Class.isLive or the asset', (c) => !('isLive' in c.meta) && !('hlsAsset' in c.meta));",
+                  "bad('streamStatus is a known state or null', (c) => [null,\"preparing\",\"live\",\"reconnecting\",\"processing\",\"ended\"].includes(c.meta.streamStatus));",
+                  "bad('hasPlayback / canPlay / isFree are booleans', (c) => ['hasPlayback', 'canPlay', 'isFree'].every((k) => typeof c.meta[k] === 'boolean'));",
+                  "bad('every class has at least one attached course', (c) => Array.isArray(c.meta.courses) && c.meta.courses.length > 0);",
+                  "bad('every attached course has the full field set', (c) => c.meta.courses.every((x) => [\"id\",\"title\",\"imageUrl\",\"deepLink\",\"price\",\"isLive\",\"isRecorded\",\"isActive\",\"isFree\",\"isPurchased\",\"classTitle\",\"startDate\",\"endDate\"].every((k) => k in x)));",
+                  "bad('no course attached twice', (c) => new Set(c.meta.courses.map((x) => x.id)).size === c.meta.courses.length);",
+                  "bad('an inactive course is attached only when bought', (c) => c.meta.courses.every((x) => x.isActive || x.isPurchased));",
+                  "bad('canPlay = class free OR any course free/bought', (c) => c.meta.canPlay === (c.meta.isFree || c.meta.courses.some((x) => x.isFree || x.isPurchased)));",
+                  "bad('courses ordered purchased → free → rest', (c) => c.meta.courses.every((x, i, a) => i === 0 || rank(a[i - 1]) <= rank(x)));",
+                  "bad('guest view: nothing purchased', (c) => c.meta.courses.every((x) => x.isPurchased === false));",
+                  "bad('guest view: no inactive course', (c) => c.meta.courses.every((x) => x.isActive === true));",
+                  "pm.test('expired: identical to the guest response for the same query', () => pm.expect(JSON.stringify(cl.map((c) => c.id + ':' + c.meta.courses.map((x) => x.id + (x.isPurchased ? 'P' : '')).join(',')))).to.eql(pm.collectionVariables.get('guest_owned')));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query_owned}}\",\n  \"userId\": \"{{user_id}}\",\n  \"limit\": \"{{limit}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Forged token (wrong secret)",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const b64u = (w) => CryptoJS.enc.Base64.stringify(w).replace(/=+$/, '').replace(/\\+/g, '-').replace(/\\//g, '_');",
+                  "const enc = (o) => b64u(CryptoJS.enc.Utf8.parse(JSON.stringify(o)));",
+                  "const now = Math.floor(Date.now() / 1000);",
+                  "const sign = (payload, secret) => { const h = enc({ alg: 'HS256', typ: 'JWT' }); const p = enc(payload);",
+                  "  return h + '.' + p + '.' + b64u(CryptoJS.HmacSHA256(h + '.' + p, secret)); };",
+                  "const payload = { user_id: pm.variables.get('user_id'), email: 'postman@local', mobile: '0', iat: now - 120,",
+                  "  exp: now + 3600 };",
+                  "pm.variables.set('token', sign(payload, 'not-the-local-secret'));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('forged: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('forged: sections in order, classes after courses', () => pm.expect(Object.keys(d)).to.eql([\"courses\",\"classes\",\"ebooks\",\"words\",\"editorials\",\"books\",\"tests\"]));",
+                  "const cl = Array.isArray(d.classes) ? d.classes : [];",
+                  "pm.test('forged: classes is an array within the limit', () => { pm.expect(d.classes).to.be.an('array'); pm.expect(cl.length).to.be.at.most(Number(pm.variables.get('limit'))); });",
+                  "const bad = (rule, pred) => { const v = cl.filter((c) => !pred(c)).map((c) => c.id + ' ' + c.title); pm.test('forged: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "const rank = (x) => (x.isPurchased ? 0 : x.isFree ? 1 : 2);",
+                  "bad('envelope: type class, deepLink /classes/<id>', (c) => c.type === 'class' && c.deepLink === '/classes/' + c.id && typeof c.title === 'string');",
+                  "bad('no duplicate classes', (c) => cl.filter((o) => o.id === c.id).length === 1);",
+                  "bad('meta never carries Class.isLive or the asset', (c) => !('isLive' in c.meta) && !('hlsAsset' in c.meta));",
+                  "bad('streamStatus is a known state or null', (c) => [null,\"preparing\",\"live\",\"reconnecting\",\"processing\",\"ended\"].includes(c.meta.streamStatus));",
+                  "bad('hasPlayback / canPlay / isFree are booleans', (c) => ['hasPlayback', 'canPlay', 'isFree'].every((k) => typeof c.meta[k] === 'boolean'));",
+                  "bad('every class has at least one attached course', (c) => Array.isArray(c.meta.courses) && c.meta.courses.length > 0);",
+                  "bad('every attached course has the full field set', (c) => c.meta.courses.every((x) => [\"id\",\"title\",\"imageUrl\",\"deepLink\",\"price\",\"isLive\",\"isRecorded\",\"isActive\",\"isFree\",\"isPurchased\",\"classTitle\",\"startDate\",\"endDate\"].every((k) => k in x)));",
+                  "bad('no course attached twice', (c) => new Set(c.meta.courses.map((x) => x.id)).size === c.meta.courses.length);",
+                  "bad('an inactive course is attached only when bought', (c) => c.meta.courses.every((x) => x.isActive || x.isPurchased));",
+                  "bad('canPlay = class free OR any course free/bought', (c) => c.meta.canPlay === (c.meta.isFree || c.meta.courses.some((x) => x.isFree || x.isPurchased)));",
+                  "bad('courses ordered purchased → free → rest', (c) => c.meta.courses.every((x, i, a) => i === 0 || rank(a[i - 1]) <= rank(x)));",
+                  "bad('guest view: nothing purchased', (c) => c.meta.courses.every((x) => x.isPurchased === false));",
+                  "bad('guest view: no inactive course', (c) => c.meta.courses.every((x) => x.isActive === true));",
+                  "pm.test('forged: identical to the guest response for the same query', () => pm.expect(JSON.stringify(cl.map((c) => c.id + ':' + c.meta.courses.map((x) => x.id + (x.isPurchased ? 'P' : '')).join(',')))).to.eql(pm.collectionVariables.get('guest_owned')));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query_owned}}\",\n  \"userId\": \"{{user_id}}\",\n  \"limit\": \"{{limit}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Garbage token",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const b64u = (w) => CryptoJS.enc.Base64.stringify(w).replace(/=+$/, '').replace(/\\+/g, '-').replace(/\\//g, '_');",
+                  "const enc = (o) => b64u(CryptoJS.enc.Utf8.parse(JSON.stringify(o)));",
+                  "const now = Math.floor(Date.now() / 1000);",
+                  "const sign = (payload, secret) => { const h = enc({ alg: 'HS256', typ: 'JWT' }); const p = enc(payload);",
+                  "  return h + '.' + p + '.' + b64u(CryptoJS.HmacSHA256(h + '.' + p, secret)); };",
+                  "const payload = { user_id: pm.variables.get('user_id'), email: 'postman@local', mobile: '0', iat: now - 120,",
+                  "  exp: now + 3600 };",
+                  "pm.variables.set('token', 'garbage');"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('garbage: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('garbage: sections in order, classes after courses', () => pm.expect(Object.keys(d)).to.eql([\"courses\",\"classes\",\"ebooks\",\"words\",\"editorials\",\"books\",\"tests\"]));",
+                  "const cl = Array.isArray(d.classes) ? d.classes : [];",
+                  "pm.test('garbage: classes is an array within the limit', () => { pm.expect(d.classes).to.be.an('array'); pm.expect(cl.length).to.be.at.most(Number(pm.variables.get('limit'))); });",
+                  "const bad = (rule, pred) => { const v = cl.filter((c) => !pred(c)).map((c) => c.id + ' ' + c.title); pm.test('garbage: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "const rank = (x) => (x.isPurchased ? 0 : x.isFree ? 1 : 2);",
+                  "bad('envelope: type class, deepLink /classes/<id>', (c) => c.type === 'class' && c.deepLink === '/classes/' + c.id && typeof c.title === 'string');",
+                  "bad('no duplicate classes', (c) => cl.filter((o) => o.id === c.id).length === 1);",
+                  "bad('meta never carries Class.isLive or the asset', (c) => !('isLive' in c.meta) && !('hlsAsset' in c.meta));",
+                  "bad('streamStatus is a known state or null', (c) => [null,\"preparing\",\"live\",\"reconnecting\",\"processing\",\"ended\"].includes(c.meta.streamStatus));",
+                  "bad('hasPlayback / canPlay / isFree are booleans', (c) => ['hasPlayback', 'canPlay', 'isFree'].every((k) => typeof c.meta[k] === 'boolean'));",
+                  "bad('every class has at least one attached course', (c) => Array.isArray(c.meta.courses) && c.meta.courses.length > 0);",
+                  "bad('every attached course has the full field set', (c) => c.meta.courses.every((x) => [\"id\",\"title\",\"imageUrl\",\"deepLink\",\"price\",\"isLive\",\"isRecorded\",\"isActive\",\"isFree\",\"isPurchased\",\"classTitle\",\"startDate\",\"endDate\"].every((k) => k in x)));",
+                  "bad('no course attached twice', (c) => new Set(c.meta.courses.map((x) => x.id)).size === c.meta.courses.length);",
+                  "bad('an inactive course is attached only when bought', (c) => c.meta.courses.every((x) => x.isActive || x.isPurchased));",
+                  "bad('canPlay = class free OR any course free/bought', (c) => c.meta.canPlay === (c.meta.isFree || c.meta.courses.some((x) => x.isFree || x.isPurchased)));",
+                  "bad('courses ordered purchased → free → rest', (c) => c.meta.courses.every((x, i, a) => i === 0 || rank(a[i - 1]) <= rank(x)));",
+                  "bad('guest view: nothing purchased', (c) => c.meta.courses.every((x) => x.isPurchased === false));",
+                  "bad('guest view: no inactive course', (c) => c.meta.courses.every((x) => x.isActive === true));",
+                  "pm.test('garbage: identical to the guest response for the same query', () => pm.expect(JSON.stringify(cl.map((c) => c.id + ':' + c.meta.courses.map((x) => x.id + (x.isPurchased ? 'P' : '')).join(',')))).to.eql(pm.collectionVariables.get('guest_owned')));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query_owned}}\",\n  \"userId\": \"{{user_id}}\",\n  \"limit\": \"{{limit}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "4. Clicks + trending",
+      "item": [
+        {
+          "name": "Click a class result → 204",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('204', () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/search/click",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "search",
+                "click"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query_owned}}\",\n  \"type\": \"class\",\n  \"resultId\": \"{{first_class_id}}\",\n  \"userId\": \"{{user_id}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Uses the first class id saved by the guest owned-query request. On the prod read-only server the Mongo click-log write is blocked by the guard (logged, harmless); Redis is local."
+          }
+        },
+        {
+          "name": "Trending → classes always []",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200', () => pm.response.to.have.status(200));",
+                  "const d = pm.response.json().data;",
+                  "pm.test('sections in order', () => pm.expect(Object.keys(d)).to.eql([\"courses\",\"classes\",\"ebooks\",\"words\",\"editorials\",\"books\",\"tests\"]));",
+                  "pm.test('classes is empty', () => pm.expect(d.classes).to.eql([]));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/api/search/trending",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "search",
+                "trending"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base",
+      "value": "http://localhost:3110",
+      "type": "string"
+    },
+    {
+      "key": "jwt_secret",
+      "value": "local-gsearch-jwt-secret-not-used-anywhere-else",
+      "type": "string"
+    },
+    {
+      "key": "user_id",
+      "value": "6a7eb7ce543dd0b9881e0a27",
+      "type": "string"
+    },
+    {
+      "key": "query_owned",
+      "value": "mixture",
+      "type": "string"
+    },
+    {
+      "key": "query_typo",
+      "value": "alligation",
+      "type": "string"
+    },
+    {
+      "key": "query_words",
+      "value": "mixture part 2",
+      "type": "string"
+    },
+    {
+      "key": "query_other",
+      "value": "railway",
+      "type": "string"
+    },
+    {
+      "key": "limit",
+      "value": "10",
+      "type": "string"
+    },
+    {
+      "key": "first_class_id",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "guest_owned",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
