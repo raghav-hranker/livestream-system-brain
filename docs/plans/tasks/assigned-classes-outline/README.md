@@ -1,6 +1,17 @@
 # Tasks: Assigned Classes outline
 
-State: `ready-for-agent` (01–09) · `ready-for-human` (10–12)
+State: **01–09 done** (local, 2026-10-01) · `ready-for-human` (10–12)
+
+Branch heads after the merges: backend `f86dfb19d`, admin `380a5d5`. Nothing is pushed.
+Per task:
+- **Backend:** 01 `875140bee` + `7a00f448e`, 05 `0cfee7714`, 06 `f63622ae1`, 07 `c50805b54`,
+  08 `91cb671fa`, 09 `92ff607e6`. The Copy fix after the merge is `f86dfb19d`: a topic returning
+  to the target lands last.
+- **Admin:** 01 `439fe3b`, 02 `0cd6028`, 03 `0418fcd`, 04 `9efd0cd`, 05 `8c71ac7`, 07 `dba6f22`,
+  08 `95a3696`, 09 `a271c71`.
+
+No drag or dialog has been exercised in a real browser yet; task 11's local preview is the first
+time.
 
 Vertical-slice breakdown of [the PRD](../../prd-assigned-classes-outline.md). Tasks cite the PRD's
 numbered modules (Backend 1–5, Admin 6–10) and user stories; they do not restate them. Glossary: fork
