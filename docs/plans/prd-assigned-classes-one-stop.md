@@ -167,7 +167,15 @@ places the same class in the target course.
    - It is the **placement** status, per course: off hides the class from students **in this course
      only** (`CourseClass.status`), never `Class.status`. Its label says so: "Active in this course".
    - Inactive rows: muted text and an *Inactive* tag beside the status pill.
-   - Bulk Edit keeps Status, and Copy still copies it.
+   - The admin outline, its rows read and `useCourseClasses` used to drop `status: 0` placements, so
+     a switched-off row vanished. They now keep every `isActive` placement; student reads still
+     filter `status: 1`.
+   - Copy copies a switched-off placement **as switched off** (status copied as it is, outline story
+     50). Bulk Edit never had a placement Status field, so there was nothing to keep.
+   - Known gaps, not fixed here: `GET /api/topics/:topicId/classes` and `POST
+     /api/courses/:courseId/todays-classes` match `isActive` only, so a switched-off class still
+     shows there. Available Classes also lists a switched-off class, and assigning it from there
+     switches it back on.
 12. **Add class dialog** (`AddClassInPlaceDialog`). It computes the title suggestion and the teacher
    prefill from the outline group already loaded.
    - **Place pickers:** section header → Topic then Subtopic selects; topic header → Subtopic select
