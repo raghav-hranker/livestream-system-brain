@@ -1,6 +1,6 @@
 # Tasks: Assigned Classes one-stop
 
-State: `ready-for-agent` (01–07) · `ready-for-human` (08)
+State: `ready-for-agent` (00–07) · `ready-for-human` (08)
 
 Vertical-slice breakdown of [the PRD](../../prd-assigned-classes-one-stop.md). The tasks cite the PRD's
 numbered decisions instead of restating them.
@@ -25,13 +25,14 @@ numbered decisions instead of restating them.
 
 | # | Task | Type | Blocked by |
 |---|---|---|---|
+| 00 | [Guard class test-assignment routes with requireAdmin](00-class-tests-auth.md) | AFK | — |
 | 01 | [Row Go live button, status pill and ⋯ menu](01-row-menu-go-live.md) | AFK | — |
 | 02 | [Upload video from the row](02-upload-video-from-row.md) | AFK | 01 |
 | 03 | [PDFs sheet from the row](03-pdfs-sheet.md) | AFK | 01 |
-| 04 | [Tests sheet from the row](04-tests-sheet.md) | AFK | 01, class-tests auth fix |
+| 04 | [Tests sheet from the row](04-tests-sheet.md) | AFK | 00, 01 |
 | 05 | [Add recorded class here](05-add-recorded-class-here.md) | AFK | — |
 | 06 | [Schedule live class here](06-schedule-live-class-here.md) | AFK | 05 |
 | 07 | [Row resource counts and the active switch](07-row-resources-and-active-switch.md) | AFK | 01 |
 | 08 | [Preview and deploy](08-preview-deploy.md) | HITL | 01–07, outline task 11 |
 
-"Class-tests auth fix" is the separate task "Guard class test-assignment routes with requireAdmin".
+Task 00 is on its own branch off `origin/quicktricks-admin` so it can deploy ahead of the outline; it is merged into the one-stop branch for task 04.
