@@ -398,3 +398,125 @@ will touch them again.
   accepted (user, 2026-10-02).
 - Student `class-tabs` reads the placement-level taxonomy and never the per-place list, so a moved
   place doesn't change class-tabs (known gap, as before).
+
+## Round 3: recorded classes with their videos (2026-10-02)
+
+After round 2 the user asked for bulk upload of classes, and whether the add-a-recorded-class form
+should take the recording too. Board I of the preview canvas
+(https://claude.ai/artifact/FhD4V5SgPczfghzZA1KoKn) was accepted the same day. Board J (create a
+brand-new section with its classes) is **parked** for later; it is not part of this round.
+
+### What changes for the admin
+
+- **One dialog for one or many classes.** The header ⋯ item "Add recorded class here" becomes **"Add
+  recorded classes here"**, from the same section, topic and subtopic menus with the same place picker
+  (decision 2). The dialog takes videos, optionally:
+  - **no video:** one class, as today; it shows "No video yet" until a video is uploaded from the
+    row's ⋯ menu;
+  - **one video:** today's form plus the file. The title is still the series suggestion, with a "Use
+    the file name instead" link;
+  - **several videos:** a list in natural file-name order (Part 2 before Part 10). Each row shows the
+    file name, its size and an editable class title. The titles are **numbered after the group's last
+    class** (Part-7 → Part-10), or taken from the file names. Rows drag to reorder, and numbered
+    titles follow the order. One teacher for all.
+- **Create first, then upload in the background.** Create makes every class and its placement at once,
+  landing last in the group in list order, and closes the dialog. The rows appear immediately. The
+  videos upload two at a time while the admin keeps working:
+  - each row's pill shows "Uploading 43%" with a bar, "Waiting to upload", "Uploaded · being
+    processed", or "Upload failed" with **Retry upload**;
+  - a bar at the bottom of the screen shows overall progress and "Keep this tab open until uploads
+    finish", with **Cancel remaining**;
+  - leaving the page while uploads run asks the browser to confirm.
+- **Hidden until the recording is ready.** A class made this way starts **off in this course**, with
+  the tag "Hidden from students until the recording is ready" and "On when ready" under its switch.
+  It switches on by itself when its recording is ready. If the admin flips the switch by hand, that
+  choice wins and nothing switches it again.
+- **The old "Bulk Upload & Assign Classes" button** leaves the course's Available Classes tab. Its
+  classes came out inactive, with teacher "Admin", priority 1 and no subtopic, and the course
+  assignment ran only after every upload finished, so a failed upload left a class outside the course.
+  The Classes dashboard keeps its own bulk upload.
+
+### Round 3 user stories
+
+38. As a course admin, I want to add several recorded classes to a subtopic at once from their video files, so that uploading a series is one step.
+39. As a course admin, I want to attach the video while adding a single recorded class, so that I don't need a second dialog.
+40. As a course admin, I want new class titles numbered after the group's last class, so that a series stays consistent without typing.
+41. As a course admin, I want to use the file names as titles when they are already good, so that I don't retype them.
+42. As a course admin, I want to reorder the videos before creating, so that the classes land in teaching order.
+43. As a course admin, I want to keep working while videos upload, so that a 2 GB lecture doesn't hold the screen.
+44. As a course admin, I want each row to show its own upload progress and a failed upload to be retryable from its row, so that nothing gets lost silently.
+45. As a course admin, I want a duplicate title refused before anything is created, so that I never end up with half a batch.
+46. As a student, I want a new class to appear only once its recording plays, so that I never tap a class that has nothing in it.
+47. As a course admin, I want one way to bulk upload into a course, so that I don't pick the old path that leaves classes outside the course.
+
+### Round 3 implementation decisions
+
+**Backend**
+26. **Batch create in place.** The in-place endpoint (decision 2,
+    `adminCourseClassInPlaceController.ts`) accepts `titles: string[]` (1–30) as an alternative to
+    `title`, for recorded classes only. All classes and placements are made in **one transaction**, in
+    the order sent, landing last in the group (same listing-aware max + 1 and topic-order append). The
+    response lists `{ classId, placementId, title }` in that order.
+    - Titles are checked before anything is written. **409 `{ field: 'titles', taken: string[],
+      repeated: string[] }`**: `taken` are titles that already exist (the same exact-match
+      `Class.exists({ title })` rule as today, so the whole platform, not just this course); `repeated`
+      appear twice in the request. Nothing is created.
+    - The single-`title` body keeps working unchanged (live classes, task 06, use it).
+27. **Waiting for its recording.** A new field on the placement, **`CourseClass.waitingForRecordingSince?:
+    Date`**, follows the `apxSyncDeactivatedAt` pattern: its presence is the licence for one writer to
+    turn the placement on.
+    - A recorded class created in place (single or batch, with or without a video) gets `status: 0`
+      and `waitingForRecordingSince: now`. Live classes made in place are unchanged (visible).
+    - **The stream-status write** (`streamStatusController.ts`), after it persists `ended` with an
+      `hlsAsset`, sets `status: 1` and unsets the field on **every** placement of that class that
+      carries it. Idempotent under the at-least-once retries (ADR-0002): a repeat finds nothing to
+      flip. A failure here is logged and does not fail the webhook, which has already persisted the
+      class.
+    - **Any admin write of a placement's `status`** (`PATCH /course-classes/:id`,
+      `bulk-update-overrides`, the switch) unsets the field, in either direction. The admin's choice
+      wins.
+    - **Copy to another course** carries the field with the status, so a copy of a waiting class waits
+      too.
+    - Outline rows carry **`waitingForRecording: boolean`** for the tag.
+28. **Known gap, not fixed here:** `GET /api/topics/:topicId/classes` and `todays-classes` ignore the
+    placement status (round 1 finding, chip spawned). Until that fix lands, a waiting class can appear
+    on those two listings.
+
+**Admin**
+29. **`AddRecordedClassesDialog`** replaces `AddClassInPlaceDialog`'s recorded mode (live stays as task
+    06 built it). It has a drop zone and "Choose videos" (`accept="video/*"`, multiple), and three
+    shapes by file count, as above. Pure functions in `lib/add-class-in-place.ts`:
+    - `nextTitlesInSeries(lastTitle, n)` generalises `nextTitleInSeries` (keeps zero padding: "Day 06" →
+      "Day 07"…). No trailing number ⇒ the file-name titles are the default and "Number them" is
+      hidden;
+    - `titleFromFileName(name)`: strip the extension, underscores to spaces, collapse spaces;
+    - natural sort by file name (`localeCompare` with `numeric: true`).
+    The inline check covers titles in the outline plus repeats in the list; the server's 409 names the
+    rest, shown on the matching rows. Create stays disabled while any row has an error.
+30. **Background upload queue** (a zustand store, like `stores/videoUploadStore.ts`, keyed by
+    `classId`), independent of any dialog's lifetime:
+    - the same `Uploader`, upload lane `'class'`, path `<customerId>/<classId>`, 10 MB chunks, the
+      existing two retries;
+    - two uploads at a time, in list order;
+    - state per class: `waiting | uploading(pct) | processing | failed`. Lost on reload, by design: the
+      row then shows what the server knows ("No video yet" until `ended`). The transcoder sends no
+      `processing` status, so "being processed" is client-only;
+    - `beforeunload` confirm while anything is waiting or uploading;
+    - **Cancel remaining** aborts uploads and drops waiting ones; those classes keep "No video yet".
+31. **Row pill and bottom bar.** While the queue knows a class, its state replaces the server pill on
+    that row (`ClassVideoStatusPill`); otherwise `classVideoStatus` as today. The bottom bar shows
+    "Uploading N videos · X GB left", "k of n uploaded · m waiting · f failed", and the overall bytes
+    bar. The tag and "On when ready" come from `waitingForRecording`.
+32. **Row "Upload video"** (task 02) also goes through the queue, so closing its dialog no longer cancels
+    the upload. The replace warning is unchanged.
+33. **Remove the old entry point:** the "Bulk Upload & Assign" button and its `BulkUploadVideosSheet`
+    usage in `assign-classes/AvailableClassesView.tsx`. The sheet itself stays for the Classes
+    dashboard.
+
+### Round 3 out of scope
+
+- Board J: creating a new section, topic or subtopic from the course screen (parked).
+- Resuming an upload after a reload or a closed tab.
+- A server-side "uploaded, transcoding" state (would need the transcoder to report `processing`).
+- Bulk scheduling of live classes.
+- Fixing the two listings that ignore placement status (decision 28).

@@ -1,6 +1,6 @@
 # Tasks: Assigned Classes one-stop
 
-State: 00–07 and 09–13 **done** (2026-10-02, local) · `ready-for-human` (08)
+State: 00–07 and 09–13 **done** (2026-10-02, local) · 14–16 `ready-for-agent` (Round 3) · `ready-for-human` (08)
 
 **Merged heads** of `feat/assign-classes-one-stop`: backend `4e9456e64`, admin `c37e774` (worktrees
 `qt-one-stop-backend` / `qt-one-stop-admin`). Round 1 ended at backend `146653960`, admin `94cf488`.
@@ -58,10 +58,19 @@ numbered decisions instead of restating them.
 | 11 | [Drag across groups, and several classes at once](11-cross-group-multi-drag.md) | AFK | 10 |
 | 12 | [Classes that appear in two places](12-classes-in-two-places.md) | AFK | 09 |
 | 13 | [Class PDF upload: filed from the class, free in this class only](13-class-pdf-upload.md) | AFK | — |
-| 08 | [Preview and deploy](08-preview-deploy.md) | HITL | 01–07, 09–13, outline task 11 |
+| 14 | [Hidden until the recording is ready](14-hidden-until-recording-ready.md) | AFK | — |
+| 15 | [Background uploads, and a video in the add form](15-upload-queue-and-one-video.md) | AFK | 14 |
+| 16 | [Several videos at once, and the old bulk button goes](16-several-videos.md) | AFK | 15 |
+| 08 | [Preview and deploy](08-preview-deploy.md) | HITL | 01–07, 09–16, outline task 11 |
 
 Task 00 is on its own branch off `origin/quicktricks-admin` so it can deploy ahead of the outline; it is merged into the one-stop branch for task 04.
 
 **Round 2** (2026-10-02, after the local preview): tasks 09–13, PRD section "Round 2". Wave 1 = 09 and
 13 in parallel; then 10 and 12 (both after 09; they touch the same view, so merge one before starting
 the other's merge); then 11. Task 08 runs once round 2 is merged.
+
+**Round 3** (2026-10-02, board I of the preview): tasks 14–16, PRD section "Round 3". Recorded classes
+with their videos: one "Add recorded classes here" dialog for no, one or several videos, background
+uploads, and new recorded classes hidden until their recording is ready. Run 14 → 15 → 16 in order
+(each builds on the last); branch per-task worktrees from the round 2 heads above. Board J (a brand-new
+section from the course screen) is parked.

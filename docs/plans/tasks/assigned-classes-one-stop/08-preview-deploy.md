@@ -1,7 +1,7 @@
 # Preview and deploy
 
 **Type**: HITL
-**Blocked by**: #01–#07, #09–#13; outline task 11 (the outline deploys first)
+**Blocked by**: #01–#07, #09–#16; outline task 11 (the outline deploys first)
 
 ## What to build
 
@@ -14,6 +14,10 @@
   - Round 2: Go live from the row ⋯; Move to… a row and a ticked set; drag a row and three ticked rows
     into another topic; Reset a moved row; on a class shown in two places, remove one place and check
     the student listing still has the other; upload a PDF from a class with Free off.
+  - Round 3: add a recorded class with no video, with one video, and with several videos (titles
+    numbered, one reordered); watch the rows upload while using the outline; check a new class stays
+    hidden for students until its recording is ready, then turns on by itself; flip one by hand and
+    check it is not flipped back; the Available tab has no bulk upload button.
 - **Deploy** on the user's go-ahead, like the outline:
   - backend: `dist` compile, then commit, push, box pull and pm2 restart;
   - admin: push.
