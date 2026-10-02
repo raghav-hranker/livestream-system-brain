@@ -14,6 +14,8 @@ PRD decisions 1 and 8. The row ⋯ menu gets **PDFs**, which opens a side sheet 
 - **The sheet** shows the class's PDFs with preview, reorder and remove, and lets the admin upload new
   PDFs (the bulk sheet with auto-assign) or attach existing ones.
 - **Banner:** "Changes apply to this class in every course (N)".
+- Any change in the sheet invalidates the outline query, so the row's PDF count (task 07) is fresh.
+  If task 07 has landed, its PDF count opens this sheet too.
 
 ## Acceptance criteria
 

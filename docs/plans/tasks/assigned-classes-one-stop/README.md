@@ -1,6 +1,6 @@
 # Tasks: Assigned Classes one-stop
 
-State: `ready-for-agent` (01–06) · `ready-for-human` (07)
+State: `ready-for-agent` (01–07) · `ready-for-human` (08)
 
 Vertical-slice breakdown of [the PRD](../../prd-assigned-classes-one-stop.md). The tasks cite the PRD's
 numbered decisions instead of restating them.
@@ -31,6 +31,7 @@ numbered decisions instead of restating them.
 | 04 | [Tests sheet from the row](04-tests-sheet.md) | AFK | 01, class-tests auth fix |
 | 05 | [Add recorded class here](05-add-recorded-class-here.md) | AFK | — |
 | 06 | [Schedule live class here](06-schedule-live-class-here.md) | AFK | 05 |
-| 07 | [Preview and deploy](07-preview-deploy.md) | HITL | 01–06, outline task 11 |
+| 07 | [Row resource counts and the active switch](07-row-resources-and-active-switch.md) | AFK | 01 |
+| 08 | [Preview and deploy](08-preview-deploy.md) | HITL | 01–07, outline task 11 |
 
 "Class-tests auth fix" is the separate task "Guard class test-assignment routes with requireAdmin".

@@ -30,6 +30,13 @@ An admin arranging a course in the Assigned Classes outline has to leave it for 
   now or scheduled ahead, and lighter otherwise.
 - **A video status pill** under the title: *Live now*, *Processing*, *Recording ready*,
   *Scheduled · 03 Oct, 10:00* or *No video yet*.
+- **Resource counts next to the pill:** `📄 2 · 📝 1`, the class's PDFs and tests. Zeros show too
+  (`📄 0`), so a class with no notes is visible without opening anything. Clicking a count opens
+  that sheet.
+- **An active switch instead of the Status column.** Every row said "active", so the column goes. A
+  small switch on the row turns the class on or off **in this course**. An inactive row is dimmed and
+  gets an *Inactive* tag beside the pill, so the only rows that draw the eye are the ones students
+  can't see.
 - **A ⋯ menu** with:
 - **Upload video:** the existing upload dialog. If the class already has a recording, it warns that the
   upload replaces it.
@@ -83,6 +90,10 @@ places the same class in the target course.
 18. As a student, I want a newly added class to appear in the right topic and subtopic, in order, so that the course reads correctly.
 19. As a course admin, I want a status pill on each class row (live now, processing, recording ready, scheduled, no video yet), so that I can see which classes still need a video.
 20. As a course admin adding a class from a topic or section header, I want to choose the subtopic (and topic) myself, so that the class never lands somewhere I did not mean.
+21. As a course admin, I want each class row to show how many PDFs and tests it has, zeros included, so that I can spot classes missing notes without opening each ⋯ menu.
+22. As a course admin, I want to click a row's PDF or test count to open that sheet, so that fixing a gap is one click from seeing it.
+23. As a course admin, I want a switch on each row instead of a Status column, so that turning a class off in this course is one click and the table isn't full of "active".
+24. As a course admin, I want inactive rows dimmed and tagged, so that the classes students can't see stand out.
 
 ## Implementation Decisions
 
@@ -108,6 +119,10 @@ places the same class in the target course.
    `adminCourseClassGroupsController.ts`) must carry each class's `streamStatus` and `hasPlayback`
    (true when the class has an `hlsAsset`; the asset itself is never sent). The status pill, the Go
    live emphasis and the replace warning all read them.
+   - They also carry **`pdfCount`** and **`testCount`**: the class's `pdfAssignments` /
+     `seriesAssignments` (via the existing resolvers, so legacy `pdfIds`/`seriesIds` count too) that
+     still point at an existing Pdf / Series. That is the set the sheets list with no filters.
+     Two batched `$in` lookups per outline load, never one per row.
 4. **Class tests auth** is a prerequisite for the Tests sheet. A separate task, "Guard class
    test-assignment routes with requireAdmin", adds `requireAdmin` to the series mutation routes and
    sends the admin token from `use-class-series.ts`.
@@ -135,7 +150,18 @@ places the same class in the target course.
    `AvailablePdfsViewForClass`) take `classId` as a prop, keeping the page working. Mount both in a
    `Sheet` with the course-count banner.
 9. **Tests sheet.** The same, with the class series views.
-10. **Add class dialog** (`AddClassInPlaceDialog`). It computes the title suggestion and the teacher
+10. **Resource counts** (`RowResourceCounts`): `📄 n · 📝 n` beside the status pill, zeros in muted
+   text, an `aria-label` like "2 PDFs, 1 test". Each count is a button that opens the PDF or Tests
+   sheet for the row's class. Any change made in a sheet invalidates the outline query, so the counts
+   are fresh when the sheet closes.
+11. **Active switch.** The Status column is removed. A compact `Switch` on the row writes the
+   placement's `status` through the existing `onUpdateAssignment`, exactly what the badge did; it is
+   disabled while that row saves.
+   - It is the **placement** status, per course: off hides the class from students **in this course
+     only** (`CourseClass.status`), never `Class.status`. Its label says so: "Active in this course".
+   - Inactive rows: muted text and an *Inactive* tag beside the status pill.
+   - Bulk Edit keeps Status, and Copy still copies it.
+12. **Add class dialog** (`AddClassInPlaceDialog`). It computes the title suggestion and the teacher
    prefill from the outline group already loaded.
    - **Place pickers:** section header → Topic then Subtopic selects; topic header → Subtopic select
      with a "No subtopic" option and no default (auto-filled when the topic has no subtopics);
@@ -151,9 +177,12 @@ places the same class in the target course.
 - **Backend integration** (in-memory Mongo):
   - in-place create: derivations, landing last, topic-order append, duplicate title 409, taxonomy
     mismatch 400, live start required;
-  - the class course count.
+  - the class course count;
+  - outline rows carry `pdfCount`/`testCount`, ignoring assignments whose Pdf/Series is gone.
 - **Admin:**
   - pure tests for the title suggestion, the teacher prefill and the status pill;
+  - the row resources: the counts render (zeros too), and each opens its sheet;
+  - the active switch writes the placement status, and an inactive row is tagged;
   - component tests:
     - the row Go live button and the ⋯ items call the right hooks;
     - the topic and section pickers block Create until the place is chosen;

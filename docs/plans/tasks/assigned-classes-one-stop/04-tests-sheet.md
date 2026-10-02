@@ -12,6 +12,8 @@ built like task 03's PDF sheet.
 - Make the class series views (`AssignedSeriesViewForClass` and its available counterpart) take
   `classId` as a prop, keeping `/admin/classes/assign-series?classId=` working.
 - Reuse task 03's course-count banner.
+- Any change in the sheet invalidates the outline query, so the row's test count (task 07) is fresh.
+  If task 07 has landed, its test count opens this sheet too.
 - This must run on top of the auth fix: until the hook sends the admin token and the routes require
   it, the sheet would write through unauthenticated routes.
 
