@@ -1,14 +1,16 @@
 # Tasks: Assigned Classes one-stop
 
-State: 00–07 and 09–13 **done** (2026-10-02, local) · 14–18 `ready-for-agent` (Round 3) · `ready-for-human` (08)
+State: 00–07 and 09–18 **done** (2026-10-02, local) · `ready-for-human` (08)
 
-**Merged heads** of `feat/assign-classes-one-stop`: backend `4e9456e64`, admin `c37e774` (worktrees
-`qt-one-stop-backend` / `qt-one-stop-admin`). Round 1 ended at backend `146653960`, admin `94cf488`.
+**Merged heads** of `feat/assign-classes-one-stop`: backend `abdae59b3`, admin `064d358` (worktrees
+`qt-one-stop-backend` / `qt-one-stop-admin`). Round 2 ended at backend `4e9456e64`, admin `c37e774`;
+round 1 at backend `146653960`, admin `94cf488`.
 Task 00 also sits alone on `fix/class-series-require-admin`
 (backend `98a4a874a`, admin `a414e5a`, off origin) and was cherry-picked into the one-stop branch.
-Final suites after round 2: backend tsc clean, 17 unit (of 1959) + 6 integration (of 597) failures
-(baseline); admin 14 vitest failures of 440 (BannedUsers, LearnLibrary ×2, PdfForm.section-topic),
-138 tsc errors (+1 stale `.next` in the integration worktree), lib 275/275. The integration admin
+Final suites after round 3: backend tsc clean, 17 unit (of 1962) + 6 integration (of 631) failures
+(baseline); admin 14 vitest failures of 477 (BannedUsers, LearnLibrary ×2, PdfForm.section-topic;
+a full run sometimes shows 15, rerun the four files alone), 105 tsc errors (+1 stale `.next` in the
+integration worktree; task 18 deleted the dead files that carried 33), lib 301/301. The integration admin
 worktree carries an uncommitted `config.ts` → `localhost:5912` LOCAL PREVIEW edit: never commit it.
 
 **Round 2 commits** (per-task branches `feat/assign-classes-one-stop-NN`, merge order 13, 09, 12, 10, 11):
@@ -21,6 +23,22 @@ selection is per row, so ticking one place of a class in two places acts on that
 a topic with no section is refused (the move endpoint needs a section); the class PDFs tab still caps at
 25 (pre-existing); student class-tabs ignore a moved place (known PRD gap).
 Live in-place classes end at the end of the start's IST day (no live-duration default exists).
+
+**Round 3 commits** (merge order 14, 15, 16, 17, 18; round 3 branched from admin `f0875c5` = `c37e774` +
+three small fixes): 14 backend `ffc8b2cd0`, admin `755249c` · 15 admin `0e444df` (backend unchanged) ·
+16 backend `e5bd3982b`, admin `1eeda98` · 17 backend `8d939641d`, admin `28fd14c` · 18 admin `40815ee`
+(backend unchanged). Two commits outside the series landed on the integration admin during the round
+(`e291083` Copy to another course from a row's ⋯, `3271818` add-class dialog files into a new subtopic);
+task 15's merge resolved them in `AddClassInPlaceDialog`.
+Round 3 notes for the preview (08): nothing was checked in a browser or on a phone, no real upload ran,
+and the transcoder flip was tested against the handler only. The recorded mode stays inside
+`AddClassInPlaceDialog` (no separate dialog); several videos start at two files, max 30. The flip runs on
+the persisted `ended` + `hlsAsset`. `bulk-update-overrides` does not exist in the backend (the per-item
+PATCH fallback clears the wait). The class library lists `Class.status: 1` classes, limit 20 (max 50);
+restricted roles see only their own classes. From a section header the sheet asks for a topic first.
+Cancel remaining asks to confirm. Known nits: the add dialog still says "active straight away" for
+recorded classes; with no place, a no-topic row reads "Filed under no topic" plus the amber reason; the
+page keeps an always-empty `assignedClasses` local state.
 
 Vertical-slice breakdown of [the PRD](../../prd-assigned-classes-one-stop.md). The tasks cite the PRD's
 numbered decisions instead of restating them.
