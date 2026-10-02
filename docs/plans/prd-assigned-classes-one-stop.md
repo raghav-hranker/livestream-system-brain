@@ -106,6 +106,8 @@ places the same class in the target course.
    `{ sectionId, topicId, subTopicId?, title, teacherName, isLive, startDate?, endDate? }`.
    - **Derivation:** `mainCategory`/`category` come from the course, and the taxonomy comes from the body.
      Everything else takes the class-create defaults: chat on, not free, active, `priority` 0.
+     The full class form defaults chat off and priority 1; the user chose to keep chat on here
+     (2026-10-02), so the two create paths deliberately differ.
      Recorded: start = now. Live: start is required, and the end defaults to start + the live
      duration default.
    - **Placement:** in one transaction, it creates the Class and its placement in this course, and puts
@@ -140,7 +142,12 @@ places the same class in the target course.
    - **Status pill** from one pure function of `{ streamStatus, hasPlayback, startDate, now }`:
      `live`/`preparing`/`reconnecting` → *Live now*; `processing` → *Processing*; `hasPlayback` or
      `ended` → *Recording ready*; otherwise a start in the future → *Scheduled · date*; otherwise
-     *No video yet*.
+     *No video yet*. The start is the **placement's** start date, the date the row already shows,
+     not the class's own start (user's choice, 2026-10-02).
+   - The transcoder reports to the LMS only once, at the end, so the pill never shows *Processing*
+     after an admin upload: a re-upload stays *Recording ready* (students keep the old recording
+     until the new one lands) and a first upload stays *No video yet*. User story 5 is met only at
+     the end of the transcode.
    - **Go live emphasis:** solid for *Live now* and *Scheduled*, light otherwise. The system has no
      field saying a class is meant to be live (see Alternatives considered), so "Scheduled" means only
      "starts in the future"; it is a display hint, never a gate. Go live is offered on every row.
