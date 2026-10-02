@@ -1,6 +1,6 @@
 # Tasks: Assigned Classes one-stop
 
-State: 00–07 **done** (2026-10-02, local) · `ready-for-human` (08)
+State: 00–07 **done** (2026-10-02, local) · 09–13 `ready-for-agent` (Round 2) · `ready-for-human` (08)
 
 **Merged heads** of `feat/assign-classes-one-stop`: backend `146653960`, admin `94cf488` (worktrees
 `qt-one-stop-backend` / `qt-one-stop-admin`). Task 00 also sits alone on `fix/class-series-require-admin`
@@ -42,6 +42,15 @@ numbered decisions instead of restating them.
 | 05 | [Add recorded class here](05-add-recorded-class-here.md) | AFK | — |
 | 06 | [Schedule live class here](06-schedule-live-class-here.md) | AFK | 05 |
 | 07 | [Row resource counts and the active switch](07-row-resources-and-active-switch.md) | AFK | 01 |
-| 08 | [Preview and deploy](08-preview-deploy.md) | HITL | 01–07, outline task 11 |
+| 09 | [Row and bulk cleanup: Go live into ⋯, arrows out, Bulk edit trimmed](09-row-and-bulk-cleanup.md) | AFK | — |
+| 10 | [Move to… (one row or a ticked set) and Reset](10-move-to.md) | AFK | 09 |
+| 11 | [Drag across groups, and several classes at once](11-cross-group-multi-drag.md) | AFK | 10 |
+| 12 | [Classes that appear in two places](12-classes-in-two-places.md) | AFK | 09 |
+| 13 | [Class PDF upload: filed from the class, free in this class only](13-class-pdf-upload.md) | AFK | — |
+| 08 | [Preview and deploy](08-preview-deploy.md) | HITL | 01–07, 09–13, outline task 11 |
 
 Task 00 is on its own branch off `origin/quicktricks-admin` so it can deploy ahead of the outline; it is merged into the one-stop branch for task 04.
+
+**Round 2** (2026-10-02, after the local preview): tasks 09–13, PRD section "Round 2". Wave 1 = 09 and
+13 in parallel; then 10 and 12 (both after 09; they touch the same view, so merge one before starting
+the other's merge); then 11. Task 08 runs once round 2 is merged.

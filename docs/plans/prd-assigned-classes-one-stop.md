@@ -24,6 +24,11 @@ An admin arranging a course in the Assigned Classes outline has to leave it for 
 
 ## Solution
 
+> **Round 2 (2026-10-02) changes parts of this section.** Go live moves into the ⋯ menu, the ▲▼
+> arrows and the Change topic link leave the row, classes move by drag or Move to…, and the class PDF
+> upload changes. See [Round 2](#round-2-after-the-local-preview-2026-10-02) at the end; where the two
+> disagree, Round 2 wins.
+
 **Go live on the row, the rest in a ⋯ menu.** Every class row in the outline gets:
 - **A Go live button on the row itself**, outside any menu: the same flow as the Classes list. It
   mints the Streamer token and opens the class screen in a new tab. It is solid when the class is live
@@ -215,7 +220,7 @@ places the same class in the target course.
 - Copy carrying course-level PDFs and tests.
 - Editing the full class form (thumbnail, description, etc.) from the outline. The class page is one
   link away.
-- Multi-class drag, which is a separate decision pending.
+- Multi-class drag: settled in Round 2 below.
 
 ## Alternatives considered (2026-10-02)
 
@@ -237,3 +242,159 @@ reads only the start date. If the row actions
 come back, the first step is a stored intent field (for example `delivery: 'live' | 'recorded'`), set
 by "Add recorded class here" / "Schedule live class here" and by the class form. The Live Classes
 screen could then filter on it too.
+
+## Round 2: after the local preview (2026-10-02)
+
+The user previewed tasks 00–07 locally and asked for five changes. These were grilled the same day
+against board H of the preview canvas (https://claude.ai/artifact/FhD4V5SgPczfghzZA1KoKn) and
+accepted. Handoff: [`reference/assigned-classes-one-stop-round2-handoff-2026-10-02.md`](../../reference/assigned-classes-one-stop-round2-handoff-2026-10-02.md).
+
+### What changes for the admin
+
+- **Go live moves into the row ⋯ menu**, as its first item. The admin rarely teaches these classes;
+  the streamer's own view has Go live. The Classes list and the live schedule keep their buttons.
+- **The ▲▼ arrows leave class rows.** Drag does the same job. The section and topic "Move up / Move
+  down" menu items stay.
+- **"Change topic" becomes Move to…** in the row ⋯ menu: a section / topic / subtopic picker. There is
+  no "Follow the class" / "Pick for this course" choice any more. Whatever the admin does in a
+  course's outline changes **only that course**; re-filing the class everywhere stays on the class
+  form. A row that was moved away from where the class is filed gets **"Reset to the class's
+  topic"** in its ⋯ menu.
+- **Drag works across subtopics and topics**, and the class lands exactly where it is dropped.
+- **Dragging a ticked row moves every ticked class**, gathered at the drop point in outline order. The
+  drag preview reads "3 classes".
+- **Bulk edit shrinks** to start date & time and Free. The main category, category, section, topic
+  and subtopic *name* fields go: they renamed labels without moving anything. A bulk **Move to…**
+  joins the ticked-rows bar.
+- **Class PDF upload.** The PDFs sheet's "Bulk Upload & Assign" becomes **"Upload PDFs"**. The PDFs
+  are filed under the class's own main category, category, section and topic (shown, not asked). Their
+  Free checkbox means **free in this class**, and it is off by default.
+
+### Classes that appear in two places in one course
+
+About 400 placements (mostly the RRB and SRB Record Breaking batches) show one class in two places of
+the same course: the migration kept every folder the old platform had put the video in. Underneath it
+is one placement carrying a list of places (`CourseClass.apxDisplayPlacements`, one outline row per
+entry). The admin **never says "AppX"** about these rows; the migration is complete and no bulk writer
+will touch them again.
+- Each place moves on its own (drag or Move to…). It has no Reset.
+- Its row shows an **"Also under ‹path›"** tag.
+- **Remove** takes away only that place. If both places are ticked, the class leaves the course.
+- **The In course switch** covers the class in every place, and its toast says "Also hidden under
+  ‹path›".
+
+### Rules every move follows
+
+- A move changes this course only.
+- A drop or Move to… that lands an ordinary row exactly where the **class itself** is filed clears the
+  placement's override, so it follows the class again. The "pinned but identical" state is no longer
+  created.
+- **Refused, and nothing moves:**
+  - a drop into the "No topic" section (a course placement needs at least a section and a topic);
+  - anything that would put one class twice in the same topic, **including two different subtopics of
+    that topic**: "‹title› is already in ‹topic›".
+- When a topic's last class moves out, its tab disappears for students. There is no confirm and no
+  Undo; dragging back is the undo.
+
+### Round 2 user stories
+
+25. As a course admin, I want Go live in the row ⋯ menu instead of on the row, so that the outline row stays quiet for classes I don't teach.
+26. As a course admin, I want the reorder arrows gone from class rows, so that rows have room and drag is the one way to reorder.
+27. As a course admin, I want to move a class to another topic or subtopic of this course with Move to…, so that I don't have to think about "placements".
+28. As a course admin, I want to drag a class into another topic or subtopic, so that re-filing is the same gesture as reordering.
+29. As a course admin, I want a dragged class to land exactly where I drop it, so that I don't have to reorder it again.
+30. As a course admin, I want to drag several ticked classes at once, so that moving a series is one gesture.
+31. As a course admin, I want to move several ticked classes with Move to…, so that I can move a series far away or from a phone.
+32. As a course admin, I want to put a moved class back under its own topic in one click, so that a mistake is easy to undo.
+33. As a course admin, I want a class that appears in two places to say where else it is, so that removing or switching it off never surprises me.
+34. As a course admin, I want removing one place of such a class to leave the other place alone, so that students who bought the course don't lose it by accident.
+35. As a course admin, I want Bulk edit to offer only what it really changes (start time and Free), so that I don't rename labels by mistake.
+36. As a course admin, I want PDFs uploaded for a class to be filed from the class and not free unless I say so, so that uploading notes is one step and never makes a PDF free in every course.
+37. As a student, I want a class to appear only once in a topic, so that lists don't repeat.
+
+### Round 2 implementation decisions
+
+**Backend**
+13. **One move endpoint.** `POST /api/admin/courses/:courseId/placements/move` with
+    `{ rows: [{ placementId, listingId? }], target: { sectionId, topicId, subTopicId? }, order? }`,
+    admin auth. It moves the rows and, when `order` is sent, saves the destination topic's order, **in
+    one transaction**.
+    - **`order`** is the full new row order of the destination topic, `{ placementId, listingId? }[]`,
+      as `topic-order` takes it. It must equal the destination topic's current rows plus the moved
+      rows (else 409, like `topic-order`). The priorities are handed out as `reshuffleTopicPriorities`
+      does, over that union. Without `order`, moved rows land **last**: course max + 1 upward, in the
+      order sent.
+    - **Ordinary row** (`listingId` absent): set the placement's `section`/`topic`/`subTopic` and unset
+      its name overrides, as the taxonomy PATCH does. If the target equals the Class's own taxonomy
+      (section, topic, and subtopic or its absence), unset the override instead: the placement follows
+      the class.
+    - **Row of a class in two places** (`listingId` = the entry's `apxClassId`): set that entry's
+      `section`/`topic`/`subTopic` with a positional update and unset its `sectionName`/`topicName`/
+      `subTopicName`. Positional `$set` skips mongoose validators, so check the ids by hand
+      (`taxonomyChainError`). Never "follow the class".
+    - **Refusals** (400, nothing written): no topic in the target; a topic not under the section or a
+      subtopic not under the topic; a placement or entry not in this course. **409
+      `{ code: 'CLASS_ALREADY_IN_TOPIC', title }`** when, after the move, one CourseClass would have
+      two rows in the same topic (any subtopic).
+    - **Topic tabs:** a destination topic new to the course is appended to the stored topic order.
+      `appendNewPlacementTopicsToCourseTopicOrder` works per placement and gathers sibling entries'
+      topics, so its "already present" check can skip or misplace a topic; compute the new topics from
+      the destination alone.
+    - The taxonomy PATCH stays for **Reset** (`{ followClass: true }`) and loses its other callers.
+14. **Remove one place.** `DELETE /api/admin/courses/:courseId/placements/:placementId/listings/:listingId`
+    pulls one entry from `apxDisplayPlacements`. Removing the **last** entry is refused (409); the
+    admin removes the class instead, through the existing remove. The admin's bulk Remove sends a
+    place delete for a ticked row whose sibling stays unticked, and the class remove when every place
+    of that class is ticked. Never takes a class out of the course unless every place was ticked
+    (memory "Never remove granted access").
+15. **Outline rows carry the other places** of a class in two places (`otherPlaces: string[]`, the
+    group paths), so the tag and the switch toast need no extra read.
+16. **Class PDF upload** keeps the bulk session path. When opened for a class:
+    - the metadata is the class's own `mainCategory`, `category`, `section` and `topic` (`topic` may be
+      null; the backend already accepts it). Pdf has no subtopic;
+    - `Pdf.isFree` is **false**; the row's "Free in this class" goes to the assignment instead:
+      `POST` the class PDF assign with `pdfs: [{ pdfId, isFree }]` (that body is already accepted).
+
+**Admin**
+17. **Go live** becomes the first `OutlineRowMenu` item (`useGoLive` unchanged). The row button and
+    `goLiveSolid` / `isGoLiveSolid` go.
+18. **Arrows out.** The per-row ▲▼ (`classMoveOrder`, `AssignedClassesView.tsx`) go. The drag handle
+    must be focusable, announce itself, and reorder with Space + arrow keys (dnd-kit `KeyboardSensor`
+    is already registered in `OutlineSortable.tsx`). Drag must work by touch on a phone (a
+    `TouchSensor` / pointer activation delay), since the arrows were the phone path.
+19. **Move to…** replaces `PlacementTaxonomyDialog`'s radio dialog and the row "Change topic" link. It
+    is one dialog for one row or a ticked set: section, topic, subtopic pickers; "Only this course
+    changes"; "It goes last in ‹path›"; an amber note when the topic is new to the course ("students
+    will see a new topic tab"); a green note when an ordinary row lands back on its class's topic; the
+    409 shown inline with Move disabled. **Reset to the class's topic** shows only on an ordinary row
+    whose `taxonomyState` is `custom`.
+20. **Cross-group drag.** Collision detection lets a class row drop in any class group (`classDropMove`
+    stops refusing other subtopics and topics). A drop between groups calls decision 13's endpoint
+    with `order`; a drop inside one group keeps `topic-order`. Leaf group headers accept a drop at the
+    top of their group. While dragging, the drop line turns red with the reason over "No topic" and over
+    a topic the class is already in; dropping there does nothing.
+21. **Multi-drag.** Dragging a ticked row drags every ticked row, in outline order, gathered at the drop
+    point. The overlay is a stacked card: "3 classes" + the first title + "+2 more". The ticked set
+    clears after a cross-group move. A ticked set spanning groups is allowed.
+22. **Repeated rows:** an "Also under ‹path›" tag; the switch toast "Also hidden under ‹path›" (the
+    switch already writes the placement, so it covers every place).
+23. **Bulk edit** keeps start date & time and Free; the five name fields go, with a line pointing to
+    Move to… The bulk bar gets Move to…
+24. **Class PDF upload** (`BulkUploadPdfsSheet` opened from the class PDFs sheet): titled "Upload
+    PDFs", the button renamed from "Bulk Upload & Assign"; Filters hidden and the class's taxonomy
+    shown read-only; the topic requirement relaxed for a class with no topic; the row and default
+    checkbox read **"Free in this class"**, off. On the PDFs dashboard, "Free by default" starts
+    **off** too.
+25. **The "Showing 25 of 8565" line** the user saw in the class PDFs sheet comes from the Available tab
+    (`AvailablePdfsViewForClass`, `totalAvailablePdfs`). Confirm that is what was on screen; the
+    class's own tab must count only its PDFs.
+
+### Round 2 out of scope
+
+- Reset for a class shown in two places (no stored origin to go back to).
+- Switching one place of such a class off on its own.
+- Undo after a move.
+- Live classes made in place: the end stays the end of the start's IST day, and a past start is still
+  accepted (user, 2026-10-02).
+- Student `class-tabs` reads the placement-level taxonomy and never the per-place list, so a moved
+  place doesn't change class-tabs (known gap, as before).
