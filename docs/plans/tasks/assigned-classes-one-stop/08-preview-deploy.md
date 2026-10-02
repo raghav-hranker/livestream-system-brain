@@ -1,7 +1,7 @@
 # Preview and deploy
 
 **Type**: HITL
-**Blocked by**: #01–#07, #09–#16; outline task 11 (the outline deploys first)
+**Blocked by**: #01–#07, #09–#18; outline task 11 (the outline deploys first)
 
 ## What to build
 
@@ -17,7 +17,10 @@
   - Round 3: add a recorded class with no video, with one video, and with several videos (titles
     numbered, one reordered); watch the rows upload while using the outline; check a new class stays
     hidden for students until its recording is ready, then turns on by itself; flip one by hand and
-    check it is not flipped back; the Available tab has no bulk upload button.
+    check it is not flipped back; there is no Available tab; from a topic's ⋯ add
+    two existing classes filed there and one filed elsewhere (tagged, other courses untouched); a class
+    already in the course (on or off) can't be picked; the top "Add existing classes" files each class
+    where it is filed.
 - **Deploy** on the user's go-ahead, like the outline:
   - backend: `dist` compile, then commit, push, box pull and pm2 restart;
   - admin: push.

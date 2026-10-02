@@ -513,6 +513,87 @@ brand-new section with its classes) is **parked** for later; it is not part of t
     usage in `assign-classes/AvailableClassesView.tsx`. The sheet itself stays for the Classes
     dashboard.
 
+### Adding existing classes from the place (board L, accepted 2026-10-02)
+
+The Available Classes tab is replaced. Boards K (refine the tab) and L (add from the place) were drawn;
+the user chose **L**. What the tab gets wrong today, checked in the code:
+- it loads **one page of 50** and never the next; "Showing 20 of 20" counts the rows loaded, not the
+  matches (`use-available-classes.ts` ignores `pagination.totalAvailable`);
+- its search is a plain substring (`getAvailableClassesForCourse`), not the ranked, typo-tolerant
+  `services/titleSearch.ts` the Classes, Courses, PDFs and Plans lists use;
+- it hides only placements with `status: 1`, so a class **switched off** in this course is listed as
+  available, and Assign quietly switches it back on (`assignClassToCourse` reactivates the existing
+  placement). With decision 27 every waiting class would leak through this door;
+- the category filter is built from the 50 loaded rows; the Image, double category chip, "Priority: 1"
+  and "Recorded/Live" (`Class.isLive`, unmaintained) columns tell the admin nothing about this course,
+  and nothing says where the class will land.
+
+What the admin gets instead:
+- **Header ⋯ → "Add existing classes here"** on section, topic and subtopic headers, beside "Add
+  recorded classes here". It opens a side sheet for that place:
+  - two views: **"Filed under ‹place›"** (default) and **All classes**;
+  - ranked search; typo matches are labelled "Includes near spellings";
+  - each row: title, teacher, video pill, "in N courses", "Filed under ‹path›";
+  - classes **already in this course** (on or off) are listed but disabled, saying where they are
+    ("switched off: switch it on there");
+  - a class filed under another topic can be picked: it shows here **in this course only** (the round
+    2 "Moved here in this course" tag); other courses keep their own place;
+  - Add → last in the place, in outline order of the ticked rows.
+- **"Add existing classes"** at the top of the outline: the same sheet with no place; each class goes
+  where it is filed, last in the course (today's Assign).
+- The **Available Classes tab goes**, and with it `AvailableClassesView`.
+
+#### Stories
+
+48. As a course admin, I want to add existing classes from the header of the place I want them, so that I never have to move them after assigning.
+49. As a course admin, I want the picker to start with classes filed under that place, so that the likely ones are first.
+50. As a course admin, I want a search that finds classes despite typos and word order, so that I find the class I mean.
+51. As a course admin, I want to see which classes are already in this course and where, so that I don't add a class twice or switch one on by accident.
+52. As a course admin, I want to add a class filed elsewhere into this place for this course only, so that other courses are not disturbed.
+53. As a student, I want a class the admin switched off or that is waiting for its recording to stay hidden, so that the course shows only what is ready.
+
+#### Decisions
+
+34. **Class library read for a course.** `GET /api/admin/courses/:courseId/class-library` (admin
+    auth) with `search`, `sectionId`, `topicId`, `subTopicId`, `scope=filed|all`, `page`, `limit`
+    (≤ 50). Active classes only (`Class.status: 'active'`). Ranked with `buildTitleSearch` +
+    `searchMatchStages` and the vocabulary cache, as `classController` does; each row says
+    `searchMatch` so the sheet can label near spellings. Each row: `classId`, title, teacher, filed
+    `{ section, topic, subTopic }` names and ids, `streamStatus` + `hasPlayback`, `courseCount`
+    (other courses with an active placement), and **`inCourse`**: `null`, or `{ placementId, status,
+    paths: string[] }` when this course has a placement with `isActive: true` (on or off). Returns
+    `total` and `hasMore`. `scope=filed` with a place filters to classes filed exactly there (a
+    subtopic place: that subtopic; a topic place: the topic, any subtopic; a section place: the
+    section).
+35. **Assign into a place.** `POST /api/admin/courses/:courseId/placements/assign` (admin auth),
+    body `{ classIds: string[] (1–50), target?: { sectionId, topicId, subTopicId? } }`, one
+    transaction:
+    - **with `target`**: each placement gets that taxonomy as its override, exactly as decision 13's
+      ordinary-row move writes it (a class whose own filing equals the target follows the class);
+    - **without `target`**: each class goes where it is filed; a class with no topic is refused (400,
+      named);
+    - placement defaults are those `POST /courses/:courseId/classes` writes today (dates, `isFree`, the
+      2026-09-23 date fix); reuse that code rather than copying it;
+    - rows land **last**, in the order sent (course max + 1, the decision 13 helper); a destination
+      topic new to the course is appended to the course topic order;
+    - **409 `{ code: 'ALREADY_IN_COURSE', titles }`** when any class has an active placement here (on or
+      off); nothing is written. A **removed** placement (`isActive: false`) is restored with the new
+      taxonomy and priority instead of a second row;
+    - the placement is visible (`status: 1`), as Assign is today.
+36. **The old endpoint** `GET /api/courses/:courseId/available-classes` stops listing classes whose
+    placement here is switched off (it excludes every `isActive: true` placement, any `status`). This
+    lands with task 14 so a waiting class can never be re-assigned on early, even before the tab goes.
+37. **`AddExistingClassesSheet`** (admin): the side sheet above, opened with a place (header ⋯) or
+    without (top button). Paged with "Load more" on `hasMore`. Disabled rows for `inCourse`. Footer:
+    "They go last in ‹place›. N filed elsewhere will show here in this course only." Add calls
+    decision 35 with the ticked ids in sheet order; on 409 it refetches and shows which titles were
+    already in.
+38. **Remove the Available Classes tab**: the tab switcher, `components/admin/assign-classes/
+    AvailableClassesView.tsx`, its page handlers (`handleAssignClass`, `handleAssignMultipleClasses`,
+    `getNextAssignmentPriority`), `hooks/api/use-available-classes.ts` if nothing else uses it, and
+    the dead `app/admin/courses/assign-classes/page-old.tsx` + `components/AvailableClassesView.tsx` /
+    `AssignClassesContent.tsx` copies if they are unreferenced.
+
 ### Round 3 out of scope
 
 - Board J: creating a new section, topic or subtopic from the course screen (parked).
@@ -520,3 +601,5 @@ brand-new section with its classes) is **parked** for later; it is not part of t
 - A server-side "uploaded, transcoding" state (would need the transcoder to report `processing`).
 - Bulk scheduling of live classes.
 - Fixing the two listings that ignore placement status (decision 28).
+- Hiding an existing class that has no recording when it is assigned (Assign stays visible, as today).
+- Board K (refining the Available tab in place): not chosen.

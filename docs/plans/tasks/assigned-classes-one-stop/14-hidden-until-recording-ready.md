@@ -5,7 +5,7 @@
 
 ## What to build
 
-PRD Round 3 decisions 27 and 28, plus the row tag from decision 31. Backend + admin.
+PRD Round 3 decisions 27, 28 and 36, plus the row tag from decision 31. Backend + admin.
 
 **Backend**
 - `CourseClass.waitingForRecordingSince?: Date`, documented like `apxSyncDeactivatedAt` (its presence
@@ -22,6 +22,9 @@ PRD Round 3 decisions 27 and 28, plus the row tag from decision 31. Backend + ad
   them; the switch was built in task 07).
 - Copy to another course (`adminCourseCopyController.ts`) copies the field with the status.
 - Outline rows: `waitingForRecording: boolean`.
+- `GET /api/courses/:courseId/available-classes` (`getAvailableClassesForCourse`) excludes every
+  placement with `isActive: true`, whatever its `status` (PRD decision 36), so a waiting or switched-off
+  class is not offered for Assign (which would switch it back on).
 
 **Admin**
 - On an outline row with `waitingForRecording`: the tag "Hidden from students until the recording is
@@ -38,6 +41,7 @@ PRD Round 3 decisions 27 and 28, plus the row tag from decision 31. Backend + ad
 - [ ] `ended` without an `hlsAsset`, or any other status, turns nothing on.
 - [ ] An admin switch write clears the field, either way; the next `ended` changes nothing.
 - [ ] A copy of a waiting class waits in the target course too.
+- [ ] A switched-off or waiting class is not in the course's available classes.
 - [ ] Tests: backend integration for create, the flip (all placements, idempotent, failure swallowed),
       the admin-write clear, copy, the outline field. Admin: the tag and caption render from the field.
 - [ ] Baselines stay green.
