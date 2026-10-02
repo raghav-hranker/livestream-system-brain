@@ -1,6 +1,15 @@
 # Tasks: Assigned Classes one-stop
 
-State: `ready-for-agent` (00–07) · `ready-for-human` (08)
+State: 00–07 **done** (2026-10-02, local) · `ready-for-human` (08)
+
+**Merged heads** of `feat/assign-classes-one-stop`: backend `146653960`, admin `94cf488` (worktrees
+`qt-one-stop-backend` / `qt-one-stop-admin`). Task 00 also sits alone on `fix/class-series-require-admin`
+(backend `98a4a874a`, admin `a414e5a`, off origin) and was cherry-picked into the one-stop branch.
+Final suites: backend tsc clean, 17 unit + 6 integration failures (baseline); admin 14 vitest failures
+(BannedUsers, LearnLibrary ×2, PdfForm.section-topic), 138 tsc errors (+1 stale `.next` in the
+integration worktree), lib 249/249. The integration admin worktree carries an uncommitted
+`config.ts` → `localhost:5912` LOCAL PREVIEW edit: never commit it.
+Live in-place classes end at the end of the start's IST day (no live-duration default exists).
 
 Vertical-slice breakdown of [the PRD](../../prd-assigned-classes-one-stop.md). The tasks cite the PRD's
 numbered decisions instead of restating them.
