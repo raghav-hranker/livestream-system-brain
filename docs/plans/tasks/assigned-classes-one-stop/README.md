@@ -25,7 +25,7 @@ numbered decisions instead of restating them.
 
 | # | Task | Type | Blocked by |
 |---|---|---|---|
-| 01 | [Row ⋯ menu + Go live](01-row-menu-go-live.md) | AFK | — |
+| 01 | [Row Go live button, status pill and ⋯ menu](01-row-menu-go-live.md) | AFK | — |
 | 02 | [Upload video from the row](02-upload-video-from-row.md) | AFK | 01 |
 | 03 | [PDFs sheet from the row](03-pdfs-sheet.md) | AFK | 01 |
 | 04 | [Tests sheet from the row](04-tests-sheet.md) | AFK | 01, class-tests auth fix |

@@ -1,11 +1,11 @@
 # PDFs sheet from the row
 
 **Type**: AFK
-**Blocked by**: #01 — Row ⋯ menu + Go live
+**Blocked by**: #01 — Row Go live button, status pill and ⋯ menu
 
 ## What to build
 
-PRD decisions 1 and 7. The row ⋯ menu gets **PDFs**, which opens a side sheet for the class's PDFs.
+PRD decisions 1 and 8. The row ⋯ menu gets **PDFs**, which opens a side sheet for the class's PDFs.
 
 - **Backend:** the class course count (PRD decision 1) is the number of courses where the class has an
   active placement. Admin auth.

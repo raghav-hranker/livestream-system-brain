@@ -1,17 +1,19 @@
 # Upload video from the row
 
 **Type**: AFK
-**Blocked by**: #01 — Row ⋯ menu + Go live
+**Blocked by**: #01 — Row Go live button, status pill and ⋯ menu
 
 ## What to build
 
-PRD decision 6. The row ⋯ menu gets **Upload video**, which opens the existing
+PRD decision 7. The row ⋯ menu gets **Upload video**, which opens the existing
 `SingleVideoUploadDialog` for that class (`upload lane 'class'`, path `<customerId>/<classId>`).
 
 - If the class already has a recording, confirm first with "This class already has a recording.
   Uploading replaces it." A recording exists when the row's `streamStatus` is `ended`, or it has
-  playback. Check what the row data carries; if neither field is there, add `hasPlayback` to the
-  class-groups row.
+  playback; task 01 puts both on the outline row.
+- Check what a re-upload does to students in the meantime: if the transcoder sets the class to
+  `processing` and `/playback` then returns 425, students lose the old recording until the new one is
+  ready. If so, the warning says that too.
 - After the upload, the row's status badge shows the transcoder's `streamStatus` once the outline
   refetches. No polling loop is needed beyond the existing refetch on focus.
 

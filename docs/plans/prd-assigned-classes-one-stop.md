@@ -24,9 +24,13 @@ An admin arranging a course in the Assigned Classes outline has to leave it for 
 
 ## Solution
 
-**Row ⋯ menu.** Every class row in the outline gets a ⋯ menu with:
-- **Go live:** the same flow as the Classes list. It mints the Streamer token and opens the class
-  screen in a new tab.
+**Go live on the row, the rest in a ⋯ menu.** Every class row in the outline gets:
+- **A Go live button on the row itself**, outside any menu: the same flow as the Classes list. It
+  mints the Streamer token and opens the class screen in a new tab. It is solid when the class is live
+  now or scheduled ahead, and lighter otherwise.
+- **A video status pill** under the title: *Live now*, *Processing*, *Recording ready*,
+  *Scheduled · 03 Oct, 10:00* or *No video yet*.
+- **A ⋯ menu** with:
 - **Upload video:** the existing upload dialog. If the class already has a recording, it warns that the
   upload replaces it.
 - **PDFs:** a side sheet listing the class's PDFs. The admin can preview, reorder, remove, and upload or
@@ -38,11 +42,16 @@ PDFs and tests belong to the class itself, not to this course.
 
 **Add a class in place.** Section, topic and subtopic ⋯ menus gain:
 - "Add recorded class here", which opens a short dialog:
+  - **Where it goes:** from a subtopic header, nothing to choose. From a topic header, the admin
+    **must choose the subtopic**, or "No subtopic"; there is no default, except that a topic with no
+    subtopics fills in "No subtopic". From a section header, the admin chooses the topic, then the
+    subtopic. The title and teacher fill in once the place is chosen.
   - **Title:** suggested from the last class in that group. If it ends in a number ("Part-6",
     "Day 06"), the suggestion is the next number. It is always editable, and it must be unique across
     all classes.
   - **Teacher:** prefilled from the last class in that subtopic. If there is none, from the topic; if
     there is none there either, from the course's faculty. It is editable.
+  - A link, "Open the full class form instead", for anything the short dialog does not cover.
   - **Create** files the class under that Section › Topic › Subtopic and gives it the course's main
     category and category. It assigns the class to this course, last in its group. It is **active
     straight away**, as on the Classes page today, and the upload dialog then opens.
@@ -54,8 +63,8 @@ places the same class in the target course.
 
 ## User Stories
 
-1. As a course admin, I want a ⋯ menu on every class row, so that a class's tools are in the outline where I arrange it.
-2. As a course admin, I want Go live from a class row, so that I can start a live class without leaving the course.
+1. As a course admin, I want a ⋯ menu on every class row for upload, PDFs and tests, so that a class's tools are in the outline where I arrange it.
+2. As a course admin, I want a Go live button right on each class row, so that I can start a live class in one click without leaving the course.
 3. As a course admin, I want Upload video from a class row, so that I can attach a recording to the class I am looking at.
 4. As a course admin, I want a warning when the class already has a recording, so that I do not replace one by accident.
 5. As a course admin, I want the row's status to show processing and then ready after an upload, so that I know when students can play it.
@@ -72,6 +81,8 @@ places the same class in the target course.
 16. As a course admin, I want the upload dialog to open right after creating a recorded class, so that creating and uploading is one flow.
 17. As a course admin, I want "Schedule live class here" with a start time, so that live classes are planned in place too.
 18. As a student, I want a newly added class to appear in the right topic and subtopic, in order, so that the course reads correctly.
+19. As a course admin, I want a status pill on each class row (live now, processing, recording ready, scheduled, no video yet), so that I can see which classes still need a video.
+20. As a course admin adding a class from a topic or section header, I want to choose the subtopic (and topic) myself, so that the class never lands somewhere I did not mean.
 
 ## Implementation Decisions
 
@@ -93,27 +104,43 @@ places the same class in the target course.
      topic/subtopic is not under the section.
    - **Hooks:** it must keep every behaviour of the normal class create, such as notification scheduling
      for live classes, by going through the same model save/hooks, not a raw insert.
-3. **Class tests auth** is a prerequisite for the Tests sheet. A separate task, "Guard class
+3. **Video state on outline rows.** The outline rows (`loadListingRows` in
+   `adminCourseClassGroupsController.ts`) must carry each class's `streamStatus` and `hasPlayback`
+   (true when the class has an `hlsAsset`; the asset itself is never sent). The status pill, the Go
+   live emphasis and the replace warning all read them.
+4. **Class tests auth** is a prerequisite for the Tests sheet. A separate task, "Guard class
    test-assignment routes with requireAdmin", adds `requireAdmin` to the series mutation routes and
    sends the admin token from `use-class-series.ts`.
 
 **Admin**
-4. **`useGoLive`.** Lift `ClassesDashboard.handleGoLive` into a hook used by the Classes list, the live
+5. **`useGoLive`.** Lift `ClassesDashboard.handleGoLive` into a hook used by the Classes list, the live
    schedule and the outline.
    - Keep `userId = classId` in the Streamer token, as the Classes list does. ls derives the socket
      identity from it.
    - The schedule screen's admin-id variant is the odd one out: either align it or record why it
      differs.
-5. **Row ⋯ menu** (`OutlineRowMenu`) on every class row, disabled while a drag or save is in flight. A
-   listing row's menu acts on its class.
-6. **Upload video** reuses `SingleVideoUploadDialog`. It warns before replacing when the row's
+6. **Row actions** on every class row: a **Go live** button, then the ⋯ menu (`OutlineRowMenu`) with
+   Upload video, PDFs and Tests. Both are disabled while a drag or save is in flight. A listing row's
+   actions act on its class.
+   - **Status pill** from one pure function of `{ streamStatus, hasPlayback, startDate, now }`:
+     `live`/`preparing`/`reconnecting` → *Live now*; `processing` → *Processing*; `hasPlayback` or
+     `ended` → *Recording ready*; otherwise a start in the future → *Scheduled · date*; otherwise
+     *No video yet*.
+   - **Go live emphasis:** solid for *Live now* and *Scheduled*, light otherwise. The system has no
+     field saying a class is meant to be live (see Alternatives considered), so "Scheduled" means only
+     "starts in the future"; it is a display hint, never a gate. Go live is offered on every row.
+7. **Upload video** reuses `SingleVideoUploadDialog`. It warns before replacing when the row's
    `streamStatus` / `hasPlayback` shows a recording exists.
-7. **PDF sheet.** Make the assign-PDFs-to-class views (`AssignedPdfsViewForClass`,
+8. **PDF sheet.** Make the assign-PDFs-to-class views (`AssignedPdfsViewForClass`,
    `AvailablePdfsViewForClass`) take `classId` as a prop, keeping the page working. Mount both in a
    `Sheet` with the course-count banner.
-8. **Tests sheet.** The same, with the class series views.
-9. **Add class dialog** (`AddClassInPlaceDialog`). It computes the title suggestion and the teacher
+9. **Tests sheet.** The same, with the class series views.
+10. **Add class dialog** (`AddClassInPlaceDialog`). It computes the title suggestion and the teacher
    prefill from the outline group already loaded.
+   - **Place pickers:** section header → Topic then Subtopic selects; topic header → Subtopic select
+     with a "No subtopic" option and no default (auto-filled when the topic has no subtopics);
+     subtopic header → none. Create is refused with an inline "Choose a subtopic." / "Choose a topic."
+     until the place is set.
    - **Title:** take the trailing number of the last class's title, including zero-padding (`Day 06` →
      `Day 07`); with no trailing number, leave it empty.
    - **Teacher:** the last class in the subtopic, else the topic, else the course faculty.
@@ -126,9 +153,10 @@ places the same class in the target course.
     mismatch 400, live start required;
   - the class course count.
 - **Admin:**
-  - pure tests for the title suggestion and the teacher prefill;
+  - pure tests for the title suggestion, the teacher prefill and the status pill;
   - component tests:
-    - the row ⋯ items call the right hooks;
+    - the row Go live button and the ⋯ items call the right hooks;
+    - the topic and section pickers block Create until the place is chosen;
     - the replace warning;
     - the sheet banner shows N;
     - the dialog sends the derived body;
@@ -149,7 +177,9 @@ places the same class in the target course.
 
 A clickable preview compared the row ⋯ menu with always-visible actions:
 https://claude.ai/artifact/FhD4V5SgPczfghzZA1KoKn (A actions column, B status chips, C expand a row,
-D class side panel, E/F one video button per row). **The ⋯ menu (board 0) was chosen for now.**
+D class side panel, E/F one video button per row). **The ⋯ menu (board 0) was chosen, then tweaked (board G):** Go live moved
+out onto the row, the status pill stayed, and adding from a topic or section header asks for the
+subtopic.
 
 The always-visible versions need to know, for a class with no video, whether it will be taught live or
 uploaded. Nothing in the system records that reliably today:
@@ -158,7 +188,8 @@ uploaded. Nothing in the system records that reliably today:
 - The Live Classes screen lists every class with dates in the tab's window; it never checks intent.
 - Placement start dates are stamped at assign time, so "start in the future" is not "live".
 
-The ⋯ menu offers Go live and Upload video on every row, so it needs no such cue. If the row actions
+Board G offers Go live and Upload video on every row, so it needs no such cue; its "Scheduled" pill
+reads only the start date. If the row actions
 come back, the first step is a stored intent field (for example `delivery: 'live' | 'recorded'`), set
 by "Add recorded class here" / "Schedule live class here" and by the class form. The Live Classes
 screen could then filter on it too.

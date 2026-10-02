@@ -1,12 +1,12 @@
 # Tests sheet from the row
 
 **Type**: AFK
-**Blocked by**: #01 — Row ⋯ menu + Go live; the separate class-tests auth fix ("Guard class
+**Blocked by**: #01 — Row Go live button, status pill and ⋯ menu; the separate class-tests auth fix ("Guard class
 test-assignment routes with requireAdmin")
 
 ## What to build
 
-PRD decision 8. The row ⋯ menu gets **Tests**, which opens a side sheet for the class's tests (Series),
+PRD decisions 4 and 9. The row ⋯ menu gets **Tests**, which opens a side sheet for the class's tests (Series),
 built like task 03's PDF sheet.
 
 - Make the class series views (`AssignedSeriesViewForClass` and its available counterpart) take

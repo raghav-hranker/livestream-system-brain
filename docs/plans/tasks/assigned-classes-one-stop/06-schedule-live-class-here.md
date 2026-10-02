@@ -11,7 +11,8 @@ dialog with a start date and time; the end comes from the live-duration default.
 - The backend in-place endpoint requires `startDate` when `isLive`.
 - Keep whatever the normal class create does for live classes, such as scheduling the class-lifecycle
   notifications.
-- Afterwards the row is there and its ⋯ offers Go live (task 01, if it has landed).
+- Afterwards the row is there with a solid Go live button and a *Scheduled · date* pill (task 01, if it
+  has landed). The place pickers are the same as task 05's.
 
 ## Acceptance criteria
 
