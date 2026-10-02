@@ -144,3 +144,21 @@ places the same class in the target course.
 - Editing the full class form (thumbnail, description, etc.) from the outline. The class page is one
   link away.
 - Multi-class drag, which is a separate decision pending.
+
+## Alternatives considered (2026-10-02)
+
+A clickable preview compared the row ⋯ menu with always-visible actions:
+https://claude.ai/artifact/FhD4V5SgPczfghzZA1KoKn (A actions column, B status chips, C expand a row,
+D class side panel, E/F one video button per row). **The ⋯ menu (board 0) was chosen for now.**
+
+The always-visible versions need to know, for a class with no video, whether it will be taught live or
+uploaded. Nothing in the system records that reliably today:
+- `Class.isLive` is no longer set by the class form; old values are noise, and the notification
+  scheduler reads it.
+- The Live Classes screen lists every class with dates in the tab's window; it never checks intent.
+- Placement start dates are stamped at assign time, so "start in the future" is not "live".
+
+The ⋯ menu offers Go live and Upload video on every row, so it needs no such cue. If the row actions
+come back, the first step is a stored intent field (for example `delivery: 'live' | 'recorded'`), set
+by "Add recorded class here" / "Schedule live class here" and by the class form. The Live Classes
+screen could then filter on it too.
