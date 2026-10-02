@@ -1,14 +1,25 @@
 # Tasks: Assigned Classes one-stop
 
-State: 00–07 **done** (2026-10-02, local) · 09–13 `ready-for-agent` (Round 2) · `ready-for-human` (08)
+State: 00–07 and 09–13 **done** (2026-10-02, local) · `ready-for-human` (08)
 
-**Merged heads** of `feat/assign-classes-one-stop`: backend `146653960`, admin `94cf488` (worktrees
-`qt-one-stop-backend` / `qt-one-stop-admin`). Task 00 also sits alone on `fix/class-series-require-admin`
+**Merged heads** of `feat/assign-classes-one-stop`: backend `4e9456e64`, admin `c37e774` (worktrees
+`qt-one-stop-backend` / `qt-one-stop-admin`). Round 1 ended at backend `146653960`, admin `94cf488`.
+Task 00 also sits alone on `fix/class-series-require-admin`
 (backend `98a4a874a`, admin `a414e5a`, off origin) and was cherry-picked into the one-stop branch.
-Final suites: backend tsc clean, 17 unit + 6 integration failures (baseline); admin 14 vitest failures
-(BannedUsers, LearnLibrary ×2, PdfForm.section-topic), 138 tsc errors (+1 stale `.next` in the
-integration worktree), lib 249/249. The integration admin worktree carries an uncommitted
-`config.ts` → `localhost:5912` LOCAL PREVIEW edit: never commit it.
+Final suites after round 2: backend tsc clean, 17 unit (of 1959) + 6 integration (of 597) failures
+(baseline); admin 14 vitest failures of 440 (BannedUsers, LearnLibrary ×2, PdfForm.section-topic),
+138 tsc errors (+1 stale `.next` in the integration worktree), lib 275/275. The integration admin
+worktree carries an uncommitted `config.ts` → `localhost:5912` LOCAL PREVIEW edit: never commit it.
+
+**Round 2 commits** (per-task branches `feat/assign-classes-one-stop-NN`, merge order 13, 09, 12, 10, 11):
+13 admin `75e93b3` (backend unchanged) · 09 admin `5cb94f3` · 12 backend `4a5998eb8`, admin `afe848c` ·
+10 backend `8d184b780` + `a4665385f`, admin `8787060` (task 12 merged into its branch: backend `838988534`, admin `f10652a`) · 11 backend
+`38c008a7e` (test only), admin `40d69ed`.
+Round 2 notes for the preview (08): nothing was checked in a browser or on a phone; keyboard reorder
+stays inside a group (Move to… is the keyboard/phone path across groups); Remove now always confirms;
+selection is per row, so ticking one place of a class in two places acts on that place only; a drop into
+a topic with no section is refused (the move endpoint needs a section); the class PDFs tab still caps at
+25 (pre-existing); student class-tabs ignore a moved place (known PRD gap).
 Live in-place classes end at the end of the start's IST day (no live-duration default exists).
 
 Vertical-slice breakdown of [the PRD](../../prd-assigned-classes-one-stop.md). The tasks cite the PRD's
