@@ -1,14 +1,14 @@
 # Tasks: Assigned Classes one-stop
 
-State: 00–07 and 09–18 **done** (2026-10-02, local) · 19–22 `ready-for-agent` (Round 4; 19's prod run is HITL) · `ready-for-human` (08)
+State: 00–07 and 09–22 **done** (19–22 on 2026-10-03, local) · 19's prod `--commit` is HITL (after deploy) · `ready-for-human` (08)
 
-**Merged heads** of `feat/assign-classes-one-stop`: backend `abdae59b3`, admin `064d358` (worktrees
-`qt-one-stop-backend` / `qt-one-stop-admin`). Round 2 ended at backend `4e9456e64`, admin `c37e774`;
+**Merged heads** of `feat/assign-classes-one-stop`: backend `3578ee9f6`, admin `064e8cc` (worktrees
+`qt-one-stop-backend` / `qt-one-stop-admin`). Round 3 ended at backend `abdae59b3`, admin `064d358`; round 2 ended at backend `4e9456e64`, admin `c37e774`;
 round 1 at backend `146653960`, admin `94cf488`.
 Task 00 also sits alone on `fix/class-series-require-admin`
 (backend `98a4a874a`, admin `a414e5a`, off origin) and was cherry-picked into the one-stop branch.
-Final suites after round 3: backend tsc clean, 17 unit (of 1962) + 6 integration (of 631) failures
-(baseline); admin 14 vitest failures of 477 (BannedUsers, LearnLibrary ×2, PdfForm.section-topic;
+Final suites after round 4: backend tsc clean, 17 unit (of 1973) + 6 integration (of 644) failures
+(baseline); admin 14 vitest failures of 511 (BannedUsers, LearnLibrary ×2, PdfForm.section-topic;
 a full run sometimes shows 15, rerun the four files alone), 105 tsc errors (+1 stale `.next` in the
 integration worktree; task 18 deleted the dead files that carried 33), lib 301/301. The integration admin
 worktree carries an uncommitted `config.ts` → `localhost:5912` LOCAL PREVIEW edit: never commit it.
@@ -105,3 +105,25 @@ section from the course screen) is parked.
 20 before 21 if both edit `AssignedClassesView.tsx`); then 22 (after 20 and 21). Branch per-task
 worktrees from the round 3 heads above. Task 19's `--commit` on prod runs only with the user's
 go-ahead, after deploy.
+
+**Round 4 commits** (merge order 21, 20, 19, 22; 21 did not touch `AssignedClassesView.tsx`, so it went
+first): 19 backend `d821d2ffa` (admin unchanged) · 20 admin `8235b9b` · 21 admin `057dbbc` · 22 backend
+`3671c8845`, admin `806e808` (branched from the merged wave: backend `3c96213c0`, admin `0e211fa`).
+Round 4 notes for the preview (08): nothing was checked in a browser or on a phone, and no real create,
+upload or transcoder flip ran (the cross-course flip was tested against the stream-status handler).
+- 19: never run against any real database. Every run writes an EJSON backup (dry run defaults to
+  `class-home-filing-backup-<ts>.json` in the cwd) and refuses an existing path. Writes go through the raw
+  collections, so `updatedAt` is untouched. A placement with a topic but no section keeps the class's
+  own section. Box commands (backend dir, after deploy, with the go-ahead):
+  `DOTENV_CONFIG_PATH=.env.development npx ts-node --transpile-only src/scripts/backfillClassHomeFiling.ts --backup <file>`
+  (dry run), then the same with `--commit --backup <new file>`; `--restore <file>` undoes it. Copy the
+  commit backup to `reference/scripts/`.
+- 20: the shared picker is `assign-classes/PlacePicker.tsx` (MoveTo, the add dialog and the top sheet).
+  With a chosen place the top sheet keeps the All view plus the Filed-under tab; switching back to
+  "Where each is filed" unticks no-topic classes.
+- 21: a 403 in preview or copy stops everything; a course with nothing to add is left out ("Nothing to
+  add"); the dialog can't close mid-run. The entry labels in the view still say "Copy to another
+  course…" (title is now "Copy … to other courses").
+- 22: `alsoCourseIds` is sent only when a course is picked. Extra placements copy the main one's
+  status/waiting/dates and carry no taxonomy pin (they follow the class's own filing). 404 names the
+  course by id. `topicOrderAppended` reports the main course only.
