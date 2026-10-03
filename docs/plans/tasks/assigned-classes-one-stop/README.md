@@ -1,6 +1,6 @@
 # Tasks: Assigned Classes one-stop
 
-State: 00–07 and 09–22 **done** (19–22 on 2026-10-03, local) · 19's prod `--commit` is HITL (after deploy) · `ready-for-human` (08)
+State: 00–07 and 09–22 **done** (19–22 on 2026-10-03, local) · 19's prod `--commit` **run 2026-10-03** (from the Mac, before deploy: 399/399 modified) · `ready-for-human` (08)
 
 **Merged heads** of `feat/assign-classes-one-stop`: backend `3578ee9f6`, admin `064e8cc` (worktrees
 `qt-one-stop-backend` / `qt-one-stop-admin`). Round 3 ended at backend `abdae59b3`, admin `064d358`; round 2 ended at backend `4e9456e64`, admin `c37e774`;
@@ -115,6 +115,10 @@ upload or transcoder flip ran (the cross-course flip was tested against the stre
   `DOTENV_CONFIG_PATH=.env.development npx ts-node --transpile-only src/scripts/backfillClassHomeFiling.ts --backup <file>`
   (dry run), then the same with `--commit --backup <new file>`; `--restore <file>` undoes it. Copy the
   commit backup to `reference/scripts/`.
+  **Run on prod 2026-10-03 ~15:42 IST** by the user from the integration worktree (prod DB, ahead of the
+  deploy so the preview could be tested): dry run 833 candidates = 399 one place / 270 several / 164 none;
+  `--commit` matched 399, modified 399 (220 of them also changed section, which the topic requires).
+  Backup: `reference/scripts/class-home-filing-backup-2026-10-03.json`; undo with `--restore` on that file.
 - 20: the shared picker is `assign-classes/PlacePicker.tsx` (MoveTo, the add dialog and the top sheet).
   With a chosen place the top sheet keeps the All view plus the Filed-under tab; switching back to
   "Where each is filed" unticks no-topic classes.
