@@ -12,10 +12,14 @@ It owns **only the cross-cutting layer** — the whole-system map, the shared bo
 vertical-slice playbooks. Per-repo truth stays in each repo's own `CONTEXT.md` / `MAP.md` / `docs/`.
 **Never duplicate a per-repo definition here — link to it.**
 
-## Read first
-@SYSTEM.md
-@GLOSSARY.md
-@BRANCHES.md
+## Read when
+- **`SYSTEM.md`**: before work that crosses a service contract (stream-status, recordings, playback,
+  realtime-token, private-mode, chat-moderation, PDF access/upload, shorts), or to find which repo or box
+  owns something. It holds the service map, the contracts table and the end-to-end arcs.
+- **`GLOSSARY.md`**: when you meet a shared term (`hlsAsset`, `pdfAsset`, Transcoder secret, Media stack,
+  Upload lane, Job profile, Realtime token…), or before reasoning about playback auth or CDN tokens.
+- **`BRANCHES.md`**: before committing slice work across the service repos. The quicktricks forks never
+  follow the slice branch.
 
 ## How to use this repo
 
