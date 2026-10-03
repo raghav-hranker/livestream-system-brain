@@ -119,6 +119,11 @@ upload or transcoder flip ran (the cross-course flip was tested against the stre
   deploy so the preview could be tested): dry run 833 candidates = 399 one place / 270 several / 164 none;
   `--commit` matched 399, modified 399 (220 of them also changed section, which the topic requires).
   Backup: `reference/scripts/class-home-filing-backup-2026-10-03.json`; undo with `--restore` on that file.
+  **Second pass `--own-section`** (backend `5a54f0485`, merged `83e1dca1b`): a several-place class takes the
+  one place in its own section (fills the topic, never moves the section). Run on prod 2026-10-03 by the
+  user: 104/104 modified; backup `reference/scripts/class-home-filing-own-section-2026-10-03.json`.
+  Left without a topic of their own: 166 several places with none in their section + 164 with no course
+  filing (132 placements without a topic, 32 no active placement) — added via "In a place I choose".
 - 20: the shared picker is `assign-classes/PlacePicker.tsx` (MoveTo, the add dialog and the top sheet).
   With a chosen place the top sheet keeps the All view plus the Filed-under tab; switching back to
   "Where each is filed" unticks no-topic classes.
