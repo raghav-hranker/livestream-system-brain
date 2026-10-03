@@ -1,0 +1,57 @@
+tsc: app/admin/banners/page.tsx TS2459 x1
+tsc: app/admin/brand-images/[id]/page.tsx TS2339 x1
+tsc: app/admin/custom-tags/edit/[id]/page.tsx TS2339 x1
+tsc: app/admin/custom-tags/edit/[id]/page.tsx TS7006 x1
+tsc: app/admin/exam-updates/[id]/page.tsx TS2339 x2
+tsc: app/admin/questions/edit/[id]/page.tsx TS2561 x1
+tsc: app/admin/series/Preview-questions/[id]/page.tsx TS7006 x10
+tsc: app/admin/series/view-questions/[id]/page.tsx TS2322 x3
+tsc: app/admin/tags/edit/[id]/page.tsx TS2339 x1
+tsc: app/admin/tags/edit/[id]/page.tsx TS7006 x1
+tsc: ckeditor-build/src/ckeditor.ts TS2307 x23
+tsc: ckeditor-build/src/ckeditor.ts TS4112 x2
+tsc: components/admin/AssignClassModal.tsx TS2339 x2
+tsc: components/admin/AssignClassModal.tsx TS7006 x3
+tsc: components/admin/CategoryForm.tsx TS2339 x1
+tsc: components/admin/CategoryForm.tsx TS2358 x1
+tsc: components/admin/CustomTagsDashboard.tsx TS2322 x1
+tsc: components/admin/EbookDasboard.tsx TS2315 x1
+tsc: components/admin/EbookDasboard.tsx TS7006 x2
+tsc: components/admin/EditorialForm.tsx TS2881 x2
+tsc: components/admin/FeedForm.tsx TS2304 x1
+tsc: components/admin/MainMenuDashboard.tsx TS2322 x1
+tsc: components/admin/NoticeForm.tsx TS2322 x1
+tsc: components/admin/NotificationAnalyticsPanel.tsx TS2345 x2
+tsc: components/admin/ReportQuestionsDashboard.tsx TS2322 x1
+tsc: components/admin/SectionsDashboard.tsx TS2322 x1
+tsc: components/admin/TeacherForm.tsx TS2339 x3
+tsc: components/admin/TopicForm.tsx TS2322 x4
+tsc: components/admin/TopicForm.tsx TS2339 x1
+tsc: components/admin/TopicForm.tsx TS2345 x2
+tsc: components/admin/TopicsDashboard.tsx TS2322 x1
+tsc: components/admin/TopicsDashboard.tsx TS2367 x1
+tsc: components/admin/UsersDashboard.tsx TS7053 x1
+tsc: components/admin/WordDetails.tsx TS2339 x5
+tsc: components/admin/WordDetails.tsx TS2551 x2
+tsc: components/admin/WordDetails.tsx TS7006 x1
+tsc: components/admin/WordForm.tsx TS2322 x7
+tsc: hooks/api/use-classes.ts TS2322 x1
+tsc: hooks/api/use-classes.ts TS2339 x1
+tsc: hooks/api/use-latest-sections.ts TS2554 x2
+tsc: hooks/use-toast.ts TS2459 x2
+tsc: hooks/use-toast.ts TS2724 x1
+tsc: lib/s3.ts TS2552 x3
+vitest: components/admin/BannedUsersDashboard.test.tsx > BannedUsersDashboard > removes a ban by its row id after the confirm, never by userId
+vitest: components/admin/BannedUsersDashboard.test.tsx > BannedUsersDashboard filters > keeps the chosen filters across an invalidation refetch
+vitest: components/admin/BannedUsersDashboard.test.tsx > BannedUsersDashboard permissions > explains a denied write and re-reads the list so the screen can catch up
+vitest: components/admin/BannedUsersDashboard.test.tsx > BannedUsersDashboard permissions > falls through to the permission state once the re-read is also denied
+vitest: components/admin/BannedUsersDashboard.test.tsx > BannedUsersDashboard row completeness > renders a snapshot-only row that has no live user behind it
+vitest: components/admin/LearnLibraryDashboard.test.tsx > shows the full ebook count and priority controls without redundant columns or export
+vitest: components/admin/LearnLibraryPriorityEditor.test.tsx > Learn Library priority editor > does not save invalid priority 
+vitest: components/admin/LearnLibraryPriorityEditor.test.tsx > Learn Library priority editor > does not save invalid priority -1
+vitest: components/admin/LearnLibraryPriorityEditor.test.tsx > Learn Library priority editor > does not save invalid priority 1.5
+vitest: components/admin/LearnLibraryPriorityEditor.test.tsx > Learn Library priority editor > does not save invalid priority 9007199254740992
+vitest: components/admin/LearnLibraryPriorityEditor.test.tsx > Learn Library priority editor > reflects the priority returned after refreshing the item
+vitest: components/admin/LearnLibraryPriorityEditor.test.tsx > Learn Library priority editor > saves only priority, including zero, through the existing update API
+vitest: components/admin/PdfForm.section-topic.test.tsx > PdfForm section → topic filtering > pre-selects an edited PDF's section and topic, requesting that section's topics by section=
+vitest: components/admin/PdfForm.section-topic.test.tsx > PdfForm section → topic filtering > reloads topics and clears the stale topic when the section changes

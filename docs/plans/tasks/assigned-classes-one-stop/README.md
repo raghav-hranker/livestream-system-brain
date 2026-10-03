@@ -7,10 +7,9 @@ State: 00–07 and 09–22 **done** (19–22 on 2026-10-03, local) · 19's prod 
 round 1 at backend `146653960`, admin `94cf488`.
 Task 00 also sits alone on `fix/class-series-require-admin`
 (backend `98a4a874a`, admin `a414e5a`, off origin) and was cherry-picked into the one-stop branch.
-Final suites after round 4: backend tsc clean, 17 unit (of 1973) + 6 integration (of 644) failures
-(baseline); admin 14 vitest failures of 511 (BannedUsers, LearnLibrary ×2, PdfForm.section-topic;
-a full run sometimes shows 15, rerun the four files alone), 105 tsc errors (+1 stale `.next` in the
-integration worktree; task 18 deleted the dead files that carried 33), lib 301/301. The integration admin
+Known failures at the merged heads: [`baseline-backend.txt`](baseline-backend.txt) and
+[`baseline-admin.txt`](baseline-admin.txt) (taken 2026-10-03 on fresh worktrees with
+`scripts/qt-tasks.sh suites`; re-take after each merge round). The integration admin
 worktree carries an uncommitted `config.ts` → `localhost:5912` LOCAL PREVIEW edit: never commit it.
 
 **Round 2 commits** (per-task branches `feat/assign-classes-one-stop-NN`, merge order 13, 09, 12, 10, 11):
@@ -46,20 +45,18 @@ numbered decisions instead of restating them.
 **Working-copy rules**
 - **Branch.** Both forks use `feat/assign-classes-one-stop`, cut from `feat/course-class-grouped-view`
   (backend `f86dfb19d`, admin `380a5d5`). Everything stays local: no push, no deploy.
-- **Worktrees.** Work in the dedicated worktrees:
-  - backend `~/Projects/worktrees/qt-one-stop-backend`;
-  - admin `~/Projects/worktrees/qt-one-stop-admin`;
-  - plus per-task worktrees when tasks run in parallel.
+- **Worktrees.** `~/Projects/worktrees/qt-one-stop-{backend,admin}` are the **integration** worktrees:
+  only the orchestrator merges into them. Each task runs in its own pair, made and merged with
+  system-brain's `scripts/qt-tasks.sh` (`mkwt qt-one-stop NN` → `qt-one-stop-{backend,admin}-NN` on
+  `feat/assign-classes-one-stop-NN`; `merge qt-one-stop NN`; `rmwt qt-one-stop NN`).
 
   **Never edit** `qt-grouped-view-backend` or `qt-grouped-view-admin`: the user's local preview runs
   from them.
 - **No npm install in the admin.** It rewrites the lockfile, and `node_modules` is symlinked.
 - **Commits.** Use the work email, with no co-author trailers.
-- **Tests.**
-  - Backend: `npm test`, `npm run test:integration`, `npx tsc --noEmit`. Baseline: 17 unit and 6
-    integration failures, all pre-existing; tsc is clean.
-  - Admin: `node --test 'lib/**/*.test.ts'`, vitest `--exclude '.sandcastle/**'` (14 pre-existing
-    failures), `npx tsc --noEmit` (139 errors plus 1 stale `.next` error).
+- **Tests.** `scripts/qt-tasks.sh suites <worktree> docs/plans/tasks/assigned-classes-one-stop/baseline-<side>.txt`
+  must print `NO NEW FAILURES`. How to run, read and write tests:
+  [`reference/quicktricks-testing.md`](../../../../reference/quicktricks-testing.md).
 
 | # | Task | Type | Blocked by |
 |---|---|---|---|
