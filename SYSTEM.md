@@ -56,13 +56,13 @@ the writers are the two transcoders (video contracts) and admin-dashboard (PDF c
 | **Listing liveness (read)** | `streamStatus` + `hasPlayback` on the student class listings: `GET /api/courses/{courseId}/classes`, `GET /api/topics/{topicId}/classes?courseId=`, `POST /api/courses/{courseId}/todays-classes`, timetable | — | **thedhronas** / ls (consumers) | The only way a listing can say "live now". `streamStatus` is the transcoder-written runtime truth (`preparing/live/reconnecting/processing/ended`); `hasPlayback` = "`/playback` has an `hlsAsset` to sign" — the asset itself is never serialized. Replaces the v1 `class_link`+`isLive` write the old live backend did at first segment (gone on the v2 branch). Poll, not push: only as fresh as the refetch. Landed 2026-09-02 in the fork (`courseClassController.ts`, 4 projections) + upstream (3). |
 | **Realtime token (mint)** | `GET /api/classes/{classId}/realtime-token` (Auth or Streamer token) → `{ token, expiresIn: 600 }`, an HS256 socket ticket (`REALTIME_TOKEN_SECRET`) | — | **ls** (exchanges before every socket connect; livestream verifies the ticket at the handshake) | Socket analogue of Playback (mint) — same `authenticateUserOrStreamer` + `authorizeClassAccess` seam, so chat and video entitlement cannot drift. Streamer token ⇒ `role:'host'` (own class only); every Auth token ⇒ `viewer`. TTL gates the handshake only. `REALTIME_AUTH_REQUIRED` on livestream = secured/unsecure axis (off ⇒ phase A dual-accept). See task 19 doc phase B. |
 | **Private-mode write** | `PATCH /api/classes/{classId}/private-mode` + `X-Transcoder-Secret`, body `{isPrivate}` | livestream (host toggle via class-UI socket) | nodejs-server | `isPrivate` is LMS-owned but **dual-writable**: LMS admin UI writes it directly, livestream writes via this endpoint. LMS side landed on `launch/quicktricks-v2`; livestream's `classClient.setPrivateMode` repoint also landed there (regression-tested — the old note that it still targeted the dead `/api/internal/...` URL was stale, corrected 2026-08-21). Late-join bootstrap: `joinRoom` emits current `isPrivate` to the joining socket, and `userMsg` enforces it server-side (launch task 11). |
-| **Chat-moderation write (host)** *(unmerged: `sandcastle/chatmod-task-04`)* | `POST /api/classes/{classId}/chat-moderation` + `X-Transcoder-Secret`, body `{targetUserId, action: 'mute'\|'unmute', requestedBy}` | livestream (host command via class-UI socket) | nodejs-server | Host in-class mute/unmute persists through the LMS chat-moderation module (chat-moderation PRD task 04); response carries the authoritative post-mutation chat policy; durable `ChatModerationChanged` event via outbox → Redis Stream `chatmod:events:<tenant>`. Note: this widens the transcoder secret's blast radius to moderation writes — see `docs/plans/tasks/lms-owned-chat-moderation/contract-chat-policy-wire.md`. |
+| **Chat-moderation write (host)** | `POST /api/classes/{classId}/chat-moderation` + `X-Transcoder-Secret`, body `{targetUserId, action: 'mute'\|'unmute', requestedBy}` | livestream (host command via class-UI socket) | nodejs-server | Host in-class mute/unmute persists through the LMS chat-moderation module (chat-moderation PRD task 04); response carries the authoritative post-mutation chat policy; durable `ChatModerationChanged` event via outbox → Redis Stream `chatmod:events:<tenant>`. Note: this widens the transcoder secret's blast radius to moderation writes — see `docs/plans/tasks/lms-owned-chat-moderation/contract-chat-policy-wire.md`. |
 | **Transcoder secret** | header `X-Transcoder-Secret` ⇄ env `TRANSCODER_WEBHOOK_SECRET` | transcoders send | nodejs-server checks | **Per secured customer**, gates *both* webhooks. Never global. |
 | **PDF access (mint)** | `GET /api/admin/pdfs/{pdfId}/access` (admin) · `GET /api/courses/{courseId}/pdfs/{pdfId}/access` · `GET /api/classes/{classId}/pdfs/{pdfId}/access` (entitled viewer) → signed Bunny URL | — | admin-dashboard + student clients (consumers) | nodejs-server signs from `Pdf.pdfAsset` (`documents` zone). PDF analogue of Playback (mint): no `pdfAsset` ⇒ nothing to sign. See `repos/nodejs-server/docs/adr/0002-documents-zone-and-exact-file-tokens.md`. |
 | **Shorts upload (public lane)** | admin-signed multipart to the **public** intake `tempvideos-hranker` (lane enum, never a bucket name) → public transcode lane → `recordedvideos-hranker`; then `PATCH /api/shorts/{shortId}/video` + admin JWT, body `{sourceKey}` | admin-dashboard | nodejs-server | **The one video *read* contract OUTSIDE the content-protection seam.** No `/playback`, no token: the LMS derives `Short.videoAsset={bucket:'shorts',key}` from the staging key (the container's output prefix `{clientId}/{roomId}/hls` is deterministic) and serves `link` from `SHORTS_PUBLIC_BASE_URL`. The intake bucket chooses **storage/CDN only**; the reporting contract is a separate axis (the client's secured flag + the **Job profile**, ADR-0007) — the 2026-09-16 conflation made every secured client's short end `failed`. Readiness is **no longer the admin's**: it arrives via the Shorts transcode callback (next row); the `{videoStatus}` PATCH arm is removed. Decisions: `docs/adr/0006` (public objects) + `docs/adr/0007` (readiness, job profile); hops: `slices/public-shorts-video.md`, tasks `docs/plans/tasks/shorts-transcode-callback/`. |
 | **Shorts transcode callback** | `POST /api/shorts/transcode-complete` + `X-Transcoder-Secret`, body `{jobId, clientId, roomId, status:'processed'\|'failed', outputs:{hls:{key}}, durationSec, error}` — **key only, no `bucket`** | video-transcoder (container, `REPORTING=callback` from the per-(queue, client) **Job profile**) | nodejs-server | The generic job-complete report; the LMS is the **single writer** of `Short.videoStatus`. Unknown `roomId` ⇒ 404 ⇒ job fails visibly; repeat ⇒ idempotent 200; `processed` overrules a sweeper `failed`. A rejected callback is **fatal to the job**, like stream-status. 24 h `SHORTS_TRANSCODE_DEADLINE_HOURS` sweeper only gives up, never promotes (ADR-0002 pattern). The profile also sets `mp4:false` so shorts skip MP4 renditions. Widens the transcoder secret to a shorts write (accepted). Decision: `docs/adr/0007-shorts-readiness-via-transcode-callback.md`. |
 | **PDF write (single)** | `POST /api/pdfs` / `PUT /api/pdfs/{id}`, multipart, file field `uploadPdf` + admin JWT | admin-dashboard | nodejs-server | Being retargeted: bytes go to private B2 (`documents`), record gets `pdfAsset`, **no new public `uploadPdf` URL**. Metadata-only update keeps the current asset. PRD: `docs/plans/prd-secure-pdf-upload.md`; hops: `slices/secure-pdf-upload.md`. |
-| **PDF upload session** *(planned)* | `POST /api/admin/pdf-upload-sessions` (+ per-file `upload-target` / `complete`; retry = fresh `upload-target`) + admin JWT; bytes go browser → B2 via short-lived **single-object** presigned `PUT` (15-min TTL) | admin-dashboard | nodejs-server | Bulk path — Node is control plane only, never relays bytes. Completion is server-verified (`HeadObject` + mandatory `%PDF-` range-read) and idempotent. Decision: `docs/adr/0005-bulk-pdf-uploads-use-presigned-put.md`; contract: `docs/plans/prd-secure-pdf-upload.md` + `slices/secure-pdf-upload.md`. |
+| **PDF upload session** | `POST /api/admin/pdf-upload-sessions` (+ per-file `upload-target` / `complete`; retry = fresh `upload-target`) + admin JWT; bytes go browser → B2 via short-lived **single-object** presigned `PUT` (15-min TTL) | admin-dashboard | nodejs-server | Bulk path — Node is control plane only, never relays bytes. Completion is server-verified (`HeadObject` + mandatory `%PDF-` range-read) and idempotent. Decision: `docs/adr/0005-bulk-pdf-uploads-use-presigned-put.md`; contract: `docs/plans/prd-secure-pdf-upload.md` + `slices/secure-pdf-upload.md`. |
 
 ## End-to-end arcs
 
@@ -105,7 +105,7 @@ SHORTS (admin upload → PUBLIC read) — the one video arc with no mint
 PDF (admin upload → signed read)
   single: admin-dashboard PdfForm → POST /api/pdfs (multipart) → nodejs-server stores bytes in
      private B2 (documents zone) → Pdf.pdfAsset   (no new public uploadPdf URL)
-  bulk (planned): session create → per-file presigned B2 PUT (browser → B2 direct) → complete
+  bulk: session create → per-file presigned B2 PUT (browser → B2 direct) → complete
      (nodejs-server verifies HeadObject + %PDF-) → Pdf.pdfAsset
   reader → GET …/pdfs/{pdfId}/access → nodejs-server signs pdfAsset → Bunny CDN
      (unsigned fetch of the documents zone ⇒ 403)
@@ -113,26 +113,18 @@ PDF (admin upload → signed read)
 
 ## Serving combos & trust boundary
 
-The arcs above assume the **signed** combo. There are two, and they differ in whether playback is protected
-at the CDN — see `GLOSSARY.md` → "Storage & serving combos" for the full table.
-
-- **B2 + Bunny (signed):** every fetch needs a **Playback URL token**; `nodejs-server`/`/playback` is in the
-  path. `storageProvider:'b2'` (live transcoder routing) / `hls-to-mp4-container-b2` (recorded retranscode).
-- **R2 (unauthenticated):** files served from `R2_PUBLIC_DOMAIN`, no token, no `/playback` — content
-  protection is bypassed at the CDN. `storageProvider:'r2'` / `hls-to-mp4-container`. Lives on a separate
-  branch; which combo is live is env-driven (`STORAGE_*` present ⇒ signed B2, else R2 fallback).
-
-**Shorts are the exception to all of the above.** They ride the *public* output bucket
-(`recordedvideos-hranker`, served on the listener's `CF_HRANKER_CDN_DOMAIN`) with no token of any kind — by design, because
-a share link that expires is not a share link. Nothing in this section applies to them: no combo, no
-Playback URL token, no 403-on-expiry, no `/playback`. See ADR-0006.
+The arcs above assume a **signed** combo: every fetch needs a **Playback URL token** that `/playback` mints.
+Which combos exist, which is primary and which carry auth is defined once, in `GLOSSARY.md` →
+"Storage & serving combos" (the **Media stack**: origin × CDN, plus the legacy unauthenticated Public-R2
+combo). **Shorts are the deliberate exception:** public objects, no token, no `/playback` (ADR-0006).
 
 A slice that touches playback auth **must** state which combo it targets — the `/playback`, Playback URL
-token, and CDN-403 reasoning only apply to B2 + Bunny.
+token, and CDN-403 reasoning apply only to the signed combos.
 
 ## Where the per-repo maps pick up
 
-- livestream: `repos/livestream/Transcoding.md` (ffmpeg/NVENC), `repos/livestream/docs/plans/` (phases)
+- livestream (branch `launch/quicktricks-v2`; local checkouts sit on other branches): `Transcoding.md`
+  (ffmpeg/NVENC), `CONTEXT.md`, `docs/adr/`
 - video-transcoder: `repos/video-transcoder/MAP.md` (surfaces + 1A/1B/1C flows), `…/CONTEXT.md`
 - nodejs-server: `repos/nodejs-server/CONTEXT.md` (token taxonomy), `…/docs/adr/`,
   `…/docs/plans/prd-secure-pdf-delivery.md` (PDF signing/serializers/migration)
