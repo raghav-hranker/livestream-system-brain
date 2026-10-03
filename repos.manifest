@@ -20,13 +20,14 @@ ls                https://github.com/raghav-hranker/ls.git
 # quicktricks-backend  https://github.com/abhi092515/quicktricks-backend.git
 #   The PRODUCTION LMS (fork of nodejs-server + their admin features, merged 2026-08-13).
 #   Local: ../quicktricks-backend, branch quicktricks-admin (their line — never slice-synced).
-#   Prod: https://quicktricks.multistreaming.site -> test-uday box :5916.
+#   Prod: https://backend.quicktricksbysahilsir.com -> shared Hranker box webserver2-2, pm2 quicktricks-backend.
+#   (quicktricks.multistreaming.site on the test-uday box is a separate, non-production deploy.)
 #   nodejs-server remains the upstream lineage + the phonetics standby deploy.
 #
 # quicktricks-admin  https://github.com/abhi092515/quicktricks-admin.git
 #   The client team's admin-dashboard fork (separate cloned repo, not a branch).
 #   Their line: branch quicktricks-admin — same discipline as the backend fork:
-#   merged by agreement, never slice-synced. Deploy target: not recorded yet.
+#   merged by agreement, never slice-synced. Deploy: Vercel on push -> admin.quicktricksbysahilsir.com.
 #
 # thedhronas  git@github.com:GontinaUdayKumar/thedhronas.git
 #   The STUDENT-FACING website (Next.js) — the client team's white-label repo:

@@ -33,7 +33,9 @@ team chose a separate cloned repo over a branch, and the 2026-08-13 merge folded
 content-protection line into it alongside their admin features. Everything this file says about
 nodejs-server's role and contracts applies verbatim to the fork — `CONTEXT.md` and `docs/adr/` carried
 over (caveat: the fork holds **two ADR series with colliding numbers** — match ADRs by title, not number).
-Prod: `https://quicktricks.multistreaming.site` → test-uday box, pm2 `quicktricks-backend` port 5916.
+Prod: `https://backend.quicktricksbysahilsir.com` → the shared Hranker box `webserver2-2`, pm2 `quicktricks-backend`
+(corrected 2026-09-16; `quicktricks.multistreaming.site` on the test-uday box is a separate, non-production deploy).
+Prod admin: `admin.quicktricksbysahilsir.com` on Vercel.
 `nodejs-server` itself remains the upstream lineage and the phonetics standby deploy. The fork follows the
 other team's branch discipline, **never** the slice branch (`repos.manifest` has the registry entry).
 The client team's admin dashboard is likewise a separate cloned repo: **`quicktricks-admin`**
