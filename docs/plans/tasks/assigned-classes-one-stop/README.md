@@ -124,6 +124,14 @@ upload or transcoder flip ran (the cross-course flip was tested against the stre
   user: 104/104 modified; backup `reference/scripts/class-home-filing-own-section-2026-10-03.json`.
   Then restored the same day by the user (104/104), and **re-applied** (104/104 modified) — the second pass
   is live. Backup of the live run: `reference/scripts/class-home-filing-own-section-2026-10-03-b.json`.
+  **Third pass `--prefer-course 6a3903d283f65d7af3c02c4c`** (Railway Group D Maths Crash Course 2026, chosen by the
+  user; backend `f22309836`, merged `d07574db9`): the 95 AppX Maths classes (own section CGL MATHS) that other
+  courses lump under "Maths › Topics" took the Crash course's real topic (section → Maths). Run on prod
+  2026-10-03: 95/95; backup `reference/scripts/class-home-filing-groupd-2026-10-03.json`.
+  Still without a home topic: 235 = 57 Computer classes (BASICS OF COMPUTER APPLICATION course files them
+  Computer › Computer; RRB/SRB batches BASICS OF COMPUTER APPLICATION › same — user to choose), 14 intro /
+  announcement leftovers, 164 no course filing (115 in the Science Foundation course, 15 RRB NTPC UG Expected
+  Papers, 32 in no course).
   Left without a topic of their own: 166 several places with none in their section + 164 with no course
   filing (132 placements without a topic, 32 no active placement) — added via "In a place I choose".
 - 20: the shared picker is `assign-classes/PlacePicker.tsx` (MoveTo, the add dialog and the top sheet).
