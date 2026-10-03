@@ -603,3 +603,109 @@ What the admin gets instead:
 - Fixing the two listings that ignore placement status (decision 28).
 - Hiding an existing class that has no recording when it is assigned (Assign stays visible, as today).
 - Board K (refining the Available tab in place): not chosen.
+
+## Round 4: classes into empty courses and into several courses (2026-10-03)
+
+Round 3 merged locally and the user previewed it. Four things came back:
+
+- **An empty course can't get new classes.** "Add recorded classes here" and "Schedule live class
+  here" live only on section, topic and subtopic headers, and an empty course has none. Its only way in
+  is "Add existing classes", which files each class where it is filed.
+- **833 of 8,137 active classes have no topic of their own** (read on prod 2026-10-02). The AppX import
+  (June–July, 815 of them) put the topic on each course's placement and left the class's own topic
+  empty; 17 more came from one 2-minute script batch on 2026-09-29, not from an admin screen. Course
+  screens read the placement, so students never noticed. The top "Add existing classes" sheet reads the
+  class's own filing, so it greys these out and says "no topic" twice. Of the 833: **399** are filed in
+  exactly one place in every course, **270** sit under different topics in different courses, **164**
+  are in no course.
+- **"Also add to other courses"** while creating a class: a series taught to several batches is created
+  once and placed in all of them.
+- **Copy to another course takes several courses** at once.
+
+### What changes for the admin
+
+- **"Add classes ▾"** replaces the top "Add existing classes" button. Its menu: **Add recorded
+  classes** · **Schedule live class** · **Add existing classes**. The first two open the round 3 dialog
+  with a place picker that starts at **Section** (any section in the global list, not only the course's)
+  then Topic then Subtopic, the same picker Move to… uses. So an empty course is one click from its
+  first class.
+- **The top "Add existing classes" sheet gets a "Where" choice:** "Where each is filed" (default,
+  today) or "In a place I choose" (the same Section › Topic › Subtopic picker). With a chosen place it
+  behaves like the header sheet. A class with no topic of its own no longer reads "no topic" twice: one
+  line says "No topic of its own: choose a place above to add it", and it becomes pickable once a place
+  is chosen.
+- **The add dialog (recorded and live) gets "Also add to other courses":** a course multiselect.
+  Every class created also lands in each picked course at the same Section › Topic › Subtopic, last
+  there. Recorded classes stay hidden in every course until the recording is ready (decision 27); the
+  video uploads once. Full-access admins only, like Copy.
+- **Copy to another course picks several courses.** The preview shows one line per course ("12 added
+  · 3 already there · 1 new topic"), each expandable to today's per-topic table. Copy runs one course
+  at a time and reports each; a course that fails doesn't undo the others. The row, ticked-set, section
+  and whole-course Copy entries all use it.
+- The dialog's "It goes last there and is active straight away." says so only for live classes;
+  recorded ones already carry the round 3 footer.
+
+### The backfill
+
+The 399 classes filed in exactly one place in every course get that place as their own section, topic
+and subtopic. Placements are not touched: where a placement override now equals the class's filing,
+it stays as it is (follow-the-class is not forced). The 270 and the 164 are left; the "Where" choice
+covers them. The run is a script with a dry run, a JSON backup of every class it would change, and
+`--commit` only with the user's go-ahead.
+
+### Round 4 user stories
+
+54. As a course admin, I want to add the first class to an empty course from the top of the screen, so that a new course doesn't need a workaround.
+55. As a course admin, I want to add an existing class that has no topic of its own into a place I choose from the top, so that no class is unaddable.
+56. As a course admin, I want to put a new class into several courses while creating it, so that a series shared by several batches is created once.
+57. As a course admin, I want to copy classes to several courses at once and see what each course gets, so that I don't repeat the same copy course by course.
+58. As a course admin, I want classes imported from AppX to know their own topic, so that "Add existing classes" files them correctly.
+
+### Round 4 implementation decisions
+
+39. **Place picker from the course level** (admin). `AddClassInPlaceTarget` gains a `course` level:
+    the dialog asks for Section (`/sections/dropdown`), then Topic and Subtopic as it does from a
+    section header (including round 2's "new subtopic typed in place"). Reuse `MoveToDialog`'s picker;
+    don't write a third. The in-place endpoint already accepts any valid chain, so no backend change.
+    The series title and teacher suggestions work as today once the place is known (an empty place:
+    no title suggestion, teacher from the course faculty).
+40. **"Add classes ▾"** (admin): a dropdown button at the top of the outline card, on empty and
+    non-empty courses alike; the empty-state panel points to it. Live mode follows the same rule as
+    the header items.
+41. **"Where" in the top sheet** (admin). `AddExistingClassesSheet` with no place shows a two-way
+    choice. "In a place I choose" turns into the place picker (decision 39) and then behaves exactly
+    like a header-opened sheet (target sent, `unpickableReason` with a place). The no-place no-topic
+    row shows one line: "No topic of its own: choose a place above to add it".
+42. **Also add to other courses** (backend). The in-place endpoint (decisions 2 and 26) accepts
+    `alsoCourseIds: string[]` (0–20, distinct, never the course itself). In the **same transaction**,
+    each class gets one placement per extra course with the same section/topic/subtopic, landing last
+    there (listing-aware max + 1 of that course, its topic-order append), recorded ones waiting for
+    their recording, live ones with the same placement dates. 404 names an unknown course; 403 for a
+    restricted role (same rule and message style as Copy). The response adds
+    `alsoAdded: [{ courseId, placementIds }]`.
+43. **Also add to other courses** (admin). A course multiselect under Teacher (search, chips, the
+    current course excluded), hidden for restricted roles. Create sends `alsoCourseIds`; the toast adds
+    "Also added to N courses". The upload queue is unchanged (one class, one upload). Shared
+    `CourseMultiSelect` component, built in the Copy task (decision 44) and reused here.
+44. **Copy to several courses** (admin only; `POST …/copy-to/:target` is unchanged). `CopyToCourseDialog`
+    picks courses with `CourseMultiSelect` (source course excluded). Preview calls the endpoint with
+    `preview: true` per course, in sequence, and shows one line per course, expandable to today's
+    table; a course whose preview fails shows its error and is left out of Copy. Copy runs the picked
+    courses **one at a time**, each its own transaction, then shows per-course results; a 409 on one
+    course is reported on that line ("changed while copying; nothing copied there") and the rest
+    continue. Max 20 courses.
+45. **Backfill script** (backend `src/scripts/backfillClassHomeFiling.ts`): select active classes
+    with `topic: null`; group their **active** placements' (section, topic, subTopic); exactly one
+    distinct triple with a topic ⇒ set the class's `section`, `topic`, `subTopic` to it. Dry run by
+    default prints counts and a sample; it always writes the backup JSON (`_id` + old section, topic,
+    subTopic) before `--commit`; `--commit` uses one `bulkWrite` with a `topic: null` guard per class
+    so a class edited meanwhile is skipped. Restore = the backup applied back. It never touches
+    placements. Run on the box with `DOTENV_CONFIG_PATH=.env.development`, user go-ahead required.
+
+### Round 4 out of scope
+
+- Picking a home topic for the 270 classes filed under different topics (left to the "Where" choice).
+- Board J: creating a new section or topic from the course screen (still parked; a new subtopic typed
+  in place already works).
+- A backend batch copy endpoint (the client loop is enough at ≤ 20 courses).
+- Also-add for "Add existing classes" (Copy covers existing classes).

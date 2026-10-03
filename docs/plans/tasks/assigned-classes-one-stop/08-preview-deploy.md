@@ -1,7 +1,7 @@
 # Preview and deploy
 
 **Type**: HITL
-**Blocked by**: #01–#07, #09–#18; outline task 11 (the outline deploys first)
+**Blocked by**: #01–#07, #09–#22 (19 for the script; its prod run happens after the deploy); outline task 11 (the outline deploys first)
 
 ## What to build
 

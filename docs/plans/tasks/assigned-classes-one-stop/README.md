@@ -1,6 +1,6 @@
 # Tasks: Assigned Classes one-stop
 
-State: 00–07 and 09–18 **done** (2026-10-02, local) · `ready-for-human` (08)
+State: 00–07 and 09–18 **done** (2026-10-02, local) · 19–22 `ready-for-agent` (Round 4; 19's prod run is HITL) · `ready-for-human` (08)
 
 **Merged heads** of `feat/assign-classes-one-stop`: backend `abdae59b3`, admin `064d358` (worktrees
 `qt-one-stop-backend` / `qt-one-stop-admin`). Round 2 ended at backend `4e9456e64`, admin `c37e774`;
@@ -81,7 +81,11 @@ numbered decisions instead of restating them.
 | 16 | [Several videos at once, and the old bulk button goes](16-several-videos.md) | AFK | 15 |
 | 17 | [Add existing classes here (from a header)](17-add-existing-classes-here.md) | AFK | 15 |
 | 18 | ["Add existing classes" at the top, and the Available tab goes](18-remove-available-tab.md) | AFK | 16, 17 |
-| 08 | [Preview and deploy](08-preview-deploy.md) | HITL | 01–07, 09–18, outline task 11 |
+| 19 | [Backfill the class's own filing from its courses](19-backfill-class-home-filing.md) | AFK (+ HITL prod run) | — |
+| 20 | ["Add classes ▾" at the top, and "Where" in the top sheet](20-add-classes-from-the-top.md) | AFK | — |
+| 21 | [Copy to several courses at once](21-copy-to-several-courses.md) | AFK | — |
+| 22 | [Also add new classes to other courses](22-also-add-to-other-courses.md) | AFK | 20, 21 |
+| 08 | [Preview and deploy](08-preview-deploy.md) | HITL | 01–07, 09–22, outline task 11 |
 
 Task 00 is on its own branch off `origin/quicktricks-admin` so it can deploy ahead of the outline; it is merged into the one-stop branch for task 04.
 
@@ -95,3 +99,9 @@ uploads, and new recorded classes hidden until their recording is ready. Run 14 
 (each builds on the last); 17 (add existing classes from a header, board L) can start once 15 is
 merged, alongside 16; 18 (top button, Available tab removed) goes last; branch per-task worktrees from the round 2 heads above. Board J (a brand-new
 section from the course screen) is parked.
+
+**Round 4** (2026-10-03, after the round 3 preview): tasks 19–22, PRD section "Round 4". Wave 1 = 19,
+20 and 21 in parallel (19 is backend only, 20 and 21 are admin only and touch different dialogs; merge
+20 before 21 if both edit `AssignedClassesView.tsx`); then 22 (after 20 and 21). Branch per-task
+worktrees from the round 3 heads above. Task 19's `--commit` on prod runs only with the user's
+go-ahead, after deploy.
