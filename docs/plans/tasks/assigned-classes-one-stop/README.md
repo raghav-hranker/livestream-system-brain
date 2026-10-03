@@ -122,7 +122,8 @@ upload or transcoder flip ran (the cross-course flip was tested against the stre
   **Second pass `--own-section`** (backend `5a54f0485`, merged `83e1dca1b`): a several-place class takes the
   one place in its own section (fills the topic, never moves the section). Run on prod 2026-10-03 by the
   user: 104/104 modified; backup `reference/scripts/class-home-filing-own-section-2026-10-03.json`.
-  **Then restored the same day by the user (104/104 back to no topic)** — the second pass is not live.
+  Then restored the same day by the user (104/104), and **re-applied** (104/104 modified) — the second pass
+  is live. Backup of the live run: `reference/scripts/class-home-filing-own-section-2026-10-03-b.json`.
   Left without a topic of their own: 166 several places with none in their section + 164 with no course
   filing (132 placements without a topic, 32 no active placement) — added via "In a place I choose".
 - 20: the shared picker is `assign-classes/PlacePicker.tsx` (MoveTo, the add dialog and the top sheet).
