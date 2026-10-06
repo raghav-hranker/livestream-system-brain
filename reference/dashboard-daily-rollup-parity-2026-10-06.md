@@ -67,3 +67,21 @@ orders web 704 ms bytes 2943 total 92 locationRows 10 plans 10 recon 1
 users web 129 ms bytes 837 total 166 states 15 cities 5
 orders mobile 977 ms bytes 5978 total 2114 locationRows 33 plans 28 recon 1
 users mobile 148 ms bytes 767 total 832 states 10 cities 8
+
+## Run 3 (after full backfill, 2026-10-06 ~18:30 IST): dashboardDailyFactsParity.ts through the real stored-days read path
+
+Backfill: 1,374 days × 3 variants = 4,122 docs (2023-01-01..2026-10-05); first run died at 2025-07-05 on a 30 s socket connect timeout, resumed with --from 2025-07-05.
+
+[dashboard-facts-parity] DIFF transactions financial_year all at data.metrics.initiatedTransactions: rollup=25955 live=25954
+[dashboard-facts-parity] 48 views, 1 differing
+47 of 48 views ok. The one diff (financial_year all, metrics.initiatedTransactions 25955 vs 25954) is a today-window transition: an initiated order changed status between the rollup read and the live read. Stored days 2026-10-03..05 recomputed fresh = unchanged (stale-check), so no stored data differs.
+
+## Timing, loaders rollup vs forced live, device all, 3 runs each (ms), default read preference
+
+```
+7d: signups rollup 677/242/241 ms live 326/248/288 ms | transactions rollup 413/845/760 ms live 4389/4177/4265 ms | transaction-summary rollup 211/244/242 ms live 2770/2755/2831 ms | order-types rollup 314/338/319 ms live 413/391/380 ms || all four sections: rollup 1615/1669/1562 ms live 7898/7571/7764 ms
+30d: signups rollup 398/344/370 ms live 556/553/574 ms | transactions rollup 805/601/686 ms live 13235/12831/12642 ms | transaction-summary rollup 249/443/251 ms live 7073/7400/6916 ms | order-types rollup 339/372/370 ms live 1300/1230/1217 ms || all four sections: rollup 1791/1760/1677 ms live 22164/22014/21349 ms
+90d: signups rollup 530/435/315 ms live 1435/1359/1414 ms | transactions rollup 827/857/885 ms live 25397/25021/26762 ms | transaction-summary rollup 211/239/250 ms live 16705/16475/16982 ms | order-types rollup 421/386/343 ms live 1605/1458/1381 ms || all four sections: rollup 1989/1917/1793 ms live 45142/44313/46539 ms
+financial_year: signups rollup 595/844/685 ms live 2462/2488/2393 ms | transactions rollup 1419/1178/1010 ms live 43219/43909/42508 ms | transaction-summary rollup 426/412/467 ms live 31359/35218/31043 ms | order-types rollup 433/450/437 ms live 1840/2342/1691 ms || all four sections: rollup 2873/2884/2599 ms live 78880/83957/77635 ms
+```
+Limiter on the rollup side is the live today window (~0.4–0.6 s per pipeline), not the stored-day reads.
