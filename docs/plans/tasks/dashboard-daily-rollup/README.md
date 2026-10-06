@@ -1,6 +1,6 @@
 # Tasks: Daily facts rollup for the analytics dashboard
 
-State: `ready-for-agent` (01–04 AFK, one owner in sequence) · 05 `ready-for-human` (deploy)
+State: **DEPLOYED 2026-10-06 18:40 IST** — origin/quicktricks-admin f5613f835→0e73b42a3 (6 src + 1 dist commits, rebased onto the day's two earlier deploys), box pulled + pm2 27 restarted. Prod backfill complete (4,122 docs, 2023-01-01..2026-10-05). Stored-path parity 47/48 (the one diff was a today-window status race); timing all four sections: 7d 1.6 s vs 7.8 s, 30d 1.7 s vs 22 s, 90d 1.9 s vs 45 s, FY 2.7 s vs 80 s. Evidence `reference/dashboard-daily-rollup-parity-2026-10-06.md`. Open: first cron cycle confirmation; follow-ups = rebuild-script retry on connect errors, retire the prewarm?
 
 Vertical-slice breakdown of [the PRD](../../prd-dashboard-daily-rollup.md). Tasks cite the PRD's
 decisions (D1–D12) and do not restate them.
