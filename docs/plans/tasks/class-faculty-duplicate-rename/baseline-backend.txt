@@ -1,0 +1,35 @@
+unit: Course redirection: valid when redirectCourseId is provided
+unit: GET /api/pdfs serializes paginated rows into the admin PDF contract
+unit: Opus inside an MP4, which iOS cannot play, is converted to AAC
+unit: Plans redirection: valid without redirectCourseId
+unit: Update validation: Course redirection requires redirectCourseId
+unit: Update validation: ExternalLink requires externalLink URL
+unit: a WebM voice note is stored as AAC in an .m4a
+unit: a fragmented MP4 voice note is rewritten as a plain .m4a with its AAC untouched
+unit: a title collision is resolved by the " [apx:<apxId>]" suffix, not by failing the batch
+unit: all listings and taxonomy indicators follow ended status despite schedule and isLive
+unit: all listings and taxonomy indicators follow live status despite schedule and isLive
+unit: all listings and taxonomy indicators follow missing status despite schedule and isLive
+unit: all listings and taxonomy indicators follow preparing status despite schedule and isLive
+unit: all listings and taxonomy indicators follow processing status despite schedule and isLive
+unit: all listings and taxonomy indicators follow reconnecting status despite schedule and isLive
+unit: an Ogg voice note is stored as AAC too
+unit: an attached FLAC, which iOS cannot play, is stored as AAC in an .m4a
+unit: class listing: effective isFree = placement OR global
+unit: course class listing does not expose mp4Recordings storage references
+unit: course classes keep display names atomic with the selected taxonomy path
+unit: course listing exposes streamStatus + hasPlayback without leaking hlsAsset
+unit: two selected APX classes sharing a title (base free) both port, and re-run stays idempotent
+integration: admin create: a role-admin caller can still set role and permissions
+integration: admin create: a sub_admin cannot mint a new admin-role account
+integration: admin create: customer_id is always this tenant, never the body
+integration: audience-estimate API: Paid / UnPaid / Expired over all orders, whatever the redirect
+integration: golden: the admin mode (no userId) lists assignments by priority, paged and searchable
+integration: golden: the mobile Tests tab for a user with attempts
+integration: golden: the mobile Tests tab for a user with no attempts
+integration: golden: the mobile Tests tab for another user — attempts are that user's only
+integration: golden: the mobile Tests tab lists only its own course; 404 for an unknown course; empty course
+integration: image, file and audio captions are editable and clearable; the attachment survives
+integration: per product: Paid on one and UnPaid Not Initiated on another; the catalog skips free and deleted products
+integration: streakService: getStreakMissions returns the todayMission block
+integration: streakService: getStreakScreen reflects the persisted streak doc
