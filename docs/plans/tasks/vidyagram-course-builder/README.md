@@ -24,7 +24,7 @@ Mockup: https://claude.ai/artifact/QzLTCVVUE9arNE6r34yWwA (Builder mode on Assig
 
 Order: 00 ∥ 01 ∥ 02 → 03 ∥ 04 ∥ 08a → 05 → 06 ∥ 07 ∥ 08b ∥ 09 ∥ 10 ∥ 11 → 12.
 
-Done: 01 (3f6bb48e3), 02 (backend dfde8d844, admin 7765653); follow-ups on the integration branches: admin 86645f1 (Normalise dropped), backend 4bedbe136 (deleted orders grant nothing).
+Done: 01 (3f6bb48e3), 02 (backend dfde8d844, admin 7765653), 03 (805455cd6), 04 (a8609826f), 05 (b0bb1e55c), 08a (backend 9c573265d, admin 0481bd3), 10 (backend 4643d2388, admin e7538cd), 11 (backend 9ff38a06e, admin fed46f2); follow-ups: admin 86645f1 (Normalise dropped), 4832a5b (strip tidy), backend 4bedbe136 (deleted orders grant nothing). Build orders keep the course in `Order.build.courseId` only. After 05 a partial owner is denied class notes, course PDFs and tests until 07 and 09 open them (05 added `contentKind: 'notes'` on class access and changed the test gate to `kind !== 'full'`).
 
 Coupons on builds (PRD story 13, open question 4) are not in any task yet.
 
