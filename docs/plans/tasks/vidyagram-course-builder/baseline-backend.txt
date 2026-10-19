@@ -1,0 +1,87 @@
+unit: Course redirection: valid when redirectCourseId is provided
+unit: GET /api/pdfs serializes paginated rows into the admin PDF contract
+unit: Plans redirection: valid without redirectCourseId
+unit: Update validation: Course redirection requires redirectCourseId
+unit: Update validation: ExternalLink requires externalLink URL
+unit: a title collision is resolved by the " [apx:<apxId>]" suffix, not by failing the batch
+unit: all listings and taxonomy indicators follow ended status despite schedule and isLive
+unit: all listings and taxonomy indicators follow live status despite schedule and isLive
+unit: all listings and taxonomy indicators follow missing status despite schedule and isLive
+unit: all listings and taxonomy indicators follow preparing status despite schedule and isLive
+unit: all listings and taxonomy indicators follow processing status despite schedule and isLive
+unit: all listings and taxonomy indicators follow reconnecting status despite schedule and isLive
+unit: buildGstOrderMatch: only our captured paid orders, APX excluded
+unit: class listing: effective isFree = placement OR global
+unit: course class listing does not expose mp4Recordings storage references
+unit: course classes keep display names atomic with the selected taxonomy path
+unit: course listing exposes streamStatus + hasPlayback without leaking hlsAsset
+unit: two selected APX classes sharing a title (base free) both port, and re-run stays idempotent
+integration: CORS preflight allows the student website to send JSON with Authorization
+integration: GET /api/plans: words in any order over name + title, ranked by name, full plan JSON kept
+integration: ONE_TIME_CHARGE for a known appAccountToken creates the order; the row says fulfilled
+integration: ONE_TIME_CHARGE for an unknown token is held unclaimed; a later submit claims it
+integration: REFUND ends access; REFUND_REVERSED restores it
+integration: REVOKE refunds the order too
+integration: a Consumable fulfils, and a repeat purchase with a new transactionId is a second order
+integration: a Production non-INR transaction is foreign_currency: stored, excluded, flagged
+integration: a Production transaction without a price is unpriced; a verified INR one counts as revenue
+integration: a Sandbox transaction is fulfilled as sandbox and excluded from revenue
+integration: a body userId that disagrees with the token is a logged hint; the token user gets the order
+integration: a body with only apple_receipt fulfils the derived plan for the token user
+integration: a known user whose purchase fails the fulfilment path is held unclaimed with the rejection code
+integration: a notification stored but never processed is acted on by the alerts tick after five minutes
+integration: a planId hint that disagrees is logged and the derived plan is granted
+integration: a receipt-only submit looks the transaction up by the id inside the JWS
+integration: a resubmit by the same user replays (200, state 201); another user gets TRANSACTION_ALREADY_CLAIMED
+integration: a token-less purchase the app already submitted is replayed, not held unclaimed
+integration: access: a purchase is visible through plan flags, order history and another session
+integration: access: content is snapshotted from the plan (ebooks + both batch sources); client arrays are ignored
+integration: admin create: a role-admin caller can still set role and permissions
+integration: admin create: a sub_admin cannot mint a new admin-role account
+integration: admin create: customer_id is always this tenant, never the body
+integration: an extension plan the user cannot buy yet is PLAN_NOT_ELIGIBLE
+integration: an inactive or unknown product is PRODUCT_NOT_MAPPED
+integration: audience-estimate API: Paid / UnPaid / Expired over all orders, whatever the redirect
+integration: both product id spellings resolve to the same plan
+integration: claiming an unclaimed transaction resolves its open alert
+integration: dashboard: time-range windows and state breakdown exclude sandbox but keep verified/non-Apple
+integration: each post-verification check rejects with its own code and log row
+integration: expiry: fixed-pass expiry is purchase time + duration, and a sooner Apple expiry wins
+integration: expiry: remaining days derive from stored expiry on replay (not reset to plan duration)
+integration: extension: a lapsed holder buying through Apple gets the plan's normal duration and an ordinary order
+integration: golden: the admin mode (no userId) lists assignments by priority, paged and searchable
+integration: golden: the mobile Tests tab for a user with attempts
+integration: golden: the mobile Tests tab for a user with no attempts
+integration: golden: the mobile Tests tab for another user — attempts are that user's only
+integration: golden: the mobile Tests tab lists only its own course; 404 for an unknown course; empty course
+integration: image, file and audio captions are editable and clearable; the attachment survives
+integration: mixed fixtures: revenue counts verified Production INR only; sandbox/pending granted but excluded; non-Apple unchanged
+integration: per product: Paid on one and UnPaid Not Initiated on another; the catalog skips free and deleted products
+integration: recovery: a legacy (non-JWS) receipt resolves the signed transaction and fulfils one order
+integration: recovery: a lost response is replayable even when Apple is subsequently unavailable
+integration: recovery: a revoked/aborted order cannot be reactivated by replay
+integration: recovery: a submission with no receipt looks the transaction up by txn_id
+integration: recovery: an expired fulfilment replays as confirmation without granting another period
+integration: recovery: another user racing the same transaction gets no order and no leaked details
+integration: recovery: concurrent same-user submissions return one identical confirmation
+integration: recovery: replay still acknowledges the transaction after the plan is disabled
+integration: recovery: same user replaying with a different product id hint gets the original order back
+integration: streakService: getStreakMissions returns the todayMission block
+integration: streakService: getStreakScreen reflects the persisted streak doc
+integration: submit: a Non-Consumable product (how the App Store Connect plans are set up) fulfils
+integration: submit: a missing price fulfils as unpriced with amount null
+integration: submit: a verified Sandbox transaction grants access with no tester allowlist
+integration: submit: an Apple price that differs from the plan price still fulfils (amount = Apple price ÷ 1000)
+integration: submit: an already-elapsed purchase period grants no fresh access window
+integration: submit: another user cannot claim an existing transaction (422 TRANSACTION_ALREADY_CLAIMED)
+integration: submit: by default a transaction without an account token is rejected (422)
+integration: submit: concurrent duplicate submissions create exactly one order (both callers get state 201)
+integration: submit: fulfilment triggers no invoice, coin deduction, coupon or referral payout
+integration: submit: missing token is 401, and a body userId that differs from the token is only a hint
+integration: submit: the product type is recorded, never checked (spec §2.1 removed the type check)
+integration: submit: verified purchase creates one success order that unlocks the plan; replay returns it
+integration: submit: with the requirement off, a token-less transaction fulfils even if the user never fetched a token
+integration: the environment comes from the payload: a Sandbox notification is verified as Sandbox
+integration: the same notification delivered twice: one order, one row, 200 both times
+integration: user analytics: a sandbox buyer shows the order but ₹0 spent and 0 paid; a verified buyer shows the spend
+integration: user analytics: a verified-zero order counts as a real (₹0) order; a pending order is not paid
