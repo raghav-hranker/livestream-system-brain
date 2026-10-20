@@ -1,6 +1,6 @@
 # Vidyagram Course Builder — Postman
 
-Collection: `vidyagram-course-builder.postman_collection.json` (24 requests, 6 folders). Run the folders in
+Collection: `vidyagram-course-builder.postman_collection.json` (25 requests, 6 folders). Run the folders in
 order: folder 1 reads the course outline and saves the chapter, class and placement ids the later requests use.
 
 ## Quick start (local)
@@ -43,7 +43,8 @@ cd ~/Projects/worktrees/vg-builder-backend && SECRET=$(grep '^JWT_SECRET=' .env.
 5. **Student: access.** A class of the granted chapter is not refused; a class of another chapter is 403;
    the test gate answers for the token's user and refuses another user's id in the URL (403).
 6. **Listings.** My Courses lists the course with `isPartial` and the granted chapter; the course page and
-   My Purchases print the ownership and the build.
+   My Purchases print the ownership and the build. Every course card (My Courses, the course page,
+   `/courses/active`) carries `isBuilderEnabled` and `builderFromPrice` (the builder minimum, null when off).
 
 ## Before running on live
 
@@ -53,4 +54,4 @@ checkout" (creates a real Razorpay order; nothing is charged unless someone pays
 test student on a course you are allowed to change, and delete the granted order afterwards if needed
 (deleting an order removes its access).
 
-Last run: local, 2026-10-20, on the branch merged with origin/vidyagram-admin (backend 2ee01628d, admin 66dd030): 36/36 assertions passed, none skipped.
+Last run: local, 2026-10-20, backend db82a1eb5: 42/42 assertions passed, none skipped.

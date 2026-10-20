@@ -1077,7 +1077,8 @@
                   "const groups = pm.response.json().data || [];",
                   "const c = groups.flatMap(g => [...(g.liveCourses || []), ...(g.recordedCourses || [])]).find(x => String(x._id || x.id) === pm.collectionVariables.get('courseId'));",
                   "pm.test('course listed', () => pm.expect(c, 'course not in My Courses').to.be.an('object'));",
-                  "pm.test('isPartial with owned chapters', () => { pm.expect(c.isPartial).to.eql(true); pm.expect(c.ownedTopicIds).to.include(pm.collectionVariables.get('boughtTopicId')); });"
+                  "pm.test('isPartial with owned chapters', () => { pm.expect(c.isPartial).to.eql(true); pm.expect(c.ownedTopicIds).to.include(pm.collectionVariables.get('boughtTopicId')); });",
+                  "pm.test('card says the course sells builds, with a from-price', () => { pm.expect(c.isBuilderEnabled).to.eql(true); pm.expect(c.builderFromPrice).to.be.a('number'); });"
                 ]
               }
             }
@@ -1125,7 +1126,42 @@
                 "type": "text/javascript",
                 "exec": [
                   "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
-                  "const d = pm.response.json().data; console.log(JSON.stringify({ is_buy: d.is_buy, isPartial: d.isPartial, ownedTopicIds: d.ownedTopicIds, ownedExtras: d.ownedExtras }));"
+                  "const d = pm.response.json().data; console.log(JSON.stringify({ is_buy: d.is_buy, isPartial: d.isPartial, ownedTopicIds: d.ownedTopicIds, ownedExtras: d.ownedExtras, isBuilderEnabled: d.isBuilderEnabled, builderFromPrice: d.builderFromPrice }));",
+                  "pm.test('course page says the course sells builds', () => { pm.expect(d.isBuilderEnabled).to.eql(true); pm.expect(d.builderFromPrice).to.be.a('number'); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Course list (active): every card has the builder fields",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/courses/active",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "courses",
+                "active"
+              ]
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200));",
+                  "const cards = []; const walk = o => { if (Array.isArray(o)) o.forEach(walk); else if (o && typeof o === 'object') { if ('is_buy' in o) cards.push(o); Object.values(o).forEach(walk); } }; walk(pm.response.json().data);",
+                  "pm.test('every course card has isBuilderEnabled and builderFromPrice', () => pm.expect(cards.filter(c => !('isBuilderEnabled' in c) || !('builderFromPrice' in c)).length).to.eql(0));",
+                  "pm.test('builderFromPrice is null exactly when the builder is off', () => pm.expect(cards.filter(c => (c.builderFromPrice === null) === c.isBuilderEnabled).length).to.eql(0));",
+                  "const mine = cards.find(c => String(c.id || c._id) === pm.variables.get('courseId'));",
+                  "if (mine) pm.test('this course is on', () => pm.expect(mine.isBuilderEnabled).to.eql(true));"
                 ]
               }
             }
