@@ -1,7 +1,7 @@
 # Vidyagram Course Builder: local end-to-end verification (2026-10-20)
 
 Scope: the local setup only. Backend `~/Projects/worktrees/vg-builder-backend` at 97225928e, admin
-`~/Projects/worktrees/vg-builder-admin` at 27d93a5 (both `feat/vg-course-builder`, nothing pushed), local
+`~/Projects/worktrees/vg-builder-admin` at 27d93a5, drawer rechecked on f21eae8 (both `feat/vg-course-builder`, nothing pushed), local
 Mongo on 127.0.0.1:27037 with the invented course "SSC Aditya Batch 2026-2027 (local sample)". Rules come from
 [`../plans/prd-vidyagram-course-builder.md`](../plans/prd-vidyagram-course-builder.md). No product code was
 changed.
@@ -91,7 +91,8 @@ asset), two CoursePdfs and two classes, then removes them.
 | Builder mode strip and columns | Settings strip (Sell as Course Builder, min 199, max 799, struck-out 1999, Notes 100, Tests 150, Revision only 350, "Weights 100%", Save). Columns Weight %, Custom ₹, Chapter price, Revision. | PASS |
 | Weight total gates Save | Partnership 2 → 3: badge "Weights 101% (1% over)", Save disabled. Back to 2: "Weights 100%", Save enabled. Not saved. | PASS |
 | Revision switch persists | Number System · Class 7 switched on, placement `isRevision` true in Mongo, still on after reload; switched back off and confirmed false. | PASS |
-| Preview price drawer | 799 (struck 1,999), Notes off 699, both off 549, Revision only 449 / 349 / 199, Arithmetic only 407 (struck 1,018), Arithmetic both off 199 with "At the minimum price" note. Same as item 1. | PASS |
+| Preview price drawer: prices | 799 (struck 1,999), Notes off 699, both off 549, Revision only 449 / 349 / 199, Arithmetic only 407 (struck 1,018), Arithmetic both off 199. Same as item 1. | PASS |
+| Preview price drawer: what it shows (admin f21eae8, which drops the four-step breakdown on purpose) | Rechecked on f21eae8. The drawer shows the price, the struck-out price, and "25 chapters · 100% of the syllabus" (or "Whole course, revision classes only"). It shows no step lines. At the minimum: "At the minimum price. Switching more extras off will not lower it." Over the maximum (unsaved custom ₹900 on Number System, discarded by reload, saved settings still version 1): "Chapters came to ₹860.05 over the maximum, which was cut before extras came off." 759.05 + 900 − 799 = 860.05. | PASS |
 | Assign Tests chapter column | Tagged test shows "Arithmetic Maths › Percentage", untagged shows "No chapter"; the picker lists chapters as Section › Topic. | PASS |
 | Order page of a granted build | Course, chapters with prices (Percentage ₹39.95, Algebra ₹63.92), Revision only No, Notes Included, Tests Not included, chapters 13% ₹103.87, Tests switched off −₹150, build price raised to the minimum ₹199, paid ₹0 given for free, settings version 1 note. | PASS |
 
