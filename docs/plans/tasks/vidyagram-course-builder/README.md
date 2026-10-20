@@ -21,10 +21,11 @@ Mockup: https://claude.ai/artifact/QzLTCVVUE9arNE6r34yWwA (Builder mode on Assig
 | 10 | [Admin price preview drawer](10-admin-price-preview-drawer.md) | AFK | 02, 04 |
 | 11 | [Build on the order page and manual grant](11-order-view-and-manual-grant.md) | AFK | 04 |
 | 12 | [App team handoff and deploy](12-app-handoff-and-deploy.md) | HITL | 03, 06, 07, 08b, 09 |
+| 13 | [Build buyers in the course-buyer readers](13-build-buyers-in-readers.md) | HITL → AFK | 04, 11 |
 
 Order: 00 ∥ 01 ∥ 02 → 03 ∥ 04 ∥ 08a → 05 → 06 ∥ 07 ∥ 08b ∥ 09 ∥ 10 ∥ 11 → 12.
 
-Done: 01 (3f6bb48e3), 02 (backend dfde8d844, admin 7765653), 03 (805455cd6), 04 (a8609826f), 05 (b0bb1e55c), 06 (f88334a69), 07 (66a3dab96; merge f7506ecae resolved with 08b), 08a (backend 9c573265d, admin 0481bd3), 08b (05e28be96), 09 (backend c03d01ff0, admin 1dede3b), 10 (backend 4643d2388, admin e7538cd), 11 (backend 9ff38a06e, admin fed46f2); follow-ups: admin 86645f1 (Normalise dropped), 4832a5b (strip tidy), backend 4bedbe136 (deleted orders grant nothing). Integration heads after 09: backend 97225928e, admin 46c8c5c. Local end-to-end (2026-10-20, local Mongo): chapter build plays bought chapters only, Revision-only plays tagged classes only, no purchase is refused. Open before 12: unmatched course PDFs on real Vidyagram data (needs a live read), the test gate still trusts a URL userId when no token is sent, coupons and struck-out price questions.
+Done: 01 (3f6bb48e3), 02 (backend dfde8d844, admin 7765653), 03 (805455cd6), 04 (a8609826f), 05 (b0bb1e55c), 06 (f88334a69), 07 (66a3dab96; merge f7506ecae resolved with 08b), 08a (backend 9c573265d, admin 0481bd3), 08b (05e28be96), 09 (backend c03d01ff0, admin 1dede3b), 10 (backend 4643d2388, admin e7538cd), 11 (backend 9ff38a06e, admin fed46f2); follow-ups: admin 86645f1 (Normalise dropped), 4832a5b (strip tidy), backend 4bedbe136 (deleted orders grant nothing). 13 (backend f2fbe5851 → merge 68e1b1cbc, admin d3bb89a → merge 2d0b28d). Integration heads after 09: backend 97225928e, admin 46c8c5c. Local end-to-end (2026-10-20, local Mongo): chapter build plays bought chapters only, Revision-only plays tagged classes only, no purchase is refused. Open before 12: unmatched course PDFs on real Vidyagram data (needs a live read), the test gate still trusts a URL userId when no token is sent, coupons and struck-out price questions.
 
 Coupons on builds (PRD story 13, open question 4) are not in any task yet.
 
