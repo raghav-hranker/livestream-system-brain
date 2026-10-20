@@ -689,7 +689,7 @@
       "name": "4. Buy or grant a build",
       "item": [
         {
-          "name": "Admin: grant the student one chapter with Notes",
+          "name": "Admin: grant the student one chapter with Notes and Tests",
           "request": {
             "method": "POST",
             "header": [
@@ -715,7 +715,7 @@
             "description": "",
             "body": {
               "mode": "raw",
-              "raw": "{ \"userId\": \"{{studentId}}\", \"courseId\": \"{{courseId}}\", \"topicIds\": [\"{{boughtTopicId}}\"], \"extrasOn\": [\"notes\"], \"revisionOnly\": false }",
+              "raw": "{ \"userId\": \"{{studentId}}\", \"courseId\": \"{{courseId}}\", \"topicIds\": [\"{{boughtTopicId}}\"], \"extrasOn\": [\"notes\", \"tests\"], \"revisionOnly\": false }",
               "options": {
                 "raw": {
                   "language": "json"
@@ -970,7 +970,7 @@
                 "{{courseId}}"
               ]
             },
-            "description": "Needs a seriesId (a test assigned to the course). restrict: false means the test opens."
+            "description": "Needs seriesId: a test assigned to the course and tagged with the granted chapter. restrict: false means the test opens."
           },
           "event": [
             {
@@ -980,7 +980,7 @@
                 "exec": [
                   "const series = pm.variables.get('seriesId');",
                   "if (!series) { pm.test.skip('set seriesId (a test assigned to this course) to run this', () => {}); } else {",
-                  "pm.test('HTTP 200', () => pm.response.to.have.status(200)); console.log(JSON.stringify(pm.response.json()));",
+                  "pm.test('HTTP 200', () => pm.response.to.have.status(200)); pm.test('test opens for the bought chapter (restrict false)', () => pm.expect(pm.response.json().restrict).to.eql(false));",
                   "}"
                 ]
               }

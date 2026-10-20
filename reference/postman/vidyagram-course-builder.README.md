@@ -3,7 +3,17 @@
 Collection: `vidyagram-course-builder.postman_collection.json` (24 requests, 6 folders). Run the folders in
 order: folder 1 reads the course outline and saves the chapter, class and placement ids the later requests use.
 
-## Variables to set (collection variables)
+## Quick start (local)
+
+Import both files into Postman and pick the environment **Vidyagram Course Builder (local)**:
+`vidyagram-course-builder.postman_collection.json` and
+`vidyagram-course-builder.local.postman_environment.json`. The environment is already filled for the local
+server: admin and student tokens (signed with the local server's own secret, valid 7 days), the test
+student, the invented SSC Aditya course, and a test ("Postman: Number System test") tagged to the chapter the
+collection grants. Then run the collection; no edits needed. The environment file is not committed: the
+tokens only work against the local server and expire, so regenerate it rather than reuse an old one.
+
+## Variables (environment, or collection variables)
 
 | Variable | Local | Live |
 |---|---|---|
@@ -12,7 +22,7 @@ order: folder 1 reads the course outline and saves the chapter, class and placem
 | `studentToken` | mint one with the local JWT secret (below) | a test student's app login token |
 | `studentId` | that student's `_id` | that test student's `_id` |
 | `courseId` | `6ad4cce38edc65f31e7c7698` (the invented local course, default) | a course with Course Builder settings saved |
-| `seriesId` | empty (the local course has no tests; the two test-gate checks skip) | a test assigned to that course, to run the test-gate checks |
+| `seriesId` | the seeded "Postman: Number System test" | a test assigned to that course and tagged with the granted chapter |
 
 Mint a local student token (local only; the secret is the local server's own):
 
@@ -28,7 +38,7 @@ cd ~/Projects/worktrees/vg-builder-backend && SECRET=$(grep '^JWT_SECRET=' .env.
    Revision only 449, one chapter with both off held at the 199 minimum. These numbers assume max 799, min
    199, Notes 100, Tests 150, Revision-only discount 350; on another course read the printed prices instead.
 3. **Student: builder screen.** Signed out has no ownership; signed in prints what the student owns.
-4. **Buy or grant.** Admin grants the student one chapter with Notes; checkout prices a second chapter on the
+4. **Buy or grant.** Admin grants the student one chapter with Notes and Tests; checkout prices a second chapter on the
    server (the body's `grandTotal: 1` is ignored); a coupon is refused (400); no login is refused (401).
 5. **Student: access.** A class of the granted chapter is not refused; a class of another chapter is 403;
    the test gate answers for the token's user and refuses another user's id in the URL (403).
@@ -43,4 +53,4 @@ checkout" (creates a real Razorpay order; nothing is charged unless someone pays
 test student on a course you are allowed to change, and delete the granted order afterwards if needed
 (deleting an order removes its access).
 
-Last run: local, 2026-10-20, 35/35 assertions passed, 2 skipped (no test on the local course).
+Last run: local, 2026-10-20, on the branch merged with origin/vidyagram-admin (backend 2ee01628d, admin 66dd030): 36/36 assertions passed, none skipped.

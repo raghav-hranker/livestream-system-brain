@@ -1,3 +1,4 @@
+tsc: src/services/digialmChallengeSolver.ts TS2307 x1
 unit: Course redirection: valid when redirectCourseId is provided
 unit: GET /api/pdfs serializes paginated rows into the admin PDF contract
 unit: Plans redirection: valid without redirectCourseId
@@ -11,6 +12,7 @@ unit: all listings and taxonomy indicators follow preparing status despite sched
 unit: all listings and taxonomy indicators follow processing status despite schedule and isLive
 unit: all listings and taxonomy indicators follow reconnecting status despite schedule and isLive
 unit: buildGstOrderMatch: only our captured paid orders, APX excluded
+unit: cache keys are namespaced by tenant and the database the numbers came from
 unit: class listing: effective isFree = placement OR global
 unit: course class listing does not expose mp4Recordings storage references
 unit: course classes keep display names atomic with the selected taxonomy path
@@ -20,6 +22,7 @@ integration: CORS preflight allows the student website to send JSON with Authori
 integration: GET /api/plans: words in any order over name + title, ranked by name, full plan JSON kept
 integration: ONE_TIME_CHARGE for a known appAccountToken creates the order; the row says fulfilled
 integration: ONE_TIME_CHARGE for an unknown token is held unclaimed; a later submit claims it
+integration: QR sync: an Extension order paid by QR gets its own 183 days, not the plan’s 365
 integration: REFUND ends access; REFUND_REVERSED restores it
 integration: REVOKE refunds the order too
 integration: a Consumable fulfils, and a repeat purchase with a new transactionId is a second order
