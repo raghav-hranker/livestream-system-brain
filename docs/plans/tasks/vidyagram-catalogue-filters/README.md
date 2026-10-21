@@ -20,6 +20,8 @@ Order: 00 ∥ 01 → 02 ∥ 04 → 03 → 05; then 06 → 07 (Teacher tab, added
 
 Done 2026-10-21: 00 (backend 138e6a19b, admin 84956d4), 01 (backend f4c40be8d, admin 328bd50), 02 (67a9fa15f), 03 (cb99d0471), 04 (a57ca3e6e). Integration heads: backend bcf96d5ee, admin cc30cb7. All checked by hand on the local preview (backend 5915, admin 3000, local Mongo 27037). Deployed 2026-10-21: backend `vidyagram-admin` 2932b1c0d (origin merge + surgical dist) on webserver2-2 pm2 `vidyagram-backend`, Skills seeded on vidyagramdb (6ad88fab7940ea07944f29fb, placeholder image), admin cc30cb7 pushed to Vercel. Prod exam tab returns one group (every imported course is under main category "Vidyagram"). Still open from 05: the app-team guide, a real Skills image, a form save on a complete course.
 
+Teacher tab 2026-10-21: 06 (f9ba0b6be) and 07 (19de0d0) merged; integration heads backend 85e3e7dbe, admin 1e4e3e3. Checked on the local preview (catalogue routes, list column). Not deployed: needs the surgical dist build for the faculty files, then push, pull, restart.
+
 ## Working copies
 
 - Integration worktrees (the orchestrator creates them first, then merges task branches into them):
