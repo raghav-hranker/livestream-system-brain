@@ -1,0 +1,149 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "admin-one-stop-preview",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/qt-one-stop-admin && exec npx next dev -p 3000"
+      ],
+      "port": 3000
+    },
+    {
+      "name": "admin-pdf-outline-preview",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/qt-pdf-outline-admin && exec npx next dev -p 3000"
+      ],
+      "port": 3000
+    },
+    {
+      "name": "admin-courses-ui",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/qt-admin-courses-ui && exec npx next dev -p 3011"
+      ],
+      "port": 3011
+    },
+    {
+      "name": "admin-assign-ui",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/qt-admin-assign-ui && exec npx next dev -p 3000"
+      ],
+      "port": 3000
+    },
+    {
+      "name": "admin-one-stop-3001",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/qt-one-stop-admin && exec npx next dev -p 3001"
+      ],
+      "port": 3001
+    },
+    {
+      "name": "admin-assign-ui-3002",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/qt-admin-assign-ui && exec npx next dev -p 3002"
+      ],
+      "port": 3002
+    },
+    {
+      "name": "admin-voice-m4a",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/qt-admin-voice-m4a && exec npx next dev -p 3014"
+      ],
+      "port": 3014
+    },
+    {
+      "name": "admin-courses-row-layout",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/qt-admin-qhub-gap && exec npx next dev -p 3917"
+      ],
+      "port": 3917
+    },
+    {
+      "name": "admin-date-picker",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/quicktricks-admin && exec npx next dev -p 3977"
+      ],
+      "port": 3977
+    },
+    {
+      "name": "admin-show-in-new",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/qt-admin-show-in-new && exec npx next dev -p 3921"
+      ],
+      "port": 3921
+    },
+    {
+      "name": "admin-pdf-upload-in-place",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/qt-admin-pdf-upload-in-place && exec npx next dev -p 3000"
+      ],
+      "port": 3000
+    },
+    {
+      "name": "admin-banner-dupstart",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/qt-banner-dupstart-admin && exec npx next dev -p 3933"
+      ],
+      "port": 3933
+    },
+    {
+      "name": "vg-builder-backend",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-builder-backend && set -a && source .env.localpreview && set +a && PORT=5914 DISABLE_CRONS=true exec npx ts-node --transpile-only src/app.ts"
+      ],
+      "port": 5914
+    },
+    {
+      "name": "vg-builder-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-builder-admin && exec npx next dev -p 3002"
+      ],
+      "port": 3002
+    },
+    {
+      "name": "vg-filters-backend",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-filters-backend && set -a && source .env.localpreview && set +a && PORT=5915 DISABLE_CRONS=true exec npx ts-node --transpile-only src/app.ts"
+      ],
+      "port": 5915
+    },
+    {
+      "name": "vg-filters-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-filters-admin && exec npx next dev -p 3000"
+      ],
+      "port": 3000
+    }
+  ]
+}

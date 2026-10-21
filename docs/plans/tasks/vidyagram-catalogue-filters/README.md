@@ -16,6 +16,8 @@ prototype (`~/Downloads/Vidyagram-App.html#courses`, My courses screen). Nothing
 
 Order: 00 ∥ 01 → 02 ∥ 04 → 03 → 05.
 
+Done 2026-10-21: 00 (backend 138e6a19b, admin 84956d4), 01 (backend f4c40be8d, admin 328bd50), 02 (67a9fa15f), 03 (cb99d0471), 04 (a57ca3e6e). Integration heads: backend bcf96d5ee, admin cc30cb7. All checked by hand on the local preview (backend 5915, admin 3000, local Mongo 27037). Open before 05: a real form save on a complete course, a real Skills image for the seed, and the course-builder branch landing on `vidyagram-admin` first.
+
 ## Working copies
 
 - Integration worktrees (the orchestrator creates them first, then merges task branches into them):
