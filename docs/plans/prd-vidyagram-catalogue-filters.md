@@ -114,6 +114,12 @@ The admin picker mount (`/api/admin/courses/filter`) keeps old courses visible, 
 
 No change. An old course is priced like any other through `price` and `discountPrice`. Marking old does not touch orders, validity or entitlement.
 
+### Teacher tab (added 2026-10-21)
+
+The Teacher tab lists teachers, not courses, so it gets its own public endpoint rather than a `tab` value on the course filter: `GET /api/faculty/catalogue?subject=&search=` returning `teachers[]` (id, name, imageUrl, designation, subject, rating, reviewCount, coursesCount, mainCategories[] with id, name, image) sorted by rating desc, reviewCount desc, priority desc, and `subjects[]` (name, count) computed before the `subject` filter. Only teachers with at least one listable course appear; "listable" reuses the catalogue rule's common clauses so counts match the other tabs. `mainCategories` are the distinct main categories of those courses (the exam-body chips). Search matches teacher name or subject. Tapping a teacher uses the existing course filter with `facultyId`.
+
+New optional fields on `FacultyDetails`: `subject` (free text, one per teacher), `rating` (0–5, one decimal), `reviewCount` (integer). Admin-entered, with the same three fields on the faculty form and as columns on the faculty list. A teacher without a rating shows no stars. Decided against: mapping subject to the Sections taxonomy (mid-reconciliation, and skill teachers have no section) and a `tab: 'teacher'` on the course filter (would return an empty course list on one tab).
+
 ## Testing Decisions
 
 A good test here drives the public HTTP route or the rendered form and asserts on what a student, admin or app developer observes: which courses come back for a tab, the group counts, a 400 for an invalid combination, a badge in the list. Tests do not assert on query objects or internal helper calls.
@@ -142,7 +148,7 @@ Manual, before deploy: the admin against the local Vidyagram backend and local M
 
 ## Out of Scope
 
-- The Teacher tab (teacher list with subject, star rating and review count). `FacultyDetails` has none of those fields and the source of ratings is undecided.
+- A real student review system. Teacher ratings are admin-entered numbers (see Teacher tab below) until one exists.
 - Courses under more than one exam or skill. The prototype shows "Static GK 2.0" under four exams and a "3 in 1" bundle under three skills; with one category per course each lands under one chip. If this matters later, a `categories[]` list on the course would serve both tabs.
 - The "Suggested for you" row and student exam preferences.
 - Course-level chips inside a course (Not watched / In progress / Watched). Those filter classes, not courses.
