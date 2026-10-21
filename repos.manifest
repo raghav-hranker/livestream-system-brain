@@ -13,6 +13,10 @@ video-transcoder  https://github.com/raghav-hranker/video-transcoder.git
 admin-dashboard   https://github.com/raghav-hranker/admin-dashboard.git
 ls                https://github.com/raghav-hranker/ls.git
 
+# ops-console  https://github.com/raghav-hranker/ops-console.git
+#   Phone-first monitoring (Uptime Kuma + Telegram bot) on the OCI bastion. Local: ../ops-console, branch main.
+#   Not a slice repo: never slice-synced. Plan: docs/plans/ops-console.md.
+#
 # ---- Deploy forks (commented on purpose: NOT branch-synced, excluded from sync-branches.sh) ----
 # The client team cloned our repos as SEPARATE repos (not branches), so the production line
 # lives in forks that follow their own branch discipline and are merged by agreement.
