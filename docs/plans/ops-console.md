@@ -1,6 +1,6 @@
 # Ops console: phone-first monitoring for the boxes I own
 
-Status: needs-triage. Decided 2026-10-20 in chat; nothing built.
+Status: live. Decided 2026-10-20; Watch, Triage, Ask, Act and the 08:30 digest all live on the OCI bastion by 2026-10-21 14:00 IST (repo `raghav-hranker/ops-console`).
 
 ## What it is
 One Telegram bot, my chat id only, that does three things.
