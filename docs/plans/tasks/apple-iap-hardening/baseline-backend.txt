@@ -1,0 +1,70 @@
+tsc: src/services/gstReport.service.ts TS2307 x1
+tsc: src/tests/uploadVoiceNoteAac.test.ts TS2307 x1
+unit: Course redirection: valid when redirectCourseId is provided
+unit: GET /api/pdfs serializes paginated rows into the admin PDF contract
+unit: Plans redirection: valid without redirectCourseId
+unit: Update validation: Course redirection requires redirectCourseId
+unit: Update validation: ExternalLink requires externalLink URL
+unit: a title collision is resolved by the " [apx:<apxId>]" suffix, not by failing the batch
+unit: all listings and taxonomy indicators follow ended status despite schedule and isLive
+unit: all listings and taxonomy indicators follow live status despite schedule and isLive
+unit: all listings and taxonomy indicators follow missing status despite schedule and isLive
+unit: all listings and taxonomy indicators follow preparing status despite schedule and isLive
+unit: all listings and taxonomy indicators follow processing status despite schedule and isLive
+unit: all listings and taxonomy indicators follow reconnecting status despite schedule and isLive
+unit: class listing: effective isFree = placement OR global
+unit: course class listing does not expose mp4Recordings storage references
+unit: course classes keep display names atomic with the selected taxonomy path
+unit: course listing exposes streamStatus + hasPlayback without leaking hlsAsset
+unit: src/tests/gstReport.test.ts
+unit: src/tests/uploadVoiceNoteAac.test.ts
+unit: two selected APX classes sharing a title (base free) both port, and re-run stays idempotent
+integration: GET :classId/courses lists the courses the class is in, by title
+integration: a class shown in two places of a course: renaming one place leaves the other place's name
+integration: a class that already has the faculty is skipped and not written; courses count changed classes only
+integration: a course going back to the class title drops its chip, and its old title gets an × again
+integration: a per-course rename changes only that placement, and the reads of that course only
+integration: a place that is not one of this placement's places is refused, and nothing changes
+integration: a rename everywhere changes the class title and keeps another course's own name
+integration: a rename everywhere renames the places whose title copied the class title, and keeps the others
+integration: a rename everywhere that clears this course's name also renames its places that copied the class title
+integration: a rename in course without a place leaves the places' names alone
+integration: a restricted role gets 403 for a class it did not create, and nothing is written
+integration: a title another class has is refused, and nothing changes
+integration: admin create: a role-admin caller can still set role and permissions
+integration: admin create: a sub_admin cannot mint a new admin-role account
+integration: admin create: customer_id is always this tenant, never the body
+integration: an imported name that copied the class title follows a rename everywhere; one of its own stays
+integration: an inactive, unknown, other-customer or malformed faculty is a 400 and nothing is written
+integration: an old title a course still shows stays an old title after that course drops its name
+integration: audience-estimate API: Paid / UnPaid / Expired over all orders, whatever the redirect
+integration: bad class ids: an empty or malformed list is a 400, an unknown class a 404
+integration: clearing one place drops only that place's name: it shows the course's name, then the imported name, then the class title
+integration: clearing shows the class title again even when the placement had an imported name
+integration: dryRun still applies the access check
+integration: dryRun: returns the same counts the change would, and writes nothing
+integration: golden: the admin mode (no userId) lists assignments by priority, paged and searchable
+integration: golden: the mobile Tests tab for a user with attempts
+integration: golden: the mobile Tests tab for a user with no attempts
+integration: golden: the mobile Tests tab for another user — attempts are that user's only
+integration: golden: the mobile Tests tab lists only its own course; 404 for an unknown course; empty course
+integration: image, file and audio captions are editable and clearable; the attachment survives
+integration: no token → 401, student token → 403, and nothing is written
+integration: one class: writes the faculty's name and counts the courses it is in
+integration: per product: Paid on one and UnPaid Not Initiated on another; the catalog skips free and deleted products
+integration: removing a name a course shows, or the title, answers 409 and changes nothing
+integration: removing an old title drops it from oldTitles and searchNames
+integration: renaming a course to the class title, in any case or spacing, drops its own name
+integration: renaming back swaps the titles and leaves no duplicate
+integration: searchNames is recomputed: the title and every name a course shows
+integration: streakService: getStreakMissions returns the todayMission block
+integration: streakService: getStreakScreen reflects the persisted streak doc
+integration: the class form title edit is a rename everywhere and keeps the other fields
+integration: the clear-this-course option drops this course's own name in the same call
+integration: the everywhere route answers 401 without a token, 403 for a student, 400 for a blank title
+integration: the legacy per-course name route recomputes searchNames when it writes a title
+integration: the names read lists old titles with an × and course names without one
+integration: the names routes answer 401 without a token, 403 for a student, 400 for a bad request
+integration: the outline rows carry the class title beside the name the course shows
+integration: the rename route and the legacy route answer 401 without a token and 403 for a student
+integration: the rename route refuses a blank title, a class not in the course, and a restricted role on another admin's class

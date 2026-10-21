@@ -26,6 +26,7 @@ counts and exam-body chips.
     **before** the `subject` filter is applied; ordered by count desc then name.
   - `search` matches teacher name or subject, case-insensitive, regex-escaped (reuse `catalogueSearchText`).
   - Inactive teachers (status 0) are left out.
+- `GET /api/faculty/catalogue/:id`: one teacher in the same shape (no `subjects`), for the teacher page's header on a direct open. 404 when the teacher is inactive or has no listable course, so the two routes agree.
 - No change to the course filter API. A teacher's courses are the existing
   `POST /api/courses/filter { facultyId, tab?, search? }`.
 
@@ -35,6 +36,7 @@ counts and exam-body chips.
       and status-0 courses; sort order with and without ratings; `subject` narrows `teachers` while
       `subjects` counts stay whole; search by name and by subject; `mainCategories` lists each group once;
       inactive teacher absent; a legacy `facultyDetails`-only course counts.
+- [ ] Integration test: the `:id` route returns the same entry as the list for a listed teacher, 404 for an inactive one and for one with only old courses.
 - [ ] Integration test: admin create/update accept the three fields, reject rating 5.1 and a negative
       reviewCount, and the public faculty read returns them.
 - [ ] `NO NEW FAILURES` against `baseline-backend.txt`.

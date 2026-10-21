@@ -1,0 +1,109 @@
+{
+  "completedAt": "2026-09-26T14:22:02.360251+00:00",
+  "priorMissing": 10,
+  "retriedSourcePdfs": 7,
+  "newlyImported": 3,
+  "remaining": 7,
+  "platformScope": {
+    "checked": 146,
+    "withRecord": 139,
+    "withAsset": 139,
+    "fullyAttached": 139
+  },
+  "items": [
+    {
+      "identityHash": "3bb8c6c3d2df890f1a4c985daf4408fb12d4657438d5c2f720f24708b396cf39",
+      "title": "Class-18 - POLLUTION",
+      "sourceId": "12438",
+      "result": "source-pdf-invalid",
+      "pdfId": null,
+      "classIds": [
+        "6a455be9ebb42f585d9c4272"
+      ]
+    },
+    {
+      "identityHash": "0b5effdb80d0946b7fab636f324f6c62203dec001502d2aa05bd0e57c542c4a0",
+      "title": "Class - 37 || Human Reproduction (मानव प्रजनन) Part - 2",
+      "sourceId": "32672",
+      "result": "source-pdf-invalid",
+      "pdfId": null,
+      "classIds": [
+        "6a455b71ebb42f585d9c0e2b"
+      ]
+    },
+    {
+      "identityHash": "0153ebd61c28f0b6bb0285dc5e0400864b8ba46c5e17a494789fd206bbca377a",
+      "title": "Class-05 || Mass Volume And Density",
+      "sourceId": "21884",
+      "result": "imported-and-verified",
+      "pdfId": "6ab7d4a4ce434eccf37d1383",
+      "classIds": [
+        "6a455cabebb42f585d9c98ad"
+      ]
+    },
+    {
+      "identityHash": "45950700b3151e82436010501aa066eb6dbae2b9acd60ffa3b92bc9d83322b26",
+      "title": "Class-07 || Mass Volume And Density - Bauyancy  and law of flotation",
+      "sourceId": "24776",
+      "result": "imported-and-verified",
+      "pdfId": "6ab7d4aece434eccf37d138d",
+      "classIds": [
+        "6a455cacebb42f585d9c98c1"
+      ]
+    },
+    {
+      "identityHash": "19a1d3e7f05a40b5ec2bf21b75f91d2079af1ea61905d8a6e8e4228744ecdae3",
+      "title": "Class-06 || Mass Volume And Density",
+      "sourceId": "22085",
+      "result": "imported-and-verified",
+      "pdfId": "6ab7d4cace434eccf37d139a",
+      "classIds": [
+        "6a455cabebb42f585d9c98b7"
+      ]
+    },
+    {
+      "identityHash": "936153cdcaab6b14cee1750378a8d0a826f96ac60d39c00714ed99251bb7845f",
+      "title": "व्यावसायिक संरक्षा एवं स्वास्थ्य (Occupational safety and health) 02",
+      "sourceId": "28034",
+      "result": "source-pdf-invalid",
+      "pdfId": null,
+      "classIds": [
+        "6a455b83ebb42f585d9c1696"
+      ]
+    },
+    {
+      "identityHash": "b98a199a68556952f58d49cb8e095fa221db07d9ce0b45272b256bc1b0f1e39b",
+      "title": "Class-82 || ADVERBS - 05",
+      "sourceId": "19186",
+      "result": "source-pdf-invalid",
+      "pdfId": null,
+      "classIds": [
+        "6a455d97ebb42f585d9cfb01"
+      ]
+    },
+    {
+      "identityHash": "1d0657b956391d5d192e6fde33c91f91a0f32a8bc187e6920032314caeea6690",
+      "title": "Class-06 || Sound",
+      "sourceId": "10706",
+      "result": "no-lms-class",
+      "pdfId": null,
+      "classIds": []
+    },
+    {
+      "identityHash": "8b5a96a3661927584fbbf0ae7d5a91f7b1dd887ddd9d0b93398fab48d573c051",
+      "title": "Digestive system (पाचन तंत्र) 02",
+      "sourceId": "1466",
+      "result": "no-lms-class",
+      "pdfId": null,
+      "classIds": []
+    },
+    {
+      "identityHash": "6919abb7a54f2522b84893fef8979a46eaffc80f8b71e8e481e675084755993c",
+      "title": "हुँकार बैच PYP 27 Jan 2023 (Shift-1) | Live Class-20",
+      "sourceId": "304",
+      "result": "no-lms-class",
+      "pdfId": null,
+      "classIds": []
+    }
+  ]
+}

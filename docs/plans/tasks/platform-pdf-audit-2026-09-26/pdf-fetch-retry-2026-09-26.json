@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-09-26T11:43:02.972457+00:00",
+  "course": "ATM Full BATCH",
+  "apxCourseId": "49",
+  "attemptedSourceId": "20406",
+  "result": "APX signer quota exhausted",
+  "signingAttempts": 1,
+  "imports": 0,
+  "remainingDistinctPdfIdentities": 146,
+  "events": [
+    {
+      "event": "attempt",
+      "sourceId": "20406"
+    },
+    {
+      "event": "failed",
+      "sourceId": "20406",
+      "error": "ApxSignerQuotaError",
+      "message": "get-static-file-token echoed the unsigned url back \u2014 signer quota burned for this account"
+    }
+  ]
+}

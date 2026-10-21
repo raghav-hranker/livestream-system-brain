@@ -1,0 +1,1221 @@
+{
+  "checkedAt": "2026-09-26T10:59:35.918Z",
+  "apxCourseId": "49",
+  "checked": 121,
+  "sourceRecordsWithPdfLinks": 121,
+  "active": 121,
+  "unchangedPdfIdentities": 121,
+  "stillMissingInLms": 121,
+  "checks": [
+    {
+      "sourceId": "13848",
+      "title": "Class-01 || Number System",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c50ebb42f585d9c718b",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "13992",
+      "title": " Class-02 || Number System",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c50ebb42f585d9c7195",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "14061",
+      "title": "Class-03 || Number System",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c50ebb42f585d9c719f",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "14079",
+      "title": " Class-04 || Number System",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c50ebb42f585d9c71a9",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "14128",
+      "title": "Class-05 || Number System",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c50ebb42f585d9c71b3",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "14244",
+      "title": "Class-06 || Number System",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c50ebb42f585d9c71bd",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "14484",
+      "title": " Class-07 || Number System",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c50ebb42f585d9c71c8",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "14540",
+      "title": " Class-08 || Number System",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c50ebb42f585d9c71d2",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "14607",
+      "title": " Class-09 || Number System",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c51ebb42f585d9c71dc",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "14727",
+      "title": " Class-01 || Simplification",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c51ebb42f585d9c71e9",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "14741",
+      "title": " Class-02 || Simplification & Sectional Test Discussion",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c51ebb42f585d9c71f3",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "14878",
+      "title": " Class-03 || Simplification ",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c51ebb42f585d9c71fd",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "14954",
+      "title": "Class-04 || Simplification",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c51ebb42f585d9c7207",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "14982",
+      "title": " Class-05 || Simplification",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c51ebb42f585d9c7212",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "15031",
+      "title": " Class-06 || Simplification",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c51ebb42f585d9c721c",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "15062",
+      "title": "Sectional Test Discussion (18th July)",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c51ebb42f585d9c7227",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "15149",
+      "title": " Class-07 || Simplification",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c51ebb42f585d9c7231",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "15206",
+      "title": " Class-08 || Simplification",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c51ebb42f585d9c723b",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "15394",
+      "title": " Class-09 || Simplification",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c51ebb42f585d9c7245",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "15451",
+      "title": "Class-10 || Sectional Test Discussion",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c52ebb42f585d9c724f",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "15614",
+      "title": " Class-11 || Simplification",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c52ebb42f585d9c7259",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "15661",
+      "title": "Class-01 || Average",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c52ebb42f585d9c7266",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "15694",
+      "title": "Class-02  || Average",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c52ebb42f585d9c7270",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "15745",
+      "title": " Class-03 || Average",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c52ebb42f585d9c727a",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "15797",
+      "title": "Class-04 || Sectional Test Discussion",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c52ebb42f585d9c7284",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "15879",
+      "title": "Class-05 || Average",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c52ebb42f585d9c728e",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "15940",
+      "title": " Class-06 || Average",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c52ebb42f585d9c7298",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "17839",
+      "title": " Class-07 || Average",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c52ebb42f585d9c72a2",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "17931",
+      "title": " Class-08 || Average",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c52ebb42f585d9c72ac",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "17948",
+      "title": " Class-09 || Average",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c52ebb42f585d9c72b6",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "18020",
+      "title": " Class-10 || Test Discussion (8th Aug)",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c53ebb42f585d9c72c0",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "18127",
+      "title": " Class-1 || LCM HCF",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c53ebb42f585d9c72cd",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "18140",
+      "title": " Class-2 || LCM HCF",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c53ebb42f585d9c72d7",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "18240",
+      "title": " Class-3 || LCM HCF",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c53ebb42f585d9c72e1",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "18367",
+      "title": "Class-4 || Lcm & Hcf",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c53ebb42f585d9c72eb",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "18408",
+      "title": " Class-5 || LCM HCF",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c53ebb42f585d9c72f5",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "18468",
+      "title": "Class-1 || Ratio & Proportion",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c53ebb42f585d9c7302",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "18509",
+      "title": " Class-2 || Test Discussion (22th Aug)",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c53ebb42f585d9c730c",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "18545",
+      "title": " Class-2 || Ratio & Proportion",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c53ebb42f585d9c7316",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "19052",
+      "title": " Class-3 || Ratio & Proportion",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c53ebb42f585d9c7320",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "19101",
+      "title": " Class-4 || Ratio & Proportion",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c54ebb42f585d9c732a",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "19199",
+      "title": " Class-5 || Ratio & Proportion",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c54ebb42f585d9c7334",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "19324",
+      "title": " Class-6 || Ratio & Proportion",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c54ebb42f585d9c733e",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "19379",
+      "title": " Class-7 || Ratio & Proportion",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c54ebb42f585d9c7348",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "19399",
+      "title": " Class-8 || Test Discussion (29th August)",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c54ebb42f585d9c7352",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "19435",
+      "title": "Class-01 || Percentage",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c54ebb42f585d9c735f",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "19483",
+      "title": " Class-02 || Percentage",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c54ebb42f585d9c7369",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "19694",
+      "title": " Class-03 || Percentage",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c54ebb42f585d9c7373",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "19747",
+      "title": "Class-04 || Sectional Test Discussion",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c54ebb42f585d9c737d",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "19797",
+      "title": " Class-05 || Percentage",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c54ebb42f585d9c7387",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "19858",
+      "title": " Class-06 || Percentage",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c54ebb42f585d9c7391",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "19900",
+      "title": " Class-07 || Percentage",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c54ebb42f585d9c739b",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "19951",
+      "title": "Test Discussion 12th september",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c55ebb42f585d9c73a8",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "20080",
+      "title": "Class-01 || Profit & Loss",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c55ebb42f585d9c73b2",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "20140",
+      "title": " Class-02 || Profit & Loss",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c55ebb42f585d9c73bc",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "20183",
+      "title": "Class-03 || Profit & Loss",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c55ebb42f585d9c73c6",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "20333",
+      "title": "Class-04 || Profit & Loss",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c55ebb42f585d9c73d0",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "20406",
+      "title": " Class-05 || Test Discussion (19th Sept)",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c55ebb42f585d9c73da",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "20448",
+      "title": " Class-06 || Profit & Loss",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c55ebb42f585d9c73e4",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "20525",
+      "title": " Class-07 || Profit & Loss",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c55ebb42f585d9c73ee",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "20576",
+      "title": " Class-08 || Profit & Loss",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c55ebb42f585d9c73f8",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "20652",
+      "title": " Class-01 || Simple Interest",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c55ebb42f585d9c7405",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "20665",
+      "title": "Class-02 || Test Discussion (26th Sept)",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c55ebb42f585d9c740f",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "20737",
+      "title": " Class-03 || Simple Interest",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c56ebb42f585d9c7419",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "20788",
+      "title": " Class-04 || Simple Interest",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c56ebb42f585d9c7423",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "21377",
+      "title": "Class-05 || Test Discussion (3rd oct )",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c56ebb42f585d9c742d",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "21452",
+      "title": " Class-06 || Simple Interest",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c56ebb42f585d9c7437",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "21527",
+      "title": " Class-01 || Compound Interest",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c56ebb42f585d9c744e",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "21569",
+      "title": " Class-02 || Compound Interest",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c56ebb42f585d9c7458",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "21720",
+      "title": "Class-07 || Test Discussion",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c56ebb42f585d9c7441",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "21742",
+      "title": " Class-03 || Compound Interest",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c56ebb42f585d9c7462",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "21773",
+      "title": " Class-04 || Compound Interest",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c56ebb42f585d9c746c",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "21876",
+      "title": " Class-05 || Test Discussion (17th Oct)",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c56ebb42f585d9c7476",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "22001",
+      "title": " Class-06 || Compound Interest",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c56ebb42f585d9c7480",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "22044",
+      "title": " Class-01 || Age",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c56ebb42f585d9c748d",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "22129",
+      "title": " Class-02 || Age",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c57ebb42f585d9c7497",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "22171",
+      "title": "Maths || Class-3 || Test Discussion (24th Oct)",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c57ebb42f585d9c74a1",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "22862",
+      "title": "Atm Maths || Class-01 || Partnership",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c57ebb42f585d9c74ae",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "24753",
+      "title": "Atm Maths || Class-02 || Partnership",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c57ebb42f585d9c74b8",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "24871",
+      "title": "ATM  MATHS || Class-01 || Mixture & Alligation",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c57ebb42f585d9c74f0",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "24920",
+      "title": " ATM MATHS || Class-01 || Time & Work",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c57ebb42f585d9c7511",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "24980",
+      "title": "Atm Maths || Class-02 || Time & Work",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c58ebb42f585d9c751b",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "25098",
+      "title": " Atm Maths || Test Discussion (7th Nov)",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c57ebb42f585d9c74fa",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "25134",
+      "title": "Atm Maths || Class-03 || Time & Work",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c58ebb42f585d9c7525",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "25211",
+      "title": " Atm Maths || Class-04 || Time & Work",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c58ebb42f585d9c752f",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "25284",
+      "title": " Atm Maths || Class-05 || Time & Work",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c58ebb42f585d9c7539",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "25325",
+      "title": " Atm Maths || Test Discussion || Time & Work",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c57ebb42f585d9c7507",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "25431",
+      "title": "Atm Maths || Class-02 || pipe & cistern",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c58ebb42f585d9c7550",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "25506",
+      "title": " Atm Maths || Class-03 || TEST DISCUSSION",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c58ebb42f585d9c755a",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "25614",
+      "title": " Atm Maths || Class-04 || pipe & cistern",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c58ebb42f585d9c7564",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "25645",
+      "title": " Atm Maths || Class-01 || Time Speed & Distance",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c58ebb42f585d9c7571",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "25680",
+      "title": " Atm Maths || Class-02 || Time Speed & Distance",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c58ebb42f585d9c757b",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "25702",
+      "title": "Atm Maths || Class-03 || Time Speed & Distance",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c58ebb42f585d9c7585",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "25753",
+      "title": " Atm Maths || Class-04 || Time Speed & Distance",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c58ebb42f585d9c758f",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "25880",
+      "title": "Atm Maths || Sectional Test (5th Dec) || Time Speed & Distance",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c59ebb42f585d9c7599",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "25966",
+      "title": " Atm Maths || Class-05 || Time Speed & Distance",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c59ebb42f585d9c75a3",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "26035",
+      "title": "Atm Maths || Class-06 || Time Speed Distance",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c59ebb42f585d9c75ad",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "26417",
+      "title": "ATM MATHS || Class-07 || Time Speed Distance Test Discussion",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c59ebb42f585d9c75b7",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "26482",
+      "title": "ATM MATHS || Class-08 || Time Speed Distance",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c59ebb42f585d9c75c1",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "26696",
+      "title": "ATM MATHS || Class-01 || Train",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c57ebb42f585d9c74c5",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "26770",
+      "title": "ATM MATHS || Class-02 || Train",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c57ebb42f585d9c74cf",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "26827",
+      "title": "Atm || Class-03 || train",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c57ebb42f585d9c74d9",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "26935",
+      "title": "Atm maths || Class-04 || train",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c57ebb42f585d9c74e3",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "27060",
+      "title": "Atm Maths || Class-01 || Boat & Stream",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c59ebb42f585d9c75d8",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "27108",
+      "title": "ATM MATHS || Class-02 || Sectional Test",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c59ebb42f585d9c75e2",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "27258",
+      "title": "Atm Maths || Class-03 || Boat & Stream",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c59ebb42f585d9c75ec",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "27325",
+      "title": "Atm Maths || Class-04 || Boat & Stream",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c59ebb42f585d9c75f6",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "27362",
+      "title": "Atm Maths || Class-01 || Race",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c50ebb42f585d9c7160",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "27473",
+      "title": "Atm Maths || Class-02 || Weekly Test",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c50ebb42f585d9c716a",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "27537",
+      "title": "Atm Maths || Class-03 || Race",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c50ebb42f585d9c7174",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "27726",
+      "title": "ATM Maths || Class-01 || Mensuration",
+      "topic": "ADVANCE",
+      "classId": "6a455c5aebb42f585d9c7624",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "27774",
+      "title": "Atm Maths || Class - 04 || Race",
+      "topic": "ARITHMETIC",
+      "classId": "6a455c50ebb42f585d9c717e",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "27969",
+      "title": "ATM Maths || Sectional Test || Race",
+      "topic": "ADVANCE",
+      "classId": "6a455c5aebb42f585d9c7633",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "28030",
+      "title": "ATM Maths || Class-02 || Mensuration",
+      "topic": "ADVANCE",
+      "classId": "6a455c5aebb42f585d9c763d",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "28076",
+      "title": " ATM Maths || Class-03 || Mensuration",
+      "topic": "ADVANCE",
+      "classId": "6a455c5aebb42f585d9c7647",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "28137",
+      "title": "ATM Maths || Class-04 || Mensuration",
+      "topic": "ADVANCE",
+      "classId": "6a455c5aebb42f585d9c7651",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "28167",
+      "title": "ATM Maths || Sectional Test || Mensuration",
+      "topic": "ADVANCE",
+      "classId": "6a455c5aebb42f585d9c765b",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "28307",
+      "title": " ATM Maths || Class-05 || Mensuration",
+      "topic": "ADVANCE",
+      "classId": "6a455c5aebb42f585d9c7665",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "28392",
+      "title": " ATM Maths || Class-06 || Mensuration",
+      "topic": "ADVANCE",
+      "classId": "6a455c5bebb42f585d9c766f",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "28464",
+      "title": " ATM Maths || Class-07 || Mensuration",
+      "topic": "ADVANCE",
+      "classId": "6a455c5bebb42f585d9c7683",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    },
+    {
+      "sourceId": "28471",
+      "title": " ATM Maths || Sectional Test || Mensuration",
+      "topic": "ADVANCE",
+      "classId": "6a455c5bebb42f585d9c7679",
+      "sourceRecordAndPdfLinkPresent": true,
+      "sourceActive": true,
+      "pdfIdentityUnchanged": true,
+      "lmsRecordStillMissing": true
+    }
+  ]
+}

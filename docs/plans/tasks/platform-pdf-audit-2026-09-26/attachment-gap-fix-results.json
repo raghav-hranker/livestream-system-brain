@@ -1,0 +1,652 @@
+{
+  "fixedAt": "2026-09-26T11:35:38.657232+00:00",
+  "verified": [
+    {
+      "event": "verified",
+      "classId": "6a455be3ebb42f585d9c3fd6",
+      "pdfId": "6ab3eb4107eecf4b6bf97bf0",
+      "pdfIdentityHash": "f13b12dfa61667ef91cff47511482ceabe6f4bb7ef94bba8617acb44101aac28",
+      "mode": "legacy",
+      "sourceId": "7949"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455912ebb42f585d9abd10",
+      "pdfId": "6ab3f0218457e45193bed041",
+      "pdfIdentityHash": "c4894bc2cf3f2f407350d5ce9955fb4f53a02ce62216bad450ddf8835fa96182",
+      "mode": "legacy",
+      "sourceId": "49296"
+    },
+    {
+      "event": "verified",
+      "classId": "6a4559f9ebb42f585d9b4a76",
+      "pdfId": "6ab3e414d4931277d801c38e",
+      "pdfIdentityHash": "304fc266956b8ed29d44984577a1c90797179a728358bc7332a4627ec32a4255",
+      "mode": "legacy",
+      "sourceId": "146"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c31ebb42f585d9c63f1",
+      "pdfId": "6ab3ec2007eecf4b6bf97d66",
+      "pdfIdentityHash": "036400725c8e2bb759388b57759fdd2b359d4fec8be900f0e9e361869d1ebf88",
+      "mode": "legacy",
+      "sourceId": "986"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455a39ebb42f585d9b6f4a",
+      "pdfId": "6ab3ec2907eecf4b6bf97d74",
+      "pdfIdentityHash": "ec15d224e0bda208b60d697e7b903aa17ab76c69615cbfc14e99ca2d9587be2d",
+      "mode": "legacy",
+      "sourceId": "990"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455a37ebb42f585d9b6e44",
+      "pdfId": "6ab3ebed07eecf4b6bf97d4b",
+      "pdfIdentityHash": "4b0ec59b746c4ce92bc07b029a1716e9f75ec9a2d4e6f934af43ee1d5c24c08e",
+      "mode": "legacy",
+      "sourceId": "969"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455a3bebb42f585d9b7020",
+      "pdfId": "6ab3ec2f07eecf4b6bf97d82",
+      "pdfIdentityHash": "9b0170a66309ceace5baae606aeddc2eb66a632f2519b3bb2a9dffb5b1a667ed",
+      "mode": "legacy",
+      "sourceId": "1013"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455a37ebb42f585d9b6e44",
+      "pdfId": "6ab3ed968457e45193bec4ec",
+      "pdfIdentityHash": "8f0455cd97e2470d95eceff513becaf75291fede8ce1a05ed15450f24080e07d",
+      "mode": "legacy",
+      "sourceId": "1898"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455a65ebb42f585d9b8588",
+      "pdfId": "6ab3ed9d8457e45193bec4fa",
+      "pdfIdentityHash": "f6b5ccc90f68dfa27f873681ffe6100bf117b06fb95930b207f49a17a68f6421",
+      "mode": "legacy",
+      "sourceId": "1905"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c31ebb42f585d9c63f1",
+      "pdfId": "6ab3eda38457e45193bec509",
+      "pdfIdentityHash": "c0655bc8ab7f9a952156f7a2e6ae0c721d16c2bad8bd441a68755c773cbf6d5e",
+      "mode": "legacy",
+      "sourceId": "1915"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455a3bebb42f585d9b7020",
+      "pdfId": "6ab3edb08457e45193bec527",
+      "pdfIdentityHash": "9f0a5d08b65b6f8503332077f529a156411d25086e8998a6aaa989fe786102a9",
+      "mode": "legacy",
+      "sourceId": "1942"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455a39ebb42f585d9b6f4a",
+      "pdfId": "6ab3eda98457e45193bec518",
+      "pdfIdentityHash": "c6ab2474265e37502c24361af7dc30933743d8d8ffaa50e0a33e7f528de74111",
+      "mode": "legacy",
+      "sourceId": "1919"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c05ebb42f585d9c4f50",
+      "pdfId": "6ab3eb8d07eecf4b6bf97cb0",
+      "pdfIdentityHash": "fabfc5f3d3b6167dc2419537ff46897c018f29481ff2167c6ec0c19638766610",
+      "mode": "legacy",
+      "sourceId": "21755"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c68ebb42f585d9c7c64",
+      "pdfId": "6ab3ef728457e45193becc23",
+      "pdfIdentityHash": "bf37bb8cae0ba9ded989dbc27ae72947ad03cc9a07fb665b1404c0dc83b6dbd4",
+      "mode": "legacy",
+      "sourceId": "28228"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c64ebb42f585d9c7acf",
+      "pdfId": "6ab3ef5f8457e45193becbd7",
+      "pdfIdentityHash": "18c420aa347397e8c699f60cf2e6a2dfc22c54f4005eb4c5de6cfec759b88a77",
+      "mode": "legacy",
+      "sourceId": "25803"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c64ebb42f585d9c7ac6",
+      "pdfId": "6ab3ef648457e45193becbe6",
+      "pdfIdentityHash": "6bd8a3af3b0e07734b68733fc129d244febba688328b290c763687bc26621b00",
+      "mode": "legacy",
+      "sourceId": "25804"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c68ebb42f585d9c7c64",
+      "pdfId": "6ab3ef6c8457e45193becc01",
+      "pdfIdentityHash": "379a3d043a2285ea94e102c70273c2fecaea30d9e06053b250723e6d0327b09b",
+      "mode": "legacy",
+      "sourceId": "28229"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6eebb42f585d9c7edb",
+      "pdfId": "6ab3ef268457e45193becb18",
+      "pdfIdentityHash": "039856930dd7f2900bb7e9a0ceb80de1851fb8756f197a729328d61a5e06f927",
+      "mode": "legacy",
+      "sourceId": "21955"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c64ebb42f585d9c7acf",
+      "pdfId": "6a4fc409d249b475d04b720c",
+      "pdfIdentityHash": "16adc10002a71567a568a8ca030f5da3b19edda9c25a2f121395935880982aca",
+      "mode": "private",
+      "sourceId": "25803"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6eebb42f585d9c7ee4",
+      "pdfId": "6ab3ef2b8457e45193becb27",
+      "pdfIdentityHash": "e2a624d5a32eecc69b2c151685a62a651a3f17d636ae9f6151088c32011c16a2",
+      "mode": "legacy",
+      "sourceId": "21983"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6febb42f585d9c7f50",
+      "pdfId": "6ab3ef3c8457e45193becb62",
+      "pdfIdentityHash": "c3d5860196562859a60c03f61be7a5d2a7ed7e08f245cf5e869cd8364bfc0a61",
+      "mode": "legacy",
+      "sourceId": "25027"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c64ebb42f585d9c7ac6",
+      "pdfId": "6a4fc40ed249b475d04b7214",
+      "pdfIdentityHash": "f4c6cb8fa777ff93f4c443c72f606262bea37f4d8efc3938eb36c862d6a430c2",
+      "mode": "private",
+      "sourceId": "25804"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6febb42f585d9c7f59",
+      "pdfId": "6ab3ef418457e45193becb71",
+      "pdfIdentityHash": "d718222dbe56e11c50e00ed23a6099dd3d89fed0a8bfcefeff0fedbb0c872d5c",
+      "mode": "legacy",
+      "sourceId": "25071"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6febb42f585d9c7f62",
+      "pdfId": "6ab3ef458457e45193becb80",
+      "pdfIdentityHash": "f45c044266b3b9e51a92959cf55d71065ba261fec9c950eebdcbcedad6f9f1c1",
+      "mode": "legacy",
+      "sourceId": "25115"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6eebb42f585d9c7eed",
+      "pdfId": "6ab3ef2f8457e45193becb36",
+      "pdfIdentityHash": "c5a1b9bc989bc1fc9e1e7695c6e0e66a7b55102ae825525e885d66013c6b7f68",
+      "mode": "legacy",
+      "sourceId": "21991"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6cebb42f585d9c7e42",
+      "pdfId": "6ab3ef598457e45193becbc8",
+      "pdfIdentityHash": "c43da9c06792a54d611a7d90834cac9d09a1fd0bcd8f9b8eb49d2fb81dbbc1b7",
+      "mode": "legacy",
+      "sourceId": "25723"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6febb42f585d9c7f6b",
+      "pdfId": "6ab3ef498457e45193becb8f",
+      "pdfIdentityHash": "5fddd5f5f3ea28fab37c7a0fb4126d924171e3cf21a165433a284a0fd78914ab",
+      "mode": "legacy",
+      "sourceId": "25125"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6eebb42f585d9c7f23",
+      "pdfId": "6ab3ef558457e45193becbad",
+      "pdfIdentityHash": "910dbfa69ad774fa8626e5e7bf13aee028734633218b2936618a133d1f4cf8fd",
+      "mode": "legacy",
+      "sourceId": "25311"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455a40ebb42f585d9b728c",
+      "pdfId": "6ab3ef828457e45193becc82",
+      "pdfIdentityHash": "8aa047c2f216b68b4ed6c8996df40c83e3a0e7c51ebbd2446d6c9f04ba3d58cb",
+      "mode": "legacy",
+      "sourceId": "23380"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6eebb42f585d9c7ee4",
+      "pdfId": "6a5112e903298f427a6f9633",
+      "pdfIdentityHash": "124f76529f2035ab0045d7371722863fb1ad86f5a36f93ea225c16dac650cab1",
+      "mode": "private",
+      "sourceId": "25473"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6eebb42f585d9c7edb",
+      "pdfId": "6a5112e503298f427a6f962b",
+      "pdfIdentityHash": "5407c3f26cf965f7688f698dd3ef5f166270552dee59d9f137f0341d9618d2eb",
+      "mode": "private",
+      "sourceId": "25472"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6eebb42f585d9c7f1a",
+      "pdfId": "6a4fc47dd249b475d04b743b",
+      "pdfIdentityHash": "1129695f3259bf05a85f59c2aaf375035bf0c44b4ec23ddb7b704b19be241cd0",
+      "mode": "private",
+      "sourceId": "25479"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6eebb42f585d9c7f23",
+      "pdfId": "6a4fc47fd249b475d04b7443",
+      "pdfIdentityHash": "ff668a99ddf1d99c27b89087b46be821d4eca085ca55e437936950b7f1752032",
+      "mode": "private",
+      "sourceId": "25480"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6eebb42f585d9c7eed",
+      "pdfId": "6a5112ed03298f427a6f963b",
+      "pdfIdentityHash": "5add41e882ef25db3889c5e0ca3807fad4b2984d82df73e16c91dacd7811f3f0",
+      "mode": "private",
+      "sourceId": "25474"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6eebb42f585d9c7f2c",
+      "pdfId": "6a4fc481d249b475d04b744b",
+      "pdfIdentityHash": "b65ccc678b89cfa3d71fcc76c7b0cf81b27920dfea84f3022897e9d4ec2dc50d",
+      "mode": "private",
+      "sourceId": "25481"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6febb42f585d9c7f35",
+      "pdfId": "6a4fc483d249b475d04b7453",
+      "pdfIdentityHash": "856ba0441dada6f77e3d221162b0948a4e1b863655bbf1bf3bdc6c7069a0b8f6",
+      "mode": "private",
+      "sourceId": "25482"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6febb42f585d9c7f50",
+      "pdfId": "6ab3eef38457e45193becaa7",
+      "pdfIdentityHash": "29d10801f6a522e62c50c8d179871fb77ea3ef61afcffcbe09e6f5f16c5c1d60",
+      "mode": "legacy",
+      "sourceId": "25485"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6febb42f585d9c7f47",
+      "pdfId": "6a4fc487d249b475d04b7463",
+      "pdfIdentityHash": "4df6835d2aef5a5eb07decf3913cabcb81ca3ac7a9260da7cb75194f744f6657",
+      "mode": "private",
+      "sourceId": "25484"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6febb42f585d9c7f62",
+      "pdfId": "6ab3ef038457e45193becac3",
+      "pdfIdentityHash": "3b5e7b5a783e23f881188e4af16c83f5c4df4a772f0af550441ab6d1a5e0667a",
+      "mode": "legacy",
+      "sourceId": "25487"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6febb42f585d9c7f3e",
+      "pdfId": "6a4fc485d249b475d04b745b",
+      "pdfIdentityHash": "200be7938e7e509f977a5c4ef093036d8745caaa12b3462bb406316b47cbf8bf",
+      "mode": "private",
+      "sourceId": "25483"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6febb42f585d9c7f59",
+      "pdfId": "6a4fc48bd249b475d04b7473",
+      "pdfIdentityHash": "98b7291b2c94b2bdeec51a5badf39e91405ec6b2362df1886a3f5a314887cfdf",
+      "mode": "private",
+      "sourceId": "25486"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6febb42f585d9c7f90",
+      "pdfId": "6a4fc492d249b475d04b748b",
+      "pdfIdentityHash": "ff2aafc09be610ce2e0b0eb0c433d00627ed1f2049f777f90271ef5e3fd09db6",
+      "mode": "private",
+      "sourceId": "25489"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6febb42f585d9c7f6b",
+      "pdfId": "6a4fc48fd249b475d04b7483",
+      "pdfIdentityHash": "3159b64e0f6dc60c9a6041eefe68389c57bd19e362400258c1103af653c4da4d",
+      "mode": "private",
+      "sourceId": "25488"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455e75ebb42f585d9d529f",
+      "pdfId": "6ab3ec6707eecf4b6bf97e9e",
+      "pdfIdentityHash": "ef8b337321e394d45feb28469b963a76d7ba0d3262beb0fa909e6c307f5e3f46",
+      "mode": "legacy",
+      "sourceId": "8688"
+    },
+    {
+      "event": "verified",
+      "classId": "6a455c6cebb42f585d9c7e42",
+      "pdfId": "6a4fc496d249b475d04b74a1",
+      "pdfIdentityHash": "fd6bd2f55dc7df8b39a57229052a982d22197e6617f419b087f7e74e040cdc5c",
+      "mode": "private",
+      "sourceId": "25724"
+    }
+  ],
+  "commit": [
+    {
+      "event": "attached",
+      "classId": "6a455912ebb42f585d9abd10",
+      "pdfId": "6ab3f0218457e45193bed041",
+      "courseId": "6a455910ebb42f585d9abb18"
+    },
+    {
+      "event": "attached",
+      "classId": "6a4559f9ebb42f585d9b4a76",
+      "pdfId": "6ab3e414d4931277d801c38e",
+      "courseId": "6a455fa5ebb42f585d9dc650"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455be3ebb42f585d9c3fd6",
+      "pdfId": "6ab3eb4107eecf4b6bf97bf0",
+      "courseId": "6a455f31ebb42f585d9d98c6"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455a37ebb42f585d9b6e44",
+      "pdfId": "6ab3ebed07eecf4b6bf97d4b",
+      "courseId": "6a455f60ebb42f585d9daa39"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c31ebb42f585d9c63f1",
+      "pdfId": "6ab3ec2007eecf4b6bf97d66",
+      "courseId": "6a455f60ebb42f585d9daa39"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455a39ebb42f585d9b6f4a",
+      "pdfId": "6ab3ec2907eecf4b6bf97d74",
+      "courseId": "6a455f60ebb42f585d9daa39"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455a3bebb42f585d9b7020",
+      "pdfId": "6ab3ec2f07eecf4b6bf97d82",
+      "courseId": "6a455f60ebb42f585d9daa39"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455a37ebb42f585d9b6e44",
+      "pdfId": "6ab3ed968457e45193bec4ec",
+      "courseId": "6a455fdeebb42f585d9dddc2"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455a65ebb42f585d9b8588",
+      "pdfId": "6ab3ed9d8457e45193bec4fa",
+      "courseId": "6a455fdeebb42f585d9dddc2"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c31ebb42f585d9c63f1",
+      "pdfId": "6ab3eda38457e45193bec509",
+      "courseId": "6a455fdeebb42f585d9dddc2"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455a39ebb42f585d9b6f4a",
+      "pdfId": "6ab3eda98457e45193bec518",
+      "courseId": "6a455fdeebb42f585d9dddc2"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455a3bebb42f585d9b7020",
+      "pdfId": "6ab3edb08457e45193bec527",
+      "courseId": "6a455fdeebb42f585d9dddc2"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c05ebb42f585d9c4f50",
+      "pdfId": "6ab3eb8d07eecf4b6bf97cb0",
+      "courseId": "6a455d32ebb42f585d9cd19b"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c68ebb42f585d9c7c64",
+      "pdfId": "6ab3ef728457e45193becc23",
+      "courseId": "6a455c64ebb42f585d9c7aa3"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c64ebb42f585d9c7acf",
+      "pdfId": "6a4fc409d249b475d04b720c",
+      "courseId": "6a455c69ebb42f585d9c7ca8"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c64ebb42f585d9c7acf",
+      "pdfId": "6ab3ef5f8457e45193becbd7",
+      "courseId": "6a455c69ebb42f585d9c7ca8"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c64ebb42f585d9c7ac6",
+      "pdfId": "6a4fc40ed249b475d04b7214",
+      "courseId": "6a455c69ebb42f585d9c7ca8"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c64ebb42f585d9c7ac6",
+      "pdfId": "6ab3ef648457e45193becbe6",
+      "courseId": "6a455c69ebb42f585d9c7ca8"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c68ebb42f585d9c7c64",
+      "pdfId": "6ab3ef6c8457e45193becc01",
+      "courseId": "6a455c69ebb42f585d9c7ca8"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6eebb42f585d9c7edb",
+      "pdfId": "6ab3ef268457e45193becb18",
+      "courseId": "6a455c6cebb42f585d9c7e13"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6eebb42f585d9c7ee4",
+      "pdfId": "6ab3ef2b8457e45193becb27",
+      "courseId": "6a455c6cebb42f585d9c7e13"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6eebb42f585d9c7eed",
+      "pdfId": "6ab3ef2f8457e45193becb36",
+      "courseId": "6a455c6cebb42f585d9c7e13"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6febb42f585d9c7f50",
+      "pdfId": "6ab3ef3c8457e45193becb62",
+      "courseId": "6a455c6cebb42f585d9c7e13"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6febb42f585d9c7f59",
+      "pdfId": "6ab3ef418457e45193becb71",
+      "courseId": "6a455c6cebb42f585d9c7e13"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6febb42f585d9c7f62",
+      "pdfId": "6ab3ef458457e45193becb80",
+      "courseId": "6a455c6cebb42f585d9c7e13"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6febb42f585d9c7f6b",
+      "pdfId": "6ab3ef498457e45193becb8f",
+      "courseId": "6a455c6cebb42f585d9c7e13"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6eebb42f585d9c7f23",
+      "pdfId": "6ab3ef558457e45193becbad",
+      "courseId": "6a455c6cebb42f585d9c7e13"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6cebb42f585d9c7e42",
+      "pdfId": "6ab3ef598457e45193becbc8",
+      "courseId": "6a455c6cebb42f585d9c7e13"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455a40ebb42f585d9b728c",
+      "pdfId": "6ab3ef828457e45193becc82",
+      "courseId": "6a455c29ebb42f585d9c60e7"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6eebb42f585d9c7edb",
+      "pdfId": "6a5112e503298f427a6f962b",
+      "courseId": "6a455c71ebb42f585d9c804b"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6eebb42f585d9c7ee4",
+      "pdfId": "6a5112e903298f427a6f9633",
+      "courseId": "6a455c71ebb42f585d9c804b"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6eebb42f585d9c7eed",
+      "pdfId": "6a5112ed03298f427a6f963b",
+      "courseId": "6a455c71ebb42f585d9c804b"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6eebb42f585d9c7f1a",
+      "pdfId": "6a4fc47dd249b475d04b743b",
+      "courseId": "6a455c71ebb42f585d9c804b"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6eebb42f585d9c7f23",
+      "pdfId": "6a4fc47fd249b475d04b7443",
+      "courseId": "6a455c71ebb42f585d9c804b"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6eebb42f585d9c7f2c",
+      "pdfId": "6a4fc481d249b475d04b744b",
+      "courseId": "6a455c71ebb42f585d9c804b"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6febb42f585d9c7f35",
+      "pdfId": "6a4fc483d249b475d04b7453",
+      "courseId": "6a455c71ebb42f585d9c804b"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6febb42f585d9c7f3e",
+      "pdfId": "6a4fc485d249b475d04b745b",
+      "courseId": "6a455c71ebb42f585d9c804b"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6febb42f585d9c7f47",
+      "pdfId": "6a4fc487d249b475d04b7463",
+      "courseId": "6a455c71ebb42f585d9c804b"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6febb42f585d9c7f50",
+      "pdfId": "6ab3eef38457e45193becaa7",
+      "courseId": "6a455c71ebb42f585d9c804b"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6febb42f585d9c7f59",
+      "pdfId": "6a4fc48bd249b475d04b7473",
+      "courseId": "6a455c71ebb42f585d9c804b"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6febb42f585d9c7f62",
+      "pdfId": "6ab3ef038457e45193becac3",
+      "courseId": "6a455c71ebb42f585d9c804b"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6febb42f585d9c7f6b",
+      "pdfId": "6a4fc48fd249b475d04b7483",
+      "courseId": "6a455c71ebb42f585d9c804b"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6febb42f585d9c7f90",
+      "pdfId": "6a4fc492d249b475d04b748b",
+      "courseId": "6a455c71ebb42f585d9c804b"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455c6cebb42f585d9c7e42",
+      "pdfId": "6a4fc496d249b475d04b74a1",
+      "courseId": "6a455c71ebb42f585d9c804b"
+    },
+    {
+      "event": "attached",
+      "classId": "6a455e75ebb42f585d9d529f",
+      "pdfId": "6ab3ec6707eecf4b6bf97e9e",
+      "courseId": "6a455ec9ebb42f585d9d730f"
+    },
+    {
+      "event": "summary",
+      "completed": 45,
+      "alreadyAttached": 0,
+      "failed": 0,
+      "total": 45
+    }
+  ],
+  "readback": {
+    "checked": 45,
+    "effectiveAssignments": 45,
+    "privateCount": 15,
+    "legacyCount": 30,
+    "bad": []
+  },
+  "apxSigningRequests": 0
+}

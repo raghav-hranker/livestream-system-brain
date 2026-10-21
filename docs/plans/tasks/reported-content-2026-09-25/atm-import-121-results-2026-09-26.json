@@ -1,0 +1,1908 @@
+{
+  "completed": 57,
+  "remaining": 64,
+  "stopReason": "APX PDF signer quota exhausted",
+  "events": [
+    {
+      "event": "preflight",
+      "count": 121,
+      "commit": true
+    },
+    {
+      "event": "failed",
+      "sourceId": "13848",
+      "error": "Error",
+      "message": "Imported asset missing"
+    },
+    {
+      "event": "imported",
+      "sourceId": "13992",
+      "classId": "6a455c50ebb42f585d9c7195",
+      "pdfId": "6ab7a6b859d3543d9966593f",
+      "created": true,
+      "sizeBytes": 3045061,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "14061",
+      "classId": "6a455c50ebb42f585d9c719f",
+      "pdfId": "6ab7a6bd59d3543d9966594a",
+      "created": true,
+      "sizeBytes": 4000990,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "14079",
+      "classId": "6a455c50ebb42f585d9c71a9",
+      "pdfId": "6ab7a6c159d3543d99665955",
+      "created": true,
+      "sizeBytes": 4527269,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "14128",
+      "classId": "6a455c50ebb42f585d9c71b3",
+      "pdfId": "6ab7a6c559d3543d99665960",
+      "created": true,
+      "sizeBytes": 4094366,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "14244",
+      "classId": "6a455c50ebb42f585d9c71bd",
+      "pdfId": "6ab7a6c859d3543d9966596b",
+      "created": true,
+      "sizeBytes": 3608183,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "14484",
+      "classId": "6a455c50ebb42f585d9c71c8",
+      "pdfId": "6ab7a6cd59d3543d99665976",
+      "created": true,
+      "sizeBytes": 4995356,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "14540",
+      "classId": "6a455c50ebb42f585d9c71d2",
+      "pdfId": "6ab7a6d059d3543d99665981",
+      "created": true,
+      "sizeBytes": 3995968,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "14607",
+      "classId": "6a455c51ebb42f585d9c71dc",
+      "pdfId": "6ab7a6d559d3543d9966598c",
+      "created": true,
+      "sizeBytes": 4249507,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "14727",
+      "classId": "6a455c51ebb42f585d9c71e9",
+      "pdfId": "6ab7a6d859d3543d99665997",
+      "created": true,
+      "sizeBytes": 3050146,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "14741",
+      "classId": "6a455c51ebb42f585d9c71f3",
+      "pdfId": "6ab7a6dc59d3543d996659a2",
+      "created": true,
+      "sizeBytes": 2775190,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "14878",
+      "classId": "6a455c51ebb42f585d9c71fd",
+      "pdfId": "6ab7a6e059d3543d996659ad",
+      "created": true,
+      "sizeBytes": 2432231,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "14954",
+      "classId": "6a455c51ebb42f585d9c7207",
+      "pdfId": "6ab7a6e459d3543d996659b8",
+      "created": true,
+      "sizeBytes": 3792383,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "14982",
+      "classId": "6a455c51ebb42f585d9c7212",
+      "pdfId": "6ab7a6e959d3543d996659c3",
+      "created": true,
+      "sizeBytes": 4600000,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "15031",
+      "classId": "6a455c51ebb42f585d9c721c",
+      "pdfId": "6ab7a6ee59d3543d996659ce",
+      "created": true,
+      "sizeBytes": 4427448,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "15062",
+      "classId": "6a455c51ebb42f585d9c7227",
+      "pdfId": "6ab7a6f659d3543d996659d9",
+      "created": true,
+      "sizeBytes": 13747398,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "15149",
+      "classId": "6a455c51ebb42f585d9c7231",
+      "pdfId": "6ab7a6fc59d3543d996659e4",
+      "created": true,
+      "sizeBytes": 3398946,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "15206",
+      "classId": "6a455c51ebb42f585d9c723b",
+      "pdfId": "6ab7a70059d3543d996659ef",
+      "created": true,
+      "sizeBytes": 3712635,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "15394",
+      "classId": "6a455c51ebb42f585d9c7245",
+      "pdfId": "6ab7a70559d3543d996659fa",
+      "created": true,
+      "sizeBytes": 2783110,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "15451",
+      "classId": "6a455c52ebb42f585d9c724f",
+      "pdfId": "6ab7a70959d3543d99665a05",
+      "created": true,
+      "sizeBytes": 2461551,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "15614",
+      "classId": "6a455c52ebb42f585d9c7259",
+      "pdfId": "6ab7a70d59d3543d99665a10",
+      "created": true,
+      "sizeBytes": 1469337,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "15661",
+      "classId": "6a455c52ebb42f585d9c7266",
+      "pdfId": "6ab7a71259d3543d99665a1b",
+      "created": true,
+      "sizeBytes": 3472689,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "15694",
+      "classId": "6a455c52ebb42f585d9c7270",
+      "pdfId": "6ab7a71659d3543d99665a26",
+      "created": true,
+      "sizeBytes": 5216051,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "15745",
+      "classId": "6a455c52ebb42f585d9c727a",
+      "pdfId": "6ab7a71d59d3543d99665a31",
+      "created": true,
+      "sizeBytes": 5096657,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "15797",
+      "classId": "6a455c52ebb42f585d9c7284",
+      "pdfId": "6ab7a72359d3543d99665a3c",
+      "created": true,
+      "sizeBytes": 3893820,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "15879",
+      "classId": "6a455c52ebb42f585d9c728e",
+      "pdfId": "6ab7a72859d3543d99665a47",
+      "created": true,
+      "sizeBytes": 6400273,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "15940",
+      "classId": "6a455c52ebb42f585d9c7298",
+      "pdfId": "6ab7a72e59d3543d99665a52",
+      "created": true,
+      "sizeBytes": 6294788,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "17839",
+      "classId": "6a455c52ebb42f585d9c72a2",
+      "pdfId": "6ab7a73659d3543d99665a5d",
+      "created": true,
+      "sizeBytes": 7640115,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "17931",
+      "classId": "6a455c52ebb42f585d9c72ac",
+      "pdfId": "6ab7a73c59d3543d99665a68",
+      "created": true,
+      "sizeBytes": 7638639,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "17948",
+      "classId": "6a455c52ebb42f585d9c72b6",
+      "pdfId": "6ab7a74359d3543d99665a73",
+      "created": true,
+      "sizeBytes": 7602220,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "18020",
+      "classId": "6a455c53ebb42f585d9c72c0",
+      "pdfId": "6ab7a74759d3543d99665a7e",
+      "created": true,
+      "sizeBytes": 2685146,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "18127",
+      "classId": "6a455c53ebb42f585d9c72cd",
+      "pdfId": "6ab7a74c59d3543d99665a89",
+      "created": true,
+      "sizeBytes": 2772376,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "18140",
+      "classId": "6a455c53ebb42f585d9c72d7",
+      "pdfId": "6ab7a75159d3543d99665a94",
+      "created": true,
+      "sizeBytes": 4600494,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "18240",
+      "classId": "6a455c53ebb42f585d9c72e1",
+      "pdfId": "6ab7a75759d3543d99665a9f",
+      "created": true,
+      "sizeBytes": 5880903,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "18367",
+      "classId": "6a455c53ebb42f585d9c72eb",
+      "pdfId": "6ab7a75c59d3543d99665aaa",
+      "created": true,
+      "sizeBytes": 3620280,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "18408",
+      "classId": "6a455c53ebb42f585d9c72f5",
+      "pdfId": "6ab7a76059d3543d99665ab5",
+      "created": true,
+      "sizeBytes": 2135338,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "18468",
+      "classId": "6a455c53ebb42f585d9c7302",
+      "pdfId": "6ab7a76459d3543d99665ac0",
+      "created": true,
+      "sizeBytes": 2312665,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "18509",
+      "classId": "6a455c53ebb42f585d9c730c",
+      "pdfId": "6ab7a76859d3543d99665acb",
+      "created": true,
+      "sizeBytes": 2606032,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "18545",
+      "classId": "6a455c53ebb42f585d9c7316",
+      "pdfId": "6ab7a76e59d3543d99665ad6",
+      "created": true,
+      "sizeBytes": 2259931,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "19052",
+      "classId": "6a455c53ebb42f585d9c7320",
+      "pdfId": "6ab7a77b59d3543d99665ae1",
+      "created": true,
+      "sizeBytes": 2552879,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "19101",
+      "classId": "6a455c54ebb42f585d9c732a",
+      "pdfId": "6ab7a78759d3543d99665aec",
+      "created": true,
+      "sizeBytes": 4089039,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "19199",
+      "classId": "6a455c54ebb42f585d9c7334",
+      "pdfId": "6ab7a78d59d3543d99665af7",
+      "created": true,
+      "sizeBytes": 1981624,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "19324",
+      "classId": "6a455c54ebb42f585d9c733e",
+      "pdfId": "6ab7a79359d3543d99665b02",
+      "created": true,
+      "sizeBytes": 5399675,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "19379",
+      "classId": "6a455c54ebb42f585d9c7348",
+      "pdfId": "6ab7a79b59d3543d99665b0d",
+      "created": true,
+      "sizeBytes": 5526632,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "19399",
+      "classId": "6a455c54ebb42f585d9c7352",
+      "pdfId": "6ab7a7a059d3543d99665b18",
+      "created": true,
+      "sizeBytes": 1798306,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "19435",
+      "classId": "6a455c54ebb42f585d9c735f",
+      "pdfId": "6ab7a7a559d3543d99665b23",
+      "created": true,
+      "sizeBytes": 2571935,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "19483",
+      "classId": "6a455c54ebb42f585d9c7369",
+      "pdfId": "6ab7a7aa59d3543d99665b2e",
+      "created": true,
+      "sizeBytes": 4237063,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "19694",
+      "classId": "6a455c54ebb42f585d9c7373",
+      "pdfId": "6ab7a7b759d3543d99665b39",
+      "created": true,
+      "sizeBytes": 19693281,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "19747",
+      "classId": "6a455c54ebb42f585d9c737d",
+      "pdfId": "6ab7a7bd59d3543d99665b44",
+      "created": true,
+      "sizeBytes": 2497498,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "19797",
+      "classId": "6a455c54ebb42f585d9c7387",
+      "pdfId": "6ab7a7c259d3543d99665b4f",
+      "created": true,
+      "sizeBytes": 6227200,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "19858",
+      "classId": "6a455c54ebb42f585d9c7391",
+      "pdfId": "6ab7a7c959d3543d99665b5a",
+      "created": true,
+      "sizeBytes": 6294189,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "19900",
+      "classId": "6a455c54ebb42f585d9c739b",
+      "pdfId": "6ab7a7cf59d3543d99665b65",
+      "created": true,
+      "sizeBytes": 1914843,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "failed",
+      "sourceId": "19951",
+      "error": "Error",
+      "message": "Imported asset missing"
+    },
+    {
+      "event": "imported",
+      "sourceId": "20080",
+      "classId": "6a455c55ebb42f585d9c73b2",
+      "pdfId": "6ab7a7d759d3543d99665b76",
+      "created": true,
+      "sizeBytes": 2890515,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "20140",
+      "classId": "6a455c55ebb42f585d9c73bc",
+      "pdfId": "6ab7a7dd59d3543d99665b81",
+      "created": true,
+      "sizeBytes": 2220122,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "20183",
+      "classId": "6a455c55ebb42f585d9c73c6",
+      "pdfId": "6ab7a7e259d3543d99665b8c",
+      "created": true,
+      "sizeBytes": 3620603,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "20333",
+      "classId": "6a455c55ebb42f585d9c73d0",
+      "pdfId": "6ab7a7e759d3543d99665b97",
+      "created": true,
+      "sizeBytes": 3621921,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "failed",
+      "sourceId": "20406",
+      "error": "ApxSignerQuotaError",
+      "message": "get-static-file-token echoed the unsigned url back \u2014 signer quota burned for this account"
+    },
+    {
+      "event": "summary",
+      "success": 55,
+      "failed": 3,
+      "total": 121
+    }
+  ],
+  "remainingTargets": [
+    {
+      "sourceId": "20406",
+      "title": " Class-05 || Test Discussion (19th Sept)",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "19947",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c55ebb42f585d9c73da",
+      "classTitle": "Class-05 || Test Discussion (19th Sept)",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "1566734d20a82dd213383497119404d398dbd9147c5475a6799f1a65ff10fd49",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "20448",
+      "title": " Class-06 || Profit & Loss",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "19947",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c55ebb42f585d9c73e4",
+      "classTitle": "Class-06 || Profit & Loss",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "97294ac5333cf2959282c10ceb47b6998f7ff92727753e48d0c233fd49eb64f9",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "20525",
+      "title": " Class-07 || Profit & Loss",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "19947",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c55ebb42f585d9c73ee",
+      "classTitle": "Class-07 || Profit & Loss",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "811e59e1f11d93413f6554b45d51bda4521b518d4e6a9c11a57a4fe3b11c8bbe",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "20576",
+      "title": " Class-08 || Profit & Loss",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "19947",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c55ebb42f585d9c73f8",
+      "classTitle": "Class-08 || Profit & Loss",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "392619dd5a19dbcba48537aaf364e7c9b952e870194bc7854ef62dd777494751",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "20652",
+      "title": " Class-01 || Simple Interest",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "20648",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c55ebb42f585d9c7405",
+      "classTitle": "Class-01 || Simple Interest",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "9fc17872a67908f39f69d3a5c860560f2fc4931e6d40ffc3d503084bfc5754fe",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "20665",
+      "title": "Class-02 || Test Discussion (26th Sept)",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "20648",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c55ebb42f585d9c740f",
+      "classTitle": "Class-02 || Test Discussion (26th Sept)",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "ed4cf8833c1a12cfd991091e61a50f8b829eb8e51cb446ada12a143d2ba34c2f",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "20737",
+      "title": " Class-03 || Simple Interest",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "20648",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c56ebb42f585d9c7419",
+      "classTitle": "Class-03 || Simple Interest",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "3eff152b16fb51550bea0258700ae38fc5a53b3368071fc6f41e5d2d5b65aa52",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "20788",
+      "title": " Class-04 || Simple Interest",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "20648",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c56ebb42f585d9c7423",
+      "classTitle": "Class-04 || Simple Interest",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "9026eb2c3456d0dec1e1e5bfd14a3d423142a6b60e31abaddd8007435bc42efa",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "21377",
+      "title": "Class-05 || Test Discussion (3rd oct )",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "20648",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c56ebb42f585d9c742d",
+      "classTitle": "Class-05 || Test Discussion (3rd oct )",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "cf1c105046607d852e2287f7b7814c3da8c8a1ca1d54f0330af8ba0cbe5a69e4",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "21452",
+      "title": " Class-06 || Simple Interest",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "20648",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c56ebb42f585d9c7437",
+      "classTitle": "Class-06 || Simple Interest",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "b845a615bdc0d674682a5585323057fa8da81189d8da5725ffef87fe6e776e9b",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "21527",
+      "title": " Class-01 || Compound Interest",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "21523",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c56ebb42f585d9c744e",
+      "classTitle": "Class-01 || Compound Interest",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "7c2e403cfa41009866628f590cfcf9f2845fce7937766db3df2e1efc799758b8",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "21569",
+      "title": " Class-02 || Compound Interest",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "21523",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c56ebb42f585d9c7458",
+      "classTitle": "Class-02 || Compound Interest",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "95429b004d6e40f42874ae49876fa764f6cf188e73ddb1be5ec6ac1056d190dc",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "21720",
+      "title": "Class-07 || Test Discussion",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "20648",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c56ebb42f585d9c7441",
+      "classTitle": "Class-07 || Test Discussion",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "285b4c6b13fbda3ad4e2ee928a3c9743445922a5031816b7fc682a45ff84a509",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "21742",
+      "title": " Class-03 || Compound Interest",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "21523",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c56ebb42f585d9c7462",
+      "classTitle": "Class-03 || Compound Interest",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "8ac781ff4727c292c87d748c60385b497bf40545837d21becce9f0a675fc6b63",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "21773",
+      "title": " Class-04 || Compound Interest",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "21523",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c56ebb42f585d9c746c",
+      "classTitle": "Class-04 || Compound Interest",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "db9e049310450029a2954565b90f637b52912ef5c2880278101f181ec8298849",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "21876",
+      "title": " Class-05 || Test Discussion (17th Oct)",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "21523",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c56ebb42f585d9c7476",
+      "classTitle": "Class-05 || Test Discussion (17th Oct)",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "ac9629b38b589493fea595e664475e1ae954def7bad43ec457f627e7e3074202",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "22001",
+      "title": " Class-06 || Compound Interest",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "21523",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c56ebb42f585d9c7480",
+      "classTitle": "Class-06 || Compound Interest",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "2d835135fa9f919dae4ab8df1a614c7c2e9e3d7b53ff1a9970d65afb6af8c67f",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "22044",
+      "title": " Class-01 || Age",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "22040",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c56ebb42f585d9c748d",
+      "classTitle": "Class-01 || Age",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "20eca871a0cae2b4d7ec1a072b89a2a36520860285e79539288acb296959f002",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "22129",
+      "title": " Class-02 || Age",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "22040",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c57ebb42f585d9c7497",
+      "classTitle": "Class-02 || Age",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "11064a35736255d2eeec6ac449bbee86dbd2dc978bbee4714ea3e92ccd1691a1",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "22171",
+      "title": "Maths || Class-3 || Test Discussion (24th Oct)",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "22040",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c57ebb42f585d9c74a1",
+      "classTitle": "Maths || Class-3 || Test Discussion (24th Oct)",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "55da92e1015dfa5ecf5c5463ef05c4becac4db3a2d02df15f8c4b0a4c4a1bd6d",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "22862",
+      "title": "Atm Maths || Class-01 || Partnership",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "22858",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c57ebb42f585d9c74ae",
+      "classTitle": "Atm Maths || Class-01 || Partnership",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "cdafe8ba8a3aae4b4a1b957ee44c7f126dc171cf86b7c6fd3131d18545e25eb2",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "24753",
+      "title": "Atm Maths || Class-02 || Partnership",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "22858",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c57ebb42f585d9c74b8",
+      "classTitle": "Atm Maths || Class-02 || Partnership",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "668cf153e5b80c3cbcc0b1ba583af533bd78fd207475d60bf2393864b56e7c85",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "24871",
+      "title": "ATM  MATHS || Class-01 || Mixture & Alligation",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "24866",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c57ebb42f585d9c74f0",
+      "classTitle": "ATM  MATHS || Class-01 || Mixture & Alligation",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "afca31b28659b9a3f265557dc5aac754c238c453b5448cafd18f69569cbde4c3",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "24920",
+      "title": " ATM MATHS || Class-01 || Time & Work",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "24975",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c57ebb42f585d9c7511",
+      "classTitle": "ATM MATHS || Class-01 || Time & Work",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "c0fb5520394bfcd764b9011e9384257cfc01733d0e1a4dd66ebd3ff936308d7d",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "24980",
+      "title": "Atm Maths || Class-02 || Time & Work",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "24975",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c58ebb42f585d9c751b",
+      "classTitle": "Atm Maths || Class-02 || Time & Work",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "1e75549cbd599f26a52983e3a77b22a3556e4d086e0553348d9aee532fdf48e3",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "25098",
+      "title": " Atm Maths || Test Discussion (7th Nov)",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "24866",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c57ebb42f585d9c74fa",
+      "classTitle": "Atm Maths || Test Discussion (7th Nov)",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "e9a052d8bd8e9a8e34aa3edcd94e0a371c30cc872e5d7ce155159c7239e70f30",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "25134",
+      "title": "Atm Maths || Class-03 || Time & Work",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "24975",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c58ebb42f585d9c7525",
+      "classTitle": "Atm Maths || Class-03 || Time & Work",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "bbea75d5dd24728e58f5c08381185b9ff1f30b3292c23736fddcd081c692ccb3",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "25211",
+      "title": " Atm Maths || Class-04 || Time & Work",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "24975",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c58ebb42f585d9c752f",
+      "classTitle": "Atm Maths || Class-04 || Time & Work",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "c8c2741b7f1f8f9a4916c90b2979eff48857213e60fead53243eb720791178ec",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "25284",
+      "title": " Atm Maths || Class-05 || Time & Work",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "24975",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c58ebb42f585d9c7539",
+      "classTitle": "Atm Maths || Class-05 || Time & Work",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "96067c4ea9fec0a3c8847eec048d3dd5cf52a68cac0405d71f9fdebb92e9dd07",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "25325",
+      "title": " Atm Maths || Test Discussion || Time & Work",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "24975",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c57ebb42f585d9c7507",
+      "classTitle": "Atm Maths || Test Discussion || Time & Work",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "b29960044c7da2a54c846d176a9c3cb6feefe22d9844bed893792bf77e7efaf2",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "25431",
+      "title": "Atm Maths || Class-02 || pipe & cistern",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "25419",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c58ebb42f585d9c7550",
+      "classTitle": "Atm Maths || Class-02 || pipe & cistern",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "30a26907157efcec00b073af8ad10b2111476e784dab0847bb41795862e8dc6c",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "25506",
+      "title": " Atm Maths || Class-03 || TEST DISCUSSION",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "25419",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c58ebb42f585d9c755a",
+      "classTitle": "Atm Maths || Class-03 || TEST DISCUSSION",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "a022019a7afaf3b2cf8eaaa99a671c683d45267fdb2fa9a0d6c44c5a92dcc24d",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "25614",
+      "title": " Atm Maths || Class-04 || pipe & cistern",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "25419",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c58ebb42f585d9c7564",
+      "classTitle": "Atm Maths || Class-04 || pipe & cistern",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "b985576f3fc4be8be32cc46fa834bbf81adeea47f5655353acf56388157e3912",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "25645",
+      "title": " Atm Maths || Class-01 || Time Speed & Distance",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "25675",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c58ebb42f585d9c7571",
+      "classTitle": "Atm Maths || Class-01 || Time Speed & Distance",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "ce372805ee83cddeddcb292adc4a3b3938ea817edcce080c89eebd7d6a78f3e5",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "25680",
+      "title": " Atm Maths || Class-02 || Time Speed & Distance",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "25675",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c58ebb42f585d9c757b",
+      "classTitle": "Atm Maths || Class-02 || Time Speed & Distance",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "4013433b86b613a87fbd2028b4bdf6d3186cf8963e79130af48f173db4918e04",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "25702",
+      "title": "Atm Maths || Class-03 || Time Speed & Distance",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "25675",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c58ebb42f585d9c7585",
+      "classTitle": "Atm Maths || Class-03 || Time Speed & Distance",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "b170704681c563c93f8928515919d0ccde3ff519f06395e16a85e92111bbea06",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "25753",
+      "title": " Atm Maths || Class-04 || Time Speed & Distance",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "25675",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c58ebb42f585d9c758f",
+      "classTitle": "Atm Maths || Class-04 || Time Speed & Distance",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "cb4c7e0e53a9c5b8e525e39c3a4ad558f6bb486af0712e348060ae163ad250bd",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "25880",
+      "title": "Atm Maths || Sectional Test (5th Dec) || Time Speed & Distance",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "25675",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c59ebb42f585d9c7599",
+      "classTitle": "Atm Maths || Sectional Test (5th Dec) || Time Speed & Distance",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "59f0dd96bd347c2ce95f5e04d712d898402295acfe7fab4ee90b1c9313bf1f40",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "25966",
+      "title": " Atm Maths || Class-05 || Time Speed & Distance",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "25675",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c59ebb42f585d9c75a3",
+      "classTitle": "Atm Maths || Class-05 || Time Speed & Distance",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "2794604722576dc2083d66da7273f279229418b2e6bbdee7498d56fab7a24ae1",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "26035",
+      "title": "Atm Maths || Class-06 || Time Speed Distance",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "25675",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c59ebb42f585d9c75ad",
+      "classTitle": "Atm Maths || Class-06 || Time Speed Distance",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "45a203cd91588d53ee1703a1cd2540dee9f521f0982dea9de117e73f6cf1eabe",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "26417",
+      "title": "ATM MATHS || Class-07 || Time Speed Distance Test Discussion",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "25675",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c59ebb42f585d9c75b7",
+      "classTitle": "ATM MATHS || Class-07 || Time Speed Distance Test Discussion",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "9e167514509d0b57bddbdf47927f3f97b2c3711cba2fcf08717649015077cca4",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "26482",
+      "title": "ATM MATHS || Class-08 || Time Speed Distance",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "25675",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c59ebb42f585d9c75c1",
+      "classTitle": "ATM MATHS || Class-08 || Time Speed Distance",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "8cb1795f1c10d970ea3b82f7554535023255a3ac568b0cd217ef3be620974841",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "26696",
+      "title": "ATM MATHS || Class-01 || Train",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "26691",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c57ebb42f585d9c74c5",
+      "classTitle": "ATM MATHS || Class-01 || Train",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "3e7c85befc08eb481e3d69c8599bc442a3e5853880e936350463e46705fd4cd0",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "26770",
+      "title": "ATM MATHS || Class-02 || Train",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "26691",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c57ebb42f585d9c74cf",
+      "classTitle": "ATM MATHS || Class-02 || Train",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "7d5249ffd6e6bc591aa49941146a984dc2451e43172e219bec38bbc7d0b2230f",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "26827",
+      "title": "Atm || Class-03 || train",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "26691",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c57ebb42f585d9c74d9",
+      "classTitle": "Atm || Class-03 || train",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "c2d306c71af24b78e8ef01f3332ff96ecac7bdf13f8c0b0245c01700794dd9c7",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "26935",
+      "title": "Atm maths || Class-04 || train",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "26691",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c57ebb42f585d9c74e3",
+      "classTitle": "Atm maths || Class-04 || train",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "dd9e26a46e0a214d7d3a0b4d83ab2d782c09eb8ae96e31b3c829484e0af0d318",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "27060",
+      "title": "Atm Maths || Class-01 || Boat & Stream",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "27055",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c59ebb42f585d9c75d8",
+      "classTitle": "Atm Maths || Class-01 || Boat & Stream",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "8927bfcafbb89461df9a935ee053edf37d36403bd19f22c7f58db8d73f634061",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "27108",
+      "title": "ATM MATHS || Class-02 || Sectional Test",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "27055",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c59ebb42f585d9c75e2",
+      "classTitle": "ATM MATHS || Class-02 || Sectional Test",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "6b18825f2cb5d0a3e8a5d85b3db62aa89843329e4609434b39874ee1f13a5f69",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "27258",
+      "title": "Atm Maths || Class-03 || Boat & Stream",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "27055",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c59ebb42f585d9c75ec",
+      "classTitle": "Atm Maths || Class-03 || Boat & Stream",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "ae8a5ca5a70088deef4d570f84499417addc86c132c73114cdc617c54fff170a",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "27325",
+      "title": "Atm Maths || Class-04 || Boat & Stream",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "27055",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c59ebb42f585d9c75f6",
+      "classTitle": "Atm Maths || Class-04 || Boat & Stream",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "291606207f5933df7a254f5194ce3bc9f1529fa1c6467be3c06555d02dca53a1",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "27362",
+      "title": "Atm Maths || Class-01 || Race",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "27357",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c50ebb42f585d9c7160",
+      "classTitle": "Atm Maths || Class-01 || Race",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "acd342e14d8c67e5689daf7f2ed3f5159a7f66633fae6f1a3175de12c3dddfd8",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "27473",
+      "title": "Atm Maths || Class-02 || Weekly Test",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "27357",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c50ebb42f585d9c716a",
+      "classTitle": "Atm Maths || Class-02 || Weekly Test",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "6df1d108729b38ac372b2bf39298b3f84dee3df13208545337545c86ca67f75b",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "27537",
+      "title": "Atm Maths || Class-03 || Race",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "27357",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c50ebb42f585d9c7174",
+      "classTitle": "Atm Maths || Class-03 || Race",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "929e8328e859031239deab0b662180dfc62f3cc74040526eec6fc1fa55bf8f6c",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "27726",
+      "title": "ATM Maths || Class-01 || Mensuration",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "27721",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c5aebb42f585d9c7624",
+      "classTitle": "ATM Maths || Class-01 || Mensuration",
+      "section": "Maths ATM BAtch",
+      "topic": "ADVANCE",
+      "pdfId": null,
+      "pdfIdentityHash": "00fe6501cc8f37f8df3138a20b54ea8dd74db35e9aa6f67105df64dce3bf58ca",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "27774",
+      "title": "Atm Maths || Class - 04 || Race",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "27357",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c50ebb42f585d9c717e",
+      "classTitle": "Atm Maths || Class - 04 || Race",
+      "section": "Maths ATM BAtch",
+      "topic": "ARITHMETIC",
+      "pdfId": null,
+      "pdfIdentityHash": "4ecfc0492852cd6244a89ace4a8512e10d04388bd9e0afb838692413f49c7ef4",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "27969",
+      "title": "ATM Maths || Sectional Test || Race",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "27721",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c5aebb42f585d9c7633",
+      "classTitle": "ATM Maths || Sectional Test || Race",
+      "section": "Maths ATM BAtch",
+      "topic": "ADVANCE",
+      "pdfId": null,
+      "pdfIdentityHash": "3f1a4762e276530b6f9644bb39d8c644d29c7112674db8dae841d78a3cad2580",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "28030",
+      "title": "ATM Maths || Class-02 || Mensuration",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "27721",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c5aebb42f585d9c763d",
+      "classTitle": "ATM Maths || Class-02 || Mensuration",
+      "section": "Maths ATM BAtch",
+      "topic": "ADVANCE",
+      "pdfId": null,
+      "pdfIdentityHash": "09d470f05806a2b1bf8fca4bcb5c75ba17057fc1891375b6208c833e788b8762",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "28076",
+      "title": " ATM Maths || Class-03 || Mensuration",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "27721",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c5aebb42f585d9c7647",
+      "classTitle": "ATM Maths || Class-03 || Mensuration",
+      "section": "Maths ATM BAtch",
+      "topic": "ADVANCE",
+      "pdfId": null,
+      "pdfIdentityHash": "e8d197c8e67a7fcee4f44b78248cc1a3a2fff291b57107d0495479bba51b65f1",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "28137",
+      "title": "ATM Maths || Class-04 || Mensuration",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "27721",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c5aebb42f585d9c7651",
+      "classTitle": "ATM Maths || Class-04 || Mensuration",
+      "section": "Maths ATM BAtch",
+      "topic": "ADVANCE",
+      "pdfId": null,
+      "pdfIdentityHash": "6b4cae92b100639b7d4120e9ab381b53542b17c1f8b2ec5b4c4910a45d30b1f5",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "28167",
+      "title": "ATM Maths || Sectional Test || Mensuration",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "27721",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c5aebb42f585d9c765b",
+      "classTitle": "ATM Maths || Sectional Test || Mensuration",
+      "section": "Maths ATM BAtch",
+      "topic": "ADVANCE",
+      "pdfId": null,
+      "pdfIdentityHash": "755b1c7a4019d83823b870cd1ffb3c02c5354e587dec70ceaef3c0aa016bc631",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "28307",
+      "title": " ATM Maths || Class-05 || Mensuration",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "27721",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c5aebb42f585d9c7665",
+      "classTitle": "ATM Maths || Class-05 || Mensuration",
+      "section": "Maths ATM BAtch",
+      "topic": "ADVANCE",
+      "pdfId": null,
+      "pdfIdentityHash": "a8411c8578fb5e281a74f8e73ce22d2c4656d8cd9d1983dbdaf784c380590662",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "28392",
+      "title": " ATM Maths || Class-06 || Mensuration",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "27721",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c5bebb42f585d9c766f",
+      "classTitle": "ATM Maths || Class-06 || Mensuration",
+      "section": "Maths ATM BAtch",
+      "topic": "ADVANCE",
+      "pdfId": null,
+      "pdfIdentityHash": "c266425b1141ae9b57a2c79598300ad021ba0f062213173f171ed2fe45c73805",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "28464",
+      "title": " ATM Maths || Class-07 || Mensuration",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "27721",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c5bebb42f585d9c7683",
+      "classTitle": "ATM Maths || Class-07 || Mensuration",
+      "section": "Maths ATM BAtch",
+      "topic": "ADVANCE",
+      "pdfId": null,
+      "pdfIdentityHash": "43a4cc772cf04de515ae41234a217b3702f74a36b34b57cc0a70a27532aa9673",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    },
+    {
+      "sourceId": "28471",
+      "title": " ATM Maths || Sectional Test || Mensuration",
+      "kind": "class-note",
+      "slot": "pdf_link",
+      "sourceActive": true,
+      "parentId": "27721",
+      "sourceFolder": "",
+      "identityMatch": "live-asset",
+      "sourceRowInCapture": false,
+      "classId": "6a455c5bebb42f585d9c7679",
+      "classTitle": "ATM Maths || Sectional Test || Mensuration (31 Jan 2025)",
+      "section": "Maths ATM BAtch",
+      "topic": "ADVANCE",
+      "pdfId": null,
+      "pdfIdentityHash": "8170d7e562546d8570d0ccd6031d8169f85b595cec10262ab415edfe4276478a",
+      "flags": [
+        "pdf-record-missing"
+      ],
+      "status": "attention"
+    }
+  ],
+  "attachmentCompletionEvents": [
+    {
+      "event": "preflight",
+      "count": 2,
+      "commit": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "13848",
+      "classId": "6a455c50ebb42f585d9c718b",
+      "pdfId": "6ab7a6b759d3543d99665939",
+      "created": false,
+      "sizeBytes": 3176970,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "imported",
+      "sourceId": "19951",
+      "classId": "6a455c55ebb42f585d9c73a8",
+      "pdfId": "6ab7a7d559d3543d99665b70",
+      "created": false,
+      "sizeBytes": 2687589,
+      "storedHeaderVerified": true
+    },
+    {
+      "event": "summary",
+      "success": 2,
+      "failed": 0,
+      "total": 2
+    }
+  ]
+}

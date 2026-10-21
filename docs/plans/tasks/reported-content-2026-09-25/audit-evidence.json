@@ -1,0 +1,3567 @@
+[
+  {
+    "courses": [
+      {
+        "_id": "6a455a6febb42f585d9b8a8a",
+        "apxCourseId": "96",
+        "status": 1,
+        "title": "BS & E Foundation Mastery Batch (ALP)"
+      },
+      {
+        "_id": "6a455a77ebb42f585d9b8e52",
+        "apxCourseId": "95",
+        "status": 1,
+        "title": "BS & E Foundation Mastery  Batch (Technician Grade 1)"
+      },
+      {
+        "_id": "6a455a83ebb42f585d9b94ab",
+        "apxCourseId": "94",
+        "status": 1,
+        "title": "Science Foundation Mastery Batch"
+      },
+      {
+        "_id": "6a455a94ebb42f585d9b9da8",
+        "apxCourseId": "93",
+        "status": 1,
+        "title": "GK + GS Foundation Mastery Batch"
+      },
+      {
+        "_id": "6a455abbebb42f585d9bb5c0",
+        "apxCourseId": "92",
+        "status": 1,
+        "title": "Reasoning Foundation Mastery Batch"
+      },
+      {
+        "_id": "6a455ac9ebb42f585d9bbc8f",
+        "apxCourseId": "91",
+        "status": 1,
+        "title": "Maths Foundation Mastery Batch (MMB)"
+      },
+      {
+        "_id": "6a455af5ebb42f585d9bd15c",
+        "apxCourseId": "90",
+        "status": 1,
+        "title": "Railway Foundations Mastery Batches (RMB)"
+      },
+      {
+        "_id": "6a455b65ebb42f585d9c08c8",
+        "apxCourseId": "87",
+        "status": 1,
+        "title": "Previous Year Papers"
+      },
+      {
+        "_id": "6a455cd5ebb42f585d9ca997",
+        "apxCourseId": "49",
+        "status": 0,
+        "title": "Average To Master (ATM) Full BATCH"
+      },
+      {
+        "_id": "6a455fa1ebb42f585d9dc4d9",
+        "apxCourseId": "4",
+        "status": 0,
+        "title": "\u0939\u0941\u0901\u0915\u093e\u0930 \u092c\u0948\u091a -01 SSC GD 2023-24 (Practice PYP Batch)*"
+      }
+    ]
+  },
+  {
+    "collection": "classes",
+    "rows": [
+      {
+        "_id": "6a45595debb42f585d9aef0f",
+        "status": 1,
+        "title": "Class 86 || Alphabetical Series Part-1",
+        "section": "6a4558c2ebb42f585d9a8333",
+        "topic": "6a45595debb42f585d9aef0b",
+        "apxAssetKey": "vid:quicktrickssahilsir-data:3398393-1773639992",
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a45595debb42f585d9aef0f/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a4559bdebb42f585d9b27f6",
+        "status": 1,
+        "title": "Economics || Class - 24 || Five Years Plan + Another Important Topics",
+        "section": "6a4558d6ebb42f585d9a91ab",
+        "topic": "6a455904ebb42f585d9ab2cb",
+        "apxAssetKey": "vid:quicktrickssahilsir-data:362684-1749059749"
+      },
+      {
+        "_id": "6a455bd9ebb42f585d9c3b37",
+        "status": 1,
+        "title": "Economics || Class-01 || Five Year Plans- Part 1",
+        "section": "6a455bceebb42f585d9c3691",
+        "topic": "6a455bd9ebb42f585d9c3b33",
+        "apxAssetKey": "vid:quicktrickssahilsir-data:189636-1734955046",
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a455bd9ebb42f585d9c3b37/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a455bd9ebb42f585d9c3b41",
+        "status": 1,
+        "title": "Economics || Class-02 || Five Year Plans - Part 2",
+        "section": "6a455bceebb42f585d9c3691",
+        "topic": "6a455bd9ebb42f585d9c3b33",
+        "apxAssetKey": "vid:quicktrickssahilsir-data:191483-1735127994",
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a455bd9ebb42f585d9c3b41/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a455bd9ebb42f585d9c3b4b",
+        "status": 1,
+        "title": "Economics || Class-03 ||Five Year Plans ( Mixed Questions)",
+        "section": "6a455bceebb42f585d9c3691",
+        "topic": "6a455bd9ebb42f585d9c3b33",
+        "apxAssetKey": "vid:quicktrickssahilsir-data:193255-1735300799",
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a455bd9ebb42f585d9c3b4b/hls/master.m3u8"
+        }
+      }
+    ]
+  },
+  {
+    "asset": "6a45595debb42f585d9aef0f",
+    "placements": [
+      {
+        "_id": "6a45595debb42f585d9aef12",
+        "course": "6a455955ebb42f585d9aea68",
+        "isActive": true,
+        "sectionName": "Reasoning",
+        "topicName": "Alphabet Based Chapters",
+        "apxTitle": "Class 86 || Alphabetical Series Part-1"
+      },
+      {
+        "_id": "6a455973ebb42f585d9afbdd",
+        "course": "6a455967ebb42f585d9af4dc",
+        "isActive": true,
+        "sectionName": "Reasoning",
+        "topicName": "Topics",
+        "apxTitle": "Class 86 || Alphabetical Series Part-1"
+      }
+    ]
+  },
+  {
+    "asset": "6a4559bdebb42f585d9b27f6",
+    "placements": [
+      {
+        "_id": "6a4559bdebb42f585d9b27f9",
+        "course": "6a4559a3ebb42f585d9b17b3",
+        "isActive": true,
+        "sectionName": "GK/GS",
+        "topicName": "Economics",
+        "apxTitle": "Economics || Class - 24 || Five Years Plan + Another Important Topics"
+      },
+      {
+        "_id": "6a455abbebb42f585d9bb554",
+        "course": "6a455a94ebb42f585d9b9da8",
+        "isActive": true,
+        "sectionName": "Economics- Concept",
+        "topicName": "Economics- Concept",
+        "apxTitle": "Economics || Class - 24 || Five Years Plan + Another Important Topics"
+      },
+      {
+        "_id": "6a455b44ebb42f585d9bf944",
+        "course": "6a455af5ebb42f585d9bd15c",
+        "isActive": true,
+        "sectionName": "GK + GS",
+        "topicName": "Economics",
+        "apxTitle": "Economics || Class - 24 || Five Years Plan + Another Important Topics"
+      },
+      {
+        "_id": "6a455bc9ebb42f585d9c341b",
+        "course": "6a455bacebb42f585d9c2830",
+        "isActive": true,
+        "sectionName": "Railway GK/GS Complete Foundation",
+        "topicName": "Economics",
+        "apxTitle": "Economics || Class - 24 || Five Years Plan + Another Important Topics"
+      },
+      {
+        "_id": "6a455ccfebb42f585d9ca72a",
+        "course": "6a455cb1ebb42f585d9c9b4d",
+        "isActive": true,
+        "sectionName": "Economics",
+        "topicName": "Economics",
+        "apxTitle": "Economics || Class - 24 || Five Years Plan + Another Important Topics"
+      },
+      {
+        "_id": "6a455de5ebb42f585d9d1a68",
+        "course": "6a455dc1ebb42f585d9d0c42",
+        "isActive": true,
+        "sectionName": "Economics",
+        "topicName": "Economics",
+        "apxTitle": "Economics || Class - 24 || Five Years Plan + Another Important Topics"
+      },
+      {
+        "_id": "6a456110ebb42f585d9e50f1",
+        "course": "6a4560a9ebb42f585d9e2b91",
+        "isActive": true,
+        "sectionName": "RRB  GENERAL AWARENESS FOUNDATION BATCH (CBT 1 & CBT 2)",
+        "topicName": "Economics",
+        "apxTitle": "Economics || Class - 24 || Five Years Plan + Another Important Topics"
+      }
+    ]
+  },
+  {
+    "asset": "6a455bd9ebb42f585d9c3b37",
+    "placements": [
+      {
+        "_id": "6a455bd9ebb42f585d9c3b3a",
+        "course": "6a455bacebb42f585d9c2830",
+        "isActive": true,
+        "sectionName": "Complete Practice (ATM) Batch",
+        "topicName": "Economics",
+        "apxTitle": "Economics || Class-01 || Five Year Plans- Part 1"
+      },
+      {
+        "_id": "6a455d01ebb42f585d9cbb0f",
+        "course": "6a455cd5ebb42f585d9ca997",
+        "isActive": true,
+        "sectionName": "Static GK/GA ATM Batch",
+        "topicName": "Economics",
+        "apxTitle": "Economics || Class-01 || Five Year Plans- Part 1"
+      },
+      {
+        "_id": "6a455d44ebb42f585d9cd86f",
+        "course": "6a455d3eebb42f585d9cd638",
+        "isActive": true,
+        "sectionName": "Economics",
+        "topicName": "Economics",
+        "apxTitle": "Economics || Class-01 || Five Year Plans- Part 1"
+      },
+      {
+        "_id": "6a45600debb42f585d9defa3",
+        "course": "6a455fdeebb42f585d9dddc2",
+        "isActive": true,
+        "sectionName": "Average To Master (ATM) Full BATCH",
+        "topicName": "Static GK/GA ATM Batch",
+        "apxTitle": "Economics || Class-01 || Five Year Plans- Part 1"
+      },
+      {
+        "_id": "6a4560e5ebb42f585d9e418f",
+        "course": "6a4560a9ebb42f585d9e2b91",
+        "isActive": true,
+        "sectionName": "Average To Master (ATM) Full BATCH",
+        "topicName": "Static GK/GA ATM Batch",
+        "apxTitle": "Economics || Class-01 || Five Year Plans- Part 1"
+      }
+    ]
+  },
+  {
+    "asset": "6a455bd9ebb42f585d9c3b41",
+    "placements": [
+      {
+        "_id": "6a455bd9ebb42f585d9c3b44",
+        "course": "6a455bacebb42f585d9c2830",
+        "isActive": true,
+        "sectionName": "Complete Practice (ATM) Batch",
+        "topicName": "Economics",
+        "apxTitle": "Economics || Class-02 || Five Year Plans - Part 2"
+      },
+      {
+        "_id": "6a455d01ebb42f585d9cbb16",
+        "course": "6a455cd5ebb42f585d9ca997",
+        "isActive": true,
+        "sectionName": "Static GK/GA ATM Batch",
+        "topicName": "Economics",
+        "apxTitle": "Economics || Class-02 || Five Year Plans - Part 2"
+      },
+      {
+        "_id": "6a455d44ebb42f585d9cd875",
+        "course": "6a455d3eebb42f585d9cd638",
+        "isActive": true,
+        "sectionName": "Economics",
+        "topicName": "Economics",
+        "apxTitle": "Economics || Class-02 || Five Year Plans - Part 2"
+      },
+      {
+        "_id": "6a45600debb42f585d9defaa",
+        "course": "6a455fdeebb42f585d9dddc2",
+        "isActive": true,
+        "sectionName": "Average To Master (ATM) Full BATCH",
+        "topicName": "Static GK/GA ATM Batch",
+        "apxTitle": "Economics || Class-02 || Five Year Plans - Part 2"
+      },
+      {
+        "_id": "6a4560e5ebb42f585d9e4196",
+        "course": "6a4560a9ebb42f585d9e2b91",
+        "isActive": true,
+        "sectionName": "Average To Master (ATM) Full BATCH",
+        "topicName": "Static GK/GA ATM Batch",
+        "apxTitle": "Economics || Class-02 || Five Year Plans - Part 2"
+      }
+    ]
+  },
+  {
+    "asset": "6a455bd9ebb42f585d9c3b4b",
+    "placements": [
+      {
+        "_id": "6a455bd9ebb42f585d9c3b4e",
+        "course": "6a455bacebb42f585d9c2830",
+        "isActive": true,
+        "sectionName": "Complete Practice (ATM) Batch",
+        "topicName": "Economics",
+        "apxTitle": "Economics || Class-03 ||Five Year Plans ( Mixed Questions)"
+      },
+      {
+        "_id": "6a455d01ebb42f585d9cbb1d",
+        "course": "6a455cd5ebb42f585d9ca997",
+        "isActive": true,
+        "sectionName": "Static GK/GA ATM Batch",
+        "topicName": "Economics",
+        "apxTitle": "Economics || Class-03 ||Five Year Plans ( Mixed Questions)"
+      },
+      {
+        "_id": "6a455d45ebb42f585d9cd87b",
+        "course": "6a455d3eebb42f585d9cd638",
+        "isActive": true,
+        "sectionName": "Economics",
+        "topicName": "Economics",
+        "apxTitle": "Economics || Class-03 ||Five Year Plans ( Mixed Questions)"
+      },
+      {
+        "_id": "6a45600debb42f585d9defb1",
+        "course": "6a455fdeebb42f585d9dddc2",
+        "isActive": true,
+        "sectionName": "Average To Master (ATM) Full BATCH",
+        "topicName": "Static GK/GA ATM Batch",
+        "apxTitle": "Economics || Class-03 ||Five Year Plans ( Mixed Questions)"
+      },
+      {
+        "_id": "6a4560e5ebb42f585d9e419d",
+        "course": "6a4560a9ebb42f585d9e2b91",
+        "isActive": true,
+        "sectionName": "Average To Master (ATM) Full BATCH",
+        "topicName": "Static GK/GA ATM Batch",
+        "apxTitle": "Economics || Class-03 ||Five Year Plans ( Mixed Questions)"
+      }
+    ]
+  },
+  {
+    "collection": "pdfs",
+    "rows": [
+      {
+        "_id": "6a514dfd898c7ba629da3297",
+        "status": 1,
+        "title": "Class 86 || Alphabetical Series Part-1",
+        "section": "6a4558c2ebb42f585d9a8333",
+        "topic": "6a45595debb42f585d9aef0b",
+        "apxAssetKey": "url:https://appx-content-v2.classx.co.in/paid_course4/2026-03-16-0_016833973241176192.pdf",
+        "pdfAsset": {
+          "bucket": "documents",
+          "key": "pdfs/eacea4916cb5f4122ee51e47ae02595cef2399dbe7305b8e660625a962c732ed.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 2923558
+        }
+      },
+      {
+        "_id": "6a53a0d53f82b0142645d8d5",
+        "status": 1,
+        "title": "Economics || Class-01 || Five Year Plans- Part 1",
+        "section": "6a455bceebb42f585d9c3691",
+        "topic": "6a455bd9ebb42f585d9c3b33",
+        "apxAssetKey": "url:https://appx-content-v2.classx.co.in/paid_course4/2025-02-20-0.42643219988831027.pdf",
+        "pdfAsset": {
+          "bucket": "documents",
+          "key": "pdfs/24b4ca9461582e67cf8de45b51beac58d130ccb1a4824f9a9122e8267e9ce751.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 14791587
+        }
+      },
+      {
+        "_id": "6a53a0ed3f82b0142645d8ea",
+        "status": 1,
+        "title": "Economics || Class-02 || Five Year Plans - Part 2",
+        "section": "6a455bceebb42f585d9c3691",
+        "topic": "6a455bd9ebb42f585d9c3b33",
+        "apxAssetKey": "url:https://appx-content-v2.classx.co.in/paid_course4/2024-12-25-0.10908940904484998.pdf",
+        "pdfAsset": {
+          "bucket": "documents",
+          "key": "pdfs/f1486222811e175f5a50b476010fbb78e7fa2d335f5d4bd0cf5e123b74bc8416.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 23215764
+        }
+      },
+      {
+        "_id": "6a53a1023f82b0142645d8ff",
+        "status": 1,
+        "title": "Economics || Class-03 ||Five Year Plans ( Mixed Questions)",
+        "section": "6a455bceebb42f585d9c3691",
+        "topic": "6a455bd9ebb42f585d9c3b33",
+        "apxAssetKey": "url:https://appx-content-v2.classx.co.in/paid_course4/2024-12-27-0.7173261621724509.pdf",
+        "pdfAsset": {
+          "bucket": "documents",
+          "key": "pdfs/7e1b5b531d84711ca0b2d24478f198eec67871746a9a18716ff67382a3ee13ad.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 21837184
+        }
+      },
+      {
+        "_id": "6a550d48f476ce149965478d",
+        "status": 1,
+        "title": "Economics || Class - 24 || Five Years Plan + Another Important Topics",
+        "section": "6a455bacebb42f585d9c2834",
+        "topic": "6a455bc7ebb42f585d9c3376",
+        "apxAssetKey": "url:https://appx-content-v2.classx.co.in/paid_course4/2025-06-04-0.8130208487241327.pdf",
+        "pdfAsset": {
+          "bucket": "documents",
+          "key": "pdfs/ad10cf9ccc6a6a7757b7065aa62bf864c7894d63533d870a5cb073270f6e7e8e.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 8059874
+        }
+      },
+      {
+        "_id": "6a7c6cb3f8924219f2dd369e",
+        "status": 1,
+        "title": "RRB NTPC 2026 (G) CBT - 2 Answer Key Hindi",
+        "section": "6a946ea129f16f98cfd7ca67",
+        "topic": null,
+        "apxAssetKey": "url:https://appx-content-v2.classx.co.in/paid_course4/2026-07-27-0.2364171232922655.pdf",
+        "pdfAsset": {
+          "bucket": "documents",
+          "key": "pdfs/f2f8a0c4faa01413f8b2cbd2bd836402a5c5ad2478e349a3a83e89fa61918f9d.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 517436,
+          "sha256": "50a72ae9ebdd0948759aa112fa38f4d5d8413844951875f3d41dbd90ef2c291f"
+        }
+      },
+      {
+        "_id": "6a7c6cb8f8924219f2dd36a5",
+        "status": 1,
+        "title": "RRB NTPC 2026 (G) CBT - 2 Answer Key English",
+        "section": "6a946ea129f16f98cfd7ca67",
+        "topic": null,
+        "apxAssetKey": "url:https://appx-content-v2.classx.co.in/paid_course4/2026-07-27-0.7893012248593694.pdf",
+        "pdfAsset": {
+          "bucket": "documents",
+          "key": "pdfs/c4b051b76401d040f68be56fbc149cc52661154f48f67109a0a830fe60c4b309.pdf",
+          "mimeType": "application/pdf",
+          "sizeBytes": 214499,
+          "sha256": "3b2f85ba2f0ed2b3d23df738ccffa5bcab8546bdbd26d5f8d9a9debe581e3a2c"
+        }
+      }
+    ]
+  },
+  {
+    "asset": "6a514dfd898c7ba629da3297",
+    "placements": []
+  },
+  {
+    "asset": "6a53a0d53f82b0142645d8d5",
+    "placements": []
+  },
+  {
+    "asset": "6a53a0ed3f82b0142645d8ea",
+    "placements": []
+  },
+  {
+    "asset": "6a53a1023f82b0142645d8ff",
+    "placements": []
+  },
+  {
+    "asset": "6a550d48f476ce149965478d",
+    "placements": []
+  },
+  {
+    "asset": "6a7c6cb3f8924219f2dd369e",
+    "placements": [
+      {
+        "_id": "6a7c6cb63aed5ba9f38639fb",
+        "course": "6a455b65ebb42f585d9c08c8",
+        "isActive": true,
+        "sectionName": "RRB NTPC CBT-2 2026 Graduate",
+        "apxTitle": "RRB NTPC 2026 (G) CBT - 2 Answer Key Hindi"
+      }
+    ]
+  },
+  {
+    "asset": "6a7c6cb8f8924219f2dd36a5",
+    "placements": [
+      {
+        "_id": "6a7c6cbb3aed5ba9f3863a77",
+        "course": "6a455b65ebb42f585d9c08c8",
+        "isActive": true,
+        "sectionName": "RRB NTPC CBT-2 2026 Graduate",
+        "apxTitle": "RRB NTPC 2026 (G) CBT - 2 Answer Key English"
+      }
+    ]
+  },
+  {
+    "courses": []
+  },
+  {
+    "alphabet": [
+      {
+        "_id": "6a455c1febb42f585d9c5c5c",
+        "status": 1,
+        "title": "ALPHANUMERIC SERIES - 1",
+        "pdfIds": [
+          "6a550eb1f476ce1499654e6b"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a455c1febb42f585d9c5c5c/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a743fefa646aabd47a7a890",
+        "status": 1,
+        "title": "Class 81 || Alphabetical and Alphanumeric Symbol Series",
+        "pdfIds": [
+          "6a7c7097f8924219f2dd4a42"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a743fefa646aabd47a7a890/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a743fefa646aabd47a7a899",
+        "status": 1,
+        "title": "Class 82 || Alphabetical and Alphanumeric Symbol Series",
+        "pdfIds": [
+          "6a7c709ef8924219f2dd4a4a"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a743fefa646aabd47a7a899/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a743ff0a646aabd47a7a8ab",
+        "status": 1,
+        "title": "Class 83 || Alphabetical and Alphanumeric Symbol Series",
+        "pdfIds": [
+          "6a7c70acf8924219f2dd4a5a"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a743ff0a646aabd47a7a8ab/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a743ff0a646aabd47a7a8c6",
+        "status": 1,
+        "title": "Class 84 || Alphabetical and Alphanumeric Symbol Series",
+        "pdfIds": [
+          "6a7c70c0f8924219f2dd4a72"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a743ff0a646aabd47a7a8c6/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a743ff0a646aabd47a7a8d8",
+        "status": 1,
+        "title": "Class 85 || Alphabetical and Alphanumeric Symbol Series",
+        "pdfIds": [
+          "6a7c70cdf8924219f2dd4a82"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a743ff0a646aabd47a7a8d8/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a45595debb42f585d9aef0f",
+        "status": 1,
+        "title": "Class 86 || Alphabetical Series Part-1",
+        "pdfIds": [
+          "6a514dfd898c7ba629da3297"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a45595debb42f585d9aef0f/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a743ff0a646aabd47a7a8ea",
+        "status": 1,
+        "title": "Class 86 || Alphabetical and Alphanumeric Symbol Series",
+        "pdfIds": [
+          "6a7c70daf8924219f2dd4a92"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a743ff0a646aabd47a7a8ea/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a45595debb42f585d9aef19",
+        "status": 1,
+        "title": "Class 87 || Alphabetical Series Part-2",
+        "pdfIds": [
+          "6a514e01898c7ba629da32a9"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a45595debb42f585d9aef19/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a45595debb42f585d9aef23",
+        "status": 1,
+        "title": "Class 88 || Alphabetical Series Part-3",
+        "pdfIds": [
+          "6a514e03898c7ba629da32b2"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a45595debb42f585d9aef23/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a45595debb42f585d9aef2d",
+        "status": 1,
+        "title": "Class 89 || Alphabetical Series Part-4",
+        "pdfIds": [
+          "6a514e06898c7ba629da32bb"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a45595debb42f585d9aef2d/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a45595debb42f585d9aef37",
+        "status": 1,
+        "title": "Class 90 || Alphanumeric Symbol Series + Dictionary",
+        "pdfIds": [
+          "6a514e07898c7ba629da32c4"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a45595debb42f585d9aef37/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a45599bebb42f585d9b1368",
+        "status": 1,
+        "title": "Class- 16 || Alphabetical Series Part 2",
+        "pdfIds": [
+          "6a539fbc0be1e8deae7261e8"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a45599bebb42f585d9b1368/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a45599cebb42f585d9b1374",
+        "status": 1,
+        "title": "Class- 17 || Alphabetical Series Part 3",
+        "pdfIds": [
+          "6a539fce0be1e8deae7261fa"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a45599cebb42f585d9b1374/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a45599cebb42f585d9b137e",
+        "status": 1,
+        "title": "Class- 18 || Alphabetical Series Part 4 & inequality",
+        "pdfIds": [
+          "6a539fd70be1e8deae726203"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a45599cebb42f585d9b137e/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a455c16ebb42f585d9c57c1",
+        "status": 1,
+        "title": "Class-01 || Repeated Alphabet Series",
+        "pdfIds": [],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a455c16ebb42f585d9c57c1/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a455c16ebb42f585d9c57cb",
+        "status": 1,
+        "title": "Class-02 || Repeated Alphabet Series",
+        "pdfIds": [
+          "6a4fc25fd249b475d04b67d0"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a455c16ebb42f585d9c57cb/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a455c16ebb42f585d9c57d5",
+        "status": 1,
+        "title": "Class-03 || Repeated Alphabet Series",
+        "pdfIds": [
+          "6a53aa3e3f82b0142645e49f"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a455c16ebb42f585d9c57d5/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a455c16ebb42f585d9c57df",
+        "status": 1,
+        "title": "Class-04 || Repeated Alphabet Series",
+        "pdfIds": [
+          "6a4fc263d249b475d04b67dc"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a455c16ebb42f585d9c57df/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a455c16ebb42f585d9c57e9",
+        "status": 1,
+        "title": "Class-05 || Missing Alphabet Series",
+        "pdfIds": [
+          "6a4fc267d249b475d04b67e5"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a455c16ebb42f585d9c57e9/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a455c16ebb42f585d9c57f3",
+        "status": 1,
+        "title": "Class-06 || Missing Alphabet Series",
+        "pdfIds": [
+          "6a4fc26ad249b475d04b67ee"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a455c16ebb42f585d9c57f3/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a455c16ebb42f585d9c57fd",
+        "status": 1,
+        "title": "Class-07 || Missing Alphabet Series",
+        "pdfIds": [
+          "6a4fc26ed249b475d04b67f7"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a455c16ebb42f585d9c57fd/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a455c16ebb42f585d9c5807",
+        "status": 1,
+        "title": "Class-08 || Missing Alphabet Series",
+        "pdfIds": [
+          "6a4fc270d249b475d04b6800"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a455c16ebb42f585d9c5807/hls/master.m3u8"
+        }
+      },
+      {
+        "_id": "6a79a9ed6cc62cd0512d1924",
+        "status": 1,
+        "title": "Reasoning || Alphabetical and Alphanumeric Symbol Series Test",
+        "pdfIds": [
+          "6a7c711cf8924219f2dd4ae2"
+        ],
+        "hlsAsset": {
+          "bucket": "recorded",
+          "key": "472/6a79a9ed6cc62cd0512d1924/hls/master.m3u8"
+        }
+      }
+    ]
+  },
+  {
+    "econ": {
+      "_id": "6a4559bdebb42f585d9b27f6",
+      "title": "Economics || Class - 24 || Five Years Plan + Another Important Topics",
+      "pdfIds": [
+        "6a550d48f476ce149965478d"
+      ],
+      "mp4Recordings": []
+    },
+    "jobs": [
+      {
+        "_id": "6a4564983aed5ba9f314e661",
+        "apxClassId": "38028",
+        "apxCourseId": "6a454f9bebb42f585d9a7c82",
+        "attempts": 4,
+        "error": "mint: no token/UHS_url (urls=0, status=undefined)",
+        "status": "skipped",
+        "updatedAt": "2026-07-02T14:09:47.628Z"
+      }
+    ]
+  },
+  {
+    "apx": "90",
+    "updated": "2026-08-25T17:38:11.736Z",
+    "keys": [
+      "id",
+      "name",
+      "class_count",
+      "pdf_count",
+      "classes",
+      "pdfs",
+      "enable",
+      "price",
+      "mrp",
+      "detailMeta"
+    ],
+    "matches": [
+      {
+        "path": "courseData.classes.10",
+        "data": {
+          "id": "34904",
+          "title": "Class- 07 || Percentage || Price & Consumption and Mensuration Based",
+          "topic": "Maths",
+          "subtopic": "1. Percentage"
+        }
+      },
+      {
+        "path": "courseData.classes.60",
+        "data": {
+          "id": "36139",
+          "title": "Class- 48 || Simple Interest Part - 1",
+          "topic": "Maths",
+          "subtopic": "3. SI & CI"
+        }
+      },
+      {
+        "path": "courseData.classes.61",
+        "data": {
+          "id": "36198",
+          "title": "Class- 49 || Simple Interest Part - 2",
+          "topic": "Maths",
+          "subtopic": "3. SI & CI"
+        }
+      },
+      {
+        "path": "courseData.classes.62",
+        "data": {
+          "id": "36211",
+          "title": "Class- 50 || Simple Interest Part - 3",
+          "topic": "Maths",
+          "subtopic": "3. SI & CI"
+        }
+      },
+      {
+        "path": "courseData.classes.63",
+        "data": {
+          "id": "36239",
+          "title": "Class- 51 || Simple Interest Part - 4",
+          "topic": "Maths",
+          "subtopic": "3. SI & CI"
+        }
+      },
+      {
+        "path": "courseData.classes.65",
+        "data": {
+          "id": "36257",
+          "title": "Class- 52 || Simple Interest Part - 5",
+          "topic": "Maths",
+          "subtopic": "3. SI & CI"
+        }
+      },
+      {
+        "path": "courseData.classes.66",
+        "data": {
+          "id": "36761",
+          "title": "Class- 53 || Simple Interest Part - 6",
+          "topic": "Maths",
+          "subtopic": "3. SI & CI"
+        }
+      },
+      {
+        "path": "courseData.classes.67",
+        "data": {
+          "id": "36773",
+          "title": "Class- 54 || Simple Interest Part - 7",
+          "topic": "Maths",
+          "subtopic": "3. SI & CI"
+        }
+      },
+      {
+        "path": "courseData.classes.68",
+        "data": {
+          "id": "36797",
+          "title": "Class- 55 || Simple Interest (Installment) Part - 8",
+          "topic": "Maths",
+          "subtopic": "3. SI & CI"
+        }
+      },
+      {
+        "path": "courseData.classes.69",
+        "data": {
+          "id": "36820",
+          "title": "Class- 56 || Simple Interest (Installment) Part - 9",
+          "topic": "Maths",
+          "subtopic": "3. SI & CI"
+        }
+      },
+      {
+        "path": "courseData.classes.71",
+        "data": {
+          "id": "36882",
+          "title": "Class- 57 || Compound Interest Part - 1",
+          "topic": "Maths",
+          "subtopic": "3. SI & CI"
+        }
+      },
+      {
+        "path": "courseData.classes.72",
+        "data": {
+          "id": "36896",
+          "title": "Class- 58 || Compound Interest Part - 2",
+          "topic": "Maths",
+          "subtopic": "3. SI & CI"
+        }
+      },
+      {
+        "path": "courseData.classes.73",
+        "data": {
+          "id": "36920",
+          "title": "Class- 59 || Compound Interest Part - 3",
+          "topic": "Maths",
+          "subtopic": "3. SI & CI"
+        }
+      },
+      {
+        "path": "courseData.classes.74",
+        "data": {
+          "id": "36969",
+          "title": "Class- 60 || Compound Interest Part - 4",
+          "topic": "Maths",
+          "subtopic": "3. SI & CI"
+        }
+      },
+      {
+        "path": "courseData.classes.75",
+        "data": {
+          "id": "37000",
+          "title": "Class- 61 || Compound Interest Part - 5",
+          "topic": "Maths",
+          "subtopic": "3. SI & CI"
+        }
+      },
+      {
+        "path": "courseData.classes.77",
+        "data": {
+          "id": "37083",
+          "title": "Class- 62 || Compound Interest Part - 6",
+          "topic": "Maths",
+          "subtopic": "3. SI & CI"
+        }
+      },
+      {
+        "path": "courseData.classes.78",
+        "data": {
+          "id": "37092",
+          "title": "Class- 63 || Compound Interest Part - 7",
+          "topic": "Maths",
+          "subtopic": "3. SI & CI"
+        }
+      },
+      {
+        "path": "courseData.classes.79",
+        "data": {
+          "id": "37176",
+          "title": "Class- 64 || Compound Interest Part - 8",
+          "topic": "Maths",
+          "subtopic": "3. SI & CI"
+        }
+      },
+      {
+        "path": "courseData.classes.80",
+        "data": {
+          "id": "37179",
+          "title": "Class- 65 || Compound Interest Part - 9",
+          "topic": "Maths",
+          "subtopic": "3. SI & CI"
+        }
+      },
+      {
+        "path": "courseData.classes.82",
+        "data": {
+          "id": "38338",
+          "title": "Class- 66 || Compound Interest Part - 10",
+          "topic": "Maths",
+          "subtopic": "3. SI & CI"
+        }
+      },
+      {
+        "path": "courseData.classes.83",
+        "data": {
+          "id": "38399",
+          "title": "Class- 67 || Compound Interest Part - 11",
+          "topic": "Maths",
+          "subtopic": "3. SI & CI"
+        }
+      },
+      {
+        "path": "courseData.classes.84",
+        "data": {
+          "id": "38420",
+          "title": "Class- 68 || Compound Interest (Installment) Part - 12",
+          "topic": "Maths",
+          "subtopic": "3. SI & CI"
+        }
+      },
+      {
+        "path": "courseData.classes.85",
+        "data": {
+          "id": "38455",
+          "title": "Class- 69 || Ratio & Proportion Part - 1",
+          "topic": "Maths",
+          "subtopic": "4. Ratio & Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.86",
+        "data": {
+          "id": "38482",
+          "title": "Class- 70 || Ratio & Proportion Part - 2",
+          "topic": "Maths",
+          "subtopic": "4. Ratio & Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.88",
+        "data": {
+          "id": "38528",
+          "title": "Class- 71 || Ratio & Proportion Part - 3",
+          "topic": "Maths",
+          "subtopic": "4. Ratio & Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.89",
+        "data": {
+          "id": "38550",
+          "title": "Class- 72 || Ratio & Proportion Part - 4",
+          "topic": "Maths",
+          "subtopic": "4. Ratio & Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.91",
+        "data": {
+          "id": "38805",
+          "title": "Class- 73 || Ratio & Proportion Part - 5",
+          "topic": "Maths",
+          "subtopic": "4. Ratio & Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.92",
+        "data": {
+          "id": "38889",
+          "title": "Class- 74 || Ratio & Proportion Part - 6",
+          "topic": "Maths",
+          "subtopic": "4. Ratio & Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.93",
+        "data": {
+          "id": "38945",
+          "title": "Class- 75 || Ratio & Proportion Part - 7",
+          "topic": "Maths",
+          "subtopic": "4. Ratio & Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.94",
+        "data": {
+          "id": "38970",
+          "title": "Class- 76 || Ratio & Proportion Part -8",
+          "topic": "Maths",
+          "subtopic": "4. Ratio & Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.95",
+        "data": {
+          "id": "38995",
+          "title": "Class- 77 || Ratio & Proportion Part -9",
+          "topic": "Maths",
+          "subtopic": "4. Ratio & Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.97",
+        "data": {
+          "id": "39053",
+          "title": "Class- 78 || Ratio & Proportion Part -10",
+          "topic": "Maths",
+          "subtopic": "4. Ratio & Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.98",
+        "data": {
+          "id": "39080",
+          "title": "Class- 79 || Ratio & Proportion Part -11",
+          "topic": "Maths",
+          "subtopic": "4. Ratio & Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.99",
+        "data": {
+          "id": "39243",
+          "title": "Class- 80 || Ratio & Proportion Part -12",
+          "topic": "Maths",
+          "subtopic": "4. Ratio & Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.100",
+        "data": {
+          "id": "39265",
+          "title": "Class- 81 || Ratio & Proportion Part -13",
+          "topic": "Maths",
+          "subtopic": "4. Ratio & Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.101",
+        "data": {
+          "id": "39430",
+          "title": "Class- 82 || Ratio & Proportion Part -14",
+          "topic": "Maths",
+          "subtopic": "4. Ratio & Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.103",
+        "data": {
+          "id": "39486",
+          "title": "Class- 83 || Ratio & Proportion Part -15",
+          "topic": "Maths",
+          "subtopic": "4. Ratio & Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.104",
+        "data": {
+          "id": "39501",
+          "title": "Class- 84 || Ratio & Proportion Part -16",
+          "topic": "Maths",
+          "subtopic": "4. Ratio & Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.105",
+        "data": {
+          "id": "39622",
+          "title": "Class- 85 || Ratio & Proportion Part -17",
+          "topic": "Maths",
+          "subtopic": "4. Ratio & Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.107",
+        "data": {
+          "id": "39658",
+          "title": "Class- 86 || Ratio & Proportion Part -18",
+          "topic": "Maths",
+          "subtopic": "4. Ratio & Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.108",
+        "data": {
+          "id": "39742",
+          "title": "Class- 87 || Ratio & Proportion Part -19",
+          "topic": "Maths",
+          "subtopic": "4. Ratio & Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.109",
+        "data": {
+          "id": "39793",
+          "title": "Class- 88 || Ratio & Proportion Part -20",
+          "topic": "Maths",
+          "subtopic": "4. Ratio & Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.249",
+        "data": {
+          "id": "39332",
+          "title": "Class-01 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.250",
+        "data": {
+          "id": "39333",
+          "title": "Class-02 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.251",
+        "data": {
+          "id": "39334",
+          "title": "Class-03 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.252",
+        "data": {
+          "id": "39335",
+          "title": "Class-04 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.253",
+        "data": {
+          "id": "39336",
+          "title": "Class-05 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.254",
+        "data": {
+          "id": "39337",
+          "title": "Class-06 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.255",
+        "data": {
+          "id": "39338",
+          "title": "Class-07 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.256",
+        "data": {
+          "id": "39339",
+          "title": "Class-08 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.257",
+        "data": {
+          "id": "39340",
+          "title": "Class-09 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.258",
+        "data": {
+          "id": "39341",
+          "title": "Class-10 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.259",
+        "data": {
+          "id": "39342",
+          "title": "Class-11 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.260",
+        "data": {
+          "id": "39343",
+          "title": "Class-12 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.261",
+        "data": {
+          "id": "39344",
+          "title": "Class-13 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.262",
+        "data": {
+          "id": "39345",
+          "title": "Class-14 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.263",
+        "data": {
+          "id": "39346",
+          "title": "Class-15 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.264",
+        "data": {
+          "id": "39347",
+          "title": "Class-16 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.265",
+        "data": {
+          "id": "39348",
+          "title": "Class-17 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.266",
+        "data": {
+          "id": "39349",
+          "title": "Class-18 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.267",
+        "data": {
+          "id": "39350",
+          "title": "Class-19 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.268",
+        "data": {
+          "id": "39351",
+          "title": "Class-20 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.269",
+        "data": {
+          "id": "39352",
+          "title": "Class-21 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.270",
+        "data": {
+          "id": "39353",
+          "title": "Class-22 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.271",
+        "data": {
+          "id": "39354",
+          "title": "Class-23 || Mensuration",
+          "topic": "Maths",
+          "subtopic": "1. Mensuration 2D"
+        }
+      },
+      {
+        "path": "courseData.classes.272",
+        "data": {
+          "id": "49199",
+          "title": "Mensuration || Latest Questions Part-1",
+          "topic": "Maths",
+          "subtopic": "Latest Questions 2026"
+        }
+      },
+      {
+        "path": "courseData.classes.273",
+        "data": {
+          "id": "49242",
+          "title": "Mensuration || Latest Questions Part-2",
+          "topic": "Maths",
+          "subtopic": "Latest Questions 2026"
+        }
+      },
+      {
+        "path": "courseData.classes.274",
+        "data": {
+          "id": "49285",
+          "title": "Mensuration || Latest Questions Part-3",
+          "topic": "Maths",
+          "subtopic": "Latest Questions 2026"
+        }
+      },
+      {
+        "path": "courseData.classes.275",
+        "data": {
+          "id": "49303",
+          "title": "Mensuration || Latest Questions Part-4",
+          "topic": "Maths",
+          "subtopic": "Latest Questions 2026"
+        }
+      },
+      {
+        "path": "courseData.classes.276",
+        "data": {
+          "id": "49405",
+          "title": "Mensuration || Latest Questions Part-5",
+          "topic": "Maths",
+          "subtopic": "Latest Questions 2026"
+        }
+      },
+      {
+        "path": "courseData.classes.277",
+        "data": {
+          "id": "49502",
+          "title": "Mensuration || Latest Questions Part-6",
+          "topic": "Maths",
+          "subtopic": "Latest Questions 2026"
+        }
+      },
+      {
+        "path": "courseData.classes.278",
+        "data": {
+          "id": "49527",
+          "title": "Mensuration || Latest Questions Part-7",
+          "topic": "Maths",
+          "subtopic": "Latest Questions 2026"
+        }
+      },
+      {
+        "path": "courseData.classes.279",
+        "data": {
+          "id": "39356",
+          "title": "Class-01 || Mensuration 3D",
+          "topic": "Maths",
+          "subtopic": "2. Mensuration 3D"
+        }
+      },
+      {
+        "path": "courseData.classes.280",
+        "data": {
+          "id": "39357",
+          "title": "Class-02 || Mensuration 3D",
+          "topic": "Maths",
+          "subtopic": "2. Mensuration 3D"
+        }
+      },
+      {
+        "path": "courseData.classes.281",
+        "data": {
+          "id": "39358",
+          "title": "Class-03 || Mensuration 3D",
+          "topic": "Maths",
+          "subtopic": "2. Mensuration 3D"
+        }
+      },
+      {
+        "path": "courseData.classes.282",
+        "data": {
+          "id": "39359",
+          "title": "Class-04 || Mensuration 3D",
+          "topic": "Maths",
+          "subtopic": "2. Mensuration 3D"
+        }
+      },
+      {
+        "path": "courseData.classes.283",
+        "data": {
+          "id": "39360",
+          "title": "Class-05 || Mensuration 3D",
+          "topic": "Maths",
+          "subtopic": "2. Mensuration 3D"
+        }
+      },
+      {
+        "path": "courseData.classes.284",
+        "data": {
+          "id": "39361",
+          "title": "Class-06 || Mensuration 3D",
+          "topic": "Maths",
+          "subtopic": "2. Mensuration 3D"
+        }
+      },
+      {
+        "path": "courseData.classes.285",
+        "data": {
+          "id": "39362",
+          "title": "Class-07 || Mensuration 3D",
+          "topic": "Maths",
+          "subtopic": "2. Mensuration 3D"
+        }
+      },
+      {
+        "path": "courseData.classes.286",
+        "data": {
+          "id": "39363",
+          "title": "Class-08 || Mensuration 3D",
+          "topic": "Maths",
+          "subtopic": "2. Mensuration 3D"
+        }
+      },
+      {
+        "path": "courseData.classes.287",
+        "data": {
+          "id": "39364",
+          "title": "Class-09 || Mensuration 3D",
+          "topic": "Maths",
+          "subtopic": "2. Mensuration 3D"
+        }
+      },
+      {
+        "path": "courseData.classes.288",
+        "data": {
+          "id": "39365",
+          "title": "Class-10 || Mensuration 3D",
+          "topic": "Maths",
+          "subtopic": "2. Mensuration 3D"
+        }
+      },
+      {
+        "path": "courseData.classes.289",
+        "data": {
+          "id": "39366",
+          "title": "Class-11 || Mensuration 3D",
+          "topic": "Maths",
+          "subtopic": "2. Mensuration 3D"
+        }
+      },
+      {
+        "path": "courseData.classes.290",
+        "data": {
+          "id": "39367",
+          "title": "Class-12 || Mensuration 3D",
+          "topic": "Maths",
+          "subtopic": "2. Mensuration 3D"
+        }
+      },
+      {
+        "path": "courseData.classes.291",
+        "data": {
+          "id": "39368",
+          "title": "Class-13 || Mensuration 3D",
+          "topic": "Maths",
+          "subtopic": "2. Mensuration 3D"
+        }
+      },
+      {
+        "path": "courseData.classes.292",
+        "data": {
+          "id": "39369",
+          "title": "Class-14 || Mensuration 3D",
+          "topic": "Maths",
+          "subtopic": "2. Mensuration 3D"
+        }
+      },
+      {
+        "path": "courseData.classes.293",
+        "data": {
+          "id": "39370",
+          "title": "Class-15 || Mensuration 3D",
+          "topic": "Maths",
+          "subtopic": "2. Mensuration 3D"
+        }
+      },
+      {
+        "path": "courseData.classes.294",
+        "data": {
+          "id": "39371",
+          "title": "Class-16 || Mensuration 3D",
+          "topic": "Maths",
+          "subtopic": "2. Mensuration 3D"
+        }
+      },
+      {
+        "path": "courseData.classes.295",
+        "data": {
+          "id": "49582",
+          "title": "Mensuration || Latest Questions Part-1",
+          "topic": "Maths",
+          "subtopic": "Latest Questions 2026"
+        }
+      },
+      {
+        "path": "courseData.classes.296",
+        "data": {
+          "id": "49594",
+          "title": "Mensuration || Latest Questions Part-2",
+          "topic": "Maths",
+          "subtopic": "Latest Questions 2026"
+        }
+      },
+      {
+        "path": "courseData.classes.297",
+        "data": {
+          "id": "49621",
+          "title": "Mensuration || Latest Questions Part-3",
+          "topic": "Maths",
+          "subtopic": "Latest Questions 2026"
+        }
+      },
+      {
+        "path": "courseData.classes.298",
+        "data": {
+          "id": "49722",
+          "title": "Mensuration || Latest Questions Part-4",
+          "topic": "Maths",
+          "subtopic": "Latest Questions 2026"
+        }
+      },
+      {
+        "path": "courseData.classes.299",
+        "data": {
+          "id": "49744",
+          "title": "Mensuration || Latest Questions Part-5",
+          "topic": "Maths",
+          "subtopic": "Latest Questions 2026"
+        }
+      },
+      {
+        "path": "courseData.classes.300",
+        "data": {
+          "id": "49854",
+          "title": "Mensuration || Latest Questions Part-6",
+          "topic": "Maths",
+          "subtopic": "Latest Questions 2026"
+        }
+      },
+      {
+        "path": "courseData.classes.301",
+        "data": {
+          "id": "49887",
+          "title": "Mensuration || Latest Questions Part-7",
+          "topic": "Maths",
+          "subtopic": "Latest Questions 2026"
+        }
+      },
+      {
+        "path": "courseData.classes.302",
+        "data": {
+          "id": "49917",
+          "title": "Mensuration || Latest Questions Part-8",
+          "topic": "Maths",
+          "subtopic": "Latest Questions 2026"
+        }
+      },
+      {
+        "path": "courseData.classes.303",
+        "data": {
+          "id": "50011",
+          "title": "Mensuration || Latest Questions Part-9",
+          "topic": "Maths",
+          "subtopic": "Latest Questions 2026"
+        }
+      },
+      {
+        "path": "courseData.classes.304",
+        "data": {
+          "id": "50054",
+          "title": "Mensuration || Latest Questions Part-10",
+          "topic": "Maths",
+          "subtopic": "Latest Questions 2026"
+        }
+      },
+      {
+        "path": "courseData.classes.305",
+        "data": {
+          "id": "50089",
+          "title": "Mensuration || Latest Questions Part-11",
+          "topic": "Maths",
+          "subtopic": "Latest Questions 2026"
+        }
+      },
+      {
+        "path": "courseData.classes.348",
+        "data": {
+          "id": "39563",
+          "title": "Class-34 || Algebra || Rationalization",
+          "topic": "Maths",
+          "subtopic": "3. Algebra"
+        }
+      },
+      {
+        "path": "courseData.classes.359",
+        "data": {
+          "id": "40134",
+          "title": "Chapter-01 || Trigonometry Ratios || Class-01",
+          "topic": "Maths",
+          "subtopic": "4. Trigonometry"
+        }
+      },
+      {
+        "path": "courseData.classes.360",
+        "data": {
+          "id": "40135",
+          "title": "Chapter-01 || Trigonometry Ratios || Class-02",
+          "topic": "Maths",
+          "subtopic": "4. Trigonometry"
+        }
+      },
+      {
+        "path": "courseData.classes.361",
+        "data": {
+          "id": "40136",
+          "title": "Chapter-01 || Trigonometry Ratios || Class-03",
+          "topic": "Maths",
+          "subtopic": "4. Trigonometry"
+        }
+      },
+      {
+        "path": "courseData.classes.362",
+        "data": {
+          "id": "40137",
+          "title": "Chapter-02 || Trigonometry Ratios of Some Standard Angles || Class-04",
+          "topic": "Maths",
+          "subtopic": "4. Trigonometry"
+        }
+      },
+      {
+        "path": "courseData.classes.363",
+        "data": {
+          "id": "40138",
+          "title": "Chapter-02 || Trigonometry Ratios of Some Standard Angles || Class-05",
+          "topic": "Maths",
+          "subtopic": "4. Trigonometry"
+        }
+      },
+      {
+        "path": "courseData.classes.364",
+        "data": {
+          "id": "40139",
+          "title": "Chapter-02 || Trigonometry Ratios of Some Standard Angles || Class-06",
+          "topic": "Maths",
+          "subtopic": "4. Trigonometry"
+        }
+      },
+      {
+        "path": "courseData.classes.702",
+        "data": {
+          "id": "41608",
+          "title": "Railway Exams 2024_Maths-Simple Interest Questions_Expected Questions for Railway Exams_by Sahil sir (07)",
+          "topic": "Maths",
+          "subtopic": "Exams Top Questions"
+        }
+      },
+      {
+        "path": "courseData.classes.703",
+        "data": {
+          "id": "41609",
+          "title": "Railway Exams 2025_ Compound Interest Questions asked in RRB Technician Grade 3 _Maths by Sahil sir (09)",
+          "topic": "Maths",
+          "subtopic": "Exams Top Questions"
+        }
+      },
+      {
+        "path": "courseData.classes.729",
+        "data": {
+          "id": "49009",
+          "title": "RRB GROUP D 27 and 28 Nov 2025 All Shifts Top Questions",
+          "topic": "Maths",
+          "subtopic": "Exams Top Questions"
+        }
+      },
+      {
+        "path": "courseData.classes.730",
+        "data": {
+          "id": "49039",
+          "title": "RRB GROUP D 1 and 2 Dec 2025 All Shifts Top Questions",
+          "topic": "Maths",
+          "subtopic": "Exams Top Questions"
+        }
+      },
+      {
+        "path": "courseData.classes.731",
+        "data": {
+          "id": "49040",
+          "title": "RRB GROUP D 3, 4 and 5 Dec 2025 All Shifts Top Questions",
+          "topic": "Maths",
+          "subtopic": "Exams Top Questions"
+        }
+      },
+      {
+        "path": "courseData.classes.732",
+        "data": {
+          "id": "49041",
+          "title": "RRB GROUP D 8, 9 and 10 Dec 2025 All Shifts Top Questions",
+          "topic": "Maths",
+          "subtopic": "Exams Top Questions"
+        }
+      },
+      {
+        "path": "courseData.classes.733",
+        "data": {
+          "id": "49171",
+          "title": "RRB Group D 11 and 12 Dec All Shifts Top Questions",
+          "topic": "Maths",
+          "subtopic": "Exams Top Questions"
+        }
+      },
+      {
+        "path": "courseData.classes.742",
+        "data": {
+          "id": "41621",
+          "title": "Simple Interest Latest Questions (2024-25)",
+          "topic": "Maths",
+          "subtopic": "Exams Latest Questions"
+        }
+      },
+      {
+        "path": "courseData.classes.752",
+        "data": {
+          "id": "45206",
+          "title": "Ratio Latest questions",
+          "topic": "Maths",
+          "subtopic": "Exams Latest Questions"
+        }
+      },
+      {
+        "path": "courseData.classes.771",
+        "data": {
+          "id": "41277",
+          "title": "Simple Interest Latest Questions (2024-25)",
+          "topic": "Maths",
+          "subtopic": "Extra Free Content (Exams Top Questions)"
+        }
+      },
+      {
+        "path": "courseData.classes.815",
+        "data": {
+          "id": "38666",
+          "title": "Railway Exams 2024_Maths-Simple Interest Questions_Expected Questions for Railway Exams_by Sahil sir (07)",
+          "topic": "Maths",
+          "subtopic": "Railway Exams 2024 Topic wise questions"
+        }
+      },
+      {
+        "path": "courseData.classes.816",
+        "data": {
+          "id": "38667",
+          "title": "Railway Exams 2025_ Compound Interest Questions asked in RRB Technician Grade 3 _Maths by Sahil sir (09)",
+          "topic": "Maths",
+          "subtopic": "Railway Exams 2024 Topic wise questions"
+        }
+      },
+      {
+        "path": "courseData.classes.1336",
+        "data": {
+          "id": "44487",
+          "title": "Economics || Class - 24 || Five Years Plan + Another Important Topics",
+          "topic": "GK + GS",
+          "subtopic": "Economics"
+        }
+      },
+      {
+        "path": "courseData.classes.1487",
+        "data": {
+          "id": "43487",
+          "title": "Class- 01 || Mathematical Operation (\u0917\u0923\u093f\u0924\u0940\u092f \u0938\u0915\u094d\u0930\u093f\u092f\u093e\u092f\u0947)",
+          "topic": "Reasoning",
+          "subtopic": "14. Venn Diagram"
+        }
+      },
+      {
+        "path": "courseData.classes.1506",
+        "data": {
+          "id": "44065",
+          "title": "Class- 16 || Alphabetical Series Part 2",
+          "topic": "Reasoning",
+          "subtopic": "15. Number Series"
+        }
+      },
+      {
+        "path": "courseData.classes.1507",
+        "data": {
+          "id": "44565",
+          "title": "Class- 17 || Alphabetical Series Part 3",
+          "topic": "Reasoning",
+          "subtopic": "15. Number Series"
+        }
+      },
+      {
+        "path": "courseData.classes.1508",
+        "data": {
+          "id": "44572",
+          "title": "Class- 18 || Alphabetical Series Part 4 & inequality",
+          "topic": "Reasoning",
+          "subtopic": "15. Number Series"
+        }
+      },
+      {
+        "path": "courseData.pdfs.8",
+        "data": {
+          "id": "40855",
+          "title": "4. Ratio & Proportion",
+          "topic": "Maths",
+          "subTopic": "Arithmetic"
+        }
+      },
+      {
+        "path": "courseData.pdfs.19",
+        "data": {
+          "id": "39372",
+          "title": "Mensuration 2D & 3D concept",
+          "topic": "Maths",
+          "subTopic": "Advance"
+        }
+      },
+      {
+        "path": "courseData.pdfs.20",
+        "data": {
+          "id": "39373",
+          "title": "Mensuration 2D",
+          "topic": "Maths",
+          "subTopic": "Advance"
+        }
+      },
+      {
+        "path": "courseData.pdfs.21",
+        "data": {
+          "id": "39374",
+          "title": "Mensuration 3D",
+          "topic": "Maths",
+          "subTopic": "Advance"
+        }
+      },
+      {
+        "path": "courseData.pdfs.33",
+        "data": {
+          "id": "51546",
+          "title": "E-Book (Mensuration)",
+          "topic": "Maths",
+          "subTopic": "Advance"
+        }
+      },
+      {
+        "path": "courseData.pdfs.61",
+        "data": {
+          "id": "45435",
+          "title": "Alphabetical Series Paid Batch ebook",
+          "topic": "Reasoning",
+          "subTopic": "E Book"
+        }
+      },
+      {
+        "path": "courseData.pdfs.62",
+        "data": {
+          "id": "45436",
+          "title": "Mathematical Operations Paid Batch ebook",
+          "topic": "Reasoning",
+          "subTopic": "E Book"
+        }
+      }
+    ]
+  },
+  {
+    "apx": "49",
+    "updated": "2026-08-30T17:55:44.188Z",
+    "keys": [
+      "id",
+      "name",
+      "class_count",
+      "pdf_count",
+      "classes",
+      "pdfs",
+      "enable",
+      "price",
+      "detailMeta"
+    ],
+    "matches": [
+      {
+        "path": "courseData.classes.42",
+        "data": {
+          "id": "28789",
+          "title": "Class-1 || Ratio & Proportion",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Ratio Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.44",
+        "data": {
+          "id": "28791",
+          "title": "Class-2 || Ratio & Proportion",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Ratio Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.45",
+        "data": {
+          "id": "28792",
+          "title": "Class-3 || Ratio & Proportion",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Ratio Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.46",
+        "data": {
+          "id": "28793",
+          "title": "Class-4 || Ratio & Proportion",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Ratio Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.47",
+        "data": {
+          "id": "28794",
+          "title": "Class-5 || Ratio & Proportion",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Ratio Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.48",
+        "data": {
+          "id": "28795",
+          "title": "Class-6 || Ratio & Proportion",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Ratio Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.49",
+        "data": {
+          "id": "28796",
+          "title": "Class-7 || Ratio & Proportion",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Ratio Proportion"
+        }
+      },
+      {
+        "path": "courseData.classes.67",
+        "data": {
+          "id": "28805",
+          "title": "Class-01 || Simple Interest",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Simple Interest"
+        }
+      },
+      {
+        "path": "courseData.classes.69",
+        "data": {
+          "id": "28807",
+          "title": "Class-03 || Simple Interest",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Simple Interest"
+        }
+      },
+      {
+        "path": "courseData.classes.70",
+        "data": {
+          "id": "28808",
+          "title": "Class-04 || Simple Interest",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Simple Interest"
+        }
+      },
+      {
+        "path": "courseData.classes.72",
+        "data": {
+          "id": "28810",
+          "title": "Class-06 || Simple Interest",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Simple Interest"
+        }
+      },
+      {
+        "path": "courseData.classes.74",
+        "data": {
+          "id": "28812",
+          "title": "Class-01 || Compound Interest",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Compound Interest"
+        }
+      },
+      {
+        "path": "courseData.classes.75",
+        "data": {
+          "id": "28813",
+          "title": "Class-02 || Compound Interest",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Compound Interest"
+        }
+      },
+      {
+        "path": "courseData.classes.76",
+        "data": {
+          "id": "28814",
+          "title": "Class-03 || Compound Interest",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Compound Interest"
+        }
+      },
+      {
+        "path": "courseData.classes.77",
+        "data": {
+          "id": "28815",
+          "title": "Class-04 || Compound Interest",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Compound Interest"
+        }
+      },
+      {
+        "path": "courseData.classes.79",
+        "data": {
+          "id": "28817",
+          "title": "Class-06 || Compound Interest",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Compound Interest"
+        }
+      },
+      {
+        "path": "courseData.classes.118",
+        "data": {
+          "id": "29428",
+          "title": "ATM Maths || Class-01 || Mensuration",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Mensuration"
+        }
+      },
+      {
+        "path": "courseData.classes.121",
+        "data": {
+          "id": "29431",
+          "title": "ATM Maths || Class-02 || Mensuration",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Mensuration"
+        }
+      },
+      {
+        "path": "courseData.classes.122",
+        "data": {
+          "id": "29432",
+          "title": "ATM Maths || Class-03 || Mensuration",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Mensuration"
+        }
+      },
+      {
+        "path": "courseData.classes.123",
+        "data": {
+          "id": "29433",
+          "title": "ATM Maths || Class-04 || Mensuration",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Mensuration"
+        }
+      },
+      {
+        "path": "courseData.classes.124",
+        "data": {
+          "id": "29434",
+          "title": "ATM Maths || Sectional Test || Mensuration",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Mensuration"
+        }
+      },
+      {
+        "path": "courseData.classes.125",
+        "data": {
+          "id": "29435",
+          "title": "ATM Maths || Class-05 || Mensuration",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Mensuration"
+        }
+      },
+      {
+        "path": "courseData.classes.126",
+        "data": {
+          "id": "29436",
+          "title": "ATM Maths || Class-06 || Mensuration",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Mensuration"
+        }
+      },
+      {
+        "path": "courseData.classes.127",
+        "data": {
+          "id": "29437",
+          "title": "ATM Maths || Class-07 || Mensuration",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Mensuration"
+        }
+      },
+      {
+        "path": "courseData.classes.128",
+        "data": {
+          "id": "29438",
+          "title": "ATM Maths || Sectional Test || Mensuration",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Mensuration"
+        }
+      },
+      {
+        "path": "courseData.classes.129",
+        "data": {
+          "id": "29614",
+          "title": "ATM Maths || Class-08 || Mensuration",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Mensuration"
+        }
+      },
+      {
+        "path": "courseData.classes.130",
+        "data": {
+          "id": "29652",
+          "title": "ATM Maths || Class-09 || Mensuration",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Mensuration"
+        }
+      },
+      {
+        "path": "courseData.classes.132",
+        "data": {
+          "id": "29757",
+          "title": "ATM Maths || Sectional Test || Mensuration",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Algebra"
+        }
+      },
+      {
+        "path": "courseData.classes.200",
+        "data": {
+          "id": "42229",
+          "title": "Railway Exams 2024_Maths-Simple Interest Questions_Expected Questions for Railway Exams_by Sahil sir (07)",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Exams Top Questions"
+        }
+      },
+      {
+        "path": "courseData.classes.201",
+        "data": {
+          "id": "42230",
+          "title": "Railway Exams 2025_ Compound Interest Questions asked in RRB Technician Grade 3 _Maths by Sahil sir (09)",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Exams Top Questions"
+        }
+      },
+      {
+        "path": "courseData.classes.227",
+        "data": {
+          "id": "49012",
+          "title": "RRB GROUP D 27 and 28 Nov 2025 All Shifts Top Questions",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Exams Top Questions"
+        }
+      },
+      {
+        "path": "courseData.classes.228",
+        "data": {
+          "id": "49051",
+          "title": "RRB GROUP D 1 and 2 Dec 2025 All Shifts Top Questions",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Exams Top Questions"
+        }
+      },
+      {
+        "path": "courseData.classes.229",
+        "data": {
+          "id": "49052",
+          "title": "RRB GROUP D 3, 4 and 5 Dec 2025 All Shifts Top Questions",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Exams Top Questions"
+        }
+      },
+      {
+        "path": "courseData.classes.230",
+        "data": {
+          "id": "49053",
+          "title": "RRB GROUP D 8, 9 and 10 Dec 2025 All Shifts Top Questions",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Exams Top Questions"
+        }
+      },
+      {
+        "path": "courseData.classes.231",
+        "data": {
+          "id": "49348",
+          "title": "RRB Group D 11 and 12 Dec All Shifts Top Questions",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Exams Top Questions"
+        }
+      },
+      {
+        "path": "courseData.classes.240",
+        "data": {
+          "id": "42242",
+          "title": "Simple Interest Latest Questions (2024-25)",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Exams Latest Questions"
+        }
+      },
+      {
+        "path": "courseData.classes.250",
+        "data": {
+          "id": "45278",
+          "title": "Ratio Latest questions",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Exams Latest Questions"
+        }
+      },
+      {
+        "path": "courseData.classes.295",
+        "data": {
+          "id": "31698",
+          "title": "Railway Exams 2024_Maths-Simple Interest Questions_Expected Questions for Railway Exams_by Sahil sir (07)",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Railway Exams 2024 Topic wise questions"
+        }
+      },
+      {
+        "path": "courseData.classes.296",
+        "data": {
+          "id": "31699",
+          "title": "Railway Exams 2025_ Compound Interest Questions asked in RRB Technician Grade 3 _Maths by Sahil sir (09)",
+          "topic": "Maths ATM BAtch",
+          "subtopic": "Railway Exams 2024 Topic wise questions"
+        }
+      },
+      {
+        "path": "courseData.classes.318",
+        "data": {
+          "id": "26917",
+          "title": "Mathematical Operation - 1",
+          "topic": "Reasoning ATM Batch",
+          "subtopic": "Mathematical Operator - 1"
+        }
+      },
+      {
+        "path": "courseData.classes.322",
+        "data": {
+          "id": "27132",
+          "title": "ALPHANUMERIC SERIES - 1",
+          "topic": "Reasoning ATM Batch",
+          "subtopic": "ALPHANUMERIC SERIES"
+        }
+      },
+      {
+        "path": "courseData.pdfs.5",
+        "data": {
+          "id": "27757",
+          "title": "5. E-Book ATM Batch (Ratio & Proportion)",
+          "topic": "Maths ATM BAtch",
+          "subTopic": "Pdf"
+        }
+      },
+      {
+        "path": "courseData.pdfs.8",
+        "data": {
+          "id": "28385",
+          "title": "8. E-Book ATM Batch (Simple Interest)",
+          "topic": "Maths ATM BAtch",
+          "subTopic": "Pdf"
+        }
+      },
+      {
+        "path": "courseData.pdfs.9",
+        "data": {
+          "id": "29354",
+          "title": "9. E-Book ATM Batch (Compound Interest)",
+          "topic": "Maths ATM BAtch",
+          "subTopic": "Pdf"
+        }
+      },
+      {
+        "path": "courseData.pdfs.19",
+        "data": {
+          "id": "30535",
+          "title": "19. E-Book ATM Batch (Mensuration)",
+          "topic": "Maths ATM BAtch",
+          "subTopic": "Pdf"
+        }
+      },
+      {
+        "path": "courseData.pdfs.33",
+        "data": {
+          "id": "31714",
+          "title": "Railways Group D (99 Sets English Medium)",
+          "topic": "Maths ATM BAtch",
+          "subTopic": "Previous year papers Answer Key"
+        }
+      },
+      {
+        "path": "courseData.pdfs.34",
+        "data": {
+          "id": "31715",
+          "title": "Railways Group D (99 Sets Hindi Medium)",
+          "topic": "Maths ATM BAtch",
+          "subTopic": "Previous year papers Answer Key"
+        }
+      }
+    ]
+  },
+  {
+    "apx": "87",
+    "updated": "2026-09-07T23:37:28.124Z",
+    "keys": [
+      "id",
+      "name",
+      "class_count",
+      "pdf_count",
+      "classes",
+      "pdfs",
+      "enable",
+      "price",
+      "detailMeta"
+    ],
+    "matches": [
+      {
+        "path": "courseData.pdfs.24",
+        "data": {
+          "id": "35644",
+          "title": "Railways Group D 2022 (99 Sets English Medium)",
+          "topic": "RRB Group D",
+          "subTopic": ""
+        }
+      },
+      {
+        "path": "courseData.pdfs.25",
+        "data": {
+          "id": "35645",
+          "title": "Railways Group D 2022 (99 Sets Hindi Medium)",
+          "topic": "RRB Group D",
+          "subTopic": ""
+        }
+      },
+      {
+        "path": "courseData.pdfs.26",
+        "data": {
+          "id": "48594",
+          "title": "RRB Group_D 2024 Answer_Key_Compilation(English) by sahil sir",
+          "topic": "RRB Group D",
+          "subTopic": ""
+        }
+      },
+      {
+        "path": "courseData.pdfs.27",
+        "data": {
+          "id": "48595",
+          "title": "RRB Group_D 2024 Answer_Key_Compilation(Hindi) by sahil sir",
+          "topic": "RRB Group D",
+          "subTopic": ""
+        }
+      },
+      {
+        "path": "courseData.pdfs.50",
+        "data": {
+          "id": "53538",
+          "title": "Group D 2025-26 Answer Key (Eng)",
+          "topic": "Group D 2025-26 Answer Key (Latest Papers)",
+          "apxFolderId": "53537"
+        }
+      },
+      {
+        "path": "courseData.pdfs.51",
+        "data": {
+          "id": "53539",
+          "title": "Group D 2025-26 Answer Key (Hindi)",
+          "topic": "Group D 2025-26 Answer Key (Latest Papers)",
+          "apxFolderId": "53537"
+        }
+      }
+    ]
+  },
+  {
+    "atm": {
+      "classLinks": 745,
+      "inactive": 11,
+      "classesWithNotes": 516,
+      "classesWithoutNotes": [
+        {
+          "id": "6a455949ebb42f585d9ae25e",
+          "title": "Class- 10 || Elementry Statistics"
+        },
+        {
+          "id": "6a45594bebb42f585d9ae41b",
+          "title": "Co-ordinate Geometry Short Tricks _ Parallelogram (\u0938\u092e\u093e\u0902\u0924\u0930 \u091a\u0924\u0941\u0930\u094d\u092d\u0941\u091c)_Coordinate Geometry by Sahil sir (0)"
+        },
+        {
+          "id": "6a45594bebb42f585d9ae425",
+          "title": "Co-ordinate Geometry Trick_ Best Method to Find the Area of Triangle_ Unique Approach by Sahil sir (02)"
+        },
+        {
+          "id": "6a45594cebb42f585d9ae42f",
+          "title": "Hot-Cold Water Bucket Problem Short Tricks _ Broken Bucket Problems _ Unique Approach by Sahil Sir (03)"
+        },
+        {
+          "id": "6a45594cebb42f585d9ae439",
+          "title": "LCM Short Trick _ LCM Short Method _ Unique Approach _ LCM Trick by Sahil sir (04)"
+        },
+        {
+          "id": "6a45594cebb42f585d9ae443",
+          "title": "Maths Mixture Toughest Question _ Mixture Questions Tricks _ Unique Approach by Sahil sir (05)"
+        },
+        {
+          "id": "6a45594cebb42f585d9ae44d",
+          "title": "Number System Divisibility Short Trick _ Number System Divisibility Questions _ by Sahil sir (06)"
+        },
+        {
+          "id": "6a45594cebb42f585d9ae457",
+          "title": "Number System Short Trick _ Number System Questions _ Unique Approach _ by Sahil sir (07)"
+        },
+        {
+          "id": "6a45594cebb42f585d9ae461",
+          "title": "Position of Point in Circle _ Co-ordinate Geometry Concept & Trick _ Unique Approach by Sahil sir (8)"
+        },
+        {
+          "id": "6a45594cebb42f585d9ae46b",
+          "title": "Profit and Loss Short Trick _ Profit & Loss Pipeline Method _ Unique Approach by Sahil Sir (9)"
+        },
+        {
+          "id": "6a45594cebb42f585d9ae475",
+          "title": "Profit and Loss Short trick _ Profit & Loss Short Method _ Unique Approach by Sahil sir (10)"
+        },
+        {
+          "id": "6a45594cebb42f585d9ae47f",
+          "title": "Roman Number Full Concept with Short Tricks _ Roman Numbers Questions _ by Sahil sir (11)"
+        },
+        {
+          "id": "6a45594cebb42f585d9ae489",
+          "title": "SI & CI Best Short Tricks _ Best Method to Solve Loan Based Questions _ Unique Approach by Sahil sir (12)"
+        },
+        {
+          "id": "6a45594cebb42f585d9ae493",
+          "title": "Simplification Short Tricks _Unique Approach to Solve Simplification Question _Maths by Sahil sir(13)"
+        },
+        {
+          "id": "6a45594cebb42f585d9ae49d",
+          "title": "Simplification Short Tricks _Unique Approach to Solve Simplification Questions _Maths by Sahil sir (14)"
+        },
+        {
+          "id": "6a45594cebb42f585d9ae4a7",
+          "title": "Simplification Short Tricks _Unique Approach to Solve Simplification Questions _Maths by Sahil sir (15)"
+        },
+        {
+          "id": "6a45594cebb42f585d9ae4b1",
+          "title": "Surds and Indices Short Tricks _ Unique Approach to Solve Surd & Indices _Maths by Sahil sir (16)"
+        },
+        {
+          "id": "6a45594cebb42f585d9ae4bb",
+          "title": "Thief and Police Concept _ Thief and Police Questions Short Trick _ Unique Approach by Sahil Sir (17)"
+        },
+        {
+          "id": "6a45594cebb42f585d9ae4c5",
+          "title": "Time and Work Short Trick _ Time & Work Short Method _ Unique Approach by Sahil sir (18)"
+        },
+        {
+          "id": "6a45594cebb42f585d9ae4cf",
+          "title": "Time and Work Short Trick _ Time & Work Short Method _ Unique Approach by Sahil sir (19)"
+        },
+        {
+          "id": "6a45594debb42f585d9ae4d9",
+          "title": "Time Speed & Distance Short Tricks _ Time Speed & Distance Questions _ Unique Approach by Sahil sir (20)"
+        },
+        {
+          "id": "6a45594debb42f585d9ae4e3",
+          "title": "Time Speed & Distance Short Tricks _ Time Speed & Distance Questions _ Unique Approach by Sahil sir (21)"
+        },
+        {
+          "id": "6a45594debb42f585d9ae554",
+          "title": "Railway Exams 2024_Maths-Simple Interest Questions_Expected Questions for Railway Exams_by Sahil sir (07)"
+        },
+        {
+          "id": "6a45594debb42f585d9ae55e",
+          "title": "Railway Exams 2025_ Compound Interest Questions asked in RRB Technician Grade 3 _Maths by Sahil sir (09)"
+        },
+        {
+          "id": "6a45594debb42f585d9ae568",
+          "title": "Railway Exams 2025_ Maths Multiplication Questions_Railway Exams Maths Questions Tricks_by Sahil sir (10)"
+        },
+        {
+          "id": "6a45594debb42f585d9ae572",
+          "title": "Railway Exams 2025_Maths LCM Question asked in RRB Technician Grade 3_LCM Short Tricks_by Sahil sir (11)"
+        },
+        {
+          "id": "6a45594eebb42f585d9ae57c",
+          "title": "Railway Exams 2025_Maths-Discount Questions_Discount Questions for Railway Exams_by Sahil sir (12)"
+        },
+        {
+          "id": "6a45594febb42f585d9ae6bc",
+          "title": "DI + Frequency polygon"
+        },
+        {
+          "id": "6a455b83ebb42f585d9c16d8",
+          "title": "Computer MCQs || Introduction"
+        },
+        {
+          "id": "6a455b84ebb42f585d9c173c",
+          "title": "Computer MCQs || Set-10"
+        },
+        {
+          "id": "6a455b8febb42f585d9c1bc9",
+          "title": "Machine Input/ Output NTPC QUESTION"
+        },
+        {
+          "id": "6a455b95ebb42f585d9c1e5c",
+          "title": "RPF SI 2024 Top Questions"
+        },
+        {
+          "id": "6a455b98ebb42f585d9c1fa9",
+          "title": "#01 || Railway Exams 2024-25 | Maths Complete Formula Revision | Maths Formula Revision by Sahil Sir"
+        },
+        {
+          "id": "6a455b98ebb42f585d9c1fb3",
+          "title": "#02 || Railway Exams 2024-25| Maths-Complete Arithmetic Formula Revision|Math Formula Revision by Sahil Sir"
+        },
+        {
+          "id": "6a455b98ebb42f585d9c1fbd",
+          "title": "#03 ||  Railway Exams 2024-25| Advance Maths Complete Formula Revision|Math Formula Revision by Sahil Sir"
+        },
+        {
+          "id": "6a455bceebb42f585d9c3699",
+          "title": "Static GK One Shot Ntpc"
+        },
+        {
+          "id": "6a455bceebb42f585d9c36a3",
+          "title": "Static Gk || Class-1 || Festival in India"
+        },
+        {
+          "id": "6a455bcfebb42f585d9c36d8",
+          "title": "Class-04 || Modern History - 1916 to 1918."
+        },
+        {
+          "id": "6a455bd0ebb42f585d9c3750",
+          "title": "Class-16 || Modern History - 1947 to 1950"
+        },
+        {
+          "id": "6a455bd0ebb42f585d9c3796",
+          "title": "Class-23 || Ancient History- Indus Valley Civilisation- Test Discussion"
+        },
+        {
+          "id": "6a455bd1ebb42f585d9c37be",
+          "title": "Class-26 || Ancient History- Buddhism in India/\u092d\u093e\u0930\u0924 \u092e\u0947\u0902 \u092c\u094c\u0926\u094d\u0927 \u0927\u0930\u094d\u092e"
+        },
+        {
+          "id": "6a455bd2ebb42f585d9c3822",
+          "title": "Class-35 || Ancient History- The Gupta & Post- Gupta Period- Part 1"
+        },
+        {
+          "id": "6a455bd2ebb42f585d9c3868",
+          "title": "Class-42 || Indian Geography- Geographic Location of India- Part 2"
+        },
+        {
+          "id": "6a455bd2ebb42f585d9c3872",
+          "title": "Class-43 || Indian Geography- Mountain Ranges"
+        },
+        {
+          "id": "6a455bd2ebb42f585d9c387c",
+          "title": "Class-44 || Indian Geography- Mountain Ranges"
+        },
+        {
+          "id": "6a455bd4ebb42f585d9c394e",
+          "title": "Class-65 || Indian Geography- Cities and Rivers"
+        },
+        {
+          "id": "6a455bd5ebb42f585d9c3977",
+          "title": "Class-69 || Indian Geography- Famous Cities in India"
+        },
+        {
+          "id": "6a455bd7ebb42f585d9c3a8a",
+          "title": "Indian Polity || Class-17 || Judiciary"
+        },
+        {
+          "id": "6a455bd8ebb42f585d9c3af8",
+          "title": "Indian Polity || Class-7 || Fundamental Rights- Part 2"
+        },
+        {
+          "id": "6a455bdcebb42f585d9c3c81",
+          "title": "ECONOMICS || CLASS-34 || IMPORTANT INFORMATION"
+        },
+        {
+          "id": "6a455bdcebb42f585d9c3c8b",
+          "title": "Economics || Class-35 || Theory of Economics"
+        },
+        {
+          "id": "6a455bdcebb42f585d9c3c9f",
+          "title": "Economics ||Class-37 || ATM - Theory Of Economics"
+        },
+        {
+          "id": "6a455bdcebb42f585d9c3cb3",
+          "title": "Economics || Class-39 || Classification Of Economy"
+        },
+        {
+          "id": "6a455c00ebb42f585d9c4d16",
+          "title": "Class-04 || pressure"
+        },
+        {
+          "id": "6a455c01ebb42f585d9c4dbf",
+          "title": "Class-07 || LIGHT - PHYSICS"
+        },
+        {
+          "id": "6a455c02ebb42f585d9c4e1c",
+          "title": "Class-08 || ATM PHYSICS SYLLABUS COMPLETE - GENERAL DISCUSSION"
+        },
+        {
+          "id": "6a455c02ebb42f585d9c4e33",
+          "title": "Chemistry Class Discussion"
+        },
+        {
+          "id": "6a455c04ebb42f585d9c4efd",
+          "title": "Class-04 || Chemical reactions mcq 04"
+        },
+        {
+          "id": "6a455c04ebb42f585d9c4f1b",
+          "title": "Class-03 || Chemical reactions mcq 03"
+        },
+        {
+          "id": "6a455c06ebb42f585d9c5006",
+          "title": "Class-01  || Blood circulatory system"
+        },
+        {
+          "id": "6a455c06ebb42f585d9c5024",
+          "title": "Class-04 || Blood circulatory system"
+        },
+        {
+          "id": "6a455c07ebb42f585d9c5054",
+          "title": "Harmones - concept - class 04"
+        },
+        {
+          "id": "6a455c08ebb42f585d9c50e2",
+          "title": "Class-03 - Respiratory SYSTEM"
+        },
+        {
+          "id": "6a455c08ebb42f585d9c50f9",
+          "title": "Class-02 - Nervous SYSTEM"
+        },
+        {
+          "id": "6a455c0aebb42f585d9c519f",
+          "title": "SCIENCE E CLASS 14 - Graph Concept - Most Important"
+        },
+        {
+          "id": "6a455c0aebb42f585d9c51b3",
+          "title": "SCIENCE CLASS 15 - MIX MCQ"
+        },
+        {
+          "id": "6a455c0aebb42f585d9c51c7",
+          "title": "SCIENCE CLASS 17 - MIX MCQ"
+        },
+        {
+          "id": "6a455c0aebb42f585d9c51ea",
+          "title": "SCIENCE MIX PRACTICE CLASS 11"
+        },
+        {
+          "id": "6a455c1eebb42f585d9c5b99",
+          "title": "Clock and Calendar"
+        },
+        {
+          "id": "6a455c1eebb42f585d9c5ba3",
+          "title": "Analogy + Venn Diagram"
+        },
+        {
+          "id": "6a455c1eebb42f585d9c5bad",
+          "title": "Missing Number +| Number Series"
+        },
+        {
+          "id": "6a455c1eebb42f585d9c5bb7",
+          "title": "Data Sufficiency Questions"
+        },
+        {
+          "id": "6a455c1eebb42f585d9c5bc1",
+          "title": "Special Class for All New Students"
+        },
+        {
+          "id": "6a455c1eebb42f585d9c5bcb",
+          "title": "Reasoning Mock test Solution - 18 Jan"
+        },
+        {
+          "id": "6a455c20ebb42f585d9c5c9e",
+          "title": "Clock Practice || Class 5"
+        },
+        {
+          "id": "6a455c20ebb42f585d9c5ca8",
+          "title": "QNA Session with  Akash  sir"
+        },
+        {
+          "id": "6a455c21ebb42f585d9c5cc6",
+          "title": "Clock Practice || Class 8"
+        },
+        {
+          "id": "6a455c21ebb42f585d9c5cd3",
+          "title": "Class-01 || Analogy (04 Jul 2024)"
+        },
+        {
+          "id": "6a455c21ebb42f585d9c5d19",
+          "title": "Class Information"
+        },
+        {
+          "id": "6a455c21ebb42f585d9c5d3a",
+          "title": "Class-03 || Statement and Assumption (23 Jul 2024)"
+        },
+        {
+          "id": "6a455c22ebb42f585d9c5d62",
+          "title": "Class-07 || Cause and Effect"
+        },
+        {
+          "id": "6a455c22ebb42f585d9c5d94",
+          "title": "Class-11 || ALL RAILWAY EXAMS MOCK TEST"
+        },
+        {
+          "id": "6a455c23ebb42f585d9c5dd6",
+          "title": "Class-06 || Calendar (14 Aug 2024)"
+        },
+        {
+          "id": "6a455c23ebb42f585d9c5e1f",
+          "title": "Class-05 || Dice Sectional Test Solution"
+        },
+        {
+          "id": "6a455c24ebb42f585d9c5e68",
+          "title": "Class-07 || Coded Blood Relation"
+        },
+        {
+          "id": "6a455c24ebb42f585d9c5e86",
+          "title": "Class-10 || All India Reasoning Test discussion"
+        },
+        {
+          "id": "6a455c24ebb42f585d9c5e93",
+          "title": "Class-01 || Order and Ranking"
+        },
+        {
+          "id": "6a455c25ebb42f585d9c5ea7",
+          "title": "Class-03 || Order and Ranking"
+        },
+        {
+          "id": "6a455c26ebb42f585d9c5f25",
+          "title": "Class-05 || All India Reasoning Test Solution ( 26th Sept)"
+        },
+        {
+          "id": "6a455c26ebb42f585d9c5f32",
+          "title": "Class-01 || Direction"
+        },
+        {
+          "id": "6a455c26ebb42f585d9c5f3c",
+          "title": "Class-02 || Direction"
+        },
+        {
+          "id": "6a455c27ebb42f585d9c5f9f",
+          "title": "Class-1 || Figure Counting"
+        },
+        {
+          "id": "6a455c27ebb42f585d9c5fd4",
+          "title": "17 oct Reasoning Test Solution"
+        },
+        {
+          "id": "6a455c27ebb42f585d9c6009",
+          "title": "Class-1 || Seating Arrangement"
+        },
+        {
+          "id": "6a455c28ebb42f585d9c6045",
+          "title": "ATM Reasoning || Class-7 || Seating Arrangement"
+        },
+        {
+          "id": "6a455c28ebb42f585d9c6059",
+          "title": "ATM Reasoning || Student Doubt and Discussion Session"
+        },
+        {
+          "id": "6a455c28ebb42f585d9c6096",
+          "title": "ATM || Reasoning || Important Discussion For Upcoming Exams"
+        },
+        {
+          "id": "6a455c29ebb42f585d9c60a3",
+          "title": "ATM || Reasoning || PYQ"
+        },
+        {
+          "id": "6a455c29ebb42f585d9c60b7",
+          "title": "ATM || Reasoning ALP EXAM OVER - NOW WHAT?"
+        },
+        {
+          "id": "6a455c50ebb42f585d9c7160",
+          "title": "Atm Maths || Class-01 || Race"
+        },
+        {
+          "id": "6a455c50ebb42f585d9c716a",
+          "title": "Atm Maths || Class-02 || Weekly Test"
+        },
+        {
+          "id": "6a455c50ebb42f585d9c7174",
+          "title": "Atm Maths || Class-03 || Race"
+        },
+        {
+          "id": "6a455c50ebb42f585d9c717e",
+          "title": "Atm Maths || Class - 04 || Race"
+        },
+        {
+          "id": "6a455c50ebb42f585d9c718b",
+          "title": "Class-01 || Number System (24 Jun 2024)"
+        },
+        {
+          "id": "6a455c50ebb42f585d9c7195",
+          "title": "Class-02 || Number System (25 Jun 2024)"
+        },
+        {
+          "id": "6a455c50ebb42f585d9c719f",
+          "title": "Class-03 || Number System (26 Jun 2024)"
+        },
+        {
+          "id": "6a455c50ebb42f585d9c71a9",
+          "title": "Class-04 || Number System (27 Jun 2024)"
+        },
+        {
+          "id": "6a455c50ebb42f585d9c71b3",
+          "title": "Class-05 || Number System (28 Jun 2024)"
+        },
+        {
+          "id": "6a455c50ebb42f585d9c71bd",
+          "title": "Class-06 || Number System (01 Jul 2024)"
+        },
+        {
+          "id": "6a455c50ebb42f585d9c71c8",
+          "title": "Class-07 || Number System (08 Jul 2024)"
+        },
+        {
+          "id": "6a455c50ebb42f585d9c71d2",
+          "title": "Class-08 || Number System (09 Jul 2024)"
+        },
+        {
+          "id": "6a455c51ebb42f585d9c71dc",
+          "title": "Class-09 || Number System (10 Jul 2024)"
+        },
+        {
+          "id": "6a455c51ebb42f585d9c71e9",
+          "title": "Class-01 || Simplification"
+        },
+        {
+          "id": "6a455c51ebb42f585d9c71f3",
+          "title": "Class-02 || Simplification & Sectional Test Discussion"
+        },
+        {
+          "id": "6a455c51ebb42f585d9c71fd",
+          "title": "Class-03 || Simplification"
+        },
+        {
+          "id": "6a455c51ebb42f585d9c7207",
+          "title": "Class-04 || Simplification"
+        },
+        {
+          "id": "6a455c51ebb42f585d9c7212",
+          "title": "Class-05 || Simplification"
+        },
+        {
+          "id": "6a455c51ebb42f585d9c721c",
+          "title": "Class-06 || Simplification"
+        },
+        {
+          "id": "6a455c51ebb42f585d9c7227",
+          "title": "Sectional Test Discussion (18th July)"
+        },
+        {
+          "id": "6a455c51ebb42f585d9c7231",
+          "title": "Class-07 || Simplification"
+        },
+        {
+          "id": "6a455c51ebb42f585d9c723b",
+          "title": "Class-08 || Simplification"
+        },
+        {
+          "id": "6a455c51ebb42f585d9c7245",
+          "title": "Class-09 || Simplification"
+        },
+        {
+          "id": "6a455c52ebb42f585d9c724f",
+          "title": "Class-10 || Sectional Test Discussion"
+        },
+        {
+          "id": "6a455c52ebb42f585d9c7259",
+          "title": "Class-11 || Simplification"
+        },
+        {
+          "id": "6a455c52ebb42f585d9c7266",
+          "title": "Class-01 || Average"
+        },
+        {
+          "id": "6a455c52ebb42f585d9c7270",
+          "title": "Class-02  || Average"
+        },
+        {
+          "id": "6a455c52ebb42f585d9c727a",
+          "title": "Class-03 || Average"
+        },
+        {
+          "id": "6a455c52ebb42f585d9c7284",
+          "title": "Class-04 || Sectional Test Discussion"
+        },
+        {
+          "id": "6a455c52ebb42f585d9c728e",
+          "title": "Class-05 || Average"
+        },
+        {
+          "id": "6a455c52ebb42f585d9c7298",
+          "title": "Class-06 || Average"
+        },
+        {
+          "id": "6a455c52ebb42f585d9c72a2",
+          "title": "Class-07 || Average"
+        },
+        {
+          "id": "6a455c52ebb42f585d9c72ac",
+          "title": "Class-08 || Average"
+        },
+        {
+          "id": "6a455c52ebb42f585d9c72b6",
+          "title": "Class-09 || Average"
+        },
+        {
+          "id": "6a455c53ebb42f585d9c72c0",
+          "title": "Class-10 || Test Discussion (8th Aug)"
+        },
+        {
+          "id": "6a455c53ebb42f585d9c72cd",
+          "title": "Class-1 || LCM HCF"
+        },
+        {
+          "id": "6a455c53ebb42f585d9c72d7",
+          "title": "Class-2 || LCM HCF"
+        },
+        {
+          "id": "6a455c53ebb42f585d9c72e1",
+          "title": "Class-3 || LCM HCF"
+        },
+        {
+          "id": "6a455c53ebb42f585d9c72eb",
+          "title": "Class-4 || Lcm & Hcf (20 Aug 2024)"
+        },
+        {
+          "id": "6a455c53ebb42f585d9c72f5",
+          "title": "Class-5 || LCM HCF"
+        },
+        {
+          "id": "6a455c53ebb42f585d9c7302",
+          "title": "Class-1 || Ratio & Proportion"
+        },
+        {
+          "id": "6a455c53ebb42f585d9c730c",
+          "title": "Class-2 || Test Discussion (22th Aug)"
+        },
+        {
+          "id": "6a455c53ebb42f585d9c7316",
+          "title": "Class-2 || Ratio & Proportion"
+        },
+        {
+          "id": "6a455c53ebb42f585d9c7320",
+          "title": "Class-3 || Ratio & Proportion"
+        },
+        {
+          "id": "6a455c54ebb42f585d9c732a",
+          "title": "Class-4 || Ratio & Proportion"
+        },
+        {
+          "id": "6a455c54ebb42f585d9c7334",
+          "title": "Class-5 || Ratio & Proportion"
+        },
+        {
+          "id": "6a455c54ebb42f585d9c733e",
+          "title": "Class-6 || Ratio & Proportion"
+        },
+        {
+          "id": "6a455c54ebb42f585d9c7348",
+          "title": "Class-7 || Ratio & Proportion"
+        },
+        {
+          "id": "6a455c54ebb42f585d9c7352",
+          "title": "Class-8 || Test Discussion (29th August)"
+        },
+        {
+          "id": "6a455c54ebb42f585d9c735f",
+          "title": "Class-01 || Percentage (02 Sep 2024)"
+        },
+        {
+          "id": "6a455c54ebb42f585d9c7369",
+          "title": "Class-02 || Percentage (04 Sep 2024)"
+        },
+        {
+          "id": "6a455c54ebb42f585d9c7373",
+          "title": "Class-03 || Percentage (05 Sep 2024)"
+        },
+        {
+          "id": "6a455c54ebb42f585d9c737d",
+          "title": "Class-04 || Sectional Test Discussion (06 Sep 2024)"
+        },
+        {
+          "id": "6a455c54ebb42f585d9c7387",
+          "title": "Class-05 || Percentage (09 Sep 2024)"
+        },
+        {
+          "id": "6a455c54ebb42f585d9c7391",
+          "title": "Class-06 || Percentage (10 Sep 2024)"
+        },
+        {
+          "id": "6a455c54ebb42f585d9c739b",
+          "title": "Class-07 || Percentage (11 Sep 2024)"
+        },
+        {
+          "id": "6a455c55ebb42f585d9c73a8",
+          "title": "Test Discussion 12th september"
+        },
+        {
+          "id": "6a455c55ebb42f585d9c73b2",
+          "title": "Class-01 || Profit & Loss"
+        },
+        {
+          "id": "6a455c55ebb42f585d9c73bc",
+          "title": "Class-02 || Profit & Loss"
+        },
+        {
+          "id": "6a455c55ebb42f585d9c73c6",
+          "title": "Class-03 || Profit & Loss"
+        },
+        {
+          "id": "6a455c55ebb42f585d9c73d0",
+          "title": "Class-04 || Profit & Loss"
+        },
+        {
+          "id": "6a455c55ebb42f585d9c73da",
+          "title": "Class-05 || Test Discussion (19th Sept)"
+        },
+        {
+          "id": "6a455c55ebb42f585d9c73e4",
+          "title": "Class-06 || Profit & Loss"
+        },
+        {
+          "id": "6a455c55ebb42f585d9c73ee",
+          "title": "Class-07 || Profit & Loss"
+        },
+        {
+          "id": "6a455c55ebb42f585d9c73f8",
+          "title": "Class-08 || Profit & Loss"
+        },
+        {
+          "id": "6a455c55ebb42f585d9c7405",
+          "title": "Class-01 || Simple Interest"
+        },
+        {
+          "id": "6a455c55ebb42f585d9c740f",
+          "title": "Class-02 || Test Discussion (26th Sept)"
+        },
+        {
+          "id": "6a455c56ebb42f585d9c7419",
+          "title": "Class-03 || Simple Interest"
+        },
+        {
+          "id": "6a455c56ebb42f585d9c7423",
+          "title": "Class-04 || Simple Interest"
+        },
+        {
+          "id": "6a455c56ebb42f585d9c742d",
+          "title": "Class-05 || Test Discussion (3rd oct )"
+        },
+        {
+          "id": "6a455c56ebb42f585d9c7437",
+          "title": "Class-06 || Simple Interest"
+        },
+        {
+          "id": "6a455c56ebb42f585d9c7441",
+          "title": "Class-07 || Test Discussion"
+        },
+        {
+          "id": "6a455c56ebb42f585d9c744e",
+          "title": "Class-01 || Compound Interest"
+        },
+        {
+          "id": "6a455c56ebb42f585d9c7458",
+          "title": "Class-02 || Compound Interest"
+        },
+        {
+          "id": "6a455c56ebb42f585d9c7462",
+          "title": "Class-03 || Compound Interest"
+        },
+        {
+          "id": "6a455c56ebb42f585d9c746c",
+          "title": "Class-04 || Compound Interest"
+        },
+        {
+          "id": "6a455c56ebb42f585d9c7476",
+          "title": "Class-05 || Test Discussion (17th Oct)"
+        },
+        {
+          "id": "6a455c56ebb42f585d9c7480",
+          "title": "Class-06 || Compound Interest"
+        },
+        {
+          "id": "6a455c56ebb42f585d9c748d",
+          "title": "Class-01 || Age"
+        },
+        {
+          "id": "6a455c57ebb42f585d9c7497",
+          "title": "Class-02 || Age"
+        },
+        {
+          "id": "6a455c57ebb42f585d9c74a1",
+          "title": "Maths || Class-3 || Test Discussion (24th Oct)"
+        },
+        {
+          "id": "6a455c57ebb42f585d9c74ae",
+          "title": "Atm Maths || Class-01 || Partnership"
+        },
+        {
+          "id": "6a455c57ebb42f585d9c74b8",
+          "title": "Atm Maths || Class-02 || Partnership"
+        },
+        {
+          "id": "6a455c57ebb42f585d9c74c5",
+          "title": "ATM MATHS || Class-01 || Train"
+        },
+        {
+          "id": "6a455c57ebb42f585d9c74cf",
+          "title": "ATM MATHS || Class-02 || Train"
+        },
+        {
+          "id": "6a455c57ebb42f585d9c74d9",
+          "title": "Atm || Class-03 || train"
+        },
+        {
+          "id": "6a455c57ebb42f585d9c74e3",
+          "title": "Atm maths || Class-04 || train"
+        },
+        {
+          "id": "6a455c57ebb42f585d9c74f0",
+          "title": "ATM  MATHS || Class-01 || Mixture & Alligation"
+        },
+        {
+          "id": "6a455c57ebb42f585d9c74fa",
+          "title": "Atm Maths || Test Discussion (7th Nov)"
+        },
+        {
+          "id": "6a455c57ebb42f585d9c7507",
+          "title": "Atm Maths || Test Discussion || Time & Work"
+        },
+        {
+          "id": "6a455c57ebb42f585d9c7511",
+          "title": "ATM MATHS || Class-01 || Time & Work"
+        },
+        {
+          "id": "6a455c58ebb42f585d9c751b",
+          "title": "Atm Maths || Class-02 || Time & Work"
+        },
+        {
+          "id": "6a455c58ebb42f585d9c7525",
+          "title": "Atm Maths || Class-03 || Time & Work"
+        },
+        {
+          "id": "6a455c58ebb42f585d9c752f",
+          "title": "Atm Maths || Class-04 || Time & Work"
+        },
+        {
+          "id": "6a455c58ebb42f585d9c7539",
+          "title": "Atm Maths || Class-05 || Time & Work"
+        },
+        {
+          "id": "6a455c58ebb42f585d9c7550",
+          "title": "Atm Maths || Class-02 || pipe & cistern"
+        },
+        {
+          "id": "6a455c58ebb42f585d9c755a",
+          "title": "Atm Maths || Class-03 || TEST DISCUSSION"
+        },
+        {
+          "id": "6a455c58ebb42f585d9c7564",
+          "title": "Atm Maths || Class-04 || pipe & cistern"
+        },
+        {
+          "id": "6a455c58ebb42f585d9c7571",
+          "title": "Atm Maths || Class-01 || Time Speed & Distance"
+        },
+        {
+          "id": "6a455c58ebb42f585d9c757b",
+          "title": "Atm Maths || Class-02 || Time Speed & Distance"
+        },
+        {
+          "id": "6a455c58ebb42f585d9c7585",
+          "title": "Atm Maths || Class-03 || Time Speed & Distance"
+        },
+        {
+          "id": "6a455c58ebb42f585d9c758f",
+          "title": "Atm Maths || Class-04 || Time Speed & Distance"
+        },
+        {
+          "id": "6a455c59ebb42f585d9c7599",
+          "title": "Atm Maths || Sectional Test (5th Dec) || Time Speed & Distance"
+        },
+        {
+          "id": "6a455c59ebb42f585d9c75a3",
+          "title": "Atm Maths || Class-05 || Time Speed & Distance"
+        },
+        {
+          "id": "6a455c59ebb42f585d9c75ad",
+          "title": "Atm Maths || Class-06 || Time Speed Distance"
+        },
+        {
+          "id": "6a455c59ebb42f585d9c75b7",
+          "title": "ATM MATHS || Class-07 || Time Speed Distance Test Discussion"
+        },
+        {
+          "id": "6a455c59ebb42f585d9c75c1",
+          "title": "ATM MATHS || Class-08 || Time Speed Distance"
+        },
+        {
+          "id": "6a455c59ebb42f585d9c75cb",
+          "title": "ATM MATHS || Class-09 || Time Speed & Distance"
+        },
+        {
+          "id": "6a455c59ebb42f585d9c75d8",
+          "title": "Atm Maths || Class-01 || Boat & Stream"
+        },
+        {
+          "id": "6a455c59ebb42f585d9c75e2",
+          "title": "ATM MATHS || Class-02 || Sectional Test"
+        },
+        {
+          "id": "6a455c59ebb42f585d9c75ec",
+          "title": "Atm Maths || Class-03 || Boat & Stream"
+        },
+        {
+          "id": "6a455c59ebb42f585d9c75f6",
+          "title": "Atm Maths || Class-04 || Boat & Stream"
+        },
+        {
+          "id": "6a455c5aebb42f585d9c7624",
+          "title": "ATM Maths || Class-01 || Mensuration"
+        },
+        {
+          "id": "6a455c5aebb42f585d9c7633",
+          "title": "ATM Maths || Sectional Test || Race"
+        },
+        {
+          "id": "6a455c5aebb42f585d9c763d",
+          "title": "ATM Maths || Class-02 || Mensuration"
+        },
+        {
+          "id": "6a455c5aebb42f585d9c7647",
+          "title": "ATM Maths || Class-03 || Mensuration"
+        },
+        {
+          "id": "6a455c5aebb42f585d9c7651",
+          "title": "ATM Maths || Class-04 || Mensuration"
+        },
+        {
+          "id": "6a455c5aebb42f585d9c765b",
+          "title": "ATM Maths || Sectional Test || Mensuration"
+        },
+        {
+          "id": "6a455c5aebb42f585d9c7665",
+          "title": "ATM Maths || Class-05 || Mensuration"
+        },
+        {
+          "id": "6a455c5bebb42f585d9c766f",
+          "title": "ATM Maths || Class-06 || Mensuration"
+        },
+        {
+          "id": "6a455c5bebb42f585d9c7679",
+          "title": "ATM Maths || Sectional Test || Mensuration (31 Jan 2025)"
+        },
+        {
+          "id": "6a455c5bebb42f585d9c7683",
+          "title": "ATM Maths || Class-07 || Mensuration"
+        },
+        {
+          "id": "6a455cd5ebb42f585d9ca99c",
+          "title": "Average To Master (ATM) Full BATCH Announcement"
+        },
+        {
+          "id": "6a455cd5ebb42f585d9ca9ac",
+          "title": "Planning"
+        },
+        {
+          "id": "6a455cebebb42f585d9cb205",
+          "title": "Planning (15 Jun 2024)"
+        },
+        {
+          "id": "6a455cebebb42f585d9cb22e",
+          "title": "Reasoning- Sitting Arrangements, Puzzles & Statement Based Ques."
+        },
+        {
+          "id": "6a455cf4ebb42f585d9cb597",
+          "title": "MACHINE INPUT OUTPUT SPECIAL CLASS"
+        },
+        {
+          "id": "6a455cf5ebb42f585d9cb61e",
+          "title": "Harish Bhaiya Discussion"
+        },
+        {
+          "id": "6a455cf5ebb42f585d9cb62b",
+          "title": "Planning (15 Jun 2024, 11:10)"
+        },
+        {
+          "id": "6a455d01ebb42f585d9cbb02",
+          "title": "Planning (15 Jun 2024, 11:13)"
+        }
+      ],
+      "standalonePdfs": 57
+    }
+  },
+  {
+    "pdf": {
+      "_id": "6a9f4b8bb6966685db838664",
+      "status": 1,
+      "title": "Group D 2025-26 Answer Key (Eng)",
+      "pdfAsset": {
+        "bucket": "documents",
+        "key": "pdfs/73ac669e1f9956176854de61707cb8d02403c3574c794eb7e92188881f4f8c4f.pdf",
+        "mimeType": "application/pdf",
+        "sizeBytes": 19398113,
+        "sha256": "4ccbcc74aa165acc6dee89d7cfd8425c704aa37f0c6107a9bfbcf32724cec73f"
+      }
+    },
+    "assignments": [
+      {
+        "_id": "6a9f4b8e3aed5ba9f3f74e80",
+        "course": "6a455b65ebb42f585d9c08c8",
+        "isActive": true,
+        "sectionName": "Group D 2025-26 Answer Key (Latest Papers)",
+        "apxTitle": "RRB Group D 2025-26 Answer Key (Eng)"
+      }
+    ]
+  },
+  {
+    "pdf": {
+      "_id": "6a9f4b93b6966685db83866b",
+      "status": 1,
+      "title": "Group D 2025-26 Answer Key (Hindi)",
+      "pdfAsset": {
+        "bucket": "documents",
+        "key": "pdfs/fdef314053388fe9e7200f325484367cd8b057d3e2248c66677eacc65b016248.pdf",
+        "mimeType": "application/pdf",
+        "sizeBytes": 20575033,
+        "sha256": "6c38043ddc8d450a2c8bcce8e700f049d06403ede90e465fc9acf018544ec375"
+      }
+    },
+    "assignments": [
+      {
+        "_id": "6a9f4b963aed5ba9f3f74e82",
+        "course": "6a455b65ebb42f585d9c08c8",
+        "isActive": true,
+        "sectionName": "Group D 2025-26 Answer Key (Latest Papers)",
+        "apxTitle": "RRB Group D 2025-26 Answer Key (Hindi)"
+      }
+    ]
+  },
+  {
+    "pdf": {
+      "_id": "6a4ce6a5eec8e63afc787cf7",
+      "status": 1,
+      "title": "Alphabetical Series Paid Batch ebook",
+      "pdfAsset": {
+        "bucket": "documents",
+        "key": "pdfs/691cb12c22bf3a38cc5e27a17b85efb9cccba1e92a42ca216cf3893160ee94d3.pdf",
+        "mimeType": "application/pdf",
+        "sizeBytes": 1488780
+      }
+    },
+    "assignments": [
+      {
+        "_id": "6a4ce6a53aed5ba9f32326b2",
+        "course": "6a4559f2ebb42f585d9b4602",
+        "isActive": true,
+        "sectionName": "Classes",
+        "topicName": "E Book",
+        "apxTitle": "Alphabetical Series Paid Batch ebook"
+      },
+      {
+        "_id": "6a4deec63aed5ba9f324f11e",
+        "course": "6a455abbebb42f585d9bb5c0",
+        "isActive": true,
+        "sectionName": "E Book",
+        "apxTitle": "Alphabetical Series Paid Batch ebook"
+      },
+      {
+        "_id": "6a4dfefa3aed5ba9f325506c",
+        "course": "6a455af5ebb42f585d9bd15c",
+        "isActive": true,
+        "sectionName": "Reasoning",
+        "topicName": "E Book",
+        "apxTitle": "Alphabetical Series Paid Batch ebook"
+      }
+    ]
+  },
+  {
+    "pdf": {
+      "_id": "6a7c6be4f8924219f2dd2eed",
+      "status": 1,
+      "title": "Alphabetical & Alphanumeric symbol Series Ebook Prime Batch",
+      "pdfAsset": {
+        "bucket": "documents",
+        "key": "pdfs/f4152a57675bb1598acd03c410d645d67b3ce7e360395d9d8923a54dd937f4ac.pdf",
+        "mimeType": "application/pdf",
+        "sizeBytes": 1625784,
+        "sha256": "60a951e0ea44ade79b0ff7edead7a2c1f31cf18cab3308b5c70eb666ba011e2f"
+      }
+    },
+    "assignments": [
+      {
+        "_id": "6a7c6be73aed5ba9f386386c",
+        "course": "6a4558ceebb42f585d9a8be7",
+        "isActive": true,
+        "sectionName": "Reasoning",
+        "apxTitle": "Alphabetical & Alphanumeric symbol Series Ebook Prime Batch",
+        "topicName": "E-Book"
+      },
+      {
+        "_id": "6a7c6bf93aed5ba9f386387f",
+        "course": "6a4558e3ebb42f585d9a9b0f",
+        "isActive": true,
+        "sectionName": "E-Book",
+        "apxTitle": "Alphabetical & Alphanumeric symbol Series Ebook Prime Batch"
+      },
+      {
+        "_id": "6a7c6c053aed5ba9f38638a6",
+        "course": "6a4558e8ebb42f585d9a9f29",
+        "isActive": true,
+        "sectionName": "Reasoning",
+        "topicName": "E-Book",
+        "apxTitle": "Alphabetical & Alphanumeric symbol Series Ebook Prime Batch"
+      }
+    ]
+  },
+  {
+    "atmStandalone": {
+      "total": 57,
+      "active": 57,
+      "resolved": 57,
+      "enabled": 57,
+      "withAsset": 57
+    }
+  },
+  {
+    "sourceCourses": []
+  }
+]
