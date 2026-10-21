@@ -83,7 +83,7 @@ vitest_failures() { grep -E '^ FAIL ' $1 | sed -E 's/^ FAIL +//; s/ \[[^]]*\]$//
 tsc_failures() { grep -E 'error TS[0-9]+' $1 | sed -E 's/\([0-9]+,[0-9]+\): error (TS[0-9]+).*/ \1/' | sort | uniq -c | sed -E 's/^ *([0-9]+) (.*)/\2 x\1/' }
 
 cmd_suites() {
-  local wt=${1:A} baseline=${2:-} logs suite f
+  local wt=${1:A} baseline=${2:+${2:A}} logs suite f
   [[ -f $wt/package.json ]] || die "$wt is not a repo root"
   [[ -z $baseline || -f $baseline ]] || die "no baseline file $baseline"
   logs=${QT_SUITE_LOGS:-${TMPDIR:-/tmp}/qt-suites}/${wt:t}; mkdir -p $logs; : > $logs/failures.txt
