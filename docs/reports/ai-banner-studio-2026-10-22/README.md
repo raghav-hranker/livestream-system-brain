@@ -82,3 +82,31 @@ Outputs: `studio-website-1920x628.jpg`, `studio-app-1080x1920.jpg`, `studio-thum
 5. Text editing after generation, for example regenerating one line. Today a typo means another run.
 
 [class-thumbnails memory]: ../../../../.claude/projects/-Users-raghav-Projects-system-brain/memory/class-thumbnails.md
+
+## Round 2 (same day): market scan and three more modes
+
+**Commit:** `583ecca` on `feat/ai-banner-studio`, still unpushed. The studio is now four tabs.
+
+| Market pattern | Who | Admin job | Decision |
+|---|---|---|---|
+| Brief + face reference | Pikzels, Thumbfa.st, 1of10, vidIQ | New course banner | Built: **Create** |
+| Edit by instruction | Canva Magic Edit, Firefly Generative Fill | Price, year or word change on a live banner | Built: **Edit a banner** |
+| One design to every size | Canva Magic Switch | App and website banner for every course | Built: **All sizes** |
+| Template + data in bulk | Bannerbear, Placid, Templated | ~1,551 classes with no thumbnail | Built: **Class thumbnails** |
+| Background removal | Photoroom, Firefly, Canva | Teacher cut-outs | Skipped: round photo frames do the job |
+| Frame grab from video | Thumbmagic | Thumbnail from a recording | Skipped: needs video access |
+| Copy a competitor's design | Thumbfa.st | None | Skipped: copying risk |
+| Brand kit | Canva | Per-brand logo and colours | Later: needed before any Vidyagram use |
+
+- **Edit a banner.** Pick a course's live banner or upload one, describe one change, compare before and after, and download at the original size. On the live NTPC banner it changed only the two prices (`mode-edit-*`). It dropped the strike-through on the old price, so a human still checks.
+- **All sizes.** One banner becomes the other formats, keeping the text lines word for word (`mode-resize-*`). "Make other sizes" on a Create result hands the banner and its lines over.
+- **Class thumbnails.** Search classes, keep those without a thumbnail, and make them all from one AI background, about $0.04 per batch. Titles, the topic badge, the faculty photo matched by teacher name, and the logo are typeset on canvas, so titles cannot be misspelled (`mode-class-thumb-*`).
+
+New prompt lessons:
+- "thumbnail" drew a tablet mockup, so prompts now say the design fills the canvas and never sits in a device.
+- A named topic got painted as a heading, so topics are described as objects only.
+- A $ price tag appeared, so dollar signs are now banned.
+- A kept line was repeated, so each line must appear exactly once.
+- "Keep the left side calm" was ignored, so the canvas now fades the text side to the background's own edge colour.
+
+Verified: real runs of all four modes in headless Chromium, 13 studio tests plus 481 of 481 `lib` tests, no new type errors (86 before and after), and no horizontal overflow at 390 px on any tab. Preview artifact: https://claude.ai/artifact/YDxbwQHp5ZTRj8yjEoVxSz
