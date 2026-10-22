@@ -1,10 +1,11 @@
-# Course faculties — app team guide
+# Vidyagram course faculties — app team guide
 
 > A course can have several faculty, in an order the admin sets by dragging. The app shows them in
-> that order, for example "Sahil Sir, +2 more" on a card and the full list behind "View more".
+> that order, for example "Aditya Sir +2 more" on a card and the full list behind "View more".
 > No new endpoint and no new request field. Every course object the app already fetches carries a
-> `faculties` array. Verified against production (`backend.quicktricksbysahilsir.com`, backend tip
-> 18c8acef8) on 2026-10-22: every endpoint in §2 live except `my-courses`, which was checked in code.
+> `faculties` array. Verified against production (`backend.vidyagramar.com`, backend
+> `vidyagram-admin` at 96d39c662) on 2026-10-22: every endpoint in §2 live except `my-courses`,
+> which was checked in code. Base URL: `https://backend.vidyagramar.com/api`.
 
 ---
 
@@ -21,21 +22,23 @@ A faculty object:
 
 ```json
 {
-  "id": "6a9c4dabb7780840fa525c2f",
-  "name": "Quick Tricks Team",
-  "designation": "…",
-  "bio": "A Dedicated team for Railways",
-  "imageUrl": "https://hranker-server-v2.b-cdn.net/faculty/channels4_profile.jpg",
+  "id": "6ad5bb07d764329390a894b4",
+  "name": "Vidyagram Team",
+  "designation": "All",
+  "bio": "…",
+  "imageUrl": "https://…",
   "socialLinks": [],
   "videoUrl": "…",
-  "experience": "30+ Years",
-  "reach": "20 Lakh+ Students Taught",
+  "experience": "…",
+  "reach": "…",
   "description": "…"
 }
 ```
 
-Use `id` as the faculty id. Each object also has `"_id": 0`. That is a leftover of the server
-projection and means nothing; ignore it. Any field other than `id` and `name` can be missing.
+Use `id` as the faculty id. It is the same id the Teacher tab uses (`GET /api/faculty/catalogue`), so
+a tap on a name can open that teacher's page with `GET /api/faculty/catalogue/:id`. Each object also
+has `"_id": 0`. That is a leftover of the server projection and means nothing; ignore it. Any field
+other than `id` and `name` can be missing.
 
 ## 2. Where it appears
 
@@ -43,12 +46,12 @@ The same `faculties` array is on the course objects returned by:
 
 | Endpoint | Used for |
 |---|---|
-| `POST /api/courses/filter` | course listing / tabs |
+| `POST /api/courses/filter` | My courses tabs (All, Exams, Skills, New, Live, VOD, Old, Free) |
 | `POST /api/courses/batch-filter` | batch listing |
 | `POST /api/courses/by-id-2` | course detail |
 | `GET /api/courses/:id` | course detail |
 | `GET /api/courses/active` | active courses |
-| `GET /api/courses/search` | in-app course search |
+| `GET /api/courses/search` | course search |
 | `POST /api/courses/my-courses` | the student's purchased courses |
 
 ## 3. Rules the app can rely on
@@ -60,13 +63,15 @@ The same `faculties` array is on the course objects returned by:
   Hide the faculty line.
 - **No duplicates.** The server drops a repeated id.
 - **Changes show on the next fetch.** When the admin reorders, the next response has the new order.
+- **Every faculty counts, not only the first.** The Teacher tab lists a course under every teacher
+  in `faculties`, and the `search` field on `/courses/filter` matches any of their names.
 
 ## 4. Suggested rendering
 
 The exact design is the app's call. One pattern that fits the "Faculty 1, … view more" idea:
 
-- **Course card.** The first name, then the count of the rest: `Sahil Sir` when there is one,
-  `Sahil Sir +2 more` when there are three.
+- **Course card.** The first name, then the count of the rest: `Aditya Sir` when there is one,
+  `Aditya Sir +2 more` when there are three.
 - **Course detail.** The first one or two faculty with photo and designation, then **View more**
   opening a sheet that lists all `faculties` in order.
 
@@ -80,14 +85,15 @@ function facultyLine(faculties: Faculty[] = []): string {
 }
 ```
 
-For an app build that must also run against an older backend, fall back to
-`course.faculties ?? (course.facultyDetails ? [course.facultyDetails] : [])`.
+Today every live course has one faculty ("Vidyagram Team"), so the "+N more" path only shows once
+the admin adds more faculty to a course.
 
 ## 5. Source of truth (for the backend team)
 
 | What | Where |
 |---|---|
-| Stored list + primary | `quicktricks-backend` `src/models/Course.ts` (`faculties`, `facultyDetails`) |
+| Stored list + primary | backend `vidyagram-admin` `src/models/Course.ts` (`faculties`, `facultyDetails`) |
 | Write rule (`facultyDetails = faculties[0]`) | `src/utils/courseFaculties.ts` `resolveCourseFaculties` |
 | Ordered read (`$lookup` then re-ordered by the stored ids) | `src/utils/courseFaculties.ts` `getCourseFacultiesProjection` |
-| Admin drag order | `quicktricks-admin` `components/admin/CourseForm.tsx` (sends `faculties` in list order) |
+| Teacher tab membership | `src/services/teacherCatalogue.ts` |
+| Admin drag order | admin `vidyagram-admin` `components/admin/SortableFacultyList.tsx`, used by `CourseForm.tsx` |
