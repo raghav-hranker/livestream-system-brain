@@ -22,6 +22,8 @@ guide in task 11. Nothing here touches quicktricks.
 
 Order: 01 → (02, 04, 05, 06, 10 in parallel) → 03 after 02 → (07, 08, 09, 11 as their blockers land) → 12.
 
+Done 2026-10-22: 01 (backend 42350c120, admin ad2e9ee), 02 (47a384345, 7e04d8d), 03 (64ddbf45c + build-buyer fix f7540d26f, admin 1151a41), 04 (c906c8fee), 05 (af7216913, 9ef03cc), 06 (b02018e07, f79418e), 07 (b3afb67fb, 3387795), 08 (admin dd6e13a), 09 (057527050, c140d01), 10 (2a6c61195, f29a237), 11 (guide in `vidyagram/reference/`), plus readable refusal messages (d46be69fe). Integration heads: backend 7ee2c1a53, admin 27c895e (both `feat/vg-feedback`, cut from `origin/vidyagram-admin` ab7d7b4e0 / b8416dc). 82 backend and 36 admin feedback tests pass on the heads. Checked by hand on a local preview (backend 5916, admin 3000 from a detached `vg-feedback-admin-preview` copy with config.ts pointed at localhost, local Mongo 27037 seeded with 600 demo ratings): Overview, Classes ranking, item drawer, Teachers, Tags page, course page section. Open before 12: the class teacher backfill has never run on real data (unmatched names unknown); the in-place class create on the Assign Classes outline still sends only `teacherName`; class notes PDFs are not rateable on their own (guide says rate the class).
+
 ## Working copies
 
 - Integration worktrees (the orchestrator creates them first, then merges task branches into them):
