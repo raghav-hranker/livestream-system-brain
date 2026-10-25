@@ -1,0 +1,239 @@
+<!doctype html>
+<!--
+  PROTOTYPE — throwaway. Vidyagram certificate design, question Q19:
+  what does certificate.vidyagramar.com/<code> serve?
+  Three variants, switchable via ?variant=A|B|C (or ← / →). Open this file in a browser; nothing to install.
+  The app column is deliberately identical in every variant: the app never opens the share link.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Certificate link prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Great+Vibes&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#f4f5f7; --ink:#14171f; --muted:#5d6472; --line:#dfe2e8; --card:#fff; --navy:#13224a; --gold:#c9a227; --wa:#e5ddd5; --wa-out:#d9fdd3; --ok:#1a7f45; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:14px/1.45 Inter, system-ui, sans-serif; padding:24px 16px 96px; }
+  h1 { font-size:20px; margin:0 0 4px; }
+  .lede { color:var(--muted); margin:0 0 20px; max-width:900px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px; align-items:start; }
+  .col h2 { font-size:13px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin:0 0 8px; }
+  .col .note { color:var(--muted); font-size:12.5px; margin-top:8px; }
+  .same { display:inline-block; font-size:11px; background:#eef0f4; color:var(--muted); border-radius:99px; padding:2px 8px; margin-left:6px; text-transform:none; letter-spacing:0; }
+  .phone { width:100%; max-width:320px; border:10px solid #111; border-radius:28px; overflow:hidden; background:#fff; box-shadow:0 8px 24px rgba(0,0,0,.12); }
+  .phone .bar { height:22px; background:#111; }
+  .screen { min-height:500px; display:flex; flex-direction:column; }
+  .apphead { background:var(--navy); color:#fff; padding:12px 14px; font-weight:600; }
+  .apphead small { display:block; font-weight:400; opacity:.75; }
+  .pad { padding:14px; }
+  .progress { height:8px; border-radius:6px; background:#e7e9ee; overflow:hidden; margin:6px 0 4px; }
+  .progress i { display:block; height:100%; width:100%; background:var(--ok); }
+  .btn { display:block; width:100%; text-align:center; border:0; border-radius:10px; padding:10px; font:600 14px Inter, sans-serif; cursor:default; }
+  .btn.primary { background:var(--navy); color:#fff; }
+  .btn.ghost { background:#eef0f4; color:var(--ink); }
+  .row { display:flex; gap:8px; margin-top:10px; }
+  .row .btn { flex:1; }
+  .cert { width:100%; display:block; border-radius:4px; box-shadow:0 1px 4px rgba(0,0,0,.2); }
+  .wa { background:var(--wa); flex:1; padding:14px 10px; display:flex; flex-direction:column; gap:8px; }
+  .wahead { background:#075e54; color:#fff; padding:12px 14px; font-weight:600; }
+  .bubble { align-self:flex-end; max-width:88%; background:var(--wa-out); border-radius:8px; padding:6px 8px 4px; font-size:13px; box-shadow:0 1px 1px rgba(0,0,0,.1); }
+  .bubble.in { align-self:flex-start; background:#fff; }
+  .bubble a { color:#027eb5; word-break:break-all; text-decoration:none; }
+  .bubble time { display:block; text-align:right; font-size:10.5px; color:#667781; }
+  .preview { background:rgba(0,0,0,.05); border-radius:6px; overflow:hidden; margin-bottom:6px; }
+  .preview img { width:100%; display:block; }
+  .preview .t { padding:6px 8px 0; font-weight:600; font-size:12.5px; }
+  .preview .d { padding:0 8px 6px; color:#667781; font-size:11.5px; }
+  .pdfbar { background:#323639; color:#fff; padding:10px 12px; font-size:12px; display:flex; justify-content:space-between; }
+  .pdfview { background:#525659; flex:1; padding:18px 10px; }
+  .urlbar { background:#f1f3f4; padding:8px 10px; font-size:11.5px; color:#3c4043; border-bottom:1px solid var(--line); word-break:break-all; }
+  .verify { padding:14px; }
+  .valid { display:flex; gap:8px; align-items:center; background:#e8f5ec; color:var(--ok); border-radius:10px; padding:10px 12px; font-weight:600; margin-bottom:12px; }
+  dl { margin:12px 0; display:grid; grid-template-columns:auto 1fr; gap:4px 12px; font-size:12.5px; }
+  dt { color:var(--muted); } dd { margin:0; }
+  .server { margin-top:24px; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; }
+  .server h2 { font-size:13px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin:0 0 10px; }
+  .server table { border-collapse:collapse; width:100%; font-size:13px; }
+  .server td { border-top:1px solid var(--line); padding:8px 6px; vertical-align:top; }
+  .server td:first-child { font-family:ui-monospace, Menlo, monospace; white-space:nowrap; }
+  .verdict { margin-top:16px; display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px; }
+  .verdict div { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px; }
+  .verdict b { display:block; margin-bottom:4px; }
+  .switcher { position:fixed; left:50%; bottom:18px; transform:translateX(-50%); display:flex; align-items:center; gap:4px; background:#111; color:#fff; border-radius:99px; padding:6px; box-shadow:0 6px 20px rgba(0,0,0,.3); z-index:10; font-size:13px; max-width:calc(100% - 32px); }
+  .switcher button { background:#2a2a2a; color:#fff; border:0; width:34px; height:34px; border-radius:50%; font-size:16px; cursor:pointer; flex:none; }
+  .switcher span { padding:0 12px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .proto { font-size:11px; background:#ffe9a8; color:#5a4500; border-radius:6px; padding:2px 6px; margin-left:8px; vertical-align:middle; }
+</style>
+</head>
+<body>
+<h1>What does <code>certificate.vidyagramar.com/VG-…</code> serve? <span class="proto">PROTOTYPE</span></h1>
+<p class="lede" id="lede"></p>
+
+<div class="grid">
+  <section class="col">
+    <h2>1 · Student's app <span class="same">same in every variant</span></h2>
+    <div class="phone"><div class="bar"></div><div class="screen">
+      <div class="apphead">SSC CGL 2026 — गणित फाउंडेशन<small>Course progress</small></div>
+      <div class="pad">
+        <div style="display:flex;justify-content:space-between;font-size:12.5px"><span>48 of 48 classes</span><b>100%</b></div>
+        <div class="progress"><i></i></div>
+        <p style="margin:14px 0 8px;font-weight:600">Your certificate</p>
+        <div id="app-cert"></div>
+        <div class="row"><button class="btn primary">View PDF</button><button class="btn ghost">Share</button></div>
+        <p style="font-size:12px;color:var(--muted);margin:10px 0 0">The image is drawn by the app's normal image view. "View PDF" opens <code>pdfUrl</code> in the PDF viewer the app already has for course PDFs. "Share" sends the link.</p>
+      </div>
+    </div></div>
+    <p class="note">The API returns <code>{code, imageUrl, pdfUrl, shareUrl}</code>. The app never loads <code>shareUrl</code> itself; it only hands it to the share sheet. Your "I have to render it in the app" concern is the same in every variant.</p>
+  </section>
+
+  <section class="col">
+    <h2>2 · Shared on WhatsApp</h2>
+    <div class="phone"><div class="bar"></div><div class="screen">
+      <div class="wahead">Papa</div>
+      <div class="wa" id="wa"></div>
+    </div></div>
+    <p class="note" id="wa-note"></p>
+  </section>
+
+  <section class="col">
+    <h2>3 · Recipient taps the link</h2>
+    <div class="phone"><div class="bar"></div><div class="screen" id="tap"></div></div>
+    <p class="note" id="tap-note"></p>
+  </section>
+</div>
+
+<div class="server"><h2>What the server answers</h2><table id="routes"></table></div>
+<div class="verdict" id="verdict"></div>
+
+<div class="switcher" role="toolbar" aria-label="Prototype variant">
+  <button id="prev" aria-label="Previous variant">←</button>
+  <span id="label"></span>
+  <button id="next" aria-label="Next variant">→</button>
+</div>
+
+<script>
+const CODE = 'VG-7K3Q9XMD2P';
+const SHARE = 'certificate.vidyagramar.com/' + CODE;
+
+function certSvg() {
+  const qr = [];
+  let s = 7;
+  for (let y = 0; y < 21; y++) for (let x = 0; x < 21; x++) {
+    s = (s * 9301 + 49297) % 233280;
+    const finder = (x < 7 && y < 7) || (x > 13 && y < 7) || (x < 7 && y > 13);
+    const on = finder ? !(x % 6 && y % 6 && !((x === 1 || x === 5 || x === 15 || x === 19) || (y === 1 || y === 5 || y === 15 || y === 19))) : s / 233280 > 0.5;
+    if (on) qr.push(`<rect x="${x * 4}" y="${y * 4}" width="4" height="4"/>`);
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1123 794">
+    <rect width="1123" height="794" fill="#13224a"/>
+    <path d="M0 0 L300 0 L120 794 L0 794 Z" fill="#1d3170"/>
+    <path d="M300 0 L380 0 L200 794 L120 794 Z" fill="#c9a227" opacity=".85"/>
+    <rect x="40" y="40" width="1043" height="714" fill="none" stroke="#c9a227" stroke-width="2"/>
+    <text x="700" y="140" fill="#fff" font-family="Cormorant Garamond, serif" font-size="46" font-weight="600" text-anchor="middle" letter-spacing="4">VIDYAGRAM</text>
+    <text x="700" y="240" fill="#fff" font-family="Cormorant Garamond, serif" font-size="64" text-anchor="middle">Certificate of Completion</text>
+    <text x="700" y="300" fill="#c9a227" font-family="Inter, sans-serif" font-size="20" text-anchor="middle" letter-spacing="3">PRESENTED TO</text>
+    <text x="700" y="385" fill="#fff" font-family="Noto Sans Devanagari, Inter, sans-serif" font-size="60" font-weight="600" text-anchor="middle">राहुल शर्मा</text>
+    <line x1="470" y1="410" x2="930" y2="410" stroke="#c9a227" stroke-width="2"/>
+    <text x="700" y="460" fill="#dfe4f2" font-family="Inter, sans-serif" font-size="20" text-anchor="middle">for completing the course</text>
+    <text x="700" y="500" fill="#fff" font-family="Noto Sans Devanagari, Inter, sans-serif" font-size="28" font-weight="600" text-anchor="middle">SSC CGL 2026 — गणित फाउंडेशन बैच</text>
+    <text x="700" y="545" fill="#dfe4f2" font-family="Inter, sans-serif" font-size="20" text-anchor="middle">On the 23rd of October 2026</text>
+    <text x="700" y="650" fill="#fff" font-family="Great Vibes, cursive" font-size="44" text-anchor="middle">Test Signatory</text>
+    <line x1="590" y1="665" x2="810" y2="665" stroke="#dfe4f2"/>
+    <text x="700" y="690" fill="#dfe4f2" font-family="Inter, sans-serif" font-size="15" text-anchor="middle">Director, Vidyagram (TEST VALUE)</text>
+    <g transform="translate(965 620)" fill="#fff">${qr.join('')}</g>
+    <text x="1007" y="725" fill="#dfe4f2" font-family="Inter, sans-serif" font-size="12" text-anchor="middle">${CODE}</text>
+  </svg>`;
+}
+const CERT = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(certSvg());
+const img = (style = '') => `<img class="cert" src="${CERT}" alt="Certificate" style="${style}">`;
+
+const pdfScreen = (msg) => `
+  <div class="urlbar">🔒 ${SHARE}</div>
+  <div class="pdfbar"><span>Vidyagram_Certificate.pdf</span><span>1 / 1</span></div>
+  <div class="pdfview">${img()}<p style="color:#ddd;font-size:11.5px;text-align:center;margin:12px 0 0">${msg}</p></div>`;
+
+const variants = {
+  A: {
+    name: 'Link is the PDF (AlgoExpert)',
+    lede: 'The share link returns the PDF itself, as AlgoExpert does. There is no web page: if the PDF loads from our domain, the certificate is genuine.',
+    wa: `<div class="bubble">Got my certificate 🎉<br><a>https://${SHARE}</a><time>10:41 ✓✓</time></div>
+         <div class="bubble in">Congrats beta! It won't open, what do I tap?<time>10:52</time></div>`,
+    waNote: 'WhatsApp shows a bare link with no picture. It can only build a preview card from a web page, and this link is a PDF. The recipient sees text and has to tap it before seeing anything.',
+    tap: pdfScreen('Some Android phones download the file instead of showing it.'),
+    tapNote: 'One URL and one file, so it is the simplest to build. The weakness is that the recipient gets a file, not a page, and nothing on screen says "verified by Vidyagram" apart from the address bar.',
+    routes: [
+      ['GET /VG-7K3Q9XMD2P', 'The PDF (<code>application/pdf</code>, inline, filename <code>Vidyagram_Certificate.pdf</code>)'],
+      ['GET /VG-0000000000', '404 "Certificate not found"'],
+      ['GET /VG-….png', 'The image the app shows. It can live at any URL, since only the app uses it.'],
+    ],
+    verdict: [['Build cost', 'Lowest: one route.'], ['Sharing', 'Weakest: no preview card on WhatsApp, LinkedIn or X.'], ['Proof for the recipient', 'Implicit: the domain is the proof.']],
+  },
+  B: {
+    name: 'Verify page + PDF',
+    lede: 'The share link opens a small web page with a "Valid" badge, the certificate image and a Download PDF button. The PDF has its own URL.',
+    wa: `<div class="bubble"><div class="preview"><img src="${CERT}" alt=""><div class="t">राहुल शर्मा — Certificate of Completion</div><div class="d">SSC CGL 2026 — गणित फाउंडेशन बैच · certificate.vidyagramar.com</div></div>Got my certificate 🎉<br><a>https://${SHARE}</a><time>10:41 ✓✓</time></div>
+         <div class="bubble in">Wah! Congrats beta 👏<time>10:42</time></div>`,
+    waNote: 'WhatsApp reads the page\'s preview tags (og:image, og:title) and shows the certificate in the chat before anyone taps. LinkedIn and X do the same.',
+    tap: `<div class="urlbar">🔒 ${SHARE}</div><div class="verify">
+            <div class="valid">✓ Valid certificate issued by Vidyagram</div>${img()}
+            <dl><dt>Name</dt><dd>राहुल शर्मा</dd><dt>Course</dt><dd>SSC CGL 2026 — गणित फाउंडेशन बैच</dd><dt>Issued</dt><dd>23 Oct 2026</dd><dt>Number</dt><dd>${CODE}</dd></dl>
+            <button class="btn primary">Download PDF</button></div>`,
+    tapNote: 'The recipient sees an explicit "Valid" badge and the details. The PDF is one tap away.',
+    routes: [
+      ['GET /VG-7K3Q9XMD2P', 'A small HTML page with the badge, the image and the details. <code>og:image</code> points at the .png.'],
+      ['GET /VG-7K3Q9XMD2P.pdf', 'The frozen PDF'],
+      ['GET /VG-7K3Q9XMD2P.png', 'The frozen image, used by the app and by link previews'],
+      ['GET /VG-0000000000', '404 page "No certificate found"'],
+    ],
+    verdict: [['Build cost', 'One extra route: a single HTML template with no client-side JavaScript.'], ['Sharing', 'Best: a preview card everywhere.'], ['Proof for the recipient', 'Explicit badge and details.']],
+  },
+  C: {
+    name: 'Link is the PDF, with a preview card for chat apps',
+    lede: 'Same URL as A, and a person tapping it gets the PDF. When WhatsApp, LinkedIn or X fetch the link to build a preview, they get a tiny page carrying only the preview tags, chosen by their User-Agent.',
+    wa: `<div class="bubble"><div class="preview"><img src="${CERT}" alt=""><div class="t">राहुल शर्मा — Certificate of Completion</div><div class="d">SSC CGL 2026 — गणित फाउंडेशन बैच · certificate.vidyagramar.com</div></div>Got my certificate 🎉<br><a>https://${SHARE}</a><time>10:41 ✓✓</time></div>
+         <div class="bubble in">Wah! Congrats beta 👏<time>10:42</time></div>`,
+    waNote: 'The chat shows the same preview card as B…',
+    tap: pdfScreen('…but tapping opens the PDF, as in A.'),
+    tapNote: 'AlgoExpert-style simplicity for people and a preview card in chat. It costs a User-Agent check, and a preview bot we have not listed falls back to a bare link.',
+    routes: [
+      ['GET /VG-7K3Q9XMD2P (browser)', 'The PDF, as in A'],
+      ['GET /VG-7K3Q9XMD2P (WhatsApp, facebookexternalhit, LinkedInBot, Twitterbot)', 'About 10 lines of HTML: <code>og:title</code> and <code>og:image</code> pointing at the .png'],
+      ['GET /VG-7K3Q9XMD2P.png', 'The frozen image (app + previews)'],
+      ['GET /VG-0000000000', '404 "Certificate not found"'],
+    ],
+    verdict: [['Build cost', 'Low: A plus a User-Agent check.'], ['Sharing', 'A preview card for the listed apps.'], ['Proof for the recipient', 'Implicit, as in A.']],
+  },
+};
+
+const keys = Object.keys(variants);
+function render(k) {
+  const v = variants[k];
+  document.getElementById('label').textContent = `${k} (${v.name})`;
+  document.getElementById('lede').textContent = v.lede;
+  document.getElementById('app-cert').innerHTML = img();
+  document.getElementById('wa').innerHTML = v.wa;
+  document.getElementById('wa-note').textContent = v.waNote;
+  document.getElementById('tap').innerHTML = v.tap;
+  document.getElementById('tap-note').textContent = v.tapNote;
+  document.getElementById('routes').innerHTML = v.routes.map(([a, b]) => `<tr><td>${a}</td><td>${b}</td></tr>`).join('');
+  document.getElementById('verdict').innerHTML = v.verdict.map(([a, b]) => `<div><b>${a}</b>${b}</div>`).join('');
+}
+let shown = (() => { const k = new URLSearchParams(location.search).get('variant'); return keys.includes(k) ? k : 'A'; })();
+function go(step) {
+  shown = keys[(keys.indexOf(shown) + step + keys.length) % keys.length];
+  try { history.replaceState(null, '', '?variant=' + shown); } catch {}
+  render(shown);
+}
+document.getElementById('prev').onclick = () => go(-1);
+document.getElementById('next').onclick = () => go(1);
+addEventListener('keydown', e => {
+  if (e.target.closest('input, textarea, [contenteditable]')) return;
+  if (e.key === 'ArrowLeft') go(-1);
+  if (e.key === 'ArrowRight') go(1);
+});
+render(shown);
+</script>
+</body>
+</html>
