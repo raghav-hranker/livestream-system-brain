@@ -12,6 +12,17 @@
 > Sample ids below are placeholders (`<courseId>`, `<classId>`…) in place of the real ObjectIds the
 > calls returned. Everything else is the real response.
 
+## Changed on 26 October (live as a87e74506)
+
+1. **A test can be rated without a parent.** Send `parent` only when the test was opened from a course or
+   practice batch. A test rated without one needs a submitted attempt, or the save is a 403
+   (`Submit this test before rating it.`, `reason` `no_attempt`) and `mine` says `canGiveFeedback: false`,
+   `reason: "no_attempt"`. A test asked about on `mine` without a parent is no longer `parent_required`.
+2. **My courses reads the login token.** Send `Authorization: Bearer <token>` on `POST /api/courses/my-courses`.
+   With a student token the token decides the student; a body `userId` that differs gets 403
+   `userId does not match the login`. A call with no token still works as before, until the student login gate
+   is switched on.
+
 ## Changed on 25 October
 
 1. **New kind `teacher`.** A student rates a teacher directly, with no parent. They may rate once at least
@@ -169,7 +180,7 @@ tags without an app release, so do not hard-code them.
 |---|---|
 | `kind` | `course` `practiceBatch` `class` `pdf` `test` `ebook` `teacher` |
 | `id` | the item's 24-character id |
-| `parent` | required for `class`, `pdf`, `test`; must be absent (or `null`) for the other four; see §5 |
+| `parent` | required for `class` and `pdf`; optional for `test` (without it the student needs a submitted attempt); must be absent (or `null`) for the other four; see §5 |
 | `rating` | integer 1 to 5 |
 | `tags` | codes for this kind; only at 1 to 3 stars, else `[]`; duplicates are dropped |
 | `note` | optional, trimmed, max 1000 user-visible characters |
@@ -283,6 +294,7 @@ navigated from; do not look it up.
 | PDF opened from a practice batch's PDF list | `pdf` | `{ "kind": "practiceBatch", ... }` |
 | Test opened from a course | `test` | `{ "kind": "course", ... }` |
 | Test opened from a practice batch | `test` | `{ "kind": "practiceBatch", ... }` |
+| Any other test (test series, PYQ, quiz) on the analysis screen | `test` | none (needs a submitted attempt) |
 | Ebook screen | `ebook` | none |
 | Teacher profile (Teacher tab or a course's teacher list) | `teacher` | none |
 
@@ -297,7 +309,7 @@ navigated from; do not look it up.
 
 ## 6. Read back and eligibility: `GET /api/feedback/mine`
 
-Query: `kind`, `id`, and for a class, PDF or test `parentKind` + `parentId` (the same container `PUT` would
+Query: `kind`, `id`, and for a class or PDF (and a test opened from a container) `parentKind` + `parentId` (the same container `PUT` would
 send). Send `parentKind` and `parentId` together or not at all.
 
 ```
@@ -350,7 +362,8 @@ what `PUT` returns as `msg` for the same refusal, so you can reuse it.
 
 | `reason` | When | Text `PUT` uses |
 |---|---|---|
-| `parent_required` | class, PDF or test asked about without `parentKind` + `parentId` (an app bug) | `Rate this class from the course or practice batch it is in.` |
+| `no_attempt` | a test asked about without a parent, not yet submitted | `Submit this test before rating it.` |
+| `parent_required` | class or PDF asked about without `parentKind` + `parentId` (an app bug) | `Rate this class from the course or practice batch it is in.` |
 | `not_placed` | the item is not in that course or batch (also when that parent id does not exist) | `This class is not in that course or practice batch.` |
 | `no_access` | the item, or the course or batch it was opened from, not bought or expired | `You need access to this class to rate it.` |
 | `needs_purchase` | paid ebook not bought | `Buy this ebook to rate it.` |
@@ -387,12 +400,13 @@ note length and tags at 4 or 5 stars.
 | 400 | `Invalid feedback`, `parent.kind`: `Invalid enum value. Expected 'course' \| 'practiceBatch', received 'class'` | bad parent kind | generic |
 | 400 | `Invalid feedback`, `attempt`: `Number must be greater than or equal to 1` / `Expected integer, received float` / `Expected number, received string` | attempt 0, 1.5 or `"2"` | generic |
 | 400 | `attempt is only for tests` | `attempt` sent on another kind (no `errors` array) | generic |
-| 400 | `Rate this class from the course or practice batch it is in.` (also `this PDF`, `this test`), `data: {"reason":"parent_required"}` | parent missing | generic |
+| 400 | `Rate this class from the course or practice batch it is in.` (also `this PDF`), `data: {"reason":"parent_required"}` | parent missing | generic |
 | 400 | `Rate this course on its own, not from a course or practice batch.` (also `this practice batch`, `this ebook`, `this teacher`) | parent sent where none belongs | generic |
 | 400 | `boring cannot be used on a class.` (several codes are comma-separated; `audio_unclear cannot be used on a teacher.`) | code not an active tag of this kind (unknown, retired, or another kind's) | generic; refresh the tag cache |
 | 403 | `You need access to this course to rate it.` (one per kind: `this practice batch`, `this class`, `this PDF`, `this test`), `reason` `no_access` | the item, or the course or batch it was opened from, not bought or the order expired | `msg` |
 | 403 | `Buy this ebook to rate it.`, `reason` `needs_purchase` | paid ebook not bought | `msg` |
 | 403 | `You can rate this class once it has started.`, `reason` `not_started` | class start still ahead | `msg` |
+| 403 | `Submit this test before rating it.`, `reason` `no_attempt` | test without a parent, not submitted | `msg` |
 | 403 | `You can rate this teacher once you are in one of their courses.`, `reason` `no_course_with_teacher` | no course in My courses lists the teacher | `msg` |
 | 403 | `This class is not in that course or practice batch.` (also `This PDF ...`, `This test ...`), `reason` `not_placed` | wrong `parent` | `msg`; this is an app bug, log it |
 | 403 | `Student login required` | not a student token | log in again |
@@ -417,7 +431,7 @@ reach the student.
 
 ## 8. My courses star: `myRating`
 
-`POST /api/courses/my-courses` (body `{ "userId": "<userId>" }`) now puts `myRating` on every card of
+`POST /api/courses/my-courses` (send the login token; a body `{ "userId" }` is optional and must match it) now puts `myRating` on every card of
 `liveCourses[]` and `recordedCourses[]`. It is the student's own course rating (1 to 5), or `null` before
 they rate the course. Use it for the star on the card and to prefill the course Rate sheet without an extra
 `mine` call. After a successful course `PUT`, set the card's `myRating` from the response `rating`.
