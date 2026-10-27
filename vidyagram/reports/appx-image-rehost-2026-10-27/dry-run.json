@@ -1,0 +1,1231 @@
+{
+ "summary": {
+  "mode": "DRY RUN",
+  "fieldsToRewrite": {
+   "courses": 80,
+   "ebooks": 2,
+   "questions": 14,
+   "testsectionquestionmaps": 6
+  },
+  "sourceUrls": 95,
+  "sourcesReadable": 81,
+  "sourcesNotReadable": [
+   {
+    "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-06-0_9007011932323974.jpeg",
+    "status": 404,
+    "type": "application/xml",
+    "bytes": 0,
+    "sha1": null,
+    "refs": [
+     "courses:6ad5fa4c308a95d039c360fe:banner",
+     "courses:6ad73b8ac90f6da685048d8c:banner"
+    ]
+   },
+   {
+    "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/17035974000338e497-1703597400.png",
+    "status": 200,
+    "type": "image/png",
+    "bytes": 0,
+    "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "refs": [
+     "questions:6ad892c4c9735682f0fe4542:question",
+     "testsectionquestionmaps:6ad892c4c9735682f0fe4564:test"
+    ]
+   },
+   {
+    "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/170359739957d84512-1703597398.png",
+    "status": 200,
+    "type": "image/png",
+    "bytes": 0,
+    "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "refs": [
+     "questions:6ad892d1c9735682f0fe46b4:question",
+     "testsectionquestionmaps:6ad892d2c9735682f0fe46d6:test"
+    ]
+   },
+   {
+    "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/1703597399c53f9acb-1703597399.png",
+    "status": 200,
+    "type": "image/png",
+    "bytes": 0,
+    "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "refs": [
+     "questions:6ad892d1c9735682f0fe46b4:solution",
+     "testsectionquestionmaps:6ad892d2c9735682f0fe46d6:test"
+    ]
+   },
+   {
+    "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/17035974025d438883-1703597402.png",
+    "status": 200,
+    "type": "image/png",
+    "bytes": 0,
+    "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "refs": [
+     "questions:6ad892e6c9735682f0fe481a:solution",
+     "testsectionquestionmaps:6ad892e6c9735682f0fe483c:test"
+    ]
+   },
+   {
+    "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/170359740472a50137-1703597404.png",
+    "status": 200,
+    "type": "image/png",
+    "bytes": 0,
+    "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "refs": [
+     "questions:6ad892f8c9735682f0fe494f:question",
+     "testsectionquestionmaps:6ad892f9c9735682f0fe4973:test"
+    ]
+   },
+   {
+    "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/1703597404da35e8e2-1703597404.png",
+    "status": 200,
+    "type": "image/png",
+    "bytes": 0,
+    "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "refs": [
+     "questions:6ad892f8c9735682f0fe494f:solution",
+     "testsectionquestionmaps:6ad892f9c9735682f0fe4973:test"
+    ]
+   },
+   {
+    "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/1703597643abc51049-1703597643.png",
+    "status": 200,
+    "type": "image/png",
+    "bytes": 0,
+    "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "refs": [
+     "questions:6ad8ad5cc9735682f00353ce:question",
+     "testsectionquestionmaps:6ad8ad61c9735682f0035425:test"
+    ]
+   },
+   {
+    "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/17035976443a9df781-1703597644.png",
+    "status": 200,
+    "type": "image/png",
+    "bytes": 0,
+    "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "refs": [
+     "questions:6ad8ad5dc9735682f00353d0:solution",
+     "testsectionquestionmaps:6ad8ad61c9735682f0035425:test"
+    ]
+   },
+   {
+    "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/1703597644eed525b1-1703597644.png",
+    "status": 200,
+    "type": "image/png",
+    "bytes": 0,
+    "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "refs": [
+     "questions:6ad8ad5dc9735682f00353d4:question",
+     "testsectionquestionmaps:6ad8ad61c9735682f0035425:test"
+    ]
+   },
+   {
+    "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/1703597645a6a56cf6-1703597645.png",
+    "status": 200,
+    "type": "image/png",
+    "bytes": 0,
+    "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "refs": [
+     "questions:6ad8ad5ec9735682f00353df:solution",
+     "testsectionquestionmaps:6ad8ad61c9735682f0035425:test"
+    ]
+   },
+   {
+    "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/170359764703e0947e-1703597647.png",
+    "status": 200,
+    "type": "image/png",
+    "bytes": 0,
+    "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "refs": [
+     "questions:6ad8ad5fc9735682f00353ed:solution",
+     "testsectionquestionmaps:6ad8ad61c9735682f0035425:test"
+    ]
+   },
+   {
+    "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/1703597649bb7dfde8-1703597648.png",
+    "status": 200,
+    "type": "image/png",
+    "bytes": 0,
+    "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "refs": [
+     "questions:6ad8ad60c9735682f00353f9:question",
+     "testsectionquestionmaps:6ad8ad61c9735682f0035425:test"
+    ]
+   },
+   {
+    "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/17035976507f28c251-1703597650.png",
+    "status": 200,
+    "type": "image/png",
+    "bytes": 0,
+    "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "refs": [
+     "questions:6ad8ad60c9735682f0035400:solution",
+     "testsectionquestionmaps:6ad8ad61c9735682f0035425:test"
+    ]
+   }
+  ]
+ },
+ "sources": [
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-06-0_8748184707064056.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 405845,
+   "target": "https://assets.hranker.org/781/courses/banners/675a87f9b89937fff02a43612942ac7dc75fa39d.jpeg",
+   "refs": [
+    "courses:6ad5f78db4d74b982a7948e9:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-06-0_31934981507807114.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 188191,
+   "target": "https://assets.hranker.org/781/courses/banners/724782a9729e27a90be956f7983246afd524b8ac.jpeg",
+   "refs": [
+    "courses:6ad5f971308a95d039c2e0c7:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-05-19-0_05120324419173705.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 340963,
+   "target": "https://assets.hranker.org/781/courses/banners/5833e267379ceb5dbe863adc68eed968367faa85.jpeg",
+   "refs": [
+    "courses:6ad5f979308a95d039c2e89d:banner"
+   ]
+  },
+  {
+   "src": "https://appxcontent.kaxa.in/paid_course3/2024-03-10-0.11571404445373945.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 402130,
+   "target": "https://assets.hranker.org/781/courses/banners/de519a59384036eb97b853312b826ca2f7b9b291.png",
+   "refs": [
+    "courses:6ad5f9a4308a95d039c305fd:banner"
+   ]
+  },
+  {
+   "src": "https://appxcontent.kaxa.in/paid_course3/2024-03-10-0.40597277268413157.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 386421,
+   "target": "https://assets.hranker.org/781/courses/banners/3436041464191a178dd63c3c13556e8c1ca7429b.png",
+   "refs": [
+    "courses:6ad5f9a7308a95d039c30951:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-03-22-0_9357995727443316.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 379587,
+   "target": "https://assets.hranker.org/781/courses/banners/32ea8b15aadc4f02f4a7eac9c1eb5a54c39e12d8.jpeg",
+   "refs": [
+    "courses:6ad5f9ad308a95d039c310f3:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-03-22-0_03966193776299354.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 379587,
+   "target": "https://assets.hranker.org/781/courses/banners/03bfef2239193fcbcfb251038554e05da7e7c7c1.jpeg",
+   "refs": [
+    "courses:6ad5f9b8308a95d039c31b58:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-03-22-0_18817287764031443.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 379587,
+   "target": "https://assets.hranker.org/781/courses/banners/97896a4e225f3a5928191f61ee5348fa5ce60005.jpeg",
+   "refs": [
+    "courses:6ad5f9bb308a95d039c31f33:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-03-22-0_3212513387830307.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 379587,
+   "target": "https://assets.hranker.org/781/courses/banners/0f305722eb065ca41b9e34f04988c7aa1a7edeb3.jpeg",
+   "refs": [
+    "courses:6ad5f9c0308a95d039c323d7:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-05-19-0_7073616226745992.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 333923,
+   "target": "https://assets.hranker.org/781/courses/banners/fb9afe650e1420bd103498fc5e9e18939580bb68.jpeg",
+   "refs": [
+    "courses:6ad5f9c5308a95d039c327c6:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-05-22-0_07635224186638556.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 401051,
+   "target": "https://assets.hranker.org/781/courses/banners/852f8738cb9310ba482db76176dc16a45f4bf18b.jpeg",
+   "refs": [
+    "courses:6ad5f9ca308a95d039c32990:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-04-27-0_15056166423166528.gif",
+   "ok": true,
+   "status": 200,
+   "type": "image/gif",
+   "bytes": 12261293,
+   "target": "https://assets.hranker.org/781/courses/banners/8965cb0c43b191a8b1c7050f9f4ff8f6dfafa452.gif",
+   "refs": [
+    "courses:6ad5f9cc308a95d039c32d71:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-05-22-0_5848667694479853.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 352009,
+   "target": "https://assets.hranker.org/781/courses/banners/00d3b18eb2ca4c834a690baf46c24a0f1aaa690b.jpeg",
+   "refs": [
+    "courses:6ad5f9ce308a95d039c32feb:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-05-22-0_08542916975032477.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 396540,
+   "target": "https://assets.hranker.org/781/courses/banners/ad9d61ceabaaed7eba6d99fad29383280799de39.jpeg",
+   "refs": [
+    "courses:6ad5f9d1308a95d039c3313f:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-06-0_40851613632534023.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 1859202,
+   "target": "https://assets.hranker.org/781/courses/banners/fa2921816b6a1fac4ca2369dffc2d3e6ac2c4f54.png",
+   "refs": [
+    "courses:6ad5f9d4308a95d039c332e4:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-05-22-0_24786221427461907.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 376188,
+   "target": "https://assets.hranker.org/781/courses/banners/d18bc336ba7a56a64dc03f8a2f0470d800565a05.jpeg",
+   "refs": [
+    "courses:6ad5f9d7308a95d039c33405:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-05-22-0_4531342453988436.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 336150,
+   "target": "https://assets.hranker.org/781/courses/banners/23d1ed2641291fda95e4261504f07f8a8cbf1089.jpeg",
+   "refs": [
+    "courses:6ad5f9e5308a95d039c336ad:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-06-0_10330504007579833.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 1954426,
+   "target": "https://assets.hranker.org/781/courses/banners/5156285dcdf5b46823537b3a48e9b7db76dfb519.png",
+   "refs": [
+    "courses:6ad5f9e8308a95d039c33a7b:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-05-22-0_15783453244185763.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 373053,
+   "target": "https://assets.hranker.org/781/courses/banners/cf15fee54511840b1e99210fae5e1834b76dce86.jpeg",
+   "refs": [
+    "courses:6ad5f9ea308a95d039c33b8c:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-07-28-0_5863682038521798.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 352582,
+   "target": "https://assets.hranker.org/781/courses/banners/bb827e4ee79b9f84639f17176bcdc71cd865374f.jpeg",
+   "refs": [
+    "courses:6ad5fa04308a95d039c33fb8:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-07-28-0_9927905302087822.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 448119,
+   "target": "https://assets.hranker.org/781/courses/banners/b4a3c686d6291a5ca564010a7bcc39b3cd92e0ff.jpeg",
+   "refs": [
+    "courses:6ad5fa05308a95d039c346d7:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-05-18-0_5159348786866089.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 336150,
+   "target": "https://assets.hranker.org/781/courses/banners/6a1d3f2a7f9c1a306a6df614991ec552da037646.jpeg",
+   "refs": [
+    "courses:6ad5fa0d308a95d039c347e3:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-04-27-0_5062881680598683.gif",
+   "ok": true,
+   "status": 200,
+   "type": "image/gif",
+   "bytes": 13719856,
+   "target": "https://assets.hranker.org/781/courses/banners/0fe05c3969f6c70029939ffcfde3cfa120bbe084.gif",
+   "refs": [
+    "courses:6ad5fa0f308a95d039c34b53:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-04-27-0_25089336657137407.gif",
+   "ok": true,
+   "status": 200,
+   "type": "image/gif",
+   "bytes": 12868567,
+   "target": "https://assets.hranker.org/781/courses/banners/bb5c7e7609b05985f59981d7a71868426faa0d09.gif",
+   "refs": [
+    "courses:6ad5fa10308a95d039c34b8e:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-05-15-0_3791943326973125.gif",
+   "ok": true,
+   "status": 200,
+   "type": "image/gif",
+   "bytes": 11882642,
+   "target": "https://assets.hranker.org/781/courses/banners/eb99f684831fd769a06a745835dc73094cf8e336.gif",
+   "refs": [
+    "courses:6ad5fa11308a95d039c34bf6:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-05-21-0_5515533861820834.jpg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 1066470,
+   "target": "https://assets.hranker.org/781/courses/banners/1dafe3e022437394290e1726d5a250191dbdf0a4.jpg",
+   "refs": [
+    "courses:6ad5fa11308a95d039c34c93:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-06-0_46390429339667105.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 408001,
+   "target": "https://assets.hranker.org/781/courses/banners/1b0097ef14a9cb29617e7f8bbf0c94143d478499.jpeg",
+   "refs": [
+    "courses:6ad5fa12308a95d039c34cba:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-06-0_5704197075845613.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 404469,
+   "target": "https://assets.hranker.org/781/courses/banners/ea082e3ced022d68eb4f0c9ff7b403a2518db447.jpeg",
+   "refs": [
+    "courses:6ad5fa14308a95d039c34d87:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-06-0_8041322509495442.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 405212,
+   "target": "https://assets.hranker.org/781/courses/banners/0201763c44d2aefd89e23249db752d0e01e7ec28.jpeg",
+   "refs": [
+    "courses:6ad5fa15308a95d039c34f35:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-06-0_9271735356969139.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 352131,
+   "target": "https://assets.hranker.org/781/courses/banners/f1b6fc07b2b4da36408ea7f58776cf5a6b65c04d.jpeg",
+   "refs": [
+    "courses:6ad5fa17308a95d039c34fcd:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-06-0_7576402573403715.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 395930,
+   "target": "https://assets.hranker.org/781/courses/banners/e05cc6f88e9705e41176a1e5504bfad85fd974cb.jpeg",
+   "refs": [
+    "courses:6ad5fa18308a95d039c350bc:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-06-0_881015614854877.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 398139,
+   "target": "https://assets.hranker.org/781/courses/banners/d44f4f4b427632a9106770e68cb5e7765e404da1.jpeg",
+   "refs": [
+    "courses:6ad5fa1a308a95d039c3521f:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-06-0_7513650436810003.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 339780,
+   "target": "https://assets.hranker.org/781/courses/banners/08acd213e3faecc5bb2f66e9ea5cc6b745d5b41b.jpeg",
+   "refs": [
+    "courses:6ad5fa25308a95d039c35407:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-07-0_17969212326202555.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 505432,
+   "target": "https://assets.hranker.org/781/courses/banners/bd277b6339402d690241ac697fcedced4cf2a507.jpeg",
+   "refs": [
+    "courses:6ad5fa48308a95d039c35b82:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-06-0_9007011932323974.jpeg",
+   "ok": false,
+   "status": 404,
+   "type": "application/xml",
+   "bytes": 0,
+   "target": "https://assets.hranker.org/781/courses/banners/e35e6e023b55e5418ac85eff666bea6664a8eb3e.jpeg",
+   "refs": [
+    "courses:6ad5fa4c308a95d039c360fe:banner",
+    "courses:6ad73b8ac90f6da685048d8c:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-07-0_0907927815444991.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 432781,
+   "target": "https://assets.hranker.org/781/courses/banners/67f9966272a33d4f509b0a8695bbd4d383047e87.jpeg",
+   "refs": [
+    "courses:6ad5fa61308a95d039c36703:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-07-0_5241403615536936.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 1753168,
+   "target": "https://assets.hranker.org/781/courses/banners/1de2b7b6074f3342b04690773b8e42303f4bb668.png",
+   "refs": [
+    "courses:6ad5fa6d308a95d039c36eb0:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-07-0_17915051885758504.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 406508,
+   "target": "https://assets.hranker.org/781/courses/banners/764b0abcee81c12d298caaf3f11acff789bd05d5.jpeg",
+   "refs": [
+    "courses:6ad5fa79308a95d039c37569:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-06-0_20323592857504114.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 369997,
+   "target": "https://assets.hranker.org/781/courses/banners/c4ed219eddfd718994f75c6780cfa53b16abee6e.jpeg",
+   "refs": [
+    "courses:6ad5fa7c308a95d039c379ba:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-07-23-0_55668767408358.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 1909440,
+   "target": "https://assets.hranker.org/781/courses/banners/5e2f4a3fe3aa5f833c4b483ce73f07a34e91800f.png",
+   "refs": [
+    "courses:6ad5fa7d308a95d039c37a44:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-07-23-0_7633733947183402.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 1776714,
+   "target": "https://assets.hranker.org/781/courses/banners/07d6d99f4dd23a8c6130c462f8968fb379b63ddb.png",
+   "refs": [
+    "courses:6ad5fa7e308a95d039c37aec:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-07-0_5247899196346362.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 389936,
+   "target": "https://assets.hranker.org/781/courses/banners/1cdbac4b6edd87ba51b11c87f082c7b1c1fc5126.jpeg",
+   "refs": [
+    "courses:6ad5fa85308a95d039c37e3c:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-13-0_3350264993660783.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 2101498,
+   "target": "https://assets.hranker.org/781/courses/banners/92b2b6f973e23c6b3aac3e6c4591cd2abdc8c5b4.png",
+   "refs": [
+    "courses:6ad5fa86308a95d039c380fa:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-22-0_8834280529824102.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 420989,
+   "target": "https://assets.hranker.org/781/courses/banners/aa6a4166bbc8adff43d1b91634bb87d00ccd1b33.jpeg",
+   "refs": [
+    "courses:6ad5fa87308a95d039c3810f:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-22-0_17001350756085543.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 525668,
+   "target": "https://assets.hranker.org/781/courses/banners/6b5a25ca5ff1731f19e28602d6e62ab4ca4f117b.jpeg",
+   "refs": [
+    "courses:6ad5fa88308a95d039c3816f:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-22-0_14540819299446572.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 440501,
+   "target": "https://assets.hranker.org/781/courses/banners/41c80e03cbbc050805d3154a4d3b34f6bc1ec4b0.jpeg",
+   "refs": [
+    "courses:6ad5fa88308a95d039c381d9:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-30-0_1834537520420939.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 2152180,
+   "target": "https://assets.hranker.org/781/courses/banners/c577f7cb9dee62429e62fa86654b9f8bfdbf0485.png",
+   "refs": [
+    "courses:6ad5fa89308a95d039c38237:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-30-0_6049670266889084.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 1930420,
+   "target": "https://assets.hranker.org/781/courses/banners/f5535a1a5eed9445167ddf28416a07b262a4a42b.png",
+   "refs": [
+    "courses:6ad5fa8a308a95d039c38297:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-09-20-0_7879450680946805.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 2127748,
+   "target": "https://assets.hranker.org/781/courses/banners/be945e789168428131a79df2a18dd72f5a2a49de.png",
+   "refs": [
+    "courses:6ad5fa8b308a95d039c382f3:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-09-20-0_3903341064824709.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 1962170,
+   "target": "https://assets.hranker.org/781/courses/banners/c8834b958d2891b83b60a0dd22f713f0a6b9e8d8.png",
+   "refs": [
+    "courses:6ad5fa8c308a95d039c38349:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-23-0_4796715304940612.jpg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 398402,
+   "target": "https://assets.hranker.org/781/courses/banners/ba06782665e25d6229e1e9f3eef2e7cad7ed18ff.jpg",
+   "refs": [
+    "courses:6ad5fa90308a95d039c383fc:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-07-0_19009951658395952.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 369523,
+   "target": "https://assets.hranker.org/781/courses/banners/8efe56d135a271b69a04af31d5c8729b75f155e4.jpeg",
+   "refs": [
+    "courses:6ad5fa91308a95d039c38632:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-07-0_40878406209922014.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 368288,
+   "target": "https://assets.hranker.org/781/courses/banners/a1fc57e9a31f40fdfc9e8c0eb7b3abb3039193f8.jpeg",
+   "refs": [
+    "courses:6ad5fa93308a95d039c386bf:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-07-0_7749024533967657.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 384494,
+   "target": "https://assets.hranker.org/781/courses/banners/3a42398c6a3b4e0381049cb5863c28c147ededca.jpeg",
+   "refs": [
+    "courses:6ad5fa95308a95d039c38735:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-09-14-0_9717033824957131.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 1799004,
+   "target": "https://assets.hranker.org/781/courses/banners/25ca8bea539b9c612845a93af06c824c3a5b2954.png",
+   "refs": [
+    "courses:6ad5fa96308a95d039c387f6:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-09-14-0_7588562700641301.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 1760557,
+   "target": "https://assets.hranker.org/781/courses/banners/b1852fad1ddbc88890a7532e5269023a6ca212db.png",
+   "refs": [
+    "courses:6ad5fa96308a95d039c38833:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-09-14-0_5489743386297921.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 1876087,
+   "target": "https://assets.hranker.org/781/courses/banners/55f08df2fd0ed70dd19b1881f24e093f917224bc.png",
+   "refs": [
+    "courses:6ad5fa97308a95d039c3886e:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-09-11-0_360968283056022.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 1946818,
+   "target": "https://assets.hranker.org/781/courses/banners/6fc30a88ff98cff08873cc905b49d769181cb839.png",
+   "refs": [
+    "courses:6ad5fa97308a95d039c3889b:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-03-0_15765520300061708.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 2225552,
+   "target": "https://assets.hranker.org/781/courses/banners/d858e13dcb7bc1ff1c181057ed1213cdc3a62e1a.png",
+   "refs": [
+    "courses:6ad5fa98308a95d039c388b9:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-09-28-0_880882815476025.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 2041445,
+   "target": "https://assets.hranker.org/781/courses/banners/25b215e72d24dbea36d987ce9f11abc22faaf721.png",
+   "refs": [
+    "courses:6ad5fa99308a95d039c38913:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-17-0_5091982657452553.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 1920631,
+   "target": "https://assets.hranker.org/781/courses/banners/1960fdc5046366ce4fb513cb73f731bd1a1e48a1.png",
+   "refs": [
+    "courses:6ad5fa9d308a95d039c38a7a:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-07-0_9197374512081069.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 361510,
+   "target": "https://assets.hranker.org/781/courses/banners/3d3b107e6512f22844c85f4fa44a88a939cce17d.jpeg",
+   "refs": [
+    "courses:6ad5faa0308a95d039c38b1f:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-07-0_52277983570836.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 366915,
+   "target": "https://assets.hranker.org/781/courses/banners/df90d243a692a83e77dedc40e951a22173576e1c.jpeg",
+   "refs": [
+    "courses:6ad5faa0308a95d039c38bf5:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-07-0_8487270738382396.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 352603,
+   "target": "https://assets.hranker.org/781/courses/banners/6dfb40f303c578ca467d2584f82226f41295a003.jpeg",
+   "refs": [
+    "courses:6ad5faa1308a95d039c38c28:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-07-0_18218173946468685.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 361628,
+   "target": "https://assets.hranker.org/781/courses/banners/10b707722d101981ca99532a8f17a8ceb341bf39.jpeg",
+   "refs": [
+    "courses:6ad5faa1308a95d039c38c4a:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-07-0_7072123935448381.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 343436,
+   "target": "https://assets.hranker.org/781/courses/banners/37109a635ee77fc3e7cdafad522209cb2e8d6ec1.jpeg",
+   "refs": [
+    "courses:6ad5faa2308a95d039c38c7b:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-09-27-0_8289456467005054.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 359797,
+   "target": "https://assets.hranker.org/781/courses/banners/7d072fb8ffd70f1512f9c5c62a7ceae56aca96e7.jpeg",
+   "refs": [
+    "courses:6ad5faa2308a95d039c38ca9:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-07-0_8222401559736103.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 345366,
+   "target": "https://assets.hranker.org/781/courses/banners/26bf37c16046da4a77467c52ffa896222a1f94a6.jpeg",
+   "refs": [
+    "courses:6ad5faa3308a95d039c38ccc:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-07-0_785142772116315.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 365160,
+   "target": "https://assets.hranker.org/781/courses/banners/ecdec2aaaa132874eaf99454599689ff31fb91bb.jpeg",
+   "refs": [
+    "courses:6ad5faa5308a95d039c38d15:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-09-27-0_12882424373952228.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 330473,
+   "target": "https://assets.hranker.org/781/courses/banners/c9b9df301978b5681bc5b33530169f61e591ed82.jpeg",
+   "refs": [
+    "courses:6ad5faa6308a95d039c38dd8:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-08-0_8083265489246739.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 405800,
+   "target": "https://assets.hranker.org/781/courses/banners/664bb41fa88a809af36c2ed88932e6091d8255fe.jpeg",
+   "refs": [
+    "courses:6ad5faae308a95d039c38fb7:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-08-0_8994439553901232.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 350360,
+   "target": "https://assets.hranker.org/781/courses/banners/84b761ae9fdf300b47e7bbc72444abcb96fbefac.jpeg",
+   "refs": [
+    "courses:6ad5fab3308a95d039c391c1:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-08-0_14224764425171477.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 336439,
+   "target": "https://assets.hranker.org/781/courses/banners/55308ec7de710fd8980f36f1901f1be28b1c4b47.jpeg",
+   "refs": [
+    "courses:6ad5fab4308a95d039c392e1:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-07-0_9810865844107926.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 1783869,
+   "target": "https://assets.hranker.org/781/courses/banners/e345dfcef1e1ddf582366f9f208056ec96475db8.png",
+   "refs": [
+    "courses:6ad5fab4308a95d039c392fd:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-14-0_8312704856108046.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 385996,
+   "target": "https://assets.hranker.org/781/courses/banners/647022f1e39963f101f24f5538a45921356d422c.jpeg",
+   "refs": [
+    "courses:6ad5fab5308a95d039c39323:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-06-0_3433553631900891.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 361132,
+   "target": "https://assets.hranker.org/781/courses/banners/2fd9e0e31cb913099ed6a77d2382b0a551744616.jpeg",
+   "refs": [
+    "courses:6ad5fc155d6ddda93f0f52ec:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-08-07-0_012500878307196261.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 2653548,
+   "target": "https://assets.hranker.org/781/courses/banners/06f7b0343b669a8e873debece72cc022f9ff62a6.png",
+   "refs": [
+    "courses:6ad9d7c146f19feb52b126e2:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-21-0_038473665347569685.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 1917025,
+   "target": "https://assets.hranker.org/781/courses/banners/cd0d9b5edd1313228d1f685790d7f52979081185.png",
+   "refs": [
+    "courses:6ad9d7c146f19feb52b126e3:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-23-0_003631814218446827.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 2374459,
+   "target": "https://assets.hranker.org/781/courses/banners/a6e16c89c17a8dfad9aa9e3e97132c219dfe352d.png",
+   "refs": [
+    "courses:6adc022020e78c9f77dbcde8:banner"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/study_material/2026-08-15-0_9501031785587368.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 191634,
+   "target": "https://assets.hranker.org/781/ebooks/d8332e0576858a9d555c71225042097af5c7cc97.jpeg",
+   "refs": [
+    "ebooks:6ad9f58dc9735682f023eda1:image1"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/study_material/2026-08-15-0_6283512819796135.jpeg",
+   "ok": true,
+   "status": 200,
+   "type": "image/jpeg",
+   "bytes": 210913,
+   "target": "https://assets.hranker.org/781/ebooks/d0a4bd915c40e07cd64f221cb75d45fb43750c92.jpeg",
+   "refs": [
+    "ebooks:6ad9f595c9735682f023edc7:image1"
+   ]
+  },
+  {
+   "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/17035974000338e497-1703597400.png",
+   "ok": false,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 0,
+   "target": "https://assets.hranker.org/781/questions/bd2f8873369535c7f342bbd1f3a91c071d096ff0.png",
+   "refs": [
+    "questions:6ad892c4c9735682f0fe4542:question",
+    "testsectionquestionmaps:6ad892c4c9735682f0fe4564:test"
+   ]
+  },
+  {
+   "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/170359739957d84512-1703597398.png",
+   "ok": false,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 0,
+   "target": "https://assets.hranker.org/781/questions/aea31d0510ec9389b581a513c71aa26a437a632e.png",
+   "refs": [
+    "questions:6ad892d1c9735682f0fe46b4:question",
+    "testsectionquestionmaps:6ad892d2c9735682f0fe46d6:test"
+   ]
+  },
+  {
+   "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/1703597399c53f9acb-1703597399.png",
+   "ok": false,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 0,
+   "target": "https://assets.hranker.org/781/questions/0e639805da0a51ee5025a646ced4385ab209b417.png",
+   "refs": [
+    "questions:6ad892d1c9735682f0fe46b4:solution",
+    "testsectionquestionmaps:6ad892d2c9735682f0fe46d6:test"
+   ]
+  },
+  {
+   "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/17035974025d438883-1703597402.png",
+   "ok": false,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 0,
+   "target": "https://assets.hranker.org/781/questions/c09c9a34c9264caaaf494f132c8b03b8f4aa9b5e.png",
+   "refs": [
+    "questions:6ad892e6c9735682f0fe481a:solution",
+    "testsectionquestionmaps:6ad892e6c9735682f0fe483c:test"
+   ]
+  },
+  {
+   "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/170359740472a50137-1703597404.png",
+   "ok": false,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 0,
+   "target": "https://assets.hranker.org/781/questions/9ce3cb56841e2d0323cf6d66ccf0415ab99a2c70.png",
+   "refs": [
+    "questions:6ad892f8c9735682f0fe494f:question",
+    "testsectionquestionmaps:6ad892f9c9735682f0fe4973:test"
+   ]
+  },
+  {
+   "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/1703597404da35e8e2-1703597404.png",
+   "ok": false,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 0,
+   "target": "https://assets.hranker.org/781/questions/dd3f97c820c74c88a454e75cdcfbe6f063114a90.png",
+   "refs": [
+    "questions:6ad892f8c9735682f0fe494f:solution",
+    "testsectionquestionmaps:6ad892f9c9735682f0fe4973:test"
+   ]
+  },
+  {
+   "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/1703597643abc51049-1703597643.png",
+   "ok": false,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 0,
+   "target": "https://assets.hranker.org/781/questions/01defeb84e80ea84578ba8f0a866ba783a5bd7ee.png",
+   "refs": [
+    "questions:6ad8ad5cc9735682f00353ce:question",
+    "testsectionquestionmaps:6ad8ad61c9735682f0035425:test"
+   ]
+  },
+  {
+   "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/17035976443a9df781-1703597644.png",
+   "ok": false,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 0,
+   "target": "https://assets.hranker.org/781/questions/fa305a1c9f31e6abe0b876dc772763fa35862d09.png",
+   "refs": [
+    "questions:6ad8ad5dc9735682f00353d0:solution",
+    "testsectionquestionmaps:6ad8ad61c9735682f0035425:test"
+   ]
+  },
+  {
+   "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/1703597644eed525b1-1703597644.png",
+   "ok": false,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 0,
+   "target": "https://assets.hranker.org/781/questions/3eeae17d42eb351d62c1d9060c284725f02fbb3f.png",
+   "refs": [
+    "questions:6ad8ad5dc9735682f00353d4:question",
+    "testsectionquestionmaps:6ad8ad61c9735682f0035425:test"
+   ]
+  },
+  {
+   "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/1703597645a6a56cf6-1703597645.png",
+   "ok": false,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 0,
+   "target": "https://assets.hranker.org/781/questions/d27fad1e9c8c0a4556de130fd7b0e56b7026d708.png",
+   "refs": [
+    "questions:6ad8ad5ec9735682f00353df:solution",
+    "testsectionquestionmaps:6ad8ad61c9735682f0035425:test"
+   ]
+  },
+  {
+   "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/170359764703e0947e-1703597647.png",
+   "ok": false,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 0,
+   "target": "https://assets.hranker.org/781/questions/ced39ae100440dcc21078afdaf791c585d0a3fab.png",
+   "refs": [
+    "questions:6ad8ad5fc9735682f00353ed:solution",
+    "testsectionquestionmaps:6ad8ad61c9735682f0035425:test"
+   ]
+  },
+  {
+   "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/1703597649bb7dfde8-1703597648.png",
+   "ok": false,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 0,
+   "target": "https://assets.hranker.org/781/questions/b7882b79be460bf5a74a6ee36d7599c695a731cc.png",
+   "refs": [
+    "questions:6ad8ad60c9735682f00353f9:question",
+    "testsectionquestionmaps:6ad8ad61c9735682f0035425:test"
+   ]
+  },
+  {
+   "src": "https://appxcontent.kaxa.in/test_s3_migration/2023-12-26/17035976507f28c251-1703597650.png",
+   "ok": false,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 0,
+   "target": "https://assets.hranker.org/781/questions/f98d1f3e6180ad698a83dacd2ed750557906191f.png",
+   "refs": [
+    "questions:6ad8ad60c9735682f0035400:solution",
+    "testsectionquestionmaps:6ad8ad61c9735682f0035425:test"
+   ]
+  },
+  {
+   "src": "https://appx-content-v2.classx.co.in/website/bulk_uploader_images/1788766609323_image025.png",
+   "ok": true,
+   "status": 200,
+   "type": "image/png",
+   "bytes": 2538,
+   "target": "https://assets.hranker.org/781/questions/9d313be30bfc5442de063258e22bbed08c720df9.png",
+   "refs": [
+    "questions:6ae061fac9735682f0b2338c:question",
+    "testsectionquestionmaps:6ae061fbc9735682f0b2339b:test"
+   ]
+  }
+ ]
+}
