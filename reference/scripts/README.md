@@ -16,12 +16,15 @@ Unless marked **writes**, a script is read-only. Data files (`*.json`, `*.csv`) 
 - `qt_socket_redis_probe.sh` / `qt_socket_redis_traffic.sh` — quicktricks-socket Redis Cloud probe and who moves bytes through it.
 - `dashboard_hourly.js` — today's revenue vs the 7-day hourly norm.
 - `search-usage.js` — global search usage report.
+- `user_assigned_courses.cjs` — read-only: courses a user (by `MOBILE`) holds through active orders (courseId + latestCourseId + plan bundle), per active order, in both quicktricksdb and vidyagramdb. Run on webserver2-2 from the quicktricks checkout via `node -r dotenv/config - dotenv_config_path=.env.development < script`.
 - `why_unpaid.js` — why `/api/courses/by-id-2` says `is_buy=0` for a user+course.
+- `course_orders_lookup_size.cjs` — read-only, vidyagramdb and quicktricksdb: for `COURSE` and the `TOP` courses, order count and total BSON bytes against the 100 MB `$lookup` cap (`courseId`, `build.courseId`), biggest order fields as names and sizes only. The top list groups by the whole `courseId` array, so multi-course orders make it undercount; the `COURSE` figures are exact. Run on webserver2-2 from a backend checkout with `node -r dotenv/config - dotenv_config_path=.env.development`. 11-04: VG 6ad5f95b… 155,293 orders, 117.5 MB; 6ad5f983… 190,227, 144.1 MB.
 - `offer_pockets.js` — size the "holds X, never bought Y" pockets.
 - `plan_extension_probe.js` — plan-extension probe, run on the box.
 
 ## Playback and media
 - `qt-playback-check.cjs` — check a class's hlsAsset from the LMS checkout on the box.
+- `class_name_search.cjs`, `futurekul_course_classes.cjs` — read-only, GPU box from `/root/livestream-futurekul/backend`: `NAME=<regex>` searches the job log and every Atlas collection except people and chat for a name; `COURSE=<regex> NAME=<regex>` lists a Futurekul (135) course from `test."futurekul courses"` and the classes (`test.classesClass`) and notifications tied to it.
 - `playback_walk.cjs` / `playback_host_check.cjs` — mint an admin preview and walk master → child → segment; call `/playback` in-process.
 - `playback_client_split_sample.sh` — run ON the box as root; sample access logs by client.
 - `playback_cdn_pilot.cjs` — **writes**: route chosen classes through Bunny (pilot; undo in `prod-data-changes`).
@@ -48,6 +51,7 @@ Unless marked **writes**, a script is read-only. Data files (`*.json`, `*.csv`) 
 - `apx_teacher_audit.js` — does APX supply a per-asset teacher.
 - `apx-completion-fleet.sh` (Mac), `apx-completion-pilot.sh` (box), `apx-completion-supervisor.sh`, `*.service` — manual-completion OTP fleet (done 09-29; stopped via manual-stop locks).
 - `vidyagram-nightly-gcp-run.sh`, `vidyagram-nightly-preflight.cjs`, `vidyagram-nightly-gcp.service`, `vidyagram-nightly-gcp.timer` — **writes**: dedicated Vidyagram nightly sync on GCP test-uday at 02:30 IST; preflight and shared lock protect the run; `vidyagram-nightly-api-pacing.patch` records the deployed source change.
+- `plan-sales-shape-probe.cjs` — read-only, quicktricksdb or vidyagramdb: own-checkout paid orders in the last DAYS (default 180) split by plan shape (1 course / combo / non-course only / + extras) and order kind (new / extension / upgrade), top plans by revenue, courses sold at several validities. Run on webserver2-2 from the tenant checkout: `URI=$MONGO_URI DAYS=180 node - < script`. Written 10-30, not run yet (prod read needs the user's OK).
 - `vidyagram-box-setup.sh` — Vidyagram backend on webserver2-2, Part A (no sudo).
 - `vidyagram-set-apx-session.cjs` — **writes**: replace the stored AppX cookie with one from a browser.
 - `vidyagram-ingest-worker.sh`, `vidyagram-bastion-overnight.sh`, `vidyagram-bastion-pdf-env.sh` — OCI bastion video/PDF mirror runs.
