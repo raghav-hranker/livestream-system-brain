@@ -10,3 +10,46 @@ reference/scripts/automatic-plan-extension-local/*.csv
 # Local credential backups
 .env.development.bak-*
 .audit/
+
+# Local clutter (never commit)
+.worktrees/
+.commandcode/
+__pycache__/
+*.pyc
+/body.txt
+
+# Files holding live tokens
+*.local.postman_environment.json
+/vidyagram/reports/appx-sync-verify-2026-10-26/apxcatalogcourses.json
+
+# Prod data dumps and logs over 1 MB, left out of 71cd6f8 (keep on disk, not in git)
+/reference/encode-sweep-2026-10-13/1080/vmaflogs/
+/reference/encode-sweep-2026-10-13/1080/nvenc/vmaflogs/
+/reference/reconcile_dry_run_changes.csv
+/reference/scripts/rooms-rebuild-2026-11-02.ndjson
+/reference/test_copy_usage_tests.csv
+/vidyagram/reports/appx-sync-repair-2026-10-26/pdf-capture-backup/6ad94017c9735682f0130807.pdf
+/vidyagram/reports/appx-sync-repair-2026-10-26/pdf-capture-backup/6ad94018c9735682f013080e.pdf
+/vidyagram/reports/appx-sync-repair-2026-10-26/structure/filing-order-preview.json
+/vidyagram/reports/appx-sync-repair-2026-10-26/structure/guarded-preview.json
+/vidyagram/reports/appx-sync-repair-2026-10-26/structure/live-class-metadata-before.json
+/vidyagram/reports/appx-sync-repair-2026-10-26/structure/live-courseclasses-before.json
+/vidyagram/reports/appx-sync-repair-2026-10-26/structure/live-source-flags.json
+/vidyagram/reports/appx-sync-repair-2026-10-26/structure/taxonomy-refs-questions.json
+/vidyagram/reports/appx-sync-resume-2026-10-27/structure/candidate-before.ejson
+/vidyagram/reports/appx-sync-verify-2026-10-26/apxcatalogimports.json
+/vidyagram/reports/appx-sync-verify-2026-10-26/apxcatalogpdfimports.json
+/vidyagram/reports/appx-sync-verify-2026-10-26/apxcatalogrows.json
+/vidyagram/reports/appx-sync-verify-2026-10-26/apxcatalogtree.json
+/vidyagram/reports/appx-sync-verify-2026-10-26/apxingestjobs.json
+/vidyagram/reports/appx-sync-verify-2026-10-26/classes.json
+/vidyagram/reports/appx-sync-verify-2026-10-26/courseclasses.json
+/vidyagram/reports/appx-sync-verify-2026-10-26/pdfs.json
+/vidyagram/reports/appx-sync-verify-2026-10-26/placement-fresh-audit.json
+/vidyagram/reports/appx-sync-verify-2026-10-26/plans.json
+/vidyagram/reports/apx-menu-master-20261104T083017/plan.jsonl
+/vidyagram/reports/apx-menu-split-20261104T131844/plan.jsonl
+/vidyagram/reports/apx-menu-split-bulk-20261104/after-check/plan.jsonl
+/vidyagram/reports/apx-menu-split-bulk-20261104/all-2/ledger.jsonl
+/vidyagram/reports/apx-menu-split-bulk-20261104/all-2/plan.jsonl
+/vidyagram/reports/apx-menu-split-bulk-20261104/all/ledger.jsonl
