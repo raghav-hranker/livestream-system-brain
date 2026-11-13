@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PROTOTYPE · Course form, Pricing step</title>
+<!--
+  PROTOTYPE, throwaway. Question: how should the course form's Pricing step read and pick courses?
+  Three variants of the course picker (?variant=A|B|C) on one mock of the Pricing step. Everything else
+  (plan summary, lengths table, uniform rows, extension choice, "what Save will do" bar) is the same in all three.
+  Sample data: course names are real, prices / validity / student counts / extension defaults are made up.
+  Nothing here talks to a backend.
+-->
+<style>
+*{box-sizing:border-box}
+body{margin:0;font:14px/1.45 Inter,-apple-system,"Segoe UI",system-ui,"Noto Sans Devanagari",sans-serif;color:#0f172a;background:#f8fafc}
+button,input,select{font:inherit;color:inherit}
+.shell{display:grid;grid-template-columns:200px 1fr;min-height:100vh}
+.nav{background:#fff;border-right:1px solid #e2e8f0;padding:16px 12px;font-size:13px;color:#475569}
+.nav b{display:block;color:#0f172a;margin-bottom:14px}
+.nav div{padding:6px 10px;border-radius:6px}
+.nav .on{background:#eef2ff;color:#1d4ed8;font-weight:600}
+.top{background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px}
+.top h1{font-size:17px;margin:0}
+.top p{margin:2px 0 0;color:#64748b;font-size:13px}
+.cols{display:grid;grid-template-columns:170px minmax(0,1fr) 260px;gap:20px;padding:20px 24px 120px;max-width:1280px}
+.rail div{padding:8px 10px;border-radius:8px;font-weight:600;font-size:13px}
+.rail small{display:block;font-weight:400;color:#64748b}
+.rail .on{background:#fff;border:1px solid #e2e8f0}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:10px}
+.sells{padding:14px 16px;margin-bottom:14px}
+.sells h3{margin:0 0 8px;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#64748b;display:flex;justify-content:space-between}
+.sells a{color:#2563eb;text-transform:none;letter-spacing:0;font-weight:500;text-decoration:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid #e2e8f0;border-radius:8px;padding:6px 10px;background:#f8fafc;font-size:13px}
+.chip b{font-weight:600}
+.chip.new{border-color:#86efac;background:#f0fdf4}
+.chip.off{color:#94a3b8;text-decoration:line-through}
+.tag{display:inline-block;font-size:11px;border-radius:99px;padding:1px 7px;margin-left:6px;background:#e2e8f0;color:#475569;font-weight:500}
+.tag.g{background:#dcfce7;color:#166534}.tag.a{background:#fef3c7;color:#92400e}.tag.r{background:#fee2e2;color:#991b1b}
+.row{border-top:1px solid #e2e8f0}.row:first-child{border-top:0}
+.rh{display:flex;align-items:center;gap:10px;padding:12px 16px;cursor:pointer}
+.rh:hover{background:#f8fafc}
+.rh .arr{width:14px;color:#64748b;transition:transform .12s;font-size:16px;line-height:1}
+.rh.open .arr{transform:rotate(90deg)}
+.rh .t{font-weight:600}
+.rh .s{color:#64748b;font-size:13px;flex:1;min-width:0}
+.rh.dis{cursor:default}.rh.dis:hover{background:none}.rh.dis .t{color:#94a3b8}
+.rb{padding:4px 16px 16px 40px}
+.help{color:#64748b;font-size:13px;margin:0 0 10px}
+.sw{width:36px;height:20px;border-radius:99px;background:#cbd5e1;border:0;position:relative;cursor:pointer;flex:none}
+.sw:after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:left .12s}
+.sw.on{background:#2563eb}.sw.on:after{left:18px}
+.sw[disabled]{opacity:.45;cursor:not-allowed}
+input[type=text],select{border:1px solid #cbd5e1;border-radius:6px;padding:6px 9px;background:#fff;height:34px}
+input[type=text]:focus,select:focus{outline:2px solid #bfdbfe;border-color:#2563eb}
+.btn{border:1px solid #cbd5e1;background:#fff;border-radius:6px;padding:6px 12px;cursor:pointer;font-weight:500}
+.btn:hover{background:#f1f5f9}
+.btn.p{background:#2563eb;border-color:#2563eb;color:#fff}.btn.p:hover{background:#1d4ed8}
+.btn.p[disabled]{background:#93c5fd;border-color:#93c5fd;cursor:default}
+.x{border:0;background:none;color:#94a3b8;cursor:pointer;font-size:16px;padding:2px 6px;border-radius:4px}.x:hover{background:#fee2e2;color:#b91c1c}
+table.len{border-collapse:collapse;width:100%;margin-bottom:10px}
+table.len th{font-size:12px;color:#64748b;text-align:left;font-weight:500;padding:0 8px 6px 0}
+table.len td{padding:0 8px 8px 0;vertical-align:middle}
+table.len input{width:100%}
+.note{font-size:12.5px;color:#64748b;margin:6px 0 0}
+.warn{font-size:12.5px;color:#92400e;background:#fffbeb;border:1px solid #fde68a;border-radius:6px;padding:7px 10px;margin-top:8px}
+.sel{border:1px solid #e2e8f0;border-radius:8px;margin-bottom:10px}
+.sel .it{display:flex;align-items:center;gap:10px;padding:8px 10px;border-top:1px solid #f1f5f9}.sel .it:first-child{border-top:0}
+.sel .h{color:#cbd5e1;cursor:grab}
+.ct{flex:1;min-width:0}
+.ct .n{font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ct .m{font-size:12px;color:#64748b}
+.empty{padding:14px;color:#94a3b8;font-size:13px;text-align:center}
+.list{border:1px solid #e2e8f0;border-radius:8px;max-height:300px;overflow:auto}
+.list .it{display:flex;align-items:center;gap:10px;padding:8px 10px;border-top:1px solid #f1f5f9;cursor:pointer}.list .it:first-child{border-top:0}
+.list .it:hover{background:#f8fafc}
+.list .it.in{background:#eff6ff}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;align-items:center}
+.filters input[type=text]{flex:1;min-width:160px}
+.pill{border:1px solid #cbd5e1;border-radius:99px;padding:3px 10px;font-size:12.5px;background:#fff;cursor:pointer}
+.pill.on{background:#0f172a;color:#fff;border-color:#0f172a}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.two>div{min-width:0}
+.two h4{margin:0 0 6px;font-size:12px;color:#64748b;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.pop{position:relative}
+.pop .list{position:absolute;left:0;right:0;top:38px;z-index:5;background:#fff;box-shadow:0 8px 24px rgba(15,23,42,.12)}
+.radio{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;cursor:pointer}
+.radio.on{border-color:#2563eb;background:#eff6ff}
+.radio i{width:16px;height:16px;border-radius:50%;border:2px solid #94a3b8;margin-top:2px;flex:none}
+.radio.on i{border:5px solid #2563eb}
+.radio b{display:block;font-weight:600}.radio span{color:#64748b;font-size:13px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:4px 0 8px 26px}
+.grid4 label{font-size:12px;color:#64748b;display:block}.grid4 input{width:100%}
+.sr{display:flex;gap:14px;padding:14px 16px;border-top:1px solid #e2e8f0}
+.card>.sr:first-child{border-top:0}
+.sr .sw{margin-top:1px}
+.sr .bd{flex:1;min-width:0}
+.sr .t{font-weight:600}.sr .t.mut{color:#94a3b8}
+.sr .d{color:#64748b;font-size:13px}
+.sr .body{margin-top:12px}
+.gh{padding:12px 16px 10px;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#64748b;font-weight:600}
+.fl{display:block;font-size:13px;font-weight:500;margin-bottom:4px}
+.note a{color:#2563eb}
+.prev{padding:14px}.prev .img{height:96px;border-radius:8px;background:linear-gradient(120deg,#1e3a8a,#7c3aed);margin:8px 0 10px}
+.prev .pr{font-size:18px;font-weight:700}.prev s{color:#94a3b8;font-weight:400;font-size:13px;margin-left:6px}
+.savebar{position:fixed;left:200px;right:0;bottom:0;background:#fff;border-top:1px solid #e2e8f0;padding:10px 24px;display:flex;gap:16px;align-items:center;z-index:20}
+.savebar ul{margin:0;padding-left:18px;font-size:13px;flex:1;max-height:84px;overflow:auto}
+.savebar .none{flex:1;color:#94a3b8;font-size:13px}
+.savebar li.bad{color:#b91c1c}
+.scrim{position:fixed;inset:0;background:rgba(15,23,42,.35);z-index:30}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:480px;max-width:100vw;background:#fff;z-index:31;display:flex;flex-direction:column;box-shadow:-8px 0 30px rgba(15,23,42,.18)}
+.drawer header{padding:14px 16px;border-bottom:1px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center}
+.drawer header b{font-size:15px}
+.drawer .bd{padding:12px 16px;flex:1;overflow:auto}.drawer .bd .list{max-height:none}
+.drawer footer{padding:12px 16px;border-top:1px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center}
+#bar{position:fixed;bottom:104px;left:50%;transform:translateX(-50%);background:#0f172a;color:#fff;border-radius:99px;padding:6px 8px;display:flex;gap:6px;align-items:center;z-index:40;box-shadow:0 6px 20px rgba(0,0,0,.3);font-size:13px}
+#bar button{background:#334155;border:0;color:#fff;border-radius:50%;width:26px;height:26px;cursor:pointer}
+#bar span{padding:0 8px;white-space:nowrap}
+@media(max-width:1000px){.shell{grid-template-columns:1fr}.nav{display:none}.cols{grid-template-columns:1fr}.rail,.side{display:none}.savebar{left:0}.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside class="nav"><b>Vidyagram</b><div>Dashboard</div><div>Analytics</div><div class="on">Courses</div><div>Course Classes</div><div>Live Classes</div><div>Sales</div><div>Settings</div></aside>
+  <div>
+    <div class="top"><h1>Edit Course</h1><p>🚀 UPSSSC MAINS (ALL IN ONE) FOUNDATION BATCH 2026-27</p></div>
+    <div class="cols">
+      <div class="rail" id="rail"></div>
+      <div id="form"></div>
+      <div class="side" id="side"></div>
+    </div>
+  </div>
+</div>
+<div id="overlay"></div>
+<div class="savebar" id="savebar"></div>
+<div id="bar"></div>
+
+<script>
+const VARIANTS = { arrows: 'Layout 1: arrows, as built today', flat: 'Layout 2: switches, like the other platform', grouped: 'Layout 3: switches, grouped' };
+const HOLDERS = 887;
+// Sample catalogue. Names are real; numbers are invented for the prototype.
+const C = [
+  { id:'ro',  t:'UPSSSC RO/ARO 2026 (शासन बैच)', p:499, m:12, a:1, cat:'UPSSSC', f:'Ankit Sir', st:2140 },
+  { id:'vdo', t:'UPSSSC VPO & VDO 2026 ग्रामोदय बैच', p:399, m:12, a:1, cat:'UPSSSC', f:'Ajeet Sir', st:5310 },
+  { id:'ja',  t:'🚀 UPSSSC Junior Assistant 2026 (सहायक बैच) 🚀', p:449, m:12, a:1, cat:'UPSSSC', f:'Pulkit Sir', st:3877, attached:1 },
+  { id:'dup', t:'UPSSSC MAINS (ALL IN ONE) FOUNDATION BATCH 2026-27', p:0, m:24, a:0, cat:'UPSSSC', f:'Vidyagram Team', st:0 },
+  { id:'cmp', t:'Computer (संगणना बैच) for UPSSSC EXAMS', p:199, m:12, a:1, cat:'UPSSSC', f:'Mohit Sir', st:9120 },
+  { id:'gk',  t:'UPGK (सारथी बैच) for UPSSSC EXAMS', p:249, m:12, a:1, cat:'UPSSSC', f:'Ankit Sir', st:7422 },
+  { id:'gkc', t:'UPGK (सारथी बैच) + Computer (संगणना बैच) Combo Batch', p:399, m:12, a:1, cat:'UPSSSC', f:'Ankit Sir, Mohit Sir', st:1280 },
+  { id:'mv',  t:'🎯 Maths VOD BATCH by Aditya Ranjan Sir | Arithmetic + Advance (Pre to Mains)', p:999, m:18, a:1, cat:'Maths', f:'Aditya Ranjan Sir', st:48210 },
+  { id:'ch28',t:'🎯 CHAMPIONS Maths Special 🔴 LIVE BATCH by ADITYA SIR, starts 27 March 2026', p:1299, m:12, a:1, cat:'Maths', f:'Aditya Ranjan Sir', st:15640 },
+  { id:'ch27',t:'CHAMPIONS 27.0 Maths Special LIVE BATCH by ADITYA SIR, starts 2 Feb 2026', p:1299, m:12, a:0, cat:'Maths', f:'Aditya Ranjan Sir', st:14102 },
+  { id:'ch26',t:'CHAMPIONS 26.0 Maths Special LIVE BATCH by ADITYA SIR, starts 29 Dec 2025', p:1299, m:12, a:0, cat:'Maths', f:'Aditya Ranjan Sir', st:13876 },
+  { id:'eng', t:'📖 English Special VOD Batch By Jai Sir For All Govt. Exams', p:699, m:12, a:1, cat:'English', f:'Jai Sir', st:22045 },
+  { id:'gs',  t:'🌍 GS Special Decode 1.0 Batch By Himanshu Sir 🎯', p:799, m:12, a:1, cat:'GS', f:'Himanshu Sir', st:9981 },
+  { id:'gd',  t:'SSC GD 2027 (भारत Batch)', p:599, m:18, a:1, cat:'SSC', f:'Vidyagram Team', st:6120 },
+  { id:'cgl', t:'Computer Special - SSC CGL Mains Batch 2026 🔥', p:299, m:9, a:1, cat:'SSC', f:'Mohit Sir', st:4410 },
+];
+const byId = id => C.find(c => c.id === id);
+const CATS = ['All', ...new Set(C.map(c => c.cat))];
+const EXT_DEFAULT = { show: 15, n: 6, pct: 50, min: 125 };
+
+const S = {
+  lengths: [{ id: 1, n: '24', mrp: '', price: '799', saved: true }],
+  combo: { on: true, ids: ['ro', 'vdo', 'ja'] },
+  addon: { on: false, ids: [] },
+  pay: true,
+  ext: 'default', extv: { show: '15', n: '6', pct: '50', min: '125' },
+  code: '', exch: false,
+  open: { price: true },
+  q: { combo: '', addon: '' }, cat: { combo: 'All', addon: 'All' }, inactive: { combo: false, addon: false },
+  drawer: null, pick: [], focus: null,
+};
+const snap = () => JSON.stringify({ l: S.lengths, c: S.combo, a: S.addon, p: S.pay, e: S.ext, ev: S.extv, k: S.code, x: S.exch });
+const INIT = JSON.parse(snap());
+let nextId = 2;
+
+const variant = () => { const v = new URLSearchParams(location.search).get('layout'); return VARIANTS[v] ? v : 'arrows'; };
+const rs = n => '₹' + Number(n || 0).toLocaleString('en-IN');
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const meta = c => `${c.p ? rs(c.p) : 'No price'} · ${c.m} months · ${c.f} · ${c.st.toLocaleString('en-IN')} students`;
+const status = c => c.a ? '<span class="tag g">Active</span>' : '<span class="tag">Inactive</span>';
+const sw = (act, on, dis) => `<button class="sw ${on ? 'on' : ''}" data-act="${act}" ${dis ? 'disabled' : ''} aria-label="switch"></button>`;
+
+function row(key, title, summary, o = {}) {
+  const open = S.open[key] && o.body && !o.dis;
+  return `<div class="row">
+    <div class="rh ${open ? 'open' : ''} ${o.dis ? 'dis' : ''}" data-act="${o.dis ? '' : 'toggle'}" data-k="${key}">
+      <span class="arr">${o.body && !o.dis ? '›' : ''}</span><span class="t">${title}</span><span class="s">${summary}</span>${o.sw || ''}
+    </div>${open ? `<div class="rb">${o.body}</div>` : ''}</div>`;
+}
+
+/* ---------- course picking: the part the three variants disagree on ---------- */
+function candidates(kind) {
+  const q = S.q[kind].trim().toLowerCase();
+  return C.filter(c => (S.inactive[kind] || c.a)
+    && (S.cat[kind] === 'All' || c.cat === S.cat[kind])
+    && (!q || (c.t + ' ' + c.f + ' ' + c.cat).toLowerCase().includes(q)));
+}
+function selectedList(kind) {
+  const ids = S[kind].ids;
+  if (!ids.length) return `<div class="sel"><div class="empty">${kind === 'combo' ? 'No sub courses yet.' : 'No add-ons yet.'}</div></div>`;
+  return `<div class="sel">${ids.map((id, i) => { const c = byId(id); return `<div class="it">
+      <span class="h">⋮⋮</span><span style="color:#94a3b8;width:14px">${i + 1}</span>
+      <div class="ct"><div class="n" title="${esc(c.t)}">${esc(c.t)}${status(c)}${c.attached ? '<span class="tag a">has attached products</span>' : ''}</div>
+      <div class="m">${kind === 'addon' ? 'Owners can add it at ' : ''}${meta(c)}</div></div>
+      <button class="x" data-act="remove" data-kind="${kind}" data-id="${id}" title="Remove">×</button></div>`; }).join('')}</div>`;
+}
+function filterBar(kind, withSearch = true) {
+  const hidden = C.filter(c => !c.a).length;
+  return `<div class="filters">
+    ${withSearch ? `<input type="text" id="q-${kind}" data-in="q.${kind}" value="${esc(S.q[kind])}" placeholder="Search by course, teacher or exam">` : ''}
+    ${CATS.map(k => `<button class="pill ${S.cat[kind] === k ? 'on' : ''}" data-act="cat" data-kind="${kind}" data-v="${k}">${k}</button>`).join('')}
+    <button class="pill ${S.inactive[kind] ? 'on' : ''}" data-act="inactive" data-kind="${kind}">Show inactive (${hidden})</button></div>`;
+}
+function courseRows(kind, mode) {           // mode: 'check' (drawer), 'add' (B and C)
+  const list = candidates(kind);
+  if (!list.length) return '<div class="empty">No course matches. Try another word or switch on “Show inactive”.</div>';
+  return list.map(c => {
+    const has = S[kind].ids.includes(c.id), picked = S.pick.includes(c.id);
+    const right = mode === 'check'
+      ? (has ? '<span class="tag">Already added</span>' : `<input type="checkbox" ${picked ? 'checked' : ''} style="pointer-events:none">`)
+      : (has ? '<span class="tag">Added</span>' : '<span class="btn" style="padding:3px 9px">Add</span>');
+    return `<div class="it ${picked || has ? 'in' : ''}" data-act="${has ? '' : (mode === 'check' ? 'pick' : 'add')}" data-kind="${kind}" data-id="${c.id}">
+      <div class="ct"><div class="n" title="${esc(c.t)}">${esc(c.t)}${status(c)}</div><div class="m">${meta(c)}</div></div>${right}</div>`;
+  }).join('');
+}
+function picker(kind) {
+  const v = 'A';   // the side panel won the picker round
+  if (v === 'A') return selectedList(kind) + `<button class="btn" data-act="drawer" data-kind="${kind}">+ Add courses</button>`;
+  if (v === 'B') {
+    const showing = S.focus === 'q-' + kind;
+    return selectedList(kind) + `<div class="pop">
+      <input type="text" id="q-${kind}" data-in="q.${kind}" data-pop="1" value="${esc(S.q[kind])}" placeholder="Type a course, teacher or exam to add…" style="width:100%">
+      ${showing ? `<div class="list" style="max-height:320px">${filterBarLite(kind)}${courseRows(kind, 'add')}</div>` : ''}</div>`;
+  }
+  return `<div class="two"><div><h4>All courses</h4>${filterBar(kind)}<div class="list">${courseRows(kind, 'add')}</div></div>
+    <div><h4>${kind === 'combo' ? 'In this combo' : 'Offered as add-ons'} (${S[kind].ids.length})</h4>${selectedList(kind)}</div></div>`;
+}
+function filterBarLite(kind) {
+  return `<div style="padding:6px 10px;border-bottom:1px solid #f1f5f9;font-size:12px;color:#64748b;display:flex;justify-content:space-between">
+    <span>${S.q[kind] ? 'Matches' : 'Active courses'}</span>
+    <button class="pill ${S.inactive[kind] ? 'on' : ''}" data-act="inactive" data-kind="${kind}" data-keep="q-${kind}">Show inactive</button></div>`;
+}
+function drawer() {
+  if (!S.drawer) return '';
+  const kind = S.drawer;
+  return `<div class="scrim" data-act="closeDrawer"></div><div class="drawer">
+    <header><b>${kind === 'combo' ? 'Add sub courses' : 'Add add-on courses'}</b><button class="x" data-act="closeDrawer">×</button></header>
+    <div class="bd">${filterBar(kind)}<div class="list">${courseRows(kind, 'check')}</div></div>
+    <footer><span style="color:#64748b;font-size:13px">${S.pick.length} selected</span>
+      <span><button class="btn" data-act="closeDrawer">Cancel</button>
+      <button class="btn p" data-act="commit" ${S.pick.length ? '' : 'disabled'}>Add ${S.pick.length || ''} course${S.pick.length === 1 ? '' : 's'}</button></span></footer></div>`;
+}
+
+/* ---------- the rest of the step: same in every variant ---------- */
+function priceBody() {
+  return `<table class="len"><tr><th style="width:26%">Access length (months)</th><th>MRP (₹, optional)</th><th>Selling price (₹)</th><th></th><th></th></tr>
+    ${S.lengths.map(l => `<tr>
+      <td><input type="text" id="n-${l.id}" data-len="${l.id}" data-f="n" value="${esc(l.n)}"></td>
+      <td><input type="text" id="mrp-${l.id}" data-len="${l.id}" data-f="mrp" value="${esc(l.mrp)}" placeholder="Struck-out price"></td>
+      <td><input type="text" id="price-${l.id}" data-len="${l.id}" data-f="price" value="${esc(l.price)}" placeholder="Price for this length"></td>
+      <td style="white-space:nowrap">${l.saved ? '<span class="tag g">On sale</span>' : '<span class="tag a">New, on save</span>'}</td>
+      <td>${S.lengths.length > 1 ? `<button class="x" data-act="delLen" data-id="${l.id}" title="Stop selling this length">×</button>` : ''}</td></tr>`).join('')}
+  </table>
+  <button class="btn" data-act="addLen">+ Add another length</button>
+  <p class="note">Each length is sold as its own plan. Removing one stops new sales of it; students who bought it keep their access.</p>`;
+}
+function extBody() {
+  const d = EXT_DEFAULT, opt = (k, t, s, extra = '') => `<div class="radio ${S.ext === k ? 'on' : ''}" data-act="ext" data-v="${k}"><i></i><div style="flex:1"><b>${t}</b><span>${s}</span></div></div>${extra}`;
+  const custom = S.ext === 'custom' ? `<div class="grid4">
+    ${[['show', 'Show before expiry (days)'], ['n', 'Extends by (months)'], ['pct', 'Price (% of plan)'], ['min', 'Minimum (₹)']].map(([k, l]) =>
+      `<div><label>${l}</label><input type="text" id="ext-${k}" data-in="extv.${k}" value="${esc(S.extv[k])}"></div>`).join('')}</div>` : '';
+  return `<p class="help">What a student is offered when this course is about to run out.</p>
+    ${opt('default', 'Same as the Plans page', `Right now: offered ${d.show} days before expiry, ${d.n} more months at ${d.pct}% of the price, never below ${rs(d.min)}.`)}
+    ${opt('custom', 'Different for this course', 'Set this course’s own terms.', custom)}
+    ${opt('off', 'Don’t offer an extension', 'Students buy the course again at full price.')}`;
+}
+function arrowsForm() {
+  const main = S.lengths[0], extra = S.lengths.length - 1, hasSubs = S.combo.on && S.combo.ids.length;
+  const attached = S.combo.on ? S.combo.ids.map(byId).filter(c => c.attached) : [];
+  const extSum = { default: 'Same as the Plans page', custom: `${S.extv.n} months at ${S.extv.pct}%, min ${rs(S.extv.min)}`, off: 'Not offered' }[S.ext];
+  return `<div class="card sells"><h3><span>This course is sold as</span><a href="#" onclick="return false">Open on the Plans page ↗</a></h3><div class="chips">
+      ${S.lengths.map(l => `<span class="chip ${l.saved ? '' : 'new'}"><b>${l.n || '?'} months</b> · ${l.price ? rs(l.price) : 'only inside combos'}${l.saved ? '' : ' · new'}</span>`).join('')}
+      ${hasSubs ? `<span class="chip">includes <b>${S.combo.ids.length} sub courses</b></span>` : ''}
+      ${S.addon.on && S.addon.ids.length ? `<span class="chip"><b>${S.addon.ids.length} add-ons</b> offered to owners</span>` : ''}
+      <span class="chip ${S.pay ? '' : 'off'}">${S.pay ? 'Students can buy' : 'Not on sale'}</span>
+    </div></div>
+  <div class="card">
+    ${row('price', 'Price and access length', `${main.price ? rs(main.price) : 'No price'}, ${main.n} months${extra ? ` + ${extra} more length${extra > 1 ? 's' : ''}` : ''}`, { body: priceBody() })}
+    ${row('pay', 'On sale', S.pay ? 'Students can buy this course' : 'Hidden from buying. Students who own it keep access', { sw: sw('pay', S.pay) })}
+    ${row('combo', 'Sub courses', S.combo.on ? `${S.combo.ids.length} included with this course` : 'Off', { sw: sw('swCombo', S.combo.on), body:
+      S.combo.on ? `<p class="help">Buying this course also unlocks each course below. ${HOLDERS} students already own this course and will get anything you add.</p>${picker('combo')}
+      ${attached.map(c => `<div class="warn">${esc(c.t)} has attached products. They unlock only for students who buy that course itself, not through this combo.</div>`).join('')}`
+      : '<p class="help">Switch on to bundle other courses into this one.</p>' })}
+    ${row('addon', 'Add-ons', S.addon.on ? `${S.addon.ids.length} offered to owners` : 'Off', { sw: sw('swAddon', S.addon.on), body:
+      S.addon.on ? `<p class="help">Students who own this course can buy each course below at its own price, and keep this course.</p>${picker('addon')}`
+      : '<p class="help">Switch on to offer other courses to students who own this one.</p>' })}
+    ${row('ext', 'Extension', extSum, { body: extBody() })}
+    ${row('code', 'Discount code', S.code || 'None', { body: `<p class="help">One code shown on this course’s buy screen.</p>
+      <select data-in="code"><option value="">No code</option>${['DIWALI20', 'UPSSSC100', 'FIRST50'].map(k => `<option ${S.code === k ? 'selected' : ''}>${k}</option>`).join('')}</select>` })}
+    ${row('exch', 'Exchange', hasSubs ? 'Not available: a course with sub courses can’t be swapped for another' : 'Off', { dis: hasSubs, sw: sw('', false, true) })}
+    ${row('upg', 'Upgrade to other courses', 'Coming soon', { dis: true, sw: sw('', false, true) })}
+  </div>`;
+}
+/* ---------- layouts 2 and 3: the switch is the only control ---------- */
+function srow(title, desc, on, act, o = {}) {
+  const line = o.dis || (variant() === 'grouped' && on && o.state ? o.state : desc);
+  return `<div class="sr">${sw(o.dis ? '' : act, on && !o.dis, !!o.dis)}<div class="bd"><div class="t ${o.dis ? 'mut' : ''}">${title}</div>
+    <div class="d">${line}</div>${on && !o.dis && o.body ? `<div class="body">${o.body}</div>` : ''}</div></div>`;
+}
+function extSwitchBody() {
+  const own = S.ext === 'custom';
+  return `<div class="grid4" style="margin-left:0">
+    ${[['show', 'Show before expiry (days)'], ['n', 'Extends by (months)'], ['pct', 'Price (% of plan)'], ['min', 'Minimum (₹)']].map(([k, l]) =>
+      `<div><label>${l}</label><input type="text" id="ext-${k}" data-in="extv.${k}" value="${esc(S.extv[k])}"></div>`).join('')}</div>
+    <p class="note">${own ? 'These are this course’s own terms. <a href="#" data-act="extReset">Reset to the Plans page terms</a>'
+      : 'These are the Plans page terms. Change a number to give this course its own.'}</p>`;
+}
+function switchForm(grouped) {
+  const hasSubs = S.combo.on && S.combo.ids.length;
+  const attached = S.combo.on ? S.combo.ids.map(byId).filter(c => c.attached) : [];
+  const strip = arrowsForm().split('<div class="card">')[0];
+  const top = `<div class="card" style="padding:4px 16px 16px;margin-bottom:14px"><div class="gh" style="padding-left:0">Price and access length</div>${priceBody()}
+    <div style="margin-top:16px"><label class="fl">Discount code</label>
+      <select data-in="code"><option value="">No code</option>${['DIWALI20', 'UPSSSC100', 'FIRST50'].map(k => `<option ${S.code === k ? 'selected' : ''}>${k}</option>`).join('')}</select>
+      <p class="note">Shown on this course’s buy screen.</p></div></div>`;
+  const subs = srow('Sub courses', 'Bundle other courses into this one. Buying this course unlocks them too.', S.combo.on, 'swCombo', {
+    state: `${S.combo.ids.length} included. ${HOLDERS} students already own this course and will get anything you add.`,
+    body: picker('combo') + attached.map(c => `<div class="warn">${esc(c.t)} has attached products. They unlock only for students who buy that course itself, not through this combo.</div>`).join('') });
+  const addons = srow('Add-ons', 'Offer other courses to students who own this one. They keep this course.', S.addon.on, 'swAddon', {
+    state: `${S.addon.ids.length} offered to owners, each at its own price. They keep this course.`, body: picker('addon') });
+  const sale = srow('On sale', 'Students can buy this course. Switch off to stop new purchases; students who own it keep access.', S.pay, 'pay', { state: 'Students can buy this course.' });
+  const ext = srow('Extension', 'Offer students more time when their access is about to run out.', S.ext !== 'off', 'extSw', {
+    state: S.ext === 'custom' ? 'Offered on this course’s own terms.' : 'Offered on the same terms as the Plans page.', body: extSwitchBody() });
+  const exch = srow('Exchange', 'Let students who own this course swap it for another, free.', S.exch, 'exch', {
+    dis: hasSubs ? 'Not available: a course with sub courses can’t be swapped for another.' : '',
+    state: 'Owners can swap this course for the one below.',
+    body: `<select>${C.filter(c => c.a).map(c => `<option>${esc(c.t)}</option>`).join('')}</select>` });
+  const upg = srow('Upgrade to other courses', '', false, '', { dis: 'Coming soon.' });
+  if (!grouped) return strip + top + `<div class="card">${subs}${addons}${sale}${ext}${exch}${upg}</div>`;
+  return strip + top + `<div class="card" style="margin-bottom:14px"><div class="gh">What students get</div>${subs}${addons}</div>
+    <div class="card"><div class="gh">Selling</div>${sale}${ext}${exch}</div>`;
+}
+function form() { const v = variant(); return v === 'arrows' ? arrowsForm() : switchForm(v === 'grouped'); }
+function changes() {
+  const out = [], bad = [];
+  const old = Object.fromEntries(INIT.l.map(l => [l.id, l]));
+  S.lengths.forEach(l => {
+    const o = old[l.id];
+    if (!o) (l.price ? out : bad).push(l.price ? `Creates a new plan: ${l.n} months at ${rs(l.price)}` : `The new ${l.n}-month length needs a price before you can save`);
+    else {
+      if (o.price !== l.price) out.push(`Price for ${o.n} months: ${rs(o.price)} → ${rs(l.price)} for new buyers`);
+      if (o.n !== l.n) out.push(`Access length ${o.n} → ${l.n} months for new buyers`);
+    }
+  });
+  INIT.l.filter(o => !S.lengths.find(l => l.id === o.id)).forEach(o => out.push(`Stops selling the ${o.n}-month plan; its buyers keep access`));
+  const was = INIT.c.on ? INIT.c.ids : [], now = S.combo.on ? S.combo.ids : [];
+  now.filter(i => !was.includes(i)).forEach(i => out.push(`Adds sub course “${byId(i).t}”; ${HOLDERS} current students get it too`));
+  was.filter(i => !now.includes(i)).forEach(i => bad.push(`Can’t remove “${byId(i).t}” while ${HOLDERS} students hold this course`));
+  const aw = INIT.a.on ? INIT.a.ids : [], an = S.addon.on ? S.addon.ids : [];
+  if (an.length !== aw.length || an.some(i => !aw.includes(i))) out.push(`Offers ${an.length} add-on${an.length === 1 ? '' : 's'} to this course’s owners`);
+  if (S.pay !== INIT.p) out.push(S.pay ? 'Puts the course on sale' : 'Takes the course off sale; students who own it keep access');
+  if (S.ext !== INIT.e || (S.ext === 'custom' && JSON.stringify(S.extv) !== JSON.stringify(INIT.ev)))
+    out.push({ default: 'Extension follows the Plans page again', custom: `Extension for this course: ${S.extv.n} months at ${S.extv.pct}%`, off: 'Stops offering an extension on this course' }[S.ext]);
+  if (S.exch !== INIT.x) out.push(S.exch ? 'Lets owners swap this course for another' : 'Stops offering an exchange');
+  if (S.code !== INIT.k) out.push(S.code ? `Shows discount code ${S.code}` : 'Removes the discount code');
+  return { out, bad };
+}
+function render() {
+  const a = document.activeElement, fid = a && a.id, pos = a && a.selectionStart;
+  const main = S.lengths[0], { out, bad } = changes();
+  document.getElementById('rail').innerHTML = `<div>1 Basic Information<small>All Courses, 5 faculty</small></div>
+    <div class="on">2 Pricing<small>${rs(main.price)}, ${main.n} months</small></div>
+    <div>3 Content<small>${S.combo.on ? S.combo.ids.length + ' sub courses' : 'Nothing added'}</small></div><div>4 Settings<small>Active</small></div>`;
+  document.getElementById('form').innerHTML = form();
+  document.getElementById('side').innerHTML = `<div class="card prev"><small style="color:#64748b;letter-spacing:.04em">PREVIEW</small><span class="tag g">Active</span>
+    <div class="img"></div><b>🚀 UPSSSC MAINS (ALL IN ONE) FOUNDATION…</b>
+    <div class="pr" style="margin-top:8px">${rs(main.price)}${main.mrp && +main.mrp > +main.price ? `<s>${rs(main.mrp)}</s>` : ''}</div>
+    <div style="color:#64748b;font-size:13px">${main.n} months${S.lengths.length > 1 ? ` · ${S.lengths.length} lengths to choose from` : ''}</div></div>`;
+  document.getElementById('overlay').innerHTML = drawer();
+  document.getElementById('savebar').innerHTML = (out.length + bad.length
+    ? `<div style="font-weight:600;font-size:13px;white-space:nowrap">Saving will:</div><ul>${bad.map(t => `<li class="bad">${esc(t)}</li>`).join('')}${out.map(t => `<li>${esc(t)}</li>`).join('')}</ul>`
+    : '<div class="none">No unsaved changes.</div>')
+    + `<button class="btn" data-act="reset">Discard</button><button class="btn p" ${out.length && !bad.length ? '' : 'disabled'} data-act="save">Save changes</button>`;
+  const v = variant();
+  document.getElementById('bar').innerHTML = `<button data-act="prev">←</button><span>${VARIANTS[v]}</span><button data-act="next">→</button>`;
+  if (fid) { const el = document.getElementById(fid); if (el) { el.focus(); try { el.setSelectionRange(pos, pos); } catch (e) {} } }
+}
+function cycle(d) {
+  const k = Object.keys(VARIANTS), n = k[(k.indexOf(variant()) + d + k.length) % k.length];
+  const u = new URL(location); u.searchParams.set('layout', n); history.replaceState(null, '', u); S.drawer = null; S.pick = [];
+}
+const ACT = {
+  toggle: d => { S.open[d.k] = !S.open[d.k]; },
+  pay: () => { S.pay = !S.pay; },
+  swCombo: () => { S.combo.on = !S.combo.on; S.open.combo = S.combo.on; },
+  swAddon: () => { S.addon.on = !S.addon.on; S.open.addon = S.addon.on; },
+  addLen: () => { S.lengths.push({ id: nextId++, n: '12', mrp: '', price: '', saved: false }); },
+  delLen: d => { S.lengths = S.lengths.filter(l => l.id != d.id); },
+  remove: d => { S[d.kind].ids = S[d.kind].ids.filter(i => i !== d.id); },
+  add: d => { S[d.kind].ids.push(d.id); S.q[d.kind] = ''; },
+  cat: d => { S.cat[d.kind] = d.v; },
+  inactive: d => { S.inactive[d.kind] = !S.inactive[d.kind]; },
+  drawer: d => { S.drawer = d.kind; S.pick = []; S.q[d.kind] = ''; },
+  closeDrawer: () => { S.drawer = null; S.pick = []; },
+  pick: d => { S.pick = S.pick.includes(d.id) ? S.pick.filter(i => i !== d.id) : [...S.pick, d.id]; },
+  commit: () => { S[S.drawer].ids.push(...S.pick); S.drawer = null; S.pick = []; },
+  ext: d => { S.ext = d.v; },
+  extSw: () => { S.ext = S.ext === 'off' ? 'default' : 'off'; },
+  extReset: () => { S.ext = 'default'; S.extv = { ...INIT.ev }; },
+  exch: () => { S.exch = !S.exch; },
+  reset: () => { S.lengths = JSON.parse(JSON.stringify(INIT.l)); S.combo = JSON.parse(JSON.stringify(INIT.c)); S.addon = JSON.parse(JSON.stringify(INIT.a)); S.pay = INIT.p; S.ext = INIT.e; S.extv = { ...INIT.ev }; S.code = INIT.k; S.exch = INIT.x; },
+  save: () => { alert('Prototype: nothing is saved.'); },
+  prev: () => cycle(-1), next: () => cycle(1),
+};
+document.addEventListener('mousedown', e => {            // keep the type-to-add list open while clicking inside it
+  if (e.target.closest('.pop .list')) e.preventDefault();
+});
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-act]');
+  if (!t || !t.dataset.act || !ACT[t.dataset.act]) return;
+  if (t.classList.contains('sw')) e.stopPropagation();
+  if (t.tagName === 'A') e.preventDefault();
+  ACT[t.dataset.act](t.dataset); render();
+});
+document.addEventListener('input', e => {
+  const t = e.target;
+  if (t.dataset.len) { S.lengths.find(l => l.id == t.dataset.len)[t.dataset.f] = t.value; render(); }
+  else if (t.dataset.in) { const [a, b] = t.dataset.in.split('.'); if (b) S[a][b] = t.value; else S[a] = t.value; if (a === 'extv' && S.ext === 'default' && variant() !== 'arrows') S.ext = 'custom'; render(); }
+});
+document.addEventListener('focusin', e => { if (e.target.dataset && e.target.dataset.pop && S.focus !== e.target.id) { S.focus = e.target.id; render(); } });
+document.addEventListener('focusout', e => { if (e.target.dataset && e.target.dataset.pop) setTimeout(() => { if (document.activeElement.id !== S.focus) { S.focus = null; render(); } }, 120); });
+document.addEventListener('keydown', e => {
+  if (e.target.matches('input,textarea,select,[contenteditable]')) return;
+  if (e.key === 'ArrowLeft') { cycle(-1); render(); } if (e.key === 'ArrowRight') { cycle(1); render(); }
+});
+render();
+</script>
+</body>
+</html>

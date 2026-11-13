@@ -1,0 +1,1 @@
+{"at":"2026-10-26T12:44:49.329Z","courseId":"96","checks":[{"label":"detail","ok":true,"ms":213,"rows":null,"total":null,"more":null},{"label":"pc4first100","ok":true,"ms":4480,"rows":100,"total":null,"more":null},{"label":"folderPathsFirst20","ok":true,"ms":1332,"rows":20,"total":null,"more":true},{"label":"studentRoot","ok":true,"ms":119,"rows":1,"total":1,"more":null}]}

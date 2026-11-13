@@ -1,0 +1,108 @@
+{
+  "at": "2026-10-27T12:04:47.863Z",
+  "selected": 7,
+  "retried": 7,
+  "heldBlocked": 36,
+  "states": {
+    "done": 7
+  },
+  "recovered": [
+    {
+      "id": "6acea4e38752d955968b933c",
+      "title": "Glands 02 · Biology",
+      "visiblePlacements": 2
+    },
+    {
+      "id": "6acea4e88752d955968b9343",
+      "title": "Glands 03 · Biology",
+      "visiblePlacements": 2
+    },
+    {
+      "id": "6acea4ec8752d955968b934a",
+      "title": "Glands 04 · Biology",
+      "visiblePlacements": 2
+    },
+    {
+      "id": "6acea4f08752d955968b9351",
+      "title": "Glands 05 · Biology",
+      "visiblePlacements": 2
+    },
+    {
+      "id": "6ad5df3064b695f53d872c12",
+      "title": "Internet",
+      "visiblePlacements": 1
+    },
+    {
+      "id": "6ad5df3164b695f53d872c19",
+      "title": "Internet 02 · Internet (2)",
+      "visiblePlacements": 1
+    },
+    {
+      "id": "6ad5df3164b695f53d872c20",
+      "title": "Internet 03 · Internet (2)",
+      "visiblePlacements": 1
+    }
+  ],
+  "all36BlockedJobsByteUnchanged": true,
+  "coursePlacementsUnchanged": true,
+  "catalogLedgersUnchanged": true,
+  "changedClassFields": [
+    {
+      "classId": "6acea4e38752d955968b933c",
+      "fields": [
+        "updatedAt",
+        "hlsAsset",
+        "streamStatus"
+      ]
+    },
+    {
+      "classId": "6acea4e88752d955968b9343",
+      "fields": [
+        "updatedAt",
+        "hlsAsset",
+        "streamStatus"
+      ]
+    },
+    {
+      "classId": "6acea4ec8752d955968b934a",
+      "fields": [
+        "updatedAt",
+        "hlsAsset",
+        "streamStatus"
+      ]
+    },
+    {
+      "classId": "6acea4f08752d955968b9351",
+      "fields": [
+        "updatedAt",
+        "hlsAsset",
+        "streamStatus"
+      ]
+    },
+    {
+      "classId": "6ad5df3064b695f53d872c12",
+      "fields": [
+        "updatedAt",
+        "hlsAsset",
+        "streamStatus"
+      ]
+    },
+    {
+      "classId": "6ad5df3164b695f53d872c19",
+      "fields": [
+        "updatedAt",
+        "hlsAsset",
+        "streamStatus"
+      ]
+    },
+    {
+      "classId": "6ad5df3164b695f53d872c20",
+      "fields": [
+        "updatedAt",
+        "hlsAsset",
+        "streamStatus"
+      ]
+    }
+  ],
+  "activeSelectedJobs": 0
+}

@@ -1,0 +1,222 @@
+{
+  "recordedAt": "2026-10-16T10:45:00Z",
+  "source": {
+    "database": 14690512,
+    "subscription": 3448813,
+    "host": "redis-15232.c72606.ap-south-1-mz.ec2.cloud.rlrcp.com",
+    "port": 15232
+  },
+  "destination": {
+    "database": 14696536,
+    "subscription": 3451665,
+    "name": "database-quicktricks-gcp",
+    "cloud": "GCP asia-south1",
+    "host": "redis-14293.c72764.asia-south1-mz.gcp.cloud.rlrcp.com",
+    "port": 14293,
+    "ip": "8.234.93.19",
+    "pricePerHour": 0.34,
+    "minimumPerMonth": 248.2
+  },
+  "networkPreflight": {
+    "encoderUnauthPingMs": 59,
+    "socketBeforeWhitelist": "ECONNREFUSED 1 ms",
+    "socketAfterWhitelist": "NOAUTH 9 ms x3",
+    "whitelistConfirmedIST": "14:39"
+  },
+  "readiness": {
+    "socket": {
+      "ok": true,
+      "clientVersion": "4.7.1",
+      "nodeVersion": "v22.22.2",
+      "authenticatedConnectMs": 983.7,
+      "ping": {
+        "samples": 30,
+        "medianMs": 4.48,
+        "p95Ms": 6.18,
+        "maxMs": 6.26
+      },
+      "largePayloadRoundTripMs": 25.23,
+      "ownTestKeysRemoved": true,
+      "checks": 13
+    },
+    "encoder": {
+      "ok": true,
+      "clientVersion": "4.7.1",
+      "nodeVersion": "v24.15.0",
+      "authenticatedConnectMs": 102.92,
+      "ping": {
+        "samples": 30,
+        "medianMs": 22.1,
+        "p95Ms": 22.36,
+        "maxMs": 22.44
+      },
+      "largePayloadRoundTripMs": 132.9,
+      "ownTestKeysRemoved": true,
+      "checks": 13
+    }
+  },
+  "preInventory": {
+    "classIds": 8316,
+    "selectedKeys": 123621,
+    "messages": 118050,
+    "polls": 11,
+    "privateModeCurrent": 3689,
+    "excluded": {
+      "user:sessions": 8615,
+      "room:currentViewers": 761,
+      "host:sessions": 8,
+      "activeRtmpSession": 1
+    }
+  },
+  "gpuRedisHost": "unchanged (redis-19504), user decision",
+  "window": {
+    "approvedBy": "user, 16:03 IST, overriding the one-hour rule (teacher held for the switch)",
+    "checkIST": "16:04:31",
+    "rtmpSessions": 0,
+    "writersStoppedIST": "16:04:33",
+    "bothActiveIST": "16:05:49",
+    "outageSeconds": 76,
+    "acceptedRisk": "15:00 class 6ac8ea244783067e4ff4f38d was in processing; its VOD playlists had not been produced in the 4 min before the stop (pre-existing stall, see follow-ups)"
+  },
+  "migration": {
+    "precopyIST": "16:01",
+    "precopy": {
+      "keys": 125247,
+      "bytes": 39012590,
+      "verified": 125247,
+      "semanticComparisons": 3766,
+      "seconds": 43.147
+    },
+    "final": {
+      "keys": 125257,
+      "messages": 119598,
+      "privateModeCurrent": 3742,
+      "polls": 11,
+      "rooms": 196,
+      "rtmpBlocked": 195,
+      "bytes": 39015047,
+      "verified": 125257,
+      "semanticComparisons": 3766,
+      "expired": 0,
+      "seconds": 49.158
+    },
+    "excluded": [
+      "user:sessions:*",
+      "room:*:currentViewers",
+      "host:sessions:*",
+      "rtmp:session/grace"
+    ]
+  },
+  "health": [
+    {
+      "action": "healthy",
+      "role": "socket",
+      "pid": 1231175,
+      "restarts": 336,
+      "namespace": "quicktricks",
+      "newHost": "redis-14293.c72764.asia-south1-mz.gcp.cloud.rlrcp.com",
+      "savedConfigVerified": true,
+      "ping": "PONG",
+      "logs": [],
+      "errors": []
+    },
+    {
+      "action": "healthy",
+      "role": "encoder",
+      "pid": 91384,
+      "restarts": 0,
+      "namespace": "quicktricks",
+      "newHost": "redis-14293.c72764.asia-south1-mz.gcp.cloud.rlrcp.com",
+      "savedConfigVerified": true,
+      "ping": "PONG",
+      "logs": [
+        "2026-10-16T10:35:48: 10/16/2026 10:35:48 91384 [INFO] Node Media Rtmp Server started on port: 8937",
+        "2026-10-16T10:35:48: Recovering pending stream-status deliveries from namespace 'quicktricks'",
+        "2026-10-16T10:35:48: Both Redis clients connected",
+        "2026-10-16T10:35:49: [chatmod] consuming chatmod:events:quicktricks as livestream/livestream-testing-raghav:0",
+        "2026-10-16T10:35:49: Server running on port 8082"
+      ],
+      "errors": []
+    }
+  ],
+  "mesh": {
+    "passed": true,
+    "peers": 2,
+    "namespace": "quicktricks",
+    "diagnosticTargetsOnly": true
+  },
+  "liveAcceptance": {
+    "class": "6ad1fdefe8c911cfd7a6203d (testing 25, user OBS demo)",
+    "timelineIST": {
+      "preparing": "16:07:01",
+      "live": "16:07:08",
+      "reconnecting": "16:11:02",
+      "endStreamViaRedis": "16:11:12",
+      "processing": "16:11:12",
+      "ended": "16:11:59"
+    },
+    "viewers": [
+      {
+        "test": "live join and chat-history response",
+        "peer": 0,
+        "passed": true,
+        "status": "live",
+        "historyCount": 1
+      },
+      {
+        "test": "live join and chat-history response",
+        "peer": 1,
+        "passed": true,
+        "status": "live",
+        "historyCount": 1
+      },
+      {
+        "test": "same live chat broadcasts received by both servers",
+        "passed": true,
+        "commonMessages": 2,
+        "receivedCounts": [
+          2,
+          2
+        ]
+      },
+      {
+        "test": "live viewer connection stability",
+        "passed": true,
+        "seconds": 90,
+        "unexpectedDisconnects": 0
+      },
+      {
+        "test": "temporary live viewer cleanup",
+        "passed": true
+      }
+    ],
+    "vodPlaylistUploads": 24,
+    "lmsAfterEnd": {
+      "streamStatus": "ended",
+      "hlsAsset.key": "472/6ad1fdefe8c911cfd7a6203d/playlist-mpl-vod.m3u8"
+    },
+    "pendingStatusesAfter": 0
+  },
+  "postCutoverRestarts": {
+    "note": "operator from 148.113.47.103 ran pm2 restart 27 28 29 30 at 16:11:34-48 and socket again at 16:12:55 (code 0 via SIGINT); config held",
+    "socketAfter": {
+      "pid": 1264505,
+      "restarts": 338,
+      "pm2RedisHost": "redis-14293.c72764.asia-south1-mz.gcp.cloud.rlrcp.com",
+      "head": "e4e942a"
+    },
+    "clientList": {
+      "gcp": {
+        "148.113.49.18": "3 (1 subscriber x6)",
+        "34.131.52.223": "3 (1 subscriber x6)"
+      },
+      "aws": "0 clients"
+    }
+  },
+  "rollback": {
+    "awsDatabase": "14690512 kept intact until >= 2026-10-18 16:06 IST",
+    "socketDir": "/home/hranker/quicktricks-redis-cutover-20261016T0900Z",
+    "encoderDir": "/home/raghav/quicktricks-redis-cutover-20261016T0900Z",
+    "action": "control.cjs rollback per role; sync GCP-only writes back first"
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "checkedAt": "2026-10-27T06:12:39.768Z",
+  "readOnly": true,
+  "classes": [
+    {
+      "_id": "6adc01b520e78c9f77dbc7b6",
+      "status": 1,
+      "apxAssetKey": "vid:armaths-data:4656486-1792746126",
+      "updatedAt": "2026-10-24T00:54:13.788Z"
+    },
+    {
+      "_id": "6adc01b820e78c9f77dbc7bd",
+      "status": 1,
+      "apxAssetKey": "vid:armaths-data:4657426-1792753322",
+      "updatedAt": "2026-10-24T00:54:16.966Z"
+    }
+  ],
+  "newJobs": [],
+  "ledger": [],
+  "placements": [],
+  "pdfLedger": [
+    {
+      "_id": "6ad94017c9735682f0130807",
+      "kind": "standalone",
+      "pdfId": null,
+      "runId": "daily-2026-10-26",
+      "status": "failed",
+      "updatedAt": "2026-10-26T00:53:16.468Z"
+    },
+    {
+      "_id": "6ad94018c9735682f013080e",
+      "kind": "standalone",
+      "pdfId": null,
+      "runId": "daily-2026-10-26",
+      "status": "failed",
+      "updatedAt": "2026-10-26T00:53:18.198Z"
+    }
+  ],
+  "pdfHashTwins": [],
+  "capture96": {
+    "_id": "6ace3575c9735682f04835ad",
+    "capture": {
+      "runId": "daily-2026-10-22",
+      "status": "done",
+      "completedAt": "2026-10-21T22:30:22.440Z"
+    },
+    "captureAttempt": {
+      "runId": "daily-2026-10-26",
+      "status": "failed"
+    }
+  },
+  "session": {
+    "_id": "6ace220fc9735682f0472818",
+    "orgId": "2177599",
+    "customerId": "781",
+    "isActive": false,
+    "lastCheckedAt": "2026-10-26T13:26:00.038Z",
+    "lastHttpStatus": 307
+  },
+  "runs": [
+    {
+      "_id": "daily-2026-10-26",
+      "startedAt": "2026-10-25T21:00:13.648Z",
+      "finishedAt": "2026-10-26T00:54:06.831Z",
+      "state": "done-with-failures",
+      "steps": {
+        "seed-pdf-titles": {
+          "seeded": 10,
+          "noTitle": 0,
+          "state": "done"
+        },
+        "capture": {
+          "coursesDone": 145,
+          "coursesFailed": [
+            "96"
+          ],
+          "lookups": 21,
+          "reused": 2751,
+          "vanished": 0,
+          "state": "done"
+        },
+        "classes": {
+          "newClasses": 1,
+          "placementsAdded": 0,
+          "jobsQueued": 1,
+          "waitingOnLink": 147,
+          "existing": 9984,
+          "failed": 2,
+          "state": "done"
+        },
+        "reconcile": {
+          "classes": {
+            "activated": 0,
+            "deactivated": 0,
+            "retitled": 0,
+            "skippedUnknown": 5,
+            "goneFromListing": 2,
+            "failed": 0
+          },
+          "pdfs": {
+            "activated": 0,
+            "deactivated": 0,
+            "retitled": 0,
+            "skippedUnknown": 2,
+            "goneFromListing": 3,
+            "failed": 0
+          },
+          "changes": 0,
+          "csv": "/home/raghav/vidyagram-nightly/logs/apx-catalog-reconcile-daily-2026-10-26.csv",
+          "state": "done"
+        },
+        "placement": {
+          "rowsCreated": 3,
+          "coursesCreated": 0,
+          "coursesTouched": 3,
+          "rowsInactive": 0,
+          "unfiled": 3,
+          "refused": 0,
+          "missingClasses": 0,
+          "state": "done"
+        },
+        "requeue": {
+          "requeued": 3,
+          "state": "done"
+        },
+        "pdfs": {
+          "newPdfs": 0,
+          "notesAttached": 0,
+          "leftForLater": 0,
+          "signs": {
+            "student": 0,
+            "admin": 2,
+            "public": 0
+          },
+          "throttled": false,
+          "sessionLost": false,
+          "notReached": 0,
+          "toImport": 2,
+          "failed": 2,
+          "state": "done"
+        },
+        "thumbnails": {
+          "targets": 4383,
+          "filled": 0,
+          "dead": 2,
+          "noCandidate": 4381,
+          "planned": 0,
+          "state": "done"
+        },
+        "durations": {
+          "targets": 1492,
+          "filled": 1,
+          "noDuration": 276,
+          "state": "done"
+        }
+      }
+    },
+    {
+      "_id": "daily-2026-10-25",
+      "startedAt": "2026-10-24T21:00:20.582Z",
+      "finishedAt": "2026-10-25T01:00:29.924Z",
+      "state": "done-with-failures",
+      "steps": {
+        "seed-pdf-titles": {
+          "seeded": 15,
+          "noTitle": 0,
+          "state": "done"
+        },
+        "capture": {
+          "coursesDone": 145,
+          "coursesFailed": [
+            "96"
+          ],
+          "lookups": 20,
+          "reused": 2747,
+          "vanished": 3,
+          "state": "done"
+        },
+        "classes": {
+          "newClasses": 25,
+          "placementsAdded": 20,
+          "jobsQueued": 22,
+          "waitingOnLink": 142,
+          "existing": 9959,
+          "failed": 2,
+          "state": "done"
+        },
+        "reconcile": {
+          "classes": {
+            "activated": 0,
+            "deactivated": 1,
+            "retitled": 0,
+            "skippedUnknown": 5,
+            "goneFromListing": 2,
+            "failed": 0
+          },
+          "pdfs": {
+            "activated": 1,
+            "deactivated": 0,
+            "retitled": 0,
+            "skippedUnknown": 2,
+            "goneFromListing": 3,
+            "failed": 0
+          },
+          "changes": 2,
+          "csv": "/home/raghav/vidyagram-nightly/logs/apx-catalog-reconcile-daily-2026-10-25.csv",
+          "state": "done"
+        },
+        "placement": {
+          "rowsCreated": 97,
+          "coursesCreated": 0,
+          "coursesTouched": 33,
+          "rowsInactive": 0,
+          "unfiled": 3,
+          "refused": 0,
+          "missingClasses": 0,
+          "state": "done"
+        },
+        "requeue": {
+          "requeued": 3,
+          "state": "done"
+        },
+        "pdfs": {
+          "newPdfs": 41,
+          "notesAttached": 40,
+          "leftForLater": 0,
+          "signs": {
+            "student": 44,
+            "admin": 8,
+            "public": 0
+          },
+          "throttled": false,
+          "sessionLost": false,
+          "notReached": 0,
+          "toImport": 52,
+          "failed": 2,
+          "state": "done"
+        },
+        "thumbnails": {
+          "targets": 4383,
+          "filled": 0,
+          "dead": 2,
+          "noCandidate": 4381,
+          "planned": 0,
+          "state": "done"
+        },
+        "durations": {
+          "targets": 1513,
+          "filled": 22,
+          "noDuration": 276,
+          "state": "done"
+        }
+      }
+    }
+  ],
+  "jobStatus": [
+    {
+      "_id": "done",
+      "n": 9251
+    },
+    {
+      "_id": "dead",
+      "n": 183
+    }
+  ],
+  "productionWritesByThisProbe": 0
+}

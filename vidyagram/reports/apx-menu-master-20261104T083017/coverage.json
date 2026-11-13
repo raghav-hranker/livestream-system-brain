@@ -1,0 +1,167 @@
+{
+ "at": "2026-11-04T08:43:32.747Z",
+ "totalClasses": 11261,
+ "classesWithHls": 9509,
+ "read": 9506,
+ "full": 9498,
+ "failed": [
+  {
+   "classId": "6ad8c291e59a7eb14f59cedf",
+   "title": "test (Copy)",
+   "status": 1,
+   "appxImport": false,
+   "key": "781/6ad8c291e59a7eb14f59cedf/playlist-mpl-vod.m3u8",
+   "error": "NoSuchKey"
+  },
+  {
+   "classId": "6ad8c449e59a7eb14f59d1ee",
+   "title": "test 2",
+   "status": 1,
+   "appxImport": false,
+   "key": "781/6ad8c449e59a7eb14f59d1ee/playlist-mpl-vod.m3u8",
+   "error": "NoSuchKey"
+  },
+  {
+   "classId": "6ad8d4f0b0c07a195aad88fd",
+   "title": "test 3",
+   "status": 1,
+   "appxImport": false,
+   "key": "781/6ad8d4f0b0c07a195aad88fd/playlist-mpl-vod.m3u8",
+   "error": "NoSuchKey"
+  }
+ ],
+ "lackingAliases": [
+  {
+   "classId": "6ace93978752d955968b1376",
+   "title": "काल · काल",
+   "status": 1,
+   "appxImport": true,
+   "key": "781/6ace93978752d955968b1376/hls/master.m3u8",
+   "missing": [
+    "720p",
+    "480p",
+    "240p",
+    "144p"
+   ],
+   "files": [
+    "240p.m3u8",
+    "480p.m3u8"
+   ]
+  },
+  {
+   "classId": "6ace93c48752d955968b1671",
+   "title": "CLASS 01",
+   "status": 1,
+   "appxImport": true,
+   "key": "781/6ace93c48752d955968b1671/hls/master.m3u8",
+   "missing": [
+    "720p",
+    "480p"
+   ],
+   "files": [
+    "360p.m3u8",
+    "480p.m3u8"
+   ]
+  },
+  {
+   "classId": "6ace93c58752d955968b167f",
+   "title": "Size And Location (Practice Class)",
+   "status": 1,
+   "appxImport": true,
+   "key": "781/6ace93c58752d955968b167f/hls/master.m3u8",
+   "missing": [
+    "240p",
+    "144p"
+   ],
+   "files": [
+    "240p.m3u8"
+   ]
+  },
+  {
+   "classId": "6ace95508752d955968b2b78",
+   "title": "Demo 01 (Percentage)",
+   "status": 1,
+   "appxImport": true,
+   "key": "781/6ace95508752d955968b2b78/hls/master.m3u8",
+   "missing": [
+    "720p",
+    "480p"
+   ],
+   "files": [
+    "480p.m3u8"
+   ]
+  },
+  {
+   "classId": "6ace99fd8752d955968b70be",
+   "title": "Percentage Class 14 (2)",
+   "status": 0,
+   "appxImport": true,
+   "key": "781/6ace99fd8752d955968b70be/hls/master.m3u8",
+   "missing": [
+    "720p",
+    "480p"
+   ],
+   "files": [
+    "480p.m3u8"
+   ]
+  },
+  {
+   "classId": "6ad8bdb8e59a7eb14f59c660",
+   "title": "test",
+   "status": 1,
+   "appxImport": false,
+   "key": "781/6ad8bdb8e59a7eb14f59c660/hls/master.m3u8",
+   "missing": [
+    "720p",
+    "480p",
+    "240p",
+    "144p"
+   ],
+   "files": [
+    "240p.m3u8",
+    "360p.m3u8",
+    "480p.m3u8",
+    "720p.m3u8",
+    "1080p.m3u8"
+   ]
+  }
+ ],
+ "otherShape": [
+  {
+   "classId": "6ace99558752d955968b6629",
+   "title": "Train Class 01 · TRAIN (4)",
+   "status": 0,
+   "appxImport": true,
+   "key": "781/6ace99558752d955968b6629/hls/master.m3u8",
+   "files": [
+    "900p.m3u8"
+   ]
+  },
+  {
+   "classId": "6ace996c8752d955968b678e",
+   "title": "Time, Speed & Distance Class 03 · TIME , SPEED & DISTANCE (2)",
+   "status": 0,
+   "appxImport": true,
+   "key": "781/6ace996c8752d955968b678e/hls/master.m3u8",
+   "files": [
+    "900p.m3u8"
+   ]
+  }
+ ],
+ "bucketClassFolders": 9544,
+ "unreferencedFolders": 41,
+ "unreferencedMasters": [
+  {
+   "folder": "781/6ad6995fe36abd47ea38d533",
+   "missing": []
+  },
+  {
+   "folder": "781/6ad93ddb38fae4f95ec4aa8c",
+   "missing": []
+  },
+  {
+   "folder": "781/6adaafe4d8a68cd04b9b6618",
+   "missing": []
+  }
+ ]
+}

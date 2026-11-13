@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-14",
+  "targetSubscription": 3448813,
+  "targetDatabase": 14690512,
+  "host": "redis-15232.c72606.ap-south-1-mz.ec2.cloud.rlrcp.com",
+  "port": 15232,
+  "runId": "20261014-6da479e84d5b4fa9b1daf9dd55256288",
+  "productionChanged": false,
+  "loadTest": false,
+  "results": [
+    {
+      "role": "socket",
+      "clientVersion": "4.7.1",
+      "nodeVersion": "v22.22.2",
+      "checks": [
+        "authenticated PING",
+        "SETEX / GET / TTL",
+        "hash roster operations",
+        "set session operations",
+        "sorted-set presence operations",
+        "list message-history operations",
+        "transaction / MGET",
+        "NX lock / Lua compare-and-delete",
+        "streams / consumer group / acknowledgment",
+        "64 KiB synthetic payload round-trip",
+        "pattern Pub/Sub",
+        "test subscriber reconnect",
+        "cross-server Pub/Sub delivery"
+      ],
+      "authenticatedConnectMs": 251.48,
+      "ping": {
+        "samples": 30,
+        "medianMs": 3.8,
+        "p95Ms": 5.86,
+        "maxMs": 8.15
+      },
+      "largePayloadRoundTripMs": 22.08,
+      "ok": true,
+      "ownTestKeysRemoved": true
+    },
+    {
+      "role": "encoder",
+      "clientVersion": "4.7.1",
+      "nodeVersion": "v24.15.0",
+      "checks": [
+        "authenticated PING",
+        "SETEX / GET / TTL",
+        "hash roster operations",
+        "set session operations",
+        "sorted-set presence operations",
+        "list message-history operations",
+        "transaction / MGET",
+        "NX lock / Lua compare-and-delete",
+        "streams / consumer group / acknowledgment",
+        "64 KiB synthetic payload round-trip",
+        "pattern Pub/Sub",
+        "test subscriber reconnect",
+        "cross-server Pub/Sub delivery"
+      ],
+      "authenticatedConnectMs": 125,
+      "ping": {
+        "samples": 30,
+        "medianMs": 23.77,
+        "p95Ms": 23.93,
+        "maxMs": 23.95
+      },
+      "largePayloadRoundTripMs": 143.77,
+      "ok": true,
+      "ownTestKeysRemoved": true
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+  "exitCode": 0,
+  "diagnostics": 0,
+  "output": "typecheck.txt",
+  "testedSourceCommit": "f80515ab5"
+}

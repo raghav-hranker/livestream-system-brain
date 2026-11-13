@@ -1,0 +1,117 @@
+{
+  "at": "2026-11-11T11:16:57.841Z",
+  "assets": [
+    {
+      "at": "2026-11-11T11:16:50.920Z",
+      "classId": "6ace94248752d955968b1c3d",
+      "adminPreview": true,
+      "learnerViewWrites": 0,
+      "mintHttp": 200,
+      "renditions": [
+        {
+          "playlistHttp": 200,
+          "samples": [
+            {
+              "index": 0,
+              "http": 206,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 138,
+              "http": 206,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 275,
+              "http": 206,
+              "bytes": 1024,
+              "tsSync": true
+            }
+          ],
+          "ok": true,
+          "segments": 276
+        },
+        {
+          "playlistHttp": 200,
+          "samples": [
+            {
+              "index": 0,
+              "http": 206,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 138,
+              "http": 206,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 275,
+              "http": 206,
+              "bytes": 1024,
+              "tsSync": true
+            }
+          ],
+          "ok": true,
+          "segments": 276
+        },
+        {
+          "playlistHttp": 200,
+          "samples": [
+            {
+              "index": 0,
+              "http": 206,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 138,
+              "http": 206,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 275,
+              "http": 206,
+              "bytes": 1024,
+              "tsSync": true
+            }
+          ],
+          "ok": true,
+          "segments": 276
+        },
+        {
+          "playlistHttp": 200,
+          "samples": [
+            {
+              "index": 0,
+              "http": 206,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 137,
+              "http": 206,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 274,
+              "http": 206,
+              "bytes": 1024,
+              "tsSync": true
+            }
+          ],
+          "ok": true,
+          "segments": 275
+        }
+      ],
+      "ok": true,
+      "masterHttp": 200
+    }
+  ],
+  "ok": true
+}

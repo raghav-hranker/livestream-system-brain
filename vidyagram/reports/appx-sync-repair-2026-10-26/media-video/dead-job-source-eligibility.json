@@ -1,0 +1,4485 @@
+{
+  "snapshot": "vidyagram/reports/appx-sync-verify-2026-10-26/",
+  "summary": {
+    "dead": 183,
+    "eligibility": {
+      "current planned link exists; bounded fresh probe required": 133,
+      "no current planned occurrence": 50
+    },
+    "errorCategories": {
+      "source404": 52,
+      "noPlayableURL": 131
+    },
+    "changedSourceRows": 0
+  },
+  "jobs": [
+    {
+      "job": "6ace8ef7c9735682f04ed753",
+      "classId": "6ace8ef78752d955968adeec",
+      "assetKey": "drm:707d65f4-19e2-463d-b059-9ced0e84b65f",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "3",
+          "rowId": "774",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "4",
+          "rowId": "1702",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "5",
+          "rowId": "2808",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "6",
+          "rowId": "3796",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "8",
+          "rowId": "4690",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "9",
+          "rowId": "5428",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "10",
+          "rowId": "6323",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "11",
+          "rowId": "7269",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "12",
+          "rowId": "7777",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "13",
+          "rowId": "8436",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "14",
+          "rowId": "9633",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "15",
+          "rowId": "10280",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "17",
+          "rowId": "11423",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "19",
+          "rowId": "13251",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace8f53c9735682f04ed914",
+      "classId": "6ace8f538752d955968ae359",
+      "assetKey": "vid:rgvikramjeet-data:411823-1702027232",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "3",
+          "rowId": "907",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "4",
+          "rowId": "1836",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "5",
+          "rowId": "2938",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "9",
+          "rowId": "5562",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "10",
+          "rowId": "6483",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "11",
+          "rowId": "7403",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "13",
+          "rowId": "8596",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "15",
+          "rowId": "10439",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "17",
+          "rowId": "11582",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "18",
+          "rowId": "12425",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "19",
+          "rowId": "13411",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace8f99c9735682f04ed9ed",
+      "classId": "6ace8f998752d955968ae61a",
+      "assetKey": "drm:a1622ea1-1924-4ef3-8fa6-a7316b5034f3",
+      "errorCategory": "source404",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace9077c9735682f04edc5f",
+      "classId": "6ace90778752d955968aed9f",
+      "assetKey": "drm:016433f1-0b14-4f94-be58-ea55bbf08c5e",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "5",
+          "rowId": "2313",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace91c6c9735682f04ee00b",
+      "classId": "6ace91c68752d955968af6fe",
+      "assetKey": "drm:00c27ef3-7931-4113-995b-0995dfab8ef8",
+      "errorCategory": "source404",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace91cbc9735682f04ee01a",
+      "classId": "6ace91cb8752d955968af72f",
+      "assetKey": "drm:5509dbdd-db50-4900-9673-d826a3755c81",
+      "errorCategory": "source404",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace91cbc9735682f04ee01c",
+      "classId": "6ace91cb8752d955968af736",
+      "assetKey": "drm:eaa56b5d-5eef-4684-ad66-26f0a28140ab",
+      "errorCategory": "source404",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace9257c9735682f04ee309",
+      "classId": "6ace92578752d955968aff91",
+      "assetKey": "vid:rgvikramjeet-data:410702-1701967965",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "10",
+          "rowId": "6463",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "13",
+          "rowId": "8576",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "15",
+          "rowId": "10419",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "17",
+          "rowId": "11562",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "18",
+          "rowId": "12405",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "19",
+          "rowId": "13391",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "21",
+          "rowId": "14464",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "22",
+          "rowId": "15021",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "23",
+          "rowId": "17560",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21844",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9277c9735682f04ee3ac",
+      "classId": "6ace92778752d955968b015f",
+      "assetKey": "drm:002f1676-07a3-4645-adf5-523d567ae007",
+      "errorCategory": "source404",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace92b8c9735682f04ee4f3",
+      "classId": "6ace92b88752d955968b0568",
+      "assetKey": "drm:790be452-5d22-4ebf-8800-4a885e9481c2",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "13",
+          "rowId": "8149",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "15",
+          "rowId": "10003",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "17",
+          "rowId": "11147",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "18",
+          "rowId": "11920",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "19",
+          "rowId": "12956",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "21",
+          "rowId": "14000",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21379",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace92d2c9735682f04ee56f",
+      "classId": "6ace92d28752d955968b070c",
+      "assetKey": "vid:rgvikramjeet-data:526735-1706263373",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "15",
+          "rowId": "9770",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "17",
+          "rowId": "10908",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "18",
+          "rowId": "11731",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "21",
+          "rowId": "13817",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "22",
+          "rowId": "14595",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "23",
+          "rowId": "16882",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "17734",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21205",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace92d4c9735682f04ee575",
+      "classId": "6ace92d38752d955968b0721",
+      "assetKey": "vid:rgvikramjeet-data:536119-1706624740",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "15",
+          "rowId": "9773",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "17",
+          "rowId": "10911",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "18",
+          "rowId": "11734",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "21",
+          "rowId": "13820",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "22",
+          "rowId": "14599",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "23",
+          "rowId": "16885",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "17738",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21209",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace92d6c9735682f04ee580",
+      "classId": "6ace92d68752d955968b0744",
+      "assetKey": "vid:rgvikramjeet-data:550360-1707143202",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "15",
+          "rowId": "9779",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "17",
+          "rowId": "10917",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "18",
+          "rowId": "11740",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "21",
+          "rowId": "13826",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "22",
+          "rowId": "14605",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "23",
+          "rowId": "16891",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "17744",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21215",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace92d8c9735682f04ee586",
+      "classId": "6ace92d88752d955968b0759",
+      "assetKey": "vid:rgvikramjeet-data:558454-1707402144",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "15",
+          "rowId": "9782",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "17",
+          "rowId": "10920",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "18",
+          "rowId": "11743",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "21",
+          "rowId": "13829",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "22",
+          "rowId": "14608",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "23",
+          "rowId": "16894",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "17747",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21218",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace92efc9735682f04ee5fe",
+      "classId": "6ace92ef8752d955968b08cc",
+      "assetKey": "vid:rgvikramjeet-data:653682-1710764795",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "17",
+          "rowId": "11239",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "18",
+          "rowId": "12012",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "21",
+          "rowId": "14092",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "23",
+          "rowId": "17191",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "18037",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "25",
+          "rowId": "18880",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21471",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace92f6c9735682f04ee61c",
+      "classId": "6ace92f68752d955968b092e",
+      "assetKey": "vid:rgvikramjeet-data:656581-1710846175",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "17",
+          "rowId": "10970",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9300c9735682f04ee656",
+      "classId": "6ace93008752d955968b09dd",
+      "assetKey": "vid:rgvikramjeet-data:800648-1715257156",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "18",
+          "rowId": "11652",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "21",
+          "rowId": "13736",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "23",
+          "rowId": "16807",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "17659",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "25",
+          "rowId": "18504",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "26",
+          "rowId": "19344",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21130",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9317c9735682f04ee6ce",
+      "classId": "6ace93178752d955968b0b50",
+      "assetKey": "vid:rgvikramjeet-data:812233-1715610696",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "18",
+          "rowId": "12067",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "21",
+          "rowId": "14147",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "23",
+          "rowId": "17246",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "18092",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "25",
+          "rowId": "18935",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "26",
+          "rowId": "19838",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21527",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace936cc9735682f04ee8bf",
+      "classId": "6ace936c8752d955968b10ac",
+      "assetKey": "vid:rgvikramjeet-data:108184-1726065820",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "21",
+          "rowId": "14219",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "22",
+          "rowId": "14827",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "23",
+          "rowId": "17318",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "18164",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "25",
+          "rowId": "19007",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "26",
+          "rowId": "19910",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "27",
+          "rowId": "20775",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21599",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "29",
+          "rowId": "22520",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace936dc9735682f04ee8c2",
+      "classId": "6ace936c8752d955968b10b3",
+      "assetKey": "vid:rgvikramjeet-data:108965-1726151860",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "21",
+          "rowId": "14220",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "22",
+          "rowId": "14828",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "23",
+          "rowId": "17319",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "18165",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "25",
+          "rowId": "19008",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "26",
+          "rowId": "19911",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "27",
+          "rowId": "20776",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21600",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "29",
+          "rowId": "22521",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace936dc9735682f04ee8c4",
+      "classId": "6ace936d8752d955968b10ba",
+      "assetKey": "vid:rgvikramjeet-data:111585-1726497103",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "21",
+          "rowId": "14221",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "22",
+          "rowId": "14829",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "23",
+          "rowId": "17320",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "18166",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "25",
+          "rowId": "19009",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "26",
+          "rowId": "19912",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "27",
+          "rowId": "20777",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21601",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "29",
+          "rowId": "22522",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace936dc9735682f04ee8c7",
+      "classId": "6ace936d8752d955968b10c1",
+      "assetKey": "vid:rgvikramjeet-data:112321-1726582960",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "21",
+          "rowId": "14222",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "22",
+          "rowId": "14830",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "23",
+          "rowId": "17321",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "18167",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "25",
+          "rowId": "19010",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "26",
+          "rowId": "19913",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "27",
+          "rowId": "20778",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21602",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "29",
+          "rowId": "22523",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace936ec9735682f04ee8cb",
+      "classId": "6ace936e8752d955968b10c8",
+      "assetKey": "vid:rgvikramjeet-data:113378-1726725340",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "21",
+          "rowId": "14223",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace936ec9735682f04ee8ce",
+      "classId": "6ace936e8752d955968b10cf",
+      "assetKey": "vid:rgvikramjeet-data:113837-1726748747",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "21",
+          "rowId": "14225",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "22",
+          "rowId": "14833",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "23",
+          "rowId": "17324",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "18170",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "25",
+          "rowId": "19013",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "26",
+          "rowId": "19916",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "27",
+          "rowId": "20781",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21605",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "29",
+          "rowId": "22526",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace936fc9735682f04ee8d2",
+      "classId": "6ace936e8752d955968b10d6",
+      "assetKey": "vid:rgvikramjeet-data:113962-1726755400",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "21",
+          "rowId": "14224",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "22",
+          "rowId": "14832",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "23",
+          "rowId": "17323",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "18169",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "25",
+          "rowId": "19012",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "26",
+          "rowId": "19915",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "27",
+          "rowId": "20780",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21604",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "29",
+          "rowId": "22525",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace936fc9735682f04ee8d8",
+      "classId": "6ace936f8752d955968b10dd",
+      "assetKey": "vid:rgvikramjeet-data:114797-1726841982",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "21",
+          "rowId": "14226",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "22",
+          "rowId": "14834",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "23",
+          "rowId": "17325",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "18171",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "25",
+          "rowId": "19014",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "26",
+          "rowId": "19917",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "27",
+          "rowId": "20782",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21606",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "29",
+          "rowId": "22527",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace936fc9735682f04ee8dc",
+      "classId": "6ace936f8752d955968b10e4",
+      "assetKey": "vid:rgvikramjeet-data:115587-1726928204",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "21",
+          "rowId": "14227",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "22",
+          "rowId": "14835",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "23",
+          "rowId": "17326",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "18172",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "25",
+          "rowId": "19015",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "26",
+          "rowId": "19918",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "27",
+          "rowId": "20783",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21607",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "29",
+          "rowId": "22528",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9370c9735682f04ee8e2",
+      "classId": "6ace93708752d955968b10eb",
+      "assetKey": "vid:rgvikramjeet-data:117590-1727101000",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "21",
+          "rowId": "14228",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "22",
+          "rowId": "14836",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "23",
+          "rowId": "17327",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "18173",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "25",
+          "rowId": "19016",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "26",
+          "rowId": "19919",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "27",
+          "rowId": "20784",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21608",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "29",
+          "rowId": "22529",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9370c9735682f04ee8e4",
+      "classId": "6ace93708752d955968b10f2",
+      "assetKey": "vid:rgvikramjeet-data:118542-1727187584",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "21",
+          "rowId": "14229",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "22",
+          "rowId": "14837",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "23",
+          "rowId": "17328",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "18174",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "25",
+          "rowId": "19017",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "26",
+          "rowId": "19920",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "27",
+          "rowId": "20785",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21609",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "29",
+          "rowId": "22530",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9371c9735682f04ee8e7",
+      "classId": "6ace93718752d955968b10f9",
+      "assetKey": "vid:rgvikramjeet-data:120606-1727368662",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "21",
+          "rowId": "14230",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9371c9735682f04ee8ec",
+      "classId": "6ace93718752d955968b1100",
+      "assetKey": "vid:rgvikramjeet-data:121329-1727463352",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "21",
+          "rowId": "14231",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "22",
+          "rowId": "14839",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "23",
+          "rowId": "17330",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "18176",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "25",
+          "rowId": "19019",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "26",
+          "rowId": "19922",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "27",
+          "rowId": "20787",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21611",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "29",
+          "rowId": "22532",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace937dc9735682f04ee93f",
+      "classId": "6ace937d8752d955968b11c4",
+      "assetKey": "vid:rgvikramjeet-data:120511-1727359300",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace937dc9735682f04ee941",
+      "classId": "6ace937d8752d955968b11cb",
+      "assetKey": "vid:rgvikramjeet-data:120843-1727418340",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "14840",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21612",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace937fc9735682f04ee94b",
+      "classId": "6ace937f8752d955968b11ee",
+      "assetKey": "vid:rgvikramjeet-data:465612-1703938355",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "16552",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9380c9735682f04ee953",
+      "classId": "6ace93808752d955968b1203",
+      "assetKey": "vid:rgvikramjeet-data:414306-1702109677",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "16508",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9397c9735682f04ee9c4",
+      "classId": "6ace93978752d955968b1376",
+      "assetKey": "vid:rgvikramjeet-data:412887-1702040847",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "16294",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace93a4c9735682f04eea7e",
+      "classId": "6ace93a48752d955968b145d",
+      "assetKey": "vid:rgvikramjeet-data:538157-1706701056",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "16028",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace93a4c9735682f04eea80",
+      "classId": "6ace93a48752d955968b1464",
+      "assetKey": "vid:rgvikramjeet-data:553312-1707238241",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "16029",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace93a9c9735682f04eea96",
+      "classId": "6ace93a88752d955968b14b1",
+      "assetKey": "vid:rgvikramjeet-data:520124-1706028252",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "16039",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace93b8c9735682f04eeae1",
+      "classId": "6ace93b88752d955968b15a6",
+      "assetKey": "vid:rgvikramjeet-data:414982-1702122333",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "14550",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace93c3c9735682f04eeb1a",
+      "classId": "6ace93c38752d955968b166a",
+      "assetKey": "vid:rgvikramjeet-data:113372-1726725160",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "14831",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21603",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace93c4c9735682f04eeb1c",
+      "classId": "6ace93c48752d955968b1671",
+      "assetKey": "vid:rgvikramjeet-data:410747-1701962427",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "15410",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace93c5c9735682f04eeb20",
+      "classId": "6ace93c58752d955968b167f",
+      "assetKey": "vid:rgvikramjeet-data:410875-1701975160",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "15409",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace93c5c9735682f04eeb22",
+      "classId": "6ace93c58752d955968b1686",
+      "assetKey": "vid:rgvikramjeet-data:413903-1702103930",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "15417",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace93d2c9735682f04eeb64",
+      "classId": "6ace93d28752d955968b175f",
+      "assetKey": "drm:59d7aef1-ca2e-472e-917d-45e22bb4de25",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "16137",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace93e9c9735682f04eebd9",
+      "classId": "6ace93e98752d955968b18d2",
+      "assetKey": "drm:4863eace-e19a-4f4d-a493-826688568333",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "15990",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9424c9735682f04eeceb",
+      "classId": "6ace94248752d955968b1c3d",
+      "assetKey": "vid:rgvikramjeet-data:746409-1713792675",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "15166",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9427c9735682f04eecf8",
+      "classId": "6ace94278752d955968b1c67",
+      "assetKey": "vid:rgvikramjeet-data:781903-1714744514",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "15391",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9446c9735682f04eed33",
+      "classId": "6ace94468752d955968b1d1d",
+      "assetKey": "vid:rgvikramjeet-data:838439-1716298822",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "15352",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9470c9735682f04eedc0",
+      "classId": "6ace94708752d955968b1ecf",
+      "assetKey": "drm:ecfdd952-1ce5-4a93-a21c-08eaab8a4f64",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "16186",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace947ac9735682f04eedf2",
+      "classId": "6ace947a8752d955968b1f77",
+      "assetKey": "vid:rgvikramjeet-data:611217-1709311330",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "16237",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9480c9735682f04eee0f",
+      "classId": "6ace94808752d955968b1fd9",
+      "assetKey": "vid:rgvikramjeet-data:514137-1705732556",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "15824",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace94d7c9735682f04ef00e",
+      "classId": "6ace94d78752d955968b2506",
+      "assetKey": "drm:7a18a6fb-213e-4eeb-a807-01f1e781fa1d",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "15706",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace94dac9735682f04ef02b",
+      "classId": "6ace94da8752d955968b2537",
+      "assetKey": "vid:rgvikramjeet-data:410865-1701967649",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "15716",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace94ecc9735682f04ef087",
+      "classId": "6ace94eb8752d955968b2641",
+      "assetKey": "vid:rgvikramjeet-data:416836-1702276104",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "22",
+          "rowId": "16484",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9510c9735682f04ef12e",
+      "classId": "6ace95108752d955968b2853",
+      "assetKey": "vid:rgvikramjeet-data:108070-1726058794",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "23",
+          "rowId": "16842",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "17694",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "25",
+          "rowId": "18539",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "26",
+          "rowId": "19379",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "27",
+          "rowId": "21101",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "29",
+          "rowId": "22830",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9511c9735682f04ef130",
+      "classId": "6ace95118752d955968b285a",
+      "assetKey": "vid:rgvikramjeet-data:108842-1726144483",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "23",
+          "rowId": "16843",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "17695",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "25",
+          "rowId": "18540",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "26",
+          "rowId": "19380",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "27",
+          "rowId": "21102",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "29",
+          "rowId": "22831",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9518c9735682f04ef14e",
+      "classId": "6ace95188752d955968b28c3",
+      "assetKey": "vid:rgvikramjeet-data:109959-1726289207",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "23",
+          "rowId": "16850",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9518c9735682f04ef151",
+      "classId": "6ace95188752d955968b28ca",
+      "assetKey": "vid:rgvikramjeet-data:110325-1726316198",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "23",
+          "rowId": "16851",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "17703",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "25",
+          "rowId": "18548",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "26",
+          "rowId": "19388",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "27",
+          "rowId": "20295",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "29",
+          "rowId": "22020",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9519c9735682f04ef153",
+      "classId": "6ace95198752d955968b28d1",
+      "assetKey": "vid:rgvikramjeet-data:112958-1726661452",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "23",
+          "rowId": "16853",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "17705",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "25",
+          "rowId": "18550",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "26",
+          "rowId": "19390",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "27",
+          "rowId": "20297",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "29",
+          "rowId": "22022",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace951cc9735682f04ef161",
+      "classId": "6ace951b8752d955968b28fb",
+      "assetKey": "vid:rgvikramjeet-data:119554-1727269132",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "23",
+          "rowId": "17065",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "17912",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "25",
+          "rowId": "18755",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "26",
+          "rowId": "19636",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "27",
+          "rowId": "20544",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "29",
+          "rowId": "22290",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "32",
+          "rowId": "23832",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "41",
+          "rowId": "29652",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace951cc9735682f04ef163",
+      "classId": "6ace951c8752d955968b2902",
+      "assetKey": "vid:rgvikramjeet-data:120402-1727353003",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "23",
+          "rowId": "17066",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "24",
+          "rowId": "17913",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "25",
+          "rowId": "18756",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "26",
+          "rowId": "19637",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "27",
+          "rowId": "20545",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "29",
+          "rowId": "22291",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "32",
+          "rowId": "23833",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "41",
+          "rowId": "29653",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9533c9735682f04ef1c7",
+      "classId": "6ace95328752d955968b2a52",
+      "assetKey": "vid:rgvikramjeet-data:113387-1726725705",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "23",
+          "rowId": "17322",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9534c9735682f04ef1ca",
+      "classId": "6ace95348752d955968b2a59",
+      "assetKey": "vid:rgvikramjeet-data:120607-1727368672",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "23",
+          "rowId": "17329",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9543c9735682f04ef1fa",
+      "classId": "6ace95438752d955968b2aec",
+      "assetKey": "vid:rgvikramjeet-data:112187-1726573059",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace9548c9735682f04ef20d",
+      "classId": "6ace95488752d955968b2b2b",
+      "assetKey": "vid:rgvikramjeet-data:119426-1727264807",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace9548c9735682f04ef20f",
+      "classId": "6ace95488752d955968b2b32",
+      "assetKey": "vid:rgvikramjeet-data:121198-1727437605",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace9550c9735682f04ef228",
+      "classId": "6ace95508752d955968b2b78",
+      "assetKey": "vid:rgvikramjeet-data:413406-1702104829",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "24",
+          "rowId": "17883",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21350",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "47",
+          "rowId": "35190",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9556c9735682f04ef238",
+      "classId": "6ace95558752d955968b2bb0",
+      "assetKey": "vid:rgvikramjeet-data:109948-1726288663",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "24",
+          "rowId": "17702",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9566c9735682f04ef287",
+      "classId": "6ace95668752d955968b2cb3",
+      "assetKey": "vid:rgvikramjeet-data:113390-1726725879",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "24",
+          "rowId": "18168",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9566c9735682f04ef289",
+      "classId": "6ace95668752d955968b2cba",
+      "assetKey": "vid:rgvikramjeet-data:120608-1727368848",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "24",
+          "rowId": "18175",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9567c9735682f04ef28d",
+      "classId": "6ace95678752d955968b2cc8",
+      "assetKey": "vid:rgvikramjeet-data:414656-1702116699",
+      "errorCategory": "source404",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace9573c9735682f04ef2ca",
+      "classId": "6ace95738752d955968b2d93",
+      "assetKey": "vid:rgvikramjeet-data:109942-1726288657",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "25",
+          "rowId": "18547",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9582c9735682f04ef311",
+      "classId": "6ace95828752d955968b2e73",
+      "assetKey": "vid:rgvikramjeet-data:584252-1708404954",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "25",
+          "rowId": "18628",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21248",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9583c9735682f04ef319",
+      "classId": "6ace95838752d955968b2e81",
+      "assetKey": "vid:rgvikramjeet-data:656721-1710847787",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "25",
+          "rowId": "18648",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "28",
+          "rowId": "21268",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9586c9735682f04ef327",
+      "classId": "6ace95868752d955968b2eb2",
+      "assetKey": "vid:rgvikramjeet-data:113400-1726726421",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "25",
+          "rowId": "19011",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9587c9735682f04ef329",
+      "classId": "6ace95868752d955968b2eb9",
+      "assetKey": "vid:rgvikramjeet-data:120609-1727368865",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "25",
+          "rowId": "19018",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace959ec9735682f04ef399",
+      "classId": "6ace959e8752d955968b302c",
+      "assetKey": "vid:rgvikramjeet-data:109936-1726288308",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "26",
+          "rowId": "19387",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace95b2c9735682f04ef3f5",
+      "classId": "6ace95b28752d955968b3167",
+      "assetKey": "vid:rgvikramjeet-data:113121-1726670255",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "26",
+          "rowId": "19599",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "27",
+          "rowId": "20507",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "29",
+          "rowId": "22253",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "30",
+          "rowId": "23000",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "31",
+          "rowId": "23361",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "32",
+          "rowId": "23796",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "33",
+          "rowId": "24630",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "34",
+          "rowId": "25467",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "37",
+          "rowId": "27416",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "39",
+          "rowId": "28336",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "41",
+          "rowId": "29643",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "42",
+          "rowId": "30345",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "43",
+          "rowId": "32906",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "107",
+          "rowId": "194066",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace95b5c9735682f04ef404",
+      "classId": "6ace95b58752d955968b3198",
+      "assetKey": "vid:rgvikramjeet-data:113402-1726726601",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "26",
+          "rowId": "19914",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace95b5c9735682f04ef406",
+      "classId": "6ace95b58752d955968b319f",
+      "assetKey": "vid:rgvikramjeet-data:120610-1727369019",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "26",
+          "rowId": "19921",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace95d0c9735682f04ef495",
+      "classId": "6ace95cf8752d955968b3351",
+      "assetKey": "vid:rgvikramjeet-data:109932-1726288296",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "27",
+          "rowId": "20294",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace95eec9735682f04ef524",
+      "classId": "6ace95ed8752d955968b352d",
+      "assetKey": "vid:rgvikramjeet-data:113405-1726726779",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "27",
+          "rowId": "20779",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace95eec9735682f04ef526",
+      "classId": "6ace95ee8752d955968b3534",
+      "assetKey": "vid:rgvikramjeet-data:120612-1727369197",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "27",
+          "rowId": "20786",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace95f4c9735682f04ef556",
+      "classId": "6ace95f48752d955968b3596",
+      "assetKey": "vid:rgvikramjeet-data:117265-1727091113",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace95f4c9735682f04ef558",
+      "classId": "6ace95f48752d955968b359d",
+      "assetKey": "vid:rgvikramjeet-data:118385-1727180022",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "32",
+          "rowId": "23611",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace95f6c9735682f04ef562",
+      "classId": "6ace95f68752d955968b35c0",
+      "assetKey": "vid:rgvikramjeet-data:109930-1726288121",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "29",
+          "rowId": "22019",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9609c9735682f04ef5c1",
+      "classId": "6ace96098752d955968b36e6",
+      "assetKey": "vid:rgvikramjeet-data:113409-1726726968",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "29",
+          "rowId": "22524",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace960ac9735682f04ef5c3",
+      "classId": "6ace96098752d955968b36ed",
+      "assetKey": "vid:rgvikramjeet-data:120613-1727369200",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "29",
+          "rowId": "22531",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace960bc9735682f04ef5cc",
+      "classId": "6ace960b8752d955968b3709",
+      "assetKey": "vid:rgvikramjeet-data:113194-1726678000",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "30",
+          "rowId": "23007",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "31",
+          "rowId": "23368",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace960cc9735682f04ef5ce",
+      "classId": "6ace960b8752d955968b3710",
+      "assetKey": "vid:rgvikramjeet-data:114046-1726763683",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "30",
+          "rowId": "23008",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "31",
+          "rowId": "23369",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace960cc9735682f04ef5d0",
+      "classId": "6ace960c8752d955968b3717",
+      "assetKey": "vid:rgvikramjeet-data:114935-1726851522",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "30",
+          "rowId": "23009",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "31",
+          "rowId": "23370",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace960cc9735682f04ef5d5",
+      "classId": "6ace960c8752d955968b371e",
+      "assetKey": "vid:rgvikramjeet-data:115643-1726937025",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "30",
+          "rowId": "23010",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "31",
+          "rowId": "23371",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace960dc9735682f04ef5d7",
+      "classId": "6ace960d8752d955968b3725",
+      "assetKey": "vid:rgvikramjeet-data:117681-1727113241",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "30",
+          "rowId": "23011",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "31",
+          "rowId": "23372",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace960dc9735682f04ef5d9",
+      "classId": "6ace960d8752d955968b372c",
+      "assetKey": "vid:rgvikramjeet-data:121417-1727505648",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "30",
+          "rowId": "22870",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace960ec9735682f04ef5db",
+      "classId": "6ace960d8752d955968b3733",
+      "assetKey": "vid:rgvikramjeet-data:121420-1727461721",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "30",
+          "rowId": "22872",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "31",
+          "rowId": "23232",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9627c9735682f04ef65c",
+      "classId": "6ace96278752d955968b38d7",
+      "assetKey": "vid:rgvikramjeet-data:110477-1726332041",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "30",
+          "rowId": "22942",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "31",
+          "rowId": "23303",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "35",
+          "rowId": "38720",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "43",
+          "rowId": "32864",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "160",
+          "rowId": "191284",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "161",
+          "rowId": "190823",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9627c9735682f04ef65e",
+      "classId": "6ace96278752d955968b38de",
+      "assetKey": "vid:rgvikramjeet-data:111284-1726483775",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "30",
+          "rowId": "22943",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "31",
+          "rowId": "23304",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "35",
+          "rowId": "38721",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "43",
+          "rowId": "32865",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "160",
+          "rowId": "191285",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "161",
+          "rowId": "190824",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9628c9735682f04ef660",
+      "classId": "6ace96278752d955968b38e5",
+      "assetKey": "vid:rgvikramjeet-data:111663-1726503039",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "30",
+          "rowId": "22944",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "31",
+          "rowId": "23305",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "35",
+          "rowId": "38722",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "43",
+          "rowId": "32866",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "160",
+          "rowId": "191286",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "161",
+          "rowId": "190825",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9635c9735682f04ef6bf",
+      "classId": "6ace96358752d955968b39b0",
+      "assetKey": "vid:rgvikramjeet-data:119710-1727317019",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace963ac9735682f04ef6ee",
+      "classId": "6ace963a8752d955968b3a0b",
+      "assetKey": "vid:rgvikramjeet-data:112405-1726637096",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace963bc9735682f04ef6f2",
+      "classId": "6ace963b8752d955968b3a12",
+      "assetKey": "vid:rgvikramjeet-data:121422-1727462447",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace9640c9735682f04ef725",
+      "classId": "6ace96408752d955968b3a74",
+      "assetKey": "vid:rgvikramjeet-data:112158-1726570541",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "31",
+          "rowId": "23241",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9641c9735682f04ef729",
+      "classId": "6ace96418752d955968b3a7b",
+      "assetKey": "vid:rgvikramjeet-data:121418-1727505648",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "31",
+          "rowId": "23230",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9643c9735682f04ef73f",
+      "classId": "6ace96438752d955968b3a9e",
+      "assetKey": "vid:rgvikramjeet-data:112032-1726563521",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace98a3c9735682f04f022e",
+      "classId": "6ace98a38752d955968b5afd",
+      "assetKey": "vid:rgvikramjeet-data:117821-1727152858",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "42",
+          "rowId": "31389",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace98a3c9735682f04f0230",
+      "classId": "6ace98a38752d955968b5b04",
+      "assetKey": "vid:rgvikramjeet-data:118749-1727239242",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "42",
+          "rowId": "31390",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace98a4c9735682f04f0232",
+      "classId": "6ace98a38752d955968b5b0b",
+      "assetKey": "vid:rgvikramjeet-data:119890-1727325642",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "42",
+          "rowId": "31391",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace98a4c9735682f04f0234",
+      "classId": "6ace98a48752d955968b5b12",
+      "assetKey": "vid:rgvikramjeet-data:120712-1727412222",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "42",
+          "rowId": "31392",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace98a6c9735682f04f023f",
+      "classId": "6ace98a68752d955968b5b35",
+      "assetKey": "vid:rgvikramjeet-data:109448-1726220448",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "42",
+          "rowId": "31448",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace98a7c9735682f04f0241",
+      "classId": "6ace98a68752d955968b5b3c",
+      "assetKey": "vid:rgvikramjeet-data:109895-1726285250",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "42",
+          "rowId": "31449",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace98a7c9735682f04f0243",
+      "classId": "6ace98a78752d955968b5b43",
+      "assetKey": "vid:rgvikramjeet-data:111739-1726544623",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "42",
+          "rowId": "31451",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace98a7c9735682f04f0246",
+      "classId": "6ace98a78752d955968b5b4a",
+      "assetKey": "vid:rgvikramjeet-data:112478-1726637191",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "42",
+          "rowId": "31452",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace98a8c9735682f04f0248",
+      "classId": "6ace98a88752d955968b5b51",
+      "assetKey": "vid:rgvikramjeet-data:113288-1726720666",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "42",
+          "rowId": "31453",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace98a8c9735682f04f024a",
+      "classId": "6ace98a88752d955968b5b58",
+      "assetKey": "vid:rgvikramjeet-data:115062-1726893464",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "42",
+          "rowId": "31455",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace98a9c9735682f04f024c",
+      "classId": "6ace98a98752d955968b5b5f",
+      "assetKey": "vid:rgvikramjeet-data:116090-1727065720",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "42",
+          "rowId": "31456",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace98acc9735682f04f025a",
+      "classId": "6ace98ac8752d955968b5b90",
+      "assetKey": "vid:rgvikramjeet-data:866003-1717036990",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "42",
+          "rowId": "31407",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace98afc9735682f04f0266",
+      "classId": "6ace98ae8752d955968b5bba",
+      "assetKey": "vid:rgvikramjeet-data:897148-1717904603",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "42",
+          "rowId": "31414",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace98cfc9735682f04f0319",
+      "classId": "6ace98cf8752d955968b5de3",
+      "assetKey": "vid:rgvikramjeet-data:108584-1726127033",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "42",
+          "rowId": "31717",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace98cfc9735682f04f031b",
+      "classId": "6ace98cf8752d955968b5dea",
+      "assetKey": "vid:rgvikramjeet-data:116450-1727077417",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "42",
+          "rowId": "31718",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace98d0c9735682f04f031e",
+      "classId": "6ace98d08752d955968b5df1",
+      "assetKey": "vid:rgvikramjeet-data:118023-1727163821",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "42",
+          "rowId": "31719",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace98d0c9735682f04f0320",
+      "classId": "6ace98d08752d955968b5df8",
+      "assetKey": "vid:rgvikramjeet-data:120087-1727336620",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "42",
+          "rowId": "31720",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace98d2c9735682f04f0326",
+      "classId": "6ace98d18752d955968b5e0d",
+      "assetKey": "vid:rgvikramjeet-data:840565-1716363637",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "42",
+          "rowId": "31789",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace98ddc9735682f04f035b",
+      "classId": "6ace98dd8752d955968b5ec3",
+      "assetKey": "vid:rgvikramjeet-data:111691-1726537062",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace98dec9735682f04f035d",
+      "classId": "6ace98de8752d955968b5eca",
+      "assetKey": "vid:rgvikramjeet-data:114112-1726804720",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace98e4c9735682f04f037e",
+      "classId": "6ace98e48752d955968b5f33",
+      "assetKey": "vid:rgvikramjeet-data:120931-1727422657",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace98fcc9735682f04f03fb",
+      "classId": "6ace98fc8752d955968b60c6",
+      "assetKey": "vid:rgvikramjeet-data:806069-1715411053",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "45",
+          "rowId": "33744",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace991dc9735682f04f04fc",
+      "classId": "6ace991d8752d955968b62b7",
+      "assetKey": "vid:rgvikramjeet-data:111858-1726551826",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "45",
+          "rowId": "33939",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace991dc9735682f04f04fe",
+      "classId": "6ace991d8752d955968b62be",
+      "assetKey": "vid:rgvikramjeet-data:112536-1726638274",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "45",
+          "rowId": "33940",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace991ec9735682f04f0500",
+      "classId": "6ace991e8752d955968b62c5",
+      "assetKey": "vid:rgvikramjeet-data:113349-1726724620",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "45",
+          "rowId": "33941",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace991ec9735682f04f0502",
+      "classId": "6ace991e8752d955968b62cc",
+      "assetKey": "vid:rgvikramjeet-data:114213-1726811210",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "45",
+          "rowId": "33942",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace991fc9735682f04f0504",
+      "classId": "6ace991e8752d955968b62d3",
+      "assetKey": "vid:rgvikramjeet-data:116223-1727070409",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "45",
+          "rowId": "33943",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace991fc9735682f04f0506",
+      "classId": "6ace991f8752d955968b62da",
+      "assetKey": "vid:rgvikramjeet-data:117872-1727156452",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "45",
+          "rowId": "33944",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9920c9735682f04f0508",
+      "classId": "6ace991f8752d955968b62e1",
+      "assetKey": "vid:rgvikramjeet-data:119038-1727251117",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "45",
+          "rowId": "33945",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9920c9735682f04f050a",
+      "classId": "6ace99208752d955968b62e8",
+      "assetKey": "vid:rgvikramjeet-data:120782-1727415821",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "45",
+          "rowId": "33946",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace993cc9735682f04f0591",
+      "classId": "6ace993b8752d955968b649a",
+      "assetKey": "vid:rgvikramjeet-data:110007-1726292979",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "45",
+          "rowId": "34026",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace993cc9735682f04f0593",
+      "classId": "6ace993c8752d955968b64a1",
+      "assetKey": "vid:rgvikramjeet-data:110899-1726465062",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "45",
+          "rowId": "34027",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace993cc9735682f04f0595",
+      "classId": "6ace993c8752d955968b64a8",
+      "assetKey": "vid:rgvikramjeet-data:107699-1726033599",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "45",
+          "rowId": "33879",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace993dc9735682f04f0598",
+      "classId": "6ace993d8752d955968b64af",
+      "assetKey": "vid:rgvikramjeet-data:108456-1726120000",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "45",
+          "rowId": "33880",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace993dc9735682f04f059a",
+      "classId": "6ace993d8752d955968b64b6",
+      "assetKey": "vid:rgvikramjeet-data:109210-1726206039",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "45",
+          "rowId": "33881",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace993ec9735682f04f059c",
+      "classId": "6ace993e8752d955968b64bd",
+      "assetKey": "vid:rgvikramjeet-data:109967-1726289918",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "45",
+          "rowId": "33882",
+          "kind": "VIDEO",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ace9955c9735682f04f0614",
+      "classId": "6ace99558752d955968b6629",
+      "assetKey": "vid:rgvikramjeet-data:690932-1712122818",
+      "errorCategory": "source404",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace996cc9735682f04f067c",
+      "classId": "6ace996c8752d955968b678e",
+      "assetKey": "vid:rgvikramjeet-data:659808-1710929318",
+      "errorCategory": "source404",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace99b9c9735682f04f07fc",
+      "classId": "6ace99b98752d955968b6c5e",
+      "assetKey": "vid:rgvikramjeet-data:109306-1726211450",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace99bac9735682f04f07fe",
+      "classId": "6ace99ba8752d955968b6c65",
+      "assetKey": "vid:rgvikramjeet-data:110085-1726299279",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace99bac9735682f04f0800",
+      "classId": "6ace99ba8752d955968b6c6c",
+      "assetKey": "vid:rgvikramjeet-data:111836-1726550563",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace99c0c9735682f04f081a",
+      "classId": "6ace99c08752d955968b6cc7",
+      "assetKey": "vid:rgvikramjeet-data:107758-1726038647",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace99c0c9735682f04f081c",
+      "classId": "6ace99c08752d955968b6cce",
+      "assetKey": "vid:rgvikramjeet-data:108543-1726125408",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace99cbc9735682f04f0853",
+      "classId": "6ace99cb8752d955968b6d84",
+      "assetKey": "vid:rgvikramjeet-data:111047-1726472266",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace99cbc9735682f04f0855",
+      "classId": "6ace99cb8752d955968b6d8b",
+      "assetKey": "vid:rgvikramjeet-data:111947-1726557036",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace99ccc9735682f04f0857",
+      "classId": "6ace99cc8752d955968b6d92",
+      "assetKey": "vid:rgvikramjeet-data:112629-1726643981",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace99ccc9735682f04f0859",
+      "classId": "6ace99cc8752d955968b6d99",
+      "assetKey": "vid:rgvikramjeet-data:113461-1726729668",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace99cdc9735682f04f085b",
+      "classId": "6ace99cc8752d955968b6da0",
+      "assetKey": "vid:rgvikramjeet-data:114294-1726816419",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace99cdc9735682f04f085d",
+      "classId": "6ace99cd8752d955968b6da7",
+      "assetKey": "vid:rgvikramjeet-data:116342-1727075617",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace99cdc9735682f04f085f",
+      "classId": "6ace99cd8752d955968b6dae",
+      "assetKey": "vid:rgvikramjeet-data:118203-1727173183",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace99cec9735682f04f0861",
+      "classId": "6ace99ce8752d955968b6db5",
+      "assetKey": "vid:rgvikramjeet-data:119040-1727251121",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace99cec9735682f04f0863",
+      "classId": "6ace99ce8752d955968b6dbc",
+      "assetKey": "vid:rgvikramjeet-data:120898-1727421219",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace99fec9735682f04f0950",
+      "classId": "6ace99fd8752d955968b70be",
+      "assetKey": "vid:rgvikramjeet-data:702536-1712398752",
+      "errorCategory": "source404",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace9a01c9735682f04f0960",
+      "classId": "6ace9a018752d955968b70f6",
+      "assetKey": "vid:rgvikramjeet-data:118204-1727173184",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace9a01c9735682f04f0962",
+      "classId": "6ace9a018752d955968b70fd",
+      "assetKey": "vid:rgvikramjeet-data:119043-1727251300",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace9dfdc9735682f04f105b",
+      "classId": "6ace9dfd8752d955968b81df",
+      "assetKey": "url:https://liveclasses.cloud-front.in/live/T_17768595083629_appxabr.m3u8",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace9dfec9735682f04f105d",
+      "classId": "6ace9dfe8752d955968b81e6",
+      "assetKey": "url:https://liveclasses.cloud-front.in/live/T_177718660284306053_appxabr.m3u8",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace9dfec9735682f04f105f",
+      "classId": "6ace9dfe8752d955968b81ed",
+      "assetKey": "url:https://liveclasses.cloud-front.in/live/T_177729375516283856_appxabr.m3u8",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ace9dffc9735682f04f1061",
+      "classId": "6ace9dff8752d955968b81f4",
+      "assetKey": "url:https://liveclasses.cloud-front.in/live/T_177761560104318276_appxabr.m3u8",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6acea130c9735682f04f145b",
+      "classId": "6acea1308752d955968b891e",
+      "assetKey": "url:https://liveclasses.cloud-front.in/live/T_178410684988984087_appxabr.m3u8",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6acea133c9735682f04f145f",
+      "classId": "6acea1338752d955968b8925",
+      "assetKey": "url:https://liveclasses.cloud-front.in/live/T_177736747270163748_appxabr.m3u8",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6acea13bc9735682f04f146b",
+      "classId": "6acea13a8752d955968b8933",
+      "assetKey": "url:https://liveclasses.cloud-front.in/live/T_177883751793238691_appxabr.m3u8",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6acea13bc9735682f04f146d",
+      "classId": "6acea13b8752d955968b893a",
+      "assetKey": "url:https://liveclasses.cloud-front.in/live/T_178125740881857401_appxabr.m3u8",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6acea4e1c9735682f04f1965",
+      "classId": "6acea4e08752d955968b9335",
+      "assetKey": "vid:armaths-data:3797570-1780065241",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "71",
+          "rowId": "189847",
+          "kind": "LIVE_STREAM",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "73",
+          "rowId": "189867",
+          "kind": "LIVE_STREAM",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6acea4e3c9735682f04f1967",
+      "classId": "6acea4e38752d955968b933c",
+      "assetKey": "vid:armaths-data:3802821-1780151643",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "71",
+          "rowId": "189848",
+          "kind": "LIVE_STREAM",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "73",
+          "rowId": "189868",
+          "kind": "LIVE_STREAM",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6acea4e8c9735682f04f196d",
+      "classId": "6acea4e88752d955968b9343",
+      "assetKey": "vid:armaths-data:3809395-1780324441",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "71",
+          "rowId": "189849",
+          "kind": "LIVE_STREAM",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "73",
+          "rowId": "189869",
+          "kind": "LIVE_STREAM",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6acea4ecc9735682f04f1971",
+      "classId": "6acea4ec8752d955968b934a",
+      "assetKey": "vid:armaths-data:3815152-1780410494",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "71",
+          "rowId": "189850",
+          "kind": "LIVE_STREAM",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "73",
+          "rowId": "189870",
+          "kind": "LIVE_STREAM",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6acea4f0c9735682f04f1973",
+      "classId": "6acea4f08752d955968b9351",
+      "assetKey": "vid:armaths-data:3818401-1780474757",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "71",
+          "rowId": "189853",
+          "kind": "LIVE_STREAM",
+          "active": true,
+          "noUsableLink": false
+        },
+        {
+          "course": "73",
+          "rowId": "189872",
+          "kind": "LIVE_STREAM",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6acea79dc9735682f04f1d1a",
+      "classId": "6acea79d8752d955968b9981",
+      "assetKey": "url:https://liveclasses.cloud-front.in/live/T_177821107859984760_appxabr.m3u8",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6acea79ec9735682f04f1d1c",
+      "classId": "6acea79e8752d955968b9988",
+      "assetKey": "url:https://liveclasses.cloud-front.in/live/T_177872959170413572_appxabr.m3u8",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6aceab0fc9735682f04f2157",
+      "classId": "6aceab0f8752d955968ba1ad",
+      "assetKey": "vid:englishjaisir-data:611321-1709317626",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "87",
+          "rowId": "42132",
+          "kind": "LIVE_STREAM",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6aceab1bc9735682f04f2198",
+      "classId": "6aceab1b8752d955968ba1d0",
+      "assetKey": "vid:englishjaisir-data:641040-1710352954",
+      "errorCategory": "source404",
+      "currentOccurrences": [
+        {
+          "course": "87",
+          "rowId": "42137",
+          "kind": "LIVE_STREAM",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6aceb404c9735682f04f2bfa",
+      "classId": "6aceb4038752d955968bb4cd",
+      "assetKey": "url:https://liveclasses.cloud-front.in/live/T_178393878977606420_appxabr.m3u8",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6aceb422c9735682f04f2c16",
+      "classId": "6aceb4228752d955968bb513",
+      "assetKey": "url:https://liveclasses.cloud-front.in/live/T_179189513377061702_appxabr.m3u8",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6acec26ec9735682f04f401e",
+      "classId": "6acec26e8752d955968bdd9a",
+      "assetKey": "url:https://liveclasses.cloud-front.in/live/T_178755800114426710_appxabr.m3u8",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "no current planned occurrence"
+    },
+    {
+      "job": "6ad5df30c9735682f0a0c5d4",
+      "classId": "6ad5df3064b695f53d872c12",
+      "assetKey": "vid:armaths-data:4603716-1791963341",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "131",
+          "rowId": "193431",
+          "kind": "LIVE_STREAM",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ad5df31c9735682f0a0c5d7",
+      "classId": "6ad5df3164b695f53d872c19",
+      "assetKey": "vid:armaths-data:4611456-1792049999",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "131",
+          "rowId": "193432",
+          "kind": "LIVE_STREAM",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    },
+    {
+      "job": "6ad5df31c9735682f0a0c5da",
+      "classId": "6ad5df3164b695f53d872c20",
+      "assetKey": "vid:armaths-data:4619107-1792135845",
+      "errorCategory": "noPlayableURL",
+      "currentOccurrences": [
+        {
+          "course": "131",
+          "rowId": "193434",
+          "kind": "LIVE_STREAM",
+          "active": true,
+          "noUsableLink": false
+        }
+      ],
+      "sourceRowsNowDifferentAsset": [],
+      "eligibility": "current planned link exists; bounded fresh probe required"
+    }
+  ]
+}

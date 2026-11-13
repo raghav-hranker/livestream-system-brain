@@ -1,0 +1,79 @@
+﻿Match,AppX package id,AppX package,Our package,AppX enabled,AppX price,Ours,Our price,AppX tests,Our tests,Attached to AppX courses,AppX validity,Our tab
+"AppX on sale, ours off",75,RRB NTPC GL 2026,RRB NTPC GL 2026,yes,free / special (-3),off,-3,12,12,146,100 MONTHS,test-series
+"AppX on sale, ours off",80,GROUP D,GROUP D,yes,free / special (-3),off,-3,25,25,146,100 MONTHS,test-series
+"AppX on sale, ours off",86,SSC GD 2026,SSC GD 2026,yes,free / special (-3),off,-3,32,32,145,100 MONTHS,test-series
+"AppX on sale, ours off; tests: AppX 16, ours 0",70,SECTION CONTROLLER,SECTION CONTROLLER,yes,free (0),off,0,16,0,,100 MONTHS,test-series
+"AppX on sale, ours off; tests: AppX 184, ours 0",65,SSC MTS,SSC MTS,yes,free (0),off,0,184,0,,100 MONTHS,test-series
+"AppX on sale, ours off; tests: AppX 222, ours 0",63,NTPC GRADUATE LEVEL,NTPC GRADUATE LEVEL,yes,free (0),off,0,222,0,,100 MONTHS,test-series
+"AppX on sale, ours off; tests: AppX 24, ours 0",78,UP Police Constable,UP Police Constable,yes,free (0),off,0,24,0,,100 MONTHS,test-series
+"AppX on sale, ours off; tests: AppX 263, ours 2",62,RRB GROUP D,RRB GROUP D,yes,free (0),off,0,263,2,,100 MONTHS,test-series
+"AppX on sale, ours off; tests: AppX 325, ours 0",59,SSC CGL TIER I,SSC CGL TIER I,yes,free (0),off,0,325,0,"45,46",100 MONTHS,test-series
+"AppX on sale, ours off; tests: AppX 352, ours 3",60,SSC CHSL TIER I,SSC CHSL TIER I,yes,free (0),off,0,352,3,,100 MONTHS,test-series
+"AppX on sale, ours off; tests: AppX 37, ours 0",67,RRB TECHNICIAN GRADE 3,RRB TECHNICIAN GRADE 3,yes,free (0),off,0,37,0,,100 MONTHS,test-series
+"AppX on sale, ours off; tests: AppX 42, ours 0",64,RRB JE,RRB JE,yes,free (0),off,0,42,0,,100 MONTHS,test-series
+"AppX on sale, ours off; tests: AppX 50, ours 0",71,SUPER MOCKS (Maths),SUPER MOCKS (Maths),yes,free (0),off,0,50,0,,100 MONTHS,test-series
+"AppX on sale, ours off; tests: AppX 60, ours 0",66,RRB ALP,RRB ALP,yes,free (0),off,0,60,0,,100 MONTHS,test-series
+"AppX on sale, ours off; tests: AppX 63, ours 0",61,SSC CPO TIER I,SSC CPO TIER I,yes,free (0),off,0,63,0,,6 MONTHS,test-series
+"AppX on sale, ours off; tests: AppX 83, ours 0",68,SSC STENOGRAPHER,SSC STENOGRAPHER,yes,free (0),off,0,83,0,,100 MONTHS,test-series
+ours only,,,TestPackage,,,on,12,,10,,,test-series
+ours only,,,SSC CGL Tier 1 Prev,,,on,12,,2,,,previous-year-paper
+ours only,,,Chap Tese Pk 1,,,off,121,,0,,,chapter-test
+ours only,,,Sec Test Pkg,,,off,122,,7,,,sectional-test
+ok,5,MATHS SECTIONAL TEST (TIER-II),MATHS SECTIONAL TEST (TIER-II),yes,not for sale (-1),off,-1,20,20,"10,11,12,13,14,15,17,18,19,20,21,23,24,25,26,27,3,4,5,6,9",24 MONTHS,test-series
+ok,6,MATHS SECTIONAL TEST(TIER-I),MATHS SECTIONAL TEST(TIER-I),yes,not for sale (-1),off,-1,17,17,"10,11,13,14,15,17,18,19,21,23,24,25,26,27,3,4,5,6,9",24 MONTHS,test-series
+ok,7,MATHS CHAPTER TEST,MATHS CHAPTER TEST,yes,not for sale (-1),off,-1,54,54,"10,11,13,14,15,17,18,19,21,23,24,25,26,3,4,5,6,9",24 MONTHS,test-series
+ok,8,CHAPTER TEST 16.0,CHAPTER TEST 16.0,yes,not for sale (-1),off,-1,50,50,"15,27",24 MONTHS,test-series
+ok,9,SSC CPO* - SECTIONAL MOCK (PYQ),SSC CPO* - SECTIONAL MOCK (PYQ),yes,not for sale (-1),off,-1,6,6,"19,21,23,24,25,26,27",6 MONTHS,test-series
+ok,10,SSC CHSL- SECTIONAL MOCK(PYQ),SSC CHSL- SECTIONAL MOCK(PYQ),yes,not for sale (-1),off,-1,9,9,"19,21,23,24,25,26,27",12 MONTHS,test-series
+ok,11,DAFTER SERIES English,DAFTER SERIES English,yes,not for sale (-1),off,-1,81,81,"19,21,23,24,25,26,27",6 MONTHS,test-series
+ok,12,SSC CGL - SECTIONAL  MOCK (PYQ),SSC CGL - SECTIONAL  MOCK (PYQ),yes,not for sale (-1),off,-1,39,39,"19,21,23,24,25,26,27",12 MONTHS,test-series
+ok,13,Champions 17.0,Champions 17.0,yes,not for sale (-1),off,-1,50,50,29,24 MONTHS,test-series
+ok,14,SSC CGL MAINS MATHS SECTIONAL MOCK TEST,SSC CGL MAINS MATHS SECTIONAL MOCK TEST,yes,not for sale (-1),off,-1,33,33,"30,31",12 MONTHS,test-series
+ok,15,Champions 18.0,Champions 18.0,yes,not for sale (-1),off,-1,50,50,32,24 MONTHS,test-series
+ok,16,Champions  19.0,Champions  19.0,yes,not for sale (-1),off,-1,50,50,33,24 MONTHS,test-series
+ok,17,Champions 21.0 Test,Champions 21.0 Test,yes,not for sale (-1),off,-1,50,50,36,24 MONTHS,test-series
+ok,18,Champions 22.0 Test,Champions 22.0 Test,yes,not for sale (-1),off,-1,50,50,40,24 MONTHS,test-series
+ok,19,Champions 23.0 Test,Champions 23.0 Test,yes,not for sale (-1),off,-1,50,50,48,24 MONTHS,test-series
+ok,20,UP SI Maths Special Batch Test,UP SI Maths Special Batch Test,yes,not for sale (-1),off,-1,45,45,39,24 MONTHS,test-series
+ok,21,Delhi Police Maths Special Test,Delhi Police Maths Special Test,yes,not for sale (-1),off,-1,44,44,37,24 MONTHS,test-series
+ok,22,RAILWAY EXAMS.,RAILWAY EXAMS.,yes,not for sale (-1),off,-1,84,84,"103,28,36,40,41,48,53,55,56,59,60",12 MONTHS,test-series
+ok,23,SSC MAINS TEST.,SSC MAINS TEST.,yes,not for sale (-1),off,-1,54,54,"103,28,29,32,33,35,36,40,41,43,48,53,55,56,59,60",12 MONTHS,test-series
+ok,24,CHAPTER TEST,CHAPTER TEST,yes,not for sale (-1),off,-1,50,50,"103,28,41,60",12 MONTHS,test-series
+ok,25,Champions 25.0 Test,Champions 25.0 Test,yes,not for sale (-1),off,-1,51,51,53,24 MONTHS,test-series
+ok,26,SSC GD Maths Special Batch Test,SSC GD Maths Special Batch Test,yes,not for sale (-1),off,-1,34,34,44,24 MONTHS,test-series
+ok,27,SSC PRE TEST.,SSC PRE TEST.,yes,not for sale (-1),off,-1,266,266,"103,28,29,32,33,36,40,41,48,53,55,56,59,60",12 MONTHS,test-series
+ok,28,Champions 26.0 Test,Champions 26.0 Test,yes,not for sale (-1),off,-1,50,50,55,24 MONTHS,test-series
+ok,29,POLICE EXAMS,POLICE EXAMS,yes,not for sale (-1),off,-1,36,36,"103,28,36,40,41,48,53,55,56,59,60",12 MONTHS,test-series
+ok,31,UP Police Constable Maths Special Test,UP Police Constable Maths Special Test,yes,not for sale (-1),off,-1,36,36,38,24 MONTHS,test-series
+ok,32,Champions 20.0,Champions 20.0,yes,not for sale (-1),off,-1,50,50,,24 MONTHS,test-series
+ok,33,Champions 24.0 Test,Champions 24.0 Test,yes,not for sale (-1),off,-1,50,50,,24 MONTHS,test-series
+ok,39,SSC CHSL 2025,SSC CHSL 2025,no,free (0),off,0,10,10,,6 MONTHS,test-series
+ok,40,SSC CPO 2025,SSC CPO 2025,no,free (0),off,0,10,10,,6 MONTHS,test-series
+ok,41,SSC CGL 2025,SSC CGL 2025,no,free (0),off,0,8,8,,6 MONTHS,test-series
+ok,49,SSC EXAMS,SSC EXAMS,no,free (0),off,0,0,0,,6 MONTHS,test-series
+ok,50,DAFTAR SERIES,DAFTAR SERIES,yes,not for sale (-1),off,-1,122,122,,6 MONTHS,test-series
+ok,51,MTS FULL TEST,MTS FULL TEST,yes,free / special (-3),on,-3,10,10,,6 MONTHS,test-series
+ok,52,Live Test,Live Test,yes,not for sale (-1),off,-1,41,41,,3 MONTHS,test-series
+ok,53,Vidyagram Daily Test,Vidyagram Daily Test,yes,not for sale (-1),off,-1,243,243,,24 MONTHS,test-series
+ok,54,UNFILTERED,UNFILTERED,yes,not for sale (-1),off,-1,853,853,,100 MONTHS,test-series
+ok,55,RAILWAY EXAMS,RAILWAY EXAMS,no,free (0),off,0,0,0,,6 MONTHS,test-series
+ok,56,Sectional test,Sectional test,yes,not for sale (-1),off,-3,0,0,,6 MONTHS,test-series
+ok,57,PYP,SSC GD,yes,free / special (-3),on,0,134,134,,100 MONTHS,previous-year-paper
+ok,58,English Batch Tests,English Batch Tests,yes,not for sale (-1),off,-1,148,148,"45,46",6 MONTHS,test-series
+ok,69,PYP,SSC CGL TIER I,yes,free / special (-3),on,0,90,90,,100 MONTHS,previous-year-paper
+ok,72,UP Police 2026,UP Police 2026,yes,free / special (-3),on,-3,12,12,145,100 MONTHS,test-series
+ok,73,CGL FULL TEST,CGL FULL TEST,yes,free / special (-3),on,-3,44,44,,100 MONTHS,test-series
+ok,74,RRB NTPC UGL 2026,RRB NTPC UGL 2026,yes,free / special (-3),on,10,16,16,146,100 MONTHS,test-series
+ok,79,TEST PASS,TEST PASS,no,free / special (-3),off,-3,173,173,,100 MONTHS,test-series
+ok,81,PYP,UPSI 2025,yes,free / special (-3),on,0,4,4,,100 MONTHS,previous-year-paper
+ok,82,PYP,UPSI 2026,yes,free / special (-3),on,0,8,8,,100 MONTHS,previous-year-paper
+ok,83,UP POLICE,UP POLICE,yes,free / special (-3),on,-3,12,12,,100 MONTHS,test-series
+ok,84,UPSSSC PET 2026,UPSSSC PET 2026,yes,not for sale (-1),off,-1,78,78,"114,133,145",12 MONTHS,test-series
+ok,85,SSC CGL 2026,SSC CGL 2026,yes,not for sale (-1),off,-1,74,74,144,100 MONTHS,test-series
+ok,88,English Batch Test 3.0,English Batch Test 3.0,yes,free / special (-3),on,-3,32,32,,100 MONTHS,test-series
+ok,89,SSC STENOGRAPHER 2026,SSC STENOGRAPHER 2026,yes,not for sale (-1),off,-1,2,2,,100 MONTHS,test-series
+ok,90,English Batch Test 4.0,English Batch Test 4.0,yes,not for sale (-1),off,-3,11,11,,100 MONTHS,test-series
+ok,91,CHAPTER TEST (MATHS),CGL MAINS CHAPTER MOCK TEST 2026,yes,not for sale (-1),off,-1,4,4,"160,161",24 MONTHS,test-series
+ok,92,CGL MAINS BATCH TESTS ALL CLASSES,CGL MAINS BATCH TESTS ALL CLASSES,yes,not for sale (-1),off,-1,21,21,,100 MONTHS,test-series
+ok,93,CHAPTER TEST (ENGLISH),CGL Mains English Chapter Test,yes,not for sale (-1),off,-1,6,6,"160,162",24 MONTHS,test-series
+ok,94,Decode 1.0,Decode 1.0,yes,not for sale (-1),off,-1,6,6,,24 MONTHS,test-series

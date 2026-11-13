@@ -1,0 +1,1175 @@
+{
+  "at": "2026-10-26T12:45:19.967Z",
+  "files": 0,
+  "exceptions": [
+    {
+      "id": "6ad1e05bc9735682f0ead25e",
+      "status": "failed",
+      "error": "Student source row not found in mirrored tree",
+      "pdfId": null,
+      "kind": "note",
+      "inCurrentPlan": false,
+      "rawRows": [
+        {
+          "_id": "6ace32a5c9735682f0480adc",
+          "apxCourseId": "63",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "39862",
+            "title": "🔴SSC GD 2026 Maths Practice Set 01 | पेपर में यही सवाल छपेंगे! 😱| ",
+            "type": "VIDEO",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        }
+      ],
+      "sourceCount": 0,
+      "sources": []
+    },
+    {
+      "id": "6ad1e05cc9735682f0ead281",
+      "status": "failed",
+      "error": "Student source row not found in mirrored tree",
+      "pdfId": null,
+      "kind": "note",
+      "inCurrentPlan": false,
+      "rawRows": [
+        {
+          "_id": "6ace32a5c9735682f0480adc",
+          "apxCourseId": "63",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "39862",
+            "title": "🔴SSC GD 2026 Maths Practice Set 01 | पेपर में यही सवाल छपेंगे! 😱| ",
+            "type": "VIDEO",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        }
+      ],
+      "sourceCount": 0,
+      "sources": []
+    },
+    {
+      "id": "6ad1dcabc9735682f0ea6b3f",
+      "status": "failed",
+      "error": "Student source row not found in mirrored tree",
+      "pdfId": null,
+      "kind": "note",
+      "inCurrentPlan": false,
+      "rawRows": [
+        {
+          "_id": "6ace326ac9735682f0480641",
+          "apxCourseId": "59",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "39868",
+            "title": " Percentage 14",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        }
+      ],
+      "sourceCount": 0,
+      "sources": []
+    },
+    {
+      "id": "6ad1da42c9735682f0e8a6dd",
+      "status": "pending",
+      "error": null,
+      "pdfId": "6ad1d9d5a3d5e866aea7b104",
+      "kind": "note",
+      "inCurrentPlan": false,
+      "rawRows": [
+        {
+          "_id": "6ace3762c9735682f04884e2",
+          "apxCourseId": "103",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "44155",
+            "title": "Time, Speed & Distance 09",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        },
+        {
+          "_id": "6ace3227c9735682f047ffbe",
+          "apxCourseId": "53",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "175477",
+            "title": "Time, Speed & Distance 09",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        },
+        {
+          "_id": "6ace326ac9735682f048064f",
+          "apxCourseId": "59",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "40556",
+            "title": "Time, Speed & Distance 09",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        }
+      ],
+      "sourceCount": 3,
+      "sources": [
+        {
+          "apxCourseId": "53",
+          "rowId": "175477",
+          "field": "pdf_link",
+          "kind": "note",
+          "classAssetKey": "vid:armaths-data:3707471-1778652610",
+          "state": "pending",
+          "class": {
+            "_id": "6ace9aac8752d955968b72af",
+            "title": "Time, Speed & Distance 09 (2) · Time, Speed & Distance",
+            "apxAssetKey": "vid:armaths-data:3707471-1778652610"
+          },
+          "importLedger": {
+            "_id": "6ace9aacc9735682f04f0a7f",
+            "classId": "6ace9aac8752d955968b72af",
+            "kind": "ingest"
+          }
+        },
+        {
+          "apxCourseId": "59",
+          "rowId": "40556",
+          "field": "pdf_link",
+          "kind": "note",
+          "classAssetKey": "vid:armaths-data:3707471-1778652610",
+          "state": "pending",
+          "class": {
+            "_id": "6ace9aac8752d955968b72af",
+            "title": "Time, Speed & Distance 09 (2) · Time, Speed & Distance",
+            "apxAssetKey": "vid:armaths-data:3707471-1778652610"
+          },
+          "importLedger": {
+            "_id": "6ace9aacc9735682f04f0a7f",
+            "classId": "6ace9aac8752d955968b72af",
+            "kind": "ingest"
+          }
+        },
+        {
+          "apxCourseId": "103",
+          "rowId": "44155",
+          "field": "pdf_link",
+          "kind": "note",
+          "classAssetKey": "vid:armaths-data:3707471-1778652610",
+          "state": "pending",
+          "class": {
+            "_id": "6ace9aac8752d955968b72af",
+            "title": "Time, Speed & Distance 09 (2) · Time, Speed & Distance",
+            "apxAssetKey": "vid:armaths-data:3707471-1778652610"
+          },
+          "importLedger": {
+            "_id": "6ace9aacc9735682f04f0a7f",
+            "classId": "6ace9aac8752d955968b72af",
+            "kind": "ingest"
+          }
+        }
+      ]
+    },
+    {
+      "id": "6ad1da41c9735682f0e8a6c6",
+      "status": "failed",
+      "error": "Student source row not found in mirrored tree",
+      "pdfId": null,
+      "kind": "note",
+      "inCurrentPlan": false,
+      "rawRows": [
+        {
+          "_id": "6ace31c5c9735682f047f3ae",
+          "apxCourseId": "48",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "177635",
+            "title": "Time, Speed & Distance 09",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        },
+        {
+          "_id": "6ace31fec9735682f047fbea",
+          "apxCourseId": "52",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "44487",
+            "title": "Time, Speed & Distance 09",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        },
+        {
+          "_id": "6ace3239c9735682f0480289",
+          "apxCourseId": "55",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "45165",
+            "title": "Time, Speed & Distance 09",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        },
+        {
+          "_id": "6ace3248c9735682f048041a",
+          "apxCourseId": "56",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "45270",
+            "title": "Time, Speed & Distance 09",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        },
+        {
+          "_id": "6ace32c0c9735682f0480c79",
+          "apxCourseId": "67",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "40555",
+            "title": "Time, Speed & Distance 09",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        }
+      ],
+      "sourceCount": 0,
+      "sources": []
+    },
+    {
+      "id": "6ad1da44c9735682f0e8a6e1",
+      "status": "failed",
+      "error": "Student source row not found in mirrored tree",
+      "pdfId": null,
+      "kind": "note",
+      "inCurrentPlan": false,
+      "rawRows": [
+        {
+          "_id": "6ace6c14c9735682f04e9c66",
+          "apxCourseId": "74",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "40554",
+            "title": "Time, Speed & Distance 09",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        }
+      ],
+      "sourceCount": 0,
+      "sources": []
+    },
+    {
+      "id": "6ad1dae5c9735682f0e8b126",
+      "status": "pending",
+      "error": null,
+      "pdfId": "6ad1dacfa3d5e866aea7b1a0",
+      "kind": "note",
+      "inCurrentPlan": false,
+      "rawRows": [
+        {
+          "_id": "6ace3762c9735682f0488506",
+          "apxCourseId": "103",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "44207",
+            "title": "Pipe & Cistern 02",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        },
+        {
+          "_id": "6ace3239c9735682f04802cf",
+          "apxCourseId": "55",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "175572",
+            "title": "Pipe & Cistern 02",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        },
+        {
+          "_id": "6ace326ac9735682f048067e",
+          "apxCourseId": "59",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "43327",
+            "title": "Pipe & Cistern 02",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        }
+      ],
+      "sourceCount": 3,
+      "sources": [
+        {
+          "apxCourseId": "55",
+          "rowId": "175572",
+          "field": "pdf_link",
+          "kind": "note",
+          "classAssetKey": "vid:armaths-data:3850851-1781068931",
+          "state": "pending",
+          "class": {
+            "_id": "6ace9b3d8752d955968b7915",
+            "title": "Pipe & Cistern 02 (2)",
+            "apxAssetKey": "vid:armaths-data:3850851-1781068931"
+          },
+          "importLedger": {
+            "_id": "6ace9b3dc9735682f04f0c76",
+            "classId": "6ace9b3d8752d955968b7915",
+            "kind": "ingest"
+          }
+        },
+        {
+          "apxCourseId": "59",
+          "rowId": "43327",
+          "field": "pdf_link",
+          "kind": "note",
+          "classAssetKey": "vid:armaths-data:3850851-1781068931",
+          "state": "pending",
+          "class": {
+            "_id": "6ace9b3d8752d955968b7915",
+            "title": "Pipe & Cistern 02 (2)",
+            "apxAssetKey": "vid:armaths-data:3850851-1781068931"
+          },
+          "importLedger": {
+            "_id": "6ace9b3dc9735682f04f0c76",
+            "classId": "6ace9b3d8752d955968b7915",
+            "kind": "ingest"
+          }
+        },
+        {
+          "apxCourseId": "103",
+          "rowId": "44207",
+          "field": "pdf_link",
+          "kind": "note",
+          "classAssetKey": "vid:armaths-data:3850851-1781068931",
+          "state": "pending",
+          "class": {
+            "_id": "6ace9b3d8752d955968b7915",
+            "title": "Pipe & Cistern 02 (2)",
+            "apxAssetKey": "vid:armaths-data:3850851-1781068931"
+          },
+          "importLedger": {
+            "_id": "6ace9b3dc9735682f04f0c76",
+            "classId": "6ace9b3d8752d955968b7915",
+            "kind": "ingest"
+          }
+        }
+      ]
+    },
+    {
+      "id": "6ad1dae3c9735682f0e8b107",
+      "status": "failed",
+      "error": "Student source row not found in mirrored tree",
+      "pdfId": null,
+      "kind": "note",
+      "inCurrentPlan": false,
+      "rawRows": [
+        {
+          "_id": "6ace31fec9735682f047fbd9",
+          "apxCourseId": "52",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "44464",
+            "title": "Pipe & Cistern 02",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        },
+        {
+          "_id": "6ace3248c9735682f0480466",
+          "apxCourseId": "56",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "175667",
+            "title": "Pipe & Cistern 02",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        },
+        {
+          "_id": "6ace32c0c9735682f0480ca5",
+          "apxCourseId": "67",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "43326",
+            "title": "Pipe & Cistern 02",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        }
+      ],
+      "sourceCount": 0,
+      "sources": []
+    },
+    {
+      "id": "6ad1dae6c9735682f0e8c2d4",
+      "status": "failed",
+      "error": "Student source row not found in mirrored tree",
+      "pdfId": null,
+      "kind": "note",
+      "inCurrentPlan": false,
+      "rawRows": [
+        {
+          "_id": "6ace6c14c9735682f04e9d04",
+          "apxCourseId": "74",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "43325",
+            "title": "Pipe & Cistern 02",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        }
+      ],
+      "sourceCount": 0,
+      "sources": []
+    },
+    {
+      "id": "6ad1dca5c9735682f0ea6aec",
+      "status": "failed",
+      "error": "Student source row not found in mirrored tree",
+      "pdfId": null,
+      "kind": "note",
+      "inCurrentPlan": false,
+      "rawRows": [
+        {
+          "_id": "6ace326ac9735682f04806ad",
+          "apxCourseId": "59",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "176705",
+            "title": "Partnership 02",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        }
+      ],
+      "sourceCount": 0,
+      "sources": []
+    },
+    {
+      "id": "6ad1dcaac9735682f0ea6b28",
+      "status": "pending",
+      "error": null,
+      "pdfId": "6ad1dba8a3d5e866aea7b25f",
+      "kind": "note",
+      "inCurrentPlan": false,
+      "rawRows": [
+        {
+          "_id": "6ace3526c9735682f0483206",
+          "apxCourseId": "92",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "176702",
+            "title": "Partnership 02",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        }
+      ],
+      "sourceCount": 1,
+      "sources": [
+        {
+          "apxCourseId": "92",
+          "rowId": "176702",
+          "field": "pdf_link",
+          "kind": "note",
+          "classAssetKey": "vid:armaths-data:4059093-1784527991",
+          "state": "pending",
+          "class": {
+            "_id": "6ace9c8b8752d955968b7c2c",
+            "title": "Partnership 02 (2) · Partnership",
+            "apxAssetKey": "vid:armaths-data:4059093-1784527991"
+          },
+          "importLedger": {
+            "_id": "6ace9c8cc9735682f04f0e3c",
+            "classId": "6ace9c8b8752d955968b7c2c",
+            "kind": "ingest"
+          }
+        }
+      ]
+    },
+    {
+      "id": "6ad1dca7c9735682f0ea6afe",
+      "status": "failed",
+      "error": "Student source row not found in mirrored tree",
+      "pdfId": null,
+      "kind": "note",
+      "inCurrentPlan": false,
+      "rawRows": [
+        {
+          "_id": "6ace32c0c9735682f0480cd2",
+          "apxCourseId": "67",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "176704",
+            "title": "Partnership 02",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        }
+      ],
+      "sourceCount": 0,
+      "sources": []
+    },
+    {
+      "id": "6ad1dca8c9735682f0ea6b0e",
+      "status": "failed",
+      "error": "Student source row not found in mirrored tree",
+      "pdfId": null,
+      "kind": "note",
+      "inCurrentPlan": false,
+      "rawRows": [
+        {
+          "_id": "6ad5d973c9735682f0a02373",
+          "apxCourseId": "105",
+          "raw": {
+            "id": "190331",
+            "title": "Partnership 02",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          },
+          "lastSeenRunId": "daily-2026-10-26"
+        },
+        {
+          "_id": "6ace6c14c9735682f04e9df6",
+          "apxCourseId": "74",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "176703",
+            "title": "Partnership 02",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        }
+      ],
+      "sourceCount": 0,
+      "sources": []
+    },
+    {
+      "id": "6ad1e449c9735682f0ebd409",
+      "status": "pending",
+      "error": null,
+      "pdfId": "6ad5b33ef269676d2259f810",
+      "kind": "note",
+      "inCurrentPlan": false,
+      "rawRows": [],
+      "sourceCount": 1,
+      "sources": [
+        {
+          "apxCourseId": "94",
+          "rowId": "188859",
+          "field": "pdf_link",
+          "kind": "note",
+          "classAssetKey": "vid:armaths-data:4468130-1790186981",
+          "state": "pending",
+          "class": {
+            "_id": "6acea23f8752d955968b8bb7",
+            "title": "Puzzle 03 · PUZZLE (2)",
+            "apxAssetKey": "vid:armaths-data:4468130-1790186981"
+          },
+          "importLedger": {
+            "_id": "6acea240c9735682f04f15e7",
+            "classId": "6acea23f8752d955968b8bb7",
+            "kind": "ingest"
+          }
+        }
+      ]
+    },
+    {
+      "id": "6ad1ed33c9735682f0efbf9c",
+      "status": "pending",
+      "error": null,
+      "pdfId": "6ad5b341f269676d2259f813",
+      "kind": "note",
+      "inCurrentPlan": false,
+      "rawRows": [],
+      "sourceCount": 1,
+      "sources": [
+        {
+          "apxCourseId": "95",
+          "rowId": "189655",
+          "field": "pdf_link",
+          "kind": "note",
+          "classAssetKey": "vid:armaths-data:4607176-1791984898",
+          "state": "pending",
+          "class": {
+            "_id": "6ad1e3ddb520d957233cc16b",
+            "title": "Fundamental Rights 04",
+            "apxAssetKey": "vid:armaths-data:4607176-1791984898"
+          },
+          "importLedger": {
+            "_id": "6ad1e3ddc9735682f0ebcc1a",
+            "classId": "6ad1e3ddb520d957233cc16b",
+            "kind": "ingest"
+          }
+        }
+      ]
+    },
+    {
+      "id": "6ad94017c9735682f0130807",
+      "status": "failed",
+      "error": "decrypted bytes failed the PDF validity check",
+      "pdfId": null,
+      "kind": "standalone",
+      "inCurrentPlan": false,
+      "rawRows": [
+        {
+          "_id": "6ace3176c9735682f047e5e1",
+          "apxCourseId": "43",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "32909",
+            "title": "Height and Distance (ClassRoom Sheet-Mains)",
+            "type": "PDF",
+            "is_pdf_encrypted": "1",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        }
+      ],
+      "sourceCount": 0,
+      "sources": []
+    },
+    {
+      "id": "6ad94018c9735682f013080e",
+      "status": "failed",
+      "error": "decrypted bytes failed the PDF validity check",
+      "pdfId": null,
+      "kind": "standalone",
+      "inCurrentPlan": false,
+      "rawRows": [
+        {
+          "_id": "6ace3176c9735682f047e5e2",
+          "apxCourseId": "43",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "32910",
+            "title": "Height & Distance (Pro Level Sheet_Mains) ",
+            "type": "PDF",
+            "is_pdf_encrypted": "1",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        }
+      ],
+      "sourceCount": 0,
+      "sources": []
+    }
+  ],
+  "course96": {
+    "_id": "6ace3575c9735682f04835ad",
+    "apxCourseId": "96",
+    "capture": {
+      "runId": "daily-2026-10-22",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 11390,
+        "hiddenRows": 11265,
+        "folderPaths": 56,
+        "treeParents": 58,
+        "visibleFolders": 57,
+        "visibleItems": 126,
+        "visibleChecked": 126,
+        "crossListed": 0,
+        "contentFetched": 5,
+        "pc4NotVisibleExplained": 11288,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 47,
+        "lookups": 9,
+        "reused": 5,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 147,
+        "catalogRows": 147,
+        "explained": {
+          "deleted": 0,
+          "disabled": 11265,
+          "hidden": 0,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 47
+        },
+        "appxUnavailable": 47,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-21T22:30:22.440Z",
+      "progress": {
+        "contentDone": 6,
+        "contentReused": 5,
+        "contentFailed": 3,
+        "treePages": 58,
+        "updatedAt": "2026-10-21T22:30:22.440Z"
+      },
+      "appxUnavailable": [
+        {
+          "rowId": "42850",
+          "title": "Glands 01",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 42850: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T12:43:08.171Z",
+          "lastFailedAt": "2026-10-19T22:07:14.063Z"
+        },
+        {
+          "rowId": "43008",
+          "title": "Glands 02",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43008: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T12:46:06.283Z",
+          "lastFailedAt": "2026-10-19T22:08:15.194Z"
+        },
+        {
+          "rowId": "42952",
+          "title": "Glands 03",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 42952: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-15T12:49:10.627Z",
+          "lastFailedAt": "2026-10-19T22:08:38.924Z"
+        },
+        {
+          "rowId": "43010",
+          "title": "Glands 04",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43010: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T12:52:06.524Z",
+          "lastFailedAt": "2026-10-21T22:28:52.932Z"
+        },
+        {
+          "rowId": "43088",
+          "title": "Glands 05",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43088: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-15T12:54:14.725Z",
+          "lastFailedAt": "2026-10-21T22:29:15.682Z"
+        },
+        {
+          "rowId": "43030",
+          "title": "Human Glands Handwritten Notes",
+          "kind": "PDF",
+          "error": "get_content_by_id 43030: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T12:56:14.459Z",
+          "lastFailedAt": "2026-10-21T22:30:15.942Z"
+        },
+        {
+          "rowId": "43098",
+          "title": "Excretory System 01",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43098: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T12:59:22.625Z",
+          "lastFailedAt": "2026-10-15T12:59:22.625Z"
+        },
+        {
+          "rowId": "43132",
+          "title": "Excretory System 02",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43132: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T13:01:38.647Z",
+          "lastFailedAt": "2026-10-15T13:01:38.647Z"
+        },
+        {
+          "rowId": "43218",
+          "title": "Skeleton System, Joints and Muscles 01",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43218: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T13:04:36.519Z",
+          "lastFailedAt": "2026-10-15T13:04:36.519Z"
+        },
+        {
+          "rowId": "43240",
+          "title": "Skeleton System, Joints and Muscles 02",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43240: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T13:07:41.257Z",
+          "lastFailedAt": "2026-10-15T13:07:41.257Z"
+        },
+        {
+          "rowId": "43298",
+          "title": "Genetics",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43298: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T13:10:43.361Z",
+          "lastFailedAt": "2026-10-15T13:10:43.361Z"
+        },
+        {
+          "rowId": "43347",
+          "title": "Genetics Practice Set",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43347: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T13:13:45.642Z",
+          "lastFailedAt": "2026-10-15T13:13:45.642Z"
+        },
+        {
+          "rowId": "43411",
+          "title": "Animal Kingdom 01",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43411: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T13:15:54.840Z",
+          "lastFailedAt": "2026-10-15T13:15:54.840Z"
+        },
+        {
+          "rowId": "43470",
+          "title": "Animal kingdom 02",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43470: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-15T13:18:56.427Z",
+          "lastFailedAt": "2026-10-15T13:18:56.427Z"
+        },
+        {
+          "rowId": "44864",
+          "title": "Animal Kingdom 03",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 44864: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T13:21:57.217Z",
+          "lastFailedAt": "2026-10-15T13:21:57.217Z"
+        },
+        {
+          "rowId": "44855",
+          "title": "Botany 01",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 44855: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T13:24:53.414Z",
+          "lastFailedAt": "2026-10-15T13:24:53.414Z"
+        },
+        {
+          "rowId": "45396",
+          "title": "Botany 02",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 45396: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T13:28:02.279Z",
+          "lastFailedAt": "2026-10-15T13:28:02.279Z"
+        },
+        {
+          "rowId": "45406",
+          "title": "Botany 03",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 45406: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T13:31:00.258Z",
+          "lastFailedAt": "2026-10-15T13:31:00.258Z"
+        },
+        {
+          "rowId": "45516",
+          "title": "Botany 04",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 45516: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T13:33:19.207Z",
+          "lastFailedAt": "2026-10-15T13:33:19.207Z"
+        },
+        {
+          "rowId": "45518",
+          "title": "Botany 05",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 45518: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-15T13:36:16.205Z",
+          "lastFailedAt": "2026-10-15T13:36:16.205Z"
+        },
+        {
+          "rowId": "45683",
+          "title": "Botany 06",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 45683: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T13:38:24.404Z",
+          "lastFailedAt": "2026-10-15T13:38:24.404Z"
+        },
+        {
+          "rowId": "45704",
+          "title": "Botany 07",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 45704: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T13:41:30.714Z",
+          "lastFailedAt": "2026-10-15T13:41:30.714Z"
+        },
+        {
+          "rowId": "45841",
+          "title": "Botany Practice",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 45841: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-15T13:44:34.610Z",
+          "lastFailedAt": "2026-10-15T13:44:34.610Z"
+        },
+        {
+          "rowId": "53189",
+          "title": "Introduction of Science",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 53189: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-15T13:47:32.691Z",
+          "lastFailedAt": "2026-10-15T13:47:32.691Z"
+        },
+        {
+          "rowId": "188513",
+          "title": "Glands 01",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188513: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-15T13:50:34.888Z",
+          "lastFailedAt": "2026-10-15T13:50:34.888Z"
+        },
+        {
+          "rowId": "188515",
+          "title": "Glands 02",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188515: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T13:53:43.058Z",
+          "lastFailedAt": "2026-10-15T13:53:43.058Z"
+        },
+        {
+          "rowId": "188514",
+          "title": "Glands 03",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188514: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-15T13:56:35.286Z",
+          "lastFailedAt": "2026-10-15T13:56:35.286Z"
+        },
+        {
+          "rowId": "188516",
+          "title": "Glands 04",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188516: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T13:58:43.485Z",
+          "lastFailedAt": "2026-10-15T13:58:43.485Z"
+        },
+        {
+          "rowId": "188519",
+          "title": "Glands 05",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188519: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T14:01:49.718Z",
+          "lastFailedAt": "2026-10-15T14:01:49.718Z"
+        },
+        {
+          "rowId": "188520",
+          "title": "Glands (Handwritten Notes)",
+          "kind": "PDF",
+          "error": "get_content_by_id 188520: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-15T14:04:53.100Z",
+          "lastFailedAt": "2026-10-15T14:04:53.100Z"
+        },
+        {
+          "rowId": "188524",
+          "title": "Excretory System 01",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188524: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-15T14:07:55.100Z",
+          "lastFailedAt": "2026-10-15T14:07:55.100Z"
+        },
+        {
+          "rowId": "188525",
+          "title": "Excretory System 02",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188525: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T14:10:02.715Z",
+          "lastFailedAt": "2026-10-15T14:10:02.715Z"
+        },
+        {
+          "rowId": "188528",
+          "title": "Skeleton System, Joints and Muscles 01",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188528: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-15T14:12:54.528Z",
+          "lastFailedAt": "2026-10-15T14:12:54.528Z"
+        },
+        {
+          "rowId": "188529",
+          "title": "Skeleton System, Joints and Muscles 02",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188529: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T14:15:57.283Z",
+          "lastFailedAt": "2026-10-15T14:15:57.283Z"
+        },
+        {
+          "rowId": "188532",
+          "title": "Genetics",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188532: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-15T14:18:54.462Z",
+          "lastFailedAt": "2026-10-15T14:18:54.462Z"
+        },
+        {
+          "rowId": "188533",
+          "title": "Genetics Practice Set",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188533: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T14:21:55.435Z",
+          "lastFailedAt": "2026-10-15T14:21:55.435Z"
+        },
+        {
+          "rowId": "188536",
+          "title": "Animal Kingdom 01",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188536: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T14:25:03.835Z",
+          "lastFailedAt": "2026-10-15T14:25:03.835Z"
+        },
+        {
+          "rowId": "188537",
+          "title": "Animal kingdom 02",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188537: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-15T14:27:57.371Z",
+          "lastFailedAt": "2026-10-15T14:27:57.371Z"
+        },
+        {
+          "rowId": "188539",
+          "title": "Animal Kingdom 03",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188539: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-15T14:31:01.393Z",
+          "lastFailedAt": "2026-10-15T14:31:01.393Z"
+        },
+        {
+          "rowId": "188542",
+          "title": "Botany 01",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188542: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T14:34:09.166Z",
+          "lastFailedAt": "2026-10-15T14:34:09.166Z"
+        },
+        {
+          "rowId": "188544",
+          "title": "Botany 02",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188544: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T14:37:10.425Z",
+          "lastFailedAt": "2026-10-15T14:37:10.425Z"
+        },
+        {
+          "rowId": "188545",
+          "title": "Botany 03",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188545: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T14:40:08.679Z",
+          "lastFailedAt": "2026-10-15T14:40:08.679Z"
+        },
+        {
+          "rowId": "188546",
+          "title": "Botany 04",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188546: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T14:43:16.853Z",
+          "lastFailedAt": "2026-10-15T14:43:16.853Z"
+        },
+        {
+          "rowId": "188547",
+          "title": "Botany 05",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188547: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T14:46:15.768Z",
+          "lastFailedAt": "2026-10-15T14:46:15.768Z"
+        },
+        {
+          "rowId": "188548",
+          "title": "Botany 06",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188548: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T14:49:24.549Z",
+          "lastFailedAt": "2026-10-15T14:49:24.549Z"
+        },
+        {
+          "rowId": "188549",
+          "title": "Botany 07",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188549: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T14:52:28.267Z",
+          "lastFailedAt": "2026-10-15T14:52:28.267Z"
+        },
+        {
+          "rowId": "188550",
+          "title": "Botany Practice",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188550: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-15T14:55:22.455Z",
+          "lastFailedAt": "2026-10-15T14:55:22.455Z"
+        }
+      ]
+    }
+  }
+}

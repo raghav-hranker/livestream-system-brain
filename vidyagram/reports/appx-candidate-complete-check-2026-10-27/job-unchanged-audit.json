@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-27T11:34:39.365Z",
+  "selected": 46,
+  "retried": 3,
+  "unretried": 43,
+  "states": {
+    "dead": 45,
+    "done": 1
+  },
+  "recovered": [
+    {
+      "id": "6acea4e08752d955968b9335",
+      "title": "Glands 01 · Biology",
+      "visiblePlacements": 2
+    }
+  ],
+  "all43UnretriedJobsByteUnchanged": true,
+  "coursePlacementsUnchanged": true,
+  "catalogLedgersUnchanged": true,
+  "changedClassFields": [
+    {
+      "classId": "6acea4e08752d955968b9335",
+      "fields": [
+        "updatedAt",
+        "hlsAsset",
+        "streamStatus"
+      ]
+    }
+  ],
+  "activeSelectedJobs": 0
+}

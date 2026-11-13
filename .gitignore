@@ -2,3 +2,11 @@ node_modules/
 repos/
 .DS_Store
 .secrets-realtime-token
+/.env.development
+reference/scripts/automatic-plan-extension-local/*.csv
+/outputs/
+/qa-evidence/
+
+# Local credential backups
+.env.development.bak-*
+.audit/

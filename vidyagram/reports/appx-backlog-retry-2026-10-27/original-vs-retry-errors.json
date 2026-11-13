@@ -1,0 +1,18 @@
+[
+  {
+    "job": "6ace8f53c9735682f04ed914",
+    "originalFailedFile": "master-6452701.24023549.m3u829.ts",
+    "retryFailedFiles": [
+      "master-6452701.24023549.m3u829.ts"
+    ],
+    "sameFile": true
+  },
+  {
+    "job": "6ace8ef7c9735682f04ed753",
+    "originalFailedFile": "master-7860278.873273978.m3u864.ts",
+    "retryFailedFiles": [
+      "master-7860278.873273978.m3u864.ts"
+    ],
+    "sameFile": true
+  }
+]

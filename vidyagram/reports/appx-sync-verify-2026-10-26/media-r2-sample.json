@@ -1,0 +1,885 @@
+{
+  "at": "2026-10-26T12:29:07.159Z",
+  "bucket": "recordedvideos-vidyagram",
+  "sampling": "3 oldest +6 newest +quartiles done jobs; every listed rendition; first/last segments",
+  "jobs": [
+    {
+      "job": "6ace9022c9735682f04edb7b",
+      "classId": "6ace90228752d955968aeaf9",
+      "updatedAt": "2026-10-14T12:32:36.601Z",
+      "masterKey": "781/6ace90228752d955968aeaf9/hls/master.m3u8",
+      "renditions": [
+        {
+          "playlist": "781/6ace90228752d955968aeaf9/hls/240p.m3u8",
+          "segmentCount": 15,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6ace90228752d955968aeaf9/hls/240p_0.ts",
+              "ok": true,
+              "bytes": 74636
+            },
+            {
+              "key": "781/6ace90228752d955968aeaf9/hls/240p_14.ts",
+              "ok": true,
+              "bytes": 21996
+            }
+          ]
+        },
+        {
+          "playlist": "781/6ace90228752d955968aeaf9/hls/360p.m3u8",
+          "segmentCount": 15,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6ace90228752d955968aeaf9/hls/360p_0.ts",
+              "ok": true,
+              "bytes": 263952
+            },
+            {
+              "key": "781/6ace90228752d955968aeaf9/hls/360p_14.ts",
+              "ok": true,
+              "bytes": 54520
+            }
+          ]
+        },
+        {
+          "playlist": "781/6ace90228752d955968aeaf9/hls/480p.m3u8",
+          "segmentCount": 14,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6ace90228752d955968aeaf9/hls/480p_0.ts",
+              "ok": true,
+              "bytes": 639388
+            },
+            {
+              "key": "781/6ace90228752d955968aeaf9/hls/480p_13.ts",
+              "ok": true,
+              "bytes": 396868
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "job": "6acea840c9735682f04f1dc2",
+      "classId": "6acea8408752d955968b9bf6",
+      "updatedAt": "2026-10-14T12:32:36.615Z",
+      "masterKey": "781/6acea8408752d955968b9bf6/hls/master.m3u8",
+      "renditions": [
+        {
+          "playlist": "781/6acea8408752d955968b9bf6/hls/240p.m3u8",
+          "segmentCount": 1371,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6acea8408752d955968b9bf6/hls/240p_0.ts",
+              "ok": true,
+              "bytes": 349868
+            },
+            {
+              "key": "781/6acea8408752d955968b9bf6/hls/240p_1370.ts",
+              "ok": true,
+              "bytes": 118440
+            }
+          ]
+        },
+        {
+          "playlist": "781/6acea8408752d955968b9bf6/hls/360p.m3u8",
+          "segmentCount": 1371,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6acea8408752d955968b9bf6/hls/360p_0.ts",
+              "ok": true,
+              "bytes": 587688
+            },
+            {
+              "key": "781/6acea8408752d955968b9bf6/hls/360p_1370.ts",
+              "ok": true,
+              "bytes": 513428
+            }
+          ]
+        },
+        {
+          "playlist": "781/6acea8408752d955968b9bf6/hls/480p.m3u8",
+          "segmentCount": 1371,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6acea8408752d955968b9bf6/hls/480p_0.ts",
+              "ok": true,
+              "bytes": 787532
+            },
+            {
+              "key": "781/6acea8408752d955968b9bf6/hls/480p_1370.ts",
+              "ok": true,
+              "bytes": 659128
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "job": "6ace8e8bc9735682f04ed59e",
+      "classId": "6ace8e8b8752d955968ada25",
+      "updatedAt": "2026-10-14T12:34:01.644Z",
+      "masterKey": "781/6ace8e8b8752d955968ada25/hls/master.m3u8",
+      "renditions": [
+        {
+          "playlist": "781/6ace8e8b8752d955968ada25/hls/240p.m3u8",
+          "segmentCount": 411,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6ace8e8b8752d955968ada25/hls/240p_0.ts",
+              "ok": true,
+              "bytes": 329564
+            },
+            {
+              "key": "781/6ace8e8b8752d955968ada25/hls/240p_410.ts",
+              "ok": true,
+              "bytes": 145700
+            }
+          ]
+        },
+        {
+          "playlist": "781/6ace8e8b8752d955968ada25/hls/360p.m3u8",
+          "segmentCount": 406,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6ace8e8b8752d955968ada25/hls/360p_0.ts",
+              "ok": true,
+              "bytes": 567572
+            },
+            {
+              "key": "781/6ace8e8b8752d955968ada25/hls/360p_405.ts",
+              "ok": true,
+              "bytes": 292152
+            }
+          ]
+        },
+        {
+          "playlist": "781/6ace8e8b8752d955968ada25/hls/480p.m3u8",
+          "segmentCount": 406,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6ace8e8b8752d955968ada25/hls/480p_0.ts",
+              "ok": true,
+              "bytes": 740720
+            },
+            {
+              "key": "781/6ace8e8b8752d955968ada25/hls/480p_405.ts",
+              "ok": true,
+              "bytes": 371488
+            }
+          ]
+        },
+        {
+          "playlist": "781/6ace8e8b8752d955968ada25/hls/1080p.m3u8",
+          "segmentCount": 406,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6ace8e8b8752d955968ada25/hls/1080p_0.ts",
+              "ok": true,
+              "bytes": 1679404
+            },
+            {
+              "key": "781/6ace8e8b8752d955968ada25/hls/1080p_405.ts",
+              "ok": true,
+              "bytes": 788096
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "job": "6add5372c9735682f05dd1af",
+      "classId": "6add5372040ae6b9262d6514",
+      "updatedAt": "2026-10-25T07:17:22.843Z",
+      "masterKey": "781/6add5372040ae6b9262d6514/hls/master.m3u8",
+      "renditions": [
+        {
+          "playlist": "781/6add5372040ae6b9262d6514/hls/240p.m3u8",
+          "segmentCount": 281,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6add5372040ae6b9262d6514/hls/240p_0.ts",
+              "ok": true,
+              "bytes": 72756
+            },
+            {
+              "key": "781/6add5372040ae6b9262d6514/hls/240p_280.ts",
+              "ok": true,
+              "bytes": 290836
+            }
+          ]
+        },
+        {
+          "playlist": "781/6add5372040ae6b9262d6514/hls/360p.m3u8",
+          "segmentCount": 279,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6add5372040ae6b9262d6514/hls/360p_0.ts",
+              "ok": true,
+              "bytes": 108476
+            },
+            {
+              "key": "781/6add5372040ae6b9262d6514/hls/360p_278.ts",
+              "ok": true,
+              "bytes": 64672
+            }
+          ]
+        },
+        {
+          "playlist": "781/6add5372040ae6b9262d6514/hls/480p.m3u8",
+          "segmentCount": 279,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6add5372040ae6b9262d6514/hls/480p_0.ts",
+              "ok": true,
+              "bytes": 158860
+            },
+            {
+              "key": "781/6add5372040ae6b9262d6514/hls/480p_278.ts",
+              "ok": true,
+              "bytes": 652924
+            }
+          ]
+        },
+        {
+          "playlist": "781/6add5372040ae6b9262d6514/hls/1080p.m3u8",
+          "segmentCount": 279,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6add5372040ae6b9262d6514/hls/1080p_0.ts",
+              "ok": true,
+              "bytes": 510984
+            },
+            {
+              "key": "781/6add5372040ae6b9262d6514/hls/1080p_278.ts",
+              "ok": true,
+              "bytes": 378820
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "job": "6add5373c9735682f05dd1b1",
+      "classId": "6add5373040ae6b9262d6530",
+      "updatedAt": "2026-10-25T07:17:30.576Z",
+      "masterKey": "781/6add5373040ae6b9262d6530/hls/master.m3u8",
+      "renditions": [
+        {
+          "playlist": "781/6add5373040ae6b9262d6530/hls/240p.m3u8",
+          "segmentCount": 263,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6add5373040ae6b9262d6530/hls/240p_0.ts",
+              "ok": true,
+              "bytes": 98700
+            },
+            {
+              "key": "781/6add5373040ae6b9262d6530/hls/240p_262.ts",
+              "ok": true,
+              "bytes": 102836
+            }
+          ]
+        },
+        {
+          "playlist": "781/6add5373040ae6b9262d6530/hls/360p.m3u8",
+          "segmentCount": 263,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6add5373040ae6b9262d6530/hls/360p_0.ts",
+              "ok": true,
+              "bytes": 202852
+            },
+            {
+              "key": "781/6add5373040ae6b9262d6530/hls/360p_262.ts",
+              "ok": true,
+              "bytes": 144384
+            }
+          ]
+        },
+        {
+          "playlist": "781/6add5373040ae6b9262d6530/hls/480p.m3u8",
+          "segmentCount": 263,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6add5373040ae6b9262d6530/hls/480p_0.ts",
+              "ok": true,
+              "bytes": 346672
+            },
+            {
+              "key": "781/6add5373040ae6b9262d6530/hls/480p_262.ts",
+              "ok": true,
+              "bytes": 192700
+            }
+          ]
+        },
+        {
+          "playlist": "781/6add5373040ae6b9262d6530/hls/1080p.m3u8",
+          "segmentCount": 264,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6add5373040ae6b9262d6530/hls/1080p_0.ts",
+              "ok": true,
+              "bytes": 1344764
+            },
+            {
+              "key": "781/6add5373040ae6b9262d6530/hls/1080p_263.ts",
+              "ok": true,
+              "bytes": 208304
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "job": "6add5374c9735682f05dd1b3",
+      "classId": "6add5374040ae6b9262d654e",
+      "updatedAt": "2026-10-25T07:20:07.132Z",
+      "masterKey": "781/6add5374040ae6b9262d654e/hls/master.m3u8",
+      "renditions": [
+        {
+          "playlist": "781/6add5374040ae6b9262d654e/hls/240p.m3u8",
+          "segmentCount": 405,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6add5374040ae6b9262d654e/hls/240p_0.ts",
+              "ok": true,
+              "bytes": 107160
+            },
+            {
+              "key": "781/6add5374040ae6b9262d654e/hls/240p_404.ts",
+              "ok": true,
+              "bytes": 21996
+            }
+          ]
+        },
+        {
+          "playlist": "781/6add5374040ae6b9262d654e/hls/360p.m3u8",
+          "segmentCount": 392,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6add5374040ae6b9262d654e/hls/360p_0.ts",
+              "ok": true,
+              "bytes": 240076
+            },
+            {
+              "key": "781/6add5374040ae6b9262d654e/hls/360p_391.ts",
+              "ok": true,
+              "bytes": 77644
+            }
+          ]
+        },
+        {
+          "playlist": "781/6add5374040ae6b9262d654e/hls/480p.m3u8",
+          "segmentCount": 392,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6add5374040ae6b9262d654e/hls/480p_0.ts",
+              "ok": true,
+              "bytes": 406832
+            },
+            {
+              "key": "781/6add5374040ae6b9262d654e/hls/480p_391.ts",
+              "ok": true,
+              "bytes": 117688
+            }
+          ]
+        },
+        {
+          "playlist": "781/6add5374040ae6b9262d654e/hls/1080p.m3u8",
+          "segmentCount": 389,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6add5374040ae6b9262d654e/hls/1080p_0.ts",
+              "ok": true,
+              "bytes": 1395900
+            },
+            {
+              "key": "781/6add5374040ae6b9262d654e/hls/1080p_388.ts",
+              "ok": true,
+              "bytes": 830584
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "job": "6add5378c9735682f05dd1b9",
+      "classId": "6add5378040ae6b9262d6582",
+      "updatedAt": "2026-10-25T08:18:27.892Z",
+      "masterKey": "781/6add5378040ae6b9262d6582/hls/master.m3u8",
+      "renditions": [
+        {
+          "playlist": "781/6add5378040ae6b9262d6582/hls/240p.m3u8",
+          "segmentCount": 261,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6add5378040ae6b9262d6582/hls/240p_0.ts",
+              "ok": true,
+              "bytes": 61664
+            },
+            {
+              "key": "781/6add5378040ae6b9262d6582/hls/240p_260.ts",
+              "ok": true,
+              "bytes": 62228
+            }
+          ]
+        },
+        {
+          "playlist": "781/6add5378040ae6b9262d6582/hls/360p.m3u8",
+          "segmentCount": 260,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6add5378040ae6b9262d6582/hls/360p_0.ts",
+              "ok": true,
+              "bytes": 66176
+            },
+            {
+              "key": "781/6add5378040ae6b9262d6582/hls/360p_259.ts",
+              "ok": true,
+              "bytes": 34404
+            }
+          ]
+        },
+        {
+          "playlist": "781/6add5378040ae6b9262d6582/hls/480p.m3u8",
+          "segmentCount": 260,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6add5378040ae6b9262d6582/hls/480p_0.ts",
+              "ok": true,
+              "bytes": 69560
+            },
+            {
+              "key": "781/6add5378040ae6b9262d6582/hls/480p_259.ts",
+              "ok": true,
+              "bytes": 46624
+            }
+          ]
+        },
+        {
+          "playlist": "781/6add5378040ae6b9262d6582/hls/1080p.m3u8",
+          "segmentCount": 259,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6add5378040ae6b9262d6582/hls/1080p_0.ts",
+              "ok": true,
+              "bytes": 147956
+            },
+            {
+              "key": "781/6add5378040ae6b9262d6582/hls/1080p_258.ts",
+              "ok": true,
+              "bytes": 105280
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "job": "6add5375c9735682f05dd1b5",
+      "classId": "6add5375040ae6b9262d6566",
+      "updatedAt": "2026-10-25T08:18:30.762Z",
+      "masterKey": "781/6add5375040ae6b9262d6566/hls/master.m3u8",
+      "renditions": [
+        {
+          "playlist": "781/6add5375040ae6b9262d6566/hls/240p.m3u8",
+          "segmentCount": 250,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6add5375040ae6b9262d6566/hls/240p_0.ts",
+              "ok": true,
+              "bytes": 66364
+            },
+            {
+              "key": "781/6add5375040ae6b9262d6566/hls/240p_249.ts",
+              "ok": true,
+              "bytes": 57152
+            }
+          ]
+        },
+        {
+          "playlist": "781/6add5375040ae6b9262d6566/hls/360p.m3u8",
+          "segmentCount": 249,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6add5375040ae6b9262d6566/hls/360p_0.ts",
+              "ok": true,
+              "bytes": 106220
+            },
+            {
+              "key": "781/6add5375040ae6b9262d6566/hls/360p_248.ts",
+              "ok": true,
+              "bytes": 84036
+            }
+          ]
+        },
+        {
+          "playlist": "781/6add5375040ae6b9262d6566/hls/480p.m3u8",
+          "segmentCount": 249,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6add5375040ae6b9262d6566/hls/480p_0.ts",
+              "ok": true,
+              "bytes": 184240
+            },
+            {
+              "key": "781/6add5375040ae6b9262d6566/hls/480p_248.ts",
+              "ok": true,
+              "bytes": 109228
+            }
+          ]
+        },
+        {
+          "playlist": "781/6add5375040ae6b9262d6566/hls/1080p.m3u8",
+          "segmentCount": 250,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6add5375040ae6b9262d6566/hls/1080p_0.ts",
+              "ok": true,
+              "bytes": 803700
+            },
+            {
+              "key": "781/6add5375040ae6b9262d6566/hls/1080p_249.ts",
+              "ok": true,
+              "bytes": 331444
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "job": "6adea3d6c9735682f0807292",
+      "classId": "6adea3d60692793b62346350",
+      "updatedAt": "2026-10-26T00:55:30.897Z",
+      "masterKey": "781/6adea3d60692793b62346350/hls/master.m3u8",
+      "renditions": [
+        {
+          "playlist": "781/6adea3d60692793b62346350/hls/240p.m3u8",
+          "segmentCount": 565,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6adea3d60692793b62346350/hls/240p_0.ts",
+              "ok": true,
+              "bytes": 109040
+            },
+            {
+              "key": "781/6adea3d60692793b62346350/hls/240p_564.ts",
+              "ok": true,
+              "bytes": 108852
+            }
+          ]
+        },
+        {
+          "playlist": "781/6adea3d60692793b62346350/hls/360p.m3u8",
+          "segmentCount": 570,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6adea3d60692793b62346350/hls/360p_0.ts",
+              "ok": true,
+              "bytes": 321104
+            },
+            {
+              "key": "781/6adea3d60692793b62346350/hls/360p_569.ts",
+              "ok": true,
+              "bytes": 203416
+            }
+          ]
+        },
+        {
+          "playlist": "781/6adea3d60692793b62346350/hls/480p.m3u8",
+          "segmentCount": 573,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6adea3d60692793b62346350/hls/480p_0.ts",
+              "ok": true,
+              "bytes": 552532
+            },
+            {
+              "key": "781/6adea3d60692793b62346350/hls/480p_572.ts",
+              "ok": true,
+              "bytes": 565880
+            }
+          ]
+        },
+        {
+          "playlist": "781/6adea3d60692793b62346350/hls/1080p.m3u8",
+          "segmentCount": 579,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6adea3d60692793b62346350/hls/1080p_0.ts",
+              "ok": true,
+              "bytes": 1799724
+            },
+            {
+              "key": "781/6adea3d60692793b62346350/hls/1080p_578.ts",
+              "ok": true,
+              "bytes": 1728660
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "job": "6ace9472c9735682f04eedcb",
+      "classId": "6ace94728752d955968b1ef2",
+      "updatedAt": "2026-10-14T13:59:07.326Z",
+      "masterKey": "781/6ace94728752d955968b1ef2/hls/master.m3u8",
+      "renditions": [
+        {
+          "playlist": "781/6ace94728752d955968b1ef2/hls/240p.m3u8",
+          "segmentCount": 243,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6ace94728752d955968b1ef2/hls/240p_0.ts",
+              "ok": true,
+              "bytes": 416796
+            },
+            {
+              "key": "781/6ace94728752d955968b1ef2/hls/240p_242.ts",
+              "ok": true,
+              "bytes": 62228
+            }
+          ]
+        },
+        {
+          "playlist": "781/6ace94728752d955968b1ef2/hls/360p.m3u8",
+          "segmentCount": 242,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6ace94728752d955968b1ef2/hls/360p_0.ts",
+              "ok": true,
+              "bytes": 628860
+            },
+            {
+              "key": "781/6ace94728752d955968b1ef2/hls/360p_241.ts",
+              "ok": true,
+              "bytes": 645780
+            }
+          ]
+        },
+        {
+          "playlist": "781/6ace94728752d955968b1ef2/hls/480p.m3u8",
+          "segmentCount": 243,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6ace94728752d955968b1ef2/hls/480p_0.ts",
+              "ok": true,
+              "bytes": 871944
+            },
+            {
+              "key": "781/6ace94728752d955968b1ef2/hls/480p_242.ts",
+              "ok": true,
+              "bytes": 129720
+            }
+          ]
+        },
+        {
+          "playlist": "781/6ace94728752d955968b1ef2/hls/1080p.m3u8",
+          "segmentCount": 243,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6ace94728752d955968b1ef2/hls/1080p_0.ts",
+              "ok": true,
+              "bytes": 2102780
+            },
+            {
+              "key": "781/6ace94728752d955968b1ef2/hls/1080p_242.ts",
+              "ok": true,
+              "bytes": 261508
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "job": "6ace98e9c9735682f04f039d",
+      "classId": "6ace98e98752d955968b5f8e",
+      "updatedAt": "2026-10-14T19:07:11.134Z",
+      "masterKey": "781/6ace98e98752d955968b5f8e/hls/master.m3u8",
+      "renditions": [
+        {
+          "playlist": "781/6ace98e98752d955968b5f8e/hls/240p.m3u8",
+          "segmentCount": 358,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6ace98e98752d955968b5f8e/hls/240p_0.ts",
+              "ok": true,
+              "bytes": 257372
+            },
+            {
+              "key": "781/6ace98e98752d955968b5f8e/hls/240p_357.ts",
+              "ok": true,
+              "bytes": 200220
+            }
+          ]
+        },
+        {
+          "playlist": "781/6ace98e98752d955968b5f8e/hls/360p.m3u8",
+          "segmentCount": 354,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6ace98e98752d955968b5f8e/hls/360p_0.ts",
+              "ok": true,
+              "bytes": 396680
+            },
+            {
+              "key": "781/6ace98e98752d955968b5f8e/hls/360p_353.ts",
+              "ok": true,
+              "bytes": 311892
+            }
+          ]
+        },
+        {
+          "playlist": "781/6ace98e98752d955968b5f8e/hls/480p.m3u8",
+          "segmentCount": 355,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6ace98e98752d955968b5f8e/hls/480p_0.ts",
+              "ok": true,
+              "bytes": 530160
+            },
+            {
+              "key": "781/6ace98e98752d955968b5f8e/hls/480p_354.ts",
+              "ok": true,
+              "bytes": 422812
+            }
+          ]
+        },
+        {
+          "playlist": "781/6ace98e98752d955968b5f8e/hls/1080p.m3u8",
+          "segmentCount": 355,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6ace98e98752d955968b5f8e/hls/1080p_0.ts",
+              "ok": true,
+              "bytes": 1123112
+            },
+            {
+              "key": "781/6ace98e98752d955968b5f8e/hls/1080p_354.ts",
+              "ok": true,
+              "bytes": 903340
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "job": "6aceaf34c9735682f04f2626",
+      "classId": "6aceaf348752d955968baab0",
+      "updatedAt": "2026-10-14T21:39:30.040Z",
+      "masterKey": "781/6aceaf348752d955968baab0/hls/master.m3u8",
+      "renditions": [
+        {
+          "playlist": "781/6aceaf348752d955968baab0/hls/240p.m3u8",
+          "segmentCount": 271,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6aceaf348752d955968baab0/hls/240p_0.ts",
+              "ok": true,
+              "bytes": 64860
+            },
+            {
+              "key": "781/6aceaf348752d955968baab0/hls/240p_270.ts",
+              "ok": true,
+              "bytes": 82156
+            }
+          ]
+        },
+        {
+          "playlist": "781/6aceaf348752d955968baab0/hls/360p.m3u8",
+          "segmentCount": 267,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6aceaf348752d955968baab0/hls/360p_0.ts",
+              "ok": true,
+              "bytes": 85540
+            },
+            {
+              "key": "781/6aceaf348752d955968baab0/hls/360p_266.ts",
+              "ok": true,
+              "bytes": 262072
+            }
+          ]
+        },
+        {
+          "playlist": "781/6aceaf348752d955968baab0/hls/480p.m3u8",
+          "segmentCount": 267,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6aceaf348752d955968baab0/hls/480p_0.ts",
+              "ok": true,
+              "bytes": 124456
+            },
+            {
+              "key": "781/6aceaf348752d955968baab0/hls/480p_266.ts",
+              "ok": true,
+              "bytes": 364532
+            }
+          ]
+        },
+        {
+          "playlist": "781/6aceaf348752d955968baab0/hls/1080p.m3u8",
+          "segmentCount": 268,
+          "endList": true,
+          "checked": [
+            {
+              "key": "781/6aceaf348752d955968baab0/hls/1080p_0.ts",
+              "ok": true,
+              "bytes": 171268
+            },
+            {
+              "key": "781/6aceaf348752d955968baab0/hls/1080p_267.ts",
+              "ok": true,
+              "bytes": 462480
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

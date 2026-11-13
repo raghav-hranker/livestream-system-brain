@@ -1,0 +1,102 @@
+{
+  "info": {
+    "name": "Automatic plan extension — minimal (demo)",
+    "description": "Five-request demo. Plan P lists at ₹1000. The expired user last paid ₹499, so they see ₹250 for 183 days and can pay it; a stranger sees ₹1000 and cannot pay ₹250; with the feature off (base_off) the expired user sees ₹1000. Re-seed first (see automatic-plan-extension.README.md).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base", "value": "http://localhost:3106", "type": "string" },
+    { "key": "base_off", "value": "http://localhost:3107", "type": "string" },
+    { "key": "plan_p", "value": "a0e000000000000000000001", "type": "string" },
+    { "key": "user_expired", "value": "b0e000000000000000000001", "type": "string" },
+    { "key": "user_stranger", "value": "b0e000000000000000000003", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "Expired user — sees ₹250 for 183 days",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base}}/api/plans/filter-active/{{user_expired}}",
+        "body": { "mode": "raw", "raw": "{\n  \"subscriptionId\": \"{{plan_p}}\"\n}", "options": { "raw": { "language": "json" } } }
+      },
+      "event": [{
+        "listen": "test",
+        "script": { "type": "text/javascript", "exec": [
+          "const plan = pm.response.json().data[0];",
+          "pm.test('price is ₹250 (half of the ₹499 they paid)', () => pm.expect(plan.amount).to.eql('250'));",
+          "pm.test('valid for 183 days', () => pm.expect(plan.duration).to.eql(183));",
+          "pm.test('normal price shown as ₹1000', () => pm.expect(plan.originalAmount).to.eql('1000'));",
+          "pm.test('flagged as extension offer (is_expire = 1)', () => pm.expect(plan.is_expire).to.eql(1));"
+        ] }
+      }]
+    },
+    {
+      "name": "Stranger — sees the normal ₹1000",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base}}/api/plans/filter-active/{{user_stranger}}",
+        "body": { "mode": "raw", "raw": "{\n  \"subscriptionId\": \"{{plan_p}}\"\n}", "options": { "raw": { "language": "json" } } }
+      },
+      "event": [{
+        "listen": "test",
+        "script": { "type": "text/javascript", "exec": [
+          "const plan = pm.response.json().data[0];",
+          "pm.test('price is the normal ₹1000', () => pm.expect(plan.amount).to.eql('1000'));",
+          "pm.test('normal 365 days', () => pm.expect(plan.duration).to.eql(365));",
+          "pm.test('no offer (is_expire = 0)', () => pm.expect(plan.is_expire).to.eql(0));"
+        ] }
+      }]
+    },
+    {
+      "name": "Expired user pays ₹250 — accepted",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base}}/api/orders/get-razorpay-order",
+        "body": { "mode": "raw", "raw": "{\n  \"userId\": \"{{user_expired}}\",\n  \"planId\": \"{{plan_p}}\",\n  \"grandTotal\": 250,\n  \"type\": \"subscription\",\n  \"duration\": 365\n}", "options": { "raw": { "language": "json" } } }
+      },
+      "event": [{
+        "listen": "test",
+        "script": { "type": "text/javascript", "exec": [
+          "pm.test('order created (201)', () => pm.response.to.have.status(201));",
+          "pm.test('charged ₹250', () => pm.expect(pm.response.json().data.grandTotal).to.eql(250));"
+        ] }
+      }]
+    },
+    {
+      "name": "Stranger tries to pay ₹250 — rejected",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base}}/api/orders/get-razorpay-order",
+        "body": { "mode": "raw", "raw": "{\n  \"userId\": \"{{user_stranger}}\",\n  \"planId\": \"{{plan_p}}\",\n  \"grandTotal\": 250,\n  \"type\": \"subscription\",\n  \"duration\": 365\n}", "options": { "raw": { "language": "json" } } }
+      },
+      "event": [{
+        "listen": "test",
+        "script": { "type": "text/javascript", "exec": [
+          "pm.test('rejected (400)', () => pm.response.to.have.status(400));",
+          "pm.test('server says the price is ₹1000', () => pm.expect(pm.response.json().message).to.match(/expected 1000\\b/));"
+        ] }
+      }]
+    },
+    {
+      "name": "Feature OFF — expired user sees the normal ₹1000",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_off}}/api/plans/filter-active/{{user_expired}}",
+        "body": { "mode": "raw", "raw": "{\n  \"subscriptionId\": \"{{plan_p}}\"\n}", "options": { "raw": { "language": "json" } } }
+      },
+      "event": [{
+        "listen": "test",
+        "script": { "type": "text/javascript", "exec": [
+          "const plan = pm.response.json().data[0];",
+          "pm.test('price is the normal ₹1000', () => pm.expect(plan.amount).to.eql('1000'));",
+          "pm.test('no offer (is_expire = 0)', () => pm.expect(plan.is_expire).to.eql(0));"
+        ] }
+      }]
+    }
+  ]
+}

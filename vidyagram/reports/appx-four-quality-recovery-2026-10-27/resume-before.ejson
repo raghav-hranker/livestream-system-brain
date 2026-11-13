@@ -1,0 +1,548 @@
+{
+  "jobs": [
+    {
+      "_id": {
+        "$oid": "6ace9397c9735682f04ee9c4"
+      },
+      "classId": {
+        "$oid": "6ace93978752d955968b1376"
+      },
+      "__v": {
+        "$numberInt": "0"
+      },
+      "apxClassId": "16294",
+      "apxCourseId": {
+        "$oid": "6ace2ec0c9735682f0479698"
+      },
+      "attempts": {
+        "$numberInt": "6"
+      },
+      "course_id": "22",
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1791923095381"
+        }
+      },
+      "error": "Bounded alternate-quality recovery failed; held for review",
+      "status": "dead",
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1793104396173"
+        }
+      },
+      "video_id": "16294",
+      "video_url": "https://appx-recordings-mcdn.akamai.net.in/videos/rgvikramjeet-data/412887-1702040847/hls/1080p/master-7067310.971135514.m3u8.m3u8",
+      "progress": {
+        "phase": "failed",
+        "rungs": {
+          "360p": {
+            "segsTotal": {
+              "$numberInt": "398"
+            },
+            "segsDone": {
+              "$numberInt": "59"
+            },
+            "bytes": {
+              "$numberInt": "31471576"
+            }
+          },
+          "240p": {
+            "segsTotal": {
+              "$numberInt": "398"
+            },
+            "segsDone": {
+              "$numberInt": "390"
+            },
+            "bytes": {
+              "$numberInt": "102935828"
+            }
+          },
+          "480p": {
+            "segsTotal": {
+              "$numberInt": "398"
+            },
+            "segsDone": {
+              "$numberInt": "360"
+            },
+            "bytes": {
+              "$numberInt": "291975280"
+            }
+          }
+        },
+        "classLink": null,
+        "error": "fetch https://transcoded-recordings.classx.co.in/videos/rgvikramjeet-data/412887-1702040847/hls/360p/master-7067310.971135514.m3u87.ts?edge-cache-token=Expires=1791949721~_GO=Generated~URLPrefix=aHR0cHM6Ly90cmFuc2NvZGVkLXJlY29yZGluZ3MuY2xhc3N4LmNvLmluL3ZpZGVvcy9yZ3Zpa3JhbWplZXQtZGF0YS80MTI4ODctMTcwMjA0MDg0Nw~Signature=AcdbbdY6qjZC7h2mtyJlKbObo62d4GOl52MCsp9LeN_pfIhXiTOYxPDjPkfsuTl8gcuDV2mTK2yL-X0ryTySHFxwR1QP failed: 404"
+      },
+      "progressUpdatedAt": {
+        "$date": {
+          "$numberLong": "1791939099175"
+        }
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6ace93c4c9735682f04eeb1c"
+      },
+      "classId": {
+        "$oid": "6ace93c48752d955968b1671"
+      },
+      "__v": {
+        "$numberInt": "0"
+      },
+      "apxClassId": "15410",
+      "apxCourseId": {
+        "$oid": "6ace2ec0c9735682f0479698"
+      },
+      "attempts": {
+        "$numberInt": "5"
+      },
+      "course_id": "22",
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1791923140357"
+        }
+      },
+      "error": "fetch https://transcoded-recordings.classx.co.in/videos/rgvikramjeet-data/410747-1701962427/hls/240p/master-7308944.860638292.m3u83.ts?edge-cache-token=Expires=1791950551~_GO=Generated~URLPrefix=aHR0cHM6Ly90cmFuc2NvZGVkLXJlY29yZGluZ3MuY2xhc3N4LmNvLmluL3ZpZGVvcy9yZ3Zpa3JhbWplZXQtZGF0YS80MTA3NDctMTcwMTk2MjQyNw~Signature=AcdbbdZthmpz04OjiQENfHoZJ2h_CaxCabyXhTDuGF3b5CaDsbSbe8geY7mVI_68t_R1toa-20gnk3uQkNLUaGJO1DIG failed: 404",
+      "status": "dead",
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1791939902987"
+        }
+      },
+      "video_id": "15410",
+      "video_url": "https://appx-recordings-mcdn.akamai.net.in/videos/rgvikramjeet-data/410747-1701962427/hls/1080p/master-7308944.860638292.m3u8.m3u8",
+      "progress": {
+        "phase": "failed",
+        "rungs": {
+          "360p": {
+            "segsTotal": {
+              "$numberInt": "312"
+            },
+            "segsDone": {
+              "$numberInt": "301"
+            },
+            "bytes": {
+              "$numberInt": "158298820"
+            }
+          },
+          "240p": {
+            "segsTotal": {
+              "$numberInt": "312"
+            },
+            "segsDone": {
+              "$numberInt": "3"
+            },
+            "bytes": {
+              "$numberInt": "1037948"
+            }
+          },
+          "480p": {
+            "segsTotal": {
+              "$numberInt": "312"
+            },
+            "segsDone": {
+              "$numberInt": "296"
+            },
+            "bytes": {
+              "$numberInt": "209025356"
+            }
+          }
+        },
+        "classLink": null,
+        "error": "fetch https://transcoded-recordings.classx.co.in/videos/rgvikramjeet-data/410747-1701962427/hls/240p/master-7308944.860638292.m3u83.ts?edge-cache-token=Expires=1791950551~_GO=Generated~URLPrefix=aHR0cHM6Ly90cmFuc2NvZGVkLXJlY29yZGluZ3MuY2xhc3N4LmNvLmluL3ZpZGVvcy9yZ3Zpa3JhbWplZXQtZGF0YS80MTA3NDctMTcwMTk2MjQyNw~Signature=AcdbbdZthmpz04OjiQENfHoZJ2h_CaxCabyXhTDuGF3b5CaDsbSbe8geY7mVI_68t_R1toa-20gnk3uQkNLUaGJO1DIG failed: 404"
+      },
+      "progressUpdatedAt": {
+        "$date": {
+          "$numberLong": "1791939902987"
+        }
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6ace93c5c9735682f04eeb20"
+      },
+      "classId": {
+        "$oid": "6ace93c58752d955968b167f"
+      },
+      "__v": {
+        "$numberInt": "0"
+      },
+      "apxClassId": "15409",
+      "apxCourseId": {
+        "$oid": "6ace2ec0c9735682f0479698"
+      },
+      "attempts": {
+        "$numberInt": "5"
+      },
+      "course_id": "22",
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1791923141291"
+        }
+      },
+      "error": "fetch https://transcoded-recordings.classx.co.in/videos/rgvikramjeet-data/410875-1701975160/hls/480p/master-9327300.716198197.m3u83.ts?edge-cache-token=Expires=1791950569~_GO=Generated~URLPrefix=aHR0cHM6Ly90cmFuc2NvZGVkLXJlY29yZGluZ3MuY2xhc3N4LmNvLmluL3ZpZGVvcy9yZ3Zpa3JhbWplZXQtZGF0YS80MTA4NzUtMTcwMTk3NTE2MA~Signature=AcdbbdYFooeaNI0pGZdDfWeW94gf7oK6s4v0SPulIKpsPczV6cS5EcRjT7YLmbzt850N0DyKKmiUZNdCxHOHIjh9L2gE failed: 404",
+      "status": "dead",
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1791939937197"
+        }
+      },
+      "video_id": "15409",
+      "video_url": "https://appx-recordings-mcdn.akamai.net.in/videos/rgvikramjeet-data/410875-1701975160/hls/1080p/master-9327300.716198197.m3u8.m3u8",
+      "progress": {
+        "phase": "failed",
+        "rungs": {
+          "360p": {
+            "segsTotal": {
+              "$numberInt": "337"
+            },
+            "segsDone": {
+              "$numberInt": "95"
+            },
+            "bytes": {
+              "$numberInt": "44114952"
+            }
+          },
+          "240p": {
+            "segsTotal": {
+              "$numberInt": "338"
+            },
+            "segsDone": {
+              "$numberInt": "335"
+            },
+            "bytes": {
+              "$numberInt": "93655772"
+            }
+          },
+          "480p": {
+            "segsTotal": {
+              "$numberInt": "337"
+            },
+            "segsDone": {
+              "$numberInt": "20"
+            },
+            "bytes": {
+              "$numberInt": "10474984"
+            }
+          }
+        },
+        "classLink": null,
+        "error": "fetch https://transcoded-recordings.classx.co.in/videos/rgvikramjeet-data/410875-1701975160/hls/480p/master-9327300.716198197.m3u83.ts?edge-cache-token=Expires=1791950569~_GO=Generated~URLPrefix=aHR0cHM6Ly90cmFuc2NvZGVkLXJlY29yZGluZ3MuY2xhc3N4LmNvLmluL3ZpZGVvcy9yZ3Zpa3JhbWplZXQtZGF0YS80MTA4NzUtMTcwMTk3NTE2MA~Signature=AcdbbdYFooeaNI0pGZdDfWeW94gf7oK6s4v0SPulIKpsPczV6cS5EcRjT7YLmbzt850N0DyKKmiUZNdCxHOHIjh9L2gE failed: 404"
+      },
+      "progressUpdatedAt": {
+        "$date": {
+          "$numberLong": "1791939937197"
+        }
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6ace9550c9735682f04ef228"
+      },
+      "classId": {
+        "$oid": "6ace95508752d955968b2b78"
+      },
+      "__v": {
+        "$numberInt": "0"
+      },
+      "apxClassId": "17883",
+      "apxCourseId": {
+        "$oid": "6ace2f22c9735682f047a44a"
+      },
+      "attempts": {
+        "$numberInt": "5"
+      },
+      "course_id": "24",
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1791923536751"
+        }
+      },
+      "error": "fetch https://transcoded-recordings.classx.co.in/videos/rgvikramjeet-data/413406-1702104829/hls/240p/master-5377367.930973194.m3u8.m3u8?edge-cache-token=URLPrefix=aHR0cHM6Ly90cmFuc2NvZGVkLXJlY29yZGluZ3MuY2xhc3N4LmNvLmluL3ZpZGVvcy9yZ3Zpa3JhbWplZXQtZGF0YS80MTM0MDYtMTcwMjEwNDgyOQ~Expires=1791946255~Signature=weqXjTiqR-BYJT6PsUz3McCUAiu7x9tstKBOxGo7P59-9FX6giPbqL22V3cczZfRwWXyQ_JCIVx1rBBm_9mhDg&bitrate=720 failed: 404",
+      "status": "dead",
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1791944842249"
+        }
+      },
+      "video_id": "17883",
+      "video_url": "https://appx-recordings-mcdn.akamai.net.in/videos/rgvikramjeet-data/413406-1702104829/hls/1080p/master-5377367.930973194.m3u8.m3u8",
+      "progress": {
+        "phase": "failed",
+        "rungs": {
+          "480p": {
+            "segsTotal": {
+              "$numberInt": "504"
+            },
+            "segsDone": {
+              "$numberInt": "504"
+            },
+            "bytes": {
+              "$numberInt": "403363964"
+            }
+          },
+          "360p": {
+            "segsTotal": {
+              "$numberInt": "504"
+            },
+            "segsDone": {
+              "$numberInt": "496"
+            },
+            "bytes": {
+              "$numberInt": "297124412"
+            }
+          }
+        },
+        "classLink": null,
+        "error": "fetch https://transcoded-recordings.classx.co.in/videos/rgvikramjeet-data/413406-1702104829/hls/240p/master-5377367.930973194.m3u8.m3u8?edge-cache-token=URLPrefix=aHR0cHM6Ly90cmFuc2NvZGVkLXJlY29yZGluZ3MuY2xhc3N4LmNvLmluL3ZpZGVvcy9yZ3Zpa3JhbWplZXQtZGF0YS80MTM0MDYtMTcwMjEwNDgyOQ~Expires=1791946255~Signature=weqXjTiqR-BYJT6PsUz3McCUAiu7x9tstKBOxGo7P59-9FX6giPbqL22V3cczZfRwWXyQ_JCIVx1rBBm_9mhDg&bitrate=720 failed: 404"
+      },
+      "progressUpdatedAt": {
+        "$date": {
+          "$numberLong": "1791944842248"
+        }
+      }
+    }
+  ],
+  "classes": [
+    {
+      "_id": {
+        "$oid": "6ace93978752d955968b1376"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "isChat": false,
+      "isFree": false,
+      "teacherName": "Vidyagram Team",
+      "priority": {
+        "$numberInt": "0"
+      },
+      "isLive": false,
+      "isYoutubeRedirect": false,
+      "isShort": false,
+      "isTopper": false,
+      "isPrivate": false,
+      "title": "काल · काल",
+      "mainCategory": {
+        "$oid": "6ace4d459e33840b2256c218"
+      },
+      "category": {
+        "$oid": "6ace4d469e33840b2256c21b"
+      },
+      "section": {
+        "$oid": "6ace4d469e33840b2256c21f"
+      },
+      "topic": null,
+      "subTopic": null,
+      "seriesIds": [],
+      "pdfIds": [],
+      "viewCount": {
+        "$numberInt": "0"
+      },
+      "uniqueViewCount": {
+        "$numberInt": "0"
+      },
+      "apxAssetKey": "vid:rgvikramjeet-data:412887-1702040847",
+      "seriesAssignments": [],
+      "pdfAssignments": [],
+      "mp4Recordings": [],
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1791923095305"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1791923095305"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      },
+      "duration": {
+        "$numberInt": "3982"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6ace93c48752d955968b1671"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "isChat": false,
+      "isFree": false,
+      "teacherName": "Vidyagram Team",
+      "priority": {
+        "$numberInt": "0"
+      },
+      "isLive": false,
+      "isYoutubeRedirect": false,
+      "isShort": false,
+      "isTopper": false,
+      "isPrivate": false,
+      "title": "CLASS 01",
+      "mainCategory": {
+        "$oid": "6ace4d459e33840b2256c218"
+      },
+      "category": {
+        "$oid": "6ace4d469e33840b2256c21b"
+      },
+      "section": {
+        "$oid": "6ace4d469e33840b2256c21f"
+      },
+      "topic": null,
+      "subTopic": null,
+      "seriesIds": [],
+      "pdfIds": [],
+      "viewCount": {
+        "$numberInt": "0"
+      },
+      "uniqueViewCount": {
+        "$numberInt": "0"
+      },
+      "apxAssetKey": "vid:rgvikramjeet-data:410747-1701962427",
+      "seriesAssignments": [],
+      "pdfAssignments": [],
+      "mp4Recordings": [],
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1791923140259"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1791923140259"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      },
+      "duration": {
+        "$numberInt": "3114"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6ace93c58752d955968b167f"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "isChat": false,
+      "isFree": false,
+      "teacherName": "Vidyagram Team",
+      "priority": {
+        "$numberInt": "0"
+      },
+      "isLive": false,
+      "isYoutubeRedirect": false,
+      "isShort": false,
+      "isTopper": false,
+      "isPrivate": false,
+      "title": "Size And Location (Practice Class)",
+      "mainCategory": {
+        "$oid": "6ace4d459e33840b2256c218"
+      },
+      "category": {
+        "$oid": "6ace4d469e33840b2256c21b"
+      },
+      "section": {
+        "$oid": "6ace4d469e33840b2256c21f"
+      },
+      "topic": null,
+      "subTopic": null,
+      "seriesIds": [],
+      "pdfIds": [],
+      "viewCount": {
+        "$numberInt": "0"
+      },
+      "uniqueViewCount": {
+        "$numberInt": "0"
+      },
+      "apxAssetKey": "vid:rgvikramjeet-data:410875-1701975160",
+      "seriesAssignments": [],
+      "pdfAssignments": [],
+      "mp4Recordings": [],
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1791923141204"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1791923141204"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      },
+      "duration": {
+        "$numberInt": "3371"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6ace95508752d955968b2b78"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "isChat": false,
+      "isFree": false,
+      "teacherName": "Vidyagram Team",
+      "priority": {
+        "$numberInt": "0"
+      },
+      "isLive": false,
+      "isYoutubeRedirect": false,
+      "isShort": false,
+      "isTopper": false,
+      "isPrivate": false,
+      "title": "Demo 01 (Percentage)",
+      "mainCategory": {
+        "$oid": "6ace4d459e33840b2256c218"
+      },
+      "category": {
+        "$oid": "6ace4d469e33840b2256c21b"
+      },
+      "section": {
+        "$oid": "6ace4d469e33840b2256c21f"
+      },
+      "topic": null,
+      "subTopic": null,
+      "seriesIds": [],
+      "pdfIds": [],
+      "viewCount": {
+        "$numberInt": "0"
+      },
+      "uniqueViewCount": {
+        "$numberInt": "0"
+      },
+      "apxAssetKey": "vid:rgvikramjeet-data:413406-1702104829",
+      "seriesAssignments": [],
+      "pdfAssignments": [],
+      "mp4Recordings": [],
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1791923536666"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1791923536666"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      },
+      "duration": {
+        "$numberInt": "5034"
+      }
+    }
+  ],
+  "at": {
+    "$date": {
+      "$numberLong": "1793104530863"
+    }
+  }
+}

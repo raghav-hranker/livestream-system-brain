@@ -1,0 +1,565 @@
+{
+  "api": "https://backend.quicktricksbysahilsir.com",
+  "runs": 3,
+  "generatedAt": "2026-10-06T13:31:14.757Z",
+  "rows": [
+    {
+      "classId": "6a455930ebb42f585d9ad162",
+      "cdn": "bunny",
+      "mint": {
+        "status": 200,
+        "ms": 279
+      },
+      "host": "recordedvideos-hranker-v2.b-cdn.net",
+      "master": {
+        "status": 200,
+        "ttfbMs": 1846,
+        "totalMs": 1892,
+        "bytes": 406,
+        "cache": "REVALIDATED"
+      },
+      "child": {
+        "status": 200,
+        "ttfbMs": 1054,
+        "totalMs": 1060,
+        "bytes": 8206,
+        "cache": "REVALIDATED"
+      },
+      "segment": {
+        "status": 200,
+        "ttfbMs": 345,
+        "totalMs": 1068,
+        "bytes": 66552,
+        "cache": "HIT"
+      },
+      "run": 1
+    },
+    {
+      "classId": "6a455930ebb42f585d9ad162",
+      "cdn": "cloudflare",
+      "mint": {
+        "status": 200,
+        "ms": 332
+      },
+      "host": "recordedvideosv2.hranker.org",
+      "master": {
+        "status": 200,
+        "ttfbMs": 506,
+        "totalMs": 507,
+        "bytes": 406,
+        "cache": "HIT"
+      },
+      "child": {
+        "status": 200,
+        "ttfbMs": 63,
+        "totalMs": 112,
+        "bytes": 8206,
+        "cache": "HIT"
+      },
+      "segment": {
+        "status": 200,
+        "ttfbMs": 58,
+        "totalMs": 154,
+        "bytes": 66552,
+        "cache": "HIT"
+      },
+      "run": 1
+    },
+    {
+      "classId": "6a455930ebb42f585d9ad16c",
+      "cdn": "bunny",
+      "mint": {
+        "status": 200,
+        "ms": 55
+      },
+      "host": "recordedvideos-hranker-v2.b-cdn.net",
+      "master": {
+        "status": 200,
+        "ttfbMs": 1047,
+        "totalMs": 1092,
+        "bytes": 409,
+        "cache": "REVALIDATED"
+      },
+      "child": {
+        "status": 200,
+        "ttfbMs": 1047,
+        "totalMs": 1064,
+        "bytes": 11853,
+        "cache": "REVALIDATED"
+      },
+      "segment": {
+        "status": 200,
+        "ttfbMs": 342,
+        "totalMs": 891,
+        "bytes": 150964,
+        "cache": "HIT"
+      },
+      "run": 1
+    },
+    {
+      "classId": "6a455930ebb42f585d9ad16c",
+      "cdn": "cloudflare",
+      "mint": {
+        "status": 200,
+        "ms": 304
+      },
+      "host": "recordedvideosv2.hranker.org",
+      "master": {
+        "status": 200,
+        "ttfbMs": 96,
+        "totalMs": 97,
+        "bytes": 409,
+        "cache": "HIT"
+      },
+      "child": {
+        "status": 200,
+        "ttfbMs": 110,
+        "totalMs": 110,
+        "bytes": 11853,
+        "cache": "HIT"
+      },
+      "segment": {
+        "status": 200,
+        "ttfbMs": 601,
+        "totalMs": 726,
+        "bytes": 150964,
+        "cache": "HIT"
+      },
+      "run": 1
+    },
+    {
+      "classId": "6a455930ebb42f585d9ad179",
+      "cdn": "bunny",
+      "mint": {
+        "status": 200,
+        "ms": 56
+      },
+      "host": "recordedvideos-hranker-v2.b-cdn.net",
+      "master": {
+        "status": 200,
+        "ttfbMs": 1050,
+        "totalMs": 1051,
+        "bytes": 406,
+        "cache": "REVALIDATED"
+      },
+      "child": {
+        "status": 200,
+        "ttfbMs": 1111,
+        "totalMs": 1152,
+        "bytes": 9359,
+        "cache": "REVALIDATED"
+      },
+      "segment": {
+        "status": 200,
+        "ttfbMs": 338,
+        "totalMs": 437,
+        "bytes": 72756,
+        "cache": "HIT"
+      },
+      "run": 1
+    },
+    {
+      "classId": "6a455930ebb42f585d9ad179",
+      "cdn": "cloudflare",
+      "mint": {
+        "status": 200,
+        "ms": 99
+      },
+      "host": "recordedvideosv2.hranker.org",
+      "master": {
+        "status": 200,
+        "ttfbMs": 85,
+        "totalMs": 85,
+        "bytes": 406,
+        "cache": "HIT"
+      },
+      "child": {
+        "status": 200,
+        "ttfbMs": 68,
+        "totalMs": 69,
+        "bytes": 9359,
+        "cache": "HIT"
+      },
+      "segment": {
+        "status": 200,
+        "ttfbMs": 66,
+        "totalMs": 84,
+        "bytes": 72756,
+        "cache": "HIT"
+      },
+      "run": 1
+    },
+    {
+      "classId": "6a455930ebb42f585d9ad162",
+      "cdn": "bunny",
+      "mint": {
+        "status": 200,
+        "ms": 65
+      },
+      "host": "recordedvideos-hranker-v2.b-cdn.net",
+      "master": {
+        "status": 200,
+        "ttfbMs": 1080,
+        "totalMs": 1081,
+        "bytes": 406,
+        "cache": "REVALIDATED"
+      },
+      "child": {
+        "status": 200,
+        "ttfbMs": 1092,
+        "totalMs": 1093,
+        "bytes": 8206,
+        "cache": "REVALIDATED"
+      },
+      "segment": {
+        "status": 200,
+        "ttfbMs": 338,
+        "totalMs": 430,
+        "bytes": 66552,
+        "cache": "HIT"
+      },
+      "run": 2
+    },
+    {
+      "classId": "6a455930ebb42f585d9ad162",
+      "cdn": "cloudflare",
+      "mint": {
+        "status": 200,
+        "ms": 55
+      },
+      "host": "recordedvideosv2.hranker.org",
+      "master": {
+        "status": 200,
+        "ttfbMs": 78,
+        "totalMs": 78,
+        "bytes": 406,
+        "cache": "HIT"
+      },
+      "child": {
+        "status": 200,
+        "ttfbMs": 511,
+        "totalMs": 545,
+        "bytes": 8206,
+        "cache": "HIT"
+      },
+      "segment": {
+        "status": 200,
+        "ttfbMs": 70,
+        "totalMs": 96,
+        "bytes": 66552,
+        "cache": "HIT"
+      },
+      "run": 2
+    },
+    {
+      "classId": "6a455930ebb42f585d9ad16c",
+      "cdn": "bunny",
+      "mint": {
+        "status": 200,
+        "ms": 54
+      },
+      "host": "recordedvideos-hranker-v2.b-cdn.net",
+      "master": {
+        "status": 200,
+        "ttfbMs": 568,
+        "totalMs": 615,
+        "bytes": 409,
+        "cache": "REVALIDATED"
+      },
+      "child": {
+        "status": 200,
+        "ttfbMs": 1037,
+        "totalMs": 1045,
+        "bytes": 11853,
+        "cache": "REVALIDATED"
+      },
+      "segment": {
+        "status": 200,
+        "ttfbMs": 353,
+        "totalMs": 542,
+        "bytes": 150964,
+        "cache": "HIT"
+      },
+      "run": 2
+    },
+    {
+      "classId": "6a455930ebb42f585d9ad16c",
+      "cdn": "cloudflare",
+      "mint": {
+        "status": 200,
+        "ms": 98
+      },
+      "host": "recordedvideosv2.hranker.org",
+      "master": {
+        "status": 200,
+        "ttfbMs": 98,
+        "totalMs": 99,
+        "bytes": 409,
+        "cache": "HIT"
+      },
+      "child": {
+        "status": 200,
+        "ttfbMs": 96,
+        "totalMs": 97,
+        "bytes": 11853,
+        "cache": "HIT"
+      },
+      "segment": {
+        "status": 200,
+        "ttfbMs": 59,
+        "totalMs": 103,
+        "bytes": 150964,
+        "cache": "HIT"
+      },
+      "run": 2
+    },
+    {
+      "classId": "6a455930ebb42f585d9ad179",
+      "cdn": "bunny",
+      "mint": {
+        "status": 200,
+        "ms": 55
+      },
+      "host": "recordedvideos-hranker-v2.b-cdn.net",
+      "master": {
+        "status": 200,
+        "ttfbMs": 1050,
+        "totalMs": 1050,
+        "bytes": 406,
+        "cache": "REVALIDATED"
+      },
+      "child": {
+        "status": 200,
+        "ttfbMs": 1068,
+        "totalMs": 1117,
+        "bytes": 9359,
+        "cache": "REVALIDATED"
+      },
+      "segment": {
+        "status": 200,
+        "ttfbMs": 339,
+        "totalMs": 431,
+        "bytes": 72756,
+        "cache": "HIT"
+      },
+      "run": 2
+    },
+    {
+      "classId": "6a455930ebb42f585d9ad179",
+      "cdn": "cloudflare",
+      "mint": {
+        "status": 200,
+        "ms": 56
+      },
+      "host": "recordedvideosv2.hranker.org",
+      "master": {
+        "status": 200,
+        "ttfbMs": 58,
+        "totalMs": 107,
+        "bytes": 406,
+        "cache": "HIT"
+      },
+      "child": {
+        "status": 200,
+        "ttfbMs": 111,
+        "totalMs": 111,
+        "bytes": 9359,
+        "cache": "HIT"
+      },
+      "segment": {
+        "status": 200,
+        "ttfbMs": 598,
+        "totalMs": 644,
+        "bytes": 72756,
+        "cache": "HIT"
+      },
+      "run": 2
+    },
+    {
+      "classId": "6a455930ebb42f585d9ad162",
+      "cdn": "bunny",
+      "mint": {
+        "status": 200,
+        "ms": 96
+      },
+      "host": "recordedvideos-hranker-v2.b-cdn.net",
+      "master": {
+        "status": 200,
+        "ttfbMs": 1035,
+        "totalMs": 1068,
+        "bytes": 406,
+        "cache": "REVALIDATED"
+      },
+      "child": {
+        "status": 200,
+        "ttfbMs": 1134,
+        "totalMs": 1153,
+        "bytes": 8206,
+        "cache": "REVALIDATED"
+      },
+      "segment": {
+        "status": 200,
+        "ttfbMs": 337,
+        "totalMs": 435,
+        "bytes": 66552,
+        "cache": "HIT"
+      },
+      "run": 3
+    },
+    {
+      "classId": "6a455930ebb42f585d9ad162",
+      "cdn": "cloudflare",
+      "mint": {
+        "status": 200,
+        "ms": 59
+      },
+      "host": "recordedvideosv2.hranker.org",
+      "master": {
+        "status": 200,
+        "ttfbMs": 101,
+        "totalMs": 101,
+        "bytes": 406,
+        "cache": "HIT"
+      },
+      "child": {
+        "status": 200,
+        "ttfbMs": 295,
+        "totalMs": 304,
+        "bytes": 8206,
+        "cache": "HIT"
+      },
+      "segment": {
+        "status": 200,
+        "ttfbMs": 63,
+        "totalMs": 96,
+        "bytes": 66552,
+        "cache": "HIT"
+      },
+      "run": 3
+    },
+    {
+      "classId": "6a455930ebb42f585d9ad16c",
+      "cdn": "bunny",
+      "mint": {
+        "status": 200,
+        "ms": 60
+      },
+      "host": "recordedvideos-hranker-v2.b-cdn.net",
+      "master": {
+        "status": 200,
+        "ttfbMs": 1092,
+        "totalMs": 1097,
+        "bytes": 409,
+        "cache": "REVALIDATED"
+      },
+      "child": {
+        "status": 200,
+        "ttfbMs": 1039,
+        "totalMs": 1083,
+        "bytes": 11853,
+        "cache": "REVALIDATED"
+      },
+      "segment": {
+        "status": 200,
+        "ttfbMs": 338,
+        "totalMs": 523,
+        "bytes": 150964,
+        "cache": "HIT"
+      },
+      "run": 3
+    },
+    {
+      "classId": "6a455930ebb42f585d9ad16c",
+      "cdn": "cloudflare",
+      "mint": {
+        "status": 200,
+        "ms": 65
+      },
+      "host": "recordedvideosv2.hranker.org",
+      "master": {
+        "status": 200,
+        "ttfbMs": 107,
+        "totalMs": 107,
+        "bytes": 409,
+        "cache": "HIT"
+      },
+      "child": {
+        "status": 200,
+        "ttfbMs": 113,
+        "totalMs": 114,
+        "bytes": 11853,
+        "cache": "HIT"
+      },
+      "segment": {
+        "status": 200,
+        "ttfbMs": 61,
+        "totalMs": 95,
+        "bytes": 150964,
+        "cache": "HIT"
+      },
+      "run": 3
+    },
+    {
+      "classId": "6a455930ebb42f585d9ad179",
+      "cdn": "bunny",
+      "mint": {
+        "status": 200,
+        "ms": 55
+      },
+      "host": "recordedvideos-hranker-v2.b-cdn.net",
+      "master": {
+        "status": 200,
+        "ttfbMs": 1043,
+        "totalMs": 1094,
+        "bytes": 406,
+        "cache": "REVALIDATED"
+      },
+      "child": {
+        "status": 200,
+        "ttfbMs": 1116,
+        "totalMs": 1117,
+        "bytes": 9359,
+        "cache": "REVALIDATED"
+      },
+      "segment": {
+        "status": 200,
+        "ttfbMs": 338,
+        "totalMs": 448,
+        "bytes": 72756,
+        "cache": "HIT"
+      },
+      "run": 3
+    },
+    {
+      "classId": "6a455930ebb42f585d9ad179",
+      "cdn": "cloudflare",
+      "mint": {
+        "status": 200,
+        "ms": 68
+      },
+      "host": "recordedvideosv2.hranker.org",
+      "master": {
+        "status": 200,
+        "ttfbMs": 98,
+        "totalMs": 98,
+        "bytes": 406,
+        "cache": "HIT"
+      },
+      "child": {
+        "status": 200,
+        "ttfbMs": 58,
+        "totalMs": 107,
+        "bytes": 9359,
+        "cache": "HIT"
+      },
+      "segment": {
+        "status": 200,
+        "ttfbMs": 58,
+        "totalMs": 97,
+        "bytes": 72756,
+        "cache": "HIT"
+      },
+      "run": 3
+    }
+  ]
+}

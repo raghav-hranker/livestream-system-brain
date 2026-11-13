@@ -1,0 +1,15 @@
+[Unit]
+Description=Vidyagram course prices and length plans follow AppX (after the nightly)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=raghav
+WorkingDirectory=/home/raghav/vidyagram-selling-runtime
+UMask=0077
+# Waits up to 8 h on the nightly's host lock, so it runs once the nightly is done.
+ExecStart=/usr/bin/flock -w 28800 /home/raghav/vidyagram-nightly/run.lock /bin/bash /home/raghav/vidyagram-nightly/prices-run.sh
+TimeoutStartSec=9h
+Nice=10
+MemoryMax=1500M

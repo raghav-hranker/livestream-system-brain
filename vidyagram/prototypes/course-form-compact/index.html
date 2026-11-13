@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compact Course Form</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Vidyagram course form, layout A: step rail, one line per rule, whole row opens. Throwaway. */
+:root{
+  --bg:#f4f6f9; --surface:#fff; --sunk:#f0f2f6; --hover:#f7f8fb;
+  --ink:#172033; --muted:#5d677c; --faint:#8b94a7;
+  --line:#e3e7ee; --line-strong:#cbd2de;
+  --accent:#2f5fdc; --accent-ink:#fff; --accent-soft:#e9effd;
+  --cta:#10141f; --cta-ink:#fff;
+  --ok:#0f7a4f; --ok-soft:#e1f4ea; --warn:#955a00; --warn-soft:#fcf2dd; --bad:#b42318;
+  --shadow:0 1px 2px rgba(15,25,50,.05),0 6px 18px rgba(15,25,50,.07);
+  --f:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f131a; --surface:#171c26; --sunk:#11151d; --hover:#1d2330;
+  --ink:#e7ebf3; --muted:#a0a9bb; --faint:#737d91;
+  --line:#272e3c; --line-strong:#3a4355;
+  --accent:#86a7f8; --accent-ink:#0b1222; --accent-soft:#1a2540;
+  --cta:#e7ebf3; --cta-ink:#0f131a;
+  --ok:#5ed39f; --ok-soft:#10291e; --warn:#efb65c; --warn-soft:#2f2410; --bad:#ff8c7d;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 18px rgba(0,0,0,.35);
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f131a; --surface:#171c26; --sunk:#11151d; --hover:#1d2330;
+  --ink:#e7ebf3; --muted:#a0a9bb; --faint:#737d91;
+  --line:#272e3c; --line-strong:#3a4355;
+  --accent:#86a7f8; --accent-ink:#0b1222; --accent-soft:#1a2540;
+  --cta:#e7ebf3; --cta-ink:#0f131a;
+  --ok:#5ed39f; --ok-soft:#10291e; --warn:#efb65c; --warn-soft:#2f2410; --bad:#ff8c7d;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 18px rgba(0,0,0,.35);
+  color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:400 13.5px/1.4 var(--f)}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.topbar{position:sticky;top:0;z-index:5;background:var(--surface);border-bottom:1px solid var(--line);padding:9px 18px;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+.topbar h1{font-size:15px;font-weight:700;margin:0;min-width:0;text-wrap:balance}
+.grow{flex:1}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.small{font-size:12px;color:var(--muted)}
+.layout{display:grid;gap:14px;padding:14px 18px 72px;max-width:1400px;margin:0 auto;align-items:start}
+.layout.a{grid-template-columns:208px minmax(0,1fr) 300px}
+#side{display:flex;flex-direction:column;gap:10px;position:sticky;top:62px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.pad{padding:14px}
+label{display:flex;flex-direction:column;gap:3px;font-weight:500;font-size:12.5px;min-width:0}
+input[type=text],select,textarea{height:34px;padding:0 9px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);font-weight:400;font-size:13.5px;width:100%;font-variant-numeric:tabular-nums}
+textarea{height:64px;padding:6px 9px;resize:vertical}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.stack{display:flex;flex-direction:column;gap:10px}
+.req::after{content:" *";color:var(--bad)}
+.pair{display:flex}
+.pair input{width:52px;flex:none;border-radius:6px 0 0 6px;border-right:0}
+.pair select{border-radius:0 6px 6px 0;min-width:0;flex:1}
+.switch{border:0;background:none;padding:0;display:inline-flex;align-items:center;flex:none}
+.switch i{width:32px;height:18px;border-radius:9px;background:var(--line-strong);position:relative;display:inline-block}
+.switch i::after{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:#fff;top:2px;left:2px;transition:left .12s}
+.switch.on i{background:var(--accent)}
+.switch.on i::after{left:16px}
+.btn{height:32px;padding:0 12px;border-radius:6px;border:1px solid var(--line-strong);background:var(--surface);font-weight:600}
+.btn:hover{background:var(--hover)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.sm{height:28px;padding:0 9px;font-size:12.5px}
+.chips{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:4px;padding:2px 3px 2px 9px;border:1px solid var(--line-strong);border-radius:13px;font-size:12.5px;max-width:100%}
+.x{border:0;background:var(--sunk);border-radius:50%;width:18px;height:18px;line-height:16px;padding:0;color:var(--muted);flex:none;font-size:12px}
+.pick{width:170px;height:28px;font-size:12.5px;padding:0 6px}
+.srow{display:grid;grid-template-columns:minmax(0,1fr) 88px 20px;gap:8px;align-items:center;padding:4px 0}
+.lrow{display:grid;grid-template-columns:170px minmax(0,1fr) minmax(0,1fr) 20px;gap:8px;align-items:center;padding:3px 0}
+.arow{display:grid;grid-template-columns:18px minmax(0,1fr) 74px 170px 20px;gap:8px;align-items:center;padding:3px 0}
+.drow{display:grid;grid-template-columns:18px minmax(0,1fr) 20px;gap:8px;align-items:center;padding:4px 0}
+[data-dp]{border-radius:6px}
+[data-dp].dragging{opacity:.4}
+[data-dp].over-top{box-shadow:0 -2px 0 var(--accent)}
+[data-dp].over-bottom{box-shadow:0 2px 0 var(--accent)}
+.crow{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:4px 0}
+.crow .flag{font-size:12.5px}
+.timer{font-size:12px;font-weight:600;color:var(--warn);font-variant-numeric:tabular-nums}
+.handle{touch-action:none;border:0;background:none;padding:0;color:var(--faint);cursor:grab;width:18px;height:24px;line-height:24px;font-size:14px;letter-spacing:-1px;user-select:none}
+.handle:hover{color:var(--ink)}
+.handle:active{cursor:grabbing}
+.hrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) 20px;gap:8px;align-items:center;padding:3px 0}
+.sect{font-weight:600;font-size:12.5px}
+.warn{color:var(--warn);font-size:12px}
+.err{color:var(--bad);font-size:12px}
+.upload{display:flex;gap:8px;align-items:center}
+.thumb{width:92px;height:52px;border-radius:6px;background:linear-gradient(120deg,#25306b,#8a2b6d);flex:none}
+.thumb.none{background:var(--sunk);border:1px dashed var(--line-strong)}
+.stat{display:flex;gap:16px}
+.stat b{font-weight:700;font-size:15px;font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;color:var(--muted);margin-left:4px}
+.flags{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px 14px}
+.flag{display:flex;gap:8px;align-items:center;font-weight:500}
+.actions{display:flex;justify-content:flex-end;gap:8px}
+
+/* A: step rail and settings list */
+.rail{display:flex;flex-direction:column;gap:2px;position:sticky;top:62px}
+.rail button{border:0;background:transparent;text-align:left;padding:8px 10px;border-radius:8px;display:grid;grid-template-columns:22px minmax(0,1fr);gap:0 6px}
+.rail button:hover:not(:disabled){background:var(--surface)}
+.rail button.on{background:var(--surface);box-shadow:var(--shadow)}
+.rail button:disabled{opacity:.5;cursor:not-allowed}
+.rail b{font-weight:600}
+.rail i{font-style:normal;color:var(--faint);font-weight:600}
+.rail span{grid-column:2;font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.list{display:flex;flex-direction:column}
+.item{border-top:1px solid var(--line)}
+.item:first-child{border-top:0}
+.ihead{display:flex;align-items:center;gap:10px;padding:10px 14px;min-height:44px}
+.ihead{cursor:pointer}
+.ihead:hover{background:var(--hover)}
+.ihead.still{cursor:default}
+.ihead.still:hover{background:none}
+.ihead .open{border:0;background:none;padding:0;text-align:left;display:flex;align-items:baseline;gap:8px;flex:1;min-width:0;flex-wrap:wrap}
+.chev{width:16px;flex:none;color:var(--faint);font-size:11px;transition:transform .12s;display:inline-block;text-align:center}
+.chev.down{transform:rotate(90deg);color:var(--ink)}
+.listtop{display:flex;justify-content:flex-end;margin-bottom:-6px}
+.linkbtn{border:0;background:none;padding:2px 0;color:var(--accent);font-weight:500;font-size:12.5px}
+.ihead b{font-weight:600}
+.isum{font-size:12.5px;color:var(--muted)}
+.ibody{padding:0 14px 12px;display:flex;flex-direction:column;gap:8px}
+
+/* preview */
+.stu{padding:12px;display:flex;flex-direction:column;gap:7px}
+.ban{min-height:72px;border-radius:8px;background:linear-gradient(120deg,#25306b,#8a2b6d);color:#fff;font-weight:700;padding:9px;display:flex;align-items:flex-end;line-height:1.2;font-size:13px}
+.ban.none{background:var(--sunk);color:var(--muted);font-weight:500;align-items:center;justify-content:center;border:1px dashed var(--line-strong)}
+.stu h4{font-size:14px;font-weight:600;margin:0;line-height:1.25;text-wrap:balance}
+.price{font-size:21px;font-weight:700;font-variant-numeric:tabular-nums;display:flex;flex-wrap:wrap;gap:3px 7px;align-items:center}
+.price s{font-size:13px;font-weight:400;color:var(--faint)}
+.offp{font-size:11.5px;font-weight:600;padding:1px 6px;border-radius:5px;background:var(--ok-soft);color:var(--ok)}
+.meta{font-size:12px;color:var(--muted)}
+.cta{display:block;height:34px;border-radius:7px;background:var(--cta);color:var(--cta-ink);font-weight:600;text-align:center;line-height:34px}
+.cta.ghost{background:transparent;color:var(--ink);border:1px solid var(--line-strong);line-height:32px}
+.cta.dis{background:var(--sunk);color:var(--muted)}
+.mini{border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:12.5px;display:flex;justify-content:space-between;gap:8px}
+.mini em{font-style:normal;font-weight:600;color:var(--accent);white-space:nowrap}
+.minis{display:flex;flex-direction:column;gap:5px}
+.coupon{border:1px dashed var(--ok);color:var(--ok);border-radius:6px;padding:3px 8px;font-size:12px;font-weight:600}
+
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--surface);padding:7px 14px;border-radius:8px;font-weight:500;z-index:9;max-width:90vw}
+@media (max-width:1060px){.layout.a{grid-template-columns:minmax(0,1fr)}#side,.rail{position:static}.rail{flex-direction:row;flex-wrap:wrap}.rail span{display:none}}
+@media (max-width:560px){.lrow{grid-template-columns:minmax(0,1fr) minmax(0,1fr) 20px}.arow{grid-template-columns:18px minmax(0,1fr) 74px 20px}.lrow .pair,.arow .pair{grid-column:1 / -1}.layout{padding:10px 12px 72px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="topbar" id="top"></div>
+<div class="layout" id="layout"><div id="rail"></div><div id="main"></div><div id="side"></div></div>
+<script>
+const CAT={
+  fresh:'New course',cgl:'SSC CGL Foundation 2027',champ:'Champions 5.0 Maths Special',upsssc:'UPSSSC Mains (All in One) 2026-27',upgkc:'UPGK + Computer Combo Batch',vod:'Maths VOD Batch by Aditya Ranjan Sir',
+  mathsM:'Maths Special, SSC CGL Mains 2026',engM:'English Special, SSC CGL Mains 2026',reas:'Reasoning Special 4.0',gs:'GS Special 4.0',
+  roaro:'UPSSSC RO/ARO 2026 (शासन बैच)',vpo:'UPSSSC VPO & VDO 2026 (ग्रामोदय बैच)',ja:'UPSSSC Junior Assistant 2026 (सहायक बैच)',upgk:'UPGK (सारथी बैच)',comp:'Computer (संगणना बैच)',
+};
+const ORDERS={champ:4902,upsssc:229,upgkc:2630,vod:64662};
+const TESTS={t1:'UPSSSC Mock Test Series',t2:'SSC CGL Tier 1 Test Pass'};
+const BOOKS={b1:'Maths Formula ebook',b2:'UP GK Notes ebook'};
+const DAY=86400000,NOW=Date.now();
+const COUPONS={DIWALI50:NOW+2.3*DAY,NEWBATCH20:NOW+9.6*DAY,VG100:NOW+21*DAY};
+const fmtEnd=t=>new Date(t).toLocaleDateString('en-IN',{day:'numeric',month:'short'});
+const pad=n=>String(n).padStart(2,'0');
+const left=t=>{const ms=Math.max(0,t-Date.now()),d=Math.floor(ms/DAY),h=Math.floor(ms/3600000)%24,m=Math.floor(ms/60000)%60,sec=Math.floor(ms/1000)%60;return `Ends in ${d?d+'d ':''}${pad(h)}:${pad(m)}:${pad(sec)}`};
+const MAIN={SSC:['SSC CGL','SSC CHSL','SSC GD'],Maths:['All exams','SSC'],'UP Exams':['UPSSSC','UP Police'],Railway:['RRB NTPC','Group D']};
+const FACULTY=['Aditya Ranjan Sir','Jai Sir','Akash Chaturvedi Sir','Dilawar Sir','Pulkit Sir','Mohit Sir','Manoj Sir','Vk Sir',"Riya Ma'am"];
+const FAQS=['What is the validity of this batch?','Are recordings available?','Can I download the notes?'];
+const DEF={win:30,pct:50,min:125};
+const V=(n,u)=>({n,u});
+const blank=(price,v,mrp)=>({
+  saved:true,
+  base:{price,mrp,v,more:[],multi:false,allow:true},
+  coupons:{on:false,list:[],timer:{}},
+  incl:{combo:false,subs:[],courses:[],tests:[],books:[]},
+  ext:{on:true,win:'',dur:V('','Months'),kind:'percent',val:'',min:''},
+  upg:{on:false,rows:[]},
+  add:{on:false,rows:[]},
+  exch:{on:false,targets:[]},
+  info:{title:'',short:'',desc:'',tags:[],main:'',cat:'',faculty:[],doubt:'',web:true,app:true},
+  content:{classes:0,tests:0,pdfs:0,hlOn:false,highlights:[],ttOn:false,schedule:[],faqOn:false,faqs:[]},
+  settings:{status:'active',free:false,priority:1,live:false,rec:true,inNew:false,old:false},
+});
+function seed(){
+  const c={fresh:blank('',V(1,'Years'),''),cgl:blank(999,V(3,'Years'),1999),champ:blank(449,V(2,'Years'),1999),upsssc:blank(799,V(2,'Years'),1999),upgkc:blank(399,V(1,'Years'),1999),vod:blank(699,V(2,'Years'),999)};
+  Object.assign(c.fresh,{saved:false});Object.assign(c.fresh.info,{web:false,app:false});c.fresh.settings.status='draft';
+  Object.assign(c.cgl.info,{title:CAT.cgl,short:'Foundation for SSC CGL Tier 1 and Tier 2.',desc:'Live classes with recordings, notes and topic tests.',tags:['SSC','CGL'],main:'SSC',cat:'SSC CGL',faculty:['Aditya Ranjan Sir','Jai Sir']});
+  Object.assign(c.cgl.ext,{win:'30',kind:'fixed',val:'300'});
+  Object.assign(c.cgl.coupons,{on:true,list:['DIWALI50'],timer:{DIWALI50:true}});
+  Object.assign(c.cgl.upg,{on:true,rows:[{dst:'mathsM',price:500,v:V(2,'Years')},{dst:'engM',price:400,v:V(2,'Years')}]});
+  Object.assign(c.cgl.add,{on:true,rows:[{dst:'vod',price:200,v:V(2,'Years')},{dst:'champ',price:150,v:V(2,'Years')},{dst:'upgk',price:150,v:V(1,'Years')}]});
+  Object.assign(c.vod.add,{on:true,rows:[{dst:'cgl',price:200,v:V(2,'Years')}]});
+  Object.assign(c.cgl.exch,{on:true,targets:['reas','gs']});
+  c.cgl.incl.tests=['t2'];
+  Object.assign(c.cgl.content,{classes:120,tests:24,pdfs:96,hlOn:true,highlights:[{title:'Bilingual classes',content:'Hindi and English'}],ttOn:true,schedule:[{topic:'Maths',time:'8:00 AM'}]});
+  Object.assign(c.cgl.settings,{live:true,inNew:true});
+  Object.assign(c.champ.info,{title:CAT.champ,short:'Arithmetic and Advance, Pre and Mains.',desc:'Live batch by Aditya Sir.',tags:['Maths'],main:'Maths',cat:'All exams',faculty:['Aditya Ranjan Sir']});
+  Object.assign(c.champ.base,{multi:true,more:[{price:549,mrp:1999,v:V(3,'Years')}]});
+  Object.assign(c.champ.content,{classes:86,tests:12,pdfs:60});
+  Object.assign(c.upsssc.info,{title:CAT.upsssc,short:'JA, VPO, VDO, Steno, ADO on one platform.',desc:'Foundation batch for UPSSSC Mains.',tags:['UPSSSC'],main:'UP Exams',cat:'UPSSSC',faculty:['Dilawar Sir','Pulkit Sir','Mohit Sir','Manoj Sir']});
+  Object.assign(c.upsssc.incl,{combo:true,subs:['roaro','vpo','ja']});
+  Object.assign(c.upgkc.info,{title:CAT.upgkc,short:'UPGK and Computer together.',desc:'Both batches at one price.',main:'UP Exams',cat:'UPSSSC',faculty:['Vk Sir',"Riya Ma'am"],web:false,app:false});
+  Object.assign(c.upgkc.incl,{combo:true,subs:['upgk','comp']});c.upgkc.settings.status='draft';
+  Object.assign(c.vod.info,{title:CAT.vod,short:'Arithmetic and Advance, Pre to Mains.',desc:'Recorded batch.',tags:['Maths'],main:'Maths',cat:'All exams',faculty:['Aditya Ranjan Sir']});
+  Object.assign(c.vod.content,{classes:400,tests:30,pdfs:300});
+  return c;
+}
+let S={step:2,cur:'cgl',opens:new Set(),persona:'new',tried:false,C:seed()};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const inr=n=>'₹'+Number(n||0).toLocaleString('en-IN');
+const C=()=>S.C[S.cur];
+const title=id=>(S.C[id]&&S.C[id].info.title)||CAT[id];
+const get=p=>p.split('.').reduce((o,k)=>o==null?o:o[k],C());
+const set=(p,v)=>{const ks=p.split('.');const l=ks.pop();ks.reduce((o,k)=>o[k],C())[l]=v};
+const vtext=v=>{if(v.u==='Lifetime')return 'lifetime';if(v.u==='Source')return 'until owned course ends';const n=Number(v.n)||0;return `${n} ${(n===1?v.u.replace(/s$/,''):v.u).toLowerCase()}`};
+const lengths=c=>[{price:c.base.price,mrp:c.base.mrp,v:c.base.v},...(c.base.multi?c.base.more:[])];
+const ext=c=>{
+  const e=c.ext,price=Number(c.base.price)||0,win=e.win===''?DEF.win:Number(e.win)||0,v=e.dur.n===''?V(6,'Months'):e.dur;
+  let amount;
+  if(e.kind==='fixed'&&e.val!=='')amount=Number(e.val)||0;
+  else{const pct=e.val===''?DEF.pct:Number(e.val)||0,min=e.min===''?DEF.min:Number(e.min)||0;amount=Math.min(Math.max(Math.round(price*pct/100),min),price)}
+  return {win,v,amount};
+};
+const offersOut=cid=>{const c=S.C[cid];if(!c)return [];const take=(on,rows,kind)=>on?rows.filter(r=>r.dst).map(r=>({kind,source:cid,target:r.dst,price:Number(r.price)||0,v:r.v})):[];return [...take(c.upg.on,c.upg.rows,'upgrade'),...take(c.add.on,c.add.rows,'addon')]};
+const offersInto=cid=>Object.keys(S.C).flatMap(offersOut).filter(o=>o.target===cid);
+
+/* fields */
+const fid=p=>'f-'+p.replace(/\./g,'-');
+const txt=(p,l,ph='',req=false,num=false)=>`<label for="${fid(p)}"><span class="${req?'req':''}">${l}</span><input type="text" ${num?'inputmode="numeric"':''} id="${fid(p)}" data-b="${p}" value="${esc(get(p)??'')}" placeholder="${esc(ph)}"></label>`;
+const bare=(p,l,ph='')=>`<input type="text" inputmode="numeric" id="${fid(p)}" aria-label="${esc(l)}" data-b="${p}" value="${esc(get(p)??'')}" placeholder="${esc(ph)}">`;
+const vsel=(p,l,src=false)=>{const v=get(p),noN=v.u==='Lifetime'||v.u==='Source';const pair=`<div class="pair"><input type="text" inputmode="numeric" id="${fid(p)}-n" aria-label="Length" data-b="${p}.n" value="${noN?'':esc(v.n)}" ${noN?'disabled':''}><select id="${fid(p)}-u" aria-label="Unit" data-b="${p}.u">${['Days','Months','Years','Lifetime',...(src?['Source']:[])].map(u=>`<option value="${u}" ${v.u===u?'selected':''}>${u==='Source'?'With owned course':u}</option>`).join('')}</select></div>`;return l?`<label><span>${l}</span>${pair}</label>`:pair};
+const sw=(p,l)=>`<button class="switch ${get(p)?'on':''}" data-act="flip" data-p="${p}" aria-pressed="${!!get(p)}" aria-label="${esc(l)}"><i></i></button>`;
+const courseOpts=(ex,ph)=>`<option value="">${ph}</option>`+Object.keys(CAT).filter(k=>k!=='fresh'&&!ex.includes(k)).map(k=>`<option value="${k}">${esc(title(k))}</option>`).join('');
+const handle=name=>`<button class="handle" aria-label="Reorder ${esc(name)}. Drag, or use the up and down arrow keys." title="Drag to reorder">⠿</button>`;
+const chips=(list,p,name)=>list.map(id=>`<span class="chip">${esc(name(id))}<button class="x" data-act="rm" data-p="${p}" data-id="${esc(id)}" aria-label="Remove ${esc(name(id))}">×</button></span>`).join('');
+const pick=(p,opts,id)=>`<select class="pick" id="${id}" aria-label="Add" data-add="${p}">${opts}</select>`;
+const listOpts=(ph,obj,skip)=>`<option value="">${ph}</option>`+Object.keys(obj).filter(k=>!skip.includes(k)).map(k=>`<option value="${esc(k)}">${esc(obj[k])}</option>`).join('');
+
+const rowsEd=(p,lead,src)=>{const rows=get(p);return `<span class="small">${lead}</span><div>${rows.map((r,i)=>`<div class="arow" data-dp="${p}" data-i="${i}">${handle(r.dst?title(r.dst):'this row')}<select id="${fid(p)}-dst-${i}" aria-label="Course" data-b="${p}.${i}.dst">${courseOpts([S.cur],'Pick a course').replace(`value="${r.dst}"`,`value="${r.dst}" selected`)}</select>${bare(`${p}.${i}.price`,'Price')}${vsel(`${p}.${i}.v`,'',src)}<button class="x" data-act="rmat" data-p="${p}" data-i="${i}" aria-label="Remove">×</button></div>`).join('')}</div><div><button class="btn sm" data-act="addrow" data-p="${p}">Add a course</button></div>`};
+const rowSum=(on,rows)=>on&&rows.length?`${rows.length} course${rows.length>1?'s':''}, ${rows.map(r=>inr(r.price)).join(', ')}`:'Off';
+/* every rule once: toggle path, one-line summary, its fields. Layouts only arrange these. */
+const PRICING=[
+  {k:'plans',t:'Access Duration Based Pricing',p:'base.multi',sum:c=>c.base.multi?`${lengths(c).length} pricing plans`:'One price',ed(){const c=C();return `<div class="stack" style="gap:0">${c.base.more.map((r,i)=>`<div class="lrow">${vsel(`base.more.${i}.v`)}${bare(`base.more.${i}.mrp`,'MRP','MRP')}${bare(`base.more.${i}.price`,'Selling price','Price')}<button class="x" data-act="rmat" data-p="base.more" data-i="${i}" aria-label="Remove pricing plan">×</button></div>`).join('')}</div><div><button class="btn sm" data-act="addlen">Add pricing plan</button></div>`}},
+  {k:'coupons',t:'Discount codes',p:'coupons.on',sum:c=>c.coupons.list.map(x=>x+(c.coupons.timer[x]?' with timer':'')).join(', ')||'None',ed(){const c=C();return `<div>${c.coupons.list.map(x=>`<div class="crow"><span class="coupon">${esc(x)}</span><span class="small">Ends ${fmtEnd(COUPONS[x])}</span><span class="grow"></span><span class="flag">${sw('coupons.timer.'+x,'Show timer for '+x)}<span>Show timer</span></span><button class="x" data-act="rm" data-p="coupons.list" data-id="${esc(x)}" aria-label="Remove ${esc(x)}">×</button></div>`).join('')}</div>${pick('coupons.list',`<option value="">Add a code</option>`+Object.keys(COUPONS).filter(x=>!c.coupons.list.includes(x)).map(x=>`<option>${x}</option>`).join(''),'pick-coupon')}`}},
+  {k:'combo',t:'Make this a combo',p:'incl.combo',sum:c=>c.incl.combo?`${c.incl.subs.length} sub courses`:'Off',ed(){const c=C(),i=c.incl;return `<div>${i.subs.map((s,n)=>`<div class="drow" data-dp="incl.subs" data-i="${n}">${handle(title(s))}<span>${esc(title(s))}</span><button class="x" data-act="rm" data-p="incl.subs" data-id="${s}" aria-label="Remove ${esc(title(s))}">×</button></div>`).join('')}</div>${pick('incl.subs',courseOpts([S.cur,...i.subs],'Add a sub course'),'pick-subs')}`+reach()}},
+  {k:'pay',t:'Allow Payment',p:'base.allow',sum:c=>c.base.allow?'Students can buy':'Admission closed'},
+  {k:'ext',t:'Extension',p:'ext.on',sum:c=>{if(!c.ext.on)return 'Off';const e=ext(c);return `${inr(e.amount)}, ${vtext(e.v)}, ${e.win} days before expiry`},ed(){const c=C(),e=c.ext,fixed=e.kind==='fixed'&&e.val!=='';return `<div class="grid">${txt('ext.win','Show before expiry','30 days',false,true)}${vsel('ext.dur','Validity')}<label><span>Price</span><div class="pair"><select id="ext-kind" aria-label="Price type" data-b="ext.kind" style="border-radius:6px 0 0 6px;border-right:0;width:60px;flex:none"><option value="percent" ${e.kind==='percent'?'selected':''}>%</option><option value="fixed" ${e.kind==='fixed'?'selected':''}>₹</option></select><input type="text" inputmode="numeric" id="ext-val" aria-label="Extension price" data-b="ext.val" value="${esc(e.val)}" placeholder="50" style="flex:1;width:auto;border-radius:0 6px 6px 0;border-right:1px solid var(--line-strong)"></div></label>${fixed?'':txt('ext.min','Minimum','₹125',false,true)}</div>`}},
+  {k:'upg',t:'Allow Upgrade to other Courses',sub:'Old course is removed',p:'upg.on',sum:c=>rowSum(c.upg.on,c.upg.rows),ed(){return rowsEd('upg.rows','Owners of this course can upgrade to',false)}},
+  {k:'add',t:'Allow Add-on',sub:'Student keeps both',p:'add.on',sum:c=>rowSum(c.add.on,c.add.rows),ed(){return rowsEd('add.rows','Owners of this course can add',true)}},
+  {k:'exch',t:'Allow Exchange',sub:'Free swap, same end date',p:'exch.on',blocked:c=>c.incl.combo,sum:c=>c.incl.combo?"Combos can't be exchanged":c.exch.on?`${c.exch.targets.length} courses, free`:'Off',ed(){const c=C(),x=c.exch;return `<span class="small">Owners of this course can swap to</span><div class="chips">${chips(x.targets,'exch.targets',title)}${pick('exch.targets',courseOpts([S.cur,...x.targets],'Add a course'),'pick-exch')}</div>`}},
+];
+const CONTENT=[
+  {k:'classes',t:'Classes, tests and PDFs',sum:c=>`${c.content.classes} classes, ${c.content.tests} tests, ${c.content.pdfs} PDFs`,ed(){return `<div class="row"><button class="btn sm" data-act="toast" data-m="Opens Assigned Classes, the existing screen.">Open Assigned Classes</button>${C().content.classes?'':'<button class="btn sm" data-act="addclasses">Add sample classes</button>'}</div>`}},
+  {k:'attach',t:'Attach products',sub:'Free with this course',sum:c=>{const i=c.incl,n=[i.courses.length&&`${i.courses.length} courses`,i.tests.length&&`${i.tests.length} test series`,i.books.length&&`${i.books.length} books`].filter(Boolean);return n.join(', ')||'None'},ed(){const i=C().incl;return `<div class="grid"><div class="stack" style="gap:4px"><span class="sect">Test series</span><div class="chips">${chips(i.tests,'incl.tests',x=>TESTS[x])}${pick('incl.tests',listOpts('Search',TESTS,i.tests),'pick-tests')}</div></div><div class="stack" style="gap:4px"><span class="sect">Courses</span><div class="chips">${chips(i.courses,'incl.courses',title)}${pick('incl.courses',courseOpts([S.cur,...i.courses,...i.subs],'Search'),'pick-courses')}</div></div><div class="stack" style="gap:4px"><span class="sect">Books</span><div class="chips">${chips(i.books,'incl.books',x=>BOOKS[x])}${pick('incl.books',listOpts('Search',BOOKS,i.books),'pick-books')}</div></div></div>`+reach()}},
+  {k:'hl',t:'Course Highlights',p:'content.hlOn',sum:c=>c.content.hlOn?`${c.content.highlights.length} highlights`:'Off',ed(){const t=C().content;return `<div>${t.highlights.map((h,i)=>`<div class="hrow"><input type="text" id="hl-t-${i}" aria-label="Title" data-b="content.highlights.${i}.title" value="${esc(h.title)}" placeholder="Title"><input type="text" id="hl-c-${i}" aria-label="Content" data-b="content.highlights.${i}.content" value="${esc(h.content)}" placeholder="Content"><button class="x" data-act="rmat" data-p="content.highlights" data-i="${i}" aria-label="Remove">×</button></div>`).join('')}</div><div><button class="btn sm" data-act="pushhl">Add highlight</button></div>`}},
+  {k:'tt',t:'Time Table',p:'content.ttOn',sum:c=>c.content.ttOn?`${c.content.schedule.length} rows`:'Off',ed(){const t=C().content;return `<div>${t.schedule.map((h,i)=>`<div class="hrow"><input type="text" id="tt-t-${i}" aria-label="Subject or topic" data-b="content.schedule.${i}.topic" value="${esc(h.topic)}" placeholder="Subject/Topic"><input type="text" id="tt-c-${i}" aria-label="Time" data-b="content.schedule.${i}.time" value="${esc(h.time)}" placeholder="Time"><button class="x" data-act="rmat" data-p="content.schedule" data-i="${i}" aria-label="Remove">×</button></div>`).join('')}</div><div><button class="btn sm" data-act="pushtt">Add row</button></div>`}},
+  {k:'faq',t:'FAQ',p:'content.faqOn',sum:c=>c.content.faqOn?`${c.content.faqs.length} FAQs`:'Off',ed(){const t=C().content;return `<div class="chips">${chips(t.faqs,'content.faqs',x=>x)}${pick('content.faqs',`<option value="">Add a FAQ</option>`+FAQS.filter(x=>!t.faqs.includes(x)).map(x=>`<option>${esc(x)}</option>`).join(''),'pick-faq')}</div>`}},
+];
+function reach(){const o=ORDERS[S.cur];return o?`<div class="warn">Additions also reach the ${o.toLocaleString('en-IN')} existing orders.</div>`:''}
+const ruleOn=(r,c)=>r.p?(r.blocked&&r.blocked(c)?false:!!r.p.split('.').reduce((o,k)=>o[k],c)):true;
+const ALL=[...PRICING,...CONTENT];
+const ruleOf=k=>ALL.find(r=>r.k===k);
+
+/* steps */
+const STEPS=['Basic Information','Pricing','Content','Settings'];
+const missing=()=>{const i=C().info,m=[];if(!i.title.trim())m.push('title');if(!i.desc.trim())m.push('description');if(!i.main)m.push('main category');if(!i.cat)m.push('category');if(!i.faculty.length)m.push('faculty');return m};
+const locked=n=>!C().saved&&n>1;
+const stepSum=n=>{const c=C();
+  if(n===1)return c.info.cat?`${c.info.cat}, ${c.info.faculty.length} faculty`:'Not filled';
+  if(n===2)return c.settings.free?'Free':Number(c.base.price)>0?lengths(c).map(o=>inr(o.price)).join(' or ')+`, ${vtext(c.base.v)}`:'No price';
+  if(n===3)return `${c.content.classes} classes`;
+  return c.settings.status[0].toUpperCase()+c.settings.status.slice(1)};
+function basics(){
+  const i=C().info,tried=S.tried?missing():[];
+  const up=(k,l)=>`<div class="upload"><div class="thumb ${i[k]?'':'none'}"></div><div class="stack" style="gap:3px"><span class="sect">${l}</span><button class="btn sm" data-act="flip" data-p="info.${k}">${i[k]?'Remove':'Upload'}</button></div></div>`;
+  return `<div class="stack"><div class="grid">${up('web','Website Banner')}${up('app','App Banner')}</div>
+  ${txt('info.title','Course Title','',true)}${txt('info.short','Short Description')}
+  <label for="f-info-desc"><span class="req">Description</span><textarea id="f-info-desc" data-b="info.desc">${esc(i.desc)}</textarea></label>
+  <div class="grid"><label for="f-main"><span class="req">Main Category</span><select id="f-main" data-b="info.main"><option value="">Select</option>${Object.keys(MAIN).map(k=>`<option ${i.main===k?'selected':''}>${k}</option>`).join('')}</select></label><label for="f-cat"><span class="req">Category</span><select id="f-cat" data-b="info.cat" ${i.main?'':'disabled'}><option value="">Select</option>${(MAIN[i.main]||[]).map(k=>`<option ${i.cat===k?'selected':''}>${k}</option>`).join('')}</select></label>${txt('info.doubt','Doubt Group','https://t.me/...')}</div>
+  <div class="stack" style="gap:4px"><span class="sect req">Faculty</span><div class="chips">${chips(i.faculty,'info.faculty',x=>x)}${pick('info.faculty','<option value="">Add faculty</option>'+FACULTY.filter(x=>!i.faculty.includes(x)).map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join(''),'pick-fac')}</div></div>
+  <div class="stack" style="gap:4px"><span class="sect">Tags</span><div class="chips">${chips(i.tags,'info.tags',x=>x)}<input type="text" id="tag" class="pick" aria-label="Add a tag" placeholder="Add a tag" data-tag="1"></div></div>
+  ${tried.length?`<div class="err">Still needed: ${tried.join(', ')}.</div>`:''}</div>`;
+}
+const priceFields=()=>`<div class="grid">${txt('base.mrp','MRP (₹)','',false,true)}${txt('base.price','Selling Price (₹)','',false,true)}${vsel('base.v','Validity')}</div>`;
+function settingsForm(){const st=C().settings;const flag=(p,t)=>`<div class="flag">${sw(p,t)}<span>${t}</span></div>`;
+  return `<div class="stack"><div class="grid"><label for="f-status">Status<select id="f-status" data-b="settings.status">${['active','inactive','draft'].map(k=>`<option value="${k}" ${st.status===k?'selected':''}>${k[0].toUpperCase()+k.slice(1)}</option>`).join('')}</select></label>${txt('settings.priority','Priority','',false,true)}</div>
+  <div class="flags">${flag('settings.free','Is Free')}${flag('settings.live','Live Course')}${flag('settings.rec','Recorded Course')}${flag('settings.inNew','Show in New section')}${flag('settings.old','Old batch')}</div></div>`}
+const freeNote=`<div class="pad small">This course is free. Turn off Is Free in Settings to sell it.</div>`;
+const actions=()=>`<div class="actions">${S.step>1?'<button class="btn" data-act="back">Back</button>':''}<button class="btn pri" data-act="${S.step===4?'save':'next'}">${S.step===4?'Save':C().saved?'Next':'Save draft and next'}</button></div>`;
+const rulesFor=n=>n===2?PRICING:CONTENT;
+
+/* A: rail, list of label + summary + switch, one row open at a time */
+function itemA(r){const c=C(),on=ruleOn(r,c),blocked=r.blocked&&r.blocked(c),open=S.opens.has(r.k)&&on&&r.ed,can=!blocked&&(r.ed||r.p);
+  return `<div class="item"><div class="ihead ${can?'':'still'}" ${can?`data-act="row" data-k="${r.k}"`:''}><span class="chev ${open?'down':''}" aria-hidden="true">${r.ed&&!blocked?'▶':''}</span><button class="open" ${can?'':'disabled'} ${r.ed?`aria-expanded="${!!open}"`:''}><b>${r.t}</b><span class="isum" data-sum="${r.k}">${esc(r.sum(c))}</span></button>${r.sub&&on?`<span class="small">${r.sub}</span>`:''}${r.p&&!blocked?sw(r.p,r.t):''}</div>${open?`<div class="ibody">${r.ed()}</div>`:''}</div>`}
+function incoming(){const os=offersInto(S.cur);if(!os.length)return '';return `<div class="small">Students reach this course from: ${os.map(o=>`<button class="linkbtn" data-act="goto" data-id="${o.source}">${esc(title(o.source))} (${o.kind==='upgrade'?'upgrade':'add-on'} ${inr(o.price)})</button>`).join(', ')}</div>`}
+function listA(rs){const c=C(),can=rs.filter(r=>r.ed&&ruleOn(r,c)),allOpen=can.length&&can.every(r=>S.opens.has(r.k));
+  return `<div class="listtop"><button class="linkbtn" data-act="${allOpen?'collapseall':'expandall'}">${allOpen?'Collapse all':'Expand all'}</button></div><div class="panel list">${rs.map(itemA).join('')}</div>`}
+function variantA(){
+  $('rail').innerHTML=`<div class="rail">${STEPS.map((t,i)=>`<button class="${S.step===i+1?'on':''}" data-act="step" data-n="${i+1}" ${locked(i+1)?'disabled':''}><i>${i+1}</i><b>${t}</b><span data-sum="step${i+1}">${esc(stepSum(i+1))}</span></button>`).join('')}</div>`;
+  let b;
+  if(S.step===1)b=`<div class="panel pad">${basics()}</div>`;
+  if(S.step===2)b=C().settings.free?`<div class="panel">${freeNote}</div>`:`<div class="panel pad">${priceFields()}</div>${listA(PRICING)}${incoming()}`;
+  if(S.step===3)b=listA(CONTENT);
+  if(S.step===4)b=`<div class="panel pad">${settingsForm()}</div>`;
+  return b+actions();
+}
+/* preview */
+function strip(o){const up=o.kind==='upgrade';return `<div class="mini"><span>${up?'Upgrade to':'Add'} ${esc(title(o.target))}<br><span class="meta">${vtext(o.v)}. ${up?'Replaces this course.':'You keep this course.'}</span></span><em>${inr(o.price)}</em></div>`}
+function personas(){const srcs=[...new Set(offersInto(S.cur).map(o=>o.source))];return [{id:'new',label:'New student',owns:{}},...srcs.map(s=>({id:'s:'+s,label:'Owns '+title(s),owns:{[s]:{left:200}}})),{id:'self200',label:'Owns this, 200 days left',owns:{[S.cur]:{left:200}}},{id:'self20',label:'Owns this, 20 days left',owns:{[S.cur]:{left:20}}},{id:'lapsed',label:'Ended 10 days ago',owns:{[S.cur]:{left:-10}}}]}
+const persona=()=>personas().find(p=>p.id===S.persona)||personas()[0];
+function preview(){
+  const c=C(),p=persona(),own=p.owns[S.cur],i=c.info;let inner='';
+  if(own){const e=ext(c),lapsed=own.left<0,offer=c.ext.on&&(lapsed||own.left<=e.win);
+    inner+=`<div class="meta">${lapsed?`Ended ${-own.left} days ago`:`You own this. ${own.left} days left.`}</div>`;
+    if(offer)inner+=`<div class="price">${inr(e.amount)}</div><div class="meta">Extend by ${vtext(e.v)}</div><span class="cta">Extend</span>`;
+    else inner+=lapsed?'<span class="cta dis">Access ended</span>':'<span class="cta ghost">Open course</span>';
+    if(!lapsed&&c.exch.on&&!c.incl.combo&&c.exch.targets.length)inner+=`<div class="minis">${c.exch.targets.map(t=>`<div class="mini"><span>Exchange to ${esc(title(t))}</span><em>Free</em></div>`).join('')}</div>`;
+    const out=offersOut(S.cur);if(!lapsed&&out.length)inner+=`<div class="minis">${out.map(strip).join('')}</div>`;
+  }else{
+    const best=offersInto(S.cur).filter(o=>p.owns[o.source]).sort((a,b)=>a.price-b.price)[0];
+    const price=Number(c.base.price)||0,mrp=Number(c.base.mrp)||0,open=c.settings.status==='active'&&c.base.allow;
+    if(c.settings.free)inner+='<div class="price">Free</div><span class="cta">Start learning</span>';
+    else if(open&&!price&&!best)inner+='<div class="meta">Available only inside a combo</div><span class="cta dis">View combos</span>';
+    else if(!open&&!best)inner+=`<div class="price">${price?inr(price):'Price not set'}</div><div class="meta">${!c.base.allow?'Admission closed':c.settings.status==='draft'?'Draft':'Off sale'}</div><span class="cta dis">Not on sale</span>`;
+    else if(best){const pct=price>best.price?Math.round((1-best.price/price)*100):0;inner+=`<div class="price">${inr(best.price)}${price>best.price?`<s>${inr(price)}</s><span class="offp">${pct}% OFF</span>`:''}</div><div class="meta">${best.kind==='upgrade'?`Replaces ${esc(title(best.source))}.`:`You keep ${esc(title(best.source))}.`} ${vtext(best.v)}.</div><span class="cta">${best.kind==='upgrade'?'Upgrade':'Add'}</span>`}
+    else if(c.base.multi&&c.base.more.length)inner+=`<div class="minis">${lengths(c).map((o,n)=>`<div class="mini" ${n?'':'style="border-color:var(--ink)"'}><span>${vtext(o.v)}</span><em>${inr(o.price)}</em></div>`).join('')}</div><span class="cta">Buy Now</span>`;
+    else{const pct=mrp>price?Math.round((1-price/mrp)*100):0;inner+=`<div class="price">${inr(price)}${mrp>price?`<s>${inr(mrp)}</s><span class="offp">${pct}% OFF</span>`:''}</div><div class="meta">Valid ${vtext(c.base.v)}</div><span class="cta">Buy Now</span>`}
+    if(c.coupons.on&&c.coupons.list.length&&!c.settings.free&&open)inner+=`<div class="chips">${c.coupons.list.map(x=>`<span class="coupon">${esc(x)}</span>${c.coupons.timer[x]?`<span class="timer" data-ends="${COUPONS[x]}">${left(COUPONS[x])}</span>`:''}`).join('')}</div>`;
+  }
+  const subs=c.incl.combo&&c.incl.subs.length?`<div class="minis"><span class="sect">Sub Courses</span>${c.incl.subs.map(s=>`<div class="mini"><span>${esc(title(s))}</span><em>View</em></div>`).join('')}</div>`:'';
+  const best={};Object.keys(p.owns).flatMap(offersOut).filter(o=>!p.owns[o.target]).forEach(o=>{if(!best[o.target]||o.price<best[o.target].price)best[o.target]=o});
+  const others=Object.keys(p.owns).filter(s=>s!==S.cur).map(s=>{const os=Object.values(best).filter(o=>o.source===s);return os.length?`<div class="panel stu"><span class="sect">On ${esc(title(s))}</span><div class="minis">${os.map(strip).join('')}</div></div>`:''}).join('');
+  return `<label for="who" class="small">Preview as<select id="who" data-act-change="persona">${personas().map(x=>`<option value="${x.id}" ${persona().id===x.id?'selected':''}>${esc(x.label)}</option>`).join('')}</select></label>
+  <div class="panel stu">${i.web||i.app?`<div class="ban">${esc(title(S.cur))}</div>`:'<div class="ban none">No banner</div>'}<h4>${esc(title(S.cur))}</h4>${i.short?`<div class="meta">${esc(i.short)}</div>`:''}${inner}${subs}</div>${others}`;
+}
+
+function live(){
+  const c=C();
+  document.querySelectorAll('[data-sum]').forEach(el=>{const k=el.dataset.sum;if(k.startsWith('step')){el.textContent=stepSum(+k.slice(4))}else el.textContent=ruleOf(k).sum(c)});
+  $('head').textContent=heading();
+  $('side').innerHTML=preview();
+}
+const heading=()=>S.cur==='fresh'?title(S.cur):'Edit: '+title(S.cur);
+function render(){
+  $('top').innerHTML=`<h1 id="head">${esc(heading())}</h1><span class="grow"></span><label class="row" for="course" style="flex-direction:row;font-weight:400"><span class="small">Sample</span><select id="course" data-act-change="course" style="width:230px;height:30px">${Object.keys(S.C).map(k=>`<option value="${k}" ${S.cur===k?'selected':''}>${esc(title(k))}</option>`).join('')}</select></label><button class="btn" data-act="toast" data-m="Closed without saving.">Close</button><button class="btn pri" data-act="save">Save</button>`;
+  $('layout').className='layout a';
+  $('main').innerHTML=variantA();
+  $('side').innerHTML=preview();
+}
+function toast(m){document.querySelectorAll('.toast').forEach(x=>x.remove());const t=document.createElement('div');t.className='toast';t.textContent=m;document.body.append(t);setTimeout(()=>t.remove(),2600)}
+const goStep=n=>{S.step=n;S.tried=false;S.opens.clear();render();window.scrollTo(0,0)};
+function turn(p,c){set(p,!get(p));
+  if(p==='base.multi'&&get(p)&&!c.base.more.length)c.base.more.push({price:c.base.price,mrp:c.base.mrp,v:V(3,'Years')});
+  if(p==='add.on'&&get(p)&&!c.add.rows.length)c.add.rows.push({dst:'',price:200,v:V(2,'Years')});
+  if(p==='upg.on'&&get(p)&&!c.upg.rows.length)c.upg.rows.push({dst:'',price:500,v:V(2,'Years')});
+  const r=ALL.find(x=>x.p===p);if(r&&r.ed){get(p)?S.opens.add(r.k):S.opens.delete(r.k)}
+  render()}
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-act]');if(!t)return;
+  const a=t.dataset.act,c=C();
+  const go={
+    step(){goStep(+t.dataset.n)},
+    next(){if(S.step===1&&missing().length){S.tried=true;return render()}if(!c.saved){c.saved=true;toast('Draft saved.')}goStep(S.step+1)},
+    back(){goStep(S.step-1)},
+    save(){if(missing().length){S.step=1;S.tried=true;return render()}c.saved=true;toast('Saved.');render()},
+    toast(){toast(t.dataset.m)},
+    row(){const r=ruleOf(t.dataset.k);if(r.p&&!ruleOn(r,c))return turn(r.p,c);if(r.ed){S.opens.has(r.k)?S.opens.delete(r.k):S.opens.add(r.k);return render()}if(r.p)turn(r.p,c)},
+    expandall(){rulesFor(S.step).filter(r=>r.ed&&ruleOn(r,c)).forEach(r=>S.opens.add(r.k));render()},
+    collapseall(){S.opens.clear();render()},
+    flip(){turn(t.dataset.p,c)},
+    rm(){const l=get(t.dataset.p);l.splice(l.indexOf(t.dataset.id),1);render()},
+    goto(){S.cur=t.dataset.id;S.persona='new';S.step=2;S.opens.clear();render();window.scrollTo(0,0)},
+    rmat(){get(t.dataset.p).splice(+t.dataset.i,1);render()},
+    addlen(){c.base.more.push({price:c.base.price,mrp:c.base.mrp,v:V(3,'Years')});render()},
+    addrow(){get(t.dataset.p).push({dst:'',price:t.dataset.p==='upg.rows'?500:200,v:V(2,'Years')});render()},
+    addclasses(){c.content.classes=40;c.content.pdfs=30;render()},
+    pushhl(){c.content.highlights.push({title:'',content:''});render()},
+    pushtt(){c.content.schedule.push({topic:'',time:''});render()},
+  }[a];
+  if(go)go();
+});
+/* drag to reorder, by the handle only so text in a row's inputs can still be selected. Pointer events, so mouse and touch both work. */
+let drag=null;
+const moveItem=(p,from,to)=>{const l=get(p);if(to<0||to>=l.length||from===to)return false;l.splice(to,0,l.splice(from,1)[0]);return true};
+const clearMarks=()=>document.querySelectorAll('.over-top,.over-bottom,.dragging').forEach(x=>x.classList.remove('over-top','over-bottom','dragging'));
+document.addEventListener('pointerdown',e=>{const h=e.target.closest&&e.target.closest('.handle');if(!h)return;e.preventDefault();const row=h.closest('[data-dp]');drag={p:row.dataset.dp,i:+row.dataset.i};row.classList.add('dragging');document.body.style.cursor='grabbing'});
+document.addEventListener('pointermove',e=>{if(!drag)return;const rows=[...document.querySelectorAll(`[data-dp="${drag.p}"]`)];let row=null,to=rows.length;for(const r of rows){const b=r.getBoundingClientRect();if(e.clientY<b.top+b.height/2){row=r;to=+r.dataset.i;break}}document.querySelectorAll('.over-top,.over-bottom').forEach(x=>x.classList.remove('over-top','over-bottom'));if(row)row.classList.add('over-top');else rows[rows.length-1].classList.add('over-bottom');drag.to=to});
+document.addEventListener('pointerup',()=>{if(!drag)return;const d=drag;drag=null;document.body.style.cursor='';clearMarks();if(d.to===undefined)return;const to=d.to>d.i?d.to-1:d.to;if(moveItem(d.p,d.i,to))render()});
+document.addEventListener('pointercancel',()=>{drag=null;document.body.style.cursor='';clearMarks()});
+document.addEventListener('keydown',e=>{const h=e.target.closest&&e.target.closest('.handle');if(!h||(e.key!=='ArrowUp'&&e.key!=='ArrowDown'))return;e.preventDefault();const row=h.closest('[data-dp]'),p=row.dataset.dp,i=+row.dataset.i,to=i+(e.key==='ArrowUp'?-1:1);if(moveItem(p,i,to)){render();const n=document.querySelector(`[data-dp="${p}"][data-i="${to}"] .handle`);if(n)n.focus()}});
+document.addEventListener('input',e=>{const el=e.target;if(el.dataset.b===undefined||(el.type!=='text'&&el.tagName!=='TEXTAREA'))return;set(el.dataset.b,el.value);live()});
+document.addEventListener('change',e=>{
+  const el=e.target;
+  if(el.dataset.actChange==='course'){S.cur=el.value;S.persona='new';S.step=S.cur==='fresh'?1:2;S.opens.clear();S.tried=false;render();window.scrollTo(0,0);return}
+  if(el.dataset.actChange==='persona'){S.persona=el.value;live();return}
+  if(el.dataset.add!==undefined){if(el.value){get(el.dataset.add).push(el.value);render()}return}
+  if(el.dataset.tag){if(el.value.trim())C().info.tags.push(el.value.trim());render();return}
+  if(el.dataset.b==='info.main')C().info.cat='';
+  if(el.dataset.b!==undefined&&el.type!=='text'&&el.tagName!=='TEXTAREA'){set(el.dataset.b,el.value);render()}
+});
+setInterval(()=>document.querySelectorAll('[data-ends]').forEach(el=>{el.textContent=left(+el.dataset.ends)}),1000);
+render();
+</script>
+</body>
+</html>

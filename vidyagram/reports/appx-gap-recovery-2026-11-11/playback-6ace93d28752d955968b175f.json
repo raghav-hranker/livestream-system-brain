@@ -1,0 +1,92 @@
+{
+  "at": "2026-11-11T11:34:06.664Z",
+  "assets": [
+    {
+      "at": "2026-11-11T11:34:01.496Z",
+      "classId": "6ace93d28752d955968b175f",
+      "adminPreview": true,
+      "learnerViewWrites": 0,
+      "mintHttp": 200,
+      "renditions": [
+        {
+          "playlistHttp": 200,
+          "samples": [
+            {
+              "index": 0,
+              "http": 206,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 150,
+              "http": 206,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 299,
+              "http": 206,
+              "bytes": 1024,
+              "tsSync": true
+            }
+          ],
+          "ok": true,
+          "segments": 300
+        },
+        {
+          "playlistHttp": 200,
+          "samples": [
+            {
+              "index": 0,
+              "http": 206,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 150,
+              "http": 206,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 299,
+              "http": 206,
+              "bytes": 1024,
+              "tsSync": true
+            }
+          ],
+          "ok": true,
+          "segments": 300
+        },
+        {
+          "playlistHttp": 200,
+          "samples": [
+            {
+              "index": 0,
+              "http": 206,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 150,
+              "http": 206,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 299,
+              "http": 206,
+              "bytes": 1024,
+              "tsSync": true
+            }
+          ],
+          "ok": true,
+          "segments": 300
+        }
+      ],
+      "ok": true,
+      "masterHttp": 200
+    }
+  ],
+  "ok": true
+}

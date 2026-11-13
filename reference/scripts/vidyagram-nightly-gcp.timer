@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Vidyagram catalogue sync daily at 02:30 IST
+
+[Timer]
+OnCalendar=*-*-* 02:30:00 Asia/Kolkata
+Persistent=true
+Unit=vidyagram-nightly-gcp.service
+
+[Install]
+WantedBy=timers.target

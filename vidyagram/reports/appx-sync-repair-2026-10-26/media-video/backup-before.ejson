@@ -1,0 +1,374 @@
+{
+  "at": {
+    "$date": {
+      "$numberLong": "1793018863643"
+    }
+  },
+  "classes": [
+    {
+      "_id": {
+        "$oid": "6adc01b520e78c9f77dbc7b6"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "isChat": false,
+      "isFree": false,
+      "teacherName": "Vidyagram Team",
+      "priority": {
+        "$numberInt": "0"
+      },
+      "isLive": false,
+      "isYoutubeRedirect": false,
+      "isShort": false,
+      "isTopper": false,
+      "isPrivate": false,
+      "image": "https://hranker-server-v2.b-cdn.net/781/classes/thumbnails/vid_armaths-data_4656486-1792746126.png",
+      "title": "Geometry 03 (2) · GEOMETRY (2)",
+      "mainCategory": {
+        "$oid": "6ace4d459e33840b2256c218"
+      },
+      "category": {
+        "$oid": "6ace4d469e33840b2256c21b"
+      },
+      "section": {
+        "$oid": "6ace4d469e33840b2256c21f"
+      },
+      "topic": null,
+      "subTopic": null,
+      "seriesIds": [],
+      "pdfIds": [
+        {
+          "$oid": "6ad699bae36abd47ea38d5a5"
+        }
+      ],
+      "viewCount": {
+        "$numberInt": "0"
+      },
+      "uniqueViewCount": {
+        "$numberInt": "0"
+      },
+      "apxAssetKey": "vid:armaths-data:4656486-1792746126",
+      "seriesAssignments": [],
+      "pdfAssignments": [
+        {
+          "_id": {
+            "$oid": "6adc038c20e78c9f77dbfc1b"
+          },
+          "pdfId": {
+            "$oid": "6ad699bae36abd47ea38d5a5"
+          },
+          "priority": {
+            "$numberInt": "1"
+          },
+          "isFree": false
+        }
+      ],
+      "mp4Recordings": [],
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1792803253788"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1792803253788"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6adc01b820e78c9f77dbc7bd"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "isChat": false,
+      "isFree": false,
+      "teacherName": "Vidyagram Team",
+      "priority": {
+        "$numberInt": "0"
+      },
+      "isLive": false,
+      "isYoutubeRedirect": false,
+      "isShort": false,
+      "isTopper": false,
+      "isPrivate": false,
+      "image": "https://hranker-server-v2.b-cdn.net/781/classes/thumbnails/vid_armaths-data_4657426-1792753322.png",
+      "title": "Geometry 04 (2) · GEOMETRY (2)",
+      "mainCategory": {
+        "$oid": "6ace4d459e33840b2256c218"
+      },
+      "category": {
+        "$oid": "6ace4d469e33840b2256c21b"
+      },
+      "section": {
+        "$oid": "6ace4d469e33840b2256c21f"
+      },
+      "topic": null,
+      "subTopic": null,
+      "seriesIds": [],
+      "pdfIds": [
+        {
+          "$oid": "6adc030020e78c9f77dbcedc"
+        }
+      ],
+      "viewCount": {
+        "$numberInt": "0"
+      },
+      "uniqueViewCount": {
+        "$numberInt": "0"
+      },
+      "apxAssetKey": "vid:armaths-data:4657426-1792753322",
+      "seriesAssignments": [],
+      "pdfAssignments": [
+        {
+          "_id": {
+            "$oid": "6adc038c20e78c9f77dbfc1d"
+          },
+          "pdfId": {
+            "$oid": "6adc030020e78c9f77dbcedc"
+          },
+          "priority": {
+            "$numberInt": "1"
+          },
+          "isFree": false
+        }
+      ],
+      "mp4Recordings": [],
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1792803256966"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1792803256966"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      }
+    }
+  ],
+  "oldJobs": [
+    {
+      "_id": {
+        "$oid": "6ad6995fc9735682f0bf9865"
+      },
+      "classId": {
+        "$oid": "6ad6995fe36abd47ea38d533"
+      },
+      "__v": {
+        "$numberInt": "0"
+      },
+      "apxClassId": "193547",
+      "apxCourseId": {
+        "$oid": "6ace395cc9735682f048a449"
+      },
+      "attempts": {
+        "$numberInt": "1"
+      },
+      "course_id": "160",
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1792448863160"
+        }
+      },
+      "error": null,
+      "status": "done",
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1792449562426"
+        }
+      },
+      "video_id": "193547",
+      "video_url": "https://transcoded-videos-v2.classx.co.in/videos/armaths-data/4636285-1792429697/hls-993dca/1080p/master-872082.9532805796.m3u8",
+      "progress": {
+        "phase": "complete",
+        "rungs": {
+          "240p": {
+            "segsTotal": {
+              "$numberInt": "581"
+            },
+            "segsDone": {
+              "$numberInt": "581"
+            },
+            "bytes": {
+              "$numberInt": "179740972"
+            }
+          },
+          "360p": {
+            "segsTotal": {
+              "$numberInt": "574"
+            },
+            "segsDone": {
+              "$numberInt": "574"
+            },
+            "bytes": {
+              "$numberInt": "324395128"
+            }
+          },
+          "480p": {
+            "segsTotal": {
+              "$numberInt": "577"
+            },
+            "segsDone": {
+              "$numberInt": "577"
+            },
+            "bytes": {
+              "$numberInt": "466405440"
+            }
+          },
+          "1080p": {
+            "segsTotal": {
+              "$numberInt": "568"
+            },
+            "segsDone": {
+              "$numberInt": "568"
+            },
+            "bytes": {
+              "$numberInt": "1148774940"
+            }
+          }
+        },
+        "classLink": "https://vidyagram-recorded.hranker.org/781/6ad6995fe36abd47ea38d533/hls/master.m3u8",
+        "error": null
+      },
+      "progressUpdatedAt": {
+        "$date": {
+          "$numberLong": "1792449562426"
+        }
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6adaafe4c9735682f031a915"
+      },
+      "classId": {
+        "$oid": "6adaafe4d8a68cd04b9b6618"
+      },
+      "__v": {
+        "$numberInt": "0"
+      },
+      "apxClassId": "193550",
+      "apxCourseId": {
+        "$oid": "6ace395cc9735682f048a449"
+      },
+      "attempts": {
+        "$numberInt": "1"
+      },
+      "course_id": "160",
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1792716773010"
+        }
+      },
+      "error": null,
+      "status": "done",
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1792717744728"
+        }
+      },
+      "video_id": "193550",
+      "video_url": "https://transcoded-videos-v2.classx.co.in/videos/armaths-data/4653024-1792687692/hls-de38df/1080p/master-4456700.951694816.m3u8",
+      "progress": {
+        "phase": "complete",
+        "rungs": {
+          "480p": {
+            "segsTotal": {
+              "$numberInt": "468"
+            },
+            "segsDone": {
+              "$numberInt": "468"
+            },
+            "bytes": {
+              "$numberInt": "393759420"
+            }
+          },
+          "360p": {
+            "segsTotal": {
+              "$numberInt": "467"
+            },
+            "segsDone": {
+              "$numberInt": "467"
+            },
+            "bytes": {
+              "$numberInt": "272980512"
+            }
+          },
+          "240p": {
+            "segsTotal": {
+              "$numberInt": "478"
+            },
+            "segsDone": {
+              "$numberInt": "478"
+            },
+            "bytes": {
+              "$numberInt": "134574724"
+            }
+          },
+          "1080p": {
+            "segsTotal": {
+              "$numberInt": "466"
+            },
+            "segsDone": {
+              "$numberInt": "466"
+            },
+            "bytes": {
+              "$numberInt": "961097360"
+            }
+          }
+        },
+        "classLink": "https://vidyagram-recorded.hranker.org/781/6adaafe4d8a68cd04b9b6618/hls/master.m3u8",
+        "error": null
+      },
+      "progressUpdatedAt": {
+        "$date": {
+          "$numberLong": "1792717744728"
+        }
+      }
+    }
+  ],
+  "ledger": [],
+  "currentRows": [],
+  "courses": [],
+  "sourceRows": [
+    {
+      "_id": {
+        "$oid": "6ad697e8c9735682f0bf8a92"
+      },
+      "apxCourseId": "160",
+      "rowId": "193547",
+      "lastSeenRunId": "daily-2026-10-26"
+    },
+    {
+      "_id": {
+        "$oid": "6ad697e8c9735682f0bf8a94"
+      },
+      "apxCourseId": "160",
+      "rowId": "193550",
+      "lastSeenRunId": "daily-2026-10-26"
+    },
+    {
+      "_id": {
+        "$oid": "6ad69819c9735682f0bf8c5d"
+      },
+      "apxCourseId": "161",
+      "rowId": "193541",
+      "lastSeenRunId": "daily-2026-10-26"
+    },
+    {
+      "_id": {
+        "$oid": "6ad69819c9735682f0bf8c5f"
+      },
+      "apxCourseId": "161",
+      "rowId": "193549",
+      "lastSeenRunId": "daily-2026-10-26"
+    }
+  ]
+}

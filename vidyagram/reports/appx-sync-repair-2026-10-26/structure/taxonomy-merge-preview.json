@@ -1,0 +1,3200 @@
+{
+  "summary": {
+    "createdAt": "2026-10-26T13:47:18.323Z",
+    "mode": "offline preview; UNAPPLIED",
+    "caseCollisionGroups": 4,
+    "duplicateNodesRetainedAsAliases": 5,
+    "placementDocuments": 38,
+    "fieldChanges": 84,
+    "adminAmbiguities": 0,
+    "preservedExactNameTestSectionGroups": 6,
+    "guardRequirements": [
+      "Refresh exact full live beforeimages and EJSON backup in transaction before application.",
+      "Run reference census within transaction, fail on any newly observed class/PDF/question/test/history references to retired IDs.",
+      "Repoint all live content before retiring aliases; retain old taxonomy documents and parent snapshots so old history IDs remain resolvable.",
+      "No questionbank/test namespace merges; never globally merge by normalized name.",
+      "No node deletion. No shared Class edits. No course160/161 rows.",
+      "After repoint, old PHYSICS child topic remains historical retired alias under retired PHYSICS section; no active content may reference either."
+    ]
+  },
+  "mappings": [
+    {
+      "kind": "sections",
+      "from": "6ad5f99b308a95d039c2f81b",
+      "to": "6ad5f944308a95d039c2aae3",
+      "reason": "PHYSICS -> Physics"
+    },
+    {
+      "kind": "topics",
+      "from": "6ad5f99b308a95d039c2f81f",
+      "to": "6ad5fa77308a95d039c37527",
+      "reason": "THERMODYNAMICS child -> existing Thermodynamics under Physics"
+    },
+    {
+      "kind": "topics",
+      "from": "6ad5f8f0308a95d039c26850",
+      "to": "6ad5f90c308a95d039c2842b",
+      "reason": "BOAT & STREAM -> Boat & Stream"
+    },
+    {
+      "kind": "topics",
+      "from": "6ad5f93b308a95d039c2a98f",
+      "to": "6ad9c9bdff6d062041767e13",
+      "reason": "CAUSE AND EFFECT -> Cause and Effect"
+    },
+    {
+      "kind": "topics",
+      "from": "6ad5f93e308a95d039c2aa0d",
+      "to": "6adc021a20e78c9f77dbca9c",
+      "reason": "PRESIDENT -> President"
+    }
+  ],
+  "changes": [
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f8f1308a95d039c26a84",
+      "course": "5",
+      "before": {
+        "_id": "6ad5f8f1308a95d039c26a84",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90918752d955968aee63",
+        "priority": 1352,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Boat & Stream Class 01",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f8db308a95d039c25dae",
+        "topic": "6ad5f8f0308a95d039c26850",
+        "subTopic": null,
+        "sectionName": "MATHEMATICS",
+        "topicName": "BOAT & STREAM",
+        "addedAt": "2026-10-19T11:03:13.898Z",
+        "createdAt": "2026-10-19T11:03:13.898Z",
+        "updatedAt": "2026-10-19T11:03:13.898Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6ad5f90c308a95d039c2842b",
+        "topicName": "Boat & Stream"
+      },
+      "guard": {
+        "_id": "6ad5f8f1308a95d039c26a84",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90918752d955968aee63",
+        "updatedAt": "2026-10-19T11:03:13.898Z",
+        "topic": "6ad5f8f0308a95d039c26850",
+        "topicName": "BOAT & STREAM"
+      },
+      "after": {
+        "_id": "6ad5f8f1308a95d039c26a84",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90918752d955968aee63",
+        "priority": 1352,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Boat & Stream Class 01",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f8db308a95d039c25dae",
+        "topic": "6ad5f90c308a95d039c2842b",
+        "subTopic": null,
+        "sectionName": "MATHEMATICS",
+        "topicName": "Boat & Stream",
+        "addedAt": "2026-10-19T11:03:13.898Z",
+        "createdAt": "2026-10-19T11:03:13.898Z",
+        "updatedAt": "2026-10-19T11:03:13.898Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "BOAT & STREAM -> Boat & Stream"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f8f1308a95d039c26a84",
+          "topic": "6ad5f90c308a95d039c2842b",
+          "topicName": "Boat & Stream"
+        },
+        "restore": {
+          "topic": "6ad5f8f0308a95d039c26850",
+          "topicName": "BOAT & STREAM"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f8f1308a95d039c26a85",
+      "course": "5",
+      "before": {
+        "_id": "6ad5f8f1308a95d039c26a85",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90928752d955968aee6a",
+        "priority": 1353,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "boat-stream-class-01",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f8db308a95d039c25dae",
+        "topic": "6ad5f8f0308a95d039c26850",
+        "subTopic": null,
+        "sectionName": "MATHEMATICS",
+        "topicName": "BOAT & STREAM",
+        "addedAt": "2026-10-19T11:03:13.898Z",
+        "createdAt": "2026-10-19T11:03:13.898Z",
+        "updatedAt": "2026-10-19T11:03:13.898Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6ad5f90c308a95d039c2842b",
+        "topicName": "Boat & Stream"
+      },
+      "guard": {
+        "_id": "6ad5f8f1308a95d039c26a85",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90928752d955968aee6a",
+        "updatedAt": "2026-10-19T11:03:13.898Z",
+        "topic": "6ad5f8f0308a95d039c26850",
+        "topicName": "BOAT & STREAM"
+      },
+      "after": {
+        "_id": "6ad5f8f1308a95d039c26a85",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90928752d955968aee6a",
+        "priority": 1353,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "boat-stream-class-01",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f8db308a95d039c25dae",
+        "topic": "6ad5f90c308a95d039c2842b",
+        "subTopic": null,
+        "sectionName": "MATHEMATICS",
+        "topicName": "Boat & Stream",
+        "addedAt": "2026-10-19T11:03:13.898Z",
+        "createdAt": "2026-10-19T11:03:13.898Z",
+        "updatedAt": "2026-10-19T11:03:13.898Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "BOAT & STREAM -> Boat & Stream"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f8f1308a95d039c26a85",
+          "topic": "6ad5f90c308a95d039c2842b",
+          "topicName": "Boat & Stream"
+        },
+        "restore": {
+          "topic": "6ad5f8f0308a95d039c26850",
+          "topicName": "BOAT & STREAM"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f8f1308a95d039c26a86",
+      "course": "5",
+      "before": {
+        "_id": "6ad5f8f1308a95d039c26a86",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90928752d955968aee71",
+        "priority": 1354,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Boat & Stream Class 02",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f8db308a95d039c25dae",
+        "topic": "6ad5f8f0308a95d039c26850",
+        "subTopic": null,
+        "sectionName": "MATHEMATICS",
+        "topicName": "BOAT & STREAM",
+        "addedAt": "2026-10-19T11:03:13.898Z",
+        "createdAt": "2026-10-19T11:03:13.898Z",
+        "updatedAt": "2026-10-19T11:03:13.898Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6ad5f90c308a95d039c2842b",
+        "topicName": "Boat & Stream"
+      },
+      "guard": {
+        "_id": "6ad5f8f1308a95d039c26a86",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90928752d955968aee71",
+        "updatedAt": "2026-10-19T11:03:13.898Z",
+        "topic": "6ad5f8f0308a95d039c26850",
+        "topicName": "BOAT & STREAM"
+      },
+      "after": {
+        "_id": "6ad5f8f1308a95d039c26a86",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90928752d955968aee71",
+        "priority": 1354,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Boat & Stream Class 02",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f8db308a95d039c25dae",
+        "topic": "6ad5f90c308a95d039c2842b",
+        "subTopic": null,
+        "sectionName": "MATHEMATICS",
+        "topicName": "Boat & Stream",
+        "addedAt": "2026-10-19T11:03:13.898Z",
+        "createdAt": "2026-10-19T11:03:13.898Z",
+        "updatedAt": "2026-10-19T11:03:13.898Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "BOAT & STREAM -> Boat & Stream"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f8f1308a95d039c26a86",
+          "topic": "6ad5f90c308a95d039c2842b",
+          "topicName": "Boat & Stream"
+        },
+        "restore": {
+          "topic": "6ad5f8f0308a95d039c26850",
+          "topicName": "BOAT & STREAM"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f8f1308a95d039c26a87",
+      "course": "5",
+      "before": {
+        "_id": "6ad5f8f1308a95d039c26a87",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90938752d955968aee78",
+        "priority": 1355,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "boat-stream-class-02",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f8db308a95d039c25dae",
+        "topic": "6ad5f8f0308a95d039c26850",
+        "subTopic": null,
+        "sectionName": "MATHEMATICS",
+        "topicName": "BOAT & STREAM",
+        "addedAt": "2026-10-19T11:03:13.898Z",
+        "createdAt": "2026-10-19T11:03:13.898Z",
+        "updatedAt": "2026-10-19T11:03:13.898Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6ad5f90c308a95d039c2842b",
+        "topicName": "Boat & Stream"
+      },
+      "guard": {
+        "_id": "6ad5f8f1308a95d039c26a87",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90938752d955968aee78",
+        "updatedAt": "2026-10-19T11:03:13.898Z",
+        "topic": "6ad5f8f0308a95d039c26850",
+        "topicName": "BOAT & STREAM"
+      },
+      "after": {
+        "_id": "6ad5f8f1308a95d039c26a87",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90938752d955968aee78",
+        "priority": 1355,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "boat-stream-class-02",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f8db308a95d039c25dae",
+        "topic": "6ad5f90c308a95d039c2842b",
+        "subTopic": null,
+        "sectionName": "MATHEMATICS",
+        "topicName": "Boat & Stream",
+        "addedAt": "2026-10-19T11:03:13.898Z",
+        "createdAt": "2026-10-19T11:03:13.898Z",
+        "updatedAt": "2026-10-19T11:03:13.898Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "BOAT & STREAM -> Boat & Stream"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f8f1308a95d039c26a87",
+          "topic": "6ad5f90c308a95d039c2842b",
+          "topicName": "Boat & Stream"
+        },
+        "restore": {
+          "topic": "6ad5f8f0308a95d039c26850",
+          "topicName": "BOAT & STREAM"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f8f1308a95d039c26a88",
+      "course": "5",
+      "before": {
+        "_id": "6ad5f8f1308a95d039c26a88",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90948752d955968aee7f",
+        "priority": 1356,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Boat & Stream Class 03",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f8db308a95d039c25dae",
+        "topic": "6ad5f8f0308a95d039c26850",
+        "subTopic": null,
+        "sectionName": "MATHEMATICS",
+        "topicName": "BOAT & STREAM",
+        "addedAt": "2026-10-19T11:03:13.898Z",
+        "createdAt": "2026-10-19T11:03:13.898Z",
+        "updatedAt": "2026-10-19T11:03:13.898Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6ad5f90c308a95d039c2842b",
+        "topicName": "Boat & Stream"
+      },
+      "guard": {
+        "_id": "6ad5f8f1308a95d039c26a88",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90948752d955968aee7f",
+        "updatedAt": "2026-10-19T11:03:13.898Z",
+        "topic": "6ad5f8f0308a95d039c26850",
+        "topicName": "BOAT & STREAM"
+      },
+      "after": {
+        "_id": "6ad5f8f1308a95d039c26a88",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90948752d955968aee7f",
+        "priority": 1356,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Boat & Stream Class 03",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f8db308a95d039c25dae",
+        "topic": "6ad5f90c308a95d039c2842b",
+        "subTopic": null,
+        "sectionName": "MATHEMATICS",
+        "topicName": "Boat & Stream",
+        "addedAt": "2026-10-19T11:03:13.898Z",
+        "createdAt": "2026-10-19T11:03:13.898Z",
+        "updatedAt": "2026-10-19T11:03:13.898Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "BOAT & STREAM -> Boat & Stream"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f8f1308a95d039c26a88",
+          "topic": "6ad5f90c308a95d039c2842b",
+          "topicName": "Boat & Stream"
+        },
+        "restore": {
+          "topic": "6ad5f8f0308a95d039c26850",
+          "topicName": "BOAT & STREAM"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f8f1308a95d039c26a89",
+      "course": "5",
+      "before": {
+        "_id": "6ad5f8f1308a95d039c26a89",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90968752d955968aee86",
+        "priority": 1357,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "boat-stream-class-03",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f8db308a95d039c25dae",
+        "topic": "6ad5f8f0308a95d039c26850",
+        "subTopic": null,
+        "sectionName": "MATHEMATICS",
+        "topicName": "BOAT & STREAM",
+        "addedAt": "2026-10-19T11:03:13.898Z",
+        "createdAt": "2026-10-19T11:03:13.898Z",
+        "updatedAt": "2026-10-19T11:03:13.898Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6ad5f90c308a95d039c2842b",
+        "topicName": "Boat & Stream"
+      },
+      "guard": {
+        "_id": "6ad5f8f1308a95d039c26a89",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90968752d955968aee86",
+        "updatedAt": "2026-10-19T11:03:13.898Z",
+        "topic": "6ad5f8f0308a95d039c26850",
+        "topicName": "BOAT & STREAM"
+      },
+      "after": {
+        "_id": "6ad5f8f1308a95d039c26a89",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90968752d955968aee86",
+        "priority": 1357,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "boat-stream-class-03",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f8db308a95d039c25dae",
+        "topic": "6ad5f90c308a95d039c2842b",
+        "subTopic": null,
+        "sectionName": "MATHEMATICS",
+        "topicName": "Boat & Stream",
+        "addedAt": "2026-10-19T11:03:13.898Z",
+        "createdAt": "2026-10-19T11:03:13.898Z",
+        "updatedAt": "2026-10-19T11:03:13.898Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "BOAT & STREAM -> Boat & Stream"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f8f1308a95d039c26a89",
+          "topic": "6ad5f90c308a95d039c2842b",
+          "topicName": "Boat & Stream"
+        },
+        "restore": {
+          "topic": "6ad5f8f0308a95d039c26850",
+          "topicName": "BOAT & STREAM"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f8f1308a95d039c26a8a",
+      "course": "5",
+      "before": {
+        "_id": "6ad5f8f1308a95d039c26a8a",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90978752d955968aee8d",
+        "priority": 1358,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Boat & Stream Class 04",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f8db308a95d039c25dae",
+        "topic": "6ad5f8f0308a95d039c26850",
+        "subTopic": null,
+        "sectionName": "MATHEMATICS",
+        "topicName": "BOAT & STREAM",
+        "addedAt": "2026-10-19T11:03:13.899Z",
+        "createdAt": "2026-10-19T11:03:13.899Z",
+        "updatedAt": "2026-10-19T11:03:13.899Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6ad5f90c308a95d039c2842b",
+        "topicName": "Boat & Stream"
+      },
+      "guard": {
+        "_id": "6ad5f8f1308a95d039c26a8a",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90978752d955968aee8d",
+        "updatedAt": "2026-10-19T11:03:13.899Z",
+        "topic": "6ad5f8f0308a95d039c26850",
+        "topicName": "BOAT & STREAM"
+      },
+      "after": {
+        "_id": "6ad5f8f1308a95d039c26a8a",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90978752d955968aee8d",
+        "priority": 1358,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Boat & Stream Class 04",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f8db308a95d039c25dae",
+        "topic": "6ad5f90c308a95d039c2842b",
+        "subTopic": null,
+        "sectionName": "MATHEMATICS",
+        "topicName": "Boat & Stream",
+        "addedAt": "2026-10-19T11:03:13.899Z",
+        "createdAt": "2026-10-19T11:03:13.899Z",
+        "updatedAt": "2026-10-19T11:03:13.899Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "BOAT & STREAM -> Boat & Stream"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f8f1308a95d039c26a8a",
+          "topic": "6ad5f90c308a95d039c2842b",
+          "topicName": "Boat & Stream"
+        },
+        "restore": {
+          "topic": "6ad5f8f0308a95d039c26850",
+          "topicName": "BOAT & STREAM"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f8f1308a95d039c26a8b",
+      "course": "5",
+      "before": {
+        "_id": "6ad5f8f1308a95d039c26a8b",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90988752d955968aee94",
+        "priority": 1359,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "boat-stream-class-04",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f8db308a95d039c25dae",
+        "topic": "6ad5f8f0308a95d039c26850",
+        "subTopic": null,
+        "sectionName": "MATHEMATICS",
+        "topicName": "BOAT & STREAM",
+        "addedAt": "2026-10-19T11:03:13.899Z",
+        "createdAt": "2026-10-19T11:03:13.899Z",
+        "updatedAt": "2026-10-19T11:03:13.899Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6ad5f90c308a95d039c2842b",
+        "topicName": "Boat & Stream"
+      },
+      "guard": {
+        "_id": "6ad5f8f1308a95d039c26a8b",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90988752d955968aee94",
+        "updatedAt": "2026-10-19T11:03:13.899Z",
+        "topic": "6ad5f8f0308a95d039c26850",
+        "topicName": "BOAT & STREAM"
+      },
+      "after": {
+        "_id": "6ad5f8f1308a95d039c26a8b",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90988752d955968aee94",
+        "priority": 1359,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "boat-stream-class-04",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f8db308a95d039c25dae",
+        "topic": "6ad5f90c308a95d039c2842b",
+        "subTopic": null,
+        "sectionName": "MATHEMATICS",
+        "topicName": "Boat & Stream",
+        "addedAt": "2026-10-19T11:03:13.899Z",
+        "createdAt": "2026-10-19T11:03:13.899Z",
+        "updatedAt": "2026-10-19T11:03:13.899Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "BOAT & STREAM -> Boat & Stream"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f8f1308a95d039c26a8b",
+          "topic": "6ad5f90c308a95d039c2842b",
+          "topicName": "Boat & Stream"
+        },
+        "restore": {
+          "topic": "6ad5f8f0308a95d039c26850",
+          "topicName": "BOAT & STREAM"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f8f1308a95d039c26a8c",
+      "course": "5",
+      "before": {
+        "_id": "6ad5f8f1308a95d039c26a8c",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90998752d955968aee9b",
+        "priority": 1360,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Boat & Stream Class 05",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f8db308a95d039c25dae",
+        "topic": "6ad5f8f0308a95d039c26850",
+        "subTopic": null,
+        "sectionName": "MATHEMATICS",
+        "topicName": "BOAT & STREAM",
+        "addedAt": "2026-10-19T11:03:13.899Z",
+        "createdAt": "2026-10-19T11:03:13.899Z",
+        "updatedAt": "2026-10-19T11:03:13.899Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6ad5f90c308a95d039c2842b",
+        "topicName": "Boat & Stream"
+      },
+      "guard": {
+        "_id": "6ad5f8f1308a95d039c26a8c",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90998752d955968aee9b",
+        "updatedAt": "2026-10-19T11:03:13.899Z",
+        "topic": "6ad5f8f0308a95d039c26850",
+        "topicName": "BOAT & STREAM"
+      },
+      "after": {
+        "_id": "6ad5f8f1308a95d039c26a8c",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace90998752d955968aee9b",
+        "priority": 1360,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Boat & Stream Class 05",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f8db308a95d039c25dae",
+        "topic": "6ad5f90c308a95d039c2842b",
+        "subTopic": null,
+        "sectionName": "MATHEMATICS",
+        "topicName": "Boat & Stream",
+        "addedAt": "2026-10-19T11:03:13.899Z",
+        "createdAt": "2026-10-19T11:03:13.899Z",
+        "updatedAt": "2026-10-19T11:03:13.899Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "BOAT & STREAM -> Boat & Stream"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f8f1308a95d039c26a8c",
+          "topic": "6ad5f90c308a95d039c2842b",
+          "topicName": "Boat & Stream"
+        },
+        "restore": {
+          "topic": "6ad5f8f0308a95d039c26850",
+          "topicName": "BOAT & STREAM"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f8f1308a95d039c26a8d",
+      "course": "5",
+      "before": {
+        "_id": "6ad5f8f1308a95d039c26a8d",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace909a8752d955968aeea2",
+        "priority": 1361,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "boat-stream-class-05",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f8db308a95d039c25dae",
+        "topic": "6ad5f8f0308a95d039c26850",
+        "subTopic": null,
+        "sectionName": "MATHEMATICS",
+        "topicName": "BOAT & STREAM",
+        "addedAt": "2026-10-19T11:03:13.899Z",
+        "createdAt": "2026-10-19T11:03:13.899Z",
+        "updatedAt": "2026-10-19T11:03:13.899Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6ad5f90c308a95d039c2842b",
+        "topicName": "Boat & Stream"
+      },
+      "guard": {
+        "_id": "6ad5f8f1308a95d039c26a8d",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace909a8752d955968aeea2",
+        "updatedAt": "2026-10-19T11:03:13.899Z",
+        "topic": "6ad5f8f0308a95d039c26850",
+        "topicName": "BOAT & STREAM"
+      },
+      "after": {
+        "_id": "6ad5f8f1308a95d039c26a8d",
+        "course": "6ad5f8f1308a95d039c2686c",
+        "class": "6ace909a8752d955968aeea2",
+        "priority": 1361,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "boat-stream-class-05",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f8db308a95d039c25dae",
+        "topic": "6ad5f90c308a95d039c2842b",
+        "subTopic": null,
+        "sectionName": "MATHEMATICS",
+        "topicName": "Boat & Stream",
+        "addedAt": "2026-10-19T11:03:13.899Z",
+        "createdAt": "2026-10-19T11:03:13.899Z",
+        "updatedAt": "2026-10-19T11:03:13.899Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "BOAT & STREAM -> Boat & Stream"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f8f1308a95d039c26a8d",
+          "topic": "6ad5f90c308a95d039c2842b",
+          "topicName": "Boat & Stream"
+        },
+        "restore": {
+          "topic": "6ad5f8f0308a95d039c26850",
+          "topicName": "BOAT & STREAM"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f948308a95d039c2adcd",
+      "course": "22",
+      "before": {
+        "_id": "6ad5f948308a95d039c2adcd",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace944a8752d955968b1d32",
+        "priority": 957,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Cause and Effect",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f937308a95d039c2a8ff",
+        "topic": "6ad5f93b308a95d039c2a98f",
+        "subTopic": null,
+        "sectionName": "Reasoning",
+        "topicName": "CAUSE AND EFFECT",
+        "addedAt": "2026-10-19T11:04:40.204Z",
+        "createdAt": "2026-10-19T11:04:40.204Z",
+        "updatedAt": "2026-10-19T11:04:40.204Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6ad9c9bdff6d062041767e13",
+        "topicName": "Cause and Effect"
+      },
+      "guard": {
+        "_id": "6ad5f948308a95d039c2adcd",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace944a8752d955968b1d32",
+        "updatedAt": "2026-10-19T11:04:40.204Z",
+        "topic": "6ad5f93b308a95d039c2a98f",
+        "topicName": "CAUSE AND EFFECT"
+      },
+      "after": {
+        "_id": "6ad5f948308a95d039c2adcd",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace944a8752d955968b1d32",
+        "priority": 957,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Cause and Effect",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f937308a95d039c2a8ff",
+        "topic": "6ad9c9bdff6d062041767e13",
+        "subTopic": null,
+        "sectionName": "Reasoning",
+        "topicName": "Cause and Effect",
+        "addedAt": "2026-10-19T11:04:40.204Z",
+        "createdAt": "2026-10-19T11:04:40.204Z",
+        "updatedAt": "2026-10-19T11:04:40.204Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "CAUSE AND EFFECT -> Cause and Effect"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f948308a95d039c2adcd",
+          "topic": "6ad9c9bdff6d062041767e13",
+          "topicName": "Cause and Effect"
+        },
+        "restore": {
+          "topic": "6ad5f93b308a95d039c2a98f",
+          "topicName": "CAUSE AND EFFECT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f948308a95d039c2adce",
+      "course": "22",
+      "before": {
+        "_id": "6ad5f948308a95d039c2adce",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace944a8752d955968b1d39",
+        "priority": 958,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Cause and effect 02",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f937308a95d039c2a8ff",
+        "topic": "6ad5f93b308a95d039c2a98f",
+        "subTopic": null,
+        "sectionName": "Reasoning",
+        "topicName": "CAUSE AND EFFECT",
+        "addedAt": "2026-10-19T11:04:40.204Z",
+        "createdAt": "2026-10-19T11:04:40.204Z",
+        "updatedAt": "2026-10-19T11:04:40.204Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6ad9c9bdff6d062041767e13",
+        "topicName": "Cause and Effect"
+      },
+      "guard": {
+        "_id": "6ad5f948308a95d039c2adce",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace944a8752d955968b1d39",
+        "updatedAt": "2026-10-19T11:04:40.204Z",
+        "topic": "6ad5f93b308a95d039c2a98f",
+        "topicName": "CAUSE AND EFFECT"
+      },
+      "after": {
+        "_id": "6ad5f948308a95d039c2adce",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace944a8752d955968b1d39",
+        "priority": 958,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Cause and effect 02",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f937308a95d039c2a8ff",
+        "topic": "6ad9c9bdff6d062041767e13",
+        "subTopic": null,
+        "sectionName": "Reasoning",
+        "topicName": "Cause and Effect",
+        "addedAt": "2026-10-19T11:04:40.204Z",
+        "createdAt": "2026-10-19T11:04:40.204Z",
+        "updatedAt": "2026-10-19T11:04:40.204Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "CAUSE AND EFFECT -> Cause and Effect"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f948308a95d039c2adce",
+          "topic": "6ad9c9bdff6d062041767e13",
+          "topicName": "Cause and Effect"
+        },
+        "restore": {
+          "topic": "6ad5f93b308a95d039c2a98f",
+          "topicName": "CAUSE AND EFFECT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f948308a95d039c2ae23",
+      "course": "22",
+      "before": {
+        "_id": "6ad5f948308a95d039c2ae23",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace947b8752d955968b1f8c",
+        "priority": 1099,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President Class 01",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "PRESIDENT",
+        "addedAt": "2026-10-19T11:04:40.207Z",
+        "createdAt": "2026-10-19T11:04:40.207Z",
+        "updatedAt": "2026-10-19T11:04:40.207Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "topicName": "President"
+      },
+      "guard": {
+        "_id": "6ad5f948308a95d039c2ae23",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace947b8752d955968b1f8c",
+        "updatedAt": "2026-10-19T11:04:40.207Z",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "topicName": "PRESIDENT"
+      },
+      "after": {
+        "_id": "6ad5f948308a95d039c2ae23",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace947b8752d955968b1f8c",
+        "priority": 1099,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President Class 01",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "President",
+        "addedAt": "2026-10-19T11:04:40.207Z",
+        "createdAt": "2026-10-19T11:04:40.207Z",
+        "updatedAt": "2026-10-19T11:04:40.207Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "PRESIDENT -> President"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f948308a95d039c2ae23",
+          "topic": "6adc021a20e78c9f77dbca9c",
+          "topicName": "President"
+        },
+        "restore": {
+          "topic": "6ad5f93e308a95d039c2aa0d",
+          "topicName": "PRESIDENT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f948308a95d039c2ae24",
+      "course": "22",
+      "before": {
+        "_id": "6ad5f948308a95d039c2ae24",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace947c8752d955968b1f93",
+        "priority": 1100,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President Class 02",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "PRESIDENT",
+        "addedAt": "2026-10-19T11:04:40.207Z",
+        "createdAt": "2026-10-19T11:04:40.207Z",
+        "updatedAt": "2026-10-19T11:04:40.207Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "topicName": "President"
+      },
+      "guard": {
+        "_id": "6ad5f948308a95d039c2ae24",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace947c8752d955968b1f93",
+        "updatedAt": "2026-10-19T11:04:40.207Z",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "topicName": "PRESIDENT"
+      },
+      "after": {
+        "_id": "6ad5f948308a95d039c2ae24",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace947c8752d955968b1f93",
+        "priority": 1100,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President Class 02",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "President",
+        "addedAt": "2026-10-19T11:04:40.207Z",
+        "createdAt": "2026-10-19T11:04:40.207Z",
+        "updatedAt": "2026-10-19T11:04:40.207Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "PRESIDENT -> President"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f948308a95d039c2ae24",
+          "topic": "6adc021a20e78c9f77dbca9c",
+          "topicName": "President"
+        },
+        "restore": {
+          "topic": "6ad5f93e308a95d039c2aa0d",
+          "topicName": "PRESIDENT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f948308a95d039c2ae25",
+      "course": "22",
+      "before": {
+        "_id": "6ad5f948308a95d039c2ae25",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace947c8752d955968b1f9a",
+        "priority": 1101,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President Class 03",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "PRESIDENT",
+        "addedAt": "2026-10-19T11:04:40.207Z",
+        "createdAt": "2026-10-19T11:04:40.207Z",
+        "updatedAt": "2026-10-19T11:04:40.207Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "topicName": "President"
+      },
+      "guard": {
+        "_id": "6ad5f948308a95d039c2ae25",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace947c8752d955968b1f9a",
+        "updatedAt": "2026-10-19T11:04:40.207Z",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "topicName": "PRESIDENT"
+      },
+      "after": {
+        "_id": "6ad5f948308a95d039c2ae25",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace947c8752d955968b1f9a",
+        "priority": 1101,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President Class 03",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "President",
+        "addedAt": "2026-10-19T11:04:40.207Z",
+        "createdAt": "2026-10-19T11:04:40.207Z",
+        "updatedAt": "2026-10-19T11:04:40.207Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "PRESIDENT -> President"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f948308a95d039c2ae25",
+          "topic": "6adc021a20e78c9f77dbca9c",
+          "topicName": "President"
+        },
+        "restore": {
+          "topic": "6ad5f93e308a95d039c2aa0d",
+          "topicName": "PRESIDENT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f948308a95d039c2ae26",
+      "course": "22",
+      "before": {
+        "_id": "6ad5f948308a95d039c2ae26",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace947d8752d955968b1fa1",
+        "priority": 1102,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President Class 04",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "PRESIDENT",
+        "addedAt": "2026-10-19T11:04:40.207Z",
+        "createdAt": "2026-10-19T11:04:40.207Z",
+        "updatedAt": "2026-10-19T11:04:40.207Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "topicName": "President"
+      },
+      "guard": {
+        "_id": "6ad5f948308a95d039c2ae26",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace947d8752d955968b1fa1",
+        "updatedAt": "2026-10-19T11:04:40.207Z",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "topicName": "PRESIDENT"
+      },
+      "after": {
+        "_id": "6ad5f948308a95d039c2ae26",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace947d8752d955968b1fa1",
+        "priority": 1102,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President Class 04",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "President",
+        "addedAt": "2026-10-19T11:04:40.207Z",
+        "createdAt": "2026-10-19T11:04:40.207Z",
+        "updatedAt": "2026-10-19T11:04:40.207Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "PRESIDENT -> President"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f948308a95d039c2ae26",
+          "topic": "6adc021a20e78c9f77dbca9c",
+          "topicName": "President"
+        },
+        "restore": {
+          "topic": "6ad5f93e308a95d039c2aa0d",
+          "topicName": "PRESIDENT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f948308a95d039c2ae27",
+      "course": "22",
+      "before": {
+        "_id": "6ad5f948308a95d039c2ae27",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace947d8752d955968b1fa8",
+        "priority": 1103,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President PRACTICE CLASS",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "PRESIDENT",
+        "addedAt": "2026-10-19T11:04:40.207Z",
+        "createdAt": "2026-10-19T11:04:40.207Z",
+        "updatedAt": "2026-10-19T11:04:40.207Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "topicName": "President"
+      },
+      "guard": {
+        "_id": "6ad5f948308a95d039c2ae27",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace947d8752d955968b1fa8",
+        "updatedAt": "2026-10-19T11:04:40.207Z",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "topicName": "PRESIDENT"
+      },
+      "after": {
+        "_id": "6ad5f948308a95d039c2ae27",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace947d8752d955968b1fa8",
+        "priority": 1103,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President PRACTICE CLASS",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "President",
+        "addedAt": "2026-10-19T11:04:40.207Z",
+        "createdAt": "2026-10-19T11:04:40.207Z",
+        "updatedAt": "2026-10-19T11:04:40.207Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "PRESIDENT -> President"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f948308a95d039c2ae27",
+          "topic": "6adc021a20e78c9f77dbca9c",
+          "topicName": "President"
+        },
+        "restore": {
+          "topic": "6ad5f93e308a95d039c2aa0d",
+          "topicName": "PRESIDENT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f948308a95d039c2ae28",
+      "course": "22",
+      "before": {
+        "_id": "6ad5f948308a95d039c2ae28",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace947e8752d955968b1faf",
+        "priority": 1104,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "PRESIDENT CLASS 05",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "PRESIDENT",
+        "addedAt": "2026-10-19T11:04:40.207Z",
+        "createdAt": "2026-10-19T11:04:40.207Z",
+        "updatedAt": "2026-10-19T11:04:40.207Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "topicName": "President"
+      },
+      "guard": {
+        "_id": "6ad5f948308a95d039c2ae28",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace947e8752d955968b1faf",
+        "updatedAt": "2026-10-19T11:04:40.207Z",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "topicName": "PRESIDENT"
+      },
+      "after": {
+        "_id": "6ad5f948308a95d039c2ae28",
+        "course": "6ad5f948308a95d039c2ab55",
+        "class": "6ace947e8752d955968b1faf",
+        "priority": 1104,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "PRESIDENT CLASS 05",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "President",
+        "addedAt": "2026-10-19T11:04:40.207Z",
+        "createdAt": "2026-10-19T11:04:40.207Z",
+        "updatedAt": "2026-10-19T11:04:40.207Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "PRESIDENT -> President"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f948308a95d039c2ae28",
+          "topic": "6adc021a20e78c9f77dbca9c",
+          "topicName": "President"
+        },
+        "restore": {
+          "topic": "6ad5f93e308a95d039c2aa0d",
+          "topicName": "PRESIDENT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f99b308a95d039c2fad2",
+      "course": "42",
+      "before": {
+        "_id": "6ad5f99b308a95d039c2fad2",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98388752d955968b5414",
+        "priority": 952,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Cause and Effect 01",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f937308a95d039c2a8ff",
+        "topic": "6ad5f93b308a95d039c2a98f",
+        "subTopic": null,
+        "sectionName": "Reasoning",
+        "topicName": "CAUSE AND EFFECT",
+        "addedAt": "2026-10-19T11:06:03.439Z",
+        "createdAt": "2026-10-19T11:06:03.439Z",
+        "updatedAt": "2026-10-19T11:06:03.439Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6ad9c9bdff6d062041767e13",
+        "topicName": "Cause and Effect"
+      },
+      "guard": {
+        "_id": "6ad5f99b308a95d039c2fad2",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98388752d955968b5414",
+        "updatedAt": "2026-10-19T11:06:03.439Z",
+        "topic": "6ad5f93b308a95d039c2a98f",
+        "topicName": "CAUSE AND EFFECT"
+      },
+      "after": {
+        "_id": "6ad5f99b308a95d039c2fad2",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98388752d955968b5414",
+        "priority": 952,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Cause and Effect 01",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f937308a95d039c2a8ff",
+        "topic": "6ad9c9bdff6d062041767e13",
+        "subTopic": null,
+        "sectionName": "Reasoning",
+        "topicName": "Cause and Effect",
+        "addedAt": "2026-10-19T11:06:03.439Z",
+        "createdAt": "2026-10-19T11:06:03.439Z",
+        "updatedAt": "2026-10-19T11:06:03.439Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "CAUSE AND EFFECT -> Cause and Effect"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f99b308a95d039c2fad2",
+          "topic": "6ad9c9bdff6d062041767e13",
+          "topicName": "Cause and Effect"
+        },
+        "restore": {
+          "topic": "6ad5f93b308a95d039c2a98f",
+          "topicName": "CAUSE AND EFFECT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f99b308a95d039c2fad3",
+      "course": "42",
+      "before": {
+        "_id": "6ad5f99b308a95d039c2fad3",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98388752d955968b541b",
+        "priority": 953,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Cause and Effect 02",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f937308a95d039c2a8ff",
+        "topic": "6ad5f93b308a95d039c2a98f",
+        "subTopic": null,
+        "sectionName": "Reasoning",
+        "topicName": "CAUSE AND EFFECT",
+        "addedAt": "2026-10-19T11:06:03.439Z",
+        "createdAt": "2026-10-19T11:06:03.439Z",
+        "updatedAt": "2026-10-19T11:06:03.439Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6ad9c9bdff6d062041767e13",
+        "topicName": "Cause and Effect"
+      },
+      "guard": {
+        "_id": "6ad5f99b308a95d039c2fad3",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98388752d955968b541b",
+        "updatedAt": "2026-10-19T11:06:03.439Z",
+        "topic": "6ad5f93b308a95d039c2a98f",
+        "topicName": "CAUSE AND EFFECT"
+      },
+      "after": {
+        "_id": "6ad5f99b308a95d039c2fad3",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98388752d955968b541b",
+        "priority": 953,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Cause and Effect 02",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f937308a95d039c2a8ff",
+        "topic": "6ad9c9bdff6d062041767e13",
+        "subTopic": null,
+        "sectionName": "Reasoning",
+        "topicName": "Cause and Effect",
+        "addedAt": "2026-10-19T11:06:03.439Z",
+        "createdAt": "2026-10-19T11:06:03.439Z",
+        "updatedAt": "2026-10-19T11:06:03.439Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "CAUSE AND EFFECT -> Cause and Effect"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f99b308a95d039c2fad3",
+          "topic": "6ad9c9bdff6d062041767e13",
+          "topicName": "Cause and Effect"
+        },
+        "restore": {
+          "topic": "6ad5f93b308a95d039c2a98f",
+          "topicName": "CAUSE AND EFFECT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f99b308a95d039c2fad4",
+      "course": "42",
+      "before": {
+        "_id": "6ad5f99b308a95d039c2fad4",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98398752d955968b5422",
+        "priority": 954,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Cause and Effect 03",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f937308a95d039c2a8ff",
+        "topic": "6ad5f93b308a95d039c2a98f",
+        "subTopic": null,
+        "sectionName": "Reasoning",
+        "topicName": "CAUSE AND EFFECT",
+        "addedAt": "2026-10-19T11:06:03.439Z",
+        "createdAt": "2026-10-19T11:06:03.439Z",
+        "updatedAt": "2026-10-19T11:06:03.439Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6ad9c9bdff6d062041767e13",
+        "topicName": "Cause and Effect"
+      },
+      "guard": {
+        "_id": "6ad5f99b308a95d039c2fad4",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98398752d955968b5422",
+        "updatedAt": "2026-10-19T11:06:03.439Z",
+        "topic": "6ad5f93b308a95d039c2a98f",
+        "topicName": "CAUSE AND EFFECT"
+      },
+      "after": {
+        "_id": "6ad5f99b308a95d039c2fad4",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98398752d955968b5422",
+        "priority": 954,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Cause and Effect 03",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f937308a95d039c2a8ff",
+        "topic": "6ad9c9bdff6d062041767e13",
+        "subTopic": null,
+        "sectionName": "Reasoning",
+        "topicName": "Cause and Effect",
+        "addedAt": "2026-10-19T11:06:03.439Z",
+        "createdAt": "2026-10-19T11:06:03.439Z",
+        "updatedAt": "2026-10-19T11:06:03.439Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "CAUSE AND EFFECT -> Cause and Effect"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f99b308a95d039c2fad4",
+          "topic": "6ad9c9bdff6d062041767e13",
+          "topicName": "Cause and Effect"
+        },
+        "restore": {
+          "topic": "6ad5f93b308a95d039c2a98f",
+          "topicName": "CAUSE AND EFFECT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f99b308a95d039c2fad5",
+      "course": "42",
+      "before": {
+        "_id": "6ad5f99b308a95d039c2fad5",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98398752d955968b5429",
+        "priority": 955,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Cause and Effect 04",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f937308a95d039c2a8ff",
+        "topic": "6ad5f93b308a95d039c2a98f",
+        "subTopic": null,
+        "sectionName": "Reasoning",
+        "topicName": "CAUSE AND EFFECT",
+        "addedAt": "2026-10-19T11:06:03.439Z",
+        "createdAt": "2026-10-19T11:06:03.439Z",
+        "updatedAt": "2026-10-19T11:06:03.439Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6ad9c9bdff6d062041767e13",
+        "topicName": "Cause and Effect"
+      },
+      "guard": {
+        "_id": "6ad5f99b308a95d039c2fad5",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98398752d955968b5429",
+        "updatedAt": "2026-10-19T11:06:03.439Z",
+        "topic": "6ad5f93b308a95d039c2a98f",
+        "topicName": "CAUSE AND EFFECT"
+      },
+      "after": {
+        "_id": "6ad5f99b308a95d039c2fad5",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98398752d955968b5429",
+        "priority": 955,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Cause and Effect 04",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f937308a95d039c2a8ff",
+        "topic": "6ad9c9bdff6d062041767e13",
+        "subTopic": null,
+        "sectionName": "Reasoning",
+        "topicName": "Cause and Effect",
+        "addedAt": "2026-10-19T11:06:03.439Z",
+        "createdAt": "2026-10-19T11:06:03.439Z",
+        "updatedAt": "2026-10-19T11:06:03.439Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "CAUSE AND EFFECT -> Cause and Effect"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f99b308a95d039c2fad5",
+          "topic": "6ad9c9bdff6d062041767e13",
+          "topicName": "Cause and Effect"
+        },
+        "restore": {
+          "topic": "6ad5f93b308a95d039c2a98f",
+          "topicName": "CAUSE AND EFFECT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f99b308a95d039c2fcc4",
+      "course": "42",
+      "before": {
+        "_id": "6ad5f99b308a95d039c2fcc4",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98e68752d955968b5f5d",
+        "priority": 3625,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Heat and Laws",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f99b308a95d039c2f81b",
+        "topic": "6ad5f99b308a95d039c2f81f",
+        "subTopic": null,
+        "sectionName": "PHYSICS",
+        "topicName": "THERMODYNAMICS",
+        "addedAt": "2026-10-19T11:06:03.452Z",
+        "createdAt": "2026-10-19T11:06:03.452Z",
+        "updatedAt": "2026-10-19T11:06:03.452Z",
+        "__v": 0
+      },
+      "set": {
+        "section": "6ad5f944308a95d039c2aae3",
+        "sectionName": "Physics",
+        "topic": "6ad5fa77308a95d039c37527",
+        "topicName": "Thermodynamics"
+      },
+      "guard": {
+        "_id": "6ad5f99b308a95d039c2fcc4",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98e68752d955968b5f5d",
+        "updatedAt": "2026-10-19T11:06:03.452Z",
+        "section": "6ad5f99b308a95d039c2f81b",
+        "sectionName": "PHYSICS",
+        "topic": "6ad5f99b308a95d039c2f81f",
+        "topicName": "THERMODYNAMICS"
+      },
+      "after": {
+        "_id": "6ad5f99b308a95d039c2fcc4",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98e68752d955968b5f5d",
+        "priority": 3625,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Heat and Laws",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f944308a95d039c2aae3",
+        "topic": "6ad5fa77308a95d039c37527",
+        "subTopic": null,
+        "sectionName": "Physics",
+        "topicName": "Thermodynamics",
+        "addedAt": "2026-10-19T11:06:03.452Z",
+        "createdAt": "2026-10-19T11:06:03.452Z",
+        "updatedAt": "2026-10-19T11:06:03.452Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "PHYSICS -> Physics",
+        "THERMODYNAMICS child -> existing Thermodynamics under Physics"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f99b308a95d039c2fcc4",
+          "section": "6ad5f944308a95d039c2aae3",
+          "sectionName": "Physics",
+          "topic": "6ad5fa77308a95d039c37527",
+          "topicName": "Thermodynamics"
+        },
+        "restore": {
+          "section": "6ad5f99b308a95d039c2f81b",
+          "sectionName": "PHYSICS",
+          "topic": "6ad5f99b308a95d039c2f81f",
+          "topicName": "THERMODYNAMICS"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f99b308a95d039c2fcc5",
+      "course": "42",
+      "before": {
+        "_id": "6ad5f99b308a95d039c2fcc5",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98e78752d955968b5f64",
+        "priority": 3626,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Laws of Thermodynamics",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f99b308a95d039c2f81b",
+        "topic": "6ad5f99b308a95d039c2f81f",
+        "subTopic": null,
+        "sectionName": "PHYSICS",
+        "topicName": "THERMODYNAMICS",
+        "addedAt": "2026-10-19T11:06:03.452Z",
+        "createdAt": "2026-10-19T11:06:03.452Z",
+        "updatedAt": "2026-10-19T11:06:03.452Z",
+        "__v": 0
+      },
+      "set": {
+        "section": "6ad5f944308a95d039c2aae3",
+        "sectionName": "Physics",
+        "topic": "6ad5fa77308a95d039c37527",
+        "topicName": "Thermodynamics"
+      },
+      "guard": {
+        "_id": "6ad5f99b308a95d039c2fcc5",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98e78752d955968b5f64",
+        "updatedAt": "2026-10-19T11:06:03.452Z",
+        "section": "6ad5f99b308a95d039c2f81b",
+        "sectionName": "PHYSICS",
+        "topic": "6ad5f99b308a95d039c2f81f",
+        "topicName": "THERMODYNAMICS"
+      },
+      "after": {
+        "_id": "6ad5f99b308a95d039c2fcc5",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98e78752d955968b5f64",
+        "priority": 3626,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Laws of Thermodynamics",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f944308a95d039c2aae3",
+        "topic": "6ad5fa77308a95d039c37527",
+        "subTopic": null,
+        "sectionName": "Physics",
+        "topicName": "Thermodynamics",
+        "addedAt": "2026-10-19T11:06:03.452Z",
+        "createdAt": "2026-10-19T11:06:03.452Z",
+        "updatedAt": "2026-10-19T11:06:03.452Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "PHYSICS -> Physics",
+        "THERMODYNAMICS child -> existing Thermodynamics under Physics"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f99b308a95d039c2fcc5",
+          "section": "6ad5f944308a95d039c2aae3",
+          "sectionName": "Physics",
+          "topic": "6ad5fa77308a95d039c37527",
+          "topicName": "Thermodynamics"
+        },
+        "restore": {
+          "section": "6ad5f99b308a95d039c2f81b",
+          "sectionName": "PHYSICS",
+          "topic": "6ad5f99b308a95d039c2f81f",
+          "topicName": "THERMODYNAMICS"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f99b308a95d039c2fcc6",
+      "course": "42",
+      "before": {
+        "_id": "6ad5f99b308a95d039c2fcc6",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98e78752d955968b5f6b",
+        "priority": 3627,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Type of heat",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f99b308a95d039c2f81b",
+        "topic": "6ad5f99b308a95d039c2f81f",
+        "subTopic": null,
+        "sectionName": "PHYSICS",
+        "topicName": "THERMODYNAMICS",
+        "addedAt": "2026-10-19T11:06:03.452Z",
+        "createdAt": "2026-10-19T11:06:03.452Z",
+        "updatedAt": "2026-10-19T11:06:03.452Z",
+        "__v": 0
+      },
+      "set": {
+        "section": "6ad5f944308a95d039c2aae3",
+        "sectionName": "Physics",
+        "topic": "6ad5fa77308a95d039c37527",
+        "topicName": "Thermodynamics"
+      },
+      "guard": {
+        "_id": "6ad5f99b308a95d039c2fcc6",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98e78752d955968b5f6b",
+        "updatedAt": "2026-10-19T11:06:03.452Z",
+        "section": "6ad5f99b308a95d039c2f81b",
+        "sectionName": "PHYSICS",
+        "topic": "6ad5f99b308a95d039c2f81f",
+        "topicName": "THERMODYNAMICS"
+      },
+      "after": {
+        "_id": "6ad5f99b308a95d039c2fcc6",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98e78752d955968b5f6b",
+        "priority": 3627,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Type of heat",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f944308a95d039c2aae3",
+        "topic": "6ad5fa77308a95d039c37527",
+        "subTopic": null,
+        "sectionName": "Physics",
+        "topicName": "Thermodynamics",
+        "addedAt": "2026-10-19T11:06:03.452Z",
+        "createdAt": "2026-10-19T11:06:03.452Z",
+        "updatedAt": "2026-10-19T11:06:03.452Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "PHYSICS -> Physics",
+        "THERMODYNAMICS child -> existing Thermodynamics under Physics"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f99b308a95d039c2fcc6",
+          "section": "6ad5f944308a95d039c2aae3",
+          "sectionName": "Physics",
+          "topic": "6ad5fa77308a95d039c37527",
+          "topicName": "Thermodynamics"
+        },
+        "restore": {
+          "section": "6ad5f99b308a95d039c2f81b",
+          "sectionName": "PHYSICS",
+          "topic": "6ad5f99b308a95d039c2f81f",
+          "topicName": "THERMODYNAMICS"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f99b308a95d039c2fcc7",
+      "course": "42",
+      "before": {
+        "_id": "6ad5f99b308a95d039c2fcc7",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98e88752d955968b5f72",
+        "priority": 3628,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "PYQ Thermodynamics",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f99b308a95d039c2f81b",
+        "topic": "6ad5f99b308a95d039c2f81f",
+        "subTopic": null,
+        "sectionName": "PHYSICS",
+        "topicName": "THERMODYNAMICS",
+        "addedAt": "2026-10-19T11:06:03.452Z",
+        "createdAt": "2026-10-19T11:06:03.452Z",
+        "updatedAt": "2026-10-19T11:06:03.452Z",
+        "__v": 0
+      },
+      "set": {
+        "section": "6ad5f944308a95d039c2aae3",
+        "sectionName": "Physics",
+        "topic": "6ad5fa77308a95d039c37527",
+        "topicName": "Thermodynamics"
+      },
+      "guard": {
+        "_id": "6ad5f99b308a95d039c2fcc7",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98e88752d955968b5f72",
+        "updatedAt": "2026-10-19T11:06:03.452Z",
+        "section": "6ad5f99b308a95d039c2f81b",
+        "sectionName": "PHYSICS",
+        "topic": "6ad5f99b308a95d039c2f81f",
+        "topicName": "THERMODYNAMICS"
+      },
+      "after": {
+        "_id": "6ad5f99b308a95d039c2fcc7",
+        "course": "6ad5f99b308a95d039c2f821",
+        "class": "6ace98e88752d955968b5f72",
+        "priority": 3628,
+        "status": 0,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "PYQ Thermodynamics",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": false,
+        "section": "6ad5f944308a95d039c2aae3",
+        "topic": "6ad5fa77308a95d039c37527",
+        "subTopic": null,
+        "sectionName": "Physics",
+        "topicName": "Thermodynamics",
+        "addedAt": "2026-10-19T11:06:03.452Z",
+        "createdAt": "2026-10-19T11:06:03.452Z",
+        "updatedAt": "2026-10-19T11:06:03.452Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "PHYSICS -> Physics",
+        "THERMODYNAMICS child -> existing Thermodynamics under Physics"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f99b308a95d039c2fcc7",
+          "section": "6ad5f944308a95d039c2aae3",
+          "sectionName": "Physics",
+          "topic": "6ad5fa77308a95d039c37527",
+          "topicName": "Thermodynamics"
+        },
+        "restore": {
+          "section": "6ad5f99b308a95d039c2f81b",
+          "sectionName": "PHYSICS",
+          "topic": "6ad5f99b308a95d039c2f81f",
+          "topicName": "THERMODYNAMICS"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f9d7308a95d039c33470",
+      "course": "70",
+      "before": {
+        "_id": "6ad5f9d7308a95d039c33470",
+        "course": "6ad5f9d7308a95d039c33405",
+        "class": "6ad5de5564b695f53d871054",
+        "priority": 111,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Cause and Effect 01",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f937308a95d039c2a8ff",
+        "topic": "6ad5f93b308a95d039c2a98f",
+        "subTopic": null,
+        "sectionName": "Reasoning",
+        "topicName": "CAUSE AND EFFECT",
+        "addedAt": "2026-10-19T11:07:03.548Z",
+        "createdAt": "2026-10-19T11:07:03.548Z",
+        "updatedAt": "2026-10-19T11:07:03.548Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6ad9c9bdff6d062041767e13",
+        "topicName": "Cause and Effect"
+      },
+      "guard": {
+        "_id": "6ad5f9d7308a95d039c33470",
+        "course": "6ad5f9d7308a95d039c33405",
+        "class": "6ad5de5564b695f53d871054",
+        "updatedAt": "2026-10-19T11:07:03.548Z",
+        "topic": "6ad5f93b308a95d039c2a98f",
+        "topicName": "CAUSE AND EFFECT"
+      },
+      "after": {
+        "_id": "6ad5f9d7308a95d039c33470",
+        "course": "6ad5f9d7308a95d039c33405",
+        "class": "6ad5de5564b695f53d871054",
+        "priority": 111,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Cause and Effect 01",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f937308a95d039c2a8ff",
+        "topic": "6ad9c9bdff6d062041767e13",
+        "subTopic": null,
+        "sectionName": "Reasoning",
+        "topicName": "Cause and Effect",
+        "addedAt": "2026-10-19T11:07:03.548Z",
+        "createdAt": "2026-10-19T11:07:03.548Z",
+        "updatedAt": "2026-10-19T11:07:03.548Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "CAUSE AND EFFECT -> Cause and Effect"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f9d7308a95d039c33470",
+          "topic": "6ad9c9bdff6d062041767e13",
+          "topicName": "Cause and Effect"
+        },
+        "restore": {
+          "topic": "6ad5f93b308a95d039c2a98f",
+          "topicName": "CAUSE AND EFFECT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f9e5308a95d039c33727",
+      "course": "71",
+      "before": {
+        "_id": "6ad5f9e5308a95d039c33727",
+        "course": "6ad5f9e5308a95d039c336ad",
+        "class": "6acea32a8752d955968b8e88",
+        "priority": 127,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President 01",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "PRESIDENT",
+        "addedAt": "2026-10-19T11:07:17.242Z",
+        "createdAt": "2026-10-19T11:07:17.242Z",
+        "updatedAt": "2026-10-19T11:07:17.242Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "topicName": "President"
+      },
+      "guard": {
+        "_id": "6ad5f9e5308a95d039c33727",
+        "course": "6ad5f9e5308a95d039c336ad",
+        "class": "6acea32a8752d955968b8e88",
+        "updatedAt": "2026-10-19T11:07:17.242Z",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "topicName": "PRESIDENT"
+      },
+      "after": {
+        "_id": "6ad5f9e5308a95d039c33727",
+        "course": "6ad5f9e5308a95d039c336ad",
+        "class": "6acea32a8752d955968b8e88",
+        "priority": 127,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President 01",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "President",
+        "addedAt": "2026-10-19T11:07:17.242Z",
+        "createdAt": "2026-10-19T11:07:17.242Z",
+        "updatedAt": "2026-10-19T11:07:17.242Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "PRESIDENT -> President"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f9e5308a95d039c33727",
+          "topic": "6adc021a20e78c9f77dbca9c",
+          "topicName": "President"
+        },
+        "restore": {
+          "topic": "6ad5f93e308a95d039c2aa0d",
+          "topicName": "PRESIDENT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f9e5308a95d039c33728",
+      "course": "71",
+      "before": {
+        "_id": "6ad5f9e5308a95d039c33728",
+        "course": "6ad5f9e5308a95d039c336ad",
+        "class": "6acea32d8752d955968b8e8f",
+        "priority": 128,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President 02",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "PRESIDENT",
+        "addedAt": "2026-10-19T11:07:17.242Z",
+        "createdAt": "2026-10-19T11:07:17.242Z",
+        "updatedAt": "2026-10-19T11:07:17.242Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "topicName": "President"
+      },
+      "guard": {
+        "_id": "6ad5f9e5308a95d039c33728",
+        "course": "6ad5f9e5308a95d039c336ad",
+        "class": "6acea32d8752d955968b8e8f",
+        "updatedAt": "2026-10-19T11:07:17.242Z",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "topicName": "PRESIDENT"
+      },
+      "after": {
+        "_id": "6ad5f9e5308a95d039c33728",
+        "course": "6ad5f9e5308a95d039c336ad",
+        "class": "6acea32d8752d955968b8e8f",
+        "priority": 128,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President 02",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "President",
+        "addedAt": "2026-10-19T11:07:17.242Z",
+        "createdAt": "2026-10-19T11:07:17.242Z",
+        "updatedAt": "2026-10-19T11:07:17.242Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "PRESIDENT -> President"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f9e5308a95d039c33728",
+          "topic": "6adc021a20e78c9f77dbca9c",
+          "topicName": "President"
+        },
+        "restore": {
+          "topic": "6ad5f93e308a95d039c2aa0d",
+          "topicName": "PRESIDENT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f9e5308a95d039c33729",
+      "course": "71",
+      "before": {
+        "_id": "6ad5f9e5308a95d039c33729",
+        "course": "6ad5f9e5308a95d039c336ad",
+        "class": "6acea3308752d955968b8e96",
+        "priority": 129,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President 03",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "PRESIDENT",
+        "addedAt": "2026-10-19T11:07:17.242Z",
+        "createdAt": "2026-10-19T11:07:17.242Z",
+        "updatedAt": "2026-10-19T11:07:17.242Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "topicName": "President"
+      },
+      "guard": {
+        "_id": "6ad5f9e5308a95d039c33729",
+        "course": "6ad5f9e5308a95d039c336ad",
+        "class": "6acea3308752d955968b8e96",
+        "updatedAt": "2026-10-19T11:07:17.242Z",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "topicName": "PRESIDENT"
+      },
+      "after": {
+        "_id": "6ad5f9e5308a95d039c33729",
+        "course": "6ad5f9e5308a95d039c336ad",
+        "class": "6acea3308752d955968b8e96",
+        "priority": 129,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President 03",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "President",
+        "addedAt": "2026-10-19T11:07:17.242Z",
+        "createdAt": "2026-10-19T11:07:17.242Z",
+        "updatedAt": "2026-10-19T11:07:17.242Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "PRESIDENT -> President"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f9e5308a95d039c33729",
+          "topic": "6adc021a20e78c9f77dbca9c",
+          "topicName": "President"
+        },
+        "restore": {
+          "topic": "6ad5f93e308a95d039c2aa0d",
+          "topicName": "PRESIDENT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5f9e5308a95d039c3372a",
+      "course": "71",
+      "before": {
+        "_id": "6ad5f9e5308a95d039c3372a",
+        "course": "6ad5f9e5308a95d039c336ad",
+        "class": "6acea3338752d955968b8e9d",
+        "priority": 130,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President 04",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "PRESIDENT",
+        "addedAt": "2026-10-19T11:07:17.242Z",
+        "createdAt": "2026-10-19T11:07:17.242Z",
+        "updatedAt": "2026-10-19T11:07:17.242Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "topicName": "President"
+      },
+      "guard": {
+        "_id": "6ad5f9e5308a95d039c3372a",
+        "course": "6ad5f9e5308a95d039c336ad",
+        "class": "6acea3338752d955968b8e9d",
+        "updatedAt": "2026-10-19T11:07:17.242Z",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "topicName": "PRESIDENT"
+      },
+      "after": {
+        "_id": "6ad5f9e5308a95d039c3372a",
+        "course": "6ad5f9e5308a95d039c336ad",
+        "class": "6acea3338752d955968b8e9d",
+        "priority": 130,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President 04",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "President",
+        "addedAt": "2026-10-19T11:07:17.242Z",
+        "createdAt": "2026-10-19T11:07:17.242Z",
+        "updatedAt": "2026-10-19T11:07:17.242Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "PRESIDENT -> President"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5f9e5308a95d039c3372a",
+          "topic": "6adc021a20e78c9f77dbca9c",
+          "topicName": "President"
+        },
+        "restore": {
+          "topic": "6ad5f93e308a95d039c2aa0d",
+          "topicName": "PRESIDENT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5fa04308a95d039c3408d",
+      "course": "74",
+      "before": {
+        "_id": "6ad5fa04308a95d039c3408d",
+        "course": "6ad5fa04308a95d039c33fb8",
+        "class": "6ad5de5564b695f53d871054",
+        "priority": 270,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Cause and Effect 01",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f937308a95d039c2a8ff",
+        "topic": "6ad5f93b308a95d039c2a98f",
+        "subTopic": null,
+        "sectionName": "Reasoning",
+        "topicName": "CAUSE AND EFFECT",
+        "addedAt": "2026-10-19T11:07:48.511Z",
+        "createdAt": "2026-10-19T11:07:48.511Z",
+        "updatedAt": "2026-10-19T11:07:48.511Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6ad9c9bdff6d062041767e13",
+        "topicName": "Cause and Effect"
+      },
+      "guard": {
+        "_id": "6ad5fa04308a95d039c3408d",
+        "course": "6ad5fa04308a95d039c33fb8",
+        "class": "6ad5de5564b695f53d871054",
+        "updatedAt": "2026-10-19T11:07:48.511Z",
+        "topic": "6ad5f93b308a95d039c2a98f",
+        "topicName": "CAUSE AND EFFECT"
+      },
+      "after": {
+        "_id": "6ad5fa04308a95d039c3408d",
+        "course": "6ad5fa04308a95d039c33fb8",
+        "class": "6ad5de5564b695f53d871054",
+        "priority": 270,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Cause and Effect 01",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f937308a95d039c2a8ff",
+        "topic": "6ad9c9bdff6d062041767e13",
+        "subTopic": null,
+        "sectionName": "Reasoning",
+        "topicName": "Cause and Effect",
+        "addedAt": "2026-10-19T11:07:48.511Z",
+        "createdAt": "2026-10-19T11:07:48.511Z",
+        "updatedAt": "2026-10-19T11:07:48.511Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "CAUSE AND EFFECT -> Cause and Effect"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5fa04308a95d039c3408d",
+          "topic": "6ad9c9bdff6d062041767e13",
+          "topicName": "Cause and Effect"
+        },
+        "restore": {
+          "topic": "6ad5f93b308a95d039c2a98f",
+          "topicName": "CAUSE AND EFFECT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5fa0d308a95d039c3485d",
+      "course": "77",
+      "before": {
+        "_id": "6ad5fa0d308a95d039c3485d",
+        "course": "6ad5fa0d308a95d039c347e3",
+        "class": "6acea32a8752d955968b8e88",
+        "priority": 127,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President 01",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "PRESIDENT",
+        "addedAt": "2026-10-19T11:07:57.903Z",
+        "createdAt": "2026-10-19T11:07:57.903Z",
+        "updatedAt": "2026-10-19T11:07:57.903Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "topicName": "President"
+      },
+      "guard": {
+        "_id": "6ad5fa0d308a95d039c3485d",
+        "course": "6ad5fa0d308a95d039c347e3",
+        "class": "6acea32a8752d955968b8e88",
+        "updatedAt": "2026-10-19T11:07:57.903Z",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "topicName": "PRESIDENT"
+      },
+      "after": {
+        "_id": "6ad5fa0d308a95d039c3485d",
+        "course": "6ad5fa0d308a95d039c347e3",
+        "class": "6acea32a8752d955968b8e88",
+        "priority": 127,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President 01",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "President",
+        "addedAt": "2026-10-19T11:07:57.903Z",
+        "createdAt": "2026-10-19T11:07:57.903Z",
+        "updatedAt": "2026-10-19T11:07:57.903Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "PRESIDENT -> President"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5fa0d308a95d039c3485d",
+          "topic": "6adc021a20e78c9f77dbca9c",
+          "topicName": "President"
+        },
+        "restore": {
+          "topic": "6ad5f93e308a95d039c2aa0d",
+          "topicName": "PRESIDENT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5fa0d308a95d039c3485e",
+      "course": "77",
+      "before": {
+        "_id": "6ad5fa0d308a95d039c3485e",
+        "course": "6ad5fa0d308a95d039c347e3",
+        "class": "6acea32d8752d955968b8e8f",
+        "priority": 128,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President 02",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "PRESIDENT",
+        "addedAt": "2026-10-19T11:07:57.903Z",
+        "createdAt": "2026-10-19T11:07:57.903Z",
+        "updatedAt": "2026-10-19T11:07:57.903Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "topicName": "President"
+      },
+      "guard": {
+        "_id": "6ad5fa0d308a95d039c3485e",
+        "course": "6ad5fa0d308a95d039c347e3",
+        "class": "6acea32d8752d955968b8e8f",
+        "updatedAt": "2026-10-19T11:07:57.903Z",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "topicName": "PRESIDENT"
+      },
+      "after": {
+        "_id": "6ad5fa0d308a95d039c3485e",
+        "course": "6ad5fa0d308a95d039c347e3",
+        "class": "6acea32d8752d955968b8e8f",
+        "priority": 128,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President 02",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "President",
+        "addedAt": "2026-10-19T11:07:57.903Z",
+        "createdAt": "2026-10-19T11:07:57.903Z",
+        "updatedAt": "2026-10-19T11:07:57.903Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "PRESIDENT -> President"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5fa0d308a95d039c3485e",
+          "topic": "6adc021a20e78c9f77dbca9c",
+          "topicName": "President"
+        },
+        "restore": {
+          "topic": "6ad5f93e308a95d039c2aa0d",
+          "topicName": "PRESIDENT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5fa0d308a95d039c3485f",
+      "course": "77",
+      "before": {
+        "_id": "6ad5fa0d308a95d039c3485f",
+        "course": "6ad5fa0d308a95d039c347e3",
+        "class": "6acea3308752d955968b8e96",
+        "priority": 129,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President 03",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "PRESIDENT",
+        "addedAt": "2026-10-19T11:07:57.903Z",
+        "createdAt": "2026-10-19T11:07:57.903Z",
+        "updatedAt": "2026-10-19T11:07:57.903Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "topicName": "President"
+      },
+      "guard": {
+        "_id": "6ad5fa0d308a95d039c3485f",
+        "course": "6ad5fa0d308a95d039c347e3",
+        "class": "6acea3308752d955968b8e96",
+        "updatedAt": "2026-10-19T11:07:57.903Z",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "topicName": "PRESIDENT"
+      },
+      "after": {
+        "_id": "6ad5fa0d308a95d039c3485f",
+        "course": "6ad5fa0d308a95d039c347e3",
+        "class": "6acea3308752d955968b8e96",
+        "priority": 129,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President 03",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "President",
+        "addedAt": "2026-10-19T11:07:57.903Z",
+        "createdAt": "2026-10-19T11:07:57.903Z",
+        "updatedAt": "2026-10-19T11:07:57.903Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "PRESIDENT -> President"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5fa0d308a95d039c3485f",
+          "topic": "6adc021a20e78c9f77dbca9c",
+          "topicName": "President"
+        },
+        "restore": {
+          "topic": "6ad5f93e308a95d039c2aa0d",
+          "topicName": "PRESIDENT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5fa0d308a95d039c34860",
+      "course": "77",
+      "before": {
+        "_id": "6ad5fa0d308a95d039c34860",
+        "course": "6ad5fa0d308a95d039c347e3",
+        "class": "6acea3338752d955968b8e9d",
+        "priority": 130,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President 04",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "PRESIDENT",
+        "addedAt": "2026-10-19T11:07:57.903Z",
+        "createdAt": "2026-10-19T11:07:57.903Z",
+        "updatedAt": "2026-10-19T11:07:57.903Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "topicName": "President"
+      },
+      "guard": {
+        "_id": "6ad5fa0d308a95d039c34860",
+        "course": "6ad5fa0d308a95d039c347e3",
+        "class": "6acea3338752d955968b8e9d",
+        "updatedAt": "2026-10-19T11:07:57.903Z",
+        "topic": "6ad5f93e308a95d039c2aa0d",
+        "topicName": "PRESIDENT"
+      },
+      "after": {
+        "_id": "6ad5fa0d308a95d039c34860",
+        "course": "6ad5fa0d308a95d039c347e3",
+        "class": "6acea3338752d955968b8e9d",
+        "priority": 130,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "President 04",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "topic": "6adc021a20e78c9f77dbca9c",
+        "subTopic": null,
+        "sectionName": "Polity",
+        "topicName": "President",
+        "addedAt": "2026-10-19T11:07:57.903Z",
+        "createdAt": "2026-10-19T11:07:57.903Z",
+        "updatedAt": "2026-10-19T11:07:57.903Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "PRESIDENT -> President"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5fa0d308a95d039c34860",
+          "topic": "6adc021a20e78c9f77dbca9c",
+          "topicName": "President"
+        },
+        "restore": {
+          "topic": "6ad5f93e308a95d039c2aa0d",
+          "topicName": "PRESIDENT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5fa1a308a95d039c3527a",
+      "course": "94",
+      "before": {
+        "_id": "6ad5fa1a308a95d039c3527a",
+        "course": "6ad5fa1a308a95d039c3521f",
+        "class": "6ad5de5564b695f53d871054",
+        "priority": 95,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Cause and Effect 01",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f937308a95d039c2a8ff",
+        "topic": "6ad5f93b308a95d039c2a98f",
+        "subTopic": null,
+        "sectionName": "Reasoning",
+        "topicName": "CAUSE AND EFFECT",
+        "addedAt": "2026-10-19T11:08:10.185Z",
+        "createdAt": "2026-10-19T11:08:10.185Z",
+        "updatedAt": "2026-10-19T11:08:10.185Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6ad9c9bdff6d062041767e13",
+        "topicName": "Cause and Effect"
+      },
+      "guard": {
+        "_id": "6ad5fa1a308a95d039c3527a",
+        "course": "6ad5fa1a308a95d039c3521f",
+        "class": "6ad5de5564b695f53d871054",
+        "updatedAt": "2026-10-19T11:08:10.185Z",
+        "topic": "6ad5f93b308a95d039c2a98f",
+        "topicName": "CAUSE AND EFFECT"
+      },
+      "after": {
+        "_id": "6ad5fa1a308a95d039c3527a",
+        "course": "6ad5fa1a308a95d039c3521f",
+        "class": "6ad5de5564b695f53d871054",
+        "priority": 95,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Cause and Effect 01",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f937308a95d039c2a8ff",
+        "topic": "6ad9c9bdff6d062041767e13",
+        "subTopic": null,
+        "sectionName": "Reasoning",
+        "topicName": "Cause and Effect",
+        "addedAt": "2026-10-19T11:08:10.185Z",
+        "createdAt": "2026-10-19T11:08:10.185Z",
+        "updatedAt": "2026-10-19T11:08:10.185Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "CAUSE AND EFFECT -> Cause and Effect"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5fa1a308a95d039c3527a",
+          "topic": "6ad9c9bdff6d062041767e13",
+          "topicName": "Cause and Effect"
+        },
+        "restore": {
+          "topic": "6ad5f93b308a95d039c2a98f",
+          "topicName": "CAUSE AND EFFECT"
+        }
+      }
+    },
+    {
+      "collection": "courseclasses",
+      "id": "6ad5fa85308a95d039c37e7c",
+      "course": "114",
+      "before": {
+        "_id": "6ad5fa85308a95d039c37e7c",
+        "course": "6ad5fa85308a95d039c37e3c",
+        "class": "6acec0388752d955968bd73e",
+        "priority": 86,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Cause and Effect 01",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f937308a95d039c2a8ff",
+        "topic": "6ad5f93b308a95d039c2a98f",
+        "subTopic": null,
+        "sectionName": "Reasoning",
+        "topicName": "CAUSE AND EFFECT",
+        "addedAt": "2026-10-19T11:09:57.988Z",
+        "createdAt": "2026-10-19T11:09:57.988Z",
+        "updatedAt": "2026-10-19T11:09:57.988Z",
+        "__v": 0
+      },
+      "set": {
+        "topic": "6ad9c9bdff6d062041767e13",
+        "topicName": "Cause and Effect"
+      },
+      "guard": {
+        "_id": "6ad5fa85308a95d039c37e7c",
+        "course": "6ad5fa85308a95d039c37e3c",
+        "class": "6acec0388752d955968bd73e",
+        "updatedAt": "2026-10-19T11:09:57.988Z",
+        "topic": "6ad5f93b308a95d039c2a98f",
+        "topicName": "CAUSE AND EFFECT"
+      },
+      "after": {
+        "_id": "6ad5fa85308a95d039c37e7c",
+        "course": "6ad5fa85308a95d039c37e3c",
+        "class": "6acec0388752d955968bd73e",
+        "priority": 86,
+        "status": 1,
+        "startDate": "2026-10-19T11:02:49.477Z",
+        "endDate": "2026-10-19T18:29:59.999Z",
+        "isFree": false,
+        "apxTitle": "Cause and Effect 01",
+        "notificationSent": false,
+        "scheduledNotificationJobId": null,
+        "isActive": true,
+        "section": "6ad5f937308a95d039c2a8ff",
+        "topic": "6ad9c9bdff6d062041767e13",
+        "subTopic": null,
+        "sectionName": "Reasoning",
+        "topicName": "Cause and Effect",
+        "addedAt": "2026-10-19T11:09:57.988Z",
+        "createdAt": "2026-10-19T11:09:57.988Z",
+        "updatedAt": "2026-10-19T11:09:57.988Z",
+        "__v": 0
+      },
+      "ownership": "timestamp untouched import; exact live CAS mandatory",
+      "reasons": [
+        "CAUSE AND EFFECT -> Cause and Effect"
+      ],
+      "rollback": {
+        "filter": {
+          "_id": "6ad5fa85308a95d039c37e7c",
+          "topic": "6ad9c9bdff6d062041767e13",
+          "topicName": "Cause and Effect"
+        },
+        "restore": {
+          "topic": "6ad5f93b308a95d039c2a98f",
+          "topicName": "CAUSE AND EFFECT"
+        }
+      }
+    }
+  ],
+  "retirement": [
+    {
+      "collection": "sections",
+      "id": "6ad5f99b308a95d039c2f81b",
+      "before": {
+        "_id": "6ad5f99b308a95d039c2f81b",
+        "sectionName": "PHYSICS",
+        "status": 1,
+        "customer_id": 781,
+        "legacy_id": 29,
+        "createdAt": "2026-10-19T11:06:03.177Z",
+        "updatedAt": "2026-10-19T11:06:03.177Z",
+        "__v": 0
+      },
+      "set": {
+        "status": 0,
+        "apxCanonicalId": "6ad5f944308a95d039c2aae3"
+      },
+      "guard": {
+        "_id": "6ad5f99b308a95d039c2f81b",
+        "updatedAt": "2026-10-19T11:06:03.177Z",
+        "status": 1
+      },
+      "reason": "PHYSICS -> Physics",
+      "rollback": {
+        "restoreStatus": 1,
+        "unsetCanonicalAlias": true
+      }
+    },
+    {
+      "collection": "topics",
+      "id": "6ad5f99b308a95d039c2f81f",
+      "before": {
+        "_id": "6ad5f99b308a95d039c2f81f",
+        "topicName": "THERMODYNAMICS",
+        "status": 1,
+        "section": "6ad5f99b308a95d039c2f81b",
+        "customer_id": 781,
+        "legacy_id": 395,
+        "createdAt": "2026-10-19T11:06:03.287Z",
+        "updatedAt": "2026-10-19T11:06:03.287Z",
+        "__v": 0
+      },
+      "set": {
+        "status": 0,
+        "apxCanonicalId": "6ad5fa77308a95d039c37527"
+      },
+      "guard": {
+        "_id": "6ad5f99b308a95d039c2f81f",
+        "updatedAt": "2026-10-19T11:06:03.287Z",
+        "status": 1
+      },
+      "reason": "THERMODYNAMICS child -> existing Thermodynamics under Physics",
+      "rollback": {
+        "restoreStatus": 1,
+        "unsetCanonicalAlias": true
+      }
+    },
+    {
+      "collection": "topics",
+      "id": "6ad5f8f0308a95d039c26850",
+      "before": {
+        "_id": "6ad5f8f0308a95d039c26850",
+        "topicName": "BOAT & STREAM",
+        "status": 1,
+        "section": "6ad5f8db308a95d039c25dae",
+        "customer_id": 781,
+        "legacy_id": 80,
+        "createdAt": "2026-10-19T11:03:12.389Z",
+        "updatedAt": "2026-10-19T11:03:12.389Z",
+        "__v": 0
+      },
+      "set": {
+        "status": 0,
+        "apxCanonicalId": "6ad5f90c308a95d039c2842b"
+      },
+      "guard": {
+        "_id": "6ad5f8f0308a95d039c26850",
+        "updatedAt": "2026-10-19T11:03:12.389Z",
+        "status": 1
+      },
+      "reason": "BOAT & STREAM -> Boat & Stream",
+      "rollback": {
+        "restoreStatus": 1,
+        "unsetCanonicalAlias": true
+      }
+    },
+    {
+      "collection": "topics",
+      "id": "6ad5f93b308a95d039c2a98f",
+      "before": {
+        "_id": "6ad5f93b308a95d039c2a98f",
+        "topicName": "CAUSE AND EFFECT",
+        "status": 1,
+        "section": "6ad5f937308a95d039c2a8ff",
+        "customer_id": 781,
+        "legacy_id": 195,
+        "createdAt": "2026-10-19T11:04:27.430Z",
+        "updatedAt": "2026-10-19T11:04:27.430Z",
+        "__v": 0
+      },
+      "set": {
+        "status": 0,
+        "apxCanonicalId": "6ad9c9bdff6d062041767e13"
+      },
+      "guard": {
+        "_id": "6ad5f93b308a95d039c2a98f",
+        "updatedAt": "2026-10-19T11:04:27.430Z",
+        "status": 1
+      },
+      "reason": "CAUSE AND EFFECT -> Cause and Effect",
+      "rollback": {
+        "restoreStatus": 1,
+        "unsetCanonicalAlias": true
+      }
+    },
+    {
+      "collection": "topics",
+      "id": "6ad5f93e308a95d039c2aa0d",
+      "before": {
+        "_id": "6ad5f93e308a95d039c2aa0d",
+        "topicName": "PRESIDENT",
+        "status": 1,
+        "section": "6ad5f93d308a95d039c2a9dc",
+        "customer_id": 781,
+        "legacy_id": 219,
+        "createdAt": "2026-10-19T11:04:30.954Z",
+        "updatedAt": "2026-10-19T11:04:30.954Z",
+        "__v": 0
+      },
+      "set": {
+        "status": 0,
+        "apxCanonicalId": "6adc021a20e78c9f77dbca9c"
+      },
+      "guard": {
+        "_id": "6ad5f93e308a95d039c2aa0d",
+        "updatedAt": "2026-10-19T11:04:30.954Z",
+        "status": 1
+      },
+      "reason": "PRESIDENT -> President",
+      "rollback": {
+        "restoreStatus": 1,
+        "unsetCanonicalAlias": true
+      }
+    }
+  ]
+}

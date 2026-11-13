@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Daily 08:30 (Mac local time, IST) run of qt-health.sh. Install:
+       cp reference/scripts/com.hranker.qt-health.plist ~/Library/LaunchAgents/
+       launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.hranker.qt-health.plist
+     Remove:
+       launchctl bootout gui/$(id -u)/com.hranker.qt-health && rm ~/Library/LaunchAgents/com.hranker.qt-health.plist
+     If the Mac is asleep at 08:30, launchd runs it on wake; caffeinate -i keeps it awake until the run ends. -->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.hranker.qt-health</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/caffeinate</string>
+    <string>-i</string>
+    <string>/bin/bash</string>
+    <string>/Users/raghav/Projects/system-brain/reference/scripts/qt-health.sh</string>
+    <string>--save</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict><key>Hour</key><integer>8</integer><key>Minute</key><integer>30</integer></dict>
+  <key>StandardOutPath</key><string>/Users/raghav/Library/Logs/qt-health/launchd.out</string>
+  <key>StandardErrorPath</key><string>/Users/raghav/Library/Logs/qt-health/launchd.err</string>
+</dict>
+</plist>

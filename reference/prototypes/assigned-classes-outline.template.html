@@ -1,0 +1,582 @@
+<title>Assigned Classes Prototype</title>
+<style>
+/* Layout: the admin's Assigned Classes tab, three ways — one outline, section tabs, outline + list — with a "what would be saved" log beside it. */
+:root {
+  --bg: #ffffff; --fg: #0b1220; --muted: #f1f5f9; --muted-fg: #64748b; --border: #e2e8f0;
+  --sec-bg: #f8fafc; --top-bg: #f1f5f9; --primary: #2563eb; --primary-fg: #f8fafc; --sel: #eff6ff;
+  --ok: #15803d; --ok-bg: #dcfce7; --off: #64748b; --off-bg: #f1f5f9; --live: #dc2626;
+  --bar: #0f172a; --bar-fg: #f8fafc; --ghost: rgba(37, 99, 235, .10); --shadow: 0 8px 24px rgba(15, 23, 42, .12);
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #020817; --fg: #f8fafc; --muted: #1e293b; --muted-fg: #94a3b8; --border: #1e293b;
+  --sec-bg: #0b1324; --top-bg: #111a2e; --primary: #3b82f6; --primary-fg: #020817; --sel: #172554;
+  --ok: #4ade80; --ok-bg: #14532d; --off: #94a3b8; --off-bg: #1e293b; --live: #f87171;
+  --bar: #f8fafc; --bar-fg: #0f172a; --ghost: rgba(59, 130, 246, .18); --shadow: 0 8px 24px rgba(0, 0, 0, .5); color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #020817; --fg: #f8fafc; --muted: #1e293b; --muted-fg: #94a3b8; --border: #1e293b;
+  --sec-bg: #0b1324; --top-bg: #111a2e; --primary: #3b82f6; --primary-fg: #020817; --sel: #172554;
+  --ok: #4ade80; --ok-bg: #14532d; --off: #94a3b8; --off-bg: #1e293b; --live: #f87171;
+  --bar: #f8fafc; --bar-fg: #0f172a; --ghost: rgba(59, 130, 246, .18); --shadow: 0 8px 24px rgba(0, 0, 0, .5); color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 14px; line-height: 1.4; }
+.wrap { max-width: 1280px; margin: 0 auto; padding-inline: 16px; padding-block: 16px 96px; }
+button { font: inherit; color: inherit; }
+button:focus-visible, input:focus-visible, select:focus-visible, .tab:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+.banner { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; padding-block: 10px; padding-inline: 14px; border: 1px dashed var(--border); border-radius: 8px; color: var(--muted-fg); font-size: 13px; }
+.banner b { color: var(--fg); }
+.head { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline; margin-block: 18px 12px; }
+.head h1 { font-size: 20px; margin: 0; text-wrap: balance; }
+.head .sub { color: var(--muted-fg); }
+.tabsbar { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 14px; }
+.tabsbar span { padding: 8px 12px; color: var(--muted-fg); font-weight: 500; }
+.tabsbar span.on { color: var(--fg); border-bottom: 2px solid var(--fg); margin-bottom: -1px; }
+
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 20px; align-items: start; }
+@media (max-width: 960px) { .layout { grid-template-columns: minmax(0, 1fr); } }
+
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 12px; }
+.search { flex: 1 1 240px; min-width: 0; display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 6px; padding-inline: 10px; background: var(--bg); }
+.search input { border: 0; outline: 0; background: transparent; padding-block: 8px; width: 100%; min-width: 0; color: var(--fg); font: inherit; }
+.btn { border: 1px solid var(--border); background: var(--bg); border-radius: 6px; padding: 7px 12px; cursor: pointer; white-space: nowrap; }
+.btn:hover { background: var(--muted); }
+.btn.icon { padding: 6px 8px; line-height: 0; }
+.btn.primary { background: var(--primary); border-color: var(--primary); color: var(--primary-fg); }
+.btn.danger { color: var(--live); }
+.selbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--sel); margin-bottom: 10px; }
+.note { font-size: 12px; color: var(--muted-fg); }
+.ibtn { border: 0; background: transparent; border-radius: 4px; padding: 3px; line-height: 0; color: var(--muted-fg); cursor: pointer; }
+.ibtn:hover { background: var(--muted); color: var(--fg); }
+.ibtn:disabled { opacity: .3; cursor: default; background: transparent; }
+svg { width: 16px; height: 16px; flex: none; }
+.chev { transition: transform .15s; }
+.open > .chev, [aria-expanded="true"] > .chev { transform: rotate(90deg); }
+@media (prefers-reduced-motion: reduce) { .chev { transition: none; } }
+
+/* drag handles, one class per level so a row handle never drags its topic */
+.grip { cursor: grab; color: var(--muted-fg); opacity: .55; display: inline-flex; padding: 2px; border-radius: 4px; touch-action: none; }
+.grip:hover { opacity: 1; background: var(--muted); }
+.nodrag .grip { visibility: hidden; }
+.sortable-ghost { background: var(--ghost) !important; outline: 1px dashed var(--primary); }
+.sortable-chosen { box-shadow: var(--shadow); }
+
+/* the list */
+.card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--bg); }
+.sec + .sec { border-top: 1px solid var(--border); }
+.hdr { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.hdr .name { font-weight: 600; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hdr .count { color: var(--muted-fg); font-size: 12px; white-space: nowrap; }
+.hdr .spacer { flex: 1; }
+.sec-h { padding: 10px 10px; background: var(--sec-bg); font-size: 15px; }
+.sec-h .name { font-size: 15px; }
+.top { border-top: 1px solid var(--border); }
+.top-h { padding: 8px 10px 8px 22px; background: var(--top-bg); }
+.sub-h { padding: 6px 10px 6px 40px; font-size: 13px; color: var(--muted-fg); border-top: 1px solid var(--border); }
+.sub-h .name { color: var(--fg); font-weight: 600; }
+.row { display: grid; grid-template-columns: 22px 20px 34px minmax(0, 1fr) auto; gap: 8px; align-items: center; padding: 8px 10px 8px 40px; border-top: 1px solid var(--border); }
+.nosubs .row { padding-left: 22px; }
+.row.on { background: var(--sel); }
+.row .seq { font-family: var(--mono); color: var(--muted-fg); font-size: 12px; text-align: right; font-variant-numeric: tabular-nums; }
+.row .t { font-weight: 600; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.row .m { font-size: 12px; color: var(--muted-fg); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ctrls { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+.link { border: 0; background: none; color: var(--primary); cursor: pointer; padding: 2px 4px; font-size: 12px; }
+.link:hover { text-decoration: underline; }
+.date { border: 1px solid var(--border); background: var(--bg); border-radius: 6px; padding: 4px 8px; font-size: 12px; cursor: pointer; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.pill { border: 0; border-radius: 999px; padding: 2px 9px; font-size: 12px; font-weight: 600; cursor: pointer; text-transform: capitalize; }
+.pill.active { background: var(--ok-bg); color: var(--ok); }
+.pill.inactive { background: var(--off-bg); color: var(--off); }
+.free { display: inline-flex; gap: 4px; align-items: center; font-size: 12px; color: var(--muted-fg); cursor: pointer; }
+.live { color: var(--live); font-weight: 700; font-size: 11px; letter-spacing: .04em; }
+.empty { padding: 24px; text-align: center; color: var(--muted-fg); }
+@media (max-width: 640px) {
+  .row { grid-template-columns: 22px 20px 30px minmax(0, 1fr); padding-left: 14px !important; }
+  .row .ctrls { grid-column: 3 / -1; justify-content: flex-start; }
+  .top-h { padding-left: 10px; } .sub-h { padding-left: 16px; }
+}
+
+/* B: section tabs */
+.stabs { display: flex; gap: 2px; overflow-x: auto; border-bottom: 1px solid var(--border); margin-bottom: 12px; }
+.tab { display: inline-flex; align-items: center; gap: 6px; padding: 9px 12px; border: 0; background: none; color: var(--muted-fg); font-weight: 600; cursor: pointer; white-space: nowrap; border-bottom: 2px solid transparent; }
+.tab.on { color: var(--primary); border-bottom-color: var(--primary); }
+.tab .count { font-weight: 400; font-size: 12px; }
+.acc + .acc { margin-top: 10px; }
+.acc { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.acc > .top-h { padding-left: 10px; }
+
+/* C: outline + list */
+.split { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 14px; align-items: start; }
+@media (max-width: 760px) { .split { grid-template-columns: minmax(0, 1fr); } }
+.outline { border: 1px solid var(--border); border-radius: 8px; padding: 6px; max-height: 72vh; overflow: auto; position: sticky; top: 8px; }
+.o-sec > .hdr { padding: 6px 4px; font-weight: 700; }
+.o-top > .hdr { padding: 4px 4px 4px 20px; border-radius: 6px; cursor: pointer; }
+.o-top > .hdr:hover { background: var(--muted); }
+.o-top.on > .hdr { background: var(--sel); }
+.o-top > .hdr .name { font-weight: 500; }
+.o-sub { display: flex; align-items: center; gap: 6px; padding: 3px 4px 3px 42px; font-size: 12px; color: var(--muted-fg); }
+.o-sub .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; flex: 1; }
+.pane-h { padding: 10px; border-bottom: 1px solid var(--border); background: var(--top-bg); }
+.pane-h .crumb { color: var(--muted-fg); font-size: 12px; }
+
+/* log */
+.log { border: 1px solid var(--border); border-radius: 8px; position: sticky; top: 8px; max-height: calc(100vh - 32px); display: flex; flex-direction: column; }
+.log h2 { font-size: 13px; margin: 0; padding: 10px 12px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.log ol { list-style: none; margin: 0; padding: 0; overflow: auto; }
+.log li { padding: 10px 12px; border-bottom: 1px solid var(--border); display: grid; gap: 4px; }
+.log .w { font-weight: 600; font-size: 13px; }
+.log code { font-family: var(--mono); font-size: 11px; color: var(--primary); overflow-wrap: anywhere; }
+.log .e { font-size: 12px; color: var(--muted-fg); }
+.log .new { font-size: 10px; font-weight: 700; color: var(--live); letter-spacing: .05em; }
+@media (max-width: 960px) { .log { position: static; max-height: 360px; } }
+
+/* overlays */
+.menu { position: absolute; z-index: 30; min-width: 230px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; box-shadow: var(--shadow); padding: 4px; }
+.mi { display: grid; width: 100%; text-align: left; border: 0; background: none; padding: 7px 10px; border-radius: 5px; cursor: pointer; }
+.mi:hover { background: var(--muted); }
+.mi .hint { font-size: 11px; color: var(--muted-fg); }
+.mi.disabled { opacity: .55; }
+.ov { position: fixed; inset: 0; z-index: 40; background: rgba(2, 6, 23, .45); display: grid; place-items: center; padding: 16px; }
+.dlg { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; width: min(460px, 100%); padding: 18px; display: grid; gap: 12px; box-shadow: var(--shadow); }
+.dlg h3 { margin: 0; font-size: 16px; }
+.dlg label { display: grid; gap: 4px; font-size: 12px; color: var(--muted-fg); }
+.dlg select { font: inherit; color: var(--fg); background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 7px 8px; }
+.dlg .acts { display: flex; justify-content: flex-end; gap: 8px; }
+.dlg.wide { width: min(640px, 100%); }
+.clist { display: grid; gap: 2px; max-height: 300px; overflow: auto; border: 1px solid var(--border); border-radius: 6px; padding: 4px; }
+.copt { display: flex !important; flex-direction: row !important; gap: 10px !important; align-items: center; padding: 8px; border-radius: 5px; cursor: pointer; color: var(--fg) !important; font-size: 14px !important; }
+.copt:hover { background: var(--muted); } .copt.on { background: var(--sel); }
+.copt .ct { display: block; font-weight: 600; } .copt .note { display: block; }
+.tbl { overflow-x: auto; max-height: 320px; overflow-y: auto; border: 1px solid var(--border); border-radius: 6px; }
+.ptable { width: 100%; border-collapse: collapse; font-size: 13px; }
+.ptable th, .ptable td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.ptable th { position: sticky; top: 0; background: var(--sec-bg); font-weight: 600; color: var(--muted-fg); font-size: 12px; }
+.ptable .num { text-align: right; font-variant-numeric: tabular-nums; }
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(70px + env(safe-area-inset-bottom, 0px)); z-index: 50; background: var(--bar); color: var(--bar-fg); padding: 8px 14px; border-radius: 8px; font-size: 13px; max-width: calc(100% - 32px); box-shadow: var(--shadow); }
+.switcher { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 45; display: flex; align-items: center; gap: 4px; background: var(--bar); color: var(--bar-fg); border-radius: 999px; padding: 5px; box-shadow: var(--shadow); max-width: calc(100% - 32px); }
+.switcher button { border: 0; background: transparent; color: var(--bar-fg); border-radius: 999px; padding: 6px 10px; cursor: pointer; line-height: 0; }
+.switcher button:hover { background: rgba(127, 127, 127, .25); }
+.switcher .lbl { font-size: 13px; font-weight: 600; padding-inline: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+</style>
+
+<div class="wrap">
+  <div class="banner">
+    <span><b>Prototype.</b> Nothing here saves. Reload to start over.</span>
+    <span id="dataNote"></span>
+  </div>
+  <div class="head"><h1 id="courseTitle"></h1><span class="sub">Courses › Assign Classes</span></div>
+  <div class="tabsbar" aria-hidden="true"><span>Available Classes</span><span class="on">Assigned Classes</span></div>
+  <div class="layout">
+    <main id="main" style="min-width:0"></main>
+    <aside class="log" aria-label="What the real screen would save">
+      <h2><span>What the real screen would save</span><button class="link" id="clearLog">Clear</button></h2>
+      <ol id="log"></ol>
+    </aside>
+  </div>
+</div>
+<div class="switcher" role="group" aria-label="Prototype variant">
+  <button id="prevV" aria-label="Previous variant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg></button>
+  <span class="lbl" id="vLabel"></span>
+  <button id="nextV" aria-label="Next variant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+<script>
+const RAW = __DATA__;
+const READ_ON = '1 Oct 2026';
+
+const I = {
+  grip: '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="6" r="1.6"/><circle cx="15" cy="6" r="1.6"/><circle cx="9" cy="12" r="1.6"/><circle cx="15" cy="12" r="1.6"/><circle cx="9" cy="18" r="1.6"/><circle cx="15" cy="18" r="1.6"/></svg>',
+  chev: '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>',
+  dots: '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg>',
+  up: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>',
+  down: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>',
+  search: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--muted-fg)"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>',
+};
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const fmt = new Intl.DateTimeFormat('en-IN', { timeZone: 'Asia/Kolkata', day: 'numeric', month: 'short', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true });
+const API = {
+  topicOrder: 'PUT /api/admin/courses/:courseId/topic-order',
+  courseTopics: 'PUT /api/admin/courses/:courseId/topic-priorities   (new)',
+  taxonomy: 'PATCH /api/admin/courses/:courseId/placements/:placementId/taxonomy',
+  assignment: 'PATCH /api/course-classes/:id',
+  copy: 'POST /api/admin/courses/:courseId/copy-to/:targetCourseId   (new)',
+};
+
+// ---------- state ----------
+let uid = 0; const nid = (p) => p + (++uid);
+let course, collapsed, selected, logItems = [], search = '', bTab = null, cTopic = null;
+function load() {
+  uid = 0;
+  course = {
+    title: RAW.course,
+    targets: RAW.targets.map((x) => Object.assign({}, x, { have: new Set(x.have) })),
+    sections: RAW.s.map((s) => ({ id: nid('s'), name: s.n, topics: s.t.map((t) => ({ id: nid('t'), tid: t.id, name: t.n, classes: t.c.map((r) => ({
+      id: nid('c'), title: r[0], teacher: r[1], sub: r[2], start: r[3], free: !!r[4], status: r[5] === 1 ? 'active' : 'inactive', listing: !!r[6], live: !!r[7], cid: r[8],
+    })) })) })),
+  };
+  collapsed = new Set(); selected = new Set();
+  for (const s of course.sections) for (const t of s.topics) if (t.name !== 'Core Maths') collapsed.add('t:' + t.id);
+  const maths = course.sections.find((s) => s.name === 'Maths') || course.sections[0];
+  bTab = maths.id;
+  cTopic = (maths.topics.find((t) => t.name === 'Core Maths') || maths.topics[0]).id;
+}
+load();
+
+const allTopics = () => course.sections.flatMap((s) => s.topics);
+const topicById = (id) => allTopics().find((t) => t.id === id);
+const sectionOf = (t) => course.sections.find((s) => s.topics.includes(t));
+const findClass = (id) => { for (const t of allTopics()) { const c = t.classes.find((x) => x.id === id); if (c) return { c, t }; } return {}; };
+const secCount = (s) => s.topics.reduce((n, t) => n + t.classes.length, 0);
+const plural = (n, w) => `${n} ${w}${n === 1 ? '' : (w === 'class' ? 'es' : 's')}`;
+
+// Subtopic groups in first-appearance order (how the website orders its chips).
+function buckets(t) {
+  if (!t.classes.some((c) => c.sub)) return null;
+  const m = new Map();
+  for (const c of t.classes) {
+    const k = c.sub || '';
+    if (!m.has(k)) m.set(k, { key: k, name: c.sub || 'Others', classes: [] });
+    m.get(k).classes.push(c);
+  }
+  return [...m.values()];
+}
+const flat = (t) => { const b = buckets(t); return b ? b.flatMap((x) => x.classes) : t.classes; };
+const move = (arr, from, to) => { const [x] = arr.splice(from, 1); arr.splice(to, 0, x); };
+const matches = (c) => !search || c.title.toLowerCase().includes(search) || (c.sub || '').toLowerCase().includes(search);
+
+// ---------- operations (each logs the call the real screen would make) ----------
+function save(what, api, effect) { logItems.unshift({ what, api, effect, at: Date.now() }); toast(what); render(); }
+function courseOrderEffect(extra) { return `${extra} Saves the order of all ${allTopics().length} topics for this course. The website's section tabs and topic list follow it; no website change.`; }
+
+function reorderRows(t, key, from, to) {
+  const b = buckets(t);
+  let moved;
+  if (!b) { moved = t.classes[from]; move(t.classes, from, to); }
+  else { const g = b.find((x) => x.key === key); moved = g.classes[from]; move(g.classes, from, to); t.classes = b.flatMap((x) => x.classes); }
+  save(`Moved “${moved.title}” to #${flat(t).indexOf(moved) + 1}`, API.topicOrder,
+    `${t.name}: its ${t.classes.length} classes get their own priority numbers back in the new order. No other topic changes.`);
+}
+function reorderBuckets(t, from, to) {
+  const b = buckets(t); const g = b[from]; move(b, from, to); t.classes = b.flatMap((x) => x.classes);
+  save(`Moved subtopic “${g.name}” in ${t.name}`, API.topicOrder, `Renumbers ${t.name}'s ${t.classes.length} classes so ${g.name} sits at position ${to + 1}. The website's subtopic chips follow.`);
+}
+function reorderTopics(s, from, to) {
+  const t = s.topics[from]; move(s.topics, from, to);
+  save(`Moved topic “${t.name}” within ${s.name}`, API.courseTopics, courseOrderEffect(''));
+}
+function reorderSections(from, to) {
+  const s = course.sections[from]; move(course.sections, from, to);
+  save(`Moved section “${s.name}” to position ${to + 1}`, API.courseTopics, courseOrderEffect(`Every topic in ${s.name} now comes before the next section's.`));
+}
+function arrow(cid, dir) {
+  const { c, t } = findClass(cid); const b = buckets(t);
+  const list = b ? b.find((x) => x.key === (c.sub || '')).classes : t.classes;
+  const i = list.indexOf(c); const j = i + dir; if (j < 0 || j >= list.length) return;
+  reorderRows(t, c.sub || '', i, j);
+}
+function reverseTopic(t) {
+  t.classes = flat(t).slice().reverse();
+  save(`Reversed priority in ${t.name}`, API.topicOrder, `${t.name}: subtopics and the classes inside each come out in reverse. No other topic changes.`);
+}
+function reverseAll() {
+  for (const t of allTopics()) t.classes = flat(t).slice().reverse();
+  save('Reversed priority in every topic', API.topicOrder + '   × ' + allTopics().length, 'One call per topic. Section and topic order stay as they are.');
+}
+function changeTopic(cid, toTopicId, sub) {
+  const { c, t } = findClass(cid); const to = topicById(toTopicId);
+  t.classes.splice(t.classes.indexOf(c), 1); c.sub = sub || null; to.classes.push(c);
+  collapsed.delete('t:' + to.id);
+  save(`Filed “${c.title}” under ${sectionOf(to).name} › ${to.name}${sub ? ' › ' + sub : ''}`, API.taxonomy,
+    `For this course only. ${to === t ? 'Same topic, new subtopic:' : 'Another topic:'} it lands last${sub ? ' in ' + sub : ''}.`);
+}
+
+// ---------- shared rendering ----------
+function rowHtml(c, seq, t, dragOff) {
+  const b = buckets(t); const list = b ? b.find((x) => x.key === (c.sub || '')).classes : t.classes; const i = list.indexOf(c);
+  return `<div class="row${selected.has(c.id) ? ' on' : ''}" data-c="${c.id}">
+    <span class="grip g-row" title="Drag within ${esc(b ? (c.sub || 'Others') : t.name)}">${I.grip}</span>
+    <input type="checkbox" data-act="sel" data-c="${c.id}" ${selected.has(c.id) ? 'checked' : ''} aria-label="Select ${esc(c.title)}">
+    <span class="seq">${seq}</span>
+    <div style="min-width:0"><div class="t" title="${esc(c.title)}">${esc(c.title)} ${c.live ? '<span class="live">LIVE</span>' : ''}</div>
+      <div class="m">${esc(c.teacher || '—')}</div></div>
+    <div class="ctrls">
+      <button class="ibtn" data-act="up" data-c="${c.id}" aria-label="Move up" ${dragOff || i === 0 ? 'disabled' : ''}>${I.up}</button>
+      <button class="ibtn" data-act="down" data-c="${c.id}" aria-label="Move down" ${dragOff || i === list.length - 1 ? 'disabled' : ''}>${I.down}</button>
+      ${c.listing ? '' : `<button class="link" data-act="change" data-c="${c.id}">Change topic</button>`}
+      <button class="date" data-act="start" title="Start date & time">${c.start ? esc(fmt.format(new Date(c.start))) : 'Pick start'}</button>
+      <button class="pill ${c.status}" data-act="status" data-c="${c.id}">${c.status}</button>
+      <label class="free"><input type="checkbox" data-act="free" data-c="${c.id}" ${c.free ? 'checked' : ''}>Free</label>
+    </div></div>`;
+}
+// Subtopic headings + rows for one topic. Used by all three variants.
+function topicBody(t) {
+  const b = buckets(t); const order = flat(t);
+  if (!b) {
+    const rows = t.classes.filter(matches);
+    if (!rows.length) return '<div class="empty">No classes match.</div>';
+    return `<div class="nosubs" data-sort="rows" data-t="${t.id}" data-b="">${rows.map((c) => rowHtml(c, order.indexOf(c) + 1, t, !!search)).join('')}</div>`;
+  }
+  return `<div data-sort="buckets" data-t="${t.id}">${b.map((g) => {
+    const rows = g.classes.filter(matches); if (search && !rows.length) return '';
+    const key = 'b:' + t.id + ':' + g.key; const open = search || !collapsed.has(key);
+    return `<div class="bucket"><div class="hdr sub-h"><span class="grip g-sub" title="Drag subtopic">${I.grip}</span>
+      <button class="ibtn" data-act="toggle" data-key="${esc(key)}" aria-expanded="${!!open}" aria-label="Show or hide ${esc(g.name)}">${I.chev}</button>
+      <span class="name">${esc(g.name)}</span><span class="count">${search ? rows.length + ' of ' : ''}${plural(g.classes.length, 'class')}</span></div>
+      ${open ? `<div data-sort="rows" data-t="${t.id}" data-b="${esc(g.key)}">${rows.map((c) => rowHtml(c, order.indexOf(c) + 1, t, !!search)).join('')}</div>` : ''}</div>`;
+  }).join('')}</div>`;
+}
+function topicHeader(t, gripClass) {
+  const open = search || !collapsed.has('t:' + t.id); const n = search ? t.classes.filter(matches).length : null;
+  const subs = buckets(t);
+  return `<div class="hdr top-h">${gripClass ? `<span class="grip ${gripClass}" title="Drag topic">${I.grip}</span>` : ''}
+    <button class="ibtn" data-act="toggle" data-key="t:${t.id}" aria-expanded="${!!open}" aria-label="Show or hide ${esc(t.name)}">${I.chev}</button>
+    <span class="name">${esc(t.name)}</span><span class="count">${n !== null ? n + ' of ' : ''}${plural(t.classes.length, 'class')}${subs ? ' · ' + plural(subs.length, 'subtopic') : ''}</span>
+    <span class="spacer"></span><button class="ibtn" data-act="menu-topic" data-t="${t.id}" aria-label="More for ${esc(t.name)}">${I.dots}</button></div>`;
+}
+function toolbar() {
+  const anyOpen = allTopics().some((t) => !collapsed.has('t:' + t.id));
+  return `<div class="toolbar"><div class="search">${I.search}<input id="q" type="search" placeholder="Search classes or subtopics" value="${esc(search)}" aria-label="Search classes"></div>
+    <button class="btn" data-act="toggle-all">${anyOpen ? 'Collapse all' : 'Expand all'}</button>
+    <button class="btn icon" data-act="menu-course" aria-label="More actions">${I.dots}</button></div>
+    ${selected.size ? `<div class="selbar"><b>${selected.size} selected</b><button class="btn" data-act="copy-sel">Copy to another course</button><button class="btn" data-act="bulk">Bulk edit</button><button class="btn danger" data-act="remove">Remove</button></div>` : ''}
+    ${search ? '<p class="note" style="margin:0 0 8px">Dragging is off while searching. Clear the search to reorder.</p>' : ''}`;
+}
+
+// ---------- variant A: one outline ----------
+function renderA() {
+  const secs = course.sections.map((s) => {
+    const open = search || !collapsed.has('s:' + s.id);
+    const topics = s.topics.filter((t) => !search || t.classes.some(matches)); if (search && !topics.length) return '';
+    return `<div class="sec"><div class="hdr sec-h"><span class="grip g-sec" title="Drag section">${I.grip}</span>
+      <button class="ibtn" data-act="toggle" data-key="s:${s.id}" aria-expanded="${!!open}" aria-label="Show or hide ${esc(s.name)}">${I.chev}</button>
+      <span class="name">${esc(s.name)}</span><span class="count">${plural(s.topics.length, 'topic')} · ${plural(secCount(s), 'class')}</span>
+      <span class="spacer"></span><button class="ibtn" data-act="menu-section" data-s="${s.id}" aria-label="More for ${esc(s.name)}">${I.dots}</button></div>
+      ${open ? `<div data-sort="topics" data-s="${s.id}">${topics.map((t) => `<div class="top">${topicHeader(t, 'g-top')}${(search || !collapsed.has('t:' + t.id)) ? topicBody(t) : ''}</div>`).join('')}</div>` : ''}</div>`;
+  }).join('');
+  return toolbar() + `<div class="card${search ? ' nodrag' : ''}" data-sort="sections">${secs || '<div class="empty">No classes match.</div>'}</div>`;
+}
+
+// ---------- variant B: section tabs, like the website ----------
+function renderB() {
+  if (!course.sections.some((s) => s.id === bTab)) bTab = course.sections[0].id;
+  const s = course.sections.find((x) => x.id === bTab);
+  const tabs = course.sections.map((x) => {
+    const n = search ? x.topics.reduce((a, t) => a + t.classes.filter(matches).length, 0) : secCount(x);
+    return `<button class="tab${x.id === bTab ? ' on' : ''}" data-act="tab" data-s="${x.id}" title="Drag to reorder sections">${esc(x.name)} <span class="count">${n}</span></button>`;
+  }).join('');
+  const topics = s.topics.filter((t) => !search || t.classes.some(matches));
+  return toolbar() + `<div class="stabs${search ? ' nodrag' : ''}" data-sort="tabs">${tabs}</div>
+    <p class="note" style="margin:-4px 0 10px">Drag a tab to move the section. Drag a topic by its handle.</p>
+    <div class="${search ? 'nodrag' : ''}" data-sort="topics" data-s="${s.id}">${topics.map((t) => `<div class="acc">${topicHeader(t, 'g-top')}${(search || !collapsed.has('t:' + t.id)) ? topicBody(t) : ''}</div>`).join('') || '<div class="empty">No classes match in this section.</div>'}</div>`;
+}
+
+// ---------- variant C: outline + list ----------
+function renderC() {
+  let t = topicById(cTopic) || allTopics()[0]; cTopic = t.id;
+  const outline = `<div class="outline${search ? ' nodrag' : ''}" data-sort="o-sections">${course.sections.map((s) => `<div class="o-sec">
+      <div class="hdr"><span class="grip g-osec" title="Drag section">${I.grip}</span><span class="name">${esc(s.name)}</span><span class="count">${secCount(s)}</span></div>
+      <div data-sort="o-topics" data-s="${s.id}">${s.topics.map((x) => {
+        const b = buckets(x);
+        return `<div class="o-top${x.id === cTopic ? ' on' : ''}"><div class="hdr" data-act="pick" data-t="${x.id}"><span class="grip g-otop" title="Drag topic">${I.grip}</span><span class="name">${esc(x.name)}</span><span class="spacer"></span><span class="count">${x.classes.length}</span></div>
+          ${b && x.id === cTopic ? `<div data-sort="o-subs" data-t="${x.id}">${b.map((g) => `<div class="o-sub"><span class="grip g-osub" title="Drag subtopic">${I.grip}</span><span class="name">${esc(g.name)}</span><span>${g.classes.length}</span></div>`).join('')}</div>` : ''}</div>`;
+      }).join('')}</div></div>`).join('')}</div>`;
+  const s = sectionOf(t); const subs = buckets(t);
+  const pane = `<div class="card${search ? ' nodrag' : ''}"><div class="hdr pane-h"><div style="min-width:0"><div class="crumb">${esc(s.name)} ›</div>
+      <div class="name" style="font-size:16px">${esc(t.name)}</div><div class="count">${plural(t.classes.length, 'class')}${subs ? ' · ' + plural(subs.length, 'subtopic') : ''}</div></div>
+      <span class="spacer"></span><button class="ibtn" data-act="menu-topic" data-t="${t.id}" aria-label="More for ${esc(t.name)}">${I.dots}</button></div>${topicBody(t)}</div>`;
+  return toolbar() + `<div class="split">${outline}<div style="min-width:0">${pane}</div></div>`;
+}
+
+// ---------- variants + chrome ----------
+const VARIANTS = [
+  { key: 'a', name: 'One outline', render: renderA },
+  { key: 'b', name: 'Section tabs', render: renderB },
+  { key: 'c', name: 'Outline + list', render: renderC },
+];
+let vi = Math.max(0, VARIANTS.findIndex((v) => '#' + v.key === location.hash));
+let sortables = [];
+function render() {
+  const main = document.getElementById('main');
+  const q = document.activeElement && document.activeElement.id === 'q'; const caret = q ? document.activeElement.selectionStart : 0;
+  sortables.forEach((s) => s.destroy()); sortables = [];
+  main.innerHTML = VARIANTS[vi].render();
+  document.getElementById('vLabel').textContent = `${VARIANTS[vi].key.toUpperCase()} · ${VARIANTS[vi].name}  (${vi + 1}/${VARIANTS.length})`;
+  if (q) { const el = document.getElementById('q'); el.focus(); el.setSelectionRange(caret, caret); }
+  renderLog(); wireSortables(main);
+}
+function renderLog() {
+  const ol = document.getElementById('log');
+  ol.innerHTML = logItems.length ? logItems.map((x, i) => `<li>${i === 0 ? '<span class="new">LATEST</span>' : ''}<span class="w">${esc(x.what)}</span><code>${esc(x.api)}</code><span class="e">${esc(x.effect)}</span></li>`).join('')
+    : '<li><span class="e">Nothing changed yet. Drag a class, a subtopic, a topic or a section. The call the real screen would make shows up here, with what it changes for students.</span></li>';
+}
+function wireSortables(root) {
+  if (!window.Sortable) {
+    if (!document.getElementById('nolib')) root.insertAdjacentHTML('afterbegin', '<p id="nolib" class="note">The drag library did not load. The ▲▼ arrows still work.</p>');
+    return;
+  }
+  const mk = (el, handle, onMove, opts = {}) => sortables.push(Sortable.create(el, Object.assign({
+    handle, animation: 150, disabled: !!search, group: { name: 'g' + Math.random(), pull: false, put: false }, fallbackOnBody: true,
+    onEnd: (e) => { if (e.oldDraggableIndex !== e.newDraggableIndex) onMove(e.oldDraggableIndex, e.newDraggableIndex); else render(); },
+  }, opts)));
+  root.querySelectorAll('[data-sort="sections"]').forEach((el) => mk(el, '.g-sec', reorderSections));
+  root.querySelectorAll('[data-sort="o-sections"]').forEach((el) => mk(el, '.g-osec', reorderSections));
+  root.querySelectorAll('[data-sort="tabs"]').forEach((el) => mk(el, null, reorderSections, { direction: 'horizontal', handle: undefined }));
+  root.querySelectorAll('[data-sort="topics"]').forEach((el) => { const s = course.sections.find((x) => x.id === el.dataset.s); mk(el, '.g-top', (a, b) => reorderTopics(s, a, b)); });
+  root.querySelectorAll('[data-sort="o-topics"]').forEach((el) => { const s = course.sections.find((x) => x.id === el.dataset.s); mk(el, '.g-otop', (a, b) => reorderTopics(s, a, b)); });
+  root.querySelectorAll('[data-sort="buckets"]').forEach((el) => { const t = topicById(el.dataset.t); mk(el, '.g-sub', (a, b) => reorderBuckets(t, a, b)); });
+  root.querySelectorAll('[data-sort="o-subs"]').forEach((el) => { const t = topicById(el.dataset.t); mk(el, '.g-osub', (a, b) => reorderBuckets(t, a, b)); });
+  root.querySelectorAll('[data-sort="rows"]').forEach((el) => { const t = topicById(el.dataset.t); const key = el.dataset.b; mk(el, '.g-row', (a, b) => reorderRows(t, key, a, b)); });
+}
+function setVariant(i) { vi = (i + VARIANTS.length) % VARIANTS.length; try { history.replaceState(null, '', '#' + VARIANTS[vi].key); } catch (e) {} closeMenu(); render(); window.scrollTo(0, 0); }
+document.getElementById('prevV').onclick = () => setVariant(vi - 1);
+document.getElementById('nextV').onclick = () => setVariant(vi + 1);
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') { closeMenu(); closeDialog(); return; }
+  const tag = (e.target.tagName || '').toLowerCase();
+  if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+  if (e.key === 'ArrowLeft') setVariant(vi - 1); if (e.key === 'ArrowRight') setVariant(vi + 1);
+});
+document.getElementById('clearLog').onclick = () => { logItems = []; renderLog(); };
+
+let toastTimer;
+function toast(msg) {
+  let el = document.querySelector('.toast'); if (!el) { el = document.createElement('div'); el.className = 'toast'; el.setAttribute('role', 'status'); document.body.append(el); }
+  el.textContent = msg; el.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { el.hidden = true; }, 2600);
+}
+let menuEl = null;
+function closeMenu() { if (menuEl) { menuEl.remove(); menuEl = null; } }
+function openMenu(btn, items) {
+  closeMenu(); menuEl = document.createElement('div'); menuEl.className = 'menu'; menuEl.setAttribute('role', 'menu');
+  for (const it of items) {
+    const b = document.createElement('button'); b.className = 'mi' + (it.disabled ? ' disabled' : ''); b.setAttribute('role', 'menuitem');
+    b.append(document.createTextNode(it.label));
+    if (it.hint) { const h = document.createElement('span'); h.className = 'hint'; h.textContent = it.hint; b.append(h); }
+    b.onclick = (e) => { e.stopPropagation(); closeMenu(); it.run(); }; menuEl.append(b);
+  }
+  document.body.append(menuEl);
+  const r = btn.getBoundingClientRect(); const w = menuEl.offsetWidth;
+  menuEl.style.top = (r.bottom + window.scrollY + 4) + 'px';
+  menuEl.style.left = (Math.max(16, Math.min(r.right - w, document.documentElement.clientWidth - 16 - w)) + window.scrollX) + 'px';
+  menuEl.querySelector('button')?.focus();
+}
+document.addEventListener('click', (e) => { if (menuEl && !menuEl.contains(e.target) && !e.target.closest('[data-act^="menu"]')) closeMenu(); });
+
+// Change topic dialog
+let ovEl = null;
+function closeDialog() { if (ovEl) { ovEl.remove(); ovEl = null; } }
+function openChangeTopic(cid) {
+  const { c, t } = findClass(cid); const s0 = sectionOf(t);
+  ovEl = document.createElement('div'); ovEl.className = 'ov';
+  ovEl.innerHTML = `<div class="dlg" role="dialog" aria-modal="true" aria-labelledby="ctT"><h3 id="ctT">Change topic</h3>
+    <div class="note">${esc(c.title)}<br>Currently: ${esc(s0.name)} › ${esc(t.name)}${c.sub ? ' › ' + esc(c.sub) : ''}</div>
+    <label>Section<select id="ctS"></select></label><label>Topic<select id="ctTp"></select></label><label>Subtopic<select id="ctSub"></select></label>
+    <div class="note">Applies to this course only. The class goes last in its new place.</div>
+    <div class="acts"><button class="btn" id="ctCancel">Cancel</button><button class="btn primary" id="ctSave">Save</button></div></div>`;
+  document.body.append(ovEl);
+  const sS = ovEl.querySelector('#ctS'), sT = ovEl.querySelector('#ctTp'), sB = ovEl.querySelector('#ctSub');
+  const opt = (v, l, sel) => { const o = document.createElement('option'); o.value = v; o.textContent = l; o.selected = !!sel; return o; };
+  course.sections.forEach((s) => sS.append(opt(s.id, s.name, s === s0)));
+  const fillT = (keep) => { sT.innerHTML = ''; course.sections.find((s) => s.id === sS.value).topics.forEach((x) => sT.append(opt(x.id, x.name, keep && x === t))); fillB(keep); };
+  const fillB = (keep) => { sB.innerHTML = ''; sB.append(opt('', 'None')); const x = topicById(sT.value); [...new Set(x.classes.map((k) => k.sub).filter(Boolean))].forEach((n) => sB.append(opt(n, n, keep && n === c.sub))); };
+  sS.onchange = () => fillT(false); sT.onchange = () => fillB(false); fillT(true);
+  ovEl.querySelector('#ctCancel').onclick = closeDialog;
+  ovEl.onclick = (e) => { if (e.target === ovEl) closeDialog(); };
+  ovEl.querySelector('#ctSave').onclick = () => { const to = sT.value, sub = sB.value; closeDialog(); if (to === t.id && (sub || null) === (c.sub || null)) return; changeTopic(cid, to, sub); };
+  sS.focus();
+}
+
+// Copy to another course: the same classes get placements there too. Nothing leaves this course.
+function openCopy(classes, label) {
+  closeDialog(); let pick = null, q = '';
+  ovEl = document.createElement('div'); ovEl.className = 'ov'; document.body.append(ovEl);
+  ovEl.onclick = (e) => { if (e.target === ovEl) closeDialog(); };
+  const step1 = () => {
+    const list = course.targets.filter((x) => !q || x.title.toLowerCase().includes(q));
+    ovEl.innerHTML = `<div class="dlg" role="dialog" aria-modal="true" aria-labelledby="cpT"><h3 id="cpT">Copy to another course</h3>
+      <div class="note">${plural(classes.length, 'class')} from ${esc(label)}. They stay in ${esc(course.title)} as well.</div>
+      <div class="search">${I.search}<input id="cpQ" type="search" placeholder="Search courses" value="${esc(q)}" aria-label="Search courses"></div>
+      <div class="clist" role="radiogroup" aria-label="Course">${list.map((x) => `<label class="copt${pick === x ? ' on' : ''}"><input type="radio" name="cp" value="${course.targets.indexOf(x)}" ${pick === x ? 'checked' : ''}>
+        <span style="min-width:0"><span class="ct">${esc(x.title)}</span><span class="note">${plural(x.total, 'class')} · ${plural(x.topics, 'topic')}</span></span></label>`).join('') || '<div class="empty">No course matches.</div>'}</div>
+      <div class="note">Prototype: only ${course.targets.length} real courses are listed here.</div>
+      <div class="acts"><button class="btn" id="cpCancel">Cancel</button><button class="btn primary" id="cpNext" ${pick ? '' : 'disabled'}>Next</button></div></div>`;
+    const qi = ovEl.querySelector('#cpQ'); qi.oninput = () => { q = qi.value.trim().toLowerCase(); step1(); const n = ovEl.querySelector('#cpQ'); n.focus(); n.setSelectionRange(n.value.length, n.value.length); };
+    ovEl.querySelectorAll('input[name="cp"]').forEach((r) => { r.onchange = () => { pick = course.targets[+r.value]; step1(); }; });
+    ovEl.querySelector('#cpCancel').onclick = closeDialog;
+    ovEl.querySelector('#cpNext').onclick = () => pick && step2();
+  };
+  const step2 = () => {
+    const byTopic = new Map();
+    for (const c of classes) {
+      const t = allTopics().find((x) => x.classes.includes(c));
+      if (!byTopic.has(t)) byTopic.set(t, { add: 0, skip: 0 });
+      byTopic.get(t)[pick.have.has(c.cid) ? 'skip' : 'add']++;
+    }
+    const add = [...byTopic.values()].reduce((n, x) => n + x.add, 0), skip = classes.length - add;
+    const rows = [...byTopic.entries()].map(([t, x]) => {
+      const there = pick.tc[t.tid];
+      return `<tr><td>${esc(sectionOf(t).name)} › <b>${esc(t.name)}</b></td><td class="num">${x.add}</td><td class="num">${x.skip}</td>
+        <td>${x.add ? (there ? `after its ${there}` : 'new topic, at the end') : '—'}</td></tr>`;
+    }).join('');
+    ovEl.innerHTML = `<div class="dlg wide" role="dialog" aria-modal="true" aria-labelledby="cpT"><h3 id="cpT">Copy to ${esc(pick.title)}</h3>
+      <div><b>${plural(add, 'class')}</b> will be added.${skip ? ` <b>${skip}</b> ${skip === 1 ? 'is' : 'are'} already there and will be skipped.` : ''}</div>
+      <div class="tbl"><table class="ptable"><thead><tr><th>Section › Topic</th><th class="num">Add</th><th class="num">Skip</th><th>Lands</th></tr></thead><tbody>${rows}</tbody></table></div>
+      <div class="note">Same Section › Topic › Subtopic, same order, Is Free, start date and status. Nothing changes in ${esc(course.title)}, and nobody loses access.</div>
+      <div class="acts"><button class="btn" id="cpBack">Back</button><button class="btn primary" id="cpGo" ${add ? '' : 'disabled'}>${add ? 'Copy ' + plural(add, 'class') : 'Nothing to copy'}</button></div></div>`;
+    ovEl.querySelector('#cpBack').onclick = step1;
+    ovEl.querySelector('#cpGo').onclick = () => {
+      for (const c of classes) pick.have.add(c.cid);
+      for (const [t, x] of byTopic) if (x.add) pick.tc[t.tid] = (pick.tc[t.tid] || 0) + x.add;
+      pick.total += add; closeDialog();
+      save(`Copied ${plural(add, 'class')} to ${pick.title}${skip ? ` (${skip} skipped)` : ''}`, API.copy,
+        `Adds placements in ${pick.title} under the same Section › Topic › Subtopic, in this order, after its own classes in each topic. ${course.title} is unchanged.`);
+    };
+    ovEl.querySelector('#cpGo').focus();
+  };
+  step1(); ovEl.querySelector('#cpQ').focus();
+}
+
+// one delegated handler for the list
+document.getElementById('main').addEventListener('click', (e) => {
+  const el = e.target.closest('[data-act]'); if (!el) return; const a = el.dataset.act;
+  if (a === 'toggle') { const k = el.dataset.key; collapsed.has(k) ? collapsed.delete(k) : collapsed.add(k); render(); }
+  else if (a === 'toggle-all') { const anyOpen = allTopics().some((t) => !collapsed.has('t:' + t.id)); allTopics().forEach((t) => anyOpen ? collapsed.add('t:' + t.id) : collapsed.delete('t:' + t.id)); render(); }
+  else if (a === 'up' || a === 'down') arrow(el.dataset.c, a === 'up' ? -1 : 1);
+  else if (a === 'status') { const { c } = findClass(el.dataset.c); c.status = c.status === 'active' ? 'inactive' : 'active'; save(`Set “${c.title}” ${c.status}`, API.assignment, 'Unchanged from today.'); }
+  else if (a === 'change') openChangeTopic(el.dataset.c);
+  else if (a === 'start') toast('Start date & time picker, same as today. End date is gone.');
+  else if (a === 'tab') { bTab = el.dataset.s; render(); }
+  else if (a === 'pick') { if (e.target.closest('.grip')) return; cTopic = el.dataset.t; render(); }
+  else if (a === 'copy-sel') { const ids = selected; openCopy(allTopics().flatMap((t) => flat(t)).filter((c) => ids.has(c.id)), plural(ids.size, 'selected class')); }
+  else if (a === 'bulk') toast('Bulk edit keeps Status, Start date and Is Free. No end date, no priority.');
+  else if (a === 'remove') toast(`Would remove ${selected.size} classes from this course.`);
+  else if (a === 'menu-course') openMenu(el, [
+    { label: 'Reverse priority in every topic', hint: 'Section and topic order stay', run: reverseAll },
+    { label: 'Copy to another course…', hint: `All ${allTopics().reduce((n, t) => n + t.classes.length, 0)} classes`, run: () => openCopy(allTopics().flatMap((t) => flat(t)), 'the whole course') },
+  ]);
+  else if (a === 'menu-topic') { const t = topicById(el.dataset.t); const b = buckets(t); openMenu(el, [
+    { label: 'Reverse priority', hint: `${t.name} only`, run: () => reverseTopic(t) },
+    { label: 'Copy this topic to another course…', hint: plural(t.classes.length, 'class'), run: () => openCopy(flat(t), `${sectionOf(t).name} › ${t.name}`) },
+    ...(b ? [{ label: 'Collapse all subtopics', run: () => { b.forEach((g) => collapsed.add('b:' + t.id + ':' + g.key)); collapsed.delete('t:' + t.id); render(); } },
+             { label: 'Expand all subtopics', run: () => { b.forEach((g) => collapsed.delete('b:' + t.id + ':' + g.key)); collapsed.delete('t:' + t.id); render(); } }] : []),
+  ]); }
+  else if (a === 'menu-section') { const s = course.sections.find((x) => x.id === el.dataset.s); openMenu(el, [
+    { label: 'Copy this section to another course…', hint: plural(secCount(s), 'class'), run: () => openCopy(s.topics.flatMap((t) => flat(t)), s.name) },
+    { label: 'Collapse all topics', run: () => { s.topics.forEach((t) => collapsed.add('t:' + t.id)); render(); } },
+    { label: 'Expand all topics', run: () => { s.topics.forEach((t) => collapsed.delete('t:' + t.id)); collapsed.delete('s:' + s.id); render(); } },
+  ]); }
+});
+document.getElementById('main').addEventListener('change', (e) => {
+  const el = e.target; const a = el.dataset.act;
+  if (a === 'sel') { el.checked ? selected.add(el.dataset.c) : selected.delete(el.dataset.c); render(); }
+  else if (a === 'free') { const { c } = findClass(el.dataset.c); c.free = el.checked; save(`Set “${c.title}” ${c.free ? 'free' : 'paid'}`, API.assignment, 'Unchanged from today.'); }
+});
+document.getElementById('main').addEventListener('input', (e) => { if (e.target.id === 'q') { search = e.target.value.trim().toLowerCase(); render(); } });
+
+document.getElementById('courseTitle').textContent = RAW.course;
+document.getElementById('dataNote').textContent = `${RAW.total} classes, read from production on ${READ_ON}. Thumbnails left out.`;
+render();
+</script>

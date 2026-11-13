@@ -1,0 +1,484 @@
+{
+ "ok": 9492,
+ "change": 5,
+ "unknown": 2,
+ "missing": 0,
+ "menus": {
+  "144p->240p.m3u8 240p->240p.m3u8 360p->360p.m3u8 480p->480p.m3u8 720p->480p.m3u8": 2980,
+  "144p->240p.m3u8 240p->240p.m3u8 360p->360p.m3u8 480p->480p.m3u8 720p->480p.m3u8 1080p->1080p.m3u8": 6512,
+  "638x360->360p.m3u8 854x480->480p.m3u8": 1,
+  "256x144->240p.m3u8": 1,
+  "256x144->240p.m3u8 854x480->480p.m3u8": 1,
+  "854x480->480p.m3u8": 2
+ },
+ "unknownReasons": {
+  "unexpected file: 900p.m3u8": 2
+ },
+ "probe": [
+  {
+   "classId": "6ace8eda8752d955968addb8",
+   "rungs": [
+    {
+     "uri": "240p.m3u8",
+     "size": "256x144",
+     "matches": true
+    },
+    {
+     "uri": "360p.m3u8",
+     "size": "638x360",
+     "matches": true
+    },
+    {
+     "uri": "480p.m3u8",
+     "size": "854x480",
+     "matches": true
+    }
+   ]
+  },
+  {
+   "classId": "6ace90838752d955968aee01",
+   "rungs": [
+    {
+     "uri": "240p.m3u8",
+     "size": "256x144",
+     "matches": true
+    },
+    {
+     "uri": "360p.m3u8",
+     "size": "638x360",
+     "matches": true
+    },
+    {
+     "uri": "480p.m3u8",
+     "size": "854x480",
+     "matches": true
+    }
+   ]
+  },
+  {
+   "classId": "6ace93468752d955968b0e2f",
+   "rungs": [
+    {
+     "uri": "240p.m3u8",
+     "size": "256x144",
+     "matches": true
+    },
+    {
+     "uri": "360p.m3u8",
+     "size": "638x360",
+     "matches": true
+    },
+    {
+     "uri": "480p.m3u8",
+     "size": "854x480",
+     "matches": true
+    }
+   ]
+  },
+  {
+   "classId": "6ace92158752d955968afbc6",
+   "rungs": [
+    {
+     "uri": "240p.m3u8",
+     "size": "256x144",
+     "matches": true
+    },
+    {
+     "uri": "360p.m3u8",
+     "size": "638x360",
+     "matches": true
+    },
+    {
+     "uri": "480p.m3u8",
+     "size": "854x480",
+     "matches": true
+    }
+   ]
+  },
+  {
+   "classId": "6acea6818752d955968b96e8",
+   "rungs": [
+    {
+     "uri": "240p.m3u8",
+     "size": "256x144",
+     "matches": true
+    },
+    {
+     "uri": "360p.m3u8",
+     "size": "638x360",
+     "matches": true
+    },
+    {
+     "uri": "480p.m3u8",
+     "size": "854x480",
+     "matches": true
+    }
+   ]
+  },
+  {
+   "classId": "6acea5328752d955968b93cf",
+   "rungs": [
+    {
+     "uri": "240p.m3u8",
+     "size": "256x144",
+     "matches": true
+    },
+    {
+     "uri": "360p.m3u8",
+     "size": "638x360",
+     "matches": true
+    },
+    {
+     "uri": "480p.m3u8",
+     "size": "854x480",
+     "matches": true
+    }
+   ]
+  },
+  {
+   "classId": "6aceadf08752d955968ba834",
+   "rungs": [
+    {
+     "uri": "240p.m3u8",
+     "size": "256x144",
+     "matches": true
+    },
+    {
+     "uri": "360p.m3u8",
+     "size": "638x360",
+     "matches": true
+    },
+    {
+     "uri": "480p.m3u8",
+     "size": "854x480",
+     "matches": true
+    },
+    {
+     "uri": "1080p.m3u8",
+     "size": "1600x900",
+     "matches": true
+    }
+   ]
+  },
+  {
+   "classId": "6aceb4c08752d955968bb685",
+   "rungs": [
+    {
+     "uri": "240p.m3u8",
+     "size": "256x144",
+     "matches": true
+    },
+    {
+     "uri": "360p.m3u8",
+     "size": "638x360",
+     "matches": true
+    },
+    {
+     "uri": "480p.m3u8",
+     "size": "854x480",
+     "matches": true
+    },
+    {
+     "uri": "1080p.m3u8",
+     "size": "1024x576",
+     "matches": true
+    }
+   ]
+  },
+  {
+   "classId": "6ace9f338752d955968b8471",
+   "rungs": [
+    {
+     "uri": "240p.m3u8",
+     "size": "256x144",
+     "matches": true
+    },
+    {
+     "uri": "360p.m3u8",
+     "size": "638x360",
+     "matches": true
+    },
+    {
+     "uri": "480p.m3u8",
+     "size": "854x480",
+     "matches": true
+    },
+    {
+     "uri": "1080p.m3u8",
+     "size": "1024x576",
+     "matches": true
+    }
+   ]
+  },
+  {
+   "classId": "6acec2588752d955968bdd5b",
+   "rungs": [
+    {
+     "uri": "240p.m3u8",
+     "size": "256x144",
+     "matches": true
+    },
+    {
+     "uri": "360p.m3u8",
+     "size": "638x360",
+     "matches": true
+    },
+    {
+     "uri": "480p.m3u8",
+     "size": "854x480",
+     "matches": true
+    },
+    {
+     "uri": "1080p.m3u8",
+     "size": "1600x900",
+     "matches": true
+    }
+   ]
+  },
+  {
+   "classId": "6acec4508752d955968be30a",
+   "rungs": [
+    {
+     "uri": "240p.m3u8",
+     "size": "256x144",
+     "matches": true
+    },
+    {
+     "uri": "360p.m3u8",
+     "size": "638x360",
+     "matches": true
+    },
+    {
+     "uri": "480p.m3u8",
+     "size": "854x480",
+     "matches": true
+    },
+    {
+     "uri": "1080p.m3u8",
+     "size": "1600x900",
+     "matches": true
+    }
+   ]
+  },
+  {
+   "classId": "6adaafd0d8a68cd04b9b6337",
+   "rungs": [
+    {
+     "uri": "240p.m3u8",
+     "size": "256x144",
+     "matches": true
+    },
+    {
+     "uri": "360p.m3u8",
+     "size": "638x360",
+     "matches": true
+    },
+    {
+     "uri": "480p.m3u8",
+     "size": "854x480",
+     "matches": true
+    },
+    {
+     "uri": "1080p.m3u8",
+     "size": "1600x900",
+     "matches": true
+    }
+   ]
+  },
+  {
+   "classId": "6acea9438752d955968b9dc4",
+   "rungs": [
+    {
+     "uri": "240p.m3u8",
+     "size": "256x144",
+     "matches": true
+    },
+    {
+     "uri": "360p.m3u8",
+     "size": "638x360",
+     "matches": true
+    },
+    {
+     "uri": "480p.m3u8",
+     "size": "854x480",
+     "matches": true
+    }
+   ]
+  },
+  {
+   "classId": "6ace98a28752d955968b5aef",
+   "rungs": [
+    {
+     "uri": "240p.m3u8",
+     "size": "256x144",
+     "matches": true
+    },
+    {
+     "uri": "360p.m3u8",
+     "size": "638x360",
+     "matches": true
+    },
+    {
+     "uri": "480p.m3u8",
+     "size": "854x480",
+     "matches": true
+    },
+    {
+     "uri": "1080p.m3u8",
+     "size": "1600x900",
+     "matches": true
+    }
+   ]
+  },
+  {
+   "classId": "6ace99878752d955968b6947",
+   "rungs": [
+    {
+     "uri": "240p.m3u8",
+     "size": "256x144",
+     "matches": true
+    },
+    {
+     "uri": "360p.m3u8",
+     "size": "638x360",
+     "matches": true
+    },
+    {
+     "uri": "480p.m3u8",
+     "size": "854x480",
+     "matches": true
+    },
+    {
+     "uri": "1080p.m3u8",
+     "size": "1600x900",
+     "matches": true
+    }
+   ]
+  },
+  {
+   "classId": "6ace96818752d955968b3e9c",
+   "rungs": [
+    {
+     "uri": "240p.m3u8",
+     "size": "256x144",
+     "matches": true
+    },
+    {
+     "uri": "360p.m3u8",
+     "size": "638x360",
+     "matches": true
+    },
+    {
+     "uri": "480p.m3u8",
+     "size": "854x480",
+     "matches": true
+    },
+    {
+     "uri": "1080p.m3u8",
+     "size": "1600x900",
+     "matches": true
+    }
+   ]
+  },
+  {
+   "classId": "6ace98438752d955968b54ca",
+   "rungs": [
+    {
+     "uri": "240p.m3u8",
+     "size": "256x144",
+     "matches": true
+    },
+    {
+     "uri": "360p.m3u8",
+     "size": "638x360",
+     "matches": true
+    },
+    {
+     "uri": "480p.m3u8",
+     "size": "854x480",
+     "matches": true
+    },
+    {
+     "uri": "1080p.m3u8",
+     "size": "1600x900",
+     "matches": true
+    }
+   ]
+  },
+  {
+   "classId": "6ace94658752d955968b1e2e",
+   "rungs": [
+    {
+     "uri": "240p.m3u8",
+     "size": "256x144",
+     "matches": true
+    },
+    {
+     "uri": "360p.m3u8",
+     "size": "638x360",
+     "matches": true
+    },
+    {
+     "uri": "480p.m3u8",
+     "size": "854x480",
+     "matches": true
+    },
+    {
+     "uri": "1080p.m3u8",
+     "size": "1600x900",
+     "matches": true
+    }
+   ]
+  },
+  {
+   "classId": "6ace9ab88752d955968b7373",
+   "rungs": [
+    {
+     "uri": "240p.m3u8",
+     "size": "256x144",
+     "matches": true
+    },
+    {
+     "uri": "360p.m3u8",
+     "size": "638x360",
+     "matches": true
+    },
+    {
+     "uri": "480p.m3u8",
+     "size": "854x480",
+     "matches": true
+    },
+    {
+     "uri": "1080p.m3u8",
+     "size": "1600x900",
+     "matches": true
+    }
+   ]
+  },
+  {
+   "classId": "6ace996e8752d955968b67b1",
+   "rungs": [
+    {
+     "uri": "240p.m3u8",
+     "size": "256x144",
+     "matches": true
+    },
+    {
+     "uri": "360p.m3u8",
+     "size": "638x360",
+     "matches": true
+    },
+    {
+     "uri": "480p.m3u8",
+     "size": "854x480",
+     "matches": true
+    },
+    {
+     "uri": "1080p.m3u8",
+     "size": "1600x900",
+     "matches": true
+    }
+   ]
+  }
+ ]
+}

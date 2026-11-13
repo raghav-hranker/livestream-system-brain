@@ -1,0 +1,32 @@
+# Failure causes and proposed verification flow
+
+Status: proposal only. No repair, application code change, database write or deployment authorized by this explanation request. Tenant Vidyagram781 only.
+
+## What the evidence establishes
+
+Of the46 current source recovery candidates,38 jobs recorded source404 failures and exhausted5 attempts. Eight recorded no playable URL and retired after1attempt. The old error strings establish the observed failure, not why the upstream response later changed. No retained per-attempt response evidence distinguishes an unavailable source from a different quality/path, request context or temporary upstream behaviour. Do not claim that every original failure was an expired cookie or deleted video.
+
+The queue refuses dead jobs: backend `src/services/apx/apxIngestService.ts:172`. NoURL retires immediately at229–235; other failures retire at the five-attempt cap in335–363. Session-related mint errors are already returned to pending without consuming an attempt at237–241. Token minting already checks session liveness before classifying empty URLs in `apxVideoTokenService.ts:270`; strengthen that existing safeguard rather than describing it as absent.
+
+The nightly recovery action is narrow: `src/services/apx/vidyagramNightlySteps.ts:167` only requeues recent nightly-created classes with noURL errors; it excludes the old bulk-import backlog and does not requalify old404 failures. `ApxCourse.processed` counts done OR dead (`apxIngestService.ts:386`), so processed means terminal work, not complete playable media coverage.
+
+Current source survey:46 candidates passed one-rendition first/middle/last samples;82 current videos still return no usable URL,4 have source-playlist404 and1 has a missing final segment. The50 historical assets stay outside automatic current-content recovery. See [report.md](report.md) and [summary.json](summary.json). The source survey did not run the full production worker or establish all-rendition readiness.
+
+## Proposed integration
+
+1. Capture and identify the asset. Bind tenant, asset key and current source occurrences. Preserve operator edits and historical records. Changed asset identity follows replacement handling, never an overwrite of an unrelated old job.
+2. Source preflight immediately after fresh token minting and before bulk transfer: verify authenticated CMS response separately; check exact asset identity/current eligibility; parse the HLS playlist; check every rendition the worker actually intends to import, including its optional added quality; range-read first/middle/last segments and validate media signatures. Missing media goes to source-blocked, not playable. Never silently drop a failed rendition without an explicit quality policy.
+3. Full copy retains the worker's existing guarantees: fetch/upload every intended segment and write the master last. Sampling does not replace full-transfer validation. The mirror currently refreshes segment tokens for403; other fetch failures propagate (`mirror.js:116`). Use bounded transport retries/backoff where justified, not blanket repeat downloads for persistent404s.
+4. Destination verification before publishing the new/replacement Class media reference and marking media ready: read destination playlists via the real serving path; compare intended rendition/segment inventory and sizes/checksums where available; sample media from each rendition; perform short decode/duration checks and an authenticated playback smoke test. Make verification idempotent and distinguish failed CDN serving, callback failure and storage failure. Preserve an existing working recording during replacement.
+5. Scheduled recovery qualification: a separate low-rate read-only pass over currently relevant failed assets, including the old bulk backlog. Store reason, stage, lastCheckedAt, nextCheckAt and verification outcome. Requeue only after fresh source identity/current-ownership checks and source preflight pass, preserving job attempt history. No automatic restoration of historical or operator-suppressed content.
+6. Monitoring: publish counts for discovered, source-blocked, copying, destination-verifying, verified-ready and historical. A finished run may be finished-with-failures; never present processed or an empty work queue as100% playable coverage. Alert on new failures, recovered sources and growing/stale backlogs, not each unchanged blocked item.
+
+Retry proposal: authentication failures pause tenant work and alert without consuming content attempts;429 uses Retry-After and a tenant-wide pause; network/5xx use bounded exponential backoff with jitter; noURL/404/incomplete-source use inexpensive delayed requalification (for example next day, then3days, then7days, with a review threshold), not immediate full-copy loops. These timings are proposed defaults, not implemented policy. Probe new/changed content and due failures; use small rotating samples of done content rather than rescanning all recordings nightly.
+
+Implementation seam: one reusable structured source verifier shared by the worker preflight and recovery survey, plus a distinct destination verifier at the publish/finalize boundary. The audit scripts demonstrate the checks but must not simply be pasted into production: they select one representative/one rendition, are tied to dated inventories, and have no durable production scheduling or state machine. Evidence must contain IDs, stage, safe HTTP result, counts and timestamps; never cookies, signed URLs or token-response bodies.
+
+Suggested regression cases: temporarily empty token response later recovers; a live dashboard but a malformed content endpoint; auth expiry without charging a video attempt; persistent404; a working playlist with a missing final segment; one good and one broken rendition; changed asset identity; historical/operator suppression; partial copy; destinationCDN403; successful upload with failed playback; duplicate verification/retry invocation; and ready only after destination verification.
+
+## Other identified failures
+
+The two Geometry replacements are a separate asset-version/import-job identity collision; a local representative-selection fix exists but remains undeployed. The two PDFs are a separate cleartext/encryption-metadata mismatch: valid PDF bytes were decrypted unnecessarily; a local validate-before-decrypt guard is prepared but remains undeployed. Source video rechecks do not fix either bug.

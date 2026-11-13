@@ -69,3 +69,13 @@ Left on AppX:
   image, so students already see them blank. The images have to come from the client.
 
 Several banners are 11–14 MB animated GIFs, the same bytes AppX served. `assets.hranker.org` answers `cf-cache-status: DYNAMIC`.
+
+## Second pass, 2026-11-06
+
+Six courses created after 10-27 had AppX banners again, because the importer copies AppX's URL when it creates a course.
+These were UPSSSC MAINS, UPSSSC RO/ARO, UP Foundation, GS Special Decode, Railway Group D and Railway Station Master,
+and there was 1 new question image. Same script, COMMIT=1: 7 images byte-checked onto `assets.hranker.org`, 8 fields
+rewritten, 0 courses left on AppX. For the UPSSSC combo and its 3 sub courses, every course field, the 69 placed classes
+(thumbnails on Bunny, 5 YouTube), their 74 PDFs (all `pdfAsset` in B2), faculty and plans hold no served AppX URL. The
+only AppX strings left there are `apxAssetKey` provenance keys. Undo: box `~/vg-appx-image-rehost-2026-11-06/before.json`.
+

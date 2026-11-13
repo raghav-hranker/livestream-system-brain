@@ -1,0 +1,66 @@
+{
+  "observedAt": "2026-11-11T10:54:39.011Z",
+  "readOnly": true,
+  "scope": 33,
+  "steps": [],
+  "controls": [
+    {
+      "at": "2026-11-11T10:54:41.245Z",
+      "hasUsableUrl": true
+    }
+  ],
+  "candidates": [],
+  "requests": 7,
+  "cmsRequests": 4,
+  "mediaRequests": 3,
+  "requestBudget": 20000,
+  "segmentBytes": 0,
+  "productionWrites": 1,
+  "policy": {
+    "mediaConcurrency": 4,
+    "mediaRequestsPerSecond": 8,
+    "cmsGapMs": 1100,
+    "range": "0-1023",
+    "stopAfterConfirmedGap": true
+  },
+  "mode": "apply",
+  "recoveries": [
+    {
+      "job": "6ace9582c9735682f04ef311",
+      "classId": "6ace95828752d955968b2e73",
+      "title": "Trigonometry Class 02 · TRIGONOMETRY (6)",
+      "startedAt": "2026-11-11T10:54:42.472Z",
+      "stateBefore": {
+        "job": "6ace9582c9735682f04ef311",
+        "classId": "6ace95828752d955968b2e73",
+        "jobStatus": "dead",
+        "jobClassId": "6ace95828752d955968b2e73",
+        "attempts": 5,
+        "jobUpdatedAt": "2026-10-14T02:40:07.445Z",
+        "jobError": "fetch [url] failed: 404",
+        "classStatus": 1,
+        "hasHlsAsset": false,
+        "hlsAssetKind": null,
+        "hlsAssetKey": null,
+        "streamStatus": null,
+        "apxAssetKey": "vid:rgvikramjeet-data:584252-1708404954",
+        "placements": 2,
+        "placementsActive": 2,
+        "placementsHash": "a092f0f72e01ce7346b6adad6fd523fba30b192ac926a64a42ecd6eb50ea3fdd"
+      },
+      "claimedAt": "2026-11-11T10:54:45.257Z",
+      "worker": {
+        "code": 1,
+        "failure": null
+      },
+      "release": {
+        "released": true
+      },
+      "ok": false
+    }
+  ],
+  "error": "Error",
+  "reason": "CopyFailed",
+  "completedAt": "2026-11-11T10:54:47.154Z",
+  "checkpoint": true
+}

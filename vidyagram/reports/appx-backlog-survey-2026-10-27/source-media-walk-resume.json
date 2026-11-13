@@ -1,0 +1,3137 @@
+{
+  "observedAt": "2026-10-27T08:22:32.586Z",
+  "readOnly": true,
+  "budget": 1100,
+  "steps": [
+    {
+      "name": "authentication and course list",
+      "ok": true,
+      "at": "2026-10-27T08:22:32.587Z",
+      "milliseconds": 261
+    },
+    {
+      "name": "fallback course listing 22",
+      "ok": true,
+      "at": "2026-10-27T08:22:32.848Z",
+      "milliseconds": 9507
+    },
+    {
+      "name": "fallback course listing 24",
+      "ok": true,
+      "at": "2026-10-27T08:22:42.355Z",
+      "milliseconds": 4878
+    },
+    {
+      "name": "fallback course listing 25",
+      "ok": true,
+      "at": "2026-10-27T08:22:47.233Z",
+      "milliseconds": 5594
+    },
+    {
+      "name": "fallback course listing 42",
+      "ok": true,
+      "at": "2026-10-27T08:22:52.827Z",
+      "milliseconds": 10473
+    },
+    {
+      "name": "fallback course listing 45",
+      "ok": true,
+      "at": "2026-10-27T08:23:03.300Z",
+      "milliseconds": 3541
+    },
+    {
+      "name": "fallback course listing 47",
+      "ok": true,
+      "at": "2026-10-27T08:23:06.841Z",
+      "milliseconds": 3798
+    },
+    {
+      "name": "fallback course listing 87",
+      "ok": true,
+      "at": "2026-10-27T08:23:10.639Z",
+      "milliseconds": 2602
+    },
+    {
+      "name": "fallback course listing 131",
+      "ok": true,
+      "at": "2026-10-27T08:23:13.241Z",
+      "milliseconds": 1552
+    },
+    {
+      "name": "dead token 16294",
+      "ok": true,
+      "at": "2026-10-27T08:23:14.794Z",
+      "milliseconds": 10381
+    },
+    {
+      "name": "dead token 16028",
+      "ok": true,
+      "at": "2026-10-27T08:23:25.177Z",
+      "milliseconds": 4963
+    },
+    {
+      "name": "dead token 16029",
+      "ok": true,
+      "at": "2026-10-27T08:23:30.142Z",
+      "milliseconds": 5597
+    },
+    {
+      "name": "dead token 16039",
+      "ok": true,
+      "at": "2026-10-27T08:23:35.741Z",
+      "milliseconds": 5944
+    },
+    {
+      "name": "dead token 15410",
+      "ok": true,
+      "at": "2026-10-27T08:23:41.687Z",
+      "milliseconds": 6297
+    },
+    {
+      "name": "dead token 15409",
+      "ok": true,
+      "at": "2026-10-27T08:23:47.986Z",
+      "milliseconds": 4890
+    },
+    {
+      "name": "dead token 16137",
+      "ok": true,
+      "at": "2026-10-27T08:23:52.877Z",
+      "milliseconds": 6590
+    },
+    {
+      "name": "dead token 15990",
+      "ok": true,
+      "at": "2026-10-27T08:23:59.470Z",
+      "milliseconds": 5590
+    },
+    {
+      "name": "dead token 15166",
+      "ok": true,
+      "at": "2026-10-27T08:24:05.063Z",
+      "milliseconds": 5499
+    },
+    {
+      "name": "dead token 15391",
+      "ok": true,
+      "at": "2026-10-27T08:24:10.564Z",
+      "milliseconds": 5543
+    },
+    {
+      "name": "dead token 15352",
+      "ok": true,
+      "at": "2026-10-27T08:24:16.109Z",
+      "milliseconds": 5464
+    },
+    {
+      "name": "dead token 16186",
+      "ok": true,
+      "at": "2026-10-27T08:24:21.575Z",
+      "milliseconds": 8719
+    },
+    {
+      "name": "dead token 16237",
+      "ok": true,
+      "at": "2026-10-27T08:24:30.298Z",
+      "milliseconds": 4644
+    },
+    {
+      "name": "dead token 15824",
+      "ok": true,
+      "at": "2026-10-27T08:24:34.946Z",
+      "milliseconds": 6027
+    },
+    {
+      "name": "dead token 15706",
+      "ok": true,
+      "at": "2026-10-27T08:24:40.975Z",
+      "milliseconds": 7552
+    },
+    {
+      "name": "dead token 15716",
+      "ok": true,
+      "at": "2026-10-27T08:24:48.529Z",
+      "milliseconds": 7848
+    },
+    {
+      "name": "dead token 16484",
+      "ok": true,
+      "at": "2026-10-27T08:24:56.379Z",
+      "milliseconds": 6491
+    },
+    {
+      "name": "dead token 17883",
+      "ok": true,
+      "at": "2026-10-27T08:25:02.872Z",
+      "milliseconds": 5451
+    },
+    {
+      "name": "dead token 18628",
+      "ok": true,
+      "at": "2026-10-27T08:25:08.325Z",
+      "milliseconds": 5557
+    },
+    {
+      "name": "dead token 18648",
+      "ok": true,
+      "at": "2026-10-27T08:25:13.885Z",
+      "milliseconds": 5445
+    },
+    {
+      "name": "dead token 31407",
+      "ok": true,
+      "at": "2026-10-27T08:25:19.333Z",
+      "milliseconds": 5451
+    },
+    {
+      "name": "dead token 31414",
+      "ok": true,
+      "at": "2026-10-27T08:25:24.788Z",
+      "milliseconds": 7651
+    },
+    {
+      "name": "dead token 31789",
+      "ok": true,
+      "at": "2026-10-27T08:25:32.443Z",
+      "milliseconds": 6147
+    },
+    {
+      "name": "dead token 33744",
+      "ok": true,
+      "at": "2026-10-27T08:25:38.593Z",
+      "milliseconds": 4604
+    },
+    {
+      "name": "dead token 33822",
+      "ok": true,
+      "at": "2026-10-27T08:25:43.201Z",
+      "milliseconds": 5553
+    },
+    {
+      "name": "dead token 34046",
+      "ok": true,
+      "at": "2026-10-27T08:25:48.757Z",
+      "milliseconds": 5868
+    },
+    {
+      "name": "dead token 35200",
+      "ok": true,
+      "at": "2026-10-27T08:25:54.630Z",
+      "milliseconds": 5544
+    },
+    {
+      "name": "dead token 42132",
+      "ok": true,
+      "at": "2026-10-27T08:26:00.178Z",
+      "milliseconds": 5622
+    },
+    {
+      "name": "dead token 42137",
+      "ok": true,
+      "at": "2026-10-27T08:26:05.803Z",
+      "milliseconds": 5779
+    },
+    {
+      "name": "dead token 193431",
+      "ok": true,
+      "at": "2026-10-27T08:26:11.586Z",
+      "milliseconds": 4887
+    },
+    {
+      "name": "dead token 193432",
+      "ok": true,
+      "at": "2026-10-27T08:26:16.476Z",
+      "milliseconds": 5475
+    },
+    {
+      "name": "dead token 193434",
+      "ok": true,
+      "at": "2026-10-27T08:26:21.952Z",
+      "milliseconds": 5565
+    }
+  ],
+  "deadSourceSamples": [
+    {
+      "job": "6ace9397c9735682f04ee9c4",
+      "classId": "6ace93978752d955968b1376",
+      "oldAssetKey": "vid:rgvikramjeet-data:412887-1702040847",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "22",
+      "rowId": "16294",
+      "source": {
+        "id": "16294",
+        "title": "काल ",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:412887-1702040847",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 199,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 397,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 398,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace93a4c9735682f04eea7e",
+      "classId": "6ace93a48752d955968b145d",
+      "oldAssetKey": "vid:rgvikramjeet-data:538157-1706701056",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "22",
+      "rowId": "16028",
+      "source": {
+        "id": "16028",
+        "title": "हिंदी साहित्य ",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:538157-1706701056",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 188,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 376,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 377,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace93a4c9735682f04eea80",
+      "classId": "6ace93a48752d955968b1464",
+      "oldAssetKey": "vid:rgvikramjeet-data:553312-1707238241",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "22",
+      "rowId": "16029",
+      "source": {
+        "id": "16029",
+        "title": "हिंदी साहित्य 02",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:553312-1707238241",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 207,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 414,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 415,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace93a9c9735682f04eea96",
+      "classId": "6ace93a88752d955968b14b1",
+      "oldAssetKey": "vid:rgvikramjeet-data:520124-1706028252",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "22",
+      "rowId": "16039",
+      "source": {
+        "id": "16039",
+        "title": "अलंकार 02",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:520124-1706028252",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 111,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 222,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 223,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace93c4c9735682f04eeb1c",
+      "classId": "6ace93c48752d955968b1671",
+      "oldAssetKey": "vid:rgvikramjeet-data:410747-1701962427",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "22",
+      "rowId": "15410",
+      "source": {
+        "id": "15410",
+        "title": "CLASS 01",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:410747-1701962427",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 156,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 311,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 312,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace93c5c9735682f04eeb20",
+      "classId": "6ace93c58752d955968b167f",
+      "oldAssetKey": "vid:rgvikramjeet-data:410875-1701975160",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "22",
+      "rowId": "15409",
+      "source": {
+        "id": "15409",
+        "title": "Size And Location (Practice Class)",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:410875-1701975160",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 168,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 336,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 337,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace93d2c9735682f04eeb64",
+      "classId": "6ace93d28752d955968b175f",
+      "oldAssetKey": "drm:59d7aef1-ca2e-472e-917d-45e22bb4de25",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "22",
+      "rowId": "16137",
+      "source": {
+        "id": "16137",
+        "title": "Class 13 (World Geography)",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "drm:59d7aef1-ca2e-472e-917d-45e22bb4de25",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 150,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 299,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 300,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace93e9c9735682f04eebd9",
+      "classId": "6ace93e98752d955968b18d2",
+      "oldAssetKey": "drm:4863eace-e19a-4f4d-a493-826688568333",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "22",
+      "rowId": "15990",
+      "source": {
+        "id": "15990",
+        "title": "commission (आयोग) ",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "drm:4863eace-e19a-4f4d-a493-826688568333",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 140,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 279,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 280,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace9424c9735682f04eeceb",
+      "classId": "6ace94248752d955968b1c3d",
+      "oldAssetKey": "vid:rgvikramjeet-data:746409-1713792675",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "22",
+      "rowId": "15166",
+      "source": {
+        "id": "15166",
+        "title": "Analogy 03",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:746409-1713792675",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 138,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 275,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 276,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace9427c9735682f04eecf8",
+      "classId": "6ace94278752d955968b1c67",
+      "oldAssetKey": "vid:rgvikramjeet-data:781903-1714744514",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "22",
+      "rowId": "15391",
+      "source": {
+        "id": "15391",
+        "title": "Similarity 03",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:781903-1714744514",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 155,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 310,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 311,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace9446c9735682f04eed33",
+      "classId": "6ace94468752d955968b1d1d",
+      "oldAssetKey": "vid:rgvikramjeet-data:838439-1716298822",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "22",
+      "rowId": "15352",
+      "source": {
+        "id": "15352",
+        "title": "Statement - Assumption 02",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:838439-1716298822",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 189,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 378,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 379,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace9470c9735682f04eedc0",
+      "classId": "6ace94708752d955968b1ecf",
+      "oldAssetKey": "drm:ecfdd952-1ce5-4a93-a21c-08eaab8a4f64",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "22",
+      "rowId": "16186",
+      "source": {
+        "id": "16186",
+        "title": "Preamble (CLASS 01)",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "drm:ecfdd952-1ce5-4a93-a21c-08eaab8a4f64",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 156,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 312,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 313,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace947ac9735682f04eedf2",
+      "classId": "6ace947a8752d955968b1f77",
+      "oldAssetKey": "vid:rgvikramjeet-data:611217-1709311330",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "22",
+      "rowId": "16237",
+      "source": {
+        "id": "16237",
+        "title": "PARLIAMENT 04",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:611217-1709311330",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 117,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 234,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 235,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace9480c9735682f04eee0f",
+      "classId": "6ace94808752d955968b1fd9",
+      "oldAssetKey": "vid:rgvikramjeet-data:514137-1705732556",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "22",
+      "rowId": "15824",
+      "source": {
+        "id": "15824",
+        "title": "Economics Class 03",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:514137-1705732556",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 102,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 204,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 205,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace94d7c9735682f04ef00e",
+      "classId": "6ace94d78752d955968b2506",
+      "oldAssetKey": "drm:7a18a6fb-213e-4eeb-a807-01f1e781fa1d",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "22",
+      "rowId": "15706",
+      "source": {
+        "id": "15706",
+        "title": "Carbon & Its Compouns 01 ",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "drm:7a18a6fb-213e-4eeb-a807-01f1e781fa1d",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 157,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 313,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 314,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace94dac9735682f04ef02b",
+      "classId": "6ace94da8752d955968b2537",
+      "oldAssetKey": "vid:rgvikramjeet-data:410865-1701967649",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "22",
+      "rowId": "15716",
+      "source": {
+        "id": "15716",
+        "title": "Periodic Table PYQs ",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:410865-1701967649",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 161,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 321,
+            "http": 404,
+            "bytesRead": 507,
+            "tsSync": false,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": false
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 322,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": false
+      }
+    },
+    {
+      "job": "6ace94ecc9735682f04ef087",
+      "classId": "6ace94eb8752d955968b2641",
+      "oldAssetKey": "vid:rgvikramjeet-data:416836-1702276104",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "22",
+      "rowId": "16484",
+      "source": {
+        "id": "16484",
+        "title": "IMPORTANT AWARD (महत्वपूर्ण पुरस्कार )",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:416836-1702276104",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 100,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 200,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 201,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace9550c9735682f04ef228",
+      "classId": "6ace95508752d955968b2b78",
+      "oldAssetKey": "vid:rgvikramjeet-data:413406-1702104829",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "24",
+      "rowId": "17883",
+      "source": {
+        "id": "17883",
+        "title": "Demo 01 (Percentage) ",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:413406-1702104829",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 252,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 503,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 504,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace9582c9735682f04ef311",
+      "classId": "6ace95828752d955968b2e73",
+      "oldAssetKey": "vid:rgvikramjeet-data:584252-1708404954",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "25",
+      "rowId": "18628",
+      "source": {
+        "id": "18628",
+        "title": "Trigonometry Class 02",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:584252-1708404954",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 157,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 313,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 314,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace9583c9735682f04ef319",
+      "classId": "6ace95838752d955968b2e81",
+      "oldAssetKey": "vid:rgvikramjeet-data:656721-1710847787",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "25",
+      "rowId": "18648",
+      "source": {
+        "id": "18648",
+        "title": "Trigonometry Class 19",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:656721-1710847787",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 221,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 441,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 442,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace98acc9735682f04f025a",
+      "classId": "6ace98ac8752d955968b5b90",
+      "oldAssetKey": "vid:rgvikramjeet-data:866003-1717036990",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "42",
+      "rowId": "31407",
+      "source": {
+        "id": "31407",
+        "title": "Botany 03",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:866003-1717036990",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 149,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 298,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 299,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace98afc9735682f04f0266",
+      "classId": "6ace98ae8752d955968b5bba",
+      "oldAssetKey": "vid:rgvikramjeet-data:897148-1717904603",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "42",
+      "rowId": "31414",
+      "source": {
+        "id": "31414",
+        "title": "Botany 09",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:897148-1717904603",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 181,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 362,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 363,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace98d2c9735682f04f0326",
+      "classId": "6ace98d18752d955968b5e0d",
+      "oldAssetKey": "vid:rgvikramjeet-data:840565-1716363637",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "42",
+      "rowId": "31789",
+      "source": {
+        "id": "31789",
+        "title": "Electric Potential",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:840565-1716363637",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 168,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 336,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 337,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace98fcc9735682f04f03fb",
+      "classId": "6ace98fc8752d955968b60c6",
+      "oldAssetKey": "vid:rgvikramjeet-data:806069-1715411053",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "45",
+      "rowId": "33744",
+      "source": {
+        "id": "33744",
+        "title": "Work & Wages Class 01",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:806069-1715411053",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 148,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 295,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 296,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace9955c9735682f04f0614",
+      "classId": "6ace99558752d955968b6629",
+      "oldAssetKey": "vid:rgvikramjeet-data:690932-1712122818",
+      "category": "source404",
+      "currentlyPlanned": false,
+      "course": "45",
+      "rowId": "33822",
+      "source": {
+        "id": "33822",
+        "title": "Train Class 01",
+        "type": "VIDEO",
+        "enabled": "0",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:690932-1712122818",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 141,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 282,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 283,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace996cc9735682f04f067c",
+      "classId": "6ace996c8752d955968b678e",
+      "oldAssetKey": "vid:rgvikramjeet-data:659808-1710929318",
+      "category": "source404",
+      "currentlyPlanned": false,
+      "course": "45",
+      "rowId": "34046",
+      "source": {
+        "id": "34046",
+        "title": "Time, Speed & Distance Class 03",
+        "type": "VIDEO",
+        "enabled": "0",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:659808-1710929318",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 190,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 379,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 380,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ace99fec9735682f04f0950",
+      "classId": "6ace99fd8752d955968b70be",
+      "oldAssetKey": "vid:rgvikramjeet-data:702536-1712398752",
+      "category": "source404",
+      "currentlyPlanned": false,
+      "course": "47",
+      "rowId": "35200",
+      "source": {
+        "id": "35200",
+        "title": "Percentage Class 14",
+        "type": "VIDEO",
+        "enabled": "0",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:702536-1712398752",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 628,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 1255,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 1256,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6aceab0fc9735682f04f2157",
+      "classId": "6aceab0f8752d955968ba1ad",
+      "oldAssetKey": "vid:englishjaisir-data:611321-1709317626",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "87",
+      "rowId": "42132",
+      "source": {
+        "id": "42132",
+        "title": "SUPER SET-01 (HIGH LEVEL)",
+        "type": "LIVE_STREAM",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:englishjaisir-data:611321-1709317626",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 475,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 949,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 950,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6aceab1bc9735682f04f2198",
+      "classId": "6aceab1b8752d955968ba1d0",
+      "oldAssetKey": "vid:englishjaisir-data:641040-1710352954",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "87",
+      "rowId": "42137",
+      "source": {
+        "id": "42137",
+        "title": "SUPER SET-06 (HIGH LEVEL)",
+        "type": "LIVE_STREAM",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:englishjaisir-data:641040-1710352954",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 413,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 826,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 827,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ad5df30c9735682f0a0c5d4",
+      "classId": "6ad5df3064b695f53d872c12",
+      "oldAssetKey": "vid:armaths-data:4603716-1791963341",
+      "category": "noPlayableURL",
+      "currentlyPlanned": true,
+      "course": "131",
+      "rowId": "193431",
+      "source": {
+        "id": "193431",
+        "title": "Internet",
+        "type": "LIVE_STREAM",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:armaths-data:4603716-1791963341",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 128,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 256,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 257,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ad5df31c9735682f0a0c5d7",
+      "classId": "6ad5df3164b695f53d872c19",
+      "oldAssetKey": "vid:armaths-data:4611456-1792049999",
+      "category": "noPlayableURL",
+      "currentlyPlanned": true,
+      "course": "131",
+      "rowId": "193432",
+      "source": {
+        "id": "193432",
+        "title": "Internet 02",
+        "type": "LIVE_STREAM",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:armaths-data:4611456-1792049999",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 136,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 272,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 273,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6ad5df31c9735682f0a0c5da",
+      "classId": "6ad5df3164b695f53d872c20",
+      "oldAssetKey": "vid:armaths-data:4619107-1792135845",
+      "category": "noPlayableURL",
+      "currentlyPlanned": true,
+      "course": "131",
+      "rowId": "193434",
+      "source": {
+        "id": "193434",
+        "title": "Internet 03",
+        "type": "LIVE_STREAM",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:armaths-data:4619107-1792135845",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 119,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 237,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 238,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    }
+  ],
+  "geometry": [],
+  "pdfMetadata": [],
+  "requestTelemetry": [
+    {
+      "endpoint": "get_all_courses",
+      "http": 200,
+      "rows": 146,
+      "total": "146"
+    },
+    {
+      "endpoint": "get_pc4_contents",
+      "http": 200,
+      "rows": 1634,
+      "total": null
+    },
+    {
+      "endpoint": "get_pc4_contents",
+      "http": 200,
+      "rows": 722,
+      "total": null
+    },
+    {
+      "endpoint": "get_pc4_contents",
+      "http": 200,
+      "rows": 718,
+      "total": null
+    },
+    {
+      "endpoint": "get_pc4_contents",
+      "http": 200,
+      "rows": 1913,
+      "total": null
+    },
+    {
+      "endpoint": "get_pc4_contents",
+      "http": 200,
+      "rows": 478,
+      "total": null
+    },
+    {
+      "endpoint": "get_pc4_contents",
+      "http": 200,
+      "rows": 503,
+      "total": null
+    },
+    {
+      "endpoint": "get_pc4_contents",
+      "http": 200,
+      "rows": 190,
+      "total": null
+    },
+    {
+      "endpoint": "get_pc4_contents",
+      "http": 200,
+      "rows": 48,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 404,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    }
+  ],
+  "courseList": {
+    "count": 146,
+    "total": 146
+  },
+  "completedAt": "2026-10-27T08:26:27.521Z",
+  "requests": 169,
+  "sessionLost": false,
+  "transport": "direct local HTTPS; session cookie only to cms.appx.co.in"
+}

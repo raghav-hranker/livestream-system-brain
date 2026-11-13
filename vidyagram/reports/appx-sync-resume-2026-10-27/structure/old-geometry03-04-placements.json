@@ -1,0 +1,143 @@
+{
+  "verifiedAt": "2026-10-27T06:14:13.193Z",
+  "productionWrites": 0,
+  "classes": [
+    {
+      "_id": "6ad6995fe36abd47ea38d533",
+      "status": 1,
+      "title": "Geometry 03 (2) · GEOMETRY",
+      "apxAssetKey": "vid:armaths-data:4636285-1792429697",
+      "updatedAt": "2026-10-19T22:39:22.384Z"
+    },
+    {
+      "_id": "6adaafe4d8a68cd04b9b6618",
+      "status": 1,
+      "title": "Geometry 04 (2) · GEOMETRY",
+      "apxAssetKey": "vid:armaths-data:4653024-1792687692",
+      "updatedAt": "2026-10-23T01:09:04.637Z"
+    }
+  ],
+  "ledger": [
+    {
+      "_id": "6ad6995fc9735682f0bf9866",
+      "assetKey": "vid:armaths-data:4636285-1792429697",
+      "classId": "6ad6995fe36abd47ea38d533",
+      "placements": [
+        {
+          "apxCourseId": "160",
+          "rowId": "193547",
+          "apxTitle": "Geometry 03"
+        },
+        {
+          "apxCourseId": "161",
+          "rowId": "193541",
+          "apxTitle": "Geometry 03"
+        }
+      ]
+    },
+    {
+      "_id": "6adaafe4c9735682f031a916",
+      "assetKey": "vid:armaths-data:4653024-1792687692",
+      "classId": "6adaafe4d8a68cd04b9b6618",
+      "placements": [
+        {
+          "apxCourseId": "160",
+          "rowId": "193550",
+          "apxTitle": "Geometry 04"
+        },
+        {
+          "apxCourseId": "161",
+          "rowId": "193549",
+          "apxTitle": "Geometry 04"
+        }
+      ]
+    }
+  ],
+  "placements": [
+    {
+      "placementId": "6ad9ca50ff6d0620417685ae",
+      "course": "160",
+      "classId": "6ad6995fe36abd47ea38d533",
+      "title": "Geometry 03",
+      "isActive": true,
+      "status": 1,
+      "classStatus": 1,
+      "currentlyVisible": true,
+      "createdAt": "2026-10-22T08:33:20.600Z",
+      "updatedAt": "2026-10-22T08:33:20.600Z",
+      "mapped": [
+        {
+          "rowId": "193547",
+          "oldAssetKey": "vid:armaths-data:4636285-1792429697",
+          "currentDesiredAssetKeyFromOct26Plan": "vid:armaths-data:4656486-1792746126",
+          "differs": true
+        }
+      ]
+    },
+    {
+      "placementId": "6ad9ca51ff6d0620417685cf",
+      "course": "161",
+      "classId": "6ad6995fe36abd47ea38d533",
+      "title": "Geometry 03",
+      "isActive": true,
+      "status": 1,
+      "classStatus": 1,
+      "currentlyVisible": true,
+      "createdAt": "2026-10-22T08:33:21.890Z",
+      "updatedAt": "2026-10-22T08:33:21.890Z",
+      "mapped": [
+        {
+          "rowId": "193541",
+          "oldAssetKey": "vid:armaths-data:4636285-1792429697",
+          "currentDesiredAssetKeyFromOct26Plan": "vid:armaths-data:4656486-1792746126",
+          "differs": true
+        }
+      ]
+    },
+    {
+      "placementId": "6adab02ed8a68cd04b9b6ffc",
+      "course": "160",
+      "classId": "6adaafe4d8a68cd04b9b6618",
+      "title": "Geometry 04",
+      "isActive": true,
+      "status": 1,
+      "classStatus": 1,
+      "currentlyVisible": true,
+      "createdAt": "2026-10-23T00:54:06.984Z",
+      "updatedAt": "2026-10-23T00:54:06.984Z",
+      "mapped": [
+        {
+          "rowId": "193550",
+          "oldAssetKey": "vid:armaths-data:4653024-1792687692",
+          "currentDesiredAssetKeyFromOct26Plan": "vid:armaths-data:4657426-1792753322",
+          "differs": true
+        }
+      ]
+    },
+    {
+      "placementId": "6adab02fd8a68cd04b9b700f",
+      "course": "161",
+      "classId": "6adaafe4d8a68cd04b9b6618",
+      "title": "Geometry 04",
+      "isActive": true,
+      "status": 1,
+      "classStatus": 1,
+      "currentlyVisible": true,
+      "createdAt": "2026-10-23T00:54:07.065Z",
+      "updatedAt": "2026-10-23T00:54:07.065Z",
+      "mapped": [
+        {
+          "rowId": "193549",
+          "oldAssetKey": "vid:armaths-data:4653024-1792687692",
+          "currentDesiredAssetKeyFromOct26Plan": "vid:armaths-data:4657426-1792753322",
+          "differs": true
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Current desired asset keys are from Oct26 captured plan; refresh before applying a replacement decision.",
+    "These old placements were not part of the nine originally identified obsolete activation rows.",
+    "No deactivation or insertion performed."
+  ]
+}

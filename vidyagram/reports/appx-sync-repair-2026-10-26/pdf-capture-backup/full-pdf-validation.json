@@ -1,0 +1,41 @@
+[
+  {
+    "id": "6ad94017c9735682f0130807",
+    "bytes": 2330256,
+    "sha256": "21e19d30dabc659ce40baecac90f97d997b4747ebdc460cb5d327098ae30f937",
+    "pdfinfoExit": 0,
+    "pdfinfo": "Title:           \nSubject:         \nKeywords:        \nAuthor:          \nCreator:         \nProducer:        Foxit Reader PDF Printer Version 7.1.0.112\nCreationDate:    Wed Sep 18 14:01:05 2024 IST\nModDate:         Tue Nov  4 19:01:58 2025 IST\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           5\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       2330256 bytes\nOptimized:       no\nPDF version:     1.7\n",
+    "strictParserPageCount": 5,
+    "allPageTextLengths": [
+      0,
+      4006,
+      4949,
+      4558,
+      2020
+    ],
+    "renderExit": 0,
+    "renderedPages": 5,
+    "parserWarnings": "Syntax Warning: Mismatch between font type and embedded font file\nSyntax Warning: Mismatch between font type and embedded font file\nSyntax Warning: Mismatch between font type and embedded font file\nSyntax Warning: Mismatch between font type and embedded font file\nSyntax Warning: Mismatch between font type and embedded font file\nSyntax Warning: Mismatch between font type and embedded font file\nSyntax Warning: Mismatch between font type and embedded font file\nSyntax Warning: Mismatch between font type and embedded font file\n"
+  },
+  {
+    "id": "6ad94018c9735682f013080e",
+    "bytes": 3178306,
+    "sha256": "36fddbd2145da3f9adc33b02a192dfee27d75127fffd1f272ebb29e652442946",
+    "pdfinfoExit": 0,
+    "pdfinfo": "Title:           \nSubject:         \nKeywords:        \nAuthor:          \nCreator:         \nProducer:        Foxit Reader PDF Printer Version 7.1.0.112\nCreationDate:    Sat Nov 29 11:36:34 2025 IST\nModDate:         Sat Nov 29 12:06:10 2025 IST\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            AcroForm\nJavaScript:      no\nPages:           8\nEncrypted:       no\nPage size:       595.276 x 841.89 pts (A4)\nPage rot:        0\nFile size:       3178306 bytes\nOptimized:       no\nPDF version:     1.7\n",
+    "strictParserPageCount": 8,
+    "allPageTextLengths": [
+      0,
+      4365,
+      5086,
+      4497,
+      1214,
+      1150,
+      1036,
+      1006
+    ],
+    "renderExit": 0,
+    "renderedPages": 8,
+    "parserWarnings": "Syntax Warning: Mismatch between font type and embedded font file\nSyntax Warning: Mismatch between font type and embedded font file\nSyntax Warning: Mismatch between font type and embedded font file\nSyntax Warning: Mismatch between font type and embedded font file\n"
+  }
+]

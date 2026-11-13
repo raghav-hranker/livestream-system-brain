@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Cloudflare ticket reply</title></head>
+<body style="font-family:Arial,sans-serif;font-size:14px;line-height:1.5;max-width:860px;margin:24px">
+<p>Hi,</p>
+<p>Thanks for getting back to us. We're seeing two separate problems, both during our evening live class (18:00–18:30 IST).</p>
+<p><b>Account:</b> &lt;account id&gt; &nbsp;·&nbsp; <b>Bucket:</b> livestream-hranker-v2 (S3 API, PutObject) &nbsp;·&nbsp; <b>Uploading machine:</b> 34.131.52.223 (GCP asia-south2, Delhi) &nbsp;·&nbsp; <b>SDK:</b> AWS SDK for JavaScript v3 &nbsp;·&nbsp; <b>Viewer host:</b> livev2.hranker.org</p>
+
+<h3 style="font-size:15px">1. Uploads to R2 hang for 40–124 seconds before they succeed</h3>
+<p>Meanwhile, hundreds of other uploads from the same machine to the same bucket finish normally (median 0.54 s). While a segment is stuck, our playlists already list it, so viewers get 404s for it until it lands. We don't have R2 request IDs for these calls; we're adding logging of them. Here are exact keys and UTC windows, all on 2026-10-27:</p>
+<table style="border-collapse:collapse" border="1" cellpadding="6">
+<tr style="background:#f2f2f2"><th>Start (UTC, ±1 s)</th><th>Succeeded</th><th>Duration</th><th>Key</th></tr>
+<tr><td>12:39:04.7</td><td>12:41:09</td><td>124.3 s</td><td>472/6ae034d7a72249344e5deb0d/0/segment_586.ts (676,988 bytes)</td></tr>
+<tr><td>12:36:36</td><td>12:38:28</td><td>111.9 s</td><td>472/6ae034d7a72249344e5deb0d/2/playlist.m3u8</td></tr>
+<tr><td>12:35:15</td><td>12:36:51</td><td>96.1 s</td><td>472/6adea4893b633daddec7cbdf/3/segment_20.ts</td></tr>
+<tr><td>12:39:58</td><td>12:41:20</td><td>81.7 s</td><td>472/6adea4893b633daddec7cbdf/1/segment_91.ts</td></tr>
+<tr><td>11:12:56</td><td>11:13:55</td><td>58.6 s</td><td>472/6ae0338ea72249344e5b4149/0/segment_394.ts</td></tr>
+</table>
+<p>Durations come in steps of about 20 s (20, 40, 60, 80 … 124 s). The library recorded each one as a single successful call, with no errors and no retries of its own. During segment_586's 124 s, 488 other uploads from the same machine finished normally.</p>
+<p><b>CF-RAY values</b> for viewers who got a 404 on that segment while it was stuck: a511c2fbfe26cf38 (12:39:06Z), a511c2ffba77ff68 and a511c3002eb18a21 (12:39:07Z).</p>
+<p><b>Could you find these PutObject requests on your side and tell us when each one reached R2 and how long R2 took to respond?</b> That tells us whether the delay happens before the request reaches you or inside R2.</p>
+
+<h3 style="font-size:15px">2. Cloudflare's first fetch of a new segment from R2 takes 7–17 seconds</h3>
+<p>Every viewer of that segment waits on that one fetch, so they all freeze together. Example from 2026-10-24, the same segment: 472/6adc14d63b633dadde981053/1/segment_1073.ts</p>
+<table style="border-collapse:collapse" border="1" cellpadding="6">
+<tr style="background:#f2f2f2"><th>Time (UTC)</th><th>CF-RAY</th><th>Location</th><th>Cache</th><th>Time from R2</th></tr>
+<tr><td>12:49:08</td><td>a4f9198bcfdcff77</td><td>BOM</td><td>miss</td><td>14.5 s</td></tr>
+<tr><td>12:49:09</td><td>a4f9199188227e17</td><td>SIN</td><td>hit</td><td>13.5 s</td></tr>
+<tr><td>12:49:10</td><td>a4f919964979f6db</td><td>FRA</td><td>hit</td><td>12.8 s</td></tr>
+</table>
+<p>More from the same window: a4f925164ce116f6 (12:57:01, BOM, 16.9 s) and a4f92897ee80c6d2 (12:59:24, DEL, 13.1 s). Outside that window, the same fetches take 0.5–1.1 s.</p>
+<p><b>Could you check why the R2 fetch behind these Ray IDs took 13–17 s, when the same fetches usually take under 1 s?</b> Requests that arrive during that fetch wait for it too (the "hit" rows above), so every viewer stalls at once.</p>
+
+<p>On your other points: each segment is fetched by hundreds of viewers (about 97% are cache hits), and the uploading machine, the viewers and the bucket's location hint are all in India / Asia-Pacific.</p>
+<p>Thanks,<br>Raghav</p>
+</body></html>

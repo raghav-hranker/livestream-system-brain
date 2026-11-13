@@ -1,0 +1,177 @@
+{
+  "at": {
+    "$date": {
+      "$numberLong": "1793018863642"
+    }
+  },
+  "mode": "--preview",
+  "classes": [
+    {
+      "id": {
+        "$oid": "6adc01b520e78c9f77dbc7b6"
+      },
+      "title": "Geometry 03 (2) · GEOMETRY (2)",
+      "assetKey": "vid:armaths-data:4656486-1792746126",
+      "hasHls": false
+    },
+    {
+      "id": {
+        "$oid": "6adc01b820e78c9f77dbc7bd"
+      },
+      "title": "Geometry 04 (2) · GEOMETRY (2)",
+      "assetKey": "vid:armaths-data:4657426-1792753322",
+      "hasHls": false
+    }
+  ],
+  "existingNewJobs": [],
+  "oldReservedJobs": [
+    {
+      "id": {
+        "$oid": "6ad6995fc9735682f0bf9865"
+      },
+      "classId": {
+        "$oid": "6ad6995fe36abd47ea38d533"
+      },
+      "apxCourseId": {
+        "$oid": "6ace395cc9735682f048a449"
+      },
+      "apxClassId": "193547",
+      "status": "done"
+    },
+    {
+      "id": {
+        "$oid": "6adaafe4c9735682f031a915"
+      },
+      "classId": {
+        "$oid": "6adaafe4d8a68cd04b9b6618"
+      },
+      "apxCourseId": {
+        "$oid": "6ace395cc9735682f048a449"
+      },
+      "apxClassId": "193550",
+      "status": "done"
+    }
+  ],
+  "ledgerCount": {
+    "$numberInt": "0"
+  },
+  "existingPlacementCount": {
+    "$numberInt": "0"
+  },
+  "proposedPlacements": [
+    {
+      "apxCourseId": "160",
+      "rowId": "193547",
+      "classId": {
+        "$oid": "6adc01b520e78c9f77dbc7b6"
+      },
+      "assetKey": "vid:armaths-data:4656486-1792746126",
+      "course": {
+        "$oid": "6ad5faae308a95d039c38fb7"
+      },
+      "priority": {
+        "$numberInt": "246"
+      },
+      "apxTitle": "Geometry 03",
+      "isFree": false,
+      "isActive": true,
+      "section": {
+        "$oid": "6ad5f9c2308a95d039c32766"
+      },
+      "topic": {
+        "$oid": "6ad5faac308a95d039c38f64"
+      },
+      "subTopic": null,
+      "sectionName": "Maths",
+      "topicName": "GEOMETRY"
+    },
+    {
+      "apxCourseId": "160",
+      "rowId": "193550",
+      "classId": {
+        "$oid": "6adc01b820e78c9f77dbc7bd"
+      },
+      "assetKey": "vid:armaths-data:4657426-1792753322",
+      "course": {
+        "$oid": "6ad5faae308a95d039c38fb7"
+      },
+      "priority": {
+        "$numberInt": "247"
+      },
+      "apxTitle": "Geometry 04",
+      "isFree": false,
+      "isActive": true,
+      "section": {
+        "$oid": "6ad5f9c2308a95d039c32766"
+      },
+      "topic": {
+        "$oid": "6ad5faac308a95d039c38f64"
+      },
+      "subTopic": null,
+      "sectionName": "Maths",
+      "topicName": "GEOMETRY"
+    },
+    {
+      "apxCourseId": "161",
+      "rowId": "193541",
+      "classId": {
+        "$oid": "6adc01b520e78c9f77dbc7b6"
+      },
+      "assetKey": "vid:armaths-data:4656486-1792746126",
+      "course": {
+        "$oid": "6ad5fab3308a95d039c391c1"
+      },
+      "priority": {
+        "$numberInt": "246"
+      },
+      "apxTitle": "Geometry 03",
+      "isFree": false,
+      "isActive": true,
+      "section": {
+        "$oid": "6ad5f9c2308a95d039c32766"
+      },
+      "topic": {
+        "$oid": "6ad5faac308a95d039c38f64"
+      },
+      "subTopic": null,
+      "sectionName": "Maths",
+      "topicName": "GEOMETRY"
+    },
+    {
+      "apxCourseId": "161",
+      "rowId": "193549",
+      "classId": {
+        "$oid": "6adc01b820e78c9f77dbc7bd"
+      },
+      "assetKey": "vid:armaths-data:4657426-1792753322",
+      "course": {
+        "$oid": "6ad5fab3308a95d039c391c1"
+      },
+      "priority": {
+        "$numberInt": "247"
+      },
+      "apxTitle": "Geometry 04",
+      "isFree": false,
+      "isActive": true,
+      "section": {
+        "$oid": "6ad5f9c2308a95d039c32766"
+      },
+      "topic": {
+        "$oid": "6ad5faac308a95d039c38f64"
+      },
+      "subTopic": null,
+      "sectionName": "Maths",
+      "topicName": "GEOMETRY"
+    }
+  ],
+  "expectedQueueRepresentatives": [
+    {
+      "course": "161",
+      "rowId": "193541"
+    },
+    {
+      "course": "161",
+      "rowId": "193549"
+    }
+  ]
+}

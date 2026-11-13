@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-27T08:52:00.279Z",
+  "phase": "canary",
+  "readOnly": true,
+  "bucket": "recordedvideos-vidyagram",
+  "assets": [
+    {
+      "classId": "6acea4e08752d955968b9335",
+      "title": "Glands 01 · Biology",
+      "masterKey": "781/6acea4e08752d955968b9335/hls/master.m3u8",
+      "renditions": [
+        {
+          "key": "781/6acea4e08752d955968b9335/hls/240p.m3u8",
+          "segments": 274,
+          "endList": true,
+          "samples": [
+            {
+              "index": 0,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 137,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 273,
+              "bytes": 1024,
+              "tsSync": true
+            }
+          ],
+          "ok": true
+        },
+        {
+          "key": "781/6acea4e08752d955968b9335/hls/360p.m3u8",
+          "segments": 272,
+          "endList": true,
+          "samples": [
+            {
+              "index": 0,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 136,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 271,
+              "bytes": 1024,
+              "tsSync": true
+            }
+          ],
+          "ok": true
+        },
+        {
+          "key": "781/6acea4e08752d955968b9335/hls/480p.m3u8",
+          "segments": 271,
+          "endList": true,
+          "samples": [
+            {
+              "index": 0,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 135,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 270,
+              "bytes": 1024,
+              "tsSync": true
+            }
+          ],
+          "ok": true
+        }
+      ],
+      "ok": true
+    }
+  ],
+  "allDone": false,
+  "expectedJobs": 3,
+  "ok": false
+}

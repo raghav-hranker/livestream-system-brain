@@ -13,6 +13,8 @@ vertical-slice playbooks. Per-repo truth stays in each repo's own `CONTEXT.md` /
 **Never duplicate a per-repo definition here — link to it.**
 
 ## Read when
+- **`TENANTS.md`**: first, on every task. Two customer lines (quicktricks 472, Vidyagram 781) share the fork code.
+  Name the tenant, then use only its branches, DB, boxes and folder (Vidyagram docs live in `vidyagram/`).
 - **`SYSTEM.md`**: before work that crosses a service contract (stream-status, recordings, playback,
   realtime-token, private-mode, chat-moderation, PDF access/upload, shorts), or to find which repo or box
   owns something. It holds the service map, the contracts table and the end-to-end arcs.
@@ -20,6 +22,10 @@ vertical-slice playbooks. Per-repo truth stays in each repo's own `CONTEXT.md` /
   Upload lane, Job profile, Realtime token…), or before reasoning about playback auth or CDN tokens.
 - **`BRANCHES.md`**: before committing slice work across the service repos. The quicktricks forks never
   follow the slice branch.
+- **`reference/hosts.md`** before any ssh/gcloud/Mongo call; **`reference/scripts/README.md`** before writing a probe script.
+- **`reference/scripts/qt-health.sh`**: run it first when quicktricks prod is slow, erroring or "under load". One
+  read-only call covers the box, pm2, API 5xx, rs0 and stuck notifications, and ends in a WARN verdict. This
+  morning's run is at `~/Library/Logs/qt-health/latest.txt`.
 
 ## How to use this repo
 

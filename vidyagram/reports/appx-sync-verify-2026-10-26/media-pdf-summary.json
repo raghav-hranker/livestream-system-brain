@@ -1,0 +1,363 @@
+{
+  "at": "2026-10-26",
+  "jobs": {
+    "total": 9434,
+    "status": {
+      "done": 9251,
+      "dead": 183
+    },
+    "deadReasons": {
+      "HTTP404": 52,
+      "no playable URL": 131
+    },
+    "latestDone": "2026-10-26T00:55:30.897Z",
+    "doneByUtcDate": {
+      "2026-10-14": 8714,
+      "2026-10-16": 224,
+      "2026-10-19": 164,
+      "2026-10-20": 7,
+      "2026-10-21": 57,
+      "2026-10-23": 26,
+      "2026-10-24": 36,
+      "2026-10-25": 22,
+      "2026-10-26": 1
+    },
+    "createdByUtcDate": {
+      "2026-10-13": 8894,
+      "2026-10-16": 224,
+      "2026-10-19": 167,
+      "2026-10-20": 26,
+      "2026-10-21": 38,
+      "2026-10-23": 26,
+      "2026-10-24": 36,
+      "2026-10-25": 22,
+      "2026-10-26": 1
+    },
+    "progressPhases": {
+      "complete": 9194,
+      "failed": 64,
+      "claimed": 6,
+      "publishing": 38,
+      "absent": 131,
+      "downloading": 1
+    },
+    "noClass": 0
+  },
+  "pdfLedger": {
+    "total": 10741,
+    "status": {
+      "done": 10724,
+      "failed": 12,
+      "pending": 5
+    },
+    "latestUpdated": "2026-10-26T00:53:18.198Z",
+    "doneByRun": {
+      "full-2026-10-13": 9717,
+      "daily-2026-10-20": 602,
+      "daily-2026-10-19": 27,
+      "daily-2026-10-21": 4,
+      "daily-2026-10-22": 204,
+      "daily-2026-10-23": 38,
+      "daily-2026-10-24": 82,
+      "daily-2026-10-25": 50
+    },
+    "errorCounts": {
+      "Student source row not found in mirrored tree": 10,
+      "none": 5,
+      "decrypted bytes failed the PDF validity check": 2
+    },
+    "sourceStates": {
+      "attached": 10990,
+      "standalone": 10851,
+      "pending": 9
+    },
+    "missingPdfForDone": 0,
+    "outstanding": [
+      {
+        "_id": "6ad1da41c9735682f0e8a6c6",
+        "status": "failed",
+        "error": "Student source row not found in mirrored tree",
+        "kind": "note",
+        "createdAt": "2026-10-16T08:03:13.408Z",
+        "updatedAt": "2026-10-16T08:03:13.408Z",
+        "runId": "full-2026-10-13",
+        "sources": []
+      },
+      {
+        "_id": "6ad1da42c9735682f0e8a6dd",
+        "status": "pending",
+        "error": null,
+        "kind": "note",
+        "createdAt": "2026-10-16T08:03:14.912Z",
+        "updatedAt": "2026-10-19T06:29:52.921Z",
+        "runId": "full-2026-10-13",
+        "sources": [
+          {
+            "apxCourseId": "53",
+            "rowId": "175477",
+            "kind": "note",
+            "classAssetKey": "vid:armaths-data:3707471-1778652610",
+            "state": "pending"
+          },
+          {
+            "apxCourseId": "59",
+            "rowId": "40556",
+            "kind": "note",
+            "classAssetKey": "vid:armaths-data:3707471-1778652610",
+            "state": "pending"
+          },
+          {
+            "apxCourseId": "103",
+            "rowId": "44155",
+            "kind": "note",
+            "classAssetKey": "vid:armaths-data:3707471-1778652610",
+            "state": "pending"
+          }
+        ]
+      },
+      {
+        "_id": "6ad1da44c9735682f0e8a6e1",
+        "status": "failed",
+        "error": "Student source row not found in mirrored tree",
+        "kind": "note",
+        "createdAt": "2026-10-16T08:03:16.420Z",
+        "updatedAt": "2026-10-16T08:03:16.420Z",
+        "runId": "full-2026-10-13",
+        "sources": []
+      },
+      {
+        "_id": "6ad1dae3c9735682f0e8b107",
+        "status": "failed",
+        "error": "Student source row not found in mirrored tree",
+        "kind": "note",
+        "createdAt": "2026-10-16T08:05:55.562Z",
+        "updatedAt": "2026-10-16T08:05:55.562Z",
+        "runId": "full-2026-10-13",
+        "sources": []
+      },
+      {
+        "_id": "6ad1dae5c9735682f0e8b126",
+        "status": "pending",
+        "error": null,
+        "kind": "note",
+        "createdAt": "2026-10-16T08:05:57.068Z",
+        "updatedAt": "2026-10-19T06:29:52.943Z",
+        "runId": "full-2026-10-13",
+        "sources": [
+          {
+            "apxCourseId": "55",
+            "rowId": "175572",
+            "kind": "note",
+            "classAssetKey": "vid:armaths-data:3850851-1781068931",
+            "state": "pending"
+          },
+          {
+            "apxCourseId": "59",
+            "rowId": "43327",
+            "kind": "note",
+            "classAssetKey": "vid:armaths-data:3850851-1781068931",
+            "state": "pending"
+          },
+          {
+            "apxCourseId": "103",
+            "rowId": "44207",
+            "kind": "note",
+            "classAssetKey": "vid:armaths-data:3850851-1781068931",
+            "state": "pending"
+          }
+        ]
+      },
+      {
+        "_id": "6ad1dae6c9735682f0e8c2d4",
+        "status": "failed",
+        "error": "Student source row not found in mirrored tree",
+        "kind": "note",
+        "createdAt": "2026-10-16T08:05:58.573Z",
+        "updatedAt": "2026-10-16T08:05:58.573Z",
+        "runId": "full-2026-10-13",
+        "sources": []
+      },
+      {
+        "_id": "6ad1dca5c9735682f0ea6aec",
+        "status": "failed",
+        "error": "Student source row not found in mirrored tree",
+        "kind": "note",
+        "createdAt": "2026-10-16T08:13:25.617Z",
+        "updatedAt": "2026-10-16T08:13:25.617Z",
+        "runId": "full-2026-10-13",
+        "sources": []
+      },
+      {
+        "_id": "6ad1dca7c9735682f0ea6afe",
+        "status": "failed",
+        "error": "Student source row not found in mirrored tree",
+        "kind": "note",
+        "createdAt": "2026-10-16T08:13:27.123Z",
+        "updatedAt": "2026-10-16T08:13:27.123Z",
+        "runId": "full-2026-10-13",
+        "sources": []
+      },
+      {
+        "_id": "6ad1dca8c9735682f0ea6b0e",
+        "status": "failed",
+        "error": "Student source row not found in mirrored tree",
+        "kind": "note",
+        "createdAt": "2026-10-16T08:13:28.632Z",
+        "updatedAt": "2026-10-16T08:13:28.632Z",
+        "runId": "full-2026-10-13",
+        "sources": []
+      },
+      {
+        "_id": "6ad1dcaac9735682f0ea6b28",
+        "status": "pending",
+        "error": null,
+        "kind": "note",
+        "createdAt": "2026-10-16T08:13:30.137Z",
+        "updatedAt": "2026-10-19T06:29:52.998Z",
+        "runId": "full-2026-10-13",
+        "sources": [
+          {
+            "apxCourseId": "92",
+            "rowId": "176702",
+            "kind": "note",
+            "classAssetKey": "vid:armaths-data:4059093-1784527991",
+            "state": "pending"
+          }
+        ]
+      },
+      {
+        "_id": "6ad1dcabc9735682f0ea6b3f",
+        "status": "failed",
+        "error": "Student source row not found in mirrored tree",
+        "kind": "note",
+        "createdAt": "2026-10-16T08:13:31.642Z",
+        "updatedAt": "2026-10-16T08:13:31.642Z",
+        "runId": "full-2026-10-13",
+        "sources": []
+      },
+      {
+        "_id": "6ad1e05bc9735682f0ead25e",
+        "status": "failed",
+        "error": "Student source row not found in mirrored tree",
+        "kind": "note",
+        "createdAt": "2026-10-16T08:29:15.279Z",
+        "updatedAt": "2026-10-16T08:29:15.279Z",
+        "runId": "full-2026-10-13",
+        "sources": []
+      },
+      {
+        "_id": "6ad1e05cc9735682f0ead281",
+        "status": "failed",
+        "error": "Student source row not found in mirrored tree",
+        "kind": "note",
+        "createdAt": "2026-10-16T08:29:16.785Z",
+        "updatedAt": "2026-10-16T08:29:16.785Z",
+        "runId": "full-2026-10-13",
+        "sources": []
+      },
+      {
+        "_id": "6ad1e449c9735682f0ebd409",
+        "status": "pending",
+        "error": null,
+        "kind": "note",
+        "createdAt": "2026-10-16T08:46:01.128Z",
+        "updatedAt": "2026-10-19T06:29:53.034Z",
+        "runId": "full-2026-10-13",
+        "sources": [
+          {
+            "apxCourseId": "94",
+            "rowId": "188859",
+            "kind": "note",
+            "classAssetKey": "vid:armaths-data:4468130-1790186981",
+            "state": "pending"
+          }
+        ]
+      },
+      {
+        "_id": "6ad1ed33c9735682f0efbf9c",
+        "status": "pending",
+        "error": null,
+        "kind": "note",
+        "createdAt": "2026-10-16T09:24:03.284Z",
+        "updatedAt": "2026-10-19T06:29:53.214Z",
+        "runId": "full-2026-10-13",
+        "sources": [
+          {
+            "apxCourseId": "95",
+            "rowId": "189655",
+            "kind": "note",
+            "classAssetKey": "vid:armaths-data:4607176-1791984898",
+            "state": "pending"
+          }
+        ]
+      },
+      {
+        "_id": "6ad94017c9735682f0130807",
+        "status": "failed",
+        "error": "decrypted bytes failed the PDF validity check",
+        "kind": "standalone",
+        "createdAt": "2026-10-21T22:43:35.842Z",
+        "updatedAt": "2026-10-26T00:53:16.468Z",
+        "runId": "daily-2026-10-26",
+        "sources": []
+      },
+      {
+        "_id": "6ad94018c9735682f013080e",
+        "status": "failed",
+        "error": "decrypted bytes failed the PDF validity check",
+        "kind": "standalone",
+        "createdAt": "2026-10-21T22:43:36.999Z",
+        "updatedAt": "2026-10-26T00:53:18.198Z",
+        "runId": "daily-2026-10-26",
+        "sources": []
+      }
+    ]
+  },
+  "classMediaCoverage": [
+    {
+      "kind": "drm",
+      "jobStatus": "dead",
+      "count": 12
+    },
+    {
+      "kind": "drm",
+      "jobStatus": "done",
+      "count": 1800
+    },
+    {
+      "kind": "none",
+      "jobStatus": "nojob",
+      "count": 4
+    },
+    {
+      "kind": "url",
+      "jobStatus": "dead",
+      "count": 13
+    },
+    {
+      "kind": "url",
+      "jobStatus": "nojob",
+      "count": 300
+    },
+    {
+      "kind": "vid",
+      "jobStatus": "dead",
+      "count": 158
+    },
+    {
+      "kind": "vid",
+      "jobStatus": "done",
+      "count": 7451
+    },
+    {
+      "kind": "vid",
+      "jobStatus": "nojob",
+      "count": 2
+    },
+    {
+      "kind": "yt",
+      "jobStatus": "nojob",
+      "count": 1215
+    }
+  ]
+}

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Course Auto Plan Flows</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: the Vidyagram admin in the middle, the student's view and the system's writes on the right, so every admin action shows its result at once. */
+:root{
+  --bg:#f2f4f6; --surface:#ffffff; --sunk:#eceff3; --hover:#f5f7f9;
+  --ink:#15202b; --muted:#566373; --faint:#8794a2;
+  --line:#dde2e8; --line-strong:#c4ccd5;
+  --accent:#0d7a69; --accent-ink:#ffffff; --accent-soft:#e2f2ee; --accent-line:#93d1c4;
+  --warn:#9a5b00; --warn-soft:#fdf3df; --warn-line:#eccb8c;
+  --danger:#b42318; --danger-soft:#fdecea;
+  --shadow:0 1px 2px rgba(15,25,40,.06),0 6px 20px rgba(15,25,40,.07);
+  --f-ui:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1318; --surface:#151c23; --sunk:#10161c; --hover:#1b242d;
+  --ink:#e4ebf2; --muted:#9aa8b6; --faint:#6f7d8b;
+  --line:#25303a; --line-strong:#364350;
+  --accent:#34c4ab; --accent-ink:#06201b; --accent-soft:#11302b; --accent-line:#1f6a5d;
+  --warn:#f0b65a; --warn-soft:#33260f; --warn-line:#6b4f1f;
+  --danger:#ff8a7a; --danger-soft:#3a1915;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.35);
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1318; --surface:#151c23; --sunk:#10161c; --hover:#1b242d;
+  --ink:#e4ebf2; --muted:#9aa8b6; --faint:#6f7d8b;
+  --line:#25303a; --line-strong:#364350;
+  --accent:#34c4ab; --accent-ink:#06201b; --accent-soft:#11302b; --accent-line:#1f6a5d;
+  --warn:#f0b65a; --warn-soft:#33260f; --warn-line:#6b4f1f;
+  --danger:#ff8a7a; --danger-soft:#3a1915;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.35);
+  color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:400 14px/1.45 var(--f-ui)}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.bar{background:var(--surface);border-bottom:1px solid var(--line);padding:12px 20px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.bar h1{font-size:15px;font-weight:700;margin:0}
+.seg{display:flex;flex-wrap:wrap;background:var(--sunk);border-radius:8px;padding:3px;gap:3px}
+.seg button{border:0;background:transparent;padding:6px 12px;border-radius:6px;font-weight:500;color:var(--muted)}
+.seg button.on{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+.sample{margin-left:auto;font-size:12px;color:var(--muted)}
+.idea{background:var(--accent-soft);border-bottom:1px solid var(--accent-line);padding:9px 20px;font-size:13px}
+.idea b{font-weight:600}
+.shell{display:grid;grid-template-columns:150px minmax(0,1fr) 330px;gap:16px;padding:16px 20px;align-items:start;max-width:1500px;margin:0 auto}
+nav{display:flex;flex-direction:column;gap:2px}
+nav button{border:0;background:transparent;text-align:left;padding:8px 10px;border-radius:6px;color:var(--muted);font-weight:500}
+nav button:hover{background:var(--hover)}
+nav button.on{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+main{min-width:0;display:flex;flex-direction:column;gap:12px}
+aside{display:flex;flex-direction:column;gap:12px;position:sticky;top:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px}
+.card h3{font-size:15px;font-weight:600;margin:0 0 12px}
+.head{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.head h2{font-size:19px;font-weight:700;margin:0;text-wrap:balance}
+.grow{flex:1}
+.fold{display:flex;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 18px;color:var(--muted);font-weight:500}
+.modes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:16px}
+.mode{border:1px solid var(--line-strong);background:var(--surface);border-radius:8px;padding:9px 11px;text-align:left}
+.mode b{display:block;font-weight:600}
+.mode span{display:block;font-size:12px;color:var(--muted);line-height:1.3;margin-top:2px}
+.mode.on{border-color:var(--accent);background:var(--accent-soft);box-shadow:inset 0 0 0 1px var(--accent)}
+.fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+label{display:block;font-weight:500;font-size:13px}
+input[type=text],input[type=date],select{display:block;width:100%;height:38px;margin-top:4px;padding:0 10px;border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);font-variant-numeric:tabular-nums}
+input:disabled{background:var(--sunk);color:var(--muted)}
+.pair{display:flex;margin-top:4px}
+.pair input,.pair select{margin-top:0}
+.pair select{width:58%;border-radius:6px 0 0 6px;border-right:0}
+.pair input{border-radius:0 6px 6px 0}
+.result{margin-top:14px;padding:10px 12px;border-radius:6px;background:var(--sunk);font-weight:600}
+.result small{display:block;font-weight:400;color:var(--muted);font-size:12.5px;margin-top:2px}
+.also{margin-top:10px;font-size:13px;color:var(--muted)}
+.also a,.link{color:var(--accent);font-weight:500;text-decoration:underline;background:none;border:0;padding:0}
+.note{padding:10px 12px;border-radius:6px;font-size:13px;margin-bottom:12px;border:1px solid var(--warn-line);background:var(--warn-soft)}
+.note b{font-weight:600}
+.note .acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.err{color:var(--danger);font-size:12.5px;margin-top:8px}
+.btn{height:36px;padding:0 14px;border-radius:6px;border:1px solid var(--line-strong);background:var(--surface);font-weight:600}
+.btn:hover{background:var(--hover)}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.pri:hover{filter:brightness(.95)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn.sm{height:30px;padding:0 10px;font-size:13px}
+.switch{display:inline-flex;align-items:center;gap:8px;font-weight:500;background:none;border:0;padding:0}
+.switch i{width:36px;height:20px;border-radius:10px;background:var(--line-strong);position:relative;display:inline-block}
+.switch i::after{content:"";position:absolute;width:16px;height:16px;border-radius:50%;background:#fff;top:2px;left:2px;transition:left .12s}
+.switch.on i{background:var(--accent)}
+.switch.on i::after{left:18px}
+.pill{display:inline-block;padding:1px 8px;border-radius:10px;font-size:12px;font-weight:600;background:var(--sunk);color:var(--muted);white-space:nowrap}
+.pill.good{background:var(--accent-soft);color:var(--accent)}
+.pill.warn{background:var(--warn-soft);color:var(--warn)}
+.tablewrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th{font-size:12px;font-weight:600;color:var(--muted);text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr.click{cursor:pointer}
+tr.click:hover td{background:var(--hover)}
+.tabs{display:flex;gap:4px;margin-bottom:10px}
+.tabs button{border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:5px 11px;font-weight:500;color:var(--muted)}
+.tabs button.on{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.locked{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:12px}
+.locked div{background:var(--sunk);border-radius:6px;padding:9px 11px}
+.locked span{display:block;font-size:12px;color:var(--muted)}
+.locked b{font-weight:600}
+.opt{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,.8fr) minmax(0,.8fr) 70px 86px 62px;gap:8px;align-items:center;padding:6px 0;border-bottom:1px solid var(--line)}
+.opt.h{font-size:12px;font-weight:600;color:var(--muted);padding-top:0}
+.opt input[type=text],.opt select,.opt .pair{margin-top:0}
+.phone{background:var(--surface);border:1px solid var(--line-strong);border-radius:20px;padding:10px;box-shadow:var(--shadow)}
+.ph-label{font-size:12px;font-weight:600;color:var(--muted);margin:0 0 6px}
+.ban{height:86px;border-radius:12px;background:linear-gradient(135deg,#123d5a,#0d7a69);color:#fff;font-weight:700;padding:12px;display:flex;align-items:flex-end;line-height:1.2}
+.ph-body{padding:10px 4px 4px}
+.ph-price{font-size:21px;font-weight:700;font-variant-numeric:tabular-nums}
+.ph-price s{font-size:13px;font-weight:400;color:var(--faint);margin-left:6px}
+.ph-sub{font-size:12.5px;color:var(--muted);margin:2px 0 10px}
+.buy{display:block;width:100%;height:38px;border:0;border-radius:8px;background:var(--accent);color:var(--accent-ink);font-weight:600;text-align:center;line-height:38px}
+.buy.off{background:var(--sunk);color:var(--muted)}
+.choice{display:flex;justify-content:space-between;border:1px solid var(--line-strong);border-radius:8px;padding:8px 10px;margin-bottom:6px;font-variant-numeric:tabular-nums}
+.choice.on{border-color:var(--accent);background:var(--accent-soft)}
+.log{font-size:12.5px;display:flex;flex-direction:column;gap:6px;max-height:280px;overflow:auto}
+.log div{border-left:3px solid var(--line-strong);padding:2px 0 2px 8px}
+.log div.new{border-color:var(--accent)}
+.log code{font:500 11.5px var(--f-mono);color:var(--muted);display:block;overflow-wrap:anywhere}
+.empty{color:var(--muted);font-size:13px}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--surface);padding:9px 16px;border-radius:8px;font-weight:500;box-shadow:var(--shadow);z-index:9;max-width:90vw}
+.modalbg{position:fixed;inset:0;background:rgba(10,18,26,.5);display:flex;align-items:center;justify-content:center;z-index:8;padding:16px}
+.modal{background:var(--surface);border-radius:10px;padding:20px;width:440px;max-width:100%;box-shadow:var(--shadow)}
+.modal h3{margin:0 0 10px;font-size:17px}
+.check{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid var(--line)}
+.check b{width:18px;flex:none;text-align:center}
+.check .ok{color:var(--accent)} .check .bad{color:var(--danger)} .check .warn{color:var(--warn)}
+.modal .acts{display:flex;justify-content:flex-end;gap:8px;margin-top:14px}
+@media (max-width:1100px){.shell{grid-template-columns:minmax(0,1fr)}nav{flex-direction:row;flex-wrap:wrap}aside{position:static;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:start}.sample{margin-left:0}}
+@media (max-width:640px){.modes{grid-template-columns:repeat(2,minmax(0,1fr))}.fields,.locked{grid-template-columns:minmax(0,1fr)}.opt{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.opt.h{display:none}.shell{padding:12px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="bar">
+  <h1>Plans from courses</h1>
+  <div class="seg" id="variants"></div>
+  <span class="sample">Throwaway prototype. Sample data, nothing is saved.</span>
+</div>
+<div class="idea" id="idea"></div>
+<div class="shell">
+  <nav id="nav"></nav>
+  <main id="main"></main>
+  <aside>
+    <div><p class="ph-label">What the student sees (rough sketch of the app)</p><div class="phone" id="phone"></div></div>
+    <div class="card"><h3>What the system did</h3><div class="log" id="log"></div></div>
+  </aside>
+</div>
+<div id="overlay"></div>
+<script>
+const VARIANTS={
+  A:{name:'A. Selling section',idea:'<b>The plan is invisible.</b> One Selling section on the course form. Save, and the course is on sale. The admin never hears the word plan unless they go looking.'},
+  B:{name:'B. Review, then put on sale',idea:'<b>Saving never sells.</b> Save keeps the course off sale. A separate "Put on sale" check shows what students will see and what is missing, then goes live.'},
+  C:{name:'C. Price options',idea:'<b>One course, several lengths.</b> Same as A, with rows for 6 months, 1 year and so on. Each row is its own plan behind the scenes, and the student picks one.'},
+};
+const opt=(val,unit,mrp,sell,extra={})=>({val,unit,mrp,sell,planId:null,buyers:0,...extra});
+const seed=()=>({
+  courses:[
+    {id:'new',title:'SSC CGL Foundation 2027',isNew:true,mode:'fixed',onSale:false,everSaved:false,options:[opt(12,'Months',1999,799)],combos:[],banner:false,classes:0},
+    {id:'gd',title:'SSC GD 2027 (भारत Batch)',mode:'fixed',onSale:true,everSaved:true,mismatch:{plan:299,card:599},options:[opt(12,'Months',999,599,{planId:'p-gd',buyers:1840})],combos:[],banner:true,classes:212},
+    {id:'champ',title:'Champions 5.0 Maths',mode:'fixed',onSale:true,everSaved:true,sale:{name:'Diwali Sale',price:499,until:'12 Nov'},options:[opt(12,'Months',1499,699,{planId:'p-champ',buyers:3210})],combos:[],banner:true,classes:340},
+    {id:'reason',title:'Reasoning Complete Batch',mode:'fixed',onSale:true,everSaved:true,options:[opt(12,'Months',999,399,{planId:'p-reason',buyers:142})],combos:[{name:'प्रहार 3.0',price:1499}],banner:true,classes:96},
+    {id:'upsi',title:'UP Police Fixed Batch',mode:'fixed',onSale:true,everSaved:true,options:[opt('2027-03-31','End date',1299,599,{planId:'p-upsi',buyers:75})],combos:[],banner:true,classes:60},
+    {id:'extra',title:'Maths VOD Extra',mode:'combo',onSale:true,everSaved:true,options:[opt(12,'Months',0,0)],combos:[{name:'प्रहार 3.0',price:1499},{name:'UP Police 2027',price:999}],banner:true,classes:44},
+  ],
+  plans:[
+    {id:'p-prahar',name:'प्रहार 3.0',sells:'6 courses',amount:1499,days:365,src:'hand',listed:true},
+    {id:'p-upp',name:'UP Police 2027',sells:'2 courses',amount:999,days:365,src:'hand',listed:true},
+    {id:'p-tests',name:'SSC Mains Test Series',sells:'Test series',amount:199,days:365,src:'hand',listed:true},
+    {id:'p-gd',name:'SSC GD 2027',sells:'SSC GD 2027 (भारत Batch)',amount:299,days:365,src:'hand',listed:true,courseId:'gd'},
+    {id:'p-upsi',name:'UP Police Fixed Batch',sells:'UP Police Fixed Batch',amount:599,days:220,src:'hand',listed:true,courseId:'upsi'},
+    {id:'p-champ',name:'Champions 5.0 Maths',sells:'Champions 5.0 Maths',amount:499,days:365,src:'course',listed:true,courseId:'champ'},
+    {id:'p-reason',name:'Reasoning Complete Batch',sells:'Reasoning Complete Batch',amount:399,days:365,src:'course',listed:true,courseId:'reason'},
+  ],
+  log:[],
+  links:[
+    {course:'SSC GD 2027 (भारत Batch)',card:599,plan:299,pick:'plan',done:false},
+    {course:'Vocab Ocean',card:199,plan:99,pick:'plan',done:false},
+    {course:'राजधानी SERIES',card:0,plan:100,pick:'plan',done:false},
+    {course:'Reasoning Complete Batch',card:399,plan:399,pick:'same',done:false},
+    {course:'Champions 5.0 Maths',card:699,plan:699,pick:'same',done:false},
+  ],
+});
+let S={variant:'A',screen:'form',courseId:'new',planId:null,planTab:'hand',modal:null,...seed()};
+let seq=1;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const inr=n=>'₹'+Number(n||0).toLocaleString('en-IN');
+const course=()=>S.courses.find(c=>c.id===S.courseId);
+const planOf=o=>S.plans.find(p=>p.id===o.planId);
+const usedOpts=c=>S.variant==='C'?c.options:c.options.slice(0,1);
+const fixedDate=o=>o.unit==='End date';
+const lifetime=o=>o.unit==='Lifetime';
+const days=o=>{
+  if(lifetime(o))return null;
+  if(fixedDate(o))return null;
+  const n=Number(o.val)||0;
+  if(o.unit==='Days')return n;
+  if(o.unit==='Years')return n*365;
+  return n===12?365:n*30;
+};
+const lengthText=o=>{
+  if(lifetime(o))return 'Lifetime access';
+  if(fixedDate(o))return 'till '+o.val;
+  const n=Number(o.val)||0;
+  return `${n} ${n===1?o.unit.replace(/s$/,''):o.unit}`;
+};
+const toast=m=>{document.querySelectorAll('.toast').forEach(x=>x.remove());const t=document.createElement('div');t.className='toast';t.textContent=m;document.body.append(t);setTimeout(()=>t.remove(),3200)};
+const log=(text,code)=>S.log.unshift({text,code,n:seq++});
+
+function blockers(c){
+  if(c.mode!=='fixed')return [];
+  const out=[];
+  if(c.mismatch)out.push('Pick one price above.');
+  usedOpts(c).forEach(o=>{
+    if(fixedDate(o))return;
+    if(!(Number(o.sell)>0))out.push('Enter a selling price.');
+    else if(Number(o.mrp)>0&&Number(o.sell)>Number(o.mrp))out.push('The selling price is above the MRP.');
+    if(!lifetime(o)&&!(Number(o.val)>0))out.push('Enter how long the course lasts.');
+  });
+  return [...new Set(out)];
+}
+
+function sync(c){
+  if(c.mode!=='fixed'){
+    usedOpts(c).forEach(o=>{const p=planOf(o);if(p&&p.listed){p.listed=false;log(`"${p.name}" is off sale. Its buyers keep access.`,`plan ${p.id}: status stays 1, displayOn [], purchases refused`)}});
+    if(c.mode==='combo')log(`No plan of its own. "${c.title}" sells only inside combos.`);
+    if(c.mode==='free')log(`No plan. "${c.title}" is free to open.`);
+    if(c.mode==='builder')log(`No plan. Course Builder prices "${c.title}" from its chapters.`);
+    return;
+  }
+  usedOpts(c).forEach(o=>{
+    if(fixedDate(o)){log(`Plan left alone. A fixed end date can't be kept in step automatically.`,`plan ${o.planId||'none'}: untouched, stays hand-made`);return}
+    let p=planOf(o);
+    const amount=Number(o.sell),d=lifetime(o)?0:days(o);
+    const name=S.variant==='C'&&c.options.length>1?`${c.title} (${lengthText(o)})`:c.title;
+    if(!p){
+      p={id:'p-'+(seq++),name,sells:c.title,amount,days:d,src:'course',listed:c.onSale,courseId:c.id};
+      S.plans.push(p);o.planId=p.id;
+      log(`Plan made for ${inr(amount)} and ${d?d+' days':'lifetime'}.`,`plans.create amount ${amount}, duration ${d}, course [${c.id}], singleCourseId ${c.id}, displayOn ${c.onSale?'[course]':'[]'}`);
+    }else{
+      const ch=[];
+      if(c.sale){log(`${c.sale.name} is live, so the plan price stays ${inr(c.sale.price)}. Your price applies when the sale ends.`,`bulk sale snapshot updated to amount ${amount}; plan.amount untouched`)}
+      else if(p.amount!==amount){ch.push(`price ${inr(p.amount)} to ${inr(amount)}`);p.amount=amount}
+      if(p.days!==d){ch.push(`${p.days||'lifetime'} days to ${d||'lifetime'}`);p.days=d}
+      if(p.name!==name){p.name=name}
+      if(p.src!=='course'){p.src='course';ch.push('now managed by the course')}
+      if(p.listed!==c.onSale){p.listed=c.onSale;ch.push(c.onSale?'now on sale':'off sale')}
+      if(ch.length)log(`Plan updated: ${ch.join(', ')}.${!c.onSale&&o.buyers?` ${o.buyers.toLocaleString('en-IN')} buyers keep access.`:''}`,c.onSale?`plan ${p.id}: new buyers only, orders keep their own expiry`:`plan ${p.id}: status stays 1, displayOn [], purchases refused`);
+      else if(!c.sale)log('Nothing changed on the plan.');
+    }
+  });
+}
+
+function save(){
+  const c=course();
+  if(blockers(c).length)return;
+  if(S.variant==='A'||S.variant==='C'){
+    if(!c.everSaved)c.onSale=true;
+  }
+  const first=!c.everSaved;
+  c.everSaved=true;c.isNew=false;
+  sync(c);
+  if(S.variant==='B'&&first)toast('Saved, off sale. Put it on sale when it is ready.');
+  else if(c.mode==='fixed'&&c.onSale&&!fixedDate(c.options[0]))toast(`Saved. On sale at ${inr(c.options[0].sell)}.`);
+  else toast('Saved.');
+  render();
+}
+function goLive(){const c=course();c.onSale=true;sync(c);S.modal=null;toast(`On sale at ${inr(c.options[0].sell)}.`);render()}
+function goOff(){const c=course();c.onSale=false;sync(c);S.modal=null;toast('Off sale. Buyers keep access.');render()}
+
+function phone(){
+  if(S.screen==='plans'||S.screen==='plan'||S.screen==='link'||S.screen==='courses'){
+    const c=course();if(!c){$('phone').innerHTML='';return}
+  }
+  const c=course();
+  const o=c.options[0];
+  let body='';
+  if(c.mode==='free')body=`<div class="ph-price">Free</div><div class="ph-sub">Open to every student</div><span class="buy">Start learning</span>`;
+  else if(c.mode==='builder')body=`<div class="ph-price">From ₹199</div><div class="ph-sub">Pick the chapters you need</div><span class="buy">Build your course</span>`;
+  else if(c.mode==='combo')body=c.combos.length?`<div class="ph-sub" style="margin-top:0">Available inside</div>${c.combos.map(x=>`<div class="choice"><span>${esc(x.name)}</span><b>${inr(x.price)}</b></div>`).join('')}<span class="buy">View combo</span>`:`<div class="ph-sub">Not available to buy</div><span class="buy off">Not on sale</span>`;
+  else if(!c.onSale)body=`<div class="ph-price">${inr(o.sell)}</div><div class="ph-sub">Students can't buy this yet</div><span class="buy off">Not on sale</span>`;
+  else if(S.variant==='C'&&c.options.length>1)body=c.options.map((x,i)=>`<div class="choice ${i===0?'on':''}"><span>${esc(lengthText(x))}</span><b>${inr(x.sell)}</b></div>`).join('')+`<span class="buy">Buy now</span>`;
+  else{
+    const price=c.sale?c.sale.price:o.sell;
+    body=`<div class="ph-price">${inr(price)}${Number(o.mrp)>Number(price)?`<s>${inr(o.mrp)}</s>`:''}</div><div class="ph-sub">${c.sale?esc(c.sale.name)+' · ':''}Valid ${lifetime(o)?'for life':fixedDate(o)?esc(lengthText(o)):'for '+esc(lengthText(o))}</div><span class="buy">Buy now</span>`;
+  }
+  $('phone').innerHTML=`<div class="ban">${esc(c.title)}</div><div class="ph-body" id="phbody">${body}</div>`;
+}
+function logPanel(){
+  $('log').innerHTML=S.log.length?S.log.slice(0,12).map((e,i)=>`<div class="${i===0?'new':''}">${esc(e.text)}${e.code?`<code>${esc(e.code)}</code>`:''}</div>`).join(''):'<span class="empty">Save the course to see what gets written.</span>';
+}
+
+function resultLine(c){
+  if(c.mode==='combo')return c.combos.length?`Sold only inside ${c.combos.map(x=>x.name).join(' and ')}<small>This course has no price of its own.</small>`:`No one can buy this right now<small>No combo includes this course yet.</small>`;
+  if(c.mode==='free')return 'Free for every student<small>No plan is needed.</small>';
+  if(c.mode==='builder')return 'Priced by Course Builder<small>Set chapter weights and extras in Builder mode on Assigned Classes.</small>';
+  if(c.mismatch)return `Students pay ${inr(c.mismatch.plan)} today<small>Pick the right price above before saving.</small>`;
+  const os=usedOpts(c);
+  if(os.some(fixedDate))return 'This course keeps its hand-made plan<small>A fixed end date needs a plan edited by hand. Other validity types sell automatically.</small>';
+  const line=os.map(o=>`${inr(o.sell)} for ${lifetime(o)?'lifetime':days(o)+' days'}`).join(', or ');
+  return `Student pays ${line}${c.onSale?'':'<small>Not on sale yet.</small>'}`;
+}
+function updateLive(){
+  const c=course();
+  const r=$('resline');if(r)r.innerHTML=resultLine(c);
+  const b=$('errs');if(b)b.innerHTML=blockers(c).map(x=>`<div>${esc(x)}</div>`).join('');
+  const save=$('save');if(save)save.disabled=blockers(c).length>0;
+  phone();
+}
+const unitSel=(i,o)=>`<select id="unit${i}" aria-label="Validity type" data-opt="${i}" data-f="unit">${['Days','Months','Years','Lifetime','End date'].map(u=>`<option ${o.unit===u?'selected':''}>${u}</option>`).join('')}</select>`;
+const valIn=(i,o)=>fixedDate(o)?`<input type="date" id="val${i}" aria-label="End date" data-opt="${i}" data-f="val" value="${/-/.test(o.val)?o.val:'2027-03-31'}">`:`<input type="text" inputmode="numeric" id="val${i}" aria-label="Length" data-opt="${i}" data-f="val" value="${lifetime(o)?'':esc(o.val)}" ${lifetime(o)?'disabled':''}>`;
+
+function formScreen(){
+  const c=course();const o=c.options[0];
+  const modes=[['fixed','Fixed price','One price for the whole course'],['builder','Course Builder','Students pick chapters'],['combo','Only inside combos','No price of its own'],['free','Free','Anyone can open it']];
+  let notes='';
+  if(c.mismatch)notes+=`<div class="note"><b>Two prices.</b> The course card says ${inr(c.mismatch.card)}, but students pay ${inr(c.mismatch.plan)} on its plan. Which one is right?<div class="acts"><button class="btn sm" data-act="pick" data-v="plan">${inr(c.mismatch.plan)}, what students pay now</button><button class="btn sm" data-act="pick" data-v="card">${inr(c.mismatch.card)}, what the card says</button></div></div>`;
+  if(c.sale&&c.mode==='fixed')notes+=`<div class="note"><b>${esc(c.sale.name)} is live until ${esc(c.sale.until)}.</b> Students pay ${inr(c.sale.price)} right now. A price you save here applies when the sale ends.</div>`;
+
+  let fields='';
+  if(c.mode==='fixed'){
+    if(S.variant==='C'){
+      fields=`<div class="opt h"><span>Validity</span><span>MRP</span><span>Selling price</span><span>Days</span><span>Buyers</span><span></span></div>`+
+        c.options.map((x,i)=>`<div class="opt"><div class="pair">${unitSel(i,x)}${valIn(i,x)}</div><input type="text" inputmode="numeric" aria-label="MRP" data-opt="${i}" data-f="mrp" value="${esc(x.mrp)}"><input type="text" inputmode="numeric" aria-label="Selling price" data-opt="${i}" data-f="sell" value="${esc(x.sell)}"><span id="d${i}">${days(x)??'none'}</span><span>${x.buyers?x.buyers.toLocaleString('en-IN'):'0'}</span>${c.options.length>1?`<button class="link" data-act="rmopt" data-i="${i}">Remove</button>`:'<span></span>'}</div>`).join('')+
+        `<div style="margin-top:10px"><button class="btn sm" data-act="addopt">Add a price option</button></div>`;
+    }else{
+      fields=`<div class="fields"><label for="mrp0">MRP (₹)<input type="text" inputmode="numeric" id="mrp0" data-opt="0" data-f="mrp" value="${esc(o.mrp)}"></label><label for="sell0">Selling price (₹)<input type="text" inputmode="numeric" id="sell0" data-opt="0" data-f="sell" value="${esc(o.sell)}"></label><label>Validity<div class="pair">${unitSel(0,o)}${valIn(0,o)}</div></label></div>`;
+    }
+    if(usedOpts(c).some(fixedDate))notes+='';
+  }
+  const also=c.combos.length&&c.mode==='fixed'?`<div class="also">Also sold in ${c.combos.map(x=>`<a href="#" data-act="plans" >${esc(x.name)} (${inr(x.price)})</a>`).join(', ')}</div>`:'';
+  const planLink=(()=>{const p=planOf(o);if(S.variant==='C'&&c.options.length>1&&p&&c.mode==='fixed')return `<div class="also">Each option sells through its own plan, kept in step with this course. <button class="link" data-act="plans">See them in Plans</button></div>`;return p&&p.src==='course'&&c.mode==='fixed'?`<div class="also">Sold through <button class="link" data-act="openplan" data-id="${p.id}">${esc(p.name)}</button>, kept in step with this course.</div>`:''})();
+  const onSaleCtl=(S.variant==='B'||c.mode!=='fixed'||!c.everSaved)?'':`<button class="switch ${c.onSale?'on':''}" data-act="togglesale" aria-pressed="${c.onSale}"><i></i>On sale</button>`;
+  const statusPill=c.isNew?'<span class="pill">New</span>':c.mode==='fixed'?(c.onSale?'<span class="pill good">On sale</span>':'<span class="pill warn">Off sale</span>'):'';
+  const bActions=S.variant==='B'&&c.mode==='fixed'&&c.everSaved?(c.onSale?`<button class="btn" data-act="asktakeoff">Take off sale</button>`:`<button class="btn" data-act="review">Review and put on sale</button>`):'';
+  return `<div class="head"><button class="link" data-act="courses">Courses</button><span class="empty">/</span><h2>${esc(c.title)}</h2>${statusPill}</div>
+  <div class="fold"><span>Media</span><span>+</span></div>
+  <div class="fold"><span>Basic Information</span><span>+</span></div>
+  <div class="card"><div class="head" style="margin-bottom:12px"><h3 style="margin:0">Selling</h3><span class="grow"></span>${onSaleCtl}</div>
+    ${notes}
+    <div class="modes">${modes.map(([k,t,d])=>`<button class="mode ${c.mode===k?'on':''}" data-act="mode" data-v="${k}" aria-pressed="${c.mode===k}"><b>${t}</b><span>${d}</span></button>`).join('')}</div>
+    ${fields}
+    <div class="result" id="resline">${resultLine(c)}</div>
+    <div class="err" id="errs">${blockers(c).map(x=>`<div>${esc(x)}</div>`).join('')}</div>
+    ${also}${planLink}
+  </div>
+  <div class="fold"><span>Category &amp; Faculty</span><span>+</span></div>
+  <div class="fold"><span>Settings</span><span>+</span></div>
+  <div class="fold"><span>Content</span><span>+</span></div>
+  <div class="head"><span class="grow"></span>${bActions}<button class="btn pri" id="save" data-act="save" ${blockers(c).length?'disabled':''}>${c.isNew?'Create course':'Save'}</button></div>`;
+}
+function coursesScreen(){
+  const planCol=c=>{const p=planOf(c.options[0]);if(c.mode==='builder')return '<span class="pill">Builder</span>';if(!p)return '<span class="empty">None</span>';return p.src==='course'?'<span class="pill good">Automatic</span>':'<span class="pill warn">Hand-made</span>'};
+  return `<div class="head"><h2>Courses</h2><span class="grow"></span><button class="btn pri" data-act="newcourse">New course</button></div>
+  <div class="card tablewrap"><table><thead><tr><th>Course</th><th>Sells as</th><th>Price</th><th>Validity</th><th>State</th><th>Plan</th></tr></thead><tbody>
+  ${S.courses.map(c=>`<tr class="click" data-act="open" data-id="${c.id}"><td>${esc(c.title)}</td><td>${{fixed:'Fixed price',builder:'Course Builder',combo:'Only in combos',free:'Free'}[c.mode]}</td><td>${c.mode==='fixed'?inr(c.options[0].sell):''}</td><td>${c.mode==='fixed'?esc(lengthText(c.options[0])):''}</td><td>${c.mode==='fixed'?(c.onSale?'<span class="pill good">On sale</span>':'<span class="pill warn">Off sale</span>'):''}</td><td>${planCol(c)}</td></tr>`).join('')}
+  </tbody></table></div>`;
+}
+function plansScreen(){
+  const rows=S.plans.filter(p=>S.planTab==='all'||p.src===S.planTab);
+  return `<div class="head"><h2>Plans</h2><span class="grow"></span><button class="btn">Add plan</button></div>
+  <div class="card"><div class="tabs">${[['hand','Hand-made'],['course','Made by courses'],['all','All']].map(([k,t])=>`<button class="${S.planTab===k?'on':''}" data-act="ptab" data-v="${k}">${t} (${k==='all'?S.plans.length:S.plans.filter(p=>p.src===k).length})</button>`).join('')}</div>
+  <div class="tablewrap"><table><thead><tr><th>Plan</th><th>Sells</th><th>Price</th><th>Days</th><th>State</th><th>Made by</th></tr></thead><tbody>
+  ${rows.map(p=>`<tr class="click" data-act="openplan" data-id="${p.id}"><td>${esc(p.name)}</td><td>${esc(p.sells)}</td><td>${inr(p.amount)}</td><td>${p.days||'Lifetime'}</td><td>${p.listed?'<span class="pill good">On sale</span>':'<span class="pill warn">Off sale</span>'}</td><td>${p.src==='course'?'<span class="pill good">Course</span>':'<span class="pill">Admin</span>'}</td></tr>`).join('')}
+  </tbody></table></div></div>`;
+}
+function planScreen(){
+  const p=S.plans.find(x=>x.id===S.planId);
+  const managed=p.src==='course';
+  const c=S.courses.find(x=>x.id===p.courseId);
+  return `<div class="head"><button class="link" data-act="plans">Plans</button><span class="empty">/</span><h2>${esc(p.name)}</h2>${managed?'<span class="pill good">Managed by course</span>':''}</div>
+  <div class="card">
+    ${managed?`<div class="note"><b>Price, length and state come from the course.</b> <button class="link" data-act="open" data-id="${p.courseId}">Edit ${esc(c?c.title:'the course')}</button></div>`:''}
+    ${managed?`<div class="locked"><div><span>Price</span><b>${inr(p.amount)}</b></div><div><span>Duration</span><b>${p.days?p.days+' days':'Lifetime'}</b></div><div><span>State</span><b>${p.listed?'On sale':'Off sale'}</b></div></div>`:`<div class="fields" style="margin-bottom:12px"><label>Price (₹)<input type="text" value="${p.amount}"></label><label>Duration (days)<input type="text" value="${p.days}"></label><label>Status<select><option>Active</option><option>Inactive</option></select></label></div>`}
+    <div class="fields"><label>iPhone price (₹)<input type="text" placeholder="Same as price"></label><label>Exchange to<select><option>No exchange</option><option>Reasoning Complete Batch</option></select></label><label>Upgrade offer<select><option>Off</option><option>On</option></select></label></div>
+    <div class="head" style="margin-top:14px"><span class="grow"></span><button class="btn pri" data-act="plansave">Save</button></div>
+  </div>`;
+}
+function linkScreen(){
+  const allDone=S.links.every(l=>l.done);
+  const rows=S.links.map((l,i)=>{
+    const decide=l.pick==='same'?'<span class="pill good">Prices match</span>':`<div class="pair" style="margin:0"><select aria-label="Which price" data-link="${i}" style="width:100%;border-radius:6px;border-right:1px solid var(--line-strong);margin:0"><option value="plan" ${l.pick==='plan'?'selected':''}>Keep ${inr(l.plan)}, students pay this</option><option value="card" ${l.pick==='card'?'selected':''}>Use ${inr(l.card)}, the card price</option></select></div>`;
+    return `<tr><td>${esc(l.course)}</td><td>${inr(l.card)}</td><td>${inr(l.plan)}</td><td>${l.done?'<span class="pill good">Linked</span>':decide}</td></tr>`;
+  }).join('');
+  return `<div class="head"><h2>Link old plans</h2><span class="pill">Runs once</span></div>
+  <div class="card">
+    <p style="margin:0 0 12px;max-width:65ch">Existing one-course plans get linked to their courses, so orders and reports stay on the same plan. No new plans are made. On 23 Oct there were 43 of them, and 11 courses had a card price different from what students pay. Sample rows below.</p>
+    <div class="tablewrap"><table><thead><tr><th>Course</th><th>Card shows</th><th>Plan charges</th><th>Decision</th></tr></thead><tbody>${rows}</tbody></table></div>
+    <p class="also" style="margin-top:12px">The 22 courses with no plan of their own become "Only inside combos". Nothing new goes on sale.</p>
+    <div class="head" style="margin-top:12px"><span class="grow"></span><button class="btn pri" data-act="linkall" ${allDone?'disabled':''}>${allDone?'All linked':'Link these plans'}</button></div>
+  </div>`;
+}
+function modal(){
+  const c=course();const o=c.options[0];
+  if(S.modal==='review'){
+    const list=[
+      [Number(o.sell)>0?'ok':'bad',`Selling price ${inr(o.sell)}`],
+      ['ok',`Validity ${lengthText(o)}, which is ${lifetime(o)?'lifetime':days(o)+' days'}`],
+      [c.banner?'ok':'warn',c.banner?'Banner added':'No banner yet. Students see a plain card.'],
+      [c.classes?'ok':'warn',c.classes?`${c.classes} classes`:'No classes yet. Students would buy an empty course.'],
+    ];
+    const bad=list.some(l=>l[0]==='bad');
+    return `<div class="modalbg"><div class="modal" role="dialog" aria-modal="true"><h3>Put ${esc(c.title)} on sale?</h3>${list.map(([k,t])=>`<div class="check"><b class="${k}">${k==='ok'?'✓':k==='bad'?'✕':'!'}</b><span>${esc(t)}</span></div>`).join('')}<div class="acts"><button class="btn" data-act="closemodal">Not yet</button><button class="btn pri" data-act="golive" ${bad?'disabled':''}>Put on sale</button></div></div></div>`;
+  }
+  if(S.modal==='takeoff'){
+    const b=o.buyers||0;
+    return `<div class="modalbg"><div class="modal" role="dialog" aria-modal="true"><h3>Take ${esc(c.title)} off sale?</h3><p>New students can't buy it. ${b?`The ${b.toLocaleString('en-IN')} students who already bought it keep their access.`:'No one has bought it yet.'}</p><div class="acts"><button class="btn" data-act="closemodal">Keep on sale</button><button class="btn pri" data-act="gooff">Take off sale</button></div></div></div>`;
+  }
+  return '';
+}
+function render(){
+  $('variants').innerHTML=Object.entries(VARIANTS).map(([k,v])=>`<button class="${S.variant===k?'on':''}" data-act="variant" data-v="${k}" aria-pressed="${S.variant===k}">${v.name}</button>`).join('');
+  $('idea').innerHTML=VARIANTS[S.variant].idea;
+  $('nav').innerHTML=[['courses','Courses'],['plans','Plans'],['link','Link old plans']].map(([k,t])=>`<button class="${(S.screen===k||(S.screen==='form'&&k==='courses')||(S.screen==='plan'&&k==='plans'))?'on':''}" data-act="${k}">${t}</button>`).join('');
+  $('main').innerHTML={form:formScreen,courses:coursesScreen,plans:plansScreen,plan:planScreen,link:linkScreen}[S.screen]();
+  $('overlay').innerHTML=modal();
+  phone();logPanel();
+}
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-act]');if(!t)return;
+  const a=t.dataset.act,c=course();
+  if(t.tagName==='A')e.preventDefault();
+  const go={
+    variant(){const v=t.dataset.v;const keep={screen:S.screen==='plan'?'plans':S.screen,courseId:S.courseId,planTab:S.planTab};S={variant:v,planId:null,modal:null,...keep,...seed()}},
+    courses(){S.screen='courses'},plans(){S.screen='plans'},link(){S.screen='link'},
+    open(){S.courseId=t.dataset.id;S.screen='form'},
+    openplan(){S.planId=t.dataset.id;S.screen='plan';const p=S.plans.find(x=>x.id===S.planId);if(p.courseId)S.courseId=p.courseId},
+    ptab(){S.planTab=t.dataset.v},
+    newcourse(){const id='n'+seq++;S.courses.unshift({id,title:'New course',isNew:true,mode:'fixed',onSale:false,everSaved:false,options:[opt(12,'Months',0,0)],combos:[],banner:false,classes:0});S.courseId=id;S.screen='form'},
+    mode(){c.mode=t.dataset.v},
+    pick(){const v=t.dataset.v;const price=v==='plan'?c.mismatch.plan:c.mismatch.card;c.options[0].sell=price;const p=planOf(c.options[0]);log(`Prices agreed at ${inr(price)}. The plan and the card now show the same number.`,`plan ${p.id}: singleCourseId ${c.id}, amount ${price}; course.discountPrice ${price}`);p.amount=price;p.src='course';delete c.mismatch;toast(`Price set to ${inr(price)}.`)},
+    save(){return save()},
+    togglesale(){if(c.onSale){S.modal='takeoff'}else{c.onSale=true;sync(c)}},
+    review(){S.modal='review'},asktakeoff(){S.modal='takeoff'},closemodal(){S.modal=null},
+    golive(){return goLive()},gooff(){return goOff()},
+    addopt(){c.options.push(opt(6,'Months',c.options[0].mrp,Math.round(Number(c.options[0].sell)*.65)))},
+    rmopt(){const i=+t.dataset.i;const o=c.options[i];const p=planOf(o);if(p){p.listed=false;log(`"${p.name}" is off sale.${o.buyers?` ${o.buyers.toLocaleString('en-IN')} buyers keep access.`:''}`,`plan ${p.id}: status stays 1, displayOn [], purchases refused`)}c.options.splice(i,1)},
+    plansave(){toast('Plan saved.')},
+    linkall(){S.links.forEach(l=>{l.done=true});log(`${S.links.length} old plans linked. Their ids stay the same, so orders and reports don't move.`,'plans.updateOne singleCourseId, per row; no plans.create');toast('Plans linked.')},
+  }[a];
+  if(go){const r=go();if(a!=='save'&&a!=='golive'&&a!=='gooff')render();}
+});
+document.addEventListener('input',e=>{
+  const el=e.target;
+  if(el.dataset.link!==undefined){S.links[+el.dataset.link].pick=el.value;return}
+  if(el.dataset.opt===undefined)return;
+  const c=course(),o=c.options[+el.dataset.opt],f=el.dataset.f;
+  o[f]=el.value;
+  if(f==='unit'){
+    if(el.value==='End date')o.val='2027-03-31';
+    else if(el.value==='Lifetime')o.val='';
+    else if(!(Number(o.val)>0))o.val=12;
+    render();return;
+  }
+  const d=$('d'+el.dataset.opt);if(d)d.textContent=days(o)??'none';
+  updateLive();
+});
+render();
+</script>
+</body>
+</html>

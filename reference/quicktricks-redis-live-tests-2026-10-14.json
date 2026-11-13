@@ -1,0 +1,97 @@
+{
+  "classId": "6acf6dc3ddd65eabd8badc8c",
+  "checks": [
+    {
+      "test": "live join and chat-history response",
+      "peer": 0,
+      "passed": true,
+      "status": "live",
+      "historyCount": 4
+    },
+    {
+      "test": "live join and chat-history response",
+      "peer": 1,
+      "passed": true,
+      "status": "live",
+      "historyCount": 4
+    },
+    {
+      "test": "same live chat broadcasts received by both servers",
+      "passed": true,
+      "commonMessages": 1,
+      "receivedCounts": [
+        1,
+        1
+      ]
+    },
+    {
+      "test": "live viewer connection stability",
+      "passed": true,
+      "seconds": 90,
+      "unexpectedDisconnects": 0
+    },
+    {
+      "test": "temporary live viewer cleanup",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "passiveChatObservation": true,
+  "playback": {
+    "playing": true,
+    "readyState": 4,
+    "width": 1280,
+    "height": 720,
+    "error": null,
+    "firstTime": 352.255346,
+    "secondTime": 402.466782
+  },
+  "redisSnapshot": {
+    "opsPerSecond": 185,
+    "usedMemory": 170442320,
+    "evictedKeys": 0,
+    "rejectedConnections": 0,
+    "totalErrorReplies": 0,
+    "pendingStatuses": 0
+  },
+  "endTest": {
+    "state": "ended",
+    "completionPending": false,
+    "completedAt": "2026-10-14T12:11:15Z",
+    "lmsStatus": "ended",
+    "sessionPresent": false,
+    "pendingStatuses": 0,
+    "allVodPlaylistsUploaded": true,
+    "hlsAssetKey": "472/6acf6dc3ddd65eabd8badc8c/playlist-mpl-vod.m3u8",
+    "stopTranscoderExit": {
+      "signal": "SIGKILL",
+      "intentionalStop": true
+    }
+  },
+  "recordedPlayback": {
+    "playing": true,
+    "width": 1280,
+    "height": 720,
+    "readyState": 4,
+    "error": null,
+    "firstTime": 38.345522,
+    "secondTime": 76.289969,
+    "observedDurationSeconds": 476.002952
+  },
+  "finalProcesses": [
+    {
+      "role": "socket",
+      "pid": 2680552,
+      "restarts": 316,
+      "savedConfigVerified": true,
+      "ping": "PONG"
+    },
+    {
+      "role": "encoder",
+      "pid": 101528,
+      "restarts": 1,
+      "savedConfigVerified": true,
+      "ping": "PONG"
+    }
+  ]
+}

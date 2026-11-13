@@ -1,0 +1,56 @@
+{
+  "run": "qt-prestream-1791979343755",
+  "checks": [
+    {
+      "test": "public WebSocket handshakes",
+      "passed": true,
+      "latencyMs": [
+        263,
+        61
+      ]
+    },
+    {
+      "test": "ended class join and public chat history",
+      "peer": 0,
+      "passed": true,
+      "status": "ended",
+      "messageCount": 100,
+      "privateModeBootstrap": true
+    },
+    {
+      "test": "ended class join and public chat history",
+      "peer": 1,
+      "passed": true,
+      "status": "ended",
+      "messageCount": 100,
+      "privateModeBootstrap": true
+    },
+    {
+      "test": "targeted cross-server delivery",
+      "passed": true,
+      "rounds": 5
+    },
+    {
+      "test": "persistent connections",
+      "passed": true,
+      "seconds": 50.268,
+      "unexpectedDisconnects": 0
+    },
+    {
+      "test": "fresh reconnect and mesh delivery",
+      "passed": true,
+      "peers": 2
+    },
+    {
+      "test": "student polling fallback handshake",
+      "passed": true,
+      "latencyMs": 183
+    },
+    {
+      "test": "diagnostic presence/session cleanup",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "syntheticMessagesSentToRealRooms": 0
+}

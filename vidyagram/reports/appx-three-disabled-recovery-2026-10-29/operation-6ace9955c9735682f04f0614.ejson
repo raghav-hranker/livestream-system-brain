@@ -1,0 +1,28 @@
+{
+  "filter": {
+    "_id": {
+      "$oid": "6ace9955c9735682f04f0614"
+    },
+    "status": "dead",
+    "attempts": {
+      "$numberInt": "5"
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1791958688383"
+      }
+    }
+  },
+  "set": {
+    "status": "claimed",
+    "attempts": {
+      "$numberInt": "6"
+    },
+    "error": null,
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1793276605799"
+      }
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "at": "2026-10-27T12:04:04.423Z",
+  "rows": [
+    {
+      "job": "6acea4e3c9735682f04f1967",
+      "classId": "6acea4e38752d955968b933c",
+      "title": "Glands 02 · Biology",
+      "status": "done",
+      "attempts": 1,
+      "progress": {
+        "phase": "complete",
+        "segmentsDone": 953,
+        "segmentsTotal": 953
+      },
+      "errorSummary": null,
+      "hasHls": true,
+      "sameUpdatedAt": false,
+      "sameSourcePair": true,
+      "jobSourceCourse": "71",
+      "jobSourceRow": "189848",
+      "surveyCourse": "71",
+      "surveyRow": "189848",
+      "visiblePlacements": 2
+    },
+    {
+      "job": "6acea4e8c9735682f04f196d",
+      "classId": "6acea4e88752d955968b9343",
+      "title": "Glands 03 · Biology",
+      "status": "done",
+      "attempts": 1,
+      "progress": {
+        "phase": "complete",
+        "segmentsDone": 848,
+        "segmentsTotal": 848
+      },
+      "errorSummary": null,
+      "hasHls": true,
+      "sameUpdatedAt": false,
+      "sameSourcePair": true,
+      "jobSourceCourse": "71",
+      "jobSourceRow": "189849",
+      "surveyCourse": "71",
+      "surveyRow": "189849",
+      "visiblePlacements": 2
+    },
+    {
+      "job": "6acea4ecc9735682f04f1971",
+      "classId": "6acea4ec8752d955968b934a",
+      "title": "Glands 04 · Biology",
+      "status": "done",
+      "attempts": 1,
+      "progress": {
+        "phase": "complete",
+        "segmentsDone": 831,
+        "segmentsTotal": 831
+      },
+      "errorSummary": null,
+      "hasHls": true,
+      "sameUpdatedAt": false,
+      "sameSourcePair": true,
+      "jobSourceCourse": "71",
+      "jobSourceRow": "189850",
+      "surveyCourse": "71",
+      "surveyRow": "189850",
+      "visiblePlacements": 2
+    },
+    {
+      "job": "6acea4f0c9735682f04f1973",
+      "classId": "6acea4f08752d955968b9351",
+      "title": "Glands 05 · Biology",
+      "status": "done",
+      "attempts": 1,
+      "progress": {
+        "phase": "complete",
+        "segmentsDone": 681,
+        "segmentsTotal": 681
+      },
+      "errorSummary": null,
+      "hasHls": true,
+      "sameUpdatedAt": false,
+      "sameSourcePair": true,
+      "jobSourceCourse": "71",
+      "jobSourceRow": "189853",
+      "surveyCourse": "71",
+      "surveyRow": "189853",
+      "visiblePlacements": 2
+    },
+    {
+      "job": "6ad5df30c9735682f0a0c5d4",
+      "classId": "6ad5df3064b695f53d872c12",
+      "title": "Internet",
+      "status": "done",
+      "attempts": 1,
+      "progress": {
+        "phase": "complete",
+        "segmentsDone": 1030,
+        "segmentsTotal": 1030
+      },
+      "errorSummary": null,
+      "hasHls": true,
+      "sameUpdatedAt": false,
+      "sameSourcePair": true,
+      "jobSourceCourse": "131",
+      "jobSourceRow": "193431",
+      "surveyCourse": "131",
+      "surveyRow": "193431",
+      "visiblePlacements": 1
+    },
+    {
+      "job": "6ad5df31c9735682f0a0c5d7",
+      "classId": "6ad5df3164b695f53d872c19",
+      "title": "Internet 02 · Internet (2)",
+      "status": "done",
+      "attempts": 1,
+      "progress": {
+        "phase": "complete",
+        "segmentsDone": 1104,
+        "segmentsTotal": 1104
+      },
+      "errorSummary": null,
+      "hasHls": true,
+      "sameUpdatedAt": false,
+      "sameSourcePair": true,
+      "jobSourceCourse": "131",
+      "jobSourceRow": "193432",
+      "surveyCourse": "131",
+      "surveyRow": "193432",
+      "visiblePlacements": 1
+    },
+    {
+      "job": "6ad5df31c9735682f0a0c5da",
+      "classId": "6ad5df3164b695f53d872c20",
+      "title": "Internet 03 · Internet (2)",
+      "status": "done",
+      "attempts": 1,
+      "progress": {
+        "phase": "complete",
+        "segmentsDone": 961,
+        "segmentsTotal": 961
+      },
+      "errorSummary": null,
+      "hasHls": true,
+      "sameUpdatedAt": false,
+      "sameSourcePair": true,
+      "jobSourceCourse": "131",
+      "jobSourceRow": "193434",
+      "surveyCourse": "131",
+      "surveyRow": "193434",
+      "visiblePlacements": 1
+    }
+  ]
+}

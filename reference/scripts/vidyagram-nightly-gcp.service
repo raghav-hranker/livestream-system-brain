@@ -1,0 +1,15 @@
+[Unit]
+Description=Vidyagram nightly catalogue sync
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=raghav
+WorkingDirectory=/home/raghav/vidyagram-nightly-20261019
+UMask=0077
+ExecStart=/usr/bin/flock -n /home/raghav/vidyagram-nightly/run.lock /bin/bash /home/raghav/vidyagram-nightly/run.sh
+TimeoutStartSec=7h
+Nice=10
+CPUQuota=100%
+MemoryMax=2G

@@ -1,0 +1,654 @@
+<title>Batch Upgrade Playbook</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Hind:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column; the prototype section breaks wider into phone | notes. Railway-ticket motif for the upgrade path. */
+:root{
+  --paper:#EEF1F4; --card:#FFFFFF; --ink:#13203A; --muted:#566174; --line:#D5DBE3;
+  --signal:#F2B705; --signal-ink:#7A5800; --go:#1C7349; --go-bg:#E2F2E9; --warn:#A4501F; --warn-bg:#FBEBDD;
+  --blue:#24509E; --blue-bg:#E3EBF8; --grey-bg:#E6E9EE;
+  /* the phone is an object with its own fixed palette, readable on either page theme */
+  --app-bg:#F6F7F9; --app-card:#FFFFFF; --app-ink:#14203A; --app-muted:#6B7486; --app-line:#E3E6EB;
+  --app-brand:#1E3A8A; --app-cta:#F2B705; --app-good:#1C7349; --app-bad:#C0392B; --frame:#0B1220;
+  --f-display:"Archivo", "Arial Narrow", system-ui, sans-serif;
+  --f-body:"Hind", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0E141F; --card:#161F2E; --ink:#E6EAF0; --muted:#9AA4B4; --line:#2A3446;
+    --signal:#F2B705; --signal-ink:#F5C842; --go:#5CC892; --go-bg:#173326; --warn:#EE9A6A; --warn-bg:#3A2418;
+    --blue:#86A9F0; --blue-bg:#1B2A45; --grey-bg:#222C3C; --frame:#000000; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E141F; --card:#161F2E; --ink:#E6EAF0; --muted:#9AA4B4; --line:#2A3446;
+  --signal:#F2B705; --signal-ink:#F5C842; --go:#5CC892; --go-bg:#173326; --warn:#EE9A6A; --warn-bg:#3A2418;
+  --blue:#86A9F0; --blue-bg:#1B2A45; --grey-bg:#222C3C; --frame:#000000; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 80px}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:72px}
+.col{max-width:720px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:800;font-stretch:78%;line-height:1}
+h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:750;font-stretch:82%;line-height:1.1}
+h3{font-size:1.15rem;font-weight:700;font-stretch:90%}
+p{margin:0}
+.eyebrow{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lede{font-size:1.2rem;color:var(--ink);max-width:62ch}
+.muted{color:var(--muted)}
+section{display:flex;flex-direction:column;gap:20px}
+code,.mono{font-family:var(--f-mono);font-size:.86em}
+
+/* hero */
+.hero{display:flex;flex-direction:column;gap:22px}
+.ticket{display:grid;grid-template-columns:1fr auto 1fr auto;gap:0;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;max-width:880px}
+.tk-cell{padding:18px 20px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.tk-lab{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.tk-val{font-family:var(--f-display);font-weight:700;font-stretch:85%;font-size:1.15rem;line-height:1.2}
+.tk-arrow{display:flex;align-items:center;padding:0 6px;color:var(--muted);font-size:1.4rem}
+.tk-fare{background:var(--signal);color:#1A1400;border-left:2px dashed var(--paper);position:relative}
+.tk-fare .tk-lab{color:#4A3A00}
+.tk-fare .tk-val{font-size:1.6rem}
+@media (max-width:640px){
+  .ticket{grid-template-columns:1fr}
+  .tk-arrow{padding:0 20px;transform:rotate(90deg);justify-content:flex-start;width:40px}
+  .tk-fare{border-left:0;border-top:2px dashed var(--paper)}
+}
+
+/* today */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.fact b{font-family:var(--f-display);font-stretch:90%;font-weight:700}
+.fact span{color:var(--muted);font-size:.95rem}
+.gaps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px 28px;counter-reset:none}
+.gap{display:flex;flex-direction:column;gap:6px;border-top:3px solid var(--ink);padding-top:12px}
+.gap h3{font-size:1.25rem}
+.gap p{color:var(--muted);font-size:.98rem}
+.note{background:var(--blue-bg);border-radius:8px;padding:14px 16px;font-size:.96rem;max-width:860px}
+.note b{color:var(--blue)}
+
+/* prototypes */
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tab{font:inherit;font-size:.95rem;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 14px;cursor:pointer;display:flex;align-items:center;gap:8px}
+.tab .dot{width:8px;height:8px;border-radius:50%}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tab:focus-visible,.tap:focus-visible,button:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+.stage{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:start}
+@media (max-width:820px){.stage{grid-template-columns:1fr;justify-items:center}}
+.phone-col{display:flex;flex-direction:column;align-items:center;gap:12px}
+.phone{width:320px;max-width:100%;height:650px;background:var(--frame);border-radius:42px;padding:11px;box-shadow:0 18px 40px rgba(10,20,40,.25)}
+.screen{width:100%;height:100%;border-radius:32px;overflow:hidden;background:var(--app-bg);color:var(--app-ink);position:relative;display:flex;flex-direction:column;font-size:14px;line-height:1.4}
+.scroll{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:10px;padding:10px 14px 18px}
+.stepper{display:flex;gap:6px;align-items:center;font-family:var(--f-mono);font-size:.78rem;color:var(--muted)}
+.stepper i{width:22px;height:4px;border-radius:2px;background:var(--line)}
+.stepper i.on{background:var(--ink)}
+.restart{font:inherit;font-size:.85rem;background:none;border:0;color:var(--blue);cursor:pointer;text-decoration:underline;padding:4px}
+.hint{font-size:.85rem;color:var(--muted);text-align:center;max-width:300px}
+
+.details{display:flex;flex-direction:column;gap:18px;min-width:0;max-width:560px}
+.details h3{font-size:1.6rem;font-stretch:82%}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;padding:4px 8px;border-radius:4px;font-weight:500}
+.c-today{background:var(--go-bg);color:var(--go)}
+.c-backend{background:var(--blue-bg);color:var(--blue)}
+.c-ops{background:var(--grey-bg);color:var(--ink)}
+.c-app{background:var(--warn-bg);color:var(--warn)}
+.kv{display:grid;grid-template-columns:120px 1fr;gap:10px 16px;font-size:.97rem}
+.kv dt{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.kv dd{margin:0;min-width:0}
+.kv ul{margin:0;padding-left:18px}
+@media (max-width:480px){.kv{grid-template-columns:1fr;gap:2px}.kv dd{margin-bottom:10px}}
+
+/* in-phone app UI */
+.sb{display:flex;justify-content:space-between;padding:12px 22px 4px;font-size:12px;font-weight:600;color:var(--app-ink)}
+.ab{display:flex;align-items:center;gap:10px;padding:6px 14px 10px;font-weight:600;font-size:16px;border-bottom:1px solid var(--app-line);background:var(--app-card)}
+.ab .bk{font-size:22px;line-height:1;color:var(--app-muted)}
+.pc{background:var(--app-card);border:1px solid var(--app-line);border-radius:12px;padding:12px}
+.ribbon{display:inline-block;background:#FFF4CC;color:#6B4E00;font-size:11.5px;font-weight:600;border-radius:4px;padding:2px 8px;margin-bottom:6px}
+.o-name{font-weight:700;font-size:16px;line-height:1.25}
+.o-sub{color:var(--app-muted);font-size:12.5px}
+.o-list{margin:8px 0;padding-left:18px;font-size:13px}
+.o-price{display:flex;align-items:baseline;gap:8px;margin-top:4px}
+.o-price b{font-size:22px}
+.o-price s{color:var(--app-muted)}
+.save{font-size:11.5px;font-weight:600;color:var(--app-good);background:#E2F2E9;border-radius:4px;padding:1px 6px}
+.timer{font-size:12px;color:var(--app-bad);font-weight:600;margin-top:4px}
+.cta{display:block;width:100%;margin-top:10px;font:inherit;font-weight:700;font-size:15px;border:0;border-radius:10px;padding:11px;background:var(--app-cta);color:#1A1400;cursor:pointer}
+.cta.ghost{background:transparent;border:1.5px solid var(--app-brand);color:var(--app-brand)}
+.dim{opacity:.55}
+.tap{cursor:pointer;position:relative}
+.tap.pulse{box-shadow:0 0 0 0 rgba(242,183,5,.7);animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(242,183,5,.75)}70%{box-shadow:0 0 0 9px rgba(242,183,5,0)}100%{box-shadow:0 0 0 0 rgba(242,183,5,0)}}
+@media (prefers-reduced-motion:reduce){.tap.pulse{animation:none;outline:2px solid #F2B705;outline-offset:2px}}
+
+.lock{flex:1;background:linear-gradient(170deg,#1E3A8A 0%,#0F1E4A 60%,#0A1430 100%);color:#fff;display:flex;flex-direction:column;align-items:center;padding:56px 12px 20px;gap:4px}
+.lk-time{font-size:62px;font-weight:300;line-height:1;font-family:var(--f-display);font-stretch:90%}
+.lk-date{font-size:14px;opacity:.85;margin-bottom:28px}
+.notif{all:unset;box-sizing:border-box;width:100%;background:rgba(255,255,255,.88);color:#14203A;border-radius:16px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;cursor:pointer}
+.n-head{display:flex;align-items:center;gap:6px;font-size:11.5px;color:#52607A}
+.n-app{width:18px;height:18px;border-radius:5px;background:#1E3A8A;color:#fff;font-size:9px;font-weight:700;display:grid;place-items:center}
+.n-when{margin-left:auto}
+.n-title{font-weight:700;font-size:14px}
+.n-body{font-size:13px}
+.heads{margin:8px 10px 0;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.18);border:1px solid var(--app-line)}
+
+.done{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;padding:24px}
+.tick{width:64px;height:64px;border-radius:50%;background:#E2F2E9;color:var(--app-good);display:grid;place-items:center;font-size:32px;font-weight:700}
+.done h4{margin:0;font-size:20px}
+.done p{font-size:13.5px;color:var(--app-muted)}
+
+.topic{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px;border-radius:10px;background:var(--app-card);border:1px solid var(--app-line);font-weight:600;font-size:14px}
+.topic small{font-weight:400;color:var(--app-muted);font-size:12px;white-space:nowrap}
+.topic.peek{background:#FFF8DB;border-color:#F2D46B;text-align:left;font:inherit;font-weight:600;font-size:14px;color:var(--app-ink);width:100%}
+.cls{display:grid;grid-template-columns:86px 1fr;gap:10px;align-items:center}
+.thumb{height:52px;border-radius:8px;background:linear-gradient(135deg,#1E3A8A,#3B5BB8);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:flex-end;padding:5px}
+.free{display:inline-block;font-size:10.5px;font-weight:700;color:var(--app-good);border:1px solid var(--app-good);border-radius:3px;padding:0 4px;margin-top:2px}
+.prog{height:6px;border-radius:3px;background:var(--app-line);overflow:hidden;margin-top:6px}
+.prog i{display:block;height:100%;background:var(--app-good)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.chipset{display:flex;flex-wrap:wrap;gap:6px}
+.pchip{border:1.5px solid var(--app-line);background:var(--app-card);border-radius:999px;padding:6px 12px;font:inherit;font-size:13px;color:var(--app-ink)}
+.pchip.sel{border-color:var(--app-brand);background:#E8EEFB;color:var(--app-brand);font-weight:600}
+.map-row{display:grid;grid-template-columns:1fr auto;gap:2px 8px;padding:10px 0;border-bottom:1px solid var(--app-line)}
+.map-row:last-child{border-bottom:0}
+.ok{color:var(--app-good);font-weight:600;font-size:12.5px}
+.no{color:var(--app-bad);font-weight:600;font-size:12.5px}
+.score{display:grid;grid-template-columns:1fr auto;gap:4px 8px;font-size:13px}
+.big{font-size:28px;font-weight:700;font-family:var(--f-display);font-stretch:90%}
+.ops{background:#F1F3F7;border:1px dashed #B9C1CE;border-radius:10px;padding:10px;font-size:12.5px;text-align:left;width:100%}
+.ops b{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--app-muted);margin-bottom:4px}
+
+/* logic table */
+.tbl-wrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:.95rem}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:500}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:600;width:24%}
+.size{font-family:var(--f-mono);font-size:.8rem;white-space:nowrap}
+
+/* pilot */
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0;max-width:820px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+.steps li::before{content:counter(s);font-family:var(--f-display);font-weight:800;font-stretch:80%;font-size:1.6rem;line-height:1;color:var(--signal-ink)}
+.steps b{display:block}
+.steps span{color:var(--muted);font-size:.96rem}
+.qs{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.q{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-size:.97rem}
+/* pricing */
+.models{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.model{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.model.rec{border:2px solid var(--ink)}
+.model h3{font-size:1.3rem;font-stretch:84%}
+.model .chip{align-self:flex-start}
+.formula{font-family:var(--f-mono);font-size:.8rem;background:var(--paper);border-radius:6px;padding:8px 10px;line-height:1.5}
+.pc-list{margin:0;padding-left:18px;font-size:.94rem;display:flex;flex-direction:column;gap:3px}
+.pc-list.good li::marker{content:"+  ";color:var(--go);font-weight:700}
+.pc-list.bad li::marker{content:"–  ";color:var(--warn);font-weight:700}
+.calc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 32px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+@media (max-width:760px){.calc{grid-template-columns:1fr}}
+.controls{display:flex;flex-direction:column;gap:14px;min-width:0}
+.field{display:flex;flex-direction:column;gap:5px}
+.field>label,.field>.lab{font-size:.9rem;font-weight:600;display:flex;justify-content:space-between;gap:8px}
+.field output{font-family:var(--f-mono);font-weight:500;font-size:.85rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.calc input[type=number],.calc select{font:inherit;font-size:.95rem;padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--ink);width:100%}
+.calc input[type=range]{width:100%;accent-color:var(--ink)}
+.seg{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg label{flex:1;text-align:center;padding:8px 6px;font-size:.86rem;font-weight:600;cursor:pointer;position:relative;line-height:1.2}
+.seg label+label{border-left:1px solid var(--line)}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label:has(input:checked){background:var(--ink);color:var(--paper)}
+.seg label:has(input:focus-visible){outline:3px solid var(--signal);outline-offset:-3px}
+.result{display:flex;flex-direction:column;gap:14px;min-width:0}
+.price-out{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.price-out b{font-family:var(--f-display);font-size:3.2rem;font-weight:800;font-stretch:78%;line-height:1;font-variant-numeric:tabular-nums}
+.price-out s{color:var(--muted);font-size:1.1rem}
+.breakdown{display:grid;grid-template-columns:1fr auto;gap:6px 14px;font-size:.93rem;font-variant-numeric:tabular-nums}
+.breakdown span:nth-child(even){font-family:var(--f-mono);font-size:.86rem;text-align:right}
+.breakdown .win{font-weight:700;color:var(--go)}
+.mini{background:var(--app-bg);color:var(--app-ink);border-radius:14px;padding:10px;font-size:14px;line-height:1.4;border:1px solid var(--line)}
+.mini .pc{padding:10px 12px}
+.cap{font-size:.84rem;color:var(--muted)}
+.chart-wrap{grid-column:1/-1;overflow-x:auto;display:flex;flex-direction:column;gap:8px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.86rem;color:var(--muted)}
+.legend span{display:flex;align-items:center;gap:6px}
+.legend i{width:22px;height:0;border-top:2px dashed var(--blue)}
+.legend i.l2{border-top-color:var(--warn)}
+.legend i.l3{border-top:3px solid var(--ink)}
+.legend i.l4{border-top:1.5px dotted var(--muted)}
+#chart{width:100%;min-width:520px;height:auto;display:block}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.rule{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-size:.95rem}
+.rule b{font-family:var(--f-display);font-stretch:90%;font-size:1.02rem}
+.rule em{font-style:normal;color:var(--muted)}
+.rule em::before{content:"Suggest: ";font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--go)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+footer{font-size:.88rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;max-width:820px}
+</style>
+
+<div class="wrap">
+
+  <header class="hero">
+    <p class="eyebrow">quicktricks · pitch for the team meeting · 30 Oct 2026</p>
+    <h1>Batch Upgrade Playbook</h1>
+    <p class="lede">Our upgrade offer works, but only a student who opens the Plans screen ever sees it. This is a set of ways to put the right targeted batch in front of a student at the moment it makes sense, with a reason attached.</p>
+    <div class="ticket" role="img" aria-label="Upgrade path: from Railway Maths Foundation Batch to Railway Record Breaking Batch at an upgrade fare of 499 rupees">
+      <div class="tk-cell"><span class="tk-lab">From · batch they own</span><span class="tk-val">Railway Maths Foundation Batch</span></div>
+      <div class="tk-arrow" aria-hidden="true">→</div>
+      <div class="tk-cell"><span class="tk-lab">To · targeted batch</span><span class="tk-val">Railway Record Breaking Batch</span></div>
+      <div class="tk-cell tk-fare"><span class="tk-lab">Upgrade fare</span><span class="tk-val">₹499</span></div>
+    </div>
+    <p class="muted" style="font-size:.9rem">Batch names are from our catalogue. Every price on this page is illustrative.</p>
+  </header>
+
+  <section>
+    <p class="eyebrow">Where we are</p>
+    <h2>How the upgrade works today</h2>
+    <p class="col">Live since 18 Sep, and tested on prod with a real ₹500 Razorpay payment on 19 Sep.</p>
+    <div class="facts">
+      <div class="fact"><b>Set on the target batch</b><span>Admin ticks Upgrade on the batch to sell, picks the source batches, and enters one upgrade price.</span></div>
+      <div class="fact"><b>Who qualifies</b><span>An active paid order on any source batch, and the student does not already own the target.</span></div>
+      <div class="fact"><b>Where it shows</b><span>Only on the Plans screen, as a lower price with the list price struck through.</span></div>
+      <div class="fact"><b>What they get</b><span>Full target validity. The source batch stays untouched. If the extension offer is cheaper, that one shows instead.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">What is missing</p>
+    <h2>Four gaps that cost us upgrades</h2>
+    <div class="gaps">
+      <div class="gap"><h3>Nobody tells the student</h3><p>No push, no in-batch mention, no teacher shout-out. The offer waits on a screen most buyers never revisit.</p></div>
+      <div class="gap"><h3>One price, all year</h3><p>A student on day 3 and one on day 300 see the same price, in exam-notification week and in the dead months alike.</p></div>
+      <div class="gap"><h3>No reason given</h3><p>The card shows a price. It never says why this batch fits this student's exam or where their prep falls short.</p></div>
+      <div class="gap"><h3>We can't see the funnel</h3><p>We record the upgrade order. We don't record who saw the offer or who tapped it, so we can't tell which pairs work.</p></div>
+    </div>
+    <p class="note"><b>Constraint to keep in mind:</b> we can't ship a new app release right now, so the app only reads price and the buy/upgrade flags. The extension offer already works around this by putting its message in the plan name ("… : Extension (6 Months Validity)"). An upgrade can do the same. Each prototype below says whether it needs a release.</p>
+  </section>
+
+  <section id="pricing">
+    <p class="eyebrow">Pricing the upgrade</p>
+    <h2>Credit for unused days, or a discount for existing students</h2>
+    <p class="col">Today every eligible student pays the same fixed upgrade price. The three rules below make the price depend on the student's own order instead. In every version the student keeps the batch they already own, because we never take access away. So the credit works as a discount, not a transfer.</p>
+    <div class="models">
+      <div class="model">
+        <span class="chip c-backend">Pro-rated</span>
+        <h3>Your unused days count</h3>
+        <div class="formula">credit = paid × days left ÷ validity<br>price = list − credit</div>
+        <ul class="pc-list good"><li>Feels fair, and the student can check the maths</li><li>Built-in urgency: the credit shrinks every week, with no fake timer</li></ul>
+        <ul class="pc-list bad"><li>Late in the batch, the credit is almost nothing</li><li>A student who paid more than the target's price would get it free</li></ul>
+      </div>
+      <div class="model">
+        <span class="chip c-backend">Existing-user discount</span>
+        <h3>Because you already study with us</h3>
+        <div class="formula">price = list − loyalty %<br>for anyone with an active paid batch</div>
+        <ul class="pc-list good"><li>One setting covers every targeted batch, with no pairs to configure</li><li>Easy to say in a push: "25% off for Quicktricks students"</li></ul>
+        <ul class="pc-list bad"><li>No reason to upgrade now rather than later</li><li>The discount also goes to students who would have paid full price</li></ul>
+      </div>
+      <div class="model rec">
+        <span class="chip c-today">Recommended</span>
+        <h3>Credit, with loyalty as the floor</h3>
+        <div class="formula">price = list − max(credit, loyalty %)<br>never below the floor price</div>
+        <ul class="pc-list good"><li>Early upgraders get the big credit, and late ones still get the loyalty discount</li><li>The floor protects us from students who paid more than the target's price</li></ul>
+        <ul class="pc-list bad"><li>Three dials to set, so the team has to agree on the defaults</li></ul>
+      </div>
+    </div>
+
+    <div class="calc" id="calc">
+      <form class="controls" id="calc-form" autocomplete="off">
+        <div class="field"><span class="lab">Pricing rule</span>
+          <div class="seg" role="radiogroup" aria-label="Pricing rule">
+            <label><input type="radio" name="mode" id="m-credit" value="credit">Pro-rated</label>
+            <label><input type="radio" name="mode" id="m-loyalty" value="loyalty">Existing-user</label>
+            <label><input type="radio" name="mode" id="m-both" value="both" checked>Both</label>
+          </div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="c-paid">Paid for Foundation (₹)</label><input type="number" id="c-paid" min="0" step="1" value="600"></div>
+          <div class="field"><label for="c-valid">Its validity</label><select id="c-valid"><option value="180">180 days</option><option value="365" selected>365 days</option></select></div>
+        </div>
+        <div class="field"><label for="c-used">Days already used <output id="v-used">30</output></label><input type="range" id="c-used" min="0" max="365" value="30"></div>
+        <div class="field"><label for="c-list">Record Breaking list price (₹)</label><input type="number" id="c-list" min="1" step="1" value="999"></div>
+        <div class="field"><label for="c-loy">Existing-user discount <output id="v-loy">25%</output></label><input type="range" id="c-loy" min="0" max="50" step="5" value="25"></div>
+        <div class="field"><label for="c-floor">Floor price <output id="v-floor">40% of list</output></label><input type="range" id="c-floor" min="0" max="80" step="5" value="40"></div>
+      </form>
+      <div class="result" aria-live="polite">
+        <div><p class="eyebrow">This student's upgrade price</p>
+          <div class="price-out"><b id="o-price">₹448</b><s id="o-list">₹999</s></div></div>
+        <div class="breakdown" id="o-break"></div>
+        <div class="mini"><div class="pc"><span class="ribbon" id="o-ribbon"></span><div class="o-name">Railway Record Breaking Batch</div><div class="o-price"><b id="o-price2"></b><s id="o-list2"></s></div></div></div>
+        <p class="cap">No app release needed: the app shows whatever price we send. The ribbon text can go in the plan name, the same way the extension offer does it.</p>
+      </div>
+      <div class="chart-wrap">
+        <p class="eyebrow">Upgrade price by the day they upgrade</p>
+        <div class="legend"><span><i></i>Pro-rated only</span><span><i class="l2"></i>Existing-user only</span><span><i class="l3"></i>Both (recommended)</span><span><i class="l4"></i>Floor</span></div>
+        <svg id="chart" viewBox="0 0 640 250" role="img" aria-label="Upgrade price against the day the student upgrades, for each pricing rule"></svg>
+      </div>
+    </div>
+
+    <h3 style="font-size:1.4rem;font-stretch:84%;margin-top:12px">Five students, one rule</h3>
+    <p class="col muted" style="font-size:.95rem">Record Breaking at ₹999 list, a 25% existing-user discount and a 40% floor (₹400). The Foundation batch is 365 days.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Student</th><th>Their Foundation order</th><th class="num">Credit</th><th class="num">Existing-user discount</th><th class="num">Pays</th><th>What decided it</th><th class="num">Today's flat offer</th></tr></thead>
+        <tbody>
+          <tr><td>Ravi</td><td>Paid ₹600, upgrading on day 30</td><td class="num">₹551</td><td class="num">₹250</td><td class="num"><b>₹448</b></td><td>Credit</td><td class="num">₹499</td></tr>
+          <tr><td>Pooja</td><td>Paid ₹600, upgrading on day 200</td><td class="num">₹271</td><td class="num">₹250</td><td class="num"><b>₹728</b></td><td>Credit, just</td><td class="num">₹499</td></tr>
+          <tr><td>Amit</td><td>Paid ₹600, upgrading on day 330</td><td class="num">₹58</td><td class="num">₹250</td><td class="num"><b>₹749</b></td><td>Existing-user discount</td><td class="num">₹499</td></tr>
+          <tr><td>Neha</td><td>Paid ₹1,299 for a bigger batch, upgrading on day 10</td><td class="num">₹1,263</td><td class="num">₹250</td><td class="num"><b>₹400</b></td><td>Floor</td><td class="num">₹499</td></tr>
+          <tr><td>Sunil</td><td>Admin-granted for free</td><td class="num">₹0</td><td class="num">₹0</td><td class="num"><b>₹999</b></td><td>Nothing paid, so nothing to credit</td><td class="num">₹499</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note"><b>Read this before the meeting:</b> with these dials, most students pay more than today's flat ₹499, and early upgraders pay less. That is the trade the team chooses: more money from late upgraders, or a lower price to win more of them. A higher existing-user discount, say 40%, puts Amit at ₹599.</p>
+
+    <h3 style="font-size:1.4rem;font-stretch:84%;margin-top:12px">Rules the team has to settle</h3>
+    <div class="rules">
+      <div class="rule"><b>Does the student keep their current batch?</b><em>Yes. We never take access away, so the credit is a discount we fund. Ending the old batch would only be fair when the target fully contains it.</em></div>
+      <div class="rule"><b>Which order earns the credit?</b><em>The paid order on the source batch with the latest expiry, which the upgrade already picks today. Extension orders count at their own price and 183 days.</em></div>
+      <div class="rule"><b>Two source batches?</b><em>Use the bigger single credit. Never add credits together.</em></div>
+      <div class="rule"><b>Free and admin-granted batches</b><em>₹0 paid earns ₹0 credit and no existing-user discount. They see the list price, or the fixed upgrade price if we keep one.</em></div>
+      <div class="rule"><b>The price moves every day</b><em>Checkout re-checks the price and rejects underpaying. Step the credit weekly so the price a student sees holds for 7 days.</em></div>
+      <div class="rule"><b>Coupons</b><em>Coupons already stack on upgrade prices. Apply the floor after the coupon too.</em></div>
+      <div class="rule"><b>iPhone</b><em>Apple charges fixed price tiers, so a per-student price can't go through Apple yet. Run the pilot on Android and web.</em></div>
+      <div class="rule"><b>Extension offer also applies</b><em>No change: the cheaper of the two offers wins, as it does today.</em></div>
+    </div>
+    <p class="note"><b>What already exists:</b> the extension offer already sets each student's price from their own order history (50% of their oldest paid order, with a ₹125 floor), and checkout re-checks that price on the server. A pro-rated upgrade is one more price rule in the same place, and the app sees only a different amount.</p>
+  </section>
+
+  <section id="prototypes">
+    <p class="eyebrow">Prototypes · tap through them</p>
+    <h2>Six moments to offer the targeted batch</h2>
+    <p class="col muted">Ordered from least to most work. Tap the highlighted part of each screen to move on.</p>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="stage">
+      <div class="phone-col">
+        <div class="phone"><div class="screen" id="screen" aria-live="polite"></div></div>
+        <div class="stepper" id="stepper"></div>
+        <p class="hint" id="hint"></p>
+        <button class="restart" id="restart" type="button">Restart this flow</button>
+      </div>
+      <div class="details" id="details"></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Changes to the upgrade logic</p>
+    <h2>What the backend would need</h2>
+    <p class="col">These make the prototypes possible and close the four gaps. None needs an app release.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Change</th><th>What it does</th><th>Fixes</th><th>Size</th></tr></thead>
+        <tbody>
+          <tr><td>Per-student upgrade price</td><td>Price each student from their own source order: credit for unused days, the existing-user discount, and a floor. Uses the same pattern as the extension price, and checkout already re-checks it.</td><td>One price, all year</td><td class="size">M</td></tr>
+          <tr><td>Offer window and launch price</td><td>Start and end dates on an upgrade, plus an optional lower launch price until a date. Lets us tie the offer to an exam notification with a real deadline.</td><td>One price, all year</td><td class="size">S</td></tr>
+          <tr><td>Message in the plan name</td><td>While an upgrade applies, send "Record Breaking Batch : Upgrade for Foundation students (till 6 Nov)" in the name the app already shows, as the extension offer does.</td><td>No reason given</td><td class="size">S</td></tr>
+          <tr><td>One next batch per student</td><td>When a student qualifies for several upgrades, rank them by an admin-set exam path, so pushes and cards always show one batch, not five.</td><td>No reason given</td><td class="size">M</td></tr>
+          <tr><td>Recently lapsed holders</td><td>Count source orders that expired in the last 30 days, the same window the extension offer uses. Cheaper-wins between the two is already built.</td><td>Nobody tells the student</td><td class="size">S</td></tr>
+          <tr><td>Moment triggers</td><td>A daily job that finds students who crossed 60% of a source batch or scored low in a mock section, and sends one personal push. Class progress and test results already exist.</td><td>Nobody tells the student</td><td class="size">M</td></tr>
+          <tr><td>Offer funnel log</td><td>Record each time a listing shows an upgrade price, and which push or surface led there. Checkout-started orders already exist, so the funnel becomes seen → started → paid per pair.</td><td>We can't see the funnel</td><td class="size">S–M</td></tr>
+          <tr><td>iPhone price</td><td>Today iPhone shows the upgrade price but Apple charges the full tier. Needs an Apple product per upgrade price.</td><td>Known gap</td><td class="size">M</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Proposal</p>
+    <h2>A two-week pilot with no app release</h2>
+    <p class="col">One pair, Railway Maths Foundation Batch to Railway Record Breaking Batch, using only what is live today plus content.</p>
+    <ol class="steps">
+      <li><div><b>Size the pool</b><span>Run the read-only <code>offer_pockets.js</code> script to count Foundation holders who don't own Record Breaking, active and recently lapsed.</span></div></li>
+      <li><div><b>Turn the offer on</b><span>Set an upgrade price on Record Breaking Batch with Maths Foundation as the source. Admin form only.</span></div></li>
+      <li><div><b>Add the sneak peek</b><span>Two free Record Breaking classes, including a short teacher intro, placed as the first topic inside the Foundation batch.</span></div></li>
+      <li><div><b>Send one targeted push</b><span>Plan broadcast with Advanced audience rows: Active on Foundation, Never on Record Breaking.</span></div></li>
+      <li><div><b>Read the result</b><span>Count started and paid upgrade orders for the pair after 14 days. That number decides which logic changes we build first.</span></div></li>
+    </ol>
+  </section>
+
+  <section>
+    <p class="eyebrow">For the meeting</p>
+    <h2>Questions to settle</h2>
+    <div class="qs">
+      <div class="q">Which source → target pairs do we sell first, and who sets each upgrade price?</div>
+      <div class="q">Pro-rated credit, existing-user discount, or both? And what discount and floor do we start with?</div>
+      <div class="q">In the pilot, should half the students see flat ₹499 and half the per-student price, so we can compare?</div>
+      <div class="q">Will Sahil Sir record a 2–4 minute "what comes after Foundation" clip for each pair?</div>
+      <div class="q">Who keeps the exam calendar, so offer windows open the day a notification drops?</div>
+      <div class="q">Can someone on the team take mentor calls for an evening slot, and for how many students a day?</div>
+      <div class="q">Is the prep map worth waiting for the next app release, or should it start as a web page?</div>
+      <div class="q">What upgrade rate after 14 days would make us build the triggers?</div>
+    </div>
+  </section>
+
+  <footer>Built on the live upgrade offer (target-plan upgrade price, cheaper-wins with the extension offer), plan broadcast audience rows, class progress, test results and free classes. Nothing on this page is built or configured yet, and no conversion numbers exist yet.</footer>
+</div>
+
+<script>
+const STATUS = { today:["c-today","Ships today, no code"], backend:["c-backend","Backend only"], ops:["c-ops","Web page + ops time"], app:["c-app","Needs app release"] };
+const SB = '<div class="sb"><span>9:41</span><span>●●● 4G ▮</span></div>';
+const ab = t => '<div class="ab"><span class="bk">‹</span><span>' + t + '</span></div>';
+const lock = (title, body) => '<div class="lock"><div class="lk-time">7:42</div><div class="lk-date">Thursday, 30 October</div>' +
+  '<button class="notif tap" data-next><div class="n-head"><span class="n-app">QT</span>Quicktricks<span class="n-when">now</span></div>' +
+  '<div class="n-title">' + title + '</div><div class="n-body">' + body + '</div></button></div>';
+const offer = (ribbon, timer) => SB + ab("Plans") + '<div class="scroll"><div class="pc">' +
+  '<span class="ribbon">' + ribbon + '</span>' +
+  '<div class="o-name">Railway Record Breaking Batch</div><div class="o-sub">RRB NTPC · CBT 1 + CBT 2 · 365 days</div>' +
+  '<ul class="o-list"><li>Maths, Reasoning, GA and Science</li><li>Live mocks with analysis</li><li>Your current batch stays as it is</li></ul>' +
+  '<div class="o-price"><b>₹499</b><s>₹999</s><span class="save">Save ₹500</span></div>' +
+  (timer ? '<div class="timer">' + timer + '</div>' : '') +
+  '<button class="cta tap" data-next>Upgrade for ₹499</button></div>' +
+  '<div class="pc dim"><div class="o-name">Railway Express Series</div><div class="o-sub">Test series · 180 days</div><div class="o-price"><b>₹299</b></div></div></div>';
+const done = from => SB + '<div class="done"><div class="tick">✓</div><h4>Upgrade done</h4><p>Railway Record Breaking Batch is in My Courses for 365 days. ' + from + ' stays as it is.</p><button class="cta ghost" type="button">Open batch</button></div>';
+
+const PROTOS = [
+{ id:"peek", label:"Sneak peek", status:["today"],
+  title:"Sneak peek inside the batch they own",
+  moment:"Every time a Foundation student opens their batch, the first topic is two free classes from the next batch.",
+  who:"Everyone who holds Railway Maths Foundation Batch.",
+  exists:["Adding existing classes to a course","Free flag per class","Upgrade price on the target batch"],
+  build:["Two classes per pair, one of them a short teacher intro","No code"],
+  hints:["Tap the Sneak peek topic","Tap the upgrade card under the free classes","Tap Upgrade for ₹499",""],
+  screens:[
+    SB + ab("Railway Maths Foundation Batch") + '<div class="scroll">' +
+      '<button class="topic peek tap" data-next><span>Sneak peek: Record Breaking Batch<br><small>2 free classes · from Sahil Sir</small></span><span>›</span></button>' +
+      '<div class="topic"><span>Number System</span><small>12 classes</small></div>' +
+      '<div class="topic"><span>Percentage</span><small>9 classes</small></div>' +
+      '<div class="topic"><span>Ratio &amp; Proportion</span><small>8 classes</small></div>' +
+      '<div class="topic"><span>Time &amp; Work</span><small>10 classes</small></div>' +
+      '<div class="topic"><span>Simplification</span><small>7 classes</small></div></div>',
+    SB + ab("Sneak peek") + '<div class="scroll">' +
+      '<div class="pc cls"><div class="thumb">4 MIN</div><div><b>Foundation ke baad kya? Sahil Sir explains</b><br><span class="free">FREE</span></div></div>' +
+      '<div class="pc cls"><div class="thumb">52 MIN</div><div><b>Live: NTPC mock 12, full analysis</b><br><span class="free">FREE</span></div></div>' +
+      '<button class="pc tap" data-next style="text-align:left;font:inherit;color:inherit;cursor:pointer"><b>Liked these?</b><br>' +
+      '<span style="font-size:13px;color:#6B7486">The full batch has 120+ classes and 40 mocks.</span>' +
+      '<div class="o-price"><b>₹499</b><s>₹999</s><span class="save">For Foundation students</span></div></button></div>',
+    offer("For Maths Foundation students", ""),
+    done("Railway Maths Foundation Batch")
+  ]},
+{ id:"exam", label:"Exam alert", status:["backend"],
+  title:"The day the exam notification drops",
+  moment:"RRB announces NTPC. Interest peaks that week, so the offer opens with a real deadline.",
+  who:"Active on Maths Foundation, never bought Record Breaking. Plan broadcast Advanced rows already express this.",
+  exists:["Plan broadcast audience rows","Upgrade price on the target batch"],
+  build:["Offer window with an end date","Deadline in the plan name, since the ribbon and timer need an app release"],
+  hints:["Tap the notification","Tap Upgrade for ₹499",""],
+  screens:[
+    SB + lock("RRB NTPC 2026 notification is out", "Ravi, Maths Foundation students get Record Breaking Batch for ₹499 till 6 Nov."),
+    offer("For Maths Foundation students", "Offer ends 6 Nov · 7 days left"),
+    done("Railway Maths Foundation Batch")
+  ]},
+{ id:"halfway", label:"60% done push", status:["backend"],
+  title:"When the student has outgrown the batch",
+  moment:"A student crosses 60% of their Foundation classes. They are ready for exam-level practice, and they are clearly engaged.",
+  who:"Watched 60% or more of a source batch, doesn't own the target. One push per student per pair, ever.",
+  exists:["Class progress per student","Upgrade price on the target batch"],
+  build:["Daily trigger job with a personal push","Funnel log to see if engaged students convert better"],
+  hints:["Tap the notification banner","Tap Upgrade for ₹499",""],
+  screens:[
+    SB + '<button class="notif heads tap" data-next><div class="n-head"><span class="n-app">QT</span>Quicktricks<span class="n-when">now</span></div>' +
+      '<div class="n-title">Ravi, 60% of Reasoning Foundation done</div><div class="n-body">You are ready for exam-level questions. Next step: Record Breaking Batch at ₹499 for you.</div></button>' +
+      ab("My Courses") + '<div class="scroll">' +
+      '<div class="pc"><b>Railway Reasoning Foundation Batch</b><div class="row" style="font-size:12.5px;color:#6B7486;margin-top:4px"><span>18 of 30 classes</span><span>60%</span></div><div class="prog"><i style="width:60%"></i></div></div>' +
+      '<div class="pc"><b>Railway Maths Foundation Batch</b><div class="row" style="font-size:12.5px;color:#6B7486;margin-top:4px"><span>22 of 46 classes</span><span>48%</span></div><div class="prog"><i style="width:48%"></i></div></div></div>',
+    offer("You finished 60% of Reasoning Foundation", ""),
+    done("Railway Reasoning Foundation Batch")
+  ]},
+{ id:"mock", label:"Mock score gap", status:["backend","app"],
+  title:"Right after a weak mock section",
+  moment:"The student just saw their mock result. Reasoning cost them the most marks, and the targeted batch fixes exactly that.",
+  who:"Holds a mock test series, not the target batch, and scored below 50% in one section.",
+  exists:["Test results per section","Upgrade price on the target batch"],
+  build:["Section-score trigger and push (backend only)","The card on the result screen needs an app release"],
+  hints:["Tap the card under your section scores","Tap Upgrade for ₹499",""],
+  screens:[
+    SB + ab("NTPC Mock 7 · Result") + '<div class="scroll">' +
+      '<div class="pc"><div class="row"><div><div class="big">52<span style="font-size:16px;color:#6B7486">/100</span></div><span style="font-size:12.5px;color:#6B7486">Rank 3,412 of 9,880</span></div><span style="font-size:12.5px;color:#6B7486">Cut-off ≈ 61</span></div></div>' +
+      '<div class="pc score"><span>Maths</span><b>21/30</b><span>General Awareness</span><b>17/40</b><span style="color:#C0392B;font-weight:600">Reasoning</span><b style="color:#C0392B">14/30</b></div>' +
+      '<button class="pc tap" data-next style="text-align:left;font:inherit;color:inherit;cursor:pointer;background:#FFF8DB;border-color:#F2D46B">' +
+      '<b>Reasoning cost you 16 marks</b><br><span style="font-size:13px">Record Breaking Batch has 64 Reasoning classes with topic tests. ₹499 for you.</span></button></div>',
+    offer("Based on your Mock 7 result", ""),
+    done("Your mock test series")
+  ]},
+{ id:"mentor", label:"Mentor call", status:["ops"],
+  title:"A five-minute call before they decide",
+  moment:"Many students in our audience trust a person more than a price card. A short call answers the question they actually have: which batch for my exam.",
+  who:"Upgrade-eligible students who have been active in the last 7 days.",
+  exists:["Upgrade eligibility per student","Class progress for the mentor's view"],
+  build:["A small call-request web page","A daily call list for the team","Someone to take the calls"],
+  hints:["Tap the notification","Tap Request call",""],
+  screens:[
+    SB + lock("Which batch after Foundation?", "Free 5-minute call with a Quicktricks mentor. Pick a time that suits you."),
+    SB + ab("Book a call") + '<div class="scroll">' +
+      '<div class="pc"><b>Your exam</b><div class="chipset" style="margin-top:8px"><span class="pchip sel">RRB NTPC</span><span class="pchip">Group D</span><span class="pchip">ALP</span><span class="pchip">SSC GD</span><span class="pchip">SSC CGL</span></div></div>' +
+      '<div class="pc"><b>When can we call?</b><div class="chipset" style="margin-top:8px"><span class="pchip">Today 4–6 pm</span><span class="pchip sel">Today 6–8 pm</span><span class="pchip">Tomorrow</span></div></div>' +
+      '<div class="pc"><b>Number</b><div style="margin-top:4px;color:#6B7486">98•••• 4410 · from your account</div></div>' +
+      '<button class="cta tap" data-next>Request call</button></div>',
+    SB + '<div class="done"><div class="tick">✓</div><h4>Call booked</h4><p>A mentor will call you today between 6 and 8 pm.</p>' +
+      '<div class="ops"><b>What the mentor sees</b>Ravi · Maths Foundation, 62% watched<br>Goal: RRB NTPC · last active yesterday<br>Eligible: Record Breaking Batch at ₹499</div></div>'
+  ]},
+{ id:"map", label:"Prep map", status:["app"],
+  title:"My prep map: what my batches cover for my exam",
+  moment:"The student picks their exam once. The app shows which parts of that exam their batches cover and which are missing, and one batch fills the gaps.",
+  who:"Every student who sets an exam goal.",
+  exists:["Courses and their subjects","Class progress","Upgrade price on the target batch"],
+  build:["Exam goal per student","A subject map per exam, kept by the content team","A new app screen, or a web page until the next release"],
+  hints:["Tap RRB NTPC","Tap the card at the bottom","Tap Upgrade for ₹499",""],
+  screens:[
+    SB + ab("Your exam") + '<div class="scroll"><p style="margin:4px 0 6px;font-size:15px"><b>Which exam are you preparing for?</b><br><span style="color:#6B7486;font-size:13px">We will show what your batches cover.</span></p>' +
+      '<div class="chipset"><button class="pchip tap" data-next>RRB NTPC</button><span class="pchip">RRB Group D</span><span class="pchip">RRB ALP</span><span class="pchip">SSC GD</span><span class="pchip">SSC CGL</span><span class="pchip">Bank PO</span></div></div>',
+    SB + ab("My prep map") + '<div class="scroll">' +
+      '<div class="pc"><div class="row"><b>RRB NTPC · CBT 1</b><span style="font-size:12px;color:#6B7486">Exam ≈ Mar 2027</span></div>' +
+      '<div class="map-row"><span>Maths</span><span class="ok">Covered</span><span style="font-size:12px;color:#6B7486">Maths Foundation · 62% watched</span></div>' +
+      '<div class="map-row"><span>Reasoning</span><span class="no">Missing</span></div>' +
+      '<div class="map-row"><span>General Awareness</span><span class="no">Missing</span></div>' +
+      '<div class="map-row"><span>General Science</span><span class="no">Missing</span></div>' +
+      '<div class="map-row"><span>Full-length mocks</span><span class="no">Missing</span></div></div>' +
+      '<button class="pc tap" data-next style="text-align:left;font:inherit;color:inherit;cursor:pointer;background:#FFF8DB;border-color:#F2D46B">' +
+      '<b>One batch covers all four gaps</b><br><span style="font-size:13px">Record Breaking Batch · ₹499 for you (₹999)</span></button></div>',
+    offer("Fills 4 gaps in your NTPC prep", ""),
+    done("Railway Maths Foundation Batch")
+  ]}
+];
+
+const tabsEl = document.getElementById("tabs"), screenEl = document.getElementById("screen"),
+  stepperEl = document.getElementById("stepper"), hintEl = document.getElementById("hint"), detailsEl = document.getElementById("details");
+let cur = PROTOS[0], step = 0;
+
+PROTOS.forEach(p => {
+  const b = document.createElement("button");
+  b.className = "tab"; b.type = "button"; b.setAttribute("role","tab"); b.id = "tab-" + p.id;
+  b.innerHTML = '<span class="dot" style="background:var(--' + ({today:"go",backend:"blue",ops:"muted",app:"warn"})[p.status[p.status.length-1]] + ')"></span>' + p.label;
+  b.addEventListener("click", () => select(p.id, true));
+  tabsEl.appendChild(b);
+});
+
+function select(id, focusPhone){
+  cur = PROTOS.find(p => p.id === id) || PROTOS[0]; step = 0;
+  PROTOS.forEach(p => document.getElementById("tab-" + p.id).setAttribute("aria-selected", p === cur ? "true" : "false"));
+  const li = a => '<ul>' + a.map(x => '<li>' + x + '</li>').join("") + '</ul>';
+  detailsEl.innerHTML =
+    '<div class="chips">' + cur.status.map(s => '<span class="chip ' + STATUS[s][0] + '">' + STATUS[s][1] + '</span>').join("") + '</div>' +
+    '<h3>' + cur.title + '</h3><p>' + cur.moment + '</p>' +
+    '<dl class="kv"><dt>Who sees it</dt><dd>' + cur.who + '</dd><dt>Exists today</dt><dd>' + li(cur.exists) + '</dd><dt>To build</dt><dd>' + li(cur.build) + '</dd></dl>';
+  render();
+  try { history.replaceState(null, "", "#" + cur.id); } catch(e) {}
+}
+
+function render(){
+  screenEl.innerHTML = cur.screens[step];
+  screenEl.querySelectorAll("[data-next]").forEach(el => {
+    el.classList.add("tap","pulse");
+    if (el.tagName !== "BUTTON") { el.setAttribute("role","button"); el.tabIndex = 0; }
+    el.addEventListener("click", next);
+    el.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); next(); } });
+  });
+  stepperEl.innerHTML = cur.screens.map((_, i) => '<i class="' + (i <= step ? "on" : "") + '"></i>').join("") + '<span style="margin-left:6px">' + (step+1) + ' / ' + cur.screens.length + '</span>';
+  hintEl.textContent = cur.hints[step] || "End of this flow.";
+}
+function next(){ if (step < cur.screens.length - 1) { step++; render(); } }
+document.getElementById("restart").addEventListener("click", () => { step = 0; render(); });
+
+const start = (location.hash || "").slice(1);
+select(PROTOS.some(p => p.id === start) ? start : PROTOS[0].id);
+
+const $ = id => document.getElementById(id);
+const inr = n => "₹" + Math.round(n).toLocaleString("en-IN");
+function priceAt(mode, s, used){
+  const left = Math.max(0, s.valid - used);
+  const credit = s.paid > 0 ? Math.round(s.paid * left / s.valid) : 0;
+  const loyalty = s.paid > 0 ? Math.round(s.list * s.loy / 100) : 0;
+  const off = mode === "credit" ? credit : mode === "loyalty" ? loyalty : Math.max(credit, loyalty);
+  const floor = Math.round(s.list * s.floor / 100);
+  const raw = s.list - off;
+  const price = Math.min(s.list, Math.max(raw, off > 0 ? floor : s.list));
+  return { left, credit, loyalty, floor, price, floored: off > 0 && raw < floor, by: off === 0 ? "none" : (mode === "both" ? (credit >= loyalty ? "credit" : "loyalty") : mode) };
+}
+function calc(){
+  const s = { paid: Math.max(0, +$("c-paid").value || 0), valid: +$("c-valid").value, list: Math.max(1, +$("c-list").value || 1), loy: +$("c-loy").value, floor: +$("c-floor").value };
+  const usedEl = $("c-used"); usedEl.max = s.valid; if (+usedEl.value > s.valid) usedEl.value = s.valid;
+  const used = +usedEl.value, mode = document.querySelector('input[name="mode"]:checked').value;
+  $("v-used").textContent = used + " of " + s.valid; $("v-loy").textContent = s.loy + "%"; $("v-floor").textContent = s.floor + "% of list · " + inr(s.list * s.floor / 100);
+  const r = priceAt(mode, s, used);
+  $("o-price").textContent = $("o-price2").textContent = inr(r.price);
+  $("o-list").textContent = $("o-list2").textContent = r.price < s.list ? inr(s.list) : "";
+  const win = k => (!r.floored && r.by === k) ? ' class="win"' : '';
+  $("o-break").innerHTML =
+    '<span' + win("credit") + '>Credit for ' + r.left + ' unused days' + (mode === "loyalty" ? ' (not used)' : '') + '</span><span' + win("credit") + '>−' + inr(r.credit) + '</span>' +
+    '<span' + win("loyalty") + '>Existing-user discount' + (mode === "credit" ? ' (not used)' : '') + '</span><span' + win("loyalty") + '>−' + inr(r.loyalty) + '</span>' +
+    '<span' + (r.floored ? ' class="win"' : '') + '>Floor' + (r.floored ? ' (applied)' : '') + '</span><span' + (r.floored ? ' class="win"' : '') + '>' + inr(r.floor) + '</span>';
+  $("o-ribbon").textContent = r.floored ? "Best price for Foundation students" :
+    r.by === "credit" ? inr(r.credit) + " credit for your " + r.left + " unused Foundation days" :
+    r.by === "loyalty" ? s.loy + "% off for Quicktricks students" : "No offer: nothing paid on Foundation";
+  drawChart(s, mode, used, r.price);
+}
+function drawChart(s, mode, used, price){
+  const W = 640, H = 250, ml = 52, mr = 16, mt = 12, mb = 34, iw = W - ml - mr, ih = H - mt - mb;
+  const x = d => ml + iw * d / s.valid, y = v => mt + ih * (1 - v / s.list);
+  const path = m => { let d = ""; for (let t = 0; t <= s.valid; t += 5) d += (t ? "L" : "M") + x(t).toFixed(1) + " " + y(priceAt(m, s, t).price).toFixed(1); return d + "L" + x(s.valid).toFixed(1) + " " + y(priceAt(m, s, s.valid).price).toFixed(1); };
+  let g = "";
+  [0, .25, .5, .75, 1].forEach(f => { const v = s.list * f;
+    g += '<line x1="' + ml + '" x2="' + (W - mr) + '" y1="' + y(v) + '" y2="' + y(v) + '" style="stroke:var(--line)"/>' +
+         '<text x="' + (ml - 8) + '" y="' + (y(v) + 4) + '" text-anchor="end" style="fill:var(--muted);font:11px var(--f-mono)">' + inr(v) + '</text>'; });
+  const step = s.valid > 200 ? 60 : 30;
+  for (let t = 0; t <= s.valid; t += step) g += '<text x="' + x(t) + '" y="' + (H - 12) + '" text-anchor="middle" style="fill:var(--muted);font:11px var(--f-mono)">day ' + t + '</text>';
+  const fl = s.list * s.floor / 100;
+  g += '<line x1="' + ml + '" x2="' + (W - mr) + '" y1="' + y(fl) + '" y2="' + y(fl) + '" style="stroke:var(--muted);stroke-width:1.5;stroke-dasharray:2 4"/>';
+  const lines = [["credit","var(--blue)","6 5",2],["loyalty","var(--warn)","6 5",2],["both","var(--ink)","",3.5]];
+  lines.forEach(([m, c, dash, w]) => { const on = m === mode;
+    g += '<path d="' + path(m) + '" style="fill:none;stroke:' + c + ';stroke-width:' + (on ? w + 1 : w) + ';stroke-dasharray:' + (dash || "none") + ';opacity:' + (on ? 1 : .55) + '"/>'; });
+  const cx = x(used), cy = y(price);
+  g += '<line x1="' + cx + '" x2="' + cx + '" y1="' + mt + '" y2="' + (H - mb) + '" style="stroke:var(--muted);stroke-width:1"/>' +
+       '<circle cx="' + cx + '" cy="' + cy + '" r="6" style="fill:var(--signal);stroke:var(--ink);stroke-width:2"/>' +
+       '<text x="' + (cx > W - 120 ? cx - 10 : cx + 10) + '" y="' + (cy < 30 ? cy + 20 : cy - 10) + '" text-anchor="' + (cx > W - 120 ? "end" : "start") + '" style="fill:var(--ink);font:600 13px var(--f-body)">' + inr(price) + ' on day ' + used + '</text>';
+  $("chart").innerHTML = g;
+}
+$("calc-form").addEventListener("input", calc);
+$("calc-form").addEventListener("submit", e => e.preventDefault());
+calc();
+</script>

@@ -1,0 +1,32 @@
+{
+  "observedAt": "2026-10-27T12:33:01.549Z",
+  "readOnly": true,
+  "scope": 4,
+  "steps": [],
+  "controls": [],
+  "candidates": [],
+  "requests": 5,
+  "cmsRequests": 2,
+  "mediaRequests": 3,
+  "requestBudget": 120000,
+  "segmentBytes": 0,
+  "productionWrites": 0,
+  "policy": {
+    "mediaConcurrency": 4,
+    "mediaRequestsPerSecond": 8,
+    "cmsGapMs": 1100,
+    "range": "0-1023",
+    "stopAfterConfirmedGap": true
+  },
+  "recoveries": [
+    {
+      "job": "6ace9397c9735682f04ee9c4",
+      "classId": "6ace93978752d955968b1376",
+      "ok": false
+    }
+  ],
+  "completedAt": "2026-10-27T12:33:16.285Z",
+  "approved": 4,
+  "checkpoint": true,
+  "transport": "direct local HTTPS; session cookie only to cms.appx.co.in"
+}

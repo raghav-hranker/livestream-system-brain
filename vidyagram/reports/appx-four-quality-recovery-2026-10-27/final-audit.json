@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-27T12:48:41.340Z",
+  "selected": 4,
+  "retried": 4,
+  "heldBlocked": 32,
+  "states": {
+    "done": 4
+  },
+  "recovered": [
+    {
+      "id": "6ace93978752d955968b1376",
+      "title": "काल · काल",
+      "visiblePlacements": 1
+    },
+    {
+      "id": "6ace93c48752d955968b1671",
+      "title": "CLASS 01",
+      "visiblePlacements": 1
+    },
+    {
+      "id": "6ace93c58752d955968b167f",
+      "title": "Size And Location (Practice Class)",
+      "visiblePlacements": 1
+    },
+    {
+      "id": "6ace95508752d955968b2b78",
+      "title": "Demo 01 (Percentage)",
+      "visiblePlacements": 3
+    }
+  ],
+  "all32BlockedJobsByteUnchanged": true,
+  "coursePlacementsUnchanged": true,
+  "catalogLedgersUnchanged": true,
+  "changedClassFields": [
+    {
+      "classId": "6ace93978752d955968b1376",
+      "fields": [
+        "updatedAt",
+        "hlsAsset",
+        "streamStatus"
+      ]
+    },
+    {
+      "classId": "6ace93c48752d955968b1671",
+      "fields": [
+        "updatedAt",
+        "hlsAsset",
+        "streamStatus"
+      ]
+    },
+    {
+      "classId": "6ace93c58752d955968b167f",
+      "fields": [
+        "updatedAt",
+        "hlsAsset",
+        "streamStatus"
+      ]
+    },
+    {
+      "classId": "6ace95508752d955968b2b78",
+      "fields": [
+        "updatedAt",
+        "hlsAsset",
+        "streamStatus"
+      ]
+    }
+  ],
+  "activeSelectedJobs": 0
+}

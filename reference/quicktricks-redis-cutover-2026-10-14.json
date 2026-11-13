@@ -1,0 +1,126 @@
+{
+  "recordedAt": "2026-10-14T11:52:30Z",
+  "destinationDatabase": 14690512,
+  "destinationSubscription": 3448813,
+  "migration": {
+    "keys": 98603,
+    "indexedMessages": 97057,
+    "polls": 11,
+    "rooms": 173,
+    "dumpBytes": 32070047,
+    "verified": 98603,
+    "semanticComparisons": 2831,
+    "finalCopySeconds": 30.639
+  },
+  "mesh": {
+    "passed": true,
+    "peers": 2,
+    "diagnosticTargetsOnly": true
+  },
+  "health": [
+    {
+      "action": "healthy",
+      "role": "socket",
+      "pid": 2680552,
+      "restarts": 316,
+      "namespace": "quicktricks",
+      "newHost": "redis-15232.c72606.ap-south-1-mz.ec2.cloud.rlrcp.com",
+      "savedConfigVerified": true,
+      "ping": "PONG",
+      "peers": [
+        {
+          "source": "148.113.49.18",
+          "command": "hgetall",
+          "subscriptions": 0
+        },
+        {
+          "source": "34.131.52.223",
+          "command": "xpending",
+          "subscriptions": 0
+        },
+        {
+          "source": "148.113.49.18",
+          "command": "ping",
+          "subscriptions": 6
+        },
+        {
+          "source": "34.131.52.223",
+          "command": "xreadgroup",
+          "subscriptions": 0
+        },
+        {
+          "source": "148.113.49.18",
+          "command": "client|list",
+          "subscriptions": 0
+        },
+        {
+          "source": "148.113.49.18",
+          "command": "xreadgroup",
+          "subscriptions": 0
+        },
+        {
+          "source": "34.131.52.223",
+          "command": "subscribe",
+          "subscriptions": 6
+        }
+      ],
+      "logs": [],
+      "errors": []
+    },
+    {
+      "action": "healthy",
+      "role": "encoder",
+      "pid": 101528,
+      "restarts": 1,
+      "namespace": "quicktricks",
+      "newHost": "redis-15232.c72606.ap-south-1-mz.ec2.cloud.rlrcp.com",
+      "savedConfigVerified": true,
+      "ping": "PONG",
+      "peers": [
+        {
+          "source": "148.113.49.18",
+          "command": "get",
+          "subscriptions": 0
+        },
+        {
+          "source": "34.131.52.223",
+          "command": "xpending",
+          "subscriptions": 0
+        },
+        {
+          "source": "34.131.52.223",
+          "command": "client|list",
+          "subscriptions": 0
+        },
+        {
+          "source": "148.113.49.18",
+          "command": "ping",
+          "subscriptions": 6
+        },
+        {
+          "source": "34.131.52.223",
+          "command": "xreadgroup",
+          "subscriptions": 0
+        },
+        {
+          "source": "148.113.49.18",
+          "command": "xreadgroup",
+          "subscriptions": 0
+        },
+        {
+          "source": "34.131.52.223",
+          "command": "subscribe",
+          "subscriptions": 6
+        }
+      ],
+      "logs": [
+        "2026-10-14T11:50:50: 10/14/2026 11:50:50 101528 [INFO] Node Media Rtmp Server started on port: 8937",
+        "2026-10-14T11:50:50: Recovering pending stream-status deliveries from namespace 'quicktricks'",
+        "2026-10-14T11:50:50: Both Redis clients connected",
+        "2026-10-14T11:50:50: Server running on port 8082",
+        "2026-10-14T11:50:50: [chatmod] consuming chatmod:events:quicktricks as livestream/livestream-testing-raghav:0"
+      ],
+      "errors": []
+    }
+  ]
+}

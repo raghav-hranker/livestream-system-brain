@@ -1,0 +1,30 @@
+.v4{
+  font-family:'Mukta',sans-serif;color:#fff;
+  .hero{position:relative;height:100svh;min-height:640px;display:flex;flex-direction:column;background:#111;overflow:hidden}
+  .nav{display:flex;align-items:center;gap:30px;padding:16px clamp(20px,4.4vw,64px);font-weight:500;font-size:17px;color:#D9D9D6}
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;img{width:40px;height:40px;border-radius:50%}b{font-size:22px;font-weight:700}}
+  .nav nav{display:flex;gap:26px;margin-left:auto;a:hover{color:#fff}}
+  .login{color:#111;background:#fff;padding:5px 18px;border-radius:6px;font-weight:600}
+  .say{text-align:center;padding:clamp(8px,2.6vh,28px) 20px 0;
+    h1{margin:0;font-size:clamp(40px,min(5.4vw,9.6vh),84px);line-height:1.18;font-weight:800;letter-spacing:-.005em}
+    p{margin:clamp(6px,1.4vh,14px) auto clamp(14px,2.4vh,24px);max-width:58em;font-size:clamp(16px,1.4vw,20px);line-height:1.4;color:#B5B5B0}}
+  .cta{display:flex;justify-content:center;align-items:center;gap:22px;flex-wrap:wrap}
+  .go{background:#F6B916;color:#111;padding:10px 26px;border-radius:7px;font-weight:700;font-size:18px;&:hover{background:#FFC93A}}
+  .web{font-weight:500;font-size:17px;border-bottom:1px solid #777}
+  .phones{position:relative;flex:1;min-height:0;margin-top:clamp(16px,3.4vh,34px)}
+  .ph{position:absolute;margin:0;left:50%;width:clamp(210px,min(21vw,40vh),330px);aspect-ratio:540/1040;background:#000;border-radius:clamp(26px,3vw,40px);padding:clamp(6px,.7vw,9px);box-shadow:0 0 0 1px #3A3A38;
+    img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:clamp(20px,2.4vw,32px)}}
+  .ph.c{top:0;transform:translateX(-50%);z-index:2}
+  .ph.l{top:9%;transform:translateX(-132%);opacity:.92}
+  .ph.r{top:9%;transform:translateX(32%);opacity:.92}
+
+  @media (max-width:760px){
+    .nav{padding:12px 16px;nav{display:none}.login{margin-left:auto}}
+    .say{padding-top:10px;h1{font-size:min(9vw,40px);white-space:nowrap}p{font-size:16px}}
+    .cta{gap:14px}
+    .web{display:none}
+    .ph{width:58vw;border-radius:28px;padding:6px;img{border-radius:22px}}
+    .ph.l{transform:translateX(-120%)}
+    .ph.r{transform:translateX(20%)}
+  }
+}

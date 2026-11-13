@@ -1,0 +1,25 @@
+# Vidyagram media and PDF audit — 2026-10-26
+
+Read-only. Tenant781 only. No importer, repair, restart, or database write executed. Snapshot captured around12:27UTC (17:57IST). Live object probes completed afterwards.
+
+**Video transfer: issues found.** `apxingestjobs` contains9,434 jobs:9,251done,183dead,0pending/failed/claimed/downloading/uploading. All9,251 done jobs reference an existing Class with hlsAsset. None of183 dead jobs has hlsAsset. Dead errors classify as131 “AppX returned no playable URL” and52 sourceHTTP404. These are terminal unresolved source exceptions, so the bulk transfer is not100% complete. See media-pdf-summary.json jobs.
+
+Latest successful transfer was2026-10-26T00:55:30.897Z (06:25:30IST). Done UTC-date counts:10/20=7,10/21=57,10/22=0,10/23=26,10/24=36,10/25=22,10/26=1. Completion dates are not delta-run health: a run with no newly eligible videos can complete without a video transfer. Nightly run evidence belongs in the main audit.
+
+Two active native-video Classes created10/24 have no ingest job, import ledger or CourseClass:6adc01b520e78c9f77dbc7b6 (“Geometry03(2)·GEOMETRY(2)”,asset4656486-1792746126) and6adc01b820e78c9f77dbc7bd (“Geometry04(2)·GEOMETRY(2)”,asset4657426-1792753322). Neither has hlsAsset. These are untracked/unplaced exceptions, not a queue backlog. Other no-job types:1,215YouTube,300external URL,4non-AppX. Source eligibility/recovery needs investigation before enqueueing anything.
+
+**Video storage sample: OK, bounded sample.** `media-r2-sample.json` covers12done jobs:3oldest,6newest,quartiles. Every master GET succeeded;46distinct referenced rendition playlists GET succeeded, all have ENDLIST;92first/last segment HEADs exist.10of12sample masters include1080p. This proves existence at sample endpoints, not every intermediate segment, playable decode, or byte equality against current AppX source. No full-bucket enumeration or origin-byte comparison was done.
+
+OCI worker apx-ingest-781 image3e3d21c started2026-10-18T13:04:49.790Z,RestartCount0. Settings:CLIENT_ID781,STORAGE_PROVIDERr2,recordedvideos-vidyagram,MIRROR_ADD_LEVELS1080p,CONCURRENCY4,MIRROR_MP4off.23successful completion lines during last48h,0failure lines; last2026-10-26T00:55:30.908Z. Worker uptime is corroborative, not a completeness test. Evidence oci-worker-state.txt; initial live inspection and Docker inspect.
+
+**Independent backups: could not verify.** Verified primary video R2 and primary PDF B2 storage only. The word CF_BACKUP in R2 credential names does not establish a second copy. Worker mirror-deps.js:101-105 gates optional second target toclient472; no enabled second-target setting was found on781worker. No Vidyagram independent replica inventory, backup schedule, recovery point or restore test was inspected. Do not label these copies independently backed up.
+
+**PDF transfer: issues found.** `apxcatalogpdfimports`:10,741file-ledger entries,10,724done,12failed,5pending. Every done ledger entry resolves to an existing PDF doc (8,666total PDF docs; deduplication means not one PDF per ledger entry). Source states:10,990attached,10,851standalone,9pending. Latest ledger timestamp2026-10-26T00:53:18.198Z. Two new standalone failures belong to daily-2026-10-26:6ad94017c9735682f0130807 and6ad94018c9735682f013080e, both “decrypted bytes failed the PDF validity check”. Ten other failed note entries date10/16, error “Student source row not found in mirrored tree”. Five pending note entries were last updated10/19 and contain9pending sources. Full IDs, course/row sources and dates in media-pdf-summary.json pdfLedger.outstanding.
+
+Examples pending sources:ledger6ad1da42c9735682f0e8a6dd includescourse53row175477/course59row40556/course103row44155;ledger6ad1dae5c9735682f0e8b126 includescourse55row175572/course59row43327/course103row44207;ledger6ad1ed33c9735682f0efbf9c course95row189655. Proposed follow-up: resolve missing source/class links for old notes; inspect source/decryption compatibility for two new standalone PDFs; only retry after classifying why validation failed. No fix performed.
+
+Old OCI reports do not establish current completeness. Latest historical final-attachment report10/19had9,716done6pending; current ledger still has exceptions. Historical evidence saved oci-pdf-historical-summaries.json.
+
+**PDF storage sample: OK, bounded sample.** `pdf-b2-sample.json` covers12PDFdocs:3oldest,6newest,quartiles.12HEADs succeed;12sizes equal stored pdfAsset.sizeBytes;12first16byteGETs begin%PDF-. This does not validate every page, whole-file hashes, source-byte equivalence, student authorization or every object. Private documents target follows backend src/config/documentStorage.ts:48-53.
+
+Additional monitoring mismatch:57done video jobs retain non-complete progress phases(38publishing,12failed,6claimed,1downloading). Authoritative status isdone. These progress fields alone must not be presented as a stuck live queue. Proposed follow-up: reconcile progress reporting after confirming terminal status. See media-pdf-summary.json and apxingestjobs.json.

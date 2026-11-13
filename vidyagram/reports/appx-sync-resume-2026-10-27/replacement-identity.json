@@ -1,0 +1,143 @@
+{
+  "checkedAt": "2026-10-27T06:13:31.804Z",
+  "sourceScope": "Oct26 completed per-course mirror plans; not Oct27 live AppX",
+  "courses": [
+    {
+      "_id": "6ad5faae308a95d039c38fb7",
+      "apxCourseId": "160",
+      "status": 1,
+      "title": "Combo Special - SSC CGL Mains Batch 2026 🔥"
+    },
+    {
+      "_id": "6ad5fab3308a95d039c391c1",
+      "apxCourseId": "161",
+      "status": 1,
+      "title": "Maths Special - SSC CGL Mains Batch 2026 🔥"
+    }
+  ],
+  "classes": [
+    {
+      "_id": "6ad6995fe36abd47ea38d533",
+      "status": 1,
+      "title": "Geometry 03 (2) · GEOMETRY",
+      "apxAssetKey": "vid:armaths-data:4636285-1792429697",
+      "hlsAsset": {
+        "bucket": "recorded",
+        "key": "781/6ad6995fe36abd47ea38d533/hls/master.m3u8"
+      }
+    },
+    {
+      "_id": "6adaafe4d8a68cd04b9b6618",
+      "status": 1,
+      "title": "Geometry 04 (2) · GEOMETRY",
+      "apxAssetKey": "vid:armaths-data:4653024-1792687692",
+      "hlsAsset": {
+        "bucket": "recorded",
+        "key": "781/6adaafe4d8a68cd04b9b6618/hls/master.m3u8"
+      }
+    }
+  ],
+  "ledger": [
+    {
+      "_id": "6ad6995fc9735682f0bf9866",
+      "assetKey": "vid:armaths-data:4636285-1792429697",
+      "classId": "6ad6995fe36abd47ea38d533",
+      "placements": [
+        {
+          "apxCourseId": "160",
+          "rowId": "193547",
+          "apxTitle": "Geometry 03",
+          "priority": 246,
+          "active": true
+        },
+        {
+          "apxCourseId": "161",
+          "rowId": "193541",
+          "apxTitle": "Geometry 03",
+          "priority": 246,
+          "active": true
+        }
+      ]
+    },
+    {
+      "_id": "6adaafe4c9735682f031a916",
+      "assetKey": "vid:armaths-data:4653024-1792687692",
+      "classId": "6adaafe4d8a68cd04b9b6618",
+      "placements": [
+        {
+          "apxCourseId": "160",
+          "rowId": "193550",
+          "apxTitle": "Geometry 04",
+          "priority": 247,
+          "active": true
+        },
+        {
+          "apxCourseId": "161",
+          "rowId": "193549",
+          "apxTitle": "Geometry 04",
+          "priority": 247,
+          "active": true
+        }
+      ]
+    }
+  ],
+  "placements": [
+    {
+      "_id": "6ad9ca50ff6d0620417685ae",
+      "course": "6ad5faae308a95d039c38fb7",
+      "class": "6ad6995fe36abd47ea38d533",
+      "priority": 246,
+      "status": 1,
+      "apxTitle": "Geometry 03",
+      "isActive": true,
+      "createdAt": "2026-10-22T08:33:20.600Z",
+      "updatedAt": "2026-10-22T08:33:20.600Z"
+    },
+    {
+      "_id": "6ad9ca51ff6d0620417685cf",
+      "course": "6ad5fab3308a95d039c391c1",
+      "class": "6ad6995fe36abd47ea38d533",
+      "priority": 246,
+      "status": 1,
+      "apxTitle": "Geometry 03",
+      "isActive": true,
+      "createdAt": "2026-10-22T08:33:21.890Z",
+      "updatedAt": "2026-10-22T08:33:21.890Z"
+    },
+    {
+      "_id": "6adab02ed8a68cd04b9b6ffc",
+      "course": "6ad5faae308a95d039c38fb7",
+      "class": "6adaafe4d8a68cd04b9b6618",
+      "priority": 247,
+      "status": 1,
+      "apxTitle": "Geometry 04",
+      "isActive": true,
+      "createdAt": "2026-10-23T00:54:06.984Z",
+      "updatedAt": "2026-10-23T00:54:06.984Z"
+    },
+    {
+      "_id": "6adab02fd8a68cd04b9b700f",
+      "course": "6ad5fab3308a95d039c391c1",
+      "class": "6adaafe4d8a68cd04b9b6618",
+      "priority": 247,
+      "status": 1,
+      "apxTitle": "Geometry 04",
+      "isActive": true,
+      "createdAt": "2026-10-23T00:54:07.065Z",
+      "updatedAt": "2026-10-23T00:54:07.065Z"
+    }
+  ],
+  "currentOccurrences": [
+    {
+      "classId": "6ad6995fe36abd47ea38d533",
+      "assetKey": "vid:armaths-data:4636285-1792429697",
+      "occurrences": []
+    },
+    {
+      "classId": "6adaafe4d8a68cd04b9b6618",
+      "assetKey": "vid:armaths-data:4653024-1792687692",
+      "occurrences": []
+    }
+  ],
+  "productionWrites": 0
+}

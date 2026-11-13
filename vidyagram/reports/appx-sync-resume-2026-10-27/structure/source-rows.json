@@ -1,0 +1,310 @@
+[
+  {
+    "_id": "6ace3900c9735682f048a004",
+    "apxCourseId": "135",
+    "hiddenReason": null,
+    "lastSeenRunId": "daily-2026-10-26",
+    "raw": {
+      "id": "189020",
+      "title": "Doubt Class 04",
+      "enable": "1",
+      "parent_id": "184863",
+      "deleted": "0"
+    },
+    "seenInRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6ace3903c9735682f048a020",
+    "apxCourseId": "136",
+    "hiddenReason": null,
+    "lastSeenRunId": "daily-2026-10-26",
+    "raw": {
+      "id": "189019",
+      "title": "Doubt Class 04",
+      "enable": "1",
+      "parent_id": "184868",
+      "deleted": "0"
+    },
+    "seenInRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6ace3911c9735682f048a077",
+    "apxCourseId": "142",
+    "hiddenReason": null,
+    "lastSeenRunId": "daily-2026-10-26",
+    "raw": {
+      "id": "184332",
+      "title": "SSC CGL 2026 Maths Score Booster Test 01",
+      "enable": "1",
+      "parent_id": "184331",
+      "deleted": "0"
+    },
+    "seenInRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6ace3911c9735682f048a07a",
+    "apxCourseId": "142",
+    "hiddenReason": null,
+    "lastSeenRunId": "daily-2026-10-26",
+    "raw": {
+      "id": "184521",
+      "title": "SSC CGL 2026 Maths Score Booster Test 02",
+      "enable": "1",
+      "parent_id": "184331",
+      "deleted": "0"
+    },
+    "seenInRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6ace3911c9735682f048a081",
+    "apxCourseId": "142",
+    "hiddenReason": null,
+    "lastSeenRunId": "daily-2026-10-26",
+    "raw": {
+      "id": "184803",
+      "title": "SSC CGL 2026 Maths Score Booster Test 03",
+      "enable": "1",
+      "parent_id": "184331",
+      "deleted": "0"
+    },
+    "seenInRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6ace3911c9735682f048a084",
+    "apxCourseId": "142",
+    "hiddenReason": null,
+    "lastSeenRunId": "daily-2026-10-26",
+    "raw": {
+      "id": "184908",
+      "title": "SSC CGL 2026 Maths Score Booster Test 04",
+      "enable": "1",
+      "parent_id": "184331",
+      "deleted": "0"
+    },
+    "seenInRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6ace3911c9735682f048a088",
+    "apxCourseId": "142",
+    "hiddenReason": null,
+    "lastSeenRunId": "daily-2026-10-26",
+    "raw": {
+      "id": "185167",
+      "title": "SSC CGL 2026 Maths Score Booster Test 05",
+      "enable": "1",
+      "parent_id": "184331",
+      "deleted": "0"
+    },
+    "seenInRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6ace3911c9735682f048a08c",
+    "apxCourseId": "142",
+    "hiddenReason": null,
+    "lastSeenRunId": "daily-2026-10-26",
+    "raw": {
+      "id": "185265",
+      "title": "SSC CGL 2026 Maths Score Booster Test 06",
+      "enable": "1",
+      "parent_id": "184331",
+      "deleted": "0"
+    },
+    "seenInRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6ace3911c9735682f048a093",
+    "apxCourseId": "142",
+    "hiddenReason": null,
+    "lastSeenRunId": "daily-2026-10-26",
+    "raw": {
+      "id": "185592",
+      "title": "SSC CGL 2026 Maths Score Booster Test 07",
+      "enable": "1",
+      "parent_id": "184331",
+      "deleted": "0"
+    },
+    "seenInRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6ace3911c9735682f048a096",
+    "apxCourseId": "142",
+    "hiddenReason": null,
+    "lastSeenRunId": "daily-2026-10-26",
+    "raw": {
+      "id": "185805",
+      "title": "SSC CGL 2026 Maths Score Booster Test 08",
+      "enable": "1",
+      "parent_id": "184331",
+      "deleted": "0"
+    },
+    "seenInRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6ace3911c9735682f048a09b",
+    "apxCourseId": "142",
+    "hiddenReason": null,
+    "lastSeenRunId": "daily-2026-10-26",
+    "raw": {
+      "id": "186189",
+      "title": "SSC CGL 2026 Maths Score Booster Test 09",
+      "enable": "1",
+      "parent_id": "184331",
+      "deleted": "0"
+    },
+    "seenInRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6ace3967c9735682f048a4da",
+    "apxCourseId": "162",
+    "hiddenReason": null,
+    "lastSeenRunId": "daily-2026-10-26",
+    "raw": {
+      "id": "189205",
+      "title": "Tone & Theme 01",
+      "enable": "1",
+      "parent_id": "189203",
+      "deleted": "0"
+    },
+    "seenInRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6ace3967c9735682f048a4db",
+    "apxCourseId": "162",
+    "hiddenReason": null,
+    "lastSeenRunId": "daily-2026-10-26",
+    "raw": {
+      "id": "189206",
+      "title": " Tone & Theme 02",
+      "enable": "1",
+      "parent_id": "189203",
+      "deleted": "0"
+    },
+    "seenInRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6ace3967c9735682f048a4dc",
+    "apxCourseId": "162",
+    "hiddenReason": null,
+    "lastSeenRunId": "daily-2026-10-26",
+    "raw": {
+      "id": "189267",
+      "title": " Tone & Theme 03",
+      "enable": "1",
+      "parent_id": "189203",
+      "deleted": "0"
+    },
+    "seenInRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6ace3883c9735682f0489865",
+    "apxCourseId": "114",
+    "hiddenReason": null,
+    "lastSeenRunId": "daily-2026-10-26",
+    "raw": {
+      "id": "184309",
+      "title": "Line Graph | By Aditya Ranjan Sir",
+      "enable": "1",
+      "parent_id": "184304",
+      "deleted": "0"
+    },
+    "seenInRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6ace337fc9735682f0481471",
+    "apxCourseId": "71",
+    "hiddenReason": "folder disabled",
+    "lastSeenRunId": "daily-2026-10-26",
+    "raw": {
+      "id": "187075",
+      "title": "Announcement",
+      "enable": "1",
+      "parent_id": "187069",
+      "deleted": "0"
+    },
+    "seenInRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6acf95eac9735682f061724f",
+    "apxCourseId": "77",
+    "lastSeenRunId": "daily-2026-10-26",
+    "raw": {
+      "id": "187074",
+      "title": "Announcement",
+      "enable": "1",
+      "parent_id": "187068",
+      "deleted": "0"
+    },
+    "hiddenReason": "folder disabled",
+    "seenInRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6acfb29fc9735682f06ce148",
+    "apxCourseId": "95",
+    "lastSeenRunId": "daily-2026-10-26",
+    "raw": {
+      "id": "187073",
+      "title": "Announcement",
+      "enable": "1",
+      "parent_id": "187067",
+      "deleted": "0"
+    },
+    "hiddenReason": "folder disabled",
+    "seenInRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6adaa483c9735682f031636f",
+    "apxCourseId": "105",
+    "raw": {
+      "id": "194534",
+      "title": "Figure Counting 05",
+      "enable": "0",
+      "parent_id": "192403",
+      "deleted": "0"
+    },
+    "seenInRunId": "daily-2026-10-26",
+    "hiddenReason": "item disabled",
+    "lastSeenRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6adaa795c9735682f031775d",
+    "apxCourseId": "120",
+    "raw": {
+      "id": "194533",
+      "title": "Figure Counting 05",
+      "enable": "0",
+      "parent_id": "192401",
+      "deleted": "0"
+    },
+    "seenInRunId": "daily-2026-10-26",
+    "hiddenReason": "item disabled",
+    "lastSeenRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6adaa956c9735682f03181c3",
+    "apxCourseId": "151",
+    "raw": {
+      "id": "194532",
+      "title": "Figure Counting 05",
+      "enable": "0",
+      "parent_id": "192399",
+      "deleted": "0"
+    },
+    "seenInRunId": "daily-2026-10-26",
+    "hiddenReason": "item disabled",
+    "lastSeenRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6adaa9b9c9735682f03183f7",
+    "apxCourseId": "154",
+    "raw": {
+      "id": "194531",
+      "title": "Figure Counting 05",
+      "enable": "0",
+      "parent_id": "192397",
+      "deleted": "0"
+    },
+    "seenInRunId": "daily-2026-10-26",
+    "hiddenReason": "item disabled",
+    "lastSeenRunId": "daily-2026-10-26"
+  }
+]

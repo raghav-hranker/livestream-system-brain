@@ -1,0 +1,290 @@
+{
+  "capturedAt": "2026-10-26T13:46:09.034Z",
+  "refs": {
+    "sections": [],
+    "topics": [
+      "section"
+    ],
+    "subtopics": [
+      "topic"
+    ],
+    "classes": [
+      "section",
+      "topic",
+      "subTopic"
+    ],
+    "courseclasses": [
+      "section",
+      "topic",
+      "subTopic"
+    ],
+    "pdfs": [
+      "section",
+      "topic"
+    ],
+    "questions": [
+      "sectionId",
+      "topicId",
+      "subTopicId"
+    ],
+    "series": [
+      "sectionId",
+      "section_details.section_id",
+      "section_cutoff_details.section_id",
+      "chapterIds"
+    ],
+    "seriesquestionmaps": [
+      "section_id",
+      "topic_ids",
+      "sub_topic_ids"
+    ],
+    "usertopicquestionlogs": [
+      "topic_id"
+    ],
+    "apxseriessectionmaps": [
+      "localSectionId"
+    ],
+    "aitestpatterns": [
+      "sections.section_id",
+      "sections.topics.topic_id"
+    ],
+    "shorts": [
+      "section",
+      "topic",
+      "subTopic"
+    ],
+    "learnlibrarytags": [
+      "section",
+      "topic"
+    ],
+    "coursetopics": [
+      "topic"
+    ],
+    "testseriesviewsections": [
+      "sectionId",
+      "section_ids"
+    ],
+    "testsectionquestionmaps": [
+      "section_id",
+      "topic_ids",
+      "sub_topic_ids"
+    ]
+  },
+  "result": [
+    {
+      "collection": "topics",
+      "node": "6ad5f8fb308a95d039c27271",
+      "documents": 5
+    },
+    {
+      "collection": "topics",
+      "node": "6ad895bdad1316a8cfdbb539",
+      "documents": 1
+    },
+    {
+      "collection": "topics",
+      "node": "6ad5f937308a95d039c2a8ff",
+      "documents": 85
+    },
+    {
+      "collection": "topics",
+      "node": "6ad892fcad1316a8cfdb8163",
+      "documents": 1
+    },
+    {
+      "collection": "topics",
+      "node": "6ad5f944308a95d039c2aae3",
+      "documents": 21
+    },
+    {
+      "collection": "topics",
+      "node": "6ad5f99b308a95d039c2f81b",
+      "documents": 1
+    },
+    {
+      "collection": "topics",
+      "node": "6ad5f9c2308a95d039c32766",
+      "documents": 74
+    },
+    {
+      "collection": "topics",
+      "node": "6ad892f9ad1316a8cfdb8134",
+      "documents": 1
+    },
+    {
+      "collection": "topics",
+      "node": "6ad5f9cb308a95d039c32d40",
+      "documents": 10
+    },
+    {
+      "collection": "topics",
+      "node": "6ad89300ad1316a8cfdb81c1",
+      "documents": 1
+    },
+    {
+      "collection": "topics",
+      "node": "6ad5f9cb308a95d039c32d4d",
+      "documents": 16
+    },
+    {
+      "collection": "topics",
+      "node": "6ad89300ad1316a8cfdb8192",
+      "documents": 1
+    },
+    {
+      "collection": "topics",
+      "node": "6ad5fa5d308a95d039c36674",
+      "documents": 3
+    },
+    {
+      "collection": "topics",
+      "node": "6ad89300ad1316a8cfdb81f0",
+      "documents": 1
+    },
+    {
+      "collection": "courseclasses",
+      "node": "6ad5f8fb308a95d039c27271",
+      "documents": 100
+    },
+    {
+      "collection": "courseclasses",
+      "node": "6ad5f937308a95d039c2a8ff",
+      "documents": 996
+    },
+    {
+      "collection": "courseclasses",
+      "node": "6ad5f944308a95d039c2aae3",
+      "documents": 439
+    },
+    {
+      "collection": "courseclasses",
+      "node": "6ad5f99b308a95d039c2f81b",
+      "documents": 4
+    },
+    {
+      "collection": "courseclasses",
+      "node": "6ad5f9c2308a95d039c32766",
+      "documents": 2797
+    },
+    {
+      "collection": "courseclasses",
+      "node": "6ad5f9cb308a95d039c32d40",
+      "documents": 179
+    },
+    {
+      "collection": "courseclasses",
+      "node": "6ad5f9cb308a95d039c32d4d",
+      "documents": 1863
+    },
+    {
+      "collection": "courseclasses",
+      "node": "6ad5fa5d308a95d039c36674",
+      "documents": 85
+    },
+    {
+      "collection": "courseclasses",
+      "node": "6ad5f8f0308a95d039c26850",
+      "documents": 10
+    },
+    {
+      "collection": "courseclasses",
+      "node": "6ad5f90c308a95d039c2842b",
+      "documents": 35
+    },
+    {
+      "collection": "courseclasses",
+      "node": "6ad5f93b308a95d039c2a98f",
+      "documents": 10
+    },
+    {
+      "collection": "courseclasses",
+      "node": "6ad9c9bdff6d062041767e13",
+      "documents": 15
+    },
+    {
+      "collection": "courseclasses",
+      "node": "6ad5f93e308a95d039c2aa0d",
+      "documents": 14
+    },
+    {
+      "collection": "courseclasses",
+      "node": "6adc021a20e78c9f77dbca9c",
+      "documents": 4
+    },
+    {
+      "collection": "courseclasses",
+      "node": "6ad5f99b308a95d039c2f81f",
+      "documents": 4
+    },
+    {
+      "collection": "courseclasses",
+      "node": "6ad5fa77308a95d039c37527",
+      "documents": 8
+    },
+    {
+      "collection": "questions",
+      "node": "6ad895bdad1316a8cfdbb539",
+      "documents": 650
+    },
+    {
+      "collection": "questions",
+      "node": "6ad892fcad1316a8cfdb8163",
+      "documents": 10594
+    },
+    {
+      "collection": "questions",
+      "node": "6ad892f9ad1316a8cfdb8134",
+      "documents": 10636
+    },
+    {
+      "collection": "questions",
+      "node": "6ad89300ad1316a8cfdb81c1",
+      "documents": 6810
+    },
+    {
+      "collection": "questions",
+      "node": "6ad89300ad1316a8cfdb8192",
+      "documents": 9946
+    },
+    {
+      "collection": "questions",
+      "node": "6ad89300ad1316a8cfdb81f0",
+      "documents": 3494
+    },
+    {
+      "collection": "series",
+      "node": "6ad895bdad1316a8cfdbb539",
+      "documents": 26
+    },
+    {
+      "collection": "series",
+      "node": "6ad892fcad1316a8cfdb8163",
+      "documents": 448
+    },
+    {
+      "collection": "series",
+      "node": "6ad892f9ad1316a8cfdb8134",
+      "documents": 455
+    },
+    {
+      "collection": "series",
+      "node": "6ad89300ad1316a8cfdb81c1",
+      "documents": 284
+    },
+    {
+      "collection": "series",
+      "node": "6ad89300ad1316a8cfdb8192",
+      "documents": 419
+    },
+    {
+      "collection": "series",
+      "node": "6ad89300ad1316a8cfdb81f0",
+      "documents": 173
+    }
+  ],
+  "limits": [
+    "Declared schema references plus known test reference shapes; arbitrary historical Mixed payloads are not exhaustively proven.",
+    "No taxonomy node deletion or global rename is proposed: history snapshots remain intact.",
+    "Same spelling with distinct legacy_id/source test-series identity may be intentional; never merge by name alone."
+  ]
+}

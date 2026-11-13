@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Extension Bulk Edit</title>
+<style>
+  :root{--bg:#f8fafc;--card:#fff;--fg:#0f172a;--muted:#64748b;--border:#e2e8f0;--primary:#0f172a;--accent:#f1f5f9;--amber:#fef3c7;--amberfg:#92400e;--green:#dcfce7;--greenfg:#166534;--red:#fee2e2;--redfg:#991b1b;--blue:#dbeafe;--bluefg:#1e40af}
+  *{box-sizing:border-box}
+  body{margin:0;font:14px/1.45 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--fg)}
+  .top{position:sticky;top:0;z-index:20;background:#0f172a;color:#fff;padding:10px 20px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .top b{margin-right:8px}
+  .top button{background:#1e293b;color:#cbd5e1;border:1px solid #334155;border-radius:6px;padding:6px 12px;cursor:pointer;font:inherit}
+  .top button.on{background:#fff;color:#0f172a;border-color:#fff}
+  .top .note{margin-left:auto;font-size:12px;color:#94a3b8}
+  main{max-width:1180px;margin:0 auto;padding:20px}
+  h1{font-size:22px;margin:4px 0 2px}
+  .sub{color:var(--muted);margin:0 0 16px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:16px}
+  .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .spread{justify-content:space-between}
+  table{width:100%;border-collapse:collapse}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:middle}
+  th{font-size:12px;color:var(--muted);font-weight:600;background:#f8fafc}
+  tr.sel td{background:#f1f5ff}
+  tr.dirty td{background:#fffbeb}
+  .badge{display:inline-block;border-radius:999px;padding:2px 8px;font-size:12px;border:1px solid transparent;white-space:nowrap}
+  .b-default{background:var(--accent);color:#334155;border-color:var(--border)}
+  .b-custom{background:var(--blue);color:var(--bluefg)}
+  .b-off{background:var(--red);color:var(--redfg)}
+  .b-rule{background:var(--green);color:var(--greenfg)}
+  .b-inactive{background:#f1f5f9;color:#94a3b8}
+  .muted{color:var(--muted)} .small{font-size:12px}
+  .btn{border:1px solid var(--border);background:#fff;border-radius:6px;padding:7px 12px;cursor:pointer;font:inherit}
+  .btn:hover{background:var(--accent)}
+  .btn.p{background:var(--primary);color:#fff;border-color:var(--primary)}
+  .btn.p:disabled{opacity:.4;cursor:not-allowed}
+  .btn.sm{padding:4px 8px;font-size:12px}
+  .btn.link{border:none;background:none;color:#2563eb;padding:0}
+  input[type=text],input[type=number],select{border:1px solid var(--border);border-radius:6px;padding:6px 8px;font:inherit;background:#fff}
+  input[type=number]{width:80px}
+  .search{width:260px}
+  .bar{position:sticky;bottom:16px;z-index:10;background:#0f172a;color:#fff;border-radius:10px;padding:10px 14px;display:flex;gap:12px;align-items:center;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+  .bar .btn{background:#fff;color:#0f172a}
+  .overlay{position:fixed;inset:0;background:rgba(15,23,42,.45);display:flex;align-items:flex-start;justify-content:center;padding:40px 16px;z-index:50;overflow:auto}
+  .dialog{background:#fff;border-radius:12px;width:min(760px,100%);padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+  .dialog h2{margin:0 0 4px;font-size:18px}
+  .field{border:1px solid var(--border);border-radius:8px;padding:12px;margin:12px 0}
+  .field>.lbl{font-weight:600;margin-bottom:8px}
+  .opt{display:flex;gap:8px;align-items:center;margin:6px 0;flex-wrap:wrap}
+  .opt label{display:flex;gap:6px;align-items:center;cursor:pointer}
+  .preview{max-height:240px;overflow:auto;border:1px solid var(--border);border-radius:8px}
+  .preview td,.preview th{padding:6px 10px;font-size:13px}
+  .arrow{color:var(--muted);padding:0 4px}
+  .chg{background:var(--amber);color:var(--amberfg);border-radius:4px;padding:0 4px}
+  .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#0f172a;color:#fff;padding:10px 16px;border-radius:8px;display:flex;gap:12px;align-items:center;z-index:60}
+  .toast .btn{background:#fff;color:#0f172a}
+  .defaults{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:#f8fafc;border:1px dashed #cbd5e1;border-radius:8px;padding:10px 12px;margin-bottom:12px}
+  .grid2{display:grid;grid-template-columns:280px 1fr;gap:16px}
+  .rule{border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin-bottom:8px;cursor:pointer;background:#fff}
+  .rule.on{border-color:#0f172a;box-shadow:0 0 0 1px #0f172a}
+  .explain{background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a;border-radius:8px;padding:10px 12px;margin-bottom:14px;font-size:13px}
+  .warn{color:var(--amberfg);font-size:12px}
+  .menu{position:absolute;bottom:52px;left:110px;background:#fff;color:#0f172a;border:1px solid var(--border);border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.18);min-width:300px;padding:6px;z-index:30}
+  .menu .mi{padding:8px 10px;border-radius:6px;cursor:pointer;display:flex;justify-content:space-between;gap:12px}
+  .menu .mi:hover{background:var(--accent)}
+  .menu .mi.dis{color:#94a3b8;cursor:default}
+  .menu .mi.dis:hover{background:none}
+  .menu .sep{border-top:1px solid var(--border);margin:6px 0}
+  .menu .hint{font-size:12px;color:var(--muted)}
+  .bar{position:sticky}
+  .sel-all{background:#eef2ff;border:1px solid #c7d2fe;border-radius:6px;padding:6px 10px;margin-bottom:8px;font-size:13px}
+  @media (max-width:820px){.grid2{grid-template-columns:1fr}.search{width:100%}}
+</style>
+</head>
+<body>
+<div class="top">
+  <b>Extension terms prototype</b>
+  <button data-v="A" class="on">A · Select + dialog</button>
+  <button data-v="B">B · Spreadsheet page</button>
+  <button data-v="C">C · Named rules</button>
+  <button data-v="D">D · Own page + plan form</button>
+  <button data-v="E">E · Bulk actions menu</button>
+  <span class="note">Throwaway. Sample plans, nothing saved.</span>
+</div>
+<main id="app"></main>
+<div id="layer"></div>
+
+<script>
+const monthsToDays = m => Math.round(m * 30.44);
+const daysLabel = d => { const m = Math.max(1, Math.round(d / 30.44)); return m === 1 ? '1 Month' : m + ' Months'; };
+const rupee = n => '₹' + Number(n).toLocaleString('en-IN');
+
+let DEFAULT = { days: 183, pricing: { kind: 'percent', value: 50 }, floor: 125 };
+
+const seed = () => [
+  { id: 1, name: 'SSC CGL 2026 Complete Batch', list: 1499, days: 365, active: true, courses: 1, terms: null },
+  { id: 2, name: 'SSC CGL 2026 Maths Only', list: 699, days: 365, active: true, courses: 1, terms: null },
+  { id: 3, name: 'Bank PO Foundation', list: 999, days: 183, active: true, courses: 1, terms: null },
+  { id: 4, name: 'Bank PO + Clerk Combo', list: 1799, days: 365, active: true, courses: 2, terms: { days: 365, pricing: { kind: 'percent', value: 40 } } },
+  { id: 5, name: 'Railway NTPC Crash Course', list: 299, days: 90, active: true, courses: 1, terms: null },
+  { id: 6, name: 'Railway Group D Test Pass', list: 149, days: 90, active: true, courses: 1, terms: { off: true } },
+  { id: 7, name: 'UP Police Constable Batch', list: 899, days: 183, active: true, courses: 1, terms: null },
+  { id: 8, name: 'CTET Paper 1 + 2', list: 1199, days: 365, active: true, courses: 1, terms: null },
+  { id: 9, name: 'English Spoken Skills', list: 499, days: 183, active: true, courses: 1, terms: { days: null, pricing: { kind: 'fixed', value: 199 } } },
+  { id: 10, name: 'Reasoning Masterclass (old)', list: 599, days: 365, active: false, courses: 1, terms: null },
+  { id: 11, name: 'Current Affairs Yearly', list: 399, days: 365, active: true, courses: 1, terms: null },
+  { id: 12, name: 'State PCS Prelims 2026', list: 2499, days: 365, active: true, courses: 3, terms: null },
+];
+let plans = seed();
+
+// terms: null = all default; {off:true}; {days, pricing, floor} where a null field = the default
+const eff = p => {
+  if (p.terms && p.terms.off) return null;
+  const t = p.terms || {};
+  return { days: t.days ?? DEFAULT.days, pricing: t.pricing ?? DEFAULT.pricing, floor: t.floor ?? DEFAULT.floor };
+};
+const priceFor = (p, e = eff(p)) => {
+  if (!e) return null;
+  if (e.pricing.kind === 'fixed') return Math.min(e.pricing.value, p.list);
+  const raw = Math.round(p.list * e.pricing.value / 100);
+  return Math.max(raw, Math.min(e.floor, p.list));
+};
+const pricingText = pr => pr.kind === 'fixed' ? rupee(pr.value) + ' flat' : pr.value + '% of paid';
+const termsBadge = p => {
+  if (p.terms && p.terms.off) return '<span class="badge b-off">Off</span>';
+  const e = eff(p);
+  const custom = !!p.terms;
+  const cls = custom ? 'b-custom' : 'b-default';
+  const tag = custom ? 'Custom' : 'Default';
+  return `<span class="badge ${cls}">${tag}</span> <span class="small">${daysLabel(e.days)} · ${pricingText(e.pricing)}${e.pricing.kind === 'percent' ? ' · min ' + rupee(e.floor) : ''}</span>`;
+};
+const offerCell = p => {
+  const pr = priceFor(p);
+  if (pr == null) return '<span class="muted">No offer</span>';
+  const e = eff(p);
+  const floored = e.pricing.kind === 'percent' && Math.round(p.list * e.pricing.value / 100) < pr;
+  return `${rupee(pr)} <span class="muted small">for ${daysLabel(e.days)}</span>${floored ? `<div class="warn">raised to the ${rupee(e.floor)} minimum</div>` : ''}`;
+};
+const defaultsStrip = () => `
+  <div class="defaults">
+    <span><b>Default for every plan:</b> ${daysLabel(DEFAULT.days)} (${DEFAULT.days} days) · ${pricingText(DEFAULT.pricing)} · never below ${rupee(DEFAULT.floor)}</span>
+    <button class="btn sm" onclick="editDefault()">Edit default</button>
+    <span class="muted small">Plans marked Default follow this. Custom plans keep their own terms.</span>
+  </div>`;
+
+let view = 'A';
+let selected = new Set();
+let query = '';
+let toast = null;
+
+let extFilter = 'all', statusFilter = 'active';
+const kindOf = p => p.terms && p.terms.off ? 'off' : p.terms ? 'custom' : 'default';
+const visible = () => plans.filter(p => p.name.toLowerCase().includes(query.toLowerCase())
+  && (view === 'E' ? eMatch(p) : true) && (view !== 'D' || ((extFilter === 'all' || kindOf(p) === extFilter) && (statusFilter === 'all' || (statusFilter === 'active') === p.active))));
+
+function render() {
+  document.querySelectorAll('.top button').forEach(b => b.classList.toggle('on', b.dataset.v === view));
+  const app = document.getElementById('app');
+  app.innerHTML = view === 'A' ? viewA() : view === 'B' ? viewB() : view === 'C' ? viewC() : view === 'D' ? viewD() : viewE();
+  bindSearch();
+  renderToast();
+}
+function bindSearch() {
+  const s = document.getElementById('q');
+  if (s) { s.value = query; s.oninput = e => { query = e.target.value; const pos = e.target.selectionStart; render(); const n = document.getElementById('q'); n.focus(); n.setSelectionRange(pos, pos); }; }
+}
+document.querySelectorAll('.top button').forEach(b => b.onclick = () => { view = b.dataset.v; eMenu = false; selected.clear(); query = ''; drafts = {}; closeLayer(); render(); });
+
+/* ---------------- A: select rows on the Plans list, then a dialog ---------------- */
+function viewA() {
+  const rows = visible();
+  const allOn = rows.length && rows.every(p => selected.has(p.id));
+  return `
+  <h1>Plans</h1>
+  <p class="sub">Variant A. The existing Plans list gets a checkbox column and an Extension column. Pick plans, then one dialog sets their terms.</p>
+  ${defaultsStrip()}
+  <div class="card">
+    <div class="row spread" style="margin-bottom:10px">
+      <input id="q" class="search" type="text" placeholder="Search plans…">
+      <span class="muted small">${plans.length} plans</span>
+    </div>
+    <table>
+      <thead><tr>
+        <th style="width:34px"><input type="checkbox" ${allOn ? 'checked' : ''} onchange="toggleAll(this.checked)"></th>
+        <th>Plan Name</th><th>Price</th><th>Duration</th><th>Extension</th><th>Holder pays (paid list price)</th><th></th>
+      </tr></thead>
+      <tbody>${rows.map(p => `
+        <tr class="${selected.has(p.id) ? 'sel' : ''}">
+          <td><input type="checkbox" ${selected.has(p.id) ? 'checked' : ''} onchange="toggleOne(${p.id})"></td>
+          <td>${p.name} ${p.active ? '' : '<span class="badge b-inactive">Inactive</span>'}</td>
+          <td>${rupee(p.list)}</td><td>${p.days} days</td>
+          <td>${termsBadge(p)}</td><td>${offerCell(p)}</td>
+          <td><button class="btn sm" onclick="openDialog([${p.id}])">Edit</button></td>
+        </tr>`).join('')}
+      </tbody>
+    </table>
+  </div>
+  ${selected.size ? `<div class="bar"><b>${selected.size} selected</b>
+     <button class="btn" onclick="openDialog([...selected])">Set extension terms…</button>
+     <button class="btn" onclick="quickReset()">Reset to default</button>
+     <span style="margin-left:auto;cursor:pointer" onclick="selected.clear();render()">Clear</span></div>` : ''}`;
+}
+function toggleAll(on) { visible().forEach(p => on ? selected.add(p.id) : selected.delete(p.id)); render(); }
+function toggleOne(id) { selected.has(id) ? selected.delete(id) : selected.add(id); render(); }
+
+// Dialog state: each field is Default or Custom. Closing without saving changes nothing.
+let form;
+const fieldKeys = {
+  status: t => (t && t.off ? 'off' : 'on'),
+  dur: t => (t && !t.off && t.days != null ? t.days : 'default'),
+  price: t => (t && !t.off && t.pricing ? JSON.stringify(t.pricing) : 'default'),
+  floor: t => (t && !t.off && t.floor != null ? t.floor : 'default'),
+};
+const shared = (targets, key) => { const vals = new Set(targets.map(p => String(fieldKeys[key](p.terms)))); return vals.size === 1 ? [...vals][0] : null; };
+function openDialog(ids) {
+  const targets = plans.filter(p => ids.includes(p.id));
+  form = { ids, status: 'on', durMode: 'default', durVal: 6, durUnit: 'months', priceMode: 'default', priceKind: 'percent', pct: DEFAULT.pricing.value, fixed: 199, floorMode: 'default', floorVal: DEFAULT.floor, mixed: {} };
+  const st = shared(targets, 'status'); form.mixed.status = st == null; form.status = st === 'off' ? 'off' : 'on';
+  const live = targets.filter(p => !(p.terms && p.terms.off));
+  const pick = key => live.length ? shared(live, key) : 'default';
+  const d = pick('dur'); form.mixed.dur = d == null;
+  if (d != null && d !== 'default') { form.durMode = 'custom'; form.durVal = +d; form.durUnit = 'days'; }
+  const pr = pick('price'); form.mixed.price = pr == null;
+  if (pr != null && pr !== 'default') { const v = JSON.parse(pr); form.priceMode = 'custom'; form.priceKind = v.kind; form[v.kind === 'fixed' ? 'fixed' : 'pct'] = v.value; }
+  const fl = pick('floor'); form.mixed.floor = fl == null;
+  if (fl != null && fl !== 'default') { form.floorMode = 'custom'; form.floorVal = +fl; }
+  drawDialog();
+}
+function applyForm(p) {
+  if (form.status === 'off') return { off: true };
+  const t = {
+    days: form.durMode === 'custom' ? (form.durUnit === 'months' ? monthsToDays(+form.durVal) : +form.durVal) : null,
+    pricing: form.priceMode === 'custom' ? { kind: form.priceKind, value: +(form.priceKind === 'fixed' ? form.fixed : form.pct) } : null,
+    floor: form.floorMode === 'custom' && !(form.priceMode === 'custom' && form.priceKind === 'fixed') ? +form.floorVal : null,
+  };
+  return t.days == null && t.pricing == null && t.floor == null ? null : t;
+}
+const radio = (name, val, label, extra = '') =>
+  `<label><input type="radio" name="${name}" ${form[name] === val ? 'checked' : ''} onchange="form.${name}='${val}';drawDialog()"> ${label}</label>${extra}`;
+function drawDialog() {
+  const bulk = form.ids.length > 1;
+  const targets = plans.filter(p => form.ids.includes(p.id));
+  const fixedPrice = form.priceMode === 'custom' && form.priceKind === 'fixed';
+  const preview = targets.map(p => {
+    const after = { ...p, terms: applyForm(p) };
+    const b = priceFor(p), a = priceFor(after);
+    const before = b == null ? 'No offer' : `${rupee(b)} · ${daysLabel(eff(p).days)}`;
+    const aft = a == null ? 'No offer' : `${rupee(a)} · ${daysLabel(eff(after).days)}`;
+    const termsChange = JSON.stringify(after.terms) !== JSON.stringify(p.terms);
+    return `<tr><td>${p.name}</td><td>${rupee(p.list)}</td><td>${before}</td><td class="arrow">→</td><td>${before === aft ? aft + (termsChange ? ' <span class="muted small">(terms change)</span>' : '') : `<span class="chg">${aft}</span>`}</td></tr>`;
+  }).join('');
+  const changed = targets.filter(p => JSON.stringify(applyForm(p)) !== JSON.stringify(p.terms)).length;
+  showLayer(`<div class="dialog">
+    <h2>${bulk ? `Extension terms for ${form.ids.length} plans` : targets[0].name}</h2>
+    <div class="muted small">Applies to offers shown from now on. Orders already bought keep what they paid for. Close the dialog to change nothing.</div>
+    <div class="defaults" style="margin:12px 0 0"><span class="small"><b>Default:</b> ${daysLabel(DEFAULT.days)} · ${pricingText(DEFAULT.pricing)} · minimum ${rupee(DEFAULT.floor)}</span>
+      <button class="btn sm" onclick="editDefault(true)">Edit default</button></div>
+    <div class="field"><div class="lbl">Extension offer</div>
+      <div class="opt">${radio('status', 'on', 'On')}${radio('status', 'off', bulk ? 'Off for these plans' : 'Off for this plan')}</div></div>
+    ${form.status === 'off' ? '' : `
+    <div class="field"><div class="lbl">Duration</div>
+      <div class="opt">${radio('durMode', 'default', `Default (${daysLabel(DEFAULT.days)})`)}</div>
+      <div class="opt">${radio('durMode', 'custom', 'Custom')}
+        <input id="f-durVal" type="number" min="1" value="${form.durVal}" ${form.durMode !== 'custom' ? 'disabled' : ''} oninput="form.durVal=this.value;drawPreviewOnly()">
+        <select ${form.durMode !== 'custom' ? 'disabled' : ''} onchange="form.durUnit=this.value;drawDialog()">
+          <option value="months" ${form.durUnit === 'months' ? 'selected' : ''}>months</option>
+          <option value="days" ${form.durUnit === 'days' ? 'selected' : ''}>days</option></select>
+        ${form.durMode === 'custom' ? `<span class="muted small">Card reads "${daysLabel(form.durUnit === 'months' ? monthsToDays(+form.durVal || 1) : +form.durVal || 1)} Validity"</span>` : ''}
+      </div></div>
+    <div class="field"><div class="lbl">Price</div>
+      <div class="opt">${radio('priceMode', 'default', `Default (${pricingText(DEFAULT.pricing)})`)}</div>
+      <div class="opt">${radio('priceMode', 'custom', 'Custom')}
+        <select ${form.priceMode !== 'custom' ? 'disabled' : ''} onchange="form.priceKind=this.value;drawDialog()">
+          <option value="percent" ${form.priceKind === 'percent' ? 'selected' : ''}>% of what the student paid</option>
+          <option value="fixed" ${form.priceKind === 'fixed' ? 'selected' : ''}>Fixed ₹</option></select>
+        ${form.priceKind === 'fixed'
+          ? `<input id="f-fixed" type="number" min="1" value="${form.fixed}" ${form.priceMode !== 'custom' ? 'disabled' : ''} oninput="form.fixed=this.value;drawPreviewOnly()"> <span class="muted small">never above the plan's list price</span>`
+          : `<input id="f-pct" type="number" min="1" max="100" value="${form.pct}" ${form.priceMode !== 'custom' ? 'disabled' : ''} oninput="form.pct=this.value;drawPreviewOnly()"> %`}
+      </div></div>
+    <div class="field" style="${fixedPrice ? 'opacity:.55' : ''}"><div class="lbl">Minimum price</div>
+      ${fixedPrice ? '<div class="muted small">Not used with a fixed price: the student pays exactly that price.</div>' : `
+      <div class="opt">${radio('floorMode', 'default', `Default (${rupee(DEFAULT.floor)})`)}</div>
+      <div class="opt">${radio('floorMode', 'custom', 'Custom')}
+        ₹ <input id="f-floor" type="number" min="0" value="${form.floorVal}" ${form.floorMode !== 'custom' ? 'disabled' : ''} oninput="form.floorVal=this.value;drawPreviewOnly()">
+        <span class="muted small">0 means no minimum; never above the plan's list price</span></div>`}</div>`}
+    <div class="lbl" style="font-weight:600;margin:12px 0 6px">Preview <span class="muted small">(student who paid list price)</span></div>
+    <div class="preview" id="pv"><table><thead><tr><th>Plan</th><th>List</th><th>Now</th><th></th><th>After</th></tr></thead><tbody>${preview}</tbody></table></div>
+    <div class="row spread" style="margin-top:14px">
+      <span class="muted small" id="pvcount">${changed} of ${targets.length} plans change</span>
+      <div class="row"><button class="btn" onclick="closeLayer()">Cancel</button>
+      <button class="btn p" ${changed ? '' : 'disabled'} onclick="commitDialog()">Save ${changed} plan${changed === 1 ? '' : 's'}</button></div>
+    </div></div>`);
+}
+function drawPreviewOnly() { const id = document.activeElement && document.activeElement.id; drawDialog(); const n = id && document.getElementById(id); if (n) { n.focus(); const v = n.value; n.value = ''; n.value = v; } }
+function commitDialog() {
+  const before = plans.map(p => ({ id: p.id, terms: p.terms }));
+  let n = 0;
+  plans = plans.map(p => { if (!form.ids.includes(p.id)) return p; const t = applyForm(p); if (JSON.stringify(t) !== JSON.stringify(p.terms)) n++; return { ...p, terms: t }; });
+  closeLayer(); selected.clear();
+  flash(`Extension terms updated on ${n} plan${n === 1 ? '' : 's'}`, before);
+}
+function quickReset() {
+  const before = plans.map(p => ({ id: p.id, terms: p.terms }));
+  const n = plans.filter(p => selected.has(p.id) && p.terms).length;
+  plans = plans.map(p => selected.has(p.id) ? { ...p, terms: null } : p);
+  selected.clear();
+  flash(`${n} plan${n === 1 ? '' : 's'} back on the default`, before);
+}
+
+/* ---------------- B: dedicated spreadsheet page with inline edits ---------------- */
+let drafts = {}; // id -> terms draft
+const draftOf = p => (p.id in drafts ? drafts[p.id] : p.terms);
+function setDraft(id, terms) {
+  const p = plans.find(x => x.id === id);
+  if (JSON.stringify(terms) === JSON.stringify(p.terms)) delete drafts[id]; else drafts[id] = terms;
+  render();
+}
+function cellEdit(p) {
+  const t = draftOf(p);
+  const off = t && t.off;
+  const days = t && !off ? t.days : null;
+  const pr = t && !off ? t.pricing : null;
+  return `
+    <td><select onchange="bSet(${p.id},'status',this.value)"><option value="on" ${off ? '' : 'selected'}>On</option><option value="off" ${off ? 'selected' : ''}>Off</option></select></td>
+    <td>${off ? '<span class="muted">—</span>' : `
+      <select onchange="bSet(${p.id},'durMode',this.value)">
+        <option value="default" ${days == null ? 'selected' : ''}>Default (${daysLabel(DEFAULT.days)})</option>
+        <option value="custom" ${days != null ? 'selected' : ''}>Custom</option></select>
+      ${days != null ? `<input type="number" min="1" value="${days}" onchange="bSet(${p.id},'days',this.value)"> <span class="small muted">days · ${daysLabel(days)}</span>` : ''}`}</td>
+    <td>${off ? '<span class="muted">—</span>' : `
+      <select onchange="bSet(${p.id},'priceMode',this.value)">
+        <option value="default" ${!pr ? 'selected' : ''}>Default (${pricingText(DEFAULT.pricing)})</option>
+        <option value="percent" ${pr && pr.kind === 'percent' ? 'selected' : ''}>% of paid</option>
+        <option value="fixed" ${pr && pr.kind === 'fixed' ? 'selected' : ''}>Fixed ₹</option></select>
+      ${pr ? `<input type="number" min="1" value="${pr.value}" onchange="bSet(${p.id},'pval',this.value)">` : ''}`}</td>`;
+}
+function bSet(id, what, val) {
+  const p = plans.find(x => x.id === id);
+  let t = draftOf(p);
+  t = t ? { ...t } : { days: null, pricing: null };
+  if (what === 'status') t = val === 'off' ? { off: true } : { days: null, pricing: null };
+  if (t.off) return setDraft(id, t);
+  if (what === 'durMode') t.days = val === 'custom' ? DEFAULT.days : null;
+  if (what === 'days') t.days = +val;
+  if (what === 'priceMode') t.pricing = val === 'default' ? null : { kind: val, value: val === 'fixed' ? 199 : DEFAULT.pricing.value };
+  if (what === 'pval') t.pricing = { ...t.pricing, value: +val };
+  if (t.days == null && t.pricing == null) t = null;
+  setDraft(id, t);
+}
+let fill = { status: 'on', days: '', pricing: 'keep', pval: 40 };
+function viewB() {
+  const rows = visible();
+  const allOn = rows.length && rows.every(p => selected.has(p.id));
+  const dirty = Object.keys(drafts).length;
+  return `
+  <h1>Extension terms</h1>
+  <p class="sub">Variant B. A page of its own under Plans. Every plan is a row you edit in place. Select rows to fill the same value down. Nothing saves until you review.</p>
+  ${defaultsStrip()}
+  <div class="card">
+    <div class="row spread" style="margin-bottom:10px">
+      <input id="q" class="search" type="text" placeholder="Search plans…">
+      <div class="row"><span class="muted small">${dirty ? `${dirty} unsaved change${dirty === 1 ? '' : 's'}` : 'No changes'}</span>
+        <button class="btn" ${dirty ? '' : 'disabled'} onclick="drafts={};render()">Discard</button>
+        <button class="btn p" ${dirty ? '' : 'disabled'} onclick="reviewB()">Review & save</button></div>
+    </div>
+    ${selected.size ? `<div class="defaults" style="background:#f1f5ff;border-style:solid;border-color:#c7d2fe">
+      <b>Fill ${selected.size} selected:</b>
+      <select onchange="fill.status=this.value;render()"><option value="on" ${fill.status === 'on' ? 'selected' : ''}>On</option><option value="off" ${fill.status === 'off' ? 'selected' : ''}>Off</option></select>
+      ${fill.status === 'on' ? `
+      Duration <input type="number" min="1" placeholder="keep" value="${fill.days}" oninput="fill.days=this.value" style="width:70px"> months
+      Price <select onchange="fill.pricing=this.value;render()">
+        <option value="keep" ${fill.pricing === 'keep' ? 'selected' : ''}>keep</option>
+        <option value="default" ${fill.pricing === 'default' ? 'selected' : ''}>Default</option>
+        <option value="percent" ${fill.pricing === 'percent' ? 'selected' : ''}>% of paid</option>
+        <option value="fixed" ${fill.pricing === 'fixed' ? 'selected' : ''}>Fixed ₹</option></select>
+      ${['percent', 'fixed'].includes(fill.pricing) ? `<input type="number" min="1" value="${fill.pval}" oninput="fill.pval=this.value">` : ''}` : ''}
+      <button class="btn sm p" onclick="fillDown()">Fill</button>
+      <button class="btn sm" onclick="selected.forEach(id=>setDraft(id,null))">Reset to default</button>
+    </div>` : ''}
+    <table>
+      <thead><tr><th style="width:34px"><input type="checkbox" ${allOn ? 'checked' : ''} onchange="toggleAll(this.checked)"></th>
+        <th>Plan</th><th>List</th><th>Extension</th><th>Duration</th><th>Price rule</th><th>Holder pays</th></tr></thead>
+      <tbody>${rows.map(p => { const d = { ...p, terms: draftOf(p) }; return `
+        <tr class="${p.id in drafts ? 'dirty' : selected.has(p.id) ? 'sel' : ''}">
+          <td><input type="checkbox" ${selected.has(p.id) ? 'checked' : ''} onchange="toggleOne(${p.id})"></td>
+          <td>${p.name} ${p.active ? '' : '<span class="badge b-inactive">Inactive</span>'}</td><td>${rupee(p.list)}</td>
+          ${cellEdit(p)}<td>${offerCell(d)}</td></tr>`; }).join('')}
+      </tbody></table>
+  </div>`;
+}
+function fillDown() {
+  selected.forEach(id => {
+    const p = plans.find(x => x.id === id);
+    if (fill.status === 'off') return setDraftQuiet(id, { off: true });
+    let t = draftOf(p); t = t && !t.off ? { ...t } : { days: null, pricing: null };
+    if (fill.days) t.days = monthsToDays(+fill.days);
+    if (fill.pricing === 'default') t.pricing = null;
+    if (['percent', 'fixed'].includes(fill.pricing)) t.pricing = { kind: fill.pricing, value: +fill.pval };
+    setDraftQuiet(id, t.days == null && t.pricing == null ? null : t);
+  });
+  render();
+}
+function setDraftQuiet(id, terms) { const p = plans.find(x => x.id === id); if (JSON.stringify(terms) === JSON.stringify(p.terms)) delete drafts[id]; else drafts[id] = terms; }
+function reviewB() {
+  const ids = Object.keys(drafts).map(Number);
+  const rows = ids.map(id => { const p = plans.find(x => x.id === id); const a = { ...p, terms: drafts[id] };
+    const b = priceFor(p), af = priceFor(a);
+    const bt = b == null ? 'No offer' : `${rupee(b)} · ${daysLabel(eff(p).days)}`;
+    const at = af == null ? 'No offer' : `${rupee(af)} · ${daysLabel(eff(a).days)}`;
+    return `<tr><td>${p.name}</td><td>${bt}</td><td class="arrow">→</td><td><span class="chg">${at}</span></td></tr>`; }).join('');
+  showLayer(`<div class="dialog"><h2>Save ${ids.length} change${ids.length === 1 ? '' : 's'}?</h2>
+    <div class="muted small">Applies to offers shown from now on. Orders already bought are untouched.</div>
+    <div class="preview" style="margin-top:12px"><table><thead><tr><th>Plan</th><th>Now</th><th></th><th>After</th></tr></thead><tbody>${rows}</tbody></table></div>
+    <div class="row" style="justify-content:flex-end;margin-top:14px"><button class="btn" onclick="closeLayer()">Back</button>
+    <button class="btn p" onclick="saveB()">Save</button></div></div>`);
+}
+function saveB() {
+  const before = plans.map(p => ({ id: p.id, terms: p.terms }));
+  const n = Object.keys(drafts).length;
+  plans = plans.map(p => p.id in drafts ? { ...p, terms: drafts[p.id] } : p);
+  drafts = {}; selected.clear(); closeLayer();
+  flash(`Saved ${n} plan${n === 1 ? '' : 's'}`, before);
+}
+
+/* ---------------- C: named rules that plans join ---------------- */
+let rules = [
+  { id: 'r1', name: 'Short batches', days: 91, pricing: { kind: 'percent', value: 40 } },
+  { id: 'r2', name: 'Yearly combos', days: 365, pricing: { kind: 'percent', value: 40 } },
+  { id: 'r3', name: 'Low-price test passes', off: true },
+];
+let ruleOf = { 5: 'r1', 4: 'r2', 12: 'r2', 6: 'r3' };
+let activeRule = 'default';
+const ruleTerms = r => r.off ? { off: true } : { days: r.days, pricing: r.pricing };
+const syncRuleTerms = () => { plans = plans.map(p => ({ ...p, terms: ruleOf[p.id] ? ruleTerms(rules.find(r => r.id === ruleOf[p.id])) : null })); };
+function viewC() {
+  syncRuleTerms();
+  const r = rules.find(x => x.id === activeRule);
+  const members = plans.filter(p => (ruleOf[p.id] || 'default') === activeRule);
+  const others = visible().filter(p => (ruleOf[p.id] || 'default') !== activeRule);
+  const ruleCard = (id, name, desc, count) => `<div class="rule ${activeRule === id ? 'on' : ''}" onclick="activeRule='${id}';selected.clear();render()">
+      <div class="row spread"><b>${name}</b><span class="muted small">${count} plan${count === 1 ? '' : 's'}</span></div><div class="small muted">${desc}</div></div>`;
+  const count = id => plans.filter(p => (ruleOf[p.id] || 'default') === id).length;
+  return `
+  <h1>Extension rules</h1>
+  <p class="sub">Variant C. Terms live in a few named rules. Each plan follows exactly one rule. Change a rule and every plan on it moves together.</p>
+  <div class="grid2">
+    <div>
+      ${ruleCard('default', 'Default', `${daysLabel(DEFAULT.days)} · ${pricingText(DEFAULT.pricing)}. New plans start here.`, count('default'))}
+      ${rules.map(x => ruleCard(x.id, x.name, x.off ? 'Extension off' : `${daysLabel(x.days)} · ${pricingText(x.pricing)}`, count(x.id))).join('')}
+      <button class="btn" style="width:100%" onclick="newRule()">+ New rule</button>
+    </div>
+    <div>
+      <div class="card">
+        ${activeRule === 'default' ? `<div class="row spread"><b>Default rule</b><button class="btn sm" onclick="editDefault()">Edit</button></div>
+          <div class="muted small" style="margin-top:4px">${daysLabel(DEFAULT.days)} (${DEFAULT.days} days) · ${pricingText(DEFAULT.pricing)} · never below ${rupee(DEFAULT.floor)}</div>` : `
+          <div class="row spread"><input type="text" value="${r.name}" onchange="rRename(this.value)" style="font-weight:600;width:240px">
+            <button class="btn sm" onclick="deleteRule()">Delete rule</button></div>
+          <div class="opt" style="margin-top:10px"><label><input type="checkbox" ${r.off ? 'checked' : ''} onchange="rSet('off',this.checked)"> Extension off for these plans</label></div>
+          ${r.off ? '' : `<div class="opt">Duration <input type="number" min="1" value="${r.days}" onchange="rSet('days',+this.value)"> days <span class="muted small">(${daysLabel(r.days)})</span></div>
+          <div class="opt">Price <select onchange="rSet('kind',this.value)"><option value="percent" ${r.pricing.kind === 'percent' ? 'selected' : ''}>% of paid</option><option value="fixed" ${r.pricing.kind === 'fixed' ? 'selected' : ''}>Fixed ₹</option></select>
+            <input type="number" min="1" value="${r.pricing.value}" onchange="rSet('value',+this.value)"></div>`}
+          <div class="muted small">Editing this changes all ${members.length} plans on it at once.</div>`}
+      </div>
+      <div class="card"><b>Plans on this rule</b>
+        <table style="margin-top:8px"><thead><tr><th>Plan</th><th>List</th><th>Holder pays</th><th></th></tr></thead><tbody>
+        ${members.map(p => `<tr><td>${p.name}</td><td>${rupee(p.list)}</td><td>${offerCell(p)}</td><td>${activeRule === 'default' ? '' : `<button class="btn sm" onclick="delete ruleOf[${p.id}];render()">Remove</button>`}</td></tr>`).join('') || '<tr><td colspan="4" class="muted">No plans yet</td></tr>'}
+        </tbody></table></div>
+      <div class="card"><div class="row spread"><b>Add plans</b><input id="q" class="search" type="text" placeholder="Search plans…"></div>
+        <table style="margin-top:8px"><thead><tr><th style="width:34px"></th><th>Plan</th><th>Now on</th></tr></thead><tbody>
+        ${others.map(p => `<tr class="${selected.has(p.id) ? 'sel' : ''}"><td><input type="checkbox" ${selected.has(p.id) ? 'checked' : ''} onchange="toggleOne(${p.id})"></td><td>${p.name}</td>
+          <td><span class="badge ${ruleOf[p.id] ? 'b-rule' : 'b-default'}">${ruleOf[p.id] ? rules.find(x => x.id === ruleOf[p.id]).name : 'Default'}</span></td></tr>`).join('')}
+        </tbody></table>
+        <div class="row" style="justify-content:flex-end;margin-top:10px"><button class="btn p" ${selected.size ? '' : 'disabled'} onclick="moveSelected()">Move ${selected.size || ''} to ${activeRule === 'default' ? 'Default' : r.name}</button></div>
+      </div>
+    </div>
+  </div>`;
+}
+function rSet(k, v) { const r = rules.find(x => x.id === activeRule);
+  if (k === 'off') { if (v) r.off = true; else { delete r.off; r.days = r.days || 183; r.pricing = r.pricing || { kind: 'percent', value: 50 }; } }
+  if (k === 'days') r.days = v; if (k === 'kind') r.pricing = { kind: v, value: v === 'fixed' ? 199 : 50 }; if (k === 'value') r.pricing = { ...r.pricing, value: v };
+  render(); }
+function rRename(v) { rules.find(x => x.id === activeRule).name = v; render(); }
+function newRule() { const id = 'r' + Date.now(); rules.push({ id, name: 'New rule', days: 91, pricing: { kind: 'percent', value: 50 } }); activeRule = id; render(); }
+function deleteRule() { Object.keys(ruleOf).forEach(k => ruleOf[k] === activeRule && delete ruleOf[k]); rules = rules.filter(r => r.id !== activeRule); activeRule = 'default'; render(); }
+function moveSelected() { selected.forEach(id => { if (activeRule === 'default') delete ruleOf[id]; else ruleOf[id] = activeRule; }); const n = selected.size; selected.clear(); flash(`Moved ${n} plan${n === 1 ? '' : 's'}`); }
+
+
+/* ---------------- D: own page under Sales for many plans; plan form card for one ---------------- */
+let dTab = 'page';
+function viewD() {
+  const tabs = `<div class="row" style="margin-bottom:14px">
+    ${[['page', 'Sales › Extension terms (new page)'], ['list', 'Sales › Plans (list)'], ['form', 'Plans › Edit plan']].map(([k, l]) =>
+      `<button class="btn ${dTab === k ? 'p' : ''}" onclick="dTab='${k}';selected.clear();render()">${l}</button>`).join('')}</div>`;
+  return tabs + (dTab === 'page' ? dPage() : dTab === 'list' ? dList() : dForm());
+}
+function dPage() {
+  const rows = visible();
+  const allOn = rows.length && rows.every(p => selected.has(p.id));
+  const n = k => plans.filter(p => kindOf(p) === k).length;
+  const chip = (k, l) => `<button class="btn sm ${extFilter === k ? 'p' : ''}" onclick="extFilter='${k}';selected.clear();render()">${l}</button>`;
+  return `
+  <h1>Extension terms</h1>
+  <p class="sub">Variant D. A sidebar page under Sales, beside Bulk Sales. It does one thing: extension terms across plans. The Plans list stays as it is, and one plan's terms are also on its edit form.</p>
+  ${defaultsStrip()}
+  <div class="card">
+    <div class="row spread" style="margin-bottom:10px">
+      <input id="q" class="search" type="text" placeholder="Search plans…">
+      <div class="row">${chip('all', 'All ' + plans.length)}${chip('default', 'Default ' + n('default'))}${chip('custom', 'Custom ' + n('custom'))}${chip('off', 'Off ' + n('off'))}
+        <select onchange="statusFilter=this.value;selected.clear();render()">
+          <option value="active" ${statusFilter === 'active' ? 'selected' : ''}>On-sale plans</option>
+          <option value="all" ${statusFilter === 'all' ? 'selected' : ''}>Include inactive</option></select></div>
+    </div>
+    <table>
+      <thead><tr>
+        <th style="width:34px"><input type="checkbox" ${allOn ? 'checked' : ''} onchange="toggleAll(this.checked)"></th>
+        <th>Plan</th><th>List price</th><th>Extension terms</th><th>Holder pays (paid list price)</th><th></th>
+      </tr></thead>
+      <tbody>${rows.map(p => `
+        <tr class="${selected.has(p.id) ? 'sel' : ''}">
+          <td><input type="checkbox" ${selected.has(p.id) ? 'checked' : ''} onchange="toggleOne(${p.id})"></td>
+          <td>${p.name} ${p.active ? '' : '<span class="badge b-inactive">Inactive</span>'}</td>
+          <td>${rupee(p.list)}</td>
+          <td>${termsBadge(p)}</td><td>${offerCell(p)}</td>
+          <td><button class="btn sm" onclick="openDialog([${p.id}])">Edit</button></td>
+        </tr>`).join('') || '<tr><td colspan="6" class="muted">No plans match</td></tr>'}
+      </tbody>
+    </table>
+  </div>
+  ${selected.size ? `<div class="bar"><b>${selected.size} selected</b>
+     <button class="btn" onclick="openDialog([...selected])">Set extension terms…</button>
+     <button class="btn" onclick="quickReset()">Reset to default</button>
+     <span style="margin-left:auto;cursor:pointer" onclick="selected.clear();render()">Clear</span></div>` : ''}`;
+}
+function dList() {
+  return `
+  <h1>Plans</h1>
+  <p class="sub">The Plans list stays as it is: no checkboxes, no bulk bar. The existing Flow column shows a small badge when a plan's extension differs from the default. The badge links to the Extension terms page, filtered to that plan.</p>
+  <div class="card"><table>
+    <thead><tr><th>#</th><th>Plan Name</th><th>Price</th><th>Flow</th><th>Duration</th><th>Priority</th><th>Coupon</th></tr></thead>
+    <tbody>${plans.slice(0, 9).map((p, i) => {
+      const k = kindOf(p);
+      const flow = k === 'default' ? 'Regular' : `<a href="#" onclick="dTab='page';query=${JSON.stringify(p.name).replace(/"/g, '&quot;')};extFilter='all';statusFilter='all';render();return false" class="badge ${k === 'off' ? 'b-off' : 'b-custom'}" style="text-decoration:none">Extension: ${k === 'off' ? 'Off' : daysLabel(eff(p).days) + ' · ' + pricingText(eff(p).pricing)}</a>`;
+      return `<tr><td>${i + 1}</td><td>${p.name}</td><td>${rupee(p.list)}</td><td>${flow}</td><td>${p.days} days</td><td>${i + 1}</td><td><button class="btn sm">Add Coupon</button></td></tr>`; }).join('')}
+    </tbody></table></div>`;
+}
+let dPlanId = 9;
+function dForm() {
+  const p = plans.find(x => x.id === dPlanId);
+  const t = p.terms;
+  const mode = t && t.off ? 'off' : t ? 'custom' : 'default';
+  const e = eff(p) || DEFAULT;
+  return `
+  <h1>Edit Plan</h1>
+  <p class="sub">One plan's terms sit on its own form, next to the Upgrade offer card, because they belong to the plan. This edits the same field the Extension terms page does.</p>
+  <div class="row" style="margin-bottom:10px"><span class="muted small">Sample plan:</span>
+    <select onchange="dPlanId=+this.value;render()">${plans.map(x => `<option value="${x.id}" ${x.id === dPlanId ? 'selected' : ''}>${x.name}</option>`).join('')}</select></div>
+  <div class="card"><b>Plan Details</b><div class="muted small" style="margin-top:6px">${p.name} · ${rupee(p.list)} · ${p.days} days · … (rest of the form unchanged)</div></div>
+  <div class="card"><b>Upgrade offer</b><div class="muted small" style="margin-top:6px">(existing card, unchanged)</div></div>
+  <div class="card"><b>Extension for lapsed students</b>
+    <div class="opt" style="margin-top:10px">
+      <label><input type="radio" name="dm" ${mode === 'default' ? 'checked' : ''} onchange="dSet('default')"> Use the default (${daysLabel(DEFAULT.days)} · ${pricingText(DEFAULT.pricing)})</label></div>
+    <div class="opt"><label><input type="radio" name="dm" ${mode === 'custom' ? 'checked' : ''} onchange="dSet('custom')"> Custom terms for this plan</label></div>
+    ${mode === 'custom' ? `<div style="margin:4px 0 8px 24px">
+      <div class="opt">Duration <input type="number" min="1" value="${e.days}" onchange="dPatch({days:+this.value})"> days <span class="muted small">card reads "${daysLabel(e.days)} Validity"</span></div>
+      <div class="opt">Price <select onchange="dPatch({pricing:{kind:this.value,value:this.value==='fixed'?199:50}})">
+        <option value="percent" ${e.pricing.kind === 'percent' ? 'selected' : ''}>% of what the student paid</option>
+        <option value="fixed" ${e.pricing.kind === 'fixed' ? 'selected' : ''}>Fixed ₹</option></select>
+        <input type="number" min="1" value="${e.pricing.value}" onchange="dPatch({pricing:{...eff(plans.find(x=>x.id===dPlanId)).pricing,value:+this.value}})"></div></div>` : ''}
+    <div class="opt"><label><input type="radio" name="dm" ${mode === 'off' ? 'checked' : ''} onchange="dSet('off')"> No extension on this plan</label></div>
+    <div class="muted small" style="margin-top:8px">A student who paid ${rupee(p.list)} would be offered: <b>${priceFor(p) == null ? 'nothing' : rupee(priceFor(p)) + ' for ' + daysLabel(eff(p).days)}</b>.
+      <a href="#" onclick="dTab='page';render();return false">Change many plans at once →</a></div>
+  </div>`;
+}
+function dSet(mode) { plans = plans.map(p => p.id !== dPlanId ? p : { ...p, terms: mode === 'default' ? null : mode === 'off' ? { off: true } : { days: eff(p)?.days ?? DEFAULT.days, pricing: eff(p)?.pricing ?? DEFAULT.pricing } }); render(); }
+function dPatch(patch) { plans = plans.map(p => p.id !== dPlanId ? p : { ...p, terms: { ...eff(p), ...patch } }); render(); }
+
+
+/* ---------------- E: the holistic Plans list grows a generic Bulk actions menu ---------------- */
+const SCREENS = [['packages', 'Packages'], ['course', 'Course'], ['studyPlan', 'Study Plan'], ['plans', 'Plan']];
+plans.forEach((p, i) => { p.screens = p.screens || (i % 3 === 0 ? ['packages', 'plans'] : i % 3 === 1 ? ['course'] : ['plans']); });
+let eMenu = false, eStatus = 'all', eExt = 'all';
+const eMatch = p => (eStatus === 'all' || (eStatus === 'on') === p.active) && (eExt === 'all' || kindOf(p) === eExt);
+const snapshot = () => plans.map(p => ({ id: p.id, terms: p.terms, active: p.active, screens: [...p.screens] }));
+const restore = snap => { const m = new Map(snap.map(x => [x.id, x])); plans = plans.map(p => ({ ...p, ...m.get(p.id), screens: [...m.get(p.id).screens] })); };
+function viewE() {
+  const rows = visible();
+  const allOn = rows.length && rows.every(p => selected.has(p.id));
+  const extBadge = p => { const k = kindOf(p); return k === 'default' ? '' :
+    `<span class="badge ${k === 'off' ? 'b-off' : 'b-custom'}">Extension: ${k === 'off' ? 'Off' : daysLabel(eff(p).days) + ' · ' + pricingText(eff(p).pricing)}</span>`; };
+  return `
+  <h1>Plans</h1>
+  <p class="sub">Variant E. The Plans list stays the page for whole plans. Ticking rows brings up a general <b>Bulk actions</b> menu. For now it holds one item, Extension terms; more can join later.</p>
+  <div class="card">
+    <div class="row" style="margin-bottom:10px;gap:14px">
+      <input id="q" class="search" type="text" placeholder="Search plans…">
+      <label class="small">Status <select onchange="eStatus=this.value;selected.clear();render()">
+        ${[['all', 'All'], ['on', 'On sale'], ['off', 'Off sale']].map(([v, l]) => `<option value="${v}" ${eStatus === v ? 'selected' : ''}>${l}</option>`).join('')}</select></label>
+      <label class="small">Extension <select onchange="eExt=this.value;selected.clear();render()">
+        ${[['all', 'Any'], ['default', 'Default'], ['custom', 'Custom'], ['off', 'Off']].map(([v, l]) => `<option value="${v}" ${eExt === v ? 'selected' : ''}>${l}</option>`).join('')}</select></label>
+      <span class="muted small" style="margin-left:auto">${rows.length} of ${plans.length} plans</span>
+    </div>
+    ${allOn && rows.length > 1 ? `<div class="sel-all">All ${rows.length} plans on this page are selected. On the real page with many pages: <a href="#" onclick="return false">Select all matching the filters</a>.</div>` : ''}
+    <table>
+      <thead><tr>
+        <th style="width:34px"><input type="checkbox" ${allOn ? 'checked' : ''} onchange="toggleAll(this.checked)"></th>
+        <th>Plan Name</th><th>Price</th><th>Flow</th><th>Duration</th><th>Status</th>
+      </tr></thead>
+      <tbody>${rows.map(p => `
+        <tr class="${selected.has(p.id) ? 'sel' : ''}">
+          <td><input type="checkbox" ${selected.has(p.id) ? 'checked' : ''} onchange="toggleOne(${p.id})"></td>
+          <td>${p.name}<div class="small muted">${SCREENS.filter(([v]) => p.screens.includes(v)).map(([, l]) => '☑ ' + l).join('  ') || 'Shown nowhere'}</div></td>
+          <td>${rupee(p.list)}</td>
+          <td>${extBadge(p) || 'Regular'}</td>
+          <td>${p.days} days</td>
+          <td>${p.active ? '<span class="badge b-rule">On sale</span>' : '<span class="badge b-inactive">Off sale</span>'}</td>
+        </tr>`).join('') || '<tr><td colspan="6" class="muted">No plans match</td></tr>'}
+      </tbody>
+    </table>
+  </div>
+  ${selected.size ? `<div class="bar" style="position:sticky"><b>${selected.size} selected</b>
+     <span style="position:relative"><button class="btn" onclick="eMenu=!eMenu;render()">Bulk actions ▾</button>
+     ${eMenu ? `<div class="menu" style="left:0">
+        <div class="mi" onclick="eMenu=false;openDialog([...selected])"><span>Extension terms…</span><span class="hint">on/off, duration, price, minimum</span></div>
+        </div>` : ''}</span>
+     <span style="margin-left:auto;cursor:pointer" onclick="selected.clear();eMenu=false;render()">Clear</span></div>` : ''}`;
+}
+function eStatusDialog() {
+  const ids = [...selected]; const ps = plans.filter(p => ids.includes(p.id));
+  const on = ps.filter(p => p.active).length;
+  showLayer(`<div class="dialog"><h2>Sale status for ${ids.length} plans</h2>
+    <div class="muted small">${on} on sale, ${ids.length - on} off sale now. Taking a plan off sale stops new purchases only; students who bought it keep their access, and lapsed holders still get the extension.</div>
+    <div class="field"><div class="opt"><label><input type="radio" name="es" value="on" checked> Put on sale</label></div>
+      <div class="opt"><label><input type="radio" name="es" value="off"> Take off sale</label></div></div>
+    <div class="row" style="justify-content:flex-end"><button class="btn" onclick="closeLayer()">Cancel</button>
+    <button class="btn p" onclick="eApplyStatus(document.querySelector('[name=es]:checked').value==='on')">Apply</button></div></div>`);
+}
+function eApplyStatus(active) {
+  const snap = snapshot(); const ids = [...selected];
+  const n = plans.filter(p => ids.includes(p.id) && p.active !== active).length;
+  plans = plans.map(p => ids.includes(p.id) ? { ...p, active } : p);
+  selected.clear(); closeLayer(); flash(`${n} plan${n === 1 ? '' : 's'} ${active ? 'put on' : 'taken off'} sale`, snap);
+}
+function eScreensDialog() {
+  const ids = [...selected];
+  showLayer(`<div class="dialog"><h2>Show ${ids.length} plans on screens</h2>
+    <div class="opt" style="margin:10px 0"><label><input type="radio" name="em" value="add" checked> Add these screens</label>
+      <label><input type="radio" name="em" value="remove"> Remove these screens</label></div>
+    <div class="field">${SCREENS.map(([v, l]) => `<div class="opt"><label><input type="checkbox" name="esc" value="${v}"> ${l}</label></div>`).join('')}</div>
+    <div class="muted small">Screens not ticked stay as each plan has them.</div>
+    <div class="row" style="justify-content:flex-end;margin-top:10px"><button class="btn" onclick="closeLayer()">Cancel</button>
+    <button class="btn p" onclick="eApplyScreens()">Apply</button></div></div>`);
+}
+function eApplyScreens() {
+  const add = document.querySelector('[name=em]:checked').value === 'add';
+  const picked = [...document.querySelectorAll('[name=esc]:checked')].map(x => x.value);
+  if (!picked.length) return;
+  const snap = snapshot(); const ids = [...selected];
+  plans = plans.map(p => !ids.includes(p.id) ? p : { ...p, screens: add ? [...new Set([...p.screens, ...picked])] : p.screens.filter(v => !picked.includes(v)) });
+  selected.clear(); closeLayer(); flash(`Screens updated on ${ids.length} plans`, snap);
+}
+
+/* ---------------- shared ---------------- */
+function editDefault(back) {
+  const d = DEFAULT;
+  showLayer(`<div class="dialog"><h2>Default extension terms</h2>
+    <div class="muted small">Every plan set to Default uses these. Today they live in the server's settings file.</div>
+    <div class="field"><div class="opt">Duration <input id="dd" type="number" min="1" value="${d.days}"> days</div>
+    <div class="opt">Price <input id="dp" type="number" min="1" max="100" value="${d.pricing.value}"> % of what the student paid</div>
+    <div class="opt">Minimum price ₹ <input id="df" type="number" min="0" value="${d.floor}"></div></div>
+    <div class="row" style="justify-content:flex-end"><button class="btn" onclick="${back ? 'drawDialog()' : 'closeLayer()'}">Cancel</button>
+    <button class="btn p" onclick="DEFAULT={days:+dd.value,pricing:{kind:'percent',value:+dp.value},floor:+df.value};${back ? 'render();drawDialog()' : 'closeLayer();render()'}">Save default</button></div></div>`);
+}
+function showLayer(html) { document.getElementById('layer').innerHTML = `<div class="overlay" onclick="if(event.target===this)closeLayer()">${html}</div>`; }
+function closeLayer() { document.getElementById('layer').innerHTML = ''; }
+function flash(msg, undoState) { toast = { msg, undoState }; render(); clearTimeout(flash.t); flash.t = setTimeout(() => { toast = null; render(); }, 6000); }
+function renderToast() {
+  let el = document.getElementById('toast'); if (el) el.remove();
+  if (!toast) return;
+  el = document.createElement('div'); el.id = 'toast'; el.className = 'toast';
+  el.innerHTML = `<span>${toast.msg}</span>${toast.undoState ? '<button class="btn sm">Undo</button>' : ''}`;
+  if (toast.undoState) el.querySelector('button').onclick = () => { if (toast.undoState[0] && 'screens' in toast.undoState[0]) restore(toast.undoState); else { const m = new Map(toast.undoState.map(x => [x.id, x.terms])); plans = plans.map(p => ({ ...p, terms: m.get(p.id) })); } toast = null; render(); };
+  document.body.appendChild(el);
+}
+render();
+</script>
+</body>
+</html>

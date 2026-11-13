@@ -59,8 +59,7 @@ The field takes one of these shapes (real samples):
   "courseId": "6adc747872cd89ed3dc47b59",
   "code": "VG-QDJA6B99PK",
   "imageUrl": "https://vidyagram-certificates.hranker.org/VG-QDJA6B99PK.png",
-  "pdfUrl": "https://vidyagram-certificates.hranker.org/VG-QDJA6B99PK",
-  "shareUrl": "https://vidyagram-certificates.hranker.org/VG-QDJA6B99PK"
+  "pdfUrl": "https://vidyagram-certificates.hranker.org/VG-QDJA6B99PK"
 }
 ```
 
@@ -69,7 +68,7 @@ The field takes one of these shapes (real samples):
 | `state` | always | `issued`, `eligible` or `ineligible` |
 | `reason` | only when `ineligible` | one of the codes in section 3 |
 | `progress` | every case **except** `ineligible` + `not_enabled` | the course progress, 0 to 100, may have decimals (`66.67`) |
-| `code`, `imageUrl`, `pdfUrl`, `shareUrl` | only when `issued` | the certificate's number and links; `pdfUrl` and `shareUrl` are the same link |
+| `code`, `imageUrl`, `pdfUrl` | only when `issued` | the certificate's number and links; `pdfUrl` is the PDF and also the link to share, `imageUrl` the PNG |
 
 `progress` is left out for `not_enabled` because the server skips the progress read on a course that isn't marked
 complete. Use the progress bar you already have for that course.
@@ -230,8 +229,7 @@ bearer token.
     "courseTitle": "SSC CGL 2026 Maths Foundation",
     "completionDate": "2026-10-24",
     "imageUrl": "https://vidyagram-certificates.hranker.org/VG-QDJA6B99PK.png",
-    "pdfUrl": "https://vidyagram-certificates.hranker.org/VG-QDJA6B99PK",
-    "shareUrl": "https://vidyagram-certificates.hranker.org/VG-QDJA6B99PK"
+    "pdfUrl": "https://vidyagram-certificates.hranker.org/VG-QDJA6B99PK"
   }
 }
 ```
@@ -241,7 +239,7 @@ bearer token.
 - `name` is the cleaned name as printed.
 - `courseTitle` is the title as printed. It is fixed at claim and doesn't follow later renames.
 - `completionDate` is the **claim day** on the India calendar, as `YYYY-MM-DD`. Format it for display.
-- `pdfUrl` and `shareUrl` are the same link.
+- `pdfUrl` is the link to share. There is no separate share link.
 
 **200, already claimed.** The body has the same shape and holds the certificate the student already has. **The name
 sent is ignored**, even an invalid one. Treat 200 exactly like 201.
@@ -256,8 +254,7 @@ sent is ignored**, even an invalid one. Treat 200 exactly like 201.
     "courseTitle": "SSC CGL 2026 Maths Foundation",
     "completionDate": "2026-10-24",
     "imageUrl": "https://vidyagram-certificates.hranker.org/VG-QDJA6B99PK.png",
-    "pdfUrl": "https://vidyagram-certificates.hranker.org/VG-QDJA6B99PK",
-    "shareUrl": "https://vidyagram-certificates.hranker.org/VG-QDJA6B99PK"
+    "pdfUrl": "https://vidyagram-certificates.hranker.org/VG-QDJA6B99PK"
   }
 }
 ```
@@ -308,14 +305,14 @@ certificates row.
 |---|---|---|
 | The certificate | `imageUrl` in an image view | A 3508 × 2480 px PNG (A4 landscape at 300 dpi). Load it downsampled to the screen size. Pinch-zoom is welcome. |
 | **View PDF** / "PDF देखें" | `pdfUrl`, opened in the app's existing PDF viewer | A one-page A4 PDF. Public: send no token or other header. **The link has no `.pdf` ending.** The server sends `Content-Type: application/pdf`, so the viewer must go by that, not by the extension. |
-| **Share** / "शेयर करें" | `shareUrl` through the system share sheet | See below. |
+| **Share** / "शेयर करें" | `pdfUrl` through the system share sheet | See below. |
 | Certificate number | `code` | Optional: "Certificate No. VG-QDJA6B99PK". It is printed on the certificate too. |
 
-**Share.** Send `shareUrl` as text. Anyone who opens it sees the PDF, with no app or account needed. Suggested text:
+**Share.** Send `pdfUrl` as text. Anyone who opens it sees the PDF, with no app or account needed. Suggested text:
 
-> I completed **{courseTitle}** on Vidyagram. See my certificate: {shareUrl}
+> I completed **{courseTitle}** on Vidyagram. See my certificate: {pdfUrl}
 >
-> मैंने Vidyagram पर **{courseTitle}** पूरा किया। मेरा सर्टिफ़िकेट देखें: {shareUrl}
+> मैंने Vidyagram पर **{courseTitle}** पूरा किया। मेरा सर्टिफ़िकेट देखें: {pdfUrl}
 
 If you want the image attached as well, which looks better in WhatsApp, download `imageUrl` to a temporary file and
 share the file with the text. The link must stay in the text, because the link is the proof that the certificate is
@@ -348,8 +345,7 @@ Real sample:
       "courseTitle": "SSC CGL 2026 Maths Foundation",
       "completionDate": "2026-10-24",
       "imageUrl": "https://vidyagram-certificates.hranker.org/VG-QDJA6B99PK.png",
-      "pdfUrl": "https://vidyagram-certificates.hranker.org/VG-QDJA6B99PK",
-      "shareUrl": "https://vidyagram-certificates.hranker.org/VG-QDJA6B99PK"
+      "pdfUrl": "https://vidyagram-certificates.hranker.org/VG-QDJA6B99PK"
     }
   ]
 }
@@ -364,42 +360,36 @@ Real sample:
 
 ---
 
-## 8. The `certificate_ready` push
+## 7b. My courses cards: `certificate` on `POST /api/courses/my-courses`
 
-**This push is OFF at launch** (`CERTIFICATE_PUSH_ENABLED` defaults off, by the product owner's choice on 2026-10-25). Build the
-tap handler anyway so it works when it is switched on. When it is on, it goes out only while claims are open.
+Every card in `liveCourses` and `recordedCourses` carries the **same `certificate` object as the course page** (section 2):
+same states, reasons, `progress` rule and links. Use it to show a "Certificate" badge or button on the card without
+opening the course.
 
-When an admin marks a course complete **for the first time** with the push on, the server sends one push to the students who already
-qualify. A qualifying student owns the course, is at 100%, and has no certificate for it yet.
+- **Send the bearer token.** The student comes from the token. With no token (or an admin token) every card's
+  `certificate` is `null`, even though the list itself still loads for a body `userId` from old builds.
+- `null` also when the feature switch is off.
+- Most cards read `{ "state": "ineligible", "reason": "not_enabled" }` (the course is not marked complete): show nothing.
+- `issued` cards carry `courseId`, `code`, `imageUrl`, `pdfUrl`: show the certificate thumbnail or a "View
+  certificate" action.
+- `eligible` cards: show "Get certificate"; it opens the course page / claim flow.
 
-The push is a normal FCM notification with a title and a body, plus this data:
+**Course progress on the card: `progress_percentage`.** Every card also carries `progress_percentage`, a number 0–100
+(two decimals) — the same number as the course progress bar and as `certificate.progress`: classes watched (≥ 90%) or
+ticked as done, out of the course's active classes. A course with no classes reads `0`. It is `null` without the
+student's bearer token. Use it for the progress ring/bar on the card. (The old `classesCompleted`, `watchTime`,
+`testsAttempted` and `studyMaterialRead` blocks are placeholders that always read 0 — don't use them.)
 
 ```json
-{ "type": "certificate_ready", "courseId": "6adc747872cd89ed3dc47b59" }
+{ "_id": "6adc…", "title": "SSC CGL 2026 Maths Foundation", "myRating": null,
+  "progress_percentage": 100,
+  "certificate": { "state": "eligible", "progress": 100 } }
 ```
-
-The text is in English and comes from the server:
-
-- Title: "Your certificate is ready"
-- Body: "You've completed {course title}. Claim your certificate in the app."
-
-**On tap, open the course page for `courseId`.** The page reads `by-id-2` with the token as usual and shows **Get
-certificate**. Don't open the claim screen straight from the push. Let the page's `certificate` field decide, since
-the state may have changed by then. For example, claims may still be closed (`claims_closed`), or the student may
-already have claimed on another device (`issued`).
-
-Things that send no push:
-
-- Marking the same course complete again after a reopen.
-- A student reaching 100% after the course was marked complete. That student sees **Get certificate** on the course
-  page the next time it loads.
-
-The push isn't saved as a notification record, so it doesn't show up in the in-app notification list that is fed
-from the server.
 
 ---
 
-## 9. All status codes at a glance
+
+## 8. All status codes at a glance
 
 | Route | 200 | 201 | 400 | 401 | 404 | 409 |
 |---|---|---|---|---|---|---|
@@ -423,15 +413,15 @@ The 404 body:
 
 ---
 
-## 10. State of production (2026-10-24)
+## 9. State of production (2026-10-26)
 
-- **Not deployed yet.** The backend goes out first, with both switches off. Then `certificate` is `null` on every
-  course page, and every route in this guide answers 404.
-- The Vidyagram team turns the feature on first, and opens claims later, once the real signature is on the
-  certificate. In between, a student at 100% on a complete course sees `claims_closed`.
-- No course is marked complete yet.
-
-You can build and test against these shapes now. The backend team will name a test course when the feature is on.
+- **Deployed 2026-10-26** on backend.vidyagramar.com with the feature **on** and claims **open**, so the app team can
+  test end to end. The push is **off** (`CERTIFICATE_PUSH_ENABLED=false`).
+- Certificates issued now carry a **test signature** ("Test Signatory"). They are test data and will be deleted before
+  launch; the real signature replaces it.
+- Only the test course the backend team names is marked complete. Use your test student account on it (the course is
+  assigned to that account; tick every class to reach 100%).
+- Links live at `https://vidyagram-certificates.hranker.org/<code>`.
 
 ---
 
@@ -445,7 +435,7 @@ You can build and test against these shapes now. The backend team will name a te
 - [ ] Claim: disable the button while the call runs. Treat 201 and 200 the same. Show 400 under the name field. On
       409, close the screen and show the reason's copy. Retry the same call after a network error.
 - [ ] Certificate view: `imageUrl` in an image view, **View PDF** opens `pdfUrl` (no `.pdf` ending) in the existing
-      PDF viewer, and **Share** sends `shareUrl`, with the image attached if you want.
+      PDF viewer, and **Share** sends with the image attached if you want.
 - [ ] My certificates in the profile, from `GET /api/certificates/mine`. Hide the entry on 404.
 - [ ] `certificate_ready` push: a tap opens the course page for `data.courseId`.
 - [ ] Never build certificate links in the app. Use the URLs from the responses.

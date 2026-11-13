@@ -1,0 +1,128 @@
+{
+  "observedAt": "2026-10-27T06:09:55.852372+00:00",
+  "revision": "f79842940 + serial-api-pacing-250ms-2026-10-19 + placement-7f9cfc649",
+  "files": [
+    {
+      "path": "src/services/apx/apxCatalogClassCommit.ts",
+      "sha256": "8308086db7ff8b82632ac03e931804a0c8c1ef9099033745dd14d0bfa037dfbb",
+      "mtimeUtc": "2026-10-19T06:45:28+00:00"
+    },
+    {
+      "path": "src/services/apx/apxCatalogPdfImport.ts",
+      "sha256": "adeac45fbb7fa4beed7af4f1ee81c0aa4bf47753f10d1cc15edee7d49e5555ff",
+      "mtimeUtc": "2026-10-19T06:45:28+00:00"
+    },
+    {
+      "path": "src/services/apx/apxCatalogPdfImportHttp.ts",
+      "sha256": "e3173b23075b129bdc796b270d4b26727fcb62123da03f1766b2f3fb034ded26",
+      "mtimeUtc": "2026-10-19T06:45:28+00:00"
+    },
+    {
+      "path": "src/services/apx/apxCatalogPdfNightly.ts",
+      "sha256": "22d558e17e8e7ed55575cb2789066e087abcfca54dbbe143efc4993e2269a3a6",
+      "mtimeUtc": "2026-10-19T06:45:28+00:00"
+    },
+    {
+      "path": "src/services/apx/apxCatalogPdfImportRun.ts",
+      "sha256": "7c048eb22eb29ad1d6f4e5a04f9321a73e69f3db49d82819a1707fc3722cf516",
+      "mtimeUtc": "2026-10-19T06:45:28+00:00"
+    }
+  ],
+  "units": {
+    "vidyagram-nightly-gcp.timer": {
+      "NextElapseUSecRealtime": "Tue 2026-10-27 21:00:00 UTC",
+      "LastTriggerUSec": "Mon 2026-10-26 21:00:00 UTC",
+      "Result": "success",
+      "ActiveState": "active",
+      "SubState": "waiting"
+    },
+    "vidyagram-nightly-gcp.service": {
+      "Result": "exit-code",
+      "ExecMainStartTimestamp": "Mon 2026-10-26 21:00:00 UTC",
+      "ExecMainExitTimestamp": "Mon 2026-10-26 21:00:05 UTC",
+      "ExecMainStatus": "1",
+      "ActiveState": "failed",
+      "SubState": "failed"
+    }
+  },
+  "runs": [
+    {
+      "file": "2026-10-25-210006.log",
+      "lines": [
+        "=== start 2026-10-24T21:00:06Z revision f79842940 + serial-api-pacing-250ms-2026-10-19 + placement-7f9cfc649",
+        "[nightlySync] capture: 1 course(s) failed (96); capturing them again in 5 min",
+        "[nightlySync] capture: done {\"coursesDone\":145,\"coursesFailed\":[\"96\"],\"lookups\":20,\"reused\":2747,\"vanished\":3}",
+        "[nightlySync] classes: FAILED vid:armaths-data:4656486-1792746126: Plan executor error during findAndModify :: caused by :: E11000 duplicate key error collection: vidyagramdb.apxingestjobs index: apxCourseId_1_apxClassId_1 dup key: { apxCourseId: ObjectId('6ace395cc9735682f048a449'), apxClassId: \"193547\" }",
+        "[nightlySync] classes: FAILED vid:armaths-data:4657426-1792753322: Plan executor error during findAndModify :: caused by :: E11000 duplicate key error collection: vidyagramdb.apxingestjobs index: apxCourseId_1_apxClassId_1 dup key: { apxCourseId: ObjectId('6ace395cc9735682f048a449'), apxClassId: \"193550\" }",
+        "[nightlySync] classes: done {\"newClasses\":25,\"placementsAdded\":20,\"jobsQueued\":22,\"waitingOnLink\":142,\"existing\":9959,\"failed\":2}",
+        "[nightlySync] reconcile: done {\"classes\":{\"activated\":0,\"deactivated\":1,\"retitled\":0,\"skippedUnknown\":5,\"goneFromListing\":2,\"failed\":0},\"pdfs\":{\"activated\":1,\"deactivated\":0,\"retitled\":0,\"skippedUnknown\":2,\"goneFromListing\":3,\"failed\":0},\"changes\":2,\"csv\":\"/home/raghav/vidyagram-nightly/logs/apx-catalog-reconcile-daily-2026-10-25.csv\"}",
+        "[nightlySync] placement: done {\"rowsCreated\":97,\"coursesCreated\":0,\"coursesTouched\":33,\"rowsInactive\":0,\"unfiled\":3,\"refused\":0,\"missingClasses\":0}",
+        "[nightlySync] pdfs: FAILED appx-content-v2.classx.co.in#5094a07b5f13: decrypted bytes failed the PDF validity check",
+        "[nightlySync] pdfs: FAILED appx-content-v2.classx.co.in#da5366b7467b: decrypted bytes failed the PDF validity check",
+        "[nightlySync] pdfs: done {\"newPdfs\":41,\"notesAttached\":40,\"leftForLater\":0,\"signs\":{\"student\":44,\"admin\":8,\"public\":0},\"throttled\":false,\"sessionLost\":false,\"notReached\":0,\"toImport\":52,\"failed\":2}",
+        "[nightlySync] run daily-2026-10-25: done-with-failures, 2 failure(s)",
+        "=== exit 1 2026-10-25T01:00:30Z"
+      ]
+    },
+    {
+      "file": "2026-10-26-210000.log",
+      "lines": [
+        "=== start 2026-10-25T21:00:00Z revision f79842940 + serial-api-pacing-250ms-2026-10-19 + placement-7f9cfc649",
+        "[nightlySync] capture: 1 course(s) failed (96); capturing them again in 5 min",
+        "[nightlySync] capture: done {\"coursesDone\":145,\"coursesFailed\":[\"96\"],\"lookups\":21,\"reused\":2751,\"vanished\":0}",
+        "[nightlySync] classes: FAILED vid:armaths-data:4656486-1792746126: Plan executor error during findAndModify :: caused by :: E11000 duplicate key error collection: vidyagramdb.apxingestjobs index: apxCourseId_1_apxClassId_1 dup key: { apxCourseId: ObjectId('6ace395cc9735682f048a449'), apxClassId: \"193547\" }",
+        "[nightlySync] classes: FAILED vid:armaths-data:4657426-1792753322: Plan executor error during findAndModify :: caused by :: E11000 duplicate key error collection: vidyagramdb.apxingestjobs index: apxCourseId_1_apxClassId_1 dup key: { apxCourseId: ObjectId('6ace395cc9735682f048a449'), apxClassId: \"193550\" }",
+        "[nightlySync] classes: done {\"newClasses\":1,\"placementsAdded\":0,\"jobsQueued\":1,\"waitingOnLink\":147,\"existing\":9984,\"failed\":2}",
+        "[nightlySync] reconcile: done {\"classes\":{\"activated\":0,\"deactivated\":0,\"retitled\":0,\"skippedUnknown\":5,\"goneFromListing\":2,\"failed\":0},\"pdfs\":{\"activated\":0,\"deactivated\":0,\"retitled\":0,\"skippedUnknown\":2,\"goneFromListing\":3,\"failed\":0},\"changes\":0,\"csv\":\"/home/raghav/vidyagram-nightly/logs/apx-catalog-reconcile-daily-2026-10-26.csv\"}",
+        "[nightlySync] placement: done {\"rowsCreated\":3,\"coursesCreated\":0,\"coursesTouched\":3,\"rowsInactive\":0,\"unfiled\":3,\"refused\":0,\"missingClasses\":0}",
+        "[nightlySync] pdfs: FAILED appx-content-v2.classx.co.in#5094a07b5f13: decrypted bytes failed the PDF validity check",
+        "[nightlySync] pdfs: FAILED appx-content-v2.classx.co.in#da5366b7467b: decrypted bytes failed the PDF validity check",
+        "[nightlySync] pdfs: done {\"newPdfs\":0,\"notesAttached\":0,\"leftForLater\":0,\"signs\":{\"student\":0,\"admin\":2,\"public\":0},\"throttled\":false,\"sessionLost\":false,\"notReached\":0,\"toImport\":2,\"failed\":2}",
+        "[nightlySync] run daily-2026-10-26: done-with-failures, 2 failure(s)",
+        "=== exit 1 2026-10-26T00:54:07Z"
+      ]
+    },
+    {
+      "file": "2026-10-27-210000.log",
+      "lines": [
+        "=== start 2026-10-26T21:00:00Z revision f79842940 + serial-api-pacing-250ms-2026-10-19 + placement-7f9cfc649",
+        "=== exit 1 2026-10-26T21:00:05Z"
+      ]
+    }
+  ],
+  "latestFailure": {
+    "file": "2026-10-27-210000.log",
+    "lineCount": 3,
+    "failureIndicators": [
+      "Maintained APX session is not live"
+    ],
+    "nightlyStageLines": 0,
+    "preflightSha256": "356ea1e326e09a847c146dbaf8f4383a3bac42b7ac1433dd9ffa26aec13e1b53",
+    "runnerSha256": "84967085d77293ac29b44514fbd524f63b21838882394c0873556377983ccbae"
+  },
+  "preparedChanges": [
+    {
+      "path": "src/services/apx/apxCatalogClassCommit.ts",
+      "deployedBeforeSha256": "8308086db7ff8b82632ac03e931804a0c8c1ef9099033745dd14d0bfa037dfbb",
+      "preparedAfterSha256": "339fbd448374b740c4104f1e3c0c07361d63d662afb5f15c55bcda94ded3b59b",
+      "preparedPatchDeployed": false,
+      "localCommit": "f80515ab5",
+      "scope": "All future class-ingest units processed by this isolated Vidyagram catalogue importer, not only the two repair assets."
+    },
+    {
+      "path": "src/services/apx/apxCatalogPdfImportRun.ts",
+      "deployedBeforeSha256": "7c048eb22eb29ad1d6f4e5a04f9321a73e69f3db49d82819a1707fc3722cf516",
+      "preparedAfterSha256": "ff85c1b06fba5f6dd69b0ca55b952feea10a1836f0d129e132b804da52fb3be3",
+      "preparedPatchDeployed": false,
+      "scope": "All future PDF downloads processed by this isolated Vidyagram catalogue PDF import handler, including standalone documents and note attachments, not only two failing files."
+    }
+  ],
+  "mutations": {
+    "productionWrites": 0,
+    "deployments": 0,
+    "restarts": 0,
+    "jobQueue": 0,
+    "sessionUpdates": 0,
+    "preflightExecuted": false
+  }
+}

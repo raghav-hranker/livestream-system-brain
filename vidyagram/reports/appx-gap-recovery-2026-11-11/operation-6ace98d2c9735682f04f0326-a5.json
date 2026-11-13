@@ -1,0 +1,13 @@
+{
+  "job": "6ace98d2c9735682f04f0326",
+  "filter": {
+    "status": "dead",
+    "attempts": 5,
+    "updatedAt": "2026-10-14T07:23:12.775Z"
+  },
+  "set": {
+    "status": "claimed",
+    "attempts": 6,
+    "error": null
+  }
+}

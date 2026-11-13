@@ -146,6 +146,60 @@
       "port": 3000
     },
     {
+      "name": "admin-ai-banner-studio",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/qt-admin-ai-studio && exec npx next dev -p 3311"
+      ],
+      "port": 3311
+    },
+    {
+      "name": "vg-faculty-order-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-faculty-order-admin && exec npx next dev -p 3419"
+      ],
+      "port": 3419
+    },
+    {
+      "name": "vg-feedback-backend",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-feedback-backend && set -a && source .env.localpreview && set +a && PORT=5916 DISABLE_CRONS=true exec npx ts-node --transpile-only src/app.ts"
+      ],
+      "port": 5916
+    },
+    {
+      "name": "vg-feedback-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-feedback-admin-preview && exec npx next dev -p 3000"
+      ],
+      "port": 3000
+    },
+    {
+      "name": "vg-sidebar-search-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-sidebar-search && exec npx next dev -p 3427"
+      ],
+      "port": 3427
+    },
+    {
+      "name": "vg-plan-form-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vidyagram-admin-ui && exec npx next dev -p 3000"
+      ],
+      "port": 3000
+    },
+    {
       "name": "vg-certificates-backend",
       "runtimeExecutable": "zsh",
       "runtimeArgs": [
@@ -162,6 +216,383 @@
         "cd ~/Projects/worktrees/vg-certificates-admin && exec npx next dev -p 3931"
       ],
       "port": 3931
+    },
+    {
+      "name": "vg-fb2-backend",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-fb2-backend && set -a && source .env.localpreview && set +a && PORT=5916 DISABLE_CRONS=true exec npx ts-node --transpile-only src/app.ts"
+      ],
+      "port": 5916
+    },
+    {
+      "name": "vg-playground-backend",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-playground-backend && set -a && source .env.localpreview && set +a && PORT=5933 DISABLE_CRONS=true exec npx ts-node --transpile-only src/app.ts"
+      ],
+      "port": 5933
+    },
+    {
+      "name": "vg-playground-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-playground-admin-preview && exec npx next dev -p 3933"
+      ],
+      "port": 3933
+    },
+    {
+      "name": "cb-playground-static",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "3471",
+        "--bind",
+        "127.0.0.1",
+        "--directory",
+        "/Users/raghav/Projects/system-brain/vidyagram/prototypes/course-playground"
+      ],
+      "port": 3471
+    },
+    {
+      "name": "vg-fb2-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-fb2-admin-preview && exec npx next dev -p 3000"
+      ],
+      "port": 3000
+    },
+    {
+      "name": "vg-extterms-backend",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-extterms-backend && set -a && source /private/tmp/claude-501/-Users-raghav-Projects-system-brain/f787f1cb-74b8-45f4-a210-c68406b37973/scratchpad/e2e/backend.env && set +a && exec npx ts-node --transpile-only src/app.ts"
+      ],
+      "port": 5932
+    },
+    {
+      "name": "vg-extterms-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-extterms-admin-preview && exec npx next dev -p 3932"
+      ],
+      "port": 3932
+    },
+    {
+      "name": "vg-courses-menu-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-courses-menu && exec npx next dev -p 3436"
+      ],
+      "port": 3436
+    },
+    {
+      "name": "vg-sidebar-accordion-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-sidebar-accordion && exec npx next dev -p 3441"
+      ],
+      "port": 3441
+    },
+    {
+      "name": "vg-sidebar-good-css-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-sidebar-good-css && exec npx next dev -p 3442"
+      ],
+      "port": 3442
+    },
+    {
+      "name": "vg-classes-compact-backend",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-classes-compact-backend && set -a && source .env.localpreview && set +a && PORT=5934 DISABLE_CRONS=true exec npx ts-node --transpile-only src/app.ts"
+      ],
+      "port": 5934
+    },
+    {
+      "name": "vg-classes-compact-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-classes-compact && exec npx next dev -p 3934"
+      ],
+      "port": 3934
+    },
+    {
+      "name": "vg-sidebar-g2-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-sidebar-g2 && exec npx next dev -p 3443"
+      ],
+      "port": 3443
+    },
+    {
+      "name": "vg-combo-backend",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-combo-backend && set -a && source .env.localpreview && set +a && PORT=5933 DISABLE_CRONS=true exec npx ts-node --transpile-only src/app.ts"
+      ],
+      "port": 5933
+    },
+    {
+      "name": "vg-combo-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-combo-admin && exec npx next dev -p 3433"
+      ],
+      "port": 3433
+    },
+    {
+      "name": "vg-suggested-backend",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-suggested-backend && set -a && source .env.localpreview && set +a && PORT=5941 DISABLE_CRONS=true exec npx ts-node --transpile-only src/app.ts"
+      ],
+      "port": 5941
+    },
+    {
+      "name": "vg-suggested-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-suggested-admin && exec npx next dev -p 3441"
+      ],
+      "port": 3441
+    },
+    {
+      "name": "vg-doubt-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-doubt-admin && exec npx next dev -p 3444"
+      ],
+      "port": 3444
+    },
+    {
+      "name": "vg-launch-home",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "3481",
+        "--bind",
+        "127.0.0.1",
+        "--directory",
+        "/Users/raghav/Projects/system-brain/vidyagram/prototypes/launch-home"
+      ],
+      "port": 3481
+    },
+    {
+      "name": "vg-launch-hero",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "3482",
+        "--bind",
+        "127.0.0.1",
+        "--directory",
+        "/Users/raghav/Projects/system-brain/vidyagram/prototypes/launch-hero"
+      ],
+      "port": 3482
+    },
+    {
+      "name": "vg-selling-backend",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-selling-backend && set -a && source /private/tmp/claude-501/-Users-raghav--claude-spares-spare-6HMTSG/f3293abd-d8df-44a1-aeff-998b357d827a/scratchpad/selling/backend.env && set +a && exec npx ts-node --transpile-only src/app.ts"
+      ],
+      "port": 5951
+    },
+    {
+      "name": "vg-selling-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-selling-admin-preview && exec npx next dev -p 3002"
+      ],
+      "port": 3002
+    },
+    {
+      "name": "vg-hero-round4",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "3484",
+        "--bind",
+        "127.0.0.1",
+        "--directory",
+        "/Users/raghav/Projects/system-brain/vidyagram/prototypes/hero-round4"
+      ],
+      "port": 3484
+    },
+    {
+      "name": "vg-selling-backend-prod",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "exec /private/tmp/claude-501/-Users-raghav-Projects-system-brain/f3293abd-d8df-44a1-aeff-998b357d827a/scratchpad/vg-selling-backend-prod.sh"
+      ],
+      "port": 5951
+    },
+    {
+      "name": "vg-course-pricing-polish",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "3486",
+        "--bind",
+        "127.0.0.1",
+        "--directory",
+        "/Users/raghav/Projects/system-brain/vidyagram/prototypes/course-pricing-polish"
+      ],
+      "port": 3486
+    },
+    {
+      "name": "vg-selling-admin-live",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-selling-admin && exec npx next dev -p 3000"
+      ],
+      "port": 3000
+    },
+    {
+      "name": "vg-sidebar-rail-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-sidebar-rail && exec npx next dev -p 3446"
+      ],
+      "port": 3446
+    },
+    {
+      "name": "vg-selling-admin-attach",
+      "url": "http://localhost:3000",
+      "port": 3000
+    },
+    {
+      "name": "vg-combo-bundles",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-selling-admin-bundles && exec npx next dev -p 3005"
+      ],
+      "port": 3005
+    },
+    {
+      "name": "vg-combo-bundles-3000",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-selling-admin-bundles && exec npx next dev -p 3000"
+      ],
+      "port": 3000
+    },
+    {
+      "name": "vg-editorial-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-admin-editorial && exec npx next dev -p 3451"
+      ],
+      "port": 3451
+    },
+    {
+      "name": "vg-course-list-quick-settings",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "3487",
+        "--bind",
+        "127.0.0.1",
+        "--directory",
+        "/Users/raghav/Projects/system-brain/vidyagram/prototypes/course-list-quick-settings"
+      ],
+      "port": 3487
+    },
+    {
+      "name": "vg-course-quick-edit-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-course-quick-edit && exec npx next dev -p 3489"
+      ],
+      "port": 3489
+    },
+    {
+      "name": "vg-ls-dark-mode",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/ls-vg-dark-mode && exec npx next dev -p 3461"
+      ],
+      "port": 3461
+    },
+    {
+      "name": "vg-bldv2-backend",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-bldv2-backend && set -a && source .env.localpreview && set +a && PORT=5934 DISABLE_CRONS=true exec npx ts-node --transpile-only src/app.ts"
+      ],
+      "port": 5934
+    },
+    {
+      "name": "vg-bldv2-admin",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-bldv2-admin-preview && exec npx next dev -p 3934"
+      ],
+      "port": 3934
+    },
+    {
+      "name": "vg-bldv2-admin-3000",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-bldv2-admin-preview && exec npx next dev -p 3000"
+      ],
+      "port": 3000
+    },
+    {
+      "name": "vg-pg2-backend",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-pg2-backend && set -a && source .env.localpreview && set +a && PORT=5934 DISABLE_CRONS=true exec npx ts-node --transpile-only src/app.ts"
+      ],
+      "port": 5934
+    },
+    {
+      "name": "vg-pg2-admin-3000",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-c",
+        "cd ~/Projects/worktrees/vg-pg2-admin-preview && exec npx next dev -p 3000"
+      ],
+      "port": 3000
     }
   ]
 }

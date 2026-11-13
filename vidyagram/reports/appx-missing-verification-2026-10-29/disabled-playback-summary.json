@@ -1,0 +1,85 @@
+{
+  "observedAt": "2026-10-29T11:39:06.940Z",
+  "completedAt": "2026-10-29T11:42:46.354Z",
+  "scope": 48,
+  "checked": 48,
+  "allScopeConsidered": true,
+  "productionWrites": 0,
+  "outcomes": {
+    "all advertised and derived quality playlists return 404": 6,
+    "AppX returned no playable URL": 39,
+    "video decoded at beginning, middle and end": 3
+  },
+  "playable": [
+    {
+      "title": "Percentage Class 14 (2)",
+      "classId": "6ace99fd8752d955968b70be",
+      "course": "47",
+      "rowId": "35200",
+      "sourceEnabled": "0",
+      "sourceQualityLabel": "720p",
+      "actualVideo": "854×480 (h264)"
+    },
+    {
+      "title": "Time, Speed & Distance Class 03 · TIME , SPEED & DISTANCE (2)",
+      "classId": "6ace996c8752d955968b678e",
+      "course": "45",
+      "rowId": "34046",
+      "sourceEnabled": "0",
+      "sourceQualityLabel": "1080p",
+      "actualVideo": "1600×900 (h264)"
+    },
+    {
+      "title": "Train Class 01 · TRAIN (4)",
+      "classId": "6ace99558752d955968b6629",
+      "course": "45",
+      "rowId": "33822",
+      "sourceEnabled": "0",
+      "sourceQualityLabel": "1080p",
+      "actualVideo": "1600×900 (h264)"
+    }
+  ],
+  "controls": [
+    {
+      "name": "Glands01",
+      "at": "2026-10-29T11:39:13.725Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    },
+    {
+      "name": "Glands01 ending control",
+      "at": "2026-10-29T11:42:44.469Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    },
+    {
+      "name": "Glands01 ending control",
+      "at": "2026-10-29T11:42:46.354Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    }
+  ],
+  "requests": 120,
+  "mediaBytes": 11507104
+}

@@ -1,0 +1,533 @@
+{
+  "observedAt": "2026-10-29T10:42:24.642Z",
+  "readOnly": true,
+  "scope": 6,
+  "steps": [
+    {
+      "name": "authenticated course list",
+      "ok": true,
+      "at": "2026-10-29T10:42:26.911Z"
+    },
+    {
+      "name": "known-good control course71",
+      "ok": true,
+      "at": "2026-10-29T10:42:34.441Z"
+    },
+    {
+      "name": "known-good video token control",
+      "ok": true,
+      "at": "2026-10-29T10:42:36.410Z"
+    },
+    {
+      "name": "course listing 22",
+      "ok": true,
+      "at": "2026-10-29T10:42:47.719Z"
+    },
+    {
+      "name": "course listing 5",
+      "ok": true,
+      "at": "2026-10-29T10:42:55.569Z"
+    },
+    {
+      "name": "course listing 21",
+      "ok": true,
+      "at": "2026-10-29T10:43:02.414Z"
+    },
+    {
+      "name": "course listing 23",
+      "ok": true,
+      "at": "2026-10-29T10:43:09.221Z"
+    },
+    {
+      "name": "course listing 24",
+      "ok": true,
+      "at": "2026-10-29T10:43:15.963Z"
+    },
+    {
+      "name": "course listing 25",
+      "ok": true,
+      "at": "2026-10-29T10:43:22.926Z"
+    },
+    {
+      "name": "course listing 26",
+      "ok": true,
+      "at": "2026-10-29T10:43:30.636Z"
+    },
+    {
+      "name": "course listing 27",
+      "ok": true,
+      "at": "2026-10-29T10:43:37.995Z"
+    },
+    {
+      "name": "course listing 28",
+      "ok": true,
+      "at": "2026-10-29T10:43:44.853Z"
+    },
+    {
+      "name": "course listing 29",
+      "ok": true,
+      "at": "2026-10-29T10:43:52.546Z"
+    },
+    {
+      "name": "course listing 30",
+      "ok": true,
+      "at": "2026-10-29T10:43:56.785Z"
+    },
+    {
+      "name": "course listing 31",
+      "ok": true,
+      "at": "2026-10-29T10:44:01.215Z"
+    }
+  ],
+  "controls": [
+    {
+      "name": "Glands01",
+      "at": "2026-10-29T10:42:36.410Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    },
+    {
+      "name": "Glands01 ending control",
+      "at": "2026-10-29T10:44:21.375Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    }
+  ],
+  "candidates": [
+    {
+      "job": "6ace93c5c9735682f04eeb22",
+      "classId": "6ace93c58752d955968b1686",
+      "title": "PHYSICAL DIVISION OF INDIA (CLASS 01)",
+      "oldAssetKey": "vid:rgvikramjeet-data:413903-1702103930",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15417",
+      "occurrences": [
+        {
+          "course": "22",
+          "rowId": "15417",
+          "listingCaptured": true,
+          "found": true,
+          "title": "PHYSICAL DIVISION OF INDIA (CLASS 01) ",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:44:01.216Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 176,
+          "validMediaPlaylist": true,
+          "inventoryHash": "c3f326f73936e19c86354457f196a382e75f8e447723827578cac8f21f99d145"
+        },
+        {
+          "rung": "360p",
+          "http": 404,
+          "endList": false,
+          "segments": 0,
+          "validMediaPlaylist": false
+        }
+      ],
+      "source": {
+        "title": "PHYSICAL DIVISION OF INDIA (CLASS 01) ",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": false,
+      "listedSegmentReferences": null,
+      "outcome": "required rendition playlist unavailable or unsupported"
+    },
+    {
+      "job": "6ace9077c9735682f04edc5f",
+      "classId": "6ace90778752d955968aed9f",
+      "title": "race-class-01",
+      "oldAssetKey": "drm:016433f1-0b14-4f94-be58-ea55bbf08c5e",
+      "category": "source404",
+      "course": "5",
+      "rowId": "2313",
+      "occurrences": [
+        {
+          "course": "5",
+          "rowId": "2313",
+          "listingCaptured": true,
+          "found": true,
+          "title": "race-class-01",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:44:04.874Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 404,
+          "endList": false,
+          "segments": 0,
+          "validMediaPlaylist": false
+        }
+      ],
+      "source": {
+        "title": "race-class-01",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": false,
+      "listedSegmentReferences": null,
+      "outcome": "required rendition playlist unavailable or unsupported"
+    },
+    {
+      "job": "6ace93b8c9735682f04eeae1",
+      "classId": "6ace93b88752d955968b15a6",
+      "title": "Time & Work Class 01 · TIME & WORK (6)",
+      "oldAssetKey": "vid:rgvikramjeet-data:414982-1702122333",
+      "category": "source404",
+      "course": "22",
+      "rowId": "14550",
+      "occurrences": [
+        {
+          "course": "22",
+          "rowId": "14550",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Time & Work Class 01",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:44:08.611Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 239,
+          "validMediaPlaylist": true,
+          "inventoryHash": "a822ae0f77e262a09c0b48c11634b3568107698727e826fa9db8cb1e3c096f35"
+        },
+        {
+          "rung": "360p",
+          "http": 404,
+          "endList": false,
+          "segments": 0,
+          "validMediaPlaylist": false
+        }
+      ],
+      "source": {
+        "title": "Time & Work Class 01",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": false,
+      "listedSegmentReferences": null,
+      "outcome": "required rendition playlist unavailable or unsupported"
+    },
+    {
+      "job": "6ace9380c9735682f04ee953",
+      "classId": "6ace93808752d955968b1203",
+      "title": "विलोम शब्द 02 · विलोम शब्द",
+      "oldAssetKey": "vid:rgvikramjeet-data:414306-1702109677",
+      "category": "source404",
+      "course": "22",
+      "rowId": "16508",
+      "occurrences": [
+        {
+          "course": "22",
+          "rowId": "16508",
+          "listingCaptured": true,
+          "found": true,
+          "title": "विलोम शब्द 02",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:44:12.020Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 271,
+          "validMediaPlaylist": true,
+          "inventoryHash": "9a6e46b7e24047414fff65558f1031d2a1ed0ddad6c9b4cced1fb3d4457d9345"
+        },
+        {
+          "rung": "360p",
+          "http": 404,
+          "endList": false,
+          "segments": 0,
+          "validMediaPlaylist": false
+        }
+      ],
+      "source": {
+        "title": "विलोम शब्द 02",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": false,
+      "listedSegmentReferences": null,
+      "outcome": "required rendition playlist unavailable or unsupported"
+    },
+    {
+      "job": "6ace936fc9735682f04ee8dc",
+      "classId": "6ace936f8752d955968b10e4",
+      "title": "Circle 07 · GEOMETRY (ज्यामिति) (3)",
+      "oldAssetKey": "vid:rgvikramjeet-data:115587-1726928204",
+      "category": "noPlayableURL",
+      "course": "25",
+      "rowId": "19015",
+      "occurrences": [
+        {
+          "course": "21",
+          "rowId": "14227",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Circle 07",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "22",
+          "rowId": "14835",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Circle 07",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "23",
+          "rowId": "17326",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Circle 07",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "24",
+          "rowId": "18172",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Circle 07",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "25",
+          "rowId": "19015",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Circle 07",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "26",
+          "rowId": "19918",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Circle 07",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "27",
+          "rowId": "20783",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Circle 07",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "28",
+          "rowId": "21607",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Circle 07",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "29",
+          "rowId": "22528",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Circle 07",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:44:15.043Z",
+      "renditions": [],
+      "source": {
+        "title": "Circle 07",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace960dc9735682f04ef5d7",
+      "classId": "6ace960d8752d955968b3725",
+      "title": "Percentage 05 · PERCENTAGE (प्रतिशत ) (3)",
+      "oldAssetKey": "vid:rgvikramjeet-data:117681-1727113241",
+      "category": "noPlayableURL",
+      "course": "31",
+      "rowId": "23372",
+      "occurrences": [
+        {
+          "course": "30",
+          "rowId": "23011",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Percentage 05",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "31",
+          "rowId": "23372",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Percentage 05",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:44:17.188Z",
+      "renditions": [],
+      "source": {
+        "title": "Percentage 05",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    }
+  ],
+  "requests": 29,
+  "cmsRequests": 22,
+  "mediaRequests": 7,
+  "requestBudget": 120000,
+  "segmentBytes": 0,
+  "productionWrites": 0,
+  "policy": {
+    "mediaConcurrency": 4,
+    "mediaRequestsPerSecond": 8,
+    "cmsGapMs": 1100,
+    "range": "0-1023",
+    "stopAfterConfirmedGap": true
+  },
+  "courseList": {
+    "count": 148,
+    "total": 148
+  },
+  "completedAt": "2026-10-29T10:44:21.375Z",
+  "allScopeConsidered": true,
+  "all43Considered": false,
+  "checkpoint": true
+}

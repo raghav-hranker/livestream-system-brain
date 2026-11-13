@@ -1,0 +1,465 @@
+{
+  "observedAt": "2026-10-29T12:19:36.299Z",
+  "readOnly": true,
+  "scope": 3,
+  "steps": [],
+  "controls": [
+    {
+      "at": "2026-10-29T12:19:41.430Z",
+      "hasUsableUrl": true
+    }
+  ],
+  "candidates": [],
+  "requests": 10,
+  "cmsRequests": 7,
+  "mediaRequests": 3,
+  "requestBudget": 120000,
+  "segmentBytes": 0,
+  "productionWrites": 3,
+  "policy": {
+    "mediaConcurrency": 4,
+    "mediaRequestsPerSecond": 8,
+    "cmsGapMs": 1100,
+    "range": "0-1023",
+    "stopAfterConfirmedGap": true
+  },
+  "mode": "apply",
+  "plans": [
+    {
+      "job": "6ace996cc9735682f04f067c",
+      "classId": "6ace996c8752d955968b678e",
+      "title": "Time, Speed & Distance Class 03 · TIME , SPEED & DISTANCE (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:659808-1710929318",
+      "category": "source404",
+      "course": "45",
+      "rowId": "34046",
+      "occurrences": [
+        {
+          "course": "45",
+          "rowId": "34046",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Time, Speed & Distance Class 03",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:42:24.522Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 380,
+          "endList": true,
+          "playbackSamples": [
+            {
+              "index": 0,
+              "position": "beginning",
+              "http": 200,
+              "bytes": 3432692,
+              "streams": [
+                {
+                  "codec_name": "h264",
+                  "codec_type": "video",
+                  "width": 1600,
+                  "height": 900
+                },
+                {
+                  "codec_name": "aac",
+                  "codec_type": "audio"
+                }
+              ],
+              "decodedFrames": 3,
+              "decodeExitCode": 0,
+              "videoDecoded": true,
+              "hasAudio": true,
+              "decodeError": "Error"
+            },
+            {
+              "index": 190,
+              "position": "middle",
+              "http": 200,
+              "bytes": 1591420,
+              "streams": [
+                {
+                  "codec_name": "h264",
+                  "codec_type": "video",
+                  "width": 1600,
+                  "height": 900
+                },
+                {
+                  "codec_name": "aac",
+                  "codec_type": "audio"
+                }
+              ],
+              "decodedFrames": 3,
+              "decodeExitCode": 0,
+              "videoDecoded": true,
+              "hasAudio": true,
+              "decodeError": "Error"
+            },
+            {
+              "index": 379,
+              "position": "end",
+              "http": 200,
+              "bytes": 519632,
+              "streams": [
+                {
+                  "codec_name": "h264",
+                  "codec_type": "video",
+                  "width": 1600,
+                  "height": 900
+                },
+                {
+                  "codec_name": "aac",
+                  "codec_type": "audio"
+                }
+              ],
+              "decodedFrames": 3,
+              "decodeExitCode": 0,
+              "videoDecoded": true,
+              "hasAudio": true
+            }
+          ],
+          "outcome": "video decoded at beginning, middle and end"
+        }
+      ],
+      "source": {
+        "title": "Time, Speed & Distance Class 03",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "video decoded at beginning, middle and end",
+      "readableQuality": "1080p",
+      "sourceQualityLabel": "1080p",
+      "expectedHeight": 900,
+      "rung": "900p",
+      "inventoryHash": "27d0e04e5b9125f8b1aff77e734d12c2ff47aff91485263efd0d311db7f8accb",
+      "segments": 380,
+      "durationSec": 3795.366594000007,
+      "sourceEnabled": "0",
+      "classStatus": 0
+    },
+    {
+      "job": "6ace9955c9735682f04f0614",
+      "classId": "6ace99558752d955968b6629",
+      "title": "Train Class 01 · TRAIN (4)",
+      "oldAssetKey": "vid:rgvikramjeet-data:690932-1712122818",
+      "category": "source404",
+      "course": "45",
+      "rowId": "33822",
+      "occurrences": [
+        {
+          "course": "45",
+          "rowId": "33822",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Train Class 01",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:42:32.018Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 286,
+          "endList": true,
+          "playbackSamples": [
+            {
+              "index": 0,
+              "position": "beginning",
+              "http": 200,
+              "bytes": 1290056,
+              "streams": [
+                {
+                  "codec_name": "h264",
+                  "codec_type": "video",
+                  "width": 1600,
+                  "height": 900
+                },
+                {
+                  "codec_name": "aac",
+                  "codec_type": "audio"
+                }
+              ],
+              "decodedFrames": 3,
+              "decodeExitCode": 0,
+              "videoDecoded": true,
+              "hasAudio": true,
+              "decodeError": "Error"
+            },
+            {
+              "index": 143,
+              "position": "middle",
+              "http": 200,
+              "bytes": 1891092,
+              "streams": [
+                {
+                  "codec_name": "h264",
+                  "codec_type": "video",
+                  "width": 1600,
+                  "height": 900
+                },
+                {
+                  "codec_name": "aac",
+                  "codec_type": "audio"
+                }
+              ],
+              "decodedFrames": 3,
+              "decodeExitCode": 0,
+              "videoDecoded": true,
+              "hasAudio": true,
+              "decodeError": "Error"
+            },
+            {
+              "index": 285,
+              "position": "end",
+              "http": 200,
+              "bytes": 330692,
+              "streams": [
+                {
+                  "codec_name": "h264",
+                  "codec_type": "video",
+                  "width": 1600,
+                  "height": 900
+                },
+                {
+                  "codec_name": "aac",
+                  "codec_type": "audio"
+                }
+              ],
+              "decodedFrames": 3,
+              "decodeExitCode": 0,
+              "videoDecoded": true,
+              "hasAudio": true
+            }
+          ],
+          "outcome": "video decoded at beginning, middle and end"
+        }
+      ],
+      "source": {
+        "title": "Train Class 01",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "video decoded at beginning, middle and end",
+      "readableQuality": "1080p",
+      "sourceQualityLabel": "1080p",
+      "expectedHeight": 900,
+      "rung": "900p",
+      "inventoryHash": "c2986c75b485b61002110fef8465b9bf715dbfcb80ae3427c3b01072d5a63104",
+      "segments": 286,
+      "durationSec": 3374.85,
+      "sourceEnabled": "0",
+      "classStatus": 0
+    },
+    {
+      "job": "6ace99fec9735682f04f0950",
+      "classId": "6ace99fd8752d955968b70be",
+      "title": "Percentage Class 14 (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:702536-1712398752",
+      "category": "source404",
+      "course": "47",
+      "rowId": "35200",
+      "occurrences": [
+        {
+          "course": "47",
+          "rowId": "35200",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Percentage Class 14",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:41:22.540Z",
+      "qualityChecks": [
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 1256,
+          "endList": true,
+          "playbackSamples": [
+            {
+              "index": 0,
+              "position": "beginning",
+              "http": 200,
+              "bytes": 944888,
+              "streams": [
+                {
+                  "codec_name": "h264",
+                  "codec_type": "video",
+                  "width": 854,
+                  "height": 480
+                },
+                {
+                  "codec_name": "aac",
+                  "codec_type": "audio"
+                }
+              ],
+              "decodedFrames": 3,
+              "decodeExitCode": 0,
+              "videoDecoded": true,
+              "hasAudio": true,
+              "decodeError": "Error"
+            },
+            {
+              "index": 628,
+              "position": "middle",
+              "http": 200,
+              "bytes": 900896,
+              "streams": [
+                {
+                  "codec_name": "h264",
+                  "codec_type": "video",
+                  "width": 854,
+                  "height": 480
+                },
+                {
+                  "codec_name": "aac",
+                  "codec_type": "audio"
+                }
+              ],
+              "decodedFrames": 3,
+              "decodeExitCode": 0,
+              "videoDecoded": true,
+              "hasAudio": true,
+              "decodeError": "Error"
+            },
+            {
+              "index": 1255,
+              "position": "end",
+              "http": 200,
+              "bytes": 605736,
+              "streams": [
+                {
+                  "codec_name": "h264",
+                  "codec_type": "video",
+                  "width": 854,
+                  "height": 480
+                },
+                {
+                  "codec_name": "aac",
+                  "codec_type": "audio"
+                }
+              ],
+              "decodedFrames": 3,
+              "decodeExitCode": 0,
+              "videoDecoded": true,
+              "hasAudio": true,
+              "decodeError": "Error"
+            }
+          ],
+          "outcome": "video decoded at beginning, middle and end"
+        }
+      ],
+      "source": {
+        "title": "Percentage Class 14",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "video decoded at beginning, middle and end",
+      "readableQuality": "720p",
+      "sourceQualityLabel": "720p",
+      "expectedHeight": 480,
+      "rung": "480p",
+      "inventoryHash": "7573ab8d497ae2ac249d941c4664817db38afdd75af4776783c77ab6afb774b3",
+      "segments": 1256,
+      "durationSec": 15557.650000000003,
+      "sourceEnabled": "0",
+      "classStatus": 0
+    }
+  ],
+  "recoveries": [
+    {
+      "job": "6ace996cc9735682f04f067c",
+      "classId": "6ace996c8752d955968b678e",
+      "ok": true,
+      "allSegmentBodiesValidated": true,
+      "renditions": [
+        {
+          "rung": "900p",
+          "segmentCount": 380,
+          "peakBandwidth": 2333123,
+          "width": 1600,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "job": "6ace9955c9735682f04f0614",
+      "classId": "6ace99558752d955968b6629",
+      "ok": true,
+      "allSegmentBodiesValidated": true,
+      "renditions": [
+        {
+          "rung": "900p",
+          "segmentCount": 286,
+          "peakBandwidth": 2283879,
+          "width": 1600,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "job": "6ace99fec9735682f04f0950",
+      "classId": "6ace99fd8752d955968b70be",
+      "ok": true,
+      "allSegmentBodiesValidated": true,
+      "renditions": [
+        {
+          "rung": "480p",
+          "segmentCount": 1256,
+          "peakBandwidth": 1015020,
+          "width": 854,
+          "height": 480
+        }
+      ]
+    }
+  ],
+  "copyPolicy": "Validate each full segment while copying; publish master only after all segments and uploads succeed",
+  "completedAt": "2026-10-29T12:34:14.721Z",
+  "allScopeConsidered": true,
+  "checkpoint": true
+}

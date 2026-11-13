@@ -1,0 +1,23 @@
+// Close only the authorised 85-learner saved-token recovery; never reopens acquisition.
+'use strict';
+const fs=require('fs'),path=require('path');const root=process.env.VG_APP_ROOT,req=n=>require(require.resolve(n,{paths:[root]}));
+const env=req('dotenv').parse(fs.readFileSync(process.env.VG_ENV_PATH||path.join(root,'.env.development')));
+if(!/^mongodb(?:\+srv)?:\/\/[^/]+\/vidyagramdb(?:\?|$)/.test(env.MONGO_URI||''))throw Error('wrong_tenant_database');
+const {MongoClient}=req('mongodb'),runId='vg-completion-20261104-overnight6000',id=runId+':saved-token-recovery-session-stop-1';
+if(process.env.VG_COMPLETION_RUN!==runId)throw Error('wrong_run');
+(async()=>{const client=new MongoClient(env.MONGO_URI,{minPoolSize:0,maxPoolSize:3,readPreference:'primary'});try{await client.connect();const db=client.db('vidyagramdb'),session=client.startSession();let result;
+try{await session.withTransaction(async()=>{const runs=db.collection('apx_vg_completion_pilots'),recoveries=db.collection('apx_vg_completion_recoveries'),jobs=db.collection('apx_vg_completion_jobs'),recovery=await recoveries.findOne({_id:id},{session}),run=await runs.findOne({_id:runId},{session});
+if(!recovery||recovery.completedAt||recovery.beforeJobs?.length!==85)throw Error('recovery_guard');
+if(run?.status!=='read_recovery_complete'||!run.finishedAt||!run.readOnlyRecovery||run.stopped)throw Error('recovery_not_complete');
+const outcomes=await jobs.aggregate([{$match:{runId,recoveryId:id}},{$group:{_id:'$state',n:{$sum:1}}}],{session}).toArray();
+if(outcomes.reduce((n,x)=>n+x.n,0)!==85||outcomes.some(x=>!['captured','mapping_exception'].includes(x._id)))throw Error('incomplete_learner_reads');
+if(run.otpReservations!==recovery.beforeRun.otpReservations||run.otpSent!==recovery.beforeRun.otpSent)throw Error('otp_counters_changed');
+if(await jobs.countDocuments({runId,state:'queued'},{session})!==4685)throw Error('queue_changed');
+if(await db.collection('apx_vg_completion_workers').countDocuments({runId,state:'running',heartbeatAt:{$gte:new Date(Date.now()-90000)}},{session}))throw Error('worker_still_active');
+if(await db.collection('apx_vg_request_metrics').countDocuments({runId,at:{$gte:recovery.at},endpoint:{$in:['otp_send','otp_verify']}},{session}))throw Error('unexpected_otp_traffic');
+const expiresAt=recovery.beforeRun.expiresAt;if(+expiresAt!==+new Date('2026-11-04T18:29:59Z'))throw Error('expiry_guard');
+result={event:'read-recovery-closed',learners:85,outcomes,fullyReadTotal:await jobs.countDocuments({runId,state:{$in:['captured','mapping_exception']}},{session}),otpSends:0,acquisitionPaused:true,expiryRestored:expiresAt,commit:process.argv.includes('--commit')};
+if(!process.argv.includes('--commit'))return;
+const saved=await recoveries.updateOne({_id:id,completedAt:{$exists:false}},{$set:{completedAt:new Date(),finalizationBeforeRun:run,outcomeCounts:outcomes}},{session});if(saved.modifiedCount!==1)throw Error('recovery_changed');
+const changed=await runs.updateOne({_id:runId,status:'read_recovery_complete',finishedAt:run.finishedAt,readOnlyRecovery:true,stopped:{$ne:true}},{$set:{stopped:true,status:'reads_recovered_acquisition_paused',readOnlyRecovery:true,readRecoveryFinishedAt:run.finishedAt,acquisitionPausedAt:new Date(),expiresAt,updatedAt:new Date()}},{session});if(changed.modifiedCount!==1)throw Error('run_changed');
+},{readConcern:{level:'snapshot'},writeConcern:{w:'majority'}});}finally{await session.endSession()}console.log(JSON.stringify(result));}finally{await client.close()}})().catch(e=>{console.error(JSON.stringify({event:'read-recovery-close-failed',error:e.name,code:/^[a-z_]+$/.test(e.message||'')?e.message:undefined}));process.exitCode=1});

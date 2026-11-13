@@ -1,0 +1,254 @@
+{
+  "observedAt": "2026-10-27T12:24:24.067Z",
+  "readOnly": true,
+  "scope": 4,
+  "steps": [
+    {
+      "name": "authenticated course list",
+      "ok": true,
+      "at": "2026-10-27T12:24:24.537Z"
+    },
+    {
+      "name": "known-good control course71",
+      "ok": true,
+      "at": "2026-10-27T12:24:30.463Z"
+    },
+    {
+      "name": "known-good video token control",
+      "ok": true,
+      "at": "2026-10-27T12:24:31.164Z"
+    },
+    {
+      "name": "course listing 22",
+      "ok": true,
+      "at": "2026-10-27T12:24:40.076Z"
+    },
+    {
+      "name": "course listing 24",
+      "ok": true,
+      "at": "2026-10-27T12:24:44.937Z"
+    }
+  ],
+  "controls": [
+    {
+      "name": "Glands01",
+      "at": "2026-10-27T12:24:31.164Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    }
+  ],
+  "candidates": [
+    {
+      "job": "6ace9397c9735682f04ee9c4",
+      "classId": "6ace93978752d955968b1376",
+      "oldAssetKey": "vid:rgvikramjeet-data:412887-1702040847",
+      "category": "source404",
+      "course": "22",
+      "rowId": "16294",
+      "originalFailure": null,
+      "checkedAt": "2026-10-27T12:24:44.937Z",
+      "source": {
+        "title": "काल ",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": null,
+      "outcome": "all required segment references readable",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 398,
+          "validMediaPlaylist": true,
+          "inventoryHash": "156ccf28a8f6514830d489ce13dc4e0b0b8662b1fc27f6abf71d5450cd5c0924"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 398,
+          "validMediaPlaylist": true,
+          "inventoryHash": "0beeb419a6269a904731de9ee99654ba9be906e55aa7f46060ebaf5549768779"
+        }
+      ],
+      "qualityChecks": [
+        {
+          "rung": "240p",
+          "segments": 398,
+          "ok": true,
+          "checked": 398,
+          "evidence": "completed prefix of previous bounded scan; unchanged inventory"
+        },
+        {
+          "rung": "360p",
+          "segments": 398,
+          "ok": false,
+          "reason": "confirmed missing segment in unchanged inventory"
+        },
+        {
+          "rung": "480p",
+          "segments": 398,
+          "segmentChecks": {
+            "uniqueSegments": 398,
+            "checked": 398,
+            "passed": 398,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          },
+          "outcome": "all required segment references readable",
+          "ok": true
+        }
+      ],
+      "excludedRenditions": [
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 398,
+          "validMediaPlaylist": true,
+          "inventoryHash": "42482453f835f088951a1b3d4ebd5a798ce05fde3f1f92d9ad02325475e4c9ba"
+        }
+      ],
+      "segmentChecks": {
+        "complete": true,
+        "uniqueSegments": 796,
+        "checked": 796,
+        "passed": 796
+      }
+    },
+    {
+      "job": "6ace93c4c9735682f04eeb1c",
+      "classId": "6ace93c48752d955968b1671",
+      "oldAssetKey": "vid:rgvikramjeet-data:410747-1701962427",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15410",
+      "originalFailure": null,
+      "checkedAt": "2026-10-27T12:27:01.312Z",
+      "source": {
+        "title": "CLASS 01",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": false,
+      "listedSegmentReferences": null,
+      "outcome": "token endpoint supplied no usable URL; completeness unverified",
+      "renditions": []
+    },
+    {
+      "job": "6ace93c5c9735682f04eeb20",
+      "classId": "6ace93c58752d955968b167f",
+      "oldAssetKey": "vid:rgvikramjeet-data:410875-1701975160",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15409",
+      "originalFailure": null,
+      "checkedAt": "2026-10-27T12:27:02.010Z",
+      "source": {
+        "title": "Size And Location (Practice Class)",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": false,
+      "listedSegmentReferences": null,
+      "outcome": "token endpoint supplied no usable URL; completeness unverified",
+      "renditions": []
+    },
+    {
+      "job": "6ace9550c9735682f04ef228",
+      "classId": "6ace95508752d955968b2b78",
+      "oldAssetKey": "vid:rgvikramjeet-data:413406-1702104829",
+      "category": "source404",
+      "course": "24",
+      "rowId": "17883",
+      "originalFailure": null,
+      "checkedAt": "2026-10-27T12:27:02.990Z",
+      "source": {
+        "title": "Demo 01 (Percentage) ",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": false,
+      "listedSegmentReferences": null,
+      "outcome": "token endpoint supplied no usable URL; completeness unverified",
+      "renditions": []
+    }
+  ],
+  "requests": 410,
+  "cmsRequests": 9,
+  "mediaRequests": 401,
+  "requestBudget": 120000,
+  "segmentBytes": 407552,
+  "productionWrites": 0,
+  "policy": {
+    "mediaConcurrency": 4,
+    "mediaRequestsPerSecond": 8,
+    "cmsGapMs": 1100,
+    "range": "0-1023",
+    "stopAfterConfirmedGap": true
+  },
+  "courseList": {
+    "count": 147,
+    "total": 147
+  },
+  "completedAt": "2026-10-27T12:27:03.748Z",
+  "allScopeConsidered": true,
+  "all43Considered": false,
+  "checkpoint": true,
+  "transport": "direct local HTTPS; session cookie only to cms.appx.co.in"
+}

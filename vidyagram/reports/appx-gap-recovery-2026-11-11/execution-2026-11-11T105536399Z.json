@@ -1,0 +1,110 @@
+{
+  "observedAt": "2026-11-11T10:55:37.821Z",
+  "readOnly": true,
+  "scope": 33,
+  "steps": [],
+  "controls": [
+    {
+      "at": "2026-11-11T10:55:39.992Z",
+      "hasUsableUrl": true
+    }
+  ],
+  "candidates": [],
+  "requests": 7,
+  "cmsRequests": 4,
+  "mediaRequests": 3,
+  "requestBudget": 20000,
+  "segmentBytes": 0,
+  "productionWrites": 2,
+  "policy": {
+    "mediaConcurrency": 4,
+    "mediaRequestsPerSecond": 8,
+    "cmsGapMs": 1100,
+    "range": "0-1023",
+    "stopAfterConfirmedGap": true
+  },
+  "mode": "apply",
+  "recoveries": [
+    {
+      "job": "6ace9582c9735682f04ef311",
+      "classId": "6ace95828752d955968b2e73",
+      "title": "Trigonometry Class 02 · TRIGONOMETRY (6)",
+      "startedAt": "2026-11-11T10:55:41.270Z",
+      "stateBefore": {
+        "job": "6ace9582c9735682f04ef311",
+        "classId": "6ace95828752d955968b2e73",
+        "jobStatus": "dead",
+        "jobClassId": "6ace95828752d955968b2e73",
+        "attempts": 6,
+        "jobUpdatedAt": "2026-11-11T10:54:47.190Z",
+        "jobError": "Gap recovery (complete AppX qualities) failed; held for review",
+        "classStatus": 1,
+        "hasHlsAsset": false,
+        "hlsAssetKind": null,
+        "hlsAssetKey": null,
+        "streamStatus": null,
+        "apxAssetKey": "vid:rgvikramjeet-data:584252-1708404954",
+        "placements": 2,
+        "placementsActive": 2,
+        "placementsHash": "a092f0f72e01ce7346b6adad6fd523fba30b192ac926a64a42ecd6eb50ea3fdd"
+      },
+      "releasedByUsBefore": true,
+      "claimedAt": "2026-11-11T10:55:44.112Z",
+      "worker": {
+        "job": "6ace9582c9735682f04ef311",
+        "classId": "6ace95828752d955968b2e73",
+        "ok": true,
+        "allSegmentBodiesValidated": true,
+        "menu": [
+          "240p",
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "renditions": [
+          {
+            "rung": "1080p",
+            "segmentCount": 314,
+            "peakBandwidth": 1712876,
+            "bytes": 560316704
+          },
+          {
+            "rung": "480p",
+            "segmentCount": 314,
+            "peakBandwidth": 691840,
+            "bytes": 235789224
+          },
+          {
+            "rung": "240p",
+            "segmentCount": 320,
+            "peakBandwidth": 266618,
+            "bytes": 102251132
+          }
+        ]
+      },
+      "stateAfter": {
+        "job": "6ace9582c9735682f04ef311",
+        "classId": "6ace95828752d955968b2e73",
+        "jobStatus": "done",
+        "jobClassId": "6ace95828752d955968b2e73",
+        "attempts": 7,
+        "jobUpdatedAt": "2026-11-11T10:58:38.229Z",
+        "jobError": null,
+        "classStatus": 1,
+        "hasHlsAsset": true,
+        "hlsAssetKind": null,
+        "hlsAssetKey": "781/6ace95828752d955968b2e73/hls/master.m3u8",
+        "streamStatus": "ended",
+        "apxAssetKey": "vid:rgvikramjeet-data:584252-1708404954",
+        "placements": 2,
+        "placementsActive": 2,
+        "placementsHash": "a092f0f72e01ce7346b6adad6fd523fba30b192ac926a64a42ecd6eb50ea3fdd"
+      },
+      "playbackOk": true,
+      "ok": true,
+      "finishedAt": "2026-11-11T10:58:46.593Z"
+    }
+  ],
+  "completedAt": "2026-11-11T10:58:46.593Z",
+  "checkpoint": true
+}

@@ -1,0 +1,127 @@
+{
+  "at": "2026-10-26T12:31:18.564Z",
+  "bucket": "hranker-private-assets",
+  "sampling": "3oldest+6newest+quartiles PDFs;HEAD size and GET first16bytes",
+  "pdfs": [
+    {
+      "id": "6acf907b82150aeae63387d6",
+      "key": "781/pdfs/c77ad9fe0c1d24a98bdd24c4c555fa2674e765e64c7e6db34e0af72e5111fa8b.pdf",
+      "sizeBytes": 8011133,
+      "createdAt": "2026-10-14T14:23:55.630Z",
+      "bytes": 8011133,
+      "sizeMatches": true,
+      "pdfHeader": true,
+      "ok": true
+    },
+    {
+      "id": "6acf907d82150aeae63387d9",
+      "key": "781/pdfs/72b8028860cd8ff35bb1e29d3c090fc2bebf7f61e018fac1098498a3993994c5.pdf",
+      "sizeBytes": 6042463,
+      "createdAt": "2026-10-14T14:23:57.370Z",
+      "bytes": 6042463,
+      "sizeMatches": true,
+      "pdfHeader": true,
+      "ok": true
+    },
+    {
+      "id": "6acf907d82150aeae63387dc",
+      "key": "781/pdfs/5a595ab97c696b644cf45304a4eb777d43a82f67829dd25b845f15d3fbbfeb0a.pdf",
+      "sizeBytes": 3649885,
+      "createdAt": "2026-10-14T14:23:57.833Z",
+      "bytes": 3649885,
+      "sizeMatches": true,
+      "pdfHeader": true,
+      "ok": true
+    },
+    {
+      "id": "6add5437040ae6b9262d6a06",
+      "key": "781/pdfs/0a42880f7e3418e425378c8f90c5d8b46d6e9de61c67f8228dae16fc5c28ab0e.pdf",
+      "sizeBytes": 1563715,
+      "createdAt": "2026-10-25T00:58:31.540Z",
+      "bytes": 1563715,
+      "sizeMatches": true,
+      "pdfHeader": true,
+      "ok": true
+    },
+    {
+      "id": "6add5438040ae6b9262d6a09",
+      "key": "781/pdfs/252da3ae875a131f748b7daf6038a926fbdf1521a188c7ea62c42370a55af327.pdf",
+      "sizeBytes": 1489065,
+      "createdAt": "2026-10-25T00:58:32.746Z",
+      "bytes": 1489065,
+      "sizeMatches": true,
+      "pdfHeader": true,
+      "ok": true
+    },
+    {
+      "id": "6add543a040ae6b9262d6a0c",
+      "key": "781/pdfs/a3ee8de217e5dd55142e5dc5535d99f959f140ff4fa04eed440e84ff52ef3a7a.pdf",
+      "sizeBytes": 1362950,
+      "createdAt": "2026-10-25T00:58:34.640Z",
+      "bytes": 1362950,
+      "sizeMatches": true,
+      "pdfHeader": true,
+      "ok": true
+    },
+    {
+      "id": "6add543c040ae6b9262d6a0f",
+      "key": "781/pdfs/690bbab3210ab02c8e9bf65a027d1c38c29f8aba676e0851697ba8182782adcc.pdf",
+      "sizeBytes": 1275142,
+      "createdAt": "2026-10-25T00:58:36.985Z",
+      "bytes": 1275142,
+      "sizeMatches": true,
+      "pdfHeader": true,
+      "ok": true
+    },
+    {
+      "id": "6add543e040ae6b9262d6a12",
+      "key": "781/pdfs/0e84de7854a0fd966e05e720e6202bc5d98ef60eb4681fe1b31838e3a4dd7871.pdf",
+      "sizeBytes": 1583523,
+      "createdAt": "2026-10-25T00:58:38.423Z",
+      "bytes": 1583523,
+      "sizeMatches": true,
+      "pdfHeader": true,
+      "ok": true
+    },
+    {
+      "id": "6add5451040ae6b9262d6a15",
+      "key": "781/pdfs/77a2711ecf05100880be4910f3fa114256dd96efb239d0cb249f62db8235f873.pdf",
+      "sizeBytes": 13143059,
+      "createdAt": "2026-10-25T00:58:57.108Z",
+      "bytes": 13143059,
+      "sizeMatches": true,
+      "pdfHeader": true,
+      "ok": true
+    },
+    {
+      "id": "6ad1dcf3a3d5e866aea7b392",
+      "key": "781/pdfs/dab8650ec0d0988983863fd2c560bcbae0a7119f5d7f7af0502fa06e1aaee2b6.pdf",
+      "sizeBytes": 7078033,
+      "createdAt": "2026-10-16T08:14:43.411Z",
+      "bytes": 7078033,
+      "sizeMatches": true,
+      "pdfHeader": true,
+      "ok": true
+    },
+    {
+      "id": "6ad1f5a9a3d5e866aea7ce54",
+      "key": "781/pdfs/fb6bc337d8c60f83f79cad90dfb5fd590d19f3f53af972cc3e8081a3b1c51b32.pdf",
+      "sizeBytes": 1150649,
+      "createdAt": "2026-10-16T10:00:09.711Z",
+      "bytes": 1150649,
+      "sizeMatches": true,
+      "pdfHeader": true,
+      "ok": true
+    },
+    {
+      "id": "6ad21031d1c32fa769eedc5b",
+      "key": "781/pdfs/e86ac9a04061770cae593ba1366229d621ffee4d1bdb6ef90b4584f5e8a8e696.pdf",
+      "sizeBytes": 4691797,
+      "createdAt": "2026-10-16T11:53:21.517Z",
+      "bytes": 4691797,
+      "sizeMatches": true,
+      "pdfHeader": true,
+      "ok": true
+    }
+  ]
+}

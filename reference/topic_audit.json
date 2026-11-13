@@ -1,0 +1,3857 @@
+{
+ "summary": {
+  "topics": 4205,
+  "activeTopics": 4197,
+  "emptyActiveTopics": 1818,
+  "topicsUnderInactiveSections": 13,
+  "sameNameSameSectionGroups": 34,
+  "sameNameAnySectionNames": 712,
+  "mergeGroups": 25,
+  "postMergeCollidingNames": 74,
+  "postMergeCollidingTopics": 156,
+  "postMergeExactCaseClashes": 71
+ },
+ "sameSection": [
+  {
+   "key": "6a3d2ac13aed5ba9f3fe6c0e|number system",
+   "topics": [
+    {
+     "id": "6a4558bdebb42f585d9a8014",
+     "name": "Number System",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 41,
+     "created": "2026-07-01",
+     "sectionId": "6a3d2ac13aed5ba9f3fe6c0e",
+     "sectionName": "Maths",
+     "sectionStatus": 1,
+     "content": 330,
+     "studentLogs": 0,
+     "subtopics": 10,
+     "use": {
+      "class": 104,
+      "placement": 202,
+      "pdf": 24
+     }
+    },
+    {
+     "id": "6a916992ca715c6d878424a8",
+     "name": "NUMBER SYSTEM",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 12329,
+     "created": "2026-08-28",
+     "sectionId": "6a3d2ac13aed5ba9f3fe6c0e",
+     "sectionName": "Maths",
+     "sectionStatus": 1,
+     "content": 7,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "placement": 7
+     }
+    }
+   ]
+  },
+  {
+   "key": "6a3d2ac13aed5ba9f3fe6c0e|lcm & hcf",
+   "topics": [
+    {
+     "id": "6a4558bdebb42f585d9a8056",
+     "name": "LCM & HCF",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 43,
+     "created": "2026-07-01",
+     "sectionId": "6a3d2ac13aed5ba9f3fe6c0e",
+     "sectionName": "Maths",
+     "sectionStatus": 1,
+     "content": 37,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "class": 3,
+      "placement": 20,
+      "pdf": 14
+     }
+    },
+    {
+     "id": "6a90490af00461ed3602fd97",
+     "name": "Lcm & Hcf",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 12247,
+     "created": "2026-08-27",
+     "sectionId": "6a3d2ac13aed5ba9f3fe6c0e",
+     "sectionName": "Maths",
+     "sectionStatus": 1,
+     "content": 13,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "placement": 13
+     }
+    }
+   ]
+  },
+  {
+   "key": "6a3d2ac13aed5ba9f3fe6c0e|partnership",
+   "topics": [
+    {
+     "id": "6a4558bfebb42f585d9a8140",
+     "name": "Partnership",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 51,
+     "created": "2026-07-01",
+     "sectionId": "6a3d2ac13aed5ba9f3fe6c0e",
+     "sectionName": "Maths",
+     "sectionStatus": 1,
+     "content": 8,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "class": 3,
+      "placement": 3,
+      "pdf": 2
+     }
+    },
+    {
+     "id": "6a9010d1f5a88ea47d613484",
+     "name": "PARTNERSHIP",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 12075,
+     "created": "2026-08-27",
+     "sectionId": "6a3d2ac13aed5ba9f3fe6c0e",
+     "sectionName": "Maths",
+     "sectionStatus": 1,
+     "content": 4,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "placement": 4
+     }
+    }
+   ]
+  },
+  {
+   "key": "6a4558d6ebb42f585d9a91ab|polity",
+   "topics": [
+    {
+     "id": "6a4558d6ebb42f585d9a91af",
+     "name": "POLITY",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 80,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 68,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "pdf": 68
+     }
+    },
+    {
+     "id": "6a455900ebb42f585d9aafb6",
+     "name": "Polity",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 104,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 26,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "pdf": 26
+     }
+    }
+   ]
+  },
+  {
+   "key": "6a4558d6ebb42f585d9a91ab|computer",
+   "topics": [
+    {
+     "id": "6a4558daebb42f585d9a948c",
+     "name": "COMPUTER",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 81,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 40,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "pdf": 40
+     }
+    },
+    {
+     "id": "6a455a1bebb42f585d9b5f8d",
+     "name": "Computer",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 353,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 0,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {}
+    }
+   ]
+  },
+  {
+   "key": "6a4558d6ebb42f585d9a91ab|static gk",
+   "topics": [
+    {
+     "id": "6a45590bebb42f585d9ab7fd",
+     "name": "Static GK",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 110,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 264,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "class": 104,
+      "placement": 1,
+      "apxPlacement": 1,
+      "pdf": 158
+     }
+    },
+    {
+     "id": "6a4558dcebb42f585d9a963d",
+     "name": "Static Gk",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 82,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 28,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "pdf": 28
+     }
+    }
+   ]
+  },
+  {
+   "key": "6a4558d6ebb42f585d9a91ab|biology",
+   "topics": [
+    {
+     "id": "6a4558dfebb42f585d9a9847",
+     "name": "BIOLOGY",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 84,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 68,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "pdf": 68
+     }
+    },
+    {
+     "id": "6a455911ebb42f585d9abc62",
+     "name": "Biology",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 113,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 63,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "class": 31,
+      "pdf": 32
+     }
+    }
+   ]
+  },
+  {
+   "key": "6a4558d6ebb42f585d9a91ab|number system",
+   "topics": [
+    {
+     "id": "6a455ca2ebb42f585d9c94a6",
+     "name": "NUMBER SYSTEM",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 870,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 14,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "class": 7,
+      "pdf": 7
+     }
+    },
+    {
+     "id": "6a4558e6ebb42f585d9a9d63",
+     "name": "Number System",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 94,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 8,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "class": 4,
+      "pdf": 4
+     }
+    }
+   ]
+  },
+  {
+   "key": "6a4558d6ebb42f585d9a91ab|lcm & hcf",
+   "topics": [
+    {
+     "id": "6a4558e7ebb42f585d9a9e07",
+     "name": "LCM & HCF",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 95,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 4,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "class": 2,
+      "pdf": 2
+     }
+    },
+    {
+     "id": "6a455a2eebb42f585d9b69a3",
+     "name": "Lcm & Hcf",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 369,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 0,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {}
+    }
+   ]
+  },
+  {
+   "key": "6a4558d6ebb42f585d9a91ab|latest questions 2026",
+   "topics": [
+    {
+     "id": "6a455936ebb42f585d9ad55e",
+     "name": "Latest Questions 2026",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 159,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 0,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {}
+    },
+    {
+     "id": "6a45593debb42f585d9ad9f0",
+     "name": "Latest questions 2026",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 166,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 0,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {}
+    }
+   ]
+  },
+  {
+   "key": "6a4558d6ebb42f585d9a91ab|venn diagram",
+   "topics": [
+    {
+     "id": "6a455a00ebb42f585d9b5020",
+     "name": "Venn diagram",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 316,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 5,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "class": 2,
+      "pdf": 3
+     }
+    },
+    {
+     "id": "6a455d2eebb42f585d9cd01a",
+     "name": "VENN DIAGRAM",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 1007,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 0,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {}
+    },
+    {
+     "id": "6a455d80ebb42f585d9cf198",
+     "name": "Venn Diagram",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 1046,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 0,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {}
+    }
+   ]
+  },
+  {
+   "key": "6a4558d6ebb42f585d9a91ab|16. mix topics",
+   "topics": [
+    {
+     "id": "6a455a16ebb42f585d9b5cfa",
+     "name": "16. Mix Topics",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 343,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 12,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "class": 6,
+      "pdf": 6
+     }
+    },
+    {
+     "id": "6a455ac5ebb42f585d9bba5b",
+     "name": "16. MIX Topics",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 463,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 0,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {}
+    }
+   ]
+  },
+  {
+   "key": "6a4558d6ebb42f585d9a91ab|partnership",
+   "topics": [
+    {
+     "id": "6a455a37ebb42f585d9b6e40",
+     "name": "Partnership",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 373,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 13,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "class": 6,
+      "pdf": 7
+     }
+    },
+    {
+     "id": "6a455d14ebb42f585d9cc268",
+     "name": "PARTNERSHIP",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 993,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 4,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "class": 2,
+      "pdf": 2
+     }
+    }
+   ]
+  },
+  {
+   "key": "6a4558d6ebb42f585d9a91ab|data sufficiency",
+   "topics": [
+    {
+     "id": "6a455d29ebb42f585d9cce08",
+     "name": "DATA SUFFICIENCY",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 997,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 0,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {}
+    },
+    {
+     "id": "6a455d86ebb42f585d9cf44c",
+     "name": "Data Sufficiency",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 1059,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 0,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {}
+    }
+   ]
+  },
+  {
+   "key": "6a4558d6ebb42f585d9a91ab|order and ranking",
+   "topics": [
+    {
+     "id": "6a455d2eebb42f585d9ccfce",
+     "name": "Order and Ranking",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 1005,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 0,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {}
+    },
+    {
+     "id": "6a455d7eebb42f585d9cf0e0",
+     "name": "Order And Ranking",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 1043,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 0,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {}
+    },
+    {
+     "id": "6a455eacebb42f585d9d670e",
+     "name": "ORDER AND RANKING",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 1329,
+     "created": "2026-07-01",
+     "sectionId": "6a4558d6ebb42f585d9a91ab",
+     "sectionName": "Classes",
+     "sectionStatus": 1,
+     "content": 0,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {}
+    }
+   ]
+  },
+  {
+   "key": "6a4558c2ebb42f585d9a8354|geography",
+   "topics": [
+    {
+     "id": "6a455e76ebb42f585d9d5325",
+     "name": "GEOGRAPHY",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 1272,
+     "created": "2026-07-01",
+     "sectionId": "6a4558c2ebb42f585d9a8354",
+     "sectionName": "GK",
+     "sectionStatus": 1,
+     "content": 71,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "class": 14,
+      "placement": 42,
+      "pdf": 15
+     }
+    },
+    {
+     "id": "6a8d68ddad4789cb1b01fa1f",
+     "name": "Geography",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 12035,
+     "created": "2026-08-25",
+     "sectionId": "6a4558c2ebb42f585d9a8354",
+     "sectionName": "GK",
+     "sectionStatus": 1,
+     "content": 16,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "class": 16
+     }
+    }
+   ]
+  },
+  {
+   "key": "6a4558c2ebb42f585d9a8354|polity",
+   "topics": [
+    {
+     "id": "6a455e78ebb42f585d9d53b4",
+     "name": "POLITY",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 1273,
+     "created": "2026-07-01",
+     "sectionId": "6a4558c2ebb42f585d9a8354",
+     "sectionName": "GK",
+     "sectionStatus": 1,
+     "content": 70,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "class": 15,
+      "placement": 45,
+      "pdf": 10
+     }
+    },
+    {
+     "id": "6a8d68ddad4789cb1b01fa1e",
+     "name": "Polity",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 12034,
+     "created": "2026-08-25",
+     "sectionId": "6a4558c2ebb42f585d9a8354",
+     "sectionName": "GK",
+     "sectionStatus": 1,
+     "content": 29,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "class": 29
+     }
+    }
+   ]
+  },
+  {
+   "key": "6a455ea3ebb42f585d9d6383|order and ranking",
+   "topics": [
+    {
+     "id": "6a455ee4ebb42f585d9d7cd4",
+     "name": "Order And Ranking",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 1427,
+     "created": "2026-07-01",
+     "sectionId": "6a455ea3ebb42f585d9d6383",
+     "sectionName": "Reasoning Classes",
+     "sectionStatus": 1,
+     "content": 24,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "placement": 24
+     }
+    },
+    {
+     "id": "6a455ea7ebb42f585d9d6530",
+     "name": "ORDER AND RANKING",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 1323,
+     "created": "2026-07-01",
+     "sectionId": "6a455ea3ebb42f585d9d6383",
+     "sectionName": "Reasoning Classes",
+     "sectionStatus": 1,
+     "content": 3,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "placement": 3
+     }
+    }
+   ]
+  },
+  {
+   "key": "6a455ea3ebb42f585d9d6383|missing alphabet series",
+   "topics": [
+    {
+     "id": "6a455eebebb42f585d9d7f4a",
+     "name": "Missing Alphabet Series",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 1440,
+     "created": "2026-07-01",
+     "sectionId": "6a455ea3ebb42f585d9d6383",
+     "sectionName": "Reasoning Classes",
+     "sectionStatus": 1,
+     "content": 16,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "placement": 16
+     }
+    },
+    {
+     "id": "6a456046ebb42f585d9e05f9",
+     "name": "MISSING ALPHABET SERIES",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 1728,
+     "created": "2026-07-01",
+     "sectionId": "6a455ea3ebb42f585d9d6383",
+     "sectionName": "Reasoning Classes",
+     "sectionStatus": 1,
+     "content": 8,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "placement": 8
+     }
+    }
+   ]
+  },
+  {
+   "key": "6a456153ebb42f585d9e6a5e|reasoning classes",
+   "topics": [
+    {
+     "id": "6a456154ebb42f585d9e6ad4",
+     "name": "Reasoning Classes",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 1898,
+     "created": "2026-07-01",
+     "sectionId": "6a456153ebb42f585d9e6a5e",
+     "sectionName": "RAILWAY REASONING FOUNDATION BATCH",
+     "sectionStatus": 1,
+     "content": 237,
+     "studentLogs": 0,
+     "subtopics": 39,
+     "use": {
+      "placement": 225,
+      "apxPlacement": 12
+     }
+    },
+    {
+     "id": "6a456153ebb42f585d9e6a81",
+     "name": "REASONING CLASSES",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 1897,
+     "created": "2026-07-01",
+     "sectionId": "6a456153ebb42f585d9e6a5e",
+     "sectionName": "RAILWAY REASONING FOUNDATION BATCH",
+     "sectionStatus": 1,
+     "content": 0,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {}
+    }
+   ]
+  },
+  {
+   "key": "6a455bacebb42f585d9c2834|history",
+   "topics": [
+    {
+     "id": "6a92cb87ce59c93487cdba44",
+     "name": "HISTORY",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 12568,
+     "created": "2026-08-29",
+     "sectionId": "6a455bacebb42f585d9c2834",
+     "sectionName": "Railway GK/GS Complete Foundation",
+     "sectionStatus": 1,
+     "content": 153,
+     "studentLogs": 0,
+     "subtopics": 3,
+     "use": {
+      "placement": 112,
+      "question": 41
+     }
+    },
+    {
+     "id": "6a4e37eb209421909ee3adeb",
+     "name": "History",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 2062,
+     "created": "2026-07-08",
+     "sectionId": "6a455bacebb42f585d9c2834",
+     "sectionName": "Railway GK/GS Complete Foundation",
+     "sectionStatus": 1,
+     "content": 3,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "pdf": 3
+     }
+    }
+   ]
+  },
+  {
+   "key": "6a885af03aed5ba9f3a20f1a|coordinate geometry",
+   "topics": [
+    {
+     "id": "6a885ba53aed5ba9f3a211f7",
+     "name": "Coordinate Geometry",
+     "status": 1,
+     "customer_id": 0,
+     "legacy_id": 39,
+     "created": "2026-08-21",
+     "sectionId": "6a885af03aed5ba9f3a20f1a",
+     "sectionName": "Quantitative Aptitude",
+     "sectionStatus": 1,
+     "content": 59,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "question": 23,
+      "seriesChapter": 1,
+      "seriesQMap": 35
+     }
+    },
+    {
+     "id": "6a885bf13aed5ba9f3a215c8",
+     "name": "Coordinate Geometry",
+     "status": 1,
+     "customer_id": 0,
+     "legacy_id": 5775,
+     "created": "2026-08-21",
+     "sectionId": "6a885af03aed5ba9f3a20f1a",
+     "sectionName": "Quantitative Aptitude",
+     "sectionStatus": 1,
+     "content": 27,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "question": 7,
+      "seriesChapter": 1,
+      "seriesQMap": 19
+     }
+    }
+   ]
+  },
+  {
+   "key": "6a885af03aed5ba9f3a20f18|incorrectly spelt",
+   "topics": [
+    {
+     "id": "6a885bb73aed5ba9f3a2131b",
+     "name": "Incorrectly Spelt",
+     "status": 1,
+     "customer_id": 0,
+     "legacy_id": 333,
+     "created": "2026-08-21",
+     "sectionId": "6a885af03aed5ba9f3a20f18",
+     "sectionName": "English Language",
+     "sectionStatus": 1,
+     "content": 0,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {}
+    },
+    {
+     "id": "6a885bb73aed5ba9f3a2131c",
+     "name": "Incorrectly Spelt",
+     "status": 1,
+     "customer_id": 0,
+     "legacy_id": 334,
+     "created": "2026-08-21",
+     "sectionId": "6a885af03aed5ba9f3a20f18",
+     "sectionName": "English Language",
+     "sectionStatus": 1,
+     "content": 0,
+     "studentLogs": 0,
+     "subtopics": 2,
+     "use": {}
+    }
+   ]
+  },
+  {
+   "key": "6a885af03aed5ba9f3a20f6b|current affairs",
+   "topics": [
+    {
+     "id": "6a885be53aed5ba9f3a2152d",
+     "name": "Current Affairs",
+     "status": 1,
+     "customer_id": 0,
+     "legacy_id": 1579,
+     "created": "2026-08-21",
+     "sectionId": "6a885af03aed5ba9f3a20f6b",
+     "sectionName": "CBT",
+     "sectionStatus": 1,
+     "content": 247,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "question": 219,
+      "seriesQMap": 28
+     }
+    },
+    {
+     "id": "6a885be53aed5ba9f3a2152c",
+     "name": "Current Affairs",
+     "status": 1,
+     "customer_id": 0,
+     "legacy_id": 1575,
+     "created": "2026-08-21",
+     "sectionId": "6a885af03aed5ba9f3a20f6b",
+     "sectionName": "CBT",
+     "sectionStatus": 1,
+     "content": 44,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "question": 28,
+      "seriesQMap": 16
+     }
+    }
+   ]
+  },
+  {
+   "key": "6a885af03aed5ba9f3a20f82|maths",
+   "topics": [
+    {
+     "id": "6a885be53aed5ba9f3a21544",
+     "name": "Maths",
+     "status": 1,
+     "customer_id": 0,
+     "legacy_id": 1875,
+     "created": "2026-08-21",
+     "sectionId": "6a885af03aed5ba9f3a20f82",
+     "sectionName": "Maths and Reasoning",
+     "sectionStatus": 1,
+     "content": 9,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "question": 5,
+      "seriesQMap": 4
+     }
+    },
+    {
+     "id": "6a885bee3aed5ba9f3a21563",
+     "name": "Maths",
+     "status": 1,
+     "customer_id": 0,
+     "legacy_id": 4041,
+     "created": "2026-08-21",
+     "sectionId": "6a885af03aed5ba9f3a20f82",
+     "sectionName": "Maths and Reasoning",
+     "sectionStatus": 1,
+     "content": 9,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "question": 1,
+      "seriesQMap": 8
+     }
+    }
+   ]
+  },
+  {
+   "key": "6a885af03aed5ba9f3a20f93|computer",
+   "topics": [
+    {
+     "id": "6a885bee3aed5ba9f3a21568",
+     "name": "computer",
+     "status": 1,
+     "customer_id": 0,
+     "legacy_id": 4051,
+     "created": "2026-08-21",
+     "sectionId": "6a885af03aed5ba9f3a20f93",
+     "sectionName": "Section III - Computer Knowledge",
+     "sectionStatus": 1,
+     "content": 5,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "question": 3,
+      "seriesQMap": 2
+     }
+    },
+    {
+     "id": "6a885bee3aed5ba9f3a21561",
+     "name": "Computer",
+     "status": 1,
+     "customer_id": 0,
+     "legacy_id": 4039,
+     "created": "2026-08-21",
+     "sectionId": "6a885af03aed5ba9f3a20f93",
+     "sectionName": "Section III - Computer Knowledge",
+     "sectionStatus": 1,
+     "content": 0,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {}
+    }
+   ]
+  },
+  {
+   "key": "6a9d0afa3aed5ba9f3f0395d|misc",
+   "topics": [
+    {
+     "id": "6a885bf73aed5ba9f3a215e4",
+     "name": "Misc",
+     "status": 1,
+     "customer_id": 0,
+     "legacy_id": 7393,
+     "created": "2026-08-21",
+     "sectionId": "6a9d0afa3aed5ba9f3f0395d",
+     "sectionName": "Arithmetic",
+     "sectionStatus": 1,
+     "content": 113,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "class": 1,
+      "question": 82,
+      "seriesQMap": 30
+     }
+    },
+    {
+     "id": "6a885bf73aed5ba9f3a215e3",
+     "name": "Misc",
+     "status": 1,
+     "customer_id": 0,
+     "legacy_id": 7392,
+     "created": "2026-08-21",
+     "sectionId": "6a9d0afa3aed5ba9f3f0395d",
+     "sectionName": "Arithmetic",
+     "sectionStatus": 1,
+     "content": 7,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "pdf": 1,
+      "question": 2,
+      "seriesQMap": 4
+     }
+    }
+   ]
+  },
+  {
+   "key": "6a885af03aed5ba9f3a20f19|discoveries",
+   "topics": [
+    {
+     "id": "6a885bff3aed5ba9f3a21650",
+     "name": "Discoveries",
+     "status": 1,
+     "customer_id": 0,
+     "legacy_id": 8803,
+     "created": "2026-08-21",
+     "sectionId": "6a885af03aed5ba9f3a20f19",
+     "sectionName": "General Awareness",
+     "sectionStatus": 1,
+     "content": 1,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "seriesChapter": 1
+     }
+    },
+    {
+     "id": "6a885bff3aed5ba9f3a2165b",
+     "name": "Discoveries",
+     "status": 1,
+     "customer_id": 0,
+     "legacy_id": 8815,
+     "created": "2026-08-21",
+     "sectionId": "6a885af03aed5ba9f3a20f19",
+     "sectionName": "General Awareness",
+     "sectionStatus": 1,
+     "content": 1,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "seriesChapter": 1
+     }
+    }
+   ]
+  },
+  {
+   "key": "6a885af03aed5ba9f3a20f7b|misc",
+   "topics": [
+    {
+     "id": "6a885c113aed5ba9f3a21704",
+     "name": "Misc",
+     "status": 1,
+     "customer_id": 0,
+     "legacy_id": 11027,
+     "created": "2026-08-21",
+     "sectionId": "6a885af03aed5ba9f3a20f7b",
+     "sectionName": "General English",
+     "sectionStatus": 1,
+     "content": 0,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {}
+    },
+    {
+     "id": "6a885c113aed5ba9f3a21705",
+     "name": "Misc",
+     "status": 1,
+     "customer_id": 0,
+     "legacy_id": 11034,
+     "created": "2026-08-21",
+     "sectionId": "6a885af03aed5ba9f3a20f7b",
+     "sectionName": "General English",
+     "sectionStatus": 1,
+     "content": 0,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {}
+    }
+   ]
+  },
+  {
+   "key": "6a885af03aed5ba9f3a20fd4|misc",
+   "topics": [
+    {
+     "id": "6a885c113aed5ba9f3a21725",
+     "name": "Misc",
+     "status": 1,
+     "customer_id": 0,
+     "legacy_id": 11605,
+     "created": "2026-08-21",
+     "sectionId": "6a885af03aed5ba9f3a20fd4",
+     "sectionName": "Child Pedagogy",
+     "sectionStatus": 1,
+     "content": 0,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {}
+    },
+    {
+     "id": "6a885c113aed5ba9f3a21726",
+     "name": "Misc",
+     "status": 1,
+     "customer_id": 0,
+     "legacy_id": 11622,
+     "created": "2026-08-21",
+     "sectionId": "6a885af03aed5ba9f3a20fd4",
+     "sectionName": "Child Pedagogy",
+     "sectionStatus": 1,
+     "content": 0,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {}
+    }
+   ]
+  },
+  {
+   "key": "6a3d2ac13aed5ba9f3fe6c0e|extra youtube content",
+   "topics": [
+    {
+     "id": "6a904931dfb950424f54a2a1",
+     "name": "Extra Youtube Content",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 12249,
+     "created": "2026-08-27",
+     "sectionId": "6a3d2ac13aed5ba9f3fe6c0e",
+     "sectionName": "Maths",
+     "sectionStatus": 1,
+     "content": 271,
+     "studentLogs": 0,
+     "subtopics": 5,
+     "use": {
+      "placement": 271
+     }
+    },
+    {
+     "id": "2d762a4da1c973ac3b4d5b05",
+     "name": "Extra YouTube Content",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 12051,
+     "created": "2026-08-26",
+     "sectionId": "6a3d2ac13aed5ba9f3fe6c0e",
+     "sectionName": "Maths",
+     "sectionStatus": 1,
+     "content": 95,
+     "studentLogs": 0,
+     "subtopics": 5,
+     "use": {
+      "class": 87,
+      "pdf": 8
+     }
+    }
+   ]
+  },
+  {
+   "key": "6a3d2ac13aed5ba9f3fe6c0e|introduction",
+   "topics": [
+    {
+     "id": "6a91f95640096544f6a7e763",
+     "name": "INTRODUCTION",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 12384,
+     "created": "2026-08-28",
+     "sectionId": "6a3d2ac13aed5ba9f3fe6c0e",
+     "sectionName": "Maths",
+     "sectionStatus": 1,
+     "content": 14,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "placement": 1,
+      "seriesQMap": 13
+     }
+    },
+    {
+     "id": "6a9010d1f5a88ea47d613488",
+     "name": "Introduction",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 12073,
+     "created": "2026-08-27",
+     "sectionId": "6a3d2ac13aed5ba9f3fe6c0e",
+     "sectionName": "Maths",
+     "sectionStatus": 1,
+     "content": 1,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "placement": 1
+     }
+    }
+   ]
+  },
+  {
+   "key": "6a9023049a9d53af06e3bf8f|partnership",
+   "topics": [
+    {
+     "id": "6a91f8fd8e81564a8e17c6a4",
+     "name": "PARTNERSHIP",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 12379,
+     "created": "2026-08-28",
+     "sectionId": "6a9023049a9d53af06e3bf8f",
+     "sectionName": "ARITHMETIC",
+     "sectionStatus": 1,
+     "content": 75,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "placement": 2,
+      "question": 68,
+      "seriesQMap": 5
+     }
+    },
+    {
+     "id": "6a9023049a9d53af06e3bfa4",
+     "name": "Partnership",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 12122,
+     "created": "2026-08-27",
+     "sectionId": "6a9023049a9d53af06e3bf8f",
+     "sectionName": "ARITHMETIC",
+     "sectionStatus": 1,
+     "content": 18,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "placement": 18
+     }
+    }
+   ]
+  },
+  {
+   "key": "6a4560e8ebb42f585d9e42d8|history",
+   "topics": [
+    {
+     "id": "6ab4bc8cf453897d2e4964ab",
+     "name": "History",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 12589,
+     "created": "2026-09-24",
+     "sectionId": "6a4560e8ebb42f585d9e42d8",
+     "sectionName": "RRB  GENERAL AWARENESS FOUNDATION BATCH (CBT 1 & CBT 2)",
+     "sectionStatus": 1,
+     "content": 85,
+     "studentLogs": 0,
+     "subtopics": 0,
+     "use": {
+      "pdf": 1,
+      "question": 84
+     }
+    },
+    {
+     "id": "6a92c8a60cadd59db485b7a2",
+     "name": "HISTORY",
+     "status": 1,
+     "customer_id": 472,
+     "legacy_id": 12536,
+     "created": "2026-08-29",
+     "sectionId": "6a4560e8ebb42f585d9e42d8",
+     "sectionName": "RRB  GENERAL AWARENESS FOUNDATION BATCH (CBT 1 & CBT 2)",
+     "sectionStatus": 1,
+     "content": 82,
+     "studentLogs": 0,
+     "subtopics": 2,
+     "use": {
+      "placement": 1,
+      "apxPlacement": 81
+     }
+    }
+   ]
+  }
+ ],
+ "collisions": [
+  {
+   "section": "classes",
+   "survivor": "6a4558d6ebb42f585d9a91ab",
+   "sectionsInGroup": 2,
+   "topicsInGroup": 373,
+   "topicsMovingAcross": 2,
+   "collidingNames": 27,
+   "collidingTopics": 61,
+   "exactCaseClash": 27,
+   "collisionContent": 22,
+   "collisionStudentLogs": 0,
+   "clash": [
+    {
+     "name": "syllogism",
+     "topics": [
+      {
+       "id": "6a4558e4ebb42f585d9a9c6b",
+       "name": "Syllogism",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      },
+      {
+       "id": "6a455e7eebb42f585d9d5632",
+       "name": "Syllogism",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "coding decoding",
+     "topics": [
+      {
+       "id": "6a455e7febb42f585d9d5695",
+       "name": "Coding Decoding",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 4,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 2,
+        "pdf": 2
+       }
+      },
+      {
+       "id": "6a4558e5ebb42f585d9a9d23",
+       "name": "Coding Decoding",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "number system",
+     "topics": [
+      {
+       "id": "6a455ca2ebb42f585d9c94a6",
+       "name": "NUMBER SYSTEM",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 14,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 7,
+        "pdf": 7
+       }
+      },
+      {
+       "id": "6a4558e6ebb42f585d9a9d63",
+       "name": "Number System",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 8,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 4,
+        "pdf": 4
+       }
+      },
+      {
+       "id": "6a455e93ebb42f585d9d5db8",
+       "name": "Number System",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "lcm & hcf",
+     "topics": [
+      {
+       "id": "6a4558e7ebb42f585d9a9e07",
+       "name": "LCM & HCF",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 4,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 2,
+        "pdf": 2
+       }
+      },
+      {
+       "id": "6a455a2eebb42f585d9b69a3",
+       "name": "Lcm & Hcf",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      },
+      {
+       "id": "6a455e97ebb42f585d9d5f41",
+       "name": "Lcm & Hcf",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "simplification",
+     "topics": [
+      {
+       "id": "6a4558e7ebb42f585d9a9e57",
+       "name": "Simplification",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 44,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 21,
+        "pdf": 23
+       }
+      },
+      {
+       "id": "6a455e85ebb42f585d9d58ee",
+       "name": "Simplification",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "percentage",
+     "topics": [
+      {
+       "id": "6a4558e8ebb42f585d9a9ef6",
+       "name": "Percentage",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 51,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 28,
+        "pdf": 23
+       }
+      },
+      {
+       "id": "6a455e83ebb42f585d9d5844",
+       "name": "Percentage",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "decimal",
+     "topics": [
+      {
+       "id": "6a4559f9ebb42f585d9b4a7f",
+       "name": "Decimal",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 9,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 4,
+        "pdf": 5
+       }
+      },
+      {
+       "id": "6a455e85ebb42f585d9d58b7",
+       "name": "Decimal",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "ap & gp series theory",
+     "topics": [
+      {
+       "id": "6a4559faebb42f585d9b4b0e",
+       "name": "AP & GP Series Theory",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 3,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "pdf": 3
+       }
+      },
+      {
+       "id": "6a455e85ebb42f585d9d58d6",
+       "name": "AP & GP Series Theory",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "venn diagram",
+     "topics": [
+      {
+       "id": "6a455a00ebb42f585d9b5020",
+       "name": "Venn diagram",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 5,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 2,
+        "pdf": 3
+       }
+      },
+      {
+       "id": "6a455d2eebb42f585d9cd01a",
+       "name": "VENN DIAGRAM",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      },
+      {
+       "id": "6a455d80ebb42f585d9cf198",
+       "name": "Venn Diagram",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      },
+      {
+       "id": "6a455e86ebb42f585d9d5953",
+       "name": "Venn diagram",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "profit & loss",
+     "topics": [
+      {
+       "id": "6a455a2febb42f585d9b6a01",
+       "name": "Profit & Loss",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 40,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 23,
+        "pdf": 17
+       }
+      },
+      {
+       "id": "6a455e86ebb42f585d9d5964",
+       "name": "Profit & Loss",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "simple & compound interest",
+     "topics": [
+      {
+       "id": "6a455a32ebb42f585d9b6ba1",
+       "name": "Simple & Compound Interest",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 28,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 21,
+        "pdf": 7
+       }
+      },
+      {
+       "id": "6a455e88ebb42f585d9d59cb",
+       "name": "Simple & Compound Interest",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "ratio & proportion",
+     "topics": [
+      {
+       "id": "6a455a34ebb42f585d9b6c79",
+       "name": "Ratio & Proportion",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 18,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 13,
+        "pdf": 5
+       }
+      },
+      {
+       "id": "6a455e89ebb42f585d9d5a61",
+       "name": "Ratio & Proportion",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "partnership",
+     "topics": [
+      {
+       "id": "6a455a37ebb42f585d9b6e40",
+       "name": "Partnership",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 13,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 6,
+        "pdf": 7
+       }
+      },
+      {
+       "id": "6a455d14ebb42f585d9cc268",
+       "name": "PARTNERSHIP",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 4,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 2,
+        "pdf": 2
+       }
+      },
+      {
+       "id": "6a455e8bebb42f585d9d5abf",
+       "name": "Partnership",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "average",
+     "topics": [
+      {
+       "id": "6a455a39ebb42f585d9b6f3c",
+       "name": "Average",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 40,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 26,
+        "pdf": 14
+       }
+      },
+      {
+       "id": "6a455e8cebb42f585d9d5b4d",
+       "name": "Average",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "time & work",
+     "topics": [
+      {
+       "id": "6a455a3bebb42f585d9b6ffe",
+       "name": "Time & Work",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 33,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 22,
+        "pdf": 11
+       }
+      },
+      {
+       "id": "6a455e8eebb42f585d9d5bca",
+       "name": "Time & Work",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "pipe & cistern",
+     "topics": [
+      {
+       "id": "6a455a3febb42f585d9b7242",
+       "name": "Pipe & Cistern",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 11,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 8,
+        "pdf": 3
+       }
+      },
+      {
+       "id": "6a455e8febb42f585d9d5c36",
+       "name": "Pipe & Cistern",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "time,speed & distance",
+     "topics": [
+      {
+       "id": "6a455a40ebb42f585d9b72d4",
+       "name": "Time,Speed & Distance",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 52,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 26,
+        "pdf": 26
+       }
+      },
+      {
+       "id": "6a455e8febb42f585d9d5c71",
+       "name": "Time,Speed & Distance",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "train",
+     "topics": [
+      {
+       "id": "6a455a42ebb42f585d9b739f",
+       "name": "Train",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 26,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 13,
+        "pdf": 13
+       }
+      },
+      {
+       "id": "6a455e91ebb42f585d9d5d00",
+       "name": "Train",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "boat & stream",
+     "topics": [
+      {
+       "id": "6a455a43ebb42f585d9b7427",
+       "name": "Boat & Stream",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 12,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 6,
+        "pdf": 6
+       }
+      },
+      {
+       "id": "6a455e92ebb42f585d9d5d5e",
+       "name": "Boat & Stream",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "race",
+     "topics": [
+      {
+       "id": "6a455a43ebb42f585d9b7466",
+       "name": "Race",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 12,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 6,
+        "pdf": 6
+       }
+      },
+      {
+       "id": "6a455e93ebb42f585d9d5d8b",
+       "name": "Race",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "mixture & alligation",
+     "topics": [
+      {
+       "id": "6a455a64ebb42f585d9b857a",
+       "name": "Mixture & Alligation",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 17,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 9,
+        "pdf": 8
+       }
+      },
+      {
+       "id": "6a455e8bebb42f585d9d5aec",
+       "name": "Mixture & Alligation",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "age",
+     "topics": [
+      {
+       "id": "6a455c7debb42f585d9c84f6",
+       "name": "Age",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      },
+      {
+       "id": "6a455e8cebb42f585d9d5b2e",
+       "name": "Age",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "mensuration",
+     "topics": [
+      {
+       "id": "6a455e97ebb42f585d9d5eda",
+       "name": "Mensuration",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 12,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 6,
+        "pdf": 6
+       }
+      },
+      {
+       "id": "6a455ca5ebb42f585d9c95c4",
+       "name": "Mensuration",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 10,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 5,
+        "pdf": 5
+       }
+      }
+     ]
+    },
+    {
+     "name": "order and ranking",
+     "topics": [
+      {
+       "id": "6a455e7eebb42f585d9d5674",
+       "name": "ORDER AND RANKING",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 6,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 3,
+        "pdf": 3
+       }
+      },
+      {
+       "id": "6a455d2eebb42f585d9ccfce",
+       "name": "Order and Ranking",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      },
+      {
+       "id": "6a455d7eebb42f585d9cf0e0",
+       "name": "Order And Ranking",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      },
+      {
+       "id": "6a455eacebb42f585d9d670e",
+       "name": "ORDER AND RANKING",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "mock test",
+     "topics": [
+      {
+       "id": "6a455e7cebb42f585d9d5564",
+       "name": "Mock Test",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 34,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 20,
+        "pdf": 14
+       }
+      },
+      {
+       "id": "6a455ea9ebb42f585d9d65fe",
+       "name": "Mock Test",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "number analogy",
+     "topics": [
+      {
+       "id": "6a455e7febb42f585d9d56ac",
+       "name": "Number Analogy",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 2,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 1,
+        "pdf": 1
+       }
+      },
+      {
+       "id": "6a455eacebb42f585d9d6734",
+       "name": "Number Analogy",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "letter arrangement word formation miscellaneous",
+     "topics": [
+      {
+       "id": "6a455e7febb42f585d9d56b9",
+       "name": "Letter Arrangement Word Formation Miscellaneous",
+       "sectionId": "6a455e7cebb42f585d9d5553",
+       "content": 2,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 1,
+        "pdf": 1
+       }
+      },
+      {
+       "id": "6a455eacebb42f585d9d673e",
+       "name": "Letter Arrangement Word Formation Miscellaneous",
+       "sectionId": "6a4558d6ebb42f585d9a91ab",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "section": "reasoning",
+   "survivor": "6a4558c2ebb42f585d9a8333",
+   "sectionsInGroup": 3,
+   "topicsInGroup": 112,
+   "topicsMovingAcross": 25,
+   "collidingNames": 15,
+   "collidingTopics": 30,
+   "exactCaseClash": 14,
+   "collisionContent": 572,
+   "collisionStudentLogs": 0,
+   "clash": [
+    {
+     "name": "calendar",
+     "topics": [
+      {
+       "id": "6a4558d2ebb42f585d9a8f47",
+       "name": "Calendar",
+       "sectionId": "6a4558c2ebb42f585d9a8333",
+       "content": 25,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 6,
+        "placement": 6,
+        "pdf": 13
+       }
+      },
+      {
+       "id": "6a455e08ebb42f585d9d288c",
+       "name": "Calendar",
+       "sectionId": "6a455e06ebb42f585d9d27d7",
+       "content": 10,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 10
+       }
+      }
+     ]
+    },
+    {
+     "name": "clock",
+     "topics": [
+      {
+       "id": "6a4558d3ebb42f585d9a8fae",
+       "name": "Clock",
+       "sectionId": "6a4558c2ebb42f585d9a8333",
+       "content": 27,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 6,
+        "placement": 6,
+        "pdf": 15
+       }
+      },
+      {
+       "id": "6a455e06ebb42f585d9d27db",
+       "name": "Clock",
+       "sectionId": "6a455e06ebb42f585d9d27d7",
+       "content": 8,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 8
+       }
+      }
+     ]
+    },
+    {
+     "name": "inequality",
+     "topics": [
+      {
+       "id": "6a4558d4ebb42f585d9a9015",
+       "name": "Inequality",
+       "sectionId": "6a4558c2ebb42f585d9a8333",
+       "content": 19,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 4,
+        "placement": 4,
+        "pdf": 11
+       }
+      },
+      {
+       "id": "6a455e10ebb42f585d9d2b9f",
+       "name": "Inequality",
+       "sectionId": "6a455e06ebb42f585d9d27d7",
+       "content": 5,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 5
+       }
+      }
+     ]
+    },
+    {
+     "name": "syllogism",
+     "topics": [
+      {
+       "id": "6a4558d4ebb42f585d9a905e",
+       "name": "Syllogism",
+       "sectionId": "6a4558c2ebb42f585d9a8333",
+       "content": 61,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 11,
+        "placement": 29,
+        "pdf": 21
+       }
+      },
+      {
+       "id": "6a455e07ebb42f585d9d284a",
+       "name": "Syllogism",
+       "sectionId": "6a455e06ebb42f585d9d27d7",
+       "content": 9,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 9
+       }
+      }
+     ]
+    },
+    {
+     "name": "blood relation",
+     "topics": [
+      {
+       "id": "6a455e09ebb42f585d9d28d5",
+       "name": "Blood Relation",
+       "sectionId": "6a455e06ebb42f585d9d27d7",
+       "content": 11,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 11
+       }
+      },
+      {
+       "id": "6a4558d5ebb42f585d9a90cf",
+       "name": "Blood Relation",
+       "sectionId": "6a4558c2ebb42f585d9a8333",
+       "content": 9,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "pdf": 9
+       }
+      }
+     ]
+    },
+    {
+     "name": "coding decoding",
+     "topics": [
+      {
+       "id": "6a4558d5ebb42f585d9a9161",
+       "name": "Coding Decoding",
+       "sectionId": "6a4558c2ebb42f585d9a8333",
+       "content": 33,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 8,
+        "placement": 12,
+        "pdf": 13
+       }
+      },
+      {
+       "id": "6a455e0cebb42f585d9d2a44",
+       "name": "Coding Decoding",
+       "sectionId": "6a455e06ebb42f585d9d27d7",
+       "content": 10,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 10
+       }
+      }
+     ]
+    },
+    {
+     "name": "sitting arrangement",
+     "topics": [
+      {
+       "id": "6a455959ebb42f585d9aecf2",
+       "name": "Sitting Arrangement",
+       "sectionId": "6a4558c2ebb42f585d9a8333",
+       "content": 39,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 13,
+        "placement": 13,
+        "pdf": 13
+       }
+      },
+      {
+       "id": "6a455e0debb42f585d9d2a8d",
+       "name": "Sitting Arrangement",
+       "sectionId": "6a455e06ebb42f585d9d27d7",
+       "content": 13,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 1,
+        "placement": 12
+       }
+      }
+     ]
+    },
+    {
+     "name": "puzzle",
+     "topics": [
+      {
+       "id": "6a45595aebb42f585d9aed77",
+       "name": "Puzzle",
+       "sectionId": "6a4558c2ebb42f585d9a8333",
+       "content": 36,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 12,
+        "placement": 12,
+        "pdf": 12
+       }
+      },
+      {
+       "id": "6a455e0eebb42f585d9d2aee",
+       "name": "Puzzle",
+       "sectionId": "6a455e06ebb42f585d9d27d7",
+       "content": 5,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 5
+       }
+      }
+     ]
+    },
+    {
+     "name": "number series",
+     "topics": [
+      {
+       "id": "6a45595bebb42f585d9aee41",
+       "name": "Number Series",
+       "sectionId": "6a4558c2ebb42f585d9a8333",
+       "content": 9,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 3,
+        "placement": 3,
+        "pdf": 3
+       }
+      },
+      {
+       "id": "6a455e12ebb42f585d9d2c90",
+       "name": "Number Series",
+       "sectionId": "6a455e06ebb42f585d9d27d7",
+       "content": 4,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 3,
+        "question": 1
+       }
+      }
+     ]
+    },
+    {
+     "name": "data sufficiency",
+     "topics": [
+      {
+       "id": "6a45595cebb42f585d9aeedd",
+       "name": "Data Sufficiency",
+       "sectionId": "6a4558c2ebb42f585d9a8333",
+       "content": 6,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 2,
+        "placement": 2,
+        "pdf": 2
+       }
+      },
+      {
+       "id": "6a455e13ebb42f585d9d2cd1",
+       "name": "Data Sufficiency",
+       "sectionId": "6a455e06ebb42f585d9d27d7",
+       "content": 6,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 6
+       }
+      }
+     ]
+    },
+    {
+     "name": "missing number",
+     "topics": [
+      {
+       "id": "6a45595eebb42f585d9aefed",
+       "name": "Missing Number",
+       "sectionId": "6a4558c2ebb42f585d9a8333",
+       "content": 6,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 2,
+        "placement": 2,
+        "pdf": 2
+       }
+      },
+      {
+       "id": "6a455e0cebb42f585d9d2a17",
+       "name": "Missing Number",
+       "sectionId": "6a455e06ebb42f585d9d27d7",
+       "content": 6,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 6
+       }
+      }
+     ]
+    },
+    {
+     "name": "order and ranking",
+     "topics": [
+      {
+       "id": "6a9031eb2ef10287404ac9ac",
+       "name": "ORDER AND RANKING",
+       "sectionId": "6a4558c2ebb42f585d9a8333",
+       "content": 57,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 6,
+        "question": 51
+       }
+      },
+      {
+       "id": "6a455e0aebb42f585d9d2944",
+       "name": "Order And Ranking",
+       "sectionId": "6a455e06ebb42f585d9d27d7",
+       "content": 8,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 8
+       }
+      }
+     ]
+    },
+    {
+     "name": "figure counting",
+     "topics": [
+      {
+       "id": "6a455e0bebb42f585d9d297f",
+       "name": "Figure Counting",
+       "sectionId": "6a455e06ebb42f585d9d27d7",
+       "content": 8,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 8
+       }
+      },
+      {
+       "id": "6a9031eb2ef10287404ac9a7",
+       "name": "Figure Counting",
+       "sectionId": "6a4558c2ebb42f585d9a8333",
+       "content": 5,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 4,
+        "question": 1
+       }
+      }
+     ]
+    },
+    {
+     "name": "ssc cgl / chsl mains preparation",
+     "topics": [
+      {
+       "id": "6a8fb36dca4aa7dd4bfe2b4c",
+       "name": "SSC CGL / CHSL MAINS PREPARATION",
+       "sectionId": "6a4558c2ebb42f585d9a8333",
+       "content": 28,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 28
+       }
+      },
+      {
+       "id": "6a455e17ebb42f585d9d2e1d",
+       "name": "SSC CGL / CHSL MAINS PREPARATION",
+       "sectionId": "6a455e06ebb42f585d9d27d7",
+       "content": 13,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 13
+       }
+      }
+     ]
+    },
+    {
+     "name": "reasoning (imported)",
+     "topics": [
+      {
+       "id": "6a4ca8a33e29123ffb5e11b2",
+       "name": "Reasoning (Imported)",
+       "sectionId": "6a4558c2ebb42f585d9a8333",
+       "content": 2606,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 2379,
+        "seriesQMap": 227
+       }
+      },
+      {
+       "id": "6ab42f555c6b06f491007bb3",
+       "name": "Reasoning (Imported)",
+       "sectionId": "6ab42f555c6b06f491007bb0",
+       "content": 461,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 461
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "section": "general awareness",
+   "survivor": "6a885af03aed5ba9f3a20f19",
+   "sectionsInGroup": 5,
+   "topicsInGroup": 235,
+   "topicsMovingAcross": 88,
+   "collidingNames": 11,
+   "collidingTopics": 22,
+   "exactCaseClash": 10,
+   "collisionContent": 622,
+   "collisionStudentLogs": 52087,
+   "clash": [
+    {
+     "name": "science",
+     "topics": [
+      {
+       "id": "6a885ba53aed5ba9f3a211f3",
+       "name": "Science",
+       "sectionId": "6a885af03aed5ba9f3a20f19",
+       "content": 15083,
+       "studentLogs": 1414,
+       "subtopics": 1,
+       "use": {
+        "question": 9263,
+        "seriesChapter": 2738,
+        "seriesQMap": 3082,
+        "studentLog": 1414
+       }
+      },
+      {
+       "id": "6a4559caebb42f585d9b2fa1",
+       "name": "Science",
+       "sectionId": "6a4558c8ebb42f585d9a8801",
+       "content": 118,
+       "studentLogs": 0,
+       "subtopics": 2,
+       "use": {
+        "class": 12,
+        "placement": 94,
+        "pdf": 12
+       }
+      }
+     ]
+    },
+    {
+     "name": "current affairs",
+     "topics": [
+      {
+       "id": "6a885c143aed5ba9f3a2176b",
+       "name": "Current Affairs",
+       "sectionId": "6a885af03aed5ba9f3a20f19",
+       "content": 23171,
+       "studentLogs": 7456,
+       "subtopics": 1,
+       "use": {
+        "question": 6115,
+        "seriesChapter": 2710,
+        "seriesQMap": 14346,
+        "studentLog": 7456
+       }
+      },
+      {
+       "id": "6a4559cbebb42f585d9b301c",
+       "name": "Current Affairs",
+       "sectionId": "6a4558c8ebb42f585d9a8801",
+       "content": 32,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 8,
+        "placement": 16,
+        "pdf": 8
+       }
+      }
+     ]
+    },
+    {
+     "name": "biology",
+     "topics": [
+      {
+       "id": "6a885c083aed5ba9f3a216bc",
+       "name": "Biology",
+       "sectionId": "6a885af03aed5ba9f3a20f19",
+       "content": 45553,
+       "studentLogs": 14922,
+       "subtopics": 0,
+       "use": {
+        "question": 840,
+        "seriesChapter": 13720,
+        "seriesQMap": 30993,
+        "studentLog": 14922
+       }
+      },
+      {
+       "id": "6a4559cbebb42f585d9b306f",
+       "name": "Biology",
+       "sectionId": "6a4558c8ebb42f585d9a8801",
+       "content": 46,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 24,
+        "pdf": 22
+       }
+      }
+     ]
+    },
+    {
+     "name": "chemistry",
+     "topics": [
+      {
+       "id": "6a885c083aed5ba9f3a216bb",
+       "name": "Chemistry",
+       "sectionId": "6a885af03aed5ba9f3a20f19",
+       "content": 40799,
+       "studentLogs": 14102,
+       "subtopics": 0,
+       "use": {
+        "question": 816,
+        "seriesChapter": 11371,
+        "seriesQMap": 28612,
+        "studentLog": 14102
+       }
+      },
+      {
+       "id": "6a4559cdebb42f585d9b3162",
+       "name": "Chemistry",
+       "sectionId": "6a4558c8ebb42f585d9a8801",
+       "content": 22,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 11,
+        "pdf": 11
+       }
+      }
+     ]
+    },
+    {
+     "name": "introduction",
+     "topics": [
+      {
+       "id": "6a916a83e4114180890befe0",
+       "name": "INTRODUCTION",
+       "sectionId": "6a4558c8ebb42f585d9a8801",
+       "content": 68,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 2,
+        "placement": 2,
+        "question": 50,
+        "seriesQMap": 14
+       }
+      },
+      {
+       "id": "6a455e18ebb42f585d9d2e8a",
+       "name": "INTRODUCTION",
+       "sectionId": "6a455e17ebb42f585d9d2e6c",
+       "content": 5,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 4,
+        "pdf": 1
+       }
+      }
+     ]
+    },
+    {
+     "name": "agriculture",
+     "topics": [
+      {
+       "id": "6a885bf73aed5ba9f3a2160d",
+       "name": "Agriculture",
+       "sectionId": "6a885af03aed5ba9f3a20f19",
+       "content": 15,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 7,
+        "seriesChapter": 1,
+        "seriesQMap": 7
+       }
+      },
+      {
+       "id": "6a455e1cebb42f585d9d304e",
+       "name": "Agriculture",
+       "sectionId": "6a455e17ebb42f585d9d2e6c",
+       "content": 3,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 2,
+        "pdf": 1
+       }
+      }
+     ]
+    },
+    {
+     "name": "national parks",
+     "topics": [
+      {
+       "id": "6a885bff3aed5ba9f3a2163c",
+       "name": "National Parks",
+       "sectionId": "6a885af03aed5ba9f3a20f19",
+       "content": 11,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 6,
+        "seriesChapter": 1,
+        "seriesQMap": 4
+       }
+      },
+      {
+       "id": "6a455e1cebb42f585d9d3065",
+       "name": "NATIONAL PARKS",
+       "sectionId": "6a455e17ebb42f585d9d2e6c",
+       "content": 6,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 3,
+        "pdf": 3
+       }
+      }
+     ]
+    },
+    {
+     "name": "static gk",
+     "topics": [
+      {
+       "id": "6a9ada486a0334598a77b80c",
+       "name": "Static GK",
+       "sectionId": "6a885af03aed5ba9f3a20f19",
+       "content": 15679,
+       "studentLogs": 6686,
+       "subtopics": 0,
+       "use": {
+        "question": 419,
+        "seriesChapter": 2745,
+        "seriesQMap": 12515,
+        "studentLog": 6686
+       }
+      },
+      {
+       "id": "6a455e2eebb42f585d9d37e0",
+       "name": "Static GK",
+       "sectionId": "6a455e17ebb42f585d9d2e6c",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    },
+    {
+     "name": "environment",
+     "topics": [
+      {
+       "id": "6a885ba53aed5ba9f3a211f4",
+       "name": "Environment",
+       "sectionId": "6a885af03aed5ba9f3a20f19",
+       "content": 253,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 153,
+        "seriesChapter": 7,
+        "seriesQMap": 93
+       }
+      },
+      {
+       "id": "6a455e39ebb42f585d9d3bc7",
+       "name": "Environment",
+       "sectionId": "6a455e17ebb42f585d9d2e6c",
+       "content": 1,
+       "studentLogs": 0,
+       "subtopics": 6,
+       "use": {
+        "placement": 1
+       }
+      }
+     ]
+    },
+    {
+     "name": "general awareness (imported)",
+     "topics": [
+      {
+       "id": "6a4ca8ad3e29123ffb5e11e9",
+       "name": "General Awareness (Imported)",
+       "sectionId": "6a4558c8ebb42f585d9a8801",
+       "content": 2236,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 2036,
+        "seriesQMap": 200
+       }
+      },
+      {
+       "id": "6ab433b95b97b9154439d903",
+       "name": "General Awareness (Imported)",
+       "sectionId": "6ab433b95b97b9154439d900",
+       "content": 389,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 389
+       }
+      }
+     ]
+    },
+    {
+     "name": "polity",
+     "topics": [
+      {
+       "id": "6a885ba53aed5ba9f3a211f1",
+       "name": "Polity",
+       "sectionId": "6a885af03aed5ba9f3a20f19",
+       "content": 18840,
+       "studentLogs": 7507,
+       "subtopics": 0,
+       "use": {
+        "question": 1668,
+        "seriesChapter": 2860,
+        "seriesQMap": 14312,
+        "studentLog": 7507
+       }
+      },
+      {
+       "id": "6a92127a10c3019d63540c85",
+       "name": "Polity",
+       "sectionId": "6a455e17ebb42f585d9d2e6c",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 11,
+       "use": {}
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "section": "history",
+   "survivor": "6a455d3eebb42f585d9cd648",
+   "sectionsInGroup": 3,
+   "topicsInGroup": 14,
+   "topicsMovingAcross": 0,
+   "collidingNames": 5,
+   "collidingTopics": 11,
+   "exactCaseClash": 5,
+   "collisionContent": 148,
+   "collisionStudentLogs": 0,
+   "clash": [
+    {
+     "name": "ancient history",
+     "topics": [
+      {
+       "id": "6a8fb36dca4aa7dd4bfe2b46",
+       "name": "Ancient History",
+       "sectionId": "6a455d3eebb42f585d9cd648",
+       "content": 87,
+       "studentLogs": 0,
+       "subtopics": 12,
+       "use": {
+        "placement": 87
+       }
+      },
+      {
+       "id": "6a916a83e4114180890befe1",
+       "name": "Ancient History",
+       "sectionId": "6a916a83e4114180890befde",
+       "content": 39,
+       "studentLogs": 0,
+       "subtopics": 1,
+       "use": {
+        "placement": 24,
+        "question": 1,
+        "seriesQMap": 14
+       }
+      },
+      {
+       "id": "6a885bae3aed5ba9f3a21292",
+       "name": "Ancient History",
+       "sectionId": "6a885af03aed5ba9f3a20f26",
+       "content": 10,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 5,
+        "seriesQMap": 5
+       }
+      }
+     ]
+    },
+    {
+     "name": "medieval history",
+     "topics": [
+      {
+       "id": "6a9169c46edec3b0ca2f1e05",
+       "name": "Medieval History",
+       "sectionId": "6a455d3eebb42f585d9cd648",
+       "content": 29,
+       "studentLogs": 0,
+       "subtopics": 4,
+       "use": {
+        "placement": 29
+       }
+      },
+      {
+       "id": "6a885bae3aed5ba9f3a21293",
+       "name": "Medieval History",
+       "sectionId": "6a885af03aed5ba9f3a20f26",
+       "content": 7,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 3,
+        "seriesQMap": 4
+       }
+      }
+     ]
+    },
+    {
+     "name": "modern history",
+     "topics": [
+      {
+       "id": "6a9169c46edec3b0ca2f1e06",
+       "name": "Modern History",
+       "sectionId": "6a455d3eebb42f585d9cd648",
+       "content": 48,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 48
+       }
+      },
+      {
+       "id": "6a885bae3aed5ba9f3a21294",
+       "name": "Modern History",
+       "sectionId": "6a885af03aed5ba9f3a20f26",
+       "content": 11,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 5,
+        "seriesQMap": 6
+       }
+      }
+     ]
+    },
+    {
+     "name": "medieval indian history",
+     "topics": [
+      {
+       "id": "6a916a83e4114180890befe2",
+       "name": "Medieval Indian History",
+       "sectionId": "6a916a83e4114180890befde",
+       "content": 52,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 38,
+        "seriesQMap": 14
+       }
+      },
+      {
+       "id": "6a8fb36dca4aa7dd4bfe2b47",
+       "name": "Medieval Indian History",
+       "sectionId": "6a455d3eebb42f585d9cd648",
+       "content": 38,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 38
+       }
+      }
+     ]
+    },
+    {
+     "name": "modern indian history",
+     "topics": [
+      {
+       "id": "6a916a83e4114180890befe3",
+       "name": "Modern Indian History",
+       "sectionId": "6a916a83e4114180890befde",
+       "content": 79,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 43,
+        "seriesQMap": 36
+       }
+      },
+      {
+       "id": "6a8fb36dca4aa7dd4bfe2b48",
+       "name": "Modern Indian History",
+       "sectionId": "6a455d3eebb42f585d9cd648",
+       "content": 43,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 43
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "section": "maths",
+   "survivor": "6a3d2ac13aed5ba9f3fe6c0e",
+   "sectionsInGroup": 4,
+   "topicsInGroup": 174,
+   "topicsMovingAcross": 20,
+   "collidingNames": 3,
+   "collidingTopics": 6,
+   "exactCaseClash": 3,
+   "collisionContent": 80,
+   "collisionStudentLogs": 0,
+   "clash": [
+    {
+     "name": "probability",
+     "topics": [
+      {
+       "id": "6a4558c2ebb42f585d9a8310",
+       "name": "Probability",
+       "sectionId": "6a3d2ac13aed5ba9f3fe6c0e",
+       "content": 24,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 3,
+        "placement": 17,
+        "pdf": 4
+       }
+      },
+      {
+       "id": "6a885ba53aed5ba9f3a21237",
+       "name": "Probability",
+       "sectionId": "6a885af03aed5ba9f3a20f1f",
+       "content": 3,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 1,
+        "seriesQMap": 2
+       }
+      }
+     ]
+    },
+    {
+     "name": "statistics",
+     "topics": [
+      {
+       "id": "6a92bbbe10324f60e5d9b8d6",
+       "name": "Statistics",
+       "sectionId": "6a3d2ac13aed5ba9f3fe6c0e",
+       "content": 247,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 3,
+        "question": 244
+       }
+      },
+      {
+       "id": "6a885ba53aed5ba9f3a21236",
+       "name": "Statistics",
+       "sectionId": "6a885af03aed5ba9f3a20f1f",
+       "content": 74,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 37,
+        "seriesQMap": 37
+       }
+      }
+     ]
+    },
+    {
+     "name": "announcement",
+     "topics": [
+      {
+       "id": "6a91f62edce17876b773972e",
+       "name": "Announcement",
+       "sectionId": "6a91f62edce17876b773972c",
+       "content": 17,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 1,
+        "placement": 2,
+        "seriesQMap": 14
+       }
+      },
+      {
+       "id": "6a914df6be9c4b18610935bb",
+       "name": "Announcement",
+       "sectionId": "6a3d2ac13aed5ba9f3fe6c0e",
+       "content": 3,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 1,
+        "placement": 2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "section": "arithmetic",
+   "survivor": "6a9023049a9d53af06e3bf8f",
+   "sectionsInGroup": 5,
+   "topicsInGroup": 43,
+   "topicsMovingAcross": 16,
+   "collidingNames": 2,
+   "collidingTopics": 4,
+   "exactCaseClash": 2,
+   "collisionContent": 25,
+   "collisionStudentLogs": 2,
+   "clash": [
+    {
+     "name": "percentage",
+     "topics": [
+      {
+       "id": "6a9023049a9d53af06e3bfa5",
+       "name": "Percentage",
+       "sectionId": "6a9023049a9d53af06e3bf8f",
+       "content": 312,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 55,
+        "question": 257
+       }
+      },
+      {
+       "id": "6a885c143aed5ba9f3a21772",
+       "name": "Percentage",
+       "sectionId": "6a885af03aed5ba9f3a20fe4",
+       "content": 22,
+       "studentLogs": 2,
+       "subtopics": 0,
+       "use": {
+        "seriesChapter": 15,
+        "seriesQMap": 7,
+        "studentLog": 2
+       }
+      }
+     ]
+    },
+    {
+     "name": "profit & loss",
+     "topics": [
+      {
+       "id": "6a9023049a9d53af06e3bfa7",
+       "name": "Profit & Loss",
+       "sectionId": "6a9023049a9d53af06e3bf8f",
+       "content": 52,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 51,
+        "question": 1
+       }
+      },
+      {
+       "id": "6a885c143aed5ba9f3a21774",
+       "name": "Profit & Loss",
+       "sectionId": "6a885af03aed5ba9f3a20fe4",
+       "content": 3,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "seriesQMap": 3
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "section": "bs & e sectional test",
+   "survivor": "6a3d2ac13aed5ba9f3fe6c06",
+   "sectionsInGroup": 2,
+   "topicsInGroup": 2,
+   "topicsMovingAcross": 0,
+   "collidingNames": 1,
+   "collidingTopics": 2,
+   "exactCaseClash": 1,
+   "collisionContent": 135,
+   "collisionStudentLogs": 0,
+   "clash": [
+    {
+     "name": "bs & e sectional test (imported)",
+     "topics": [
+      {
+       "id": "6a4cb9ad3e29123ffb5e311e",
+       "name": "BS & E Sectional Test (Imported)",
+       "sectionId": "6a3d2ac13aed5ba9f3fe6c06",
+       "content": 671,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 585,
+        "seriesQMap": 86
+       }
+      },
+      {
+       "id": "6ab434565b97b9154439e2d4",
+       "name": "BS & E Sectional Test (Imported)",
+       "sectionId": "6ab434565b97b9154439e2d1",
+       "content": 135,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 135
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "section": "reasoning sectional test",
+   "survivor": "6a3d2ac13aed5ba9f3fe6c07",
+   "sectionsInGroup": 2,
+   "topicsInGroup": 2,
+   "topicsMovingAcross": 0,
+   "collidingNames": 1,
+   "collidingTopics": 2,
+   "exactCaseClash": 1,
+   "collisionContent": 112,
+   "collisionStudentLogs": 0,
+   "clash": [
+    {
+     "name": "reasoning sectional test (imported)",
+     "topics": [
+      {
+       "id": "6a4cc1873e29123ffb5e3893",
+       "name": "Reasoning Sectional Test (Imported)",
+       "sectionId": "6a3d2ac13aed5ba9f3fe6c07",
+       "content": 804,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 706,
+        "seriesQMap": 98
+       }
+      },
+      {
+       "id": "6ab434955b97b9154439e5f0",
+       "name": "Reasoning Sectional Test (Imported)",
+       "sectionId": "6ab434955b97b9154439e5ed",
+       "content": 112,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 112
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "section": "science sectional test",
+   "survivor": "6a3d2ac13aed5ba9f3fe6c08",
+   "sectionsInGroup": 2,
+   "topicsInGroup": 2,
+   "topicsMovingAcross": 0,
+   "collidingNames": 1,
+   "collidingTopics": 2,
+   "exactCaseClash": 1,
+   "collisionContent": 84,
+   "collisionStudentLogs": 0,
+   "clash": [
+    {
+     "name": "science sectional test (imported)",
+     "topics": [
+      {
+       "id": "6a4cc9143e29123ffb5e418a",
+       "name": "Science Sectional Test (Imported)",
+       "sectionId": "6a3d2ac13aed5ba9f3fe6c08",
+       "content": 864,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 756,
+        "seriesQMap": 108
+       }
+      },
+      {
+       "id": "6ab434c05b97b9154439e905",
+       "name": "Science Sectional Test (Imported)",
+       "sectionId": "6ab434c05b97b9154439e902",
+       "content": 84,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 84
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "section": "gk/gs weekly sectional test",
+   "survivor": "6a3d2ac13aed5ba9f3fe6c09",
+   "sectionsInGroup": 2,
+   "topicsInGroup": 2,
+   "topicsMovingAcross": 0,
+   "collidingNames": 1,
+   "collidingTopics": 2,
+   "exactCaseClash": 1,
+   "collisionContent": 150,
+   "collisionStudentLogs": 0,
+   "clash": [
+    {
+     "name": "gk/gs weekly sectional test (imported)",
+     "topics": [
+      {
+       "id": "6a4ccf773e29123ffb5e4ac3",
+       "name": "GK/GS Weekly Sectional Test (Imported)",
+       "sectionId": "6a3d2ac13aed5ba9f3fe6c09",
+       "content": 613,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 525,
+        "seriesQMap": 88
+       }
+      },
+      {
+       "id": "6ab434d75b97b9154439eb80",
+       "name": "GK/GS Weekly Sectional Test (Imported)",
+       "sectionId": "6ab434d75b97b9154439eb7d",
+       "content": 150,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 150
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "section": "maths sectional test",
+   "survivor": "6a3d2ac13aed5ba9f3fe6c0a",
+   "sectionsInGroup": 2,
+   "topicsInGroup": 2,
+   "topicsMovingAcross": 0,
+   "collidingNames": 1,
+   "collidingTopics": 2,
+   "exactCaseClash": 1,
+   "collisionContent": 92,
+   "collisionStudentLogs": 0,
+   "clash": [
+    {
+     "name": "maths sectional test (imported)",
+     "topics": [
+      {
+       "id": "6a4cd44c3e29123ffb5e50d8",
+       "name": "Maths Sectional Test (Imported)",
+       "sectionId": "6a3d2ac13aed5ba9f3fe6c0a",
+       "content": 794,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 703,
+        "seriesQMap": 91
+       }
+      },
+      {
+       "id": "6ab434e25b97b9154439eeac",
+       "name": "Maths Sectional Test (Imported)",
+       "sectionId": "6ab434e25b97b9154439eea9",
+       "content": 92,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 92
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "section": "current affairs",
+   "survivor": "6a3d2ac13aed5ba9f3fe6c0c",
+   "sectionsInGroup": 2,
+   "topicsInGroup": 4,
+   "topicsMovingAcross": 0,
+   "collidingNames": 1,
+   "collidingTopics": 2,
+   "exactCaseClash": 1,
+   "collisionContent": 2,
+   "collisionStudentLogs": 0,
+   "clash": [
+    {
+     "name": "current affairs",
+     "topics": [
+      {
+       "id": "6a8d68ddad4789cb1b01fa21",
+       "name": "Current Affairs",
+       "sectionId": "6a3d2ac13aed5ba9f3fe6c0c",
+       "content": 847,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 230,
+        "placement": 252,
+        "pdf": 23,
+        "question": 342
+       }
+      },
+      {
+       "id": "6a885bee3aed5ba9f3a2158c",
+       "name": "Current Affairs",
+       "sectionId": "6a885af03aed5ba9f3a20f9c",
+       "content": 2,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "section": "introduction",
+   "survivor": "6a8d68ddad4789cb1b01fa1c",
+   "sectionsInGroup": 2,
+   "topicsInGroup": 3,
+   "topicsMovingAcross": 1,
+   "collidingNames": 1,
+   "collidingTopics": 2,
+   "exactCaseClash": 0,
+   "collisionContent": 2,
+   "collisionStudentLogs": 0,
+   "clash": [
+    {
+     "name": "introduction",
+     "topics": [
+      {
+       "id": "6a8d68ddad4789cb1b01fa1d",
+       "name": "Introduction",
+       "sectionId": "6a8d68ddad4789cb1b01fa1c",
+       "content": 23,
+       "studentLogs": 0,
+       "subtopics": 2,
+       "use": {
+        "class": 19,
+        "placement": 4
+       }
+      },
+      {
+       "id": "6a9023049a9d53af06e3bfba",
+       "name": "INTRODUCTION",
+       "sectionId": "6a3d2ac13aed5ba9f3fe6c15",
+       "content": 2,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "class": 1,
+        "placement": 1
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "section": "science",
+   "survivor": "6a4558c2ebb42f585d9a8376",
+   "sectionsInGroup": 3,
+   "topicsInGroup": 38,
+   "topicsMovingAcross": 0,
+   "collidingNames": 1,
+   "collidingTopics": 2,
+   "exactCaseClash": 1,
+   "collisionContent": 117,
+   "collisionStudentLogs": 0,
+   "clash": [
+    {
+     "name": "science (imported)",
+     "topics": [
+      {
+       "id": "6a4ca8a13e29123ffb5e117b",
+       "name": "Science (Imported)",
+       "sectionId": "6a4558c2ebb42f585d9a8376",
+       "content": 760,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 694,
+        "seriesQMap": 66
+       }
+      },
+      {
+       "id": "6ab435085b97b9154439f1aa",
+       "name": "Science (Imported)",
+       "sectionId": "6ab435085b97b9154439f1a7",
+       "content": 117,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 117
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "section": "physics",
+   "survivor": "6a885af03aed5ba9f3a20f1e",
+   "sectionsInGroup": 3,
+   "topicsInGroup": 34,
+   "topicsMovingAcross": 16,
+   "collidingNames": 1,
+   "collidingTopics": 2,
+   "exactCaseClash": 1,
+   "collisionContent": 0,
+   "collisionStudentLogs": 0,
+   "clash": [
+    {
+     "name": "gravitation",
+     "topics": [
+      {
+       "id": "6a455d34ebb42f585d9cd25f",
+       "name": "Gravitation",
+       "sectionId": "6a455d33ebb42f585d9cd1f3",
+       "content": 3,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 3
+       }
+      },
+      {
+       "id": "6a885bae3aed5ba9f3a21263",
+       "name": "Gravitation",
+       "sectionId": "6a885af03aed5ba9f3a20f1e",
+       "content": 0,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {}
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "section": "chemistry",
+   "survivor": "6a885af03aed5ba9f3a20f28",
+   "sectionsInGroup": 2,
+   "topicsInGroup": 10,
+   "topicsMovingAcross": 6,
+   "collidingNames": 1,
+   "collidingTopics": 2,
+   "exactCaseClash": 1,
+   "collisionContent": 4,
+   "collisionStudentLogs": 0,
+   "clash": [
+    {
+     "name": "organic chemistry",
+     "topics": [
+      {
+       "id": "6a455d39ebb42f585d9cd468",
+       "name": "Organic Chemistry",
+       "sectionId": "6a455d36ebb42f585d9cd357",
+       "content": 6,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 6
+       }
+      },
+      {
+       "id": "6a885bb73aed5ba9f3a212c8",
+       "name": "Organic Chemistry",
+       "sectionId": "6a885af03aed5ba9f3a20f28",
+       "content": 4,
+       "studentLogs": 0,
+       "subtopics": 13,
+       "use": {
+        "question": 2,
+        "seriesQMap": 2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "section": "general science",
+   "survivor": "6a885af03aed5ba9f3a20f2a",
+   "sectionsInGroup": 3,
+   "topicsInGroup": 45,
+   "topicsMovingAcross": 41,
+   "collidingNames": 1,
+   "collidingTopics": 2,
+   "exactCaseClash": 1,
+   "collisionContent": 2,
+   "collisionStudentLogs": 0,
+   "clash": [
+    {
+     "name": "general science",
+     "topics": [
+      {
+       "id": "6a885c113aed5ba9f3a2170b",
+       "name": "General Science",
+       "sectionId": "6a885af03aed5ba9f3a20f2a",
+       "content": 16,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "question": 9,
+        "seriesChapter": 7
+       }
+      },
+      {
+       "id": "6a92c45b5350b18683e4390f",
+       "name": "General Science",
+       "sectionId": "6a45605debb42f585d9e0e4c",
+       "content": 2,
+       "studentLogs": 0,
+       "subtopics": 0,
+       "use": {
+        "placement": 2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "section": "static gk / ca",
+   "survivor": "6a4558c3ebb42f585d9a83fb",
+   "sectionsInGroup": 2,
+   "topicsInGroup": 1,
+   "topicsMovingAcross": 1,
+   "collidingNames": 0,
+   "collidingTopics": 0,
+   "exactCaseClash": 0,
+   "collisionContent": 0,
+   "collisionStudentLogs": 0,
+   "clash": []
+  },
+  {
+   "section": "computer",
+   "survivor": "6a45591cebb42f585d9ac3d3",
+   "sectionsInGroup": 2,
+   "topicsInGroup": 12,
+   "topicsMovingAcross": 1,
+   "collidingNames": 0,
+   "collidingTopics": 0,
+   "exactCaseClash": 0,
+   "collisionContent": 0,
+   "collisionStudentLogs": 0,
+   "clash": []
+  },
+  {
+   "section": "e-book",
+   "survivor": "6a4cdfdf42211ae83977d84d",
+   "sectionsInGroup": 2,
+   "topicsInGroup": 7,
+   "topicsMovingAcross": 0,
+   "collidingNames": 0,
+   "collidingTopics": 0,
+   "exactCaseClash": 0,
+   "collisionContent": 0,
+   "collisionStudentLogs": 0,
+   "clash": []
+  },
+  {
+   "section": "logical reasoning",
+   "survivor": "6a885af03aed5ba9f3a20f1b",
+   "sectionsInGroup": 2,
+   "topicsInGroup": 131,
+   "topicsMovingAcross": 1,
+   "collidingNames": 0,
+   "collidingTopics": 0,
+   "exactCaseClash": 0,
+   "collisionContent": 0,
+   "collisionStudentLogs": 0,
+   "clash": []
+  },
+  {
+   "section": "computer knowledge",
+   "survivor": "6a885af03aed5ba9f3a20fba",
+   "sectionsInGroup": 2,
+   "topicsInGroup": 16,
+   "topicsMovingAcross": 15,
+   "collidingNames": 0,
+   "collidingTopics": 0,
+   "exactCaseClash": 0,
+   "collisionContent": 0,
+   "collisionStudentLogs": 0,
+   "clash": []
+  },
+  {
+   "section": "biology",
+   "survivor": "6a885af03aed5ba9f3a20f27",
+   "sectionsInGroup": 2,
+   "topicsInGroup": 39,
+   "topicsMovingAcross": 1,
+   "collidingNames": 0,
+   "collidingTopics": 0,
+   "exactCaseClash": 0,
+   "collisionContent": 0,
+   "collisionStudentLogs": 0,
+   "clash": []
+  },
+  {
+   "section": "general knowledge and current affairs",
+   "survivor": "6a885af03aed5ba9f3a20fa8",
+   "sectionsInGroup": 2,
+   "topicsInGroup": 1,
+   "topicsMovingAcross": 0,
+   "collidingNames": 0,
+   "collidingTopics": 0,
+   "exactCaseClash": 0,
+   "collisionContent": 0,
+   "collisionStudentLogs": 0,
+   "clash": []
+  },
+  {
+   "section": "advance",
+   "survivor": "6a9023049a9d53af06e3bf8e",
+   "sectionsInGroup": 2,
+   "topicsInGroup": 23,
+   "topicsMovingAcross": 8,
+   "collidingNames": 0,
+   "collidingTopics": 0,
+   "exactCaseClash": 0,
+   "collisionContent": 0,
+   "collisionStudentLogs": 0,
+   "clash": []
+  }
+ ]
+}

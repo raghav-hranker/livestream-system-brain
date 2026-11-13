@@ -1,0 +1,814 @@
+{
+  "observedAt": "2026-10-27T08:44:56.929Z",
+  "readOnly": true,
+  "budget": 1600,
+  "steps": [
+    {
+      "name": "authentication and course list",
+      "ok": true,
+      "at": "2026-10-27T08:44:56.930Z",
+      "milliseconds": 255
+    },
+    {
+      "name": "fallback course listing 3",
+      "ok": true,
+      "at": "2026-10-27T08:44:57.185Z",
+      "milliseconds": 5258
+    },
+    {
+      "name": "fallback course listing 71",
+      "ok": true,
+      "at": "2026-10-27T08:45:02.443Z",
+      "milliseconds": 5486
+    },
+    {
+      "name": "dead token 774",
+      "ok": true,
+      "at": "2026-10-27T08:45:07.929Z",
+      "milliseconds": 14604
+    },
+    {
+      "name": "dead token 907",
+      "ok": true,
+      "at": "2026-10-27T08:45:22.535Z",
+      "milliseconds": 20222
+    },
+    {
+      "name": "dead token 189847",
+      "ok": true,
+      "at": "2026-10-27T08:45:42.760Z",
+      "milliseconds": 14374
+    }
+  ],
+  "deadSourceSamples": [
+    {
+      "job": "6ace8ef7c9735682f04ed753",
+      "classId": "6ace8ef78752d955968adeec",
+      "oldAssetKey": "drm:707d65f4-19e2-463d-b059-9ced0e84b65f",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "3",
+      "rowId": "774",
+      "source": {
+        "id": "774",
+        "title": "Surds & Indices 08",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "drm:707d65f4-19e2-463d-b059-9ced0e84b65f",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "checks": [
+          {
+            "rung": "240p",
+            "http": 200,
+            "hasUsableUrl": true,
+            "segments": [
+              {
+                "index": 0,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              },
+              {
+                "index": 89,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              },
+              {
+                "index": 178,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              }
+            ],
+            "sourceHttp": 200,
+            "manifest": true,
+            "segmentCount": 179,
+            "endList": true,
+            "encrypted": false,
+            "allSampledSegmentsReadable": true
+          },
+          {
+            "rung": "360p",
+            "http": 200,
+            "hasUsableUrl": true,
+            "segments": [
+              {
+                "index": 0,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              },
+              {
+                "index": 89,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              },
+              {
+                "index": 178,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              }
+            ],
+            "sourceHttp": 200,
+            "manifest": true,
+            "segmentCount": 179,
+            "endList": true,
+            "encrypted": false,
+            "allSampledSegmentsReadable": true
+          },
+          {
+            "rung": "480p",
+            "http": 200,
+            "hasUsableUrl": true,
+            "segments": [
+              {
+                "index": 0,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              },
+              {
+                "index": 89,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              },
+              {
+                "index": 178,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              }
+            ],
+            "sourceHttp": 200,
+            "manifest": true,
+            "segmentCount": 179,
+            "endList": true,
+            "encrypted": false,
+            "allSampledSegmentsReadable": true
+          }
+        ],
+        "allWorkerChecksPassed": true,
+        "optional1080Present": false
+      }
+    },
+    {
+      "job": "6ace8f53c9735682f04ed914",
+      "classId": "6ace8f538752d955968ae359",
+      "oldAssetKey": "vid:rgvikramjeet-data:411823-1702027232",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "3",
+      "rowId": "907",
+      "source": {
+        "id": "907",
+        "title": "Mensuration 3D Class 12",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:411823-1702027232",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "checks": [
+          {
+            "rung": "240p",
+            "http": 200,
+            "hasUsableUrl": true,
+            "segments": [
+              {
+                "index": 0,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              },
+              {
+                "index": 188,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              },
+              {
+                "index": 375,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              }
+            ],
+            "sourceHttp": 200,
+            "manifest": true,
+            "segmentCount": 376,
+            "endList": true,
+            "encrypted": false,
+            "allSampledSegmentsReadable": true
+          },
+          {
+            "rung": "360p",
+            "http": 200,
+            "hasUsableUrl": true,
+            "segments": [
+              {
+                "index": 0,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              },
+              {
+                "index": 188,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              },
+              {
+                "index": 375,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              }
+            ],
+            "sourceHttp": 200,
+            "manifest": true,
+            "segmentCount": 376,
+            "endList": true,
+            "encrypted": false,
+            "allSampledSegmentsReadable": true
+          },
+          {
+            "rung": "480p",
+            "http": 200,
+            "hasUsableUrl": true,
+            "segments": [
+              {
+                "index": 0,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              },
+              {
+                "index": 188,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              },
+              {
+                "index": 375,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              }
+            ],
+            "sourceHttp": 200,
+            "manifest": true,
+            "segmentCount": 376,
+            "endList": true,
+            "encrypted": false,
+            "allSampledSegmentsReadable": true
+          },
+          {
+            "rung": "1080p",
+            "http": 200,
+            "hasUsableUrl": true,
+            "segments": [
+              {
+                "index": 0,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              },
+              {
+                "index": 188,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              },
+              {
+                "index": 375,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              }
+            ],
+            "sourceHttp": 200,
+            "manifest": true,
+            "segmentCount": 376,
+            "endList": true,
+            "encrypted": false,
+            "allSampledSegmentsReadable": true
+          }
+        ],
+        "allWorkerChecksPassed": true,
+        "optional1080Present": true
+      }
+    },
+    {
+      "job": "6acea4e1c9735682f04f1965",
+      "classId": "6acea4e08752d955968b9335",
+      "oldAssetKey": "vid:armaths-data:3797570-1780065241",
+      "category": "noPlayableURL",
+      "currentlyPlanned": true,
+      "course": "71",
+      "rowId": "189847",
+      "source": {
+        "id": "189847",
+        "title": "Glands 01",
+        "type": "LIVE_STREAM",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:armaths-data:3797570-1780065241",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "checks": [
+          {
+            "rung": "240p",
+            "http": 200,
+            "hasUsableUrl": true,
+            "segments": [
+              {
+                "index": 0,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              },
+              {
+                "index": 137,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              },
+              {
+                "index": 273,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              }
+            ],
+            "sourceHttp": 200,
+            "manifest": true,
+            "segmentCount": 274,
+            "endList": true,
+            "encrypted": false,
+            "allSampledSegmentsReadable": true
+          },
+          {
+            "rung": "360p",
+            "http": 200,
+            "hasUsableUrl": true,
+            "segments": [
+              {
+                "index": 0,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              },
+              {
+                "index": 136,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              },
+              {
+                "index": 271,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              }
+            ],
+            "sourceHttp": 200,
+            "manifest": true,
+            "segmentCount": 272,
+            "endList": true,
+            "encrypted": false,
+            "allSampledSegmentsReadable": true
+          },
+          {
+            "rung": "480p",
+            "http": 200,
+            "hasUsableUrl": true,
+            "segments": [
+              {
+                "index": 0,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              },
+              {
+                "index": 135,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              },
+              {
+                "index": 270,
+                "http": 206,
+                "bytesRead": 4096,
+                "tsSync": true,
+                "mp4": false,
+                "looksLikeError": false,
+                "mediaLike": true
+              }
+            ],
+            "sourceHttp": 200,
+            "manifest": true,
+            "segmentCount": 271,
+            "endList": true,
+            "encrypted": false,
+            "allSampledSegmentsReadable": true
+          }
+        ],
+        "allWorkerChecksPassed": true,
+        "optional1080Present": false
+      }
+    }
+  ],
+  "geometry": [],
+  "pdfMetadata": [],
+  "requestTelemetry": [
+    {
+      "endpoint": "get_all_courses",
+      "http": 200,
+      "rows": 146,
+      "total": "146"
+    },
+    {
+      "endpoint": "get_pc4_contents",
+      "http": 200,
+      "rows": 803,
+      "total": null
+    },
+    {
+      "endpoint": "get_pc4_contents",
+      "http": 200,
+      "rows": 588,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    }
+  ],
+  "courseList": {
+    "count": 146,
+    "total": 146
+  },
+  "completedAt": "2026-10-27T08:45:57.136Z",
+  "requests": 46,
+  "sessionLost": false,
+  "transport": "direct local HTTPS; session cookie only to cms.appx.co.in"
+}

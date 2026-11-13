@@ -176,7 +176,7 @@ const gb = (b) => (b / 1e9).toFixed(1);
       const lag = primaryOptime && x.optimeDate ? Math.round((primaryOptime - x.optimeDate) / 1000) : null;
       console.log(`rs  ${x.name.padEnd(22)} ${x.stateStr.padEnd(10)} health ${x.health}${lag !== null && x.stateStr !== "PRIMARY" ? `  lag ${lag}s` : ""}`);
       if (x.health !== 1 || !["PRIMARY", "SECONDARY", "ARBITER"].includes(x.stateStr)) W(`rs member ${x.name} is ${x.stateStr} (health ${x.health})`);
-      if (lag !== null && lag > 10) W(`rs member ${x.name} lags ${lag}s`);
+      if (x.health === 1 && lag !== null && lag > 10) W(`rs member ${x.name} lags ${lag}s`);
     }
   }
   for (const { h, ss, hello, ops, st } of rows) {

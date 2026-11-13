@@ -1,0 +1,21 @@
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+#root{min-height:100vh}
+
+#proto-bar{
+  position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:1000;
+  display:flex;align-items:center;gap:4px;padding:5px;border-radius:999px;
+  background:#fff;color:#111;border:2px solid #111;box-shadow:0 8px 28px rgba(0,0,0,.35);
+  font:600 12.5px/1 ui-sans-serif,system-ui,sans-serif;white-space:nowrap;
+}
+#proto-bar button{width:30px;height:30px;border-radius:50%;background:#111;color:#fff;font-size:15px}
+#proto-bar button:hover{background:#444}
+#proto-label{padding:0 12px;min-width:210px;text-align:center}
+body.has-tabbar #proto-bar{bottom:82px}
+@media (min-width:821px){body.has-tabbar #proto-bar{bottom:18px}}
+@media (max-width:420px){#proto-label{min-width:0;padding:0 8px}}

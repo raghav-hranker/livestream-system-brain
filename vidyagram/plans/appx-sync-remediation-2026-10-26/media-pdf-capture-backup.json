@@ -1,0 +1,1395 @@
+{
+  "tenant": "vg/781",
+  "asOf": "2026-10-26",
+  "executionState": {
+    "productionWrites": 0,
+    "productionWriteOperationsInflight": 0,
+    "deployments": 0,
+    "captureApplications": 0,
+    "queueOrImportApplications": 0,
+    "localOnlyPatch": true,
+    "productionHold": "Full survey and action map must be reviewed first; auto-review also rejected remote deployment for insufficient direct authorization in this chat. No retry or executor handoff."
+  },
+  "actions": [
+    {
+      "id": "PDF-1",
+      "action": "Deploy tested complete-clear-PDF guard",
+      "cause": "AppX encryption flag is stale on two already-clear valid PDF1.7 files; forced XOR corrupts the header.",
+      "scope": [
+        "GCP nightly src/services/apx/apxCatalogPdfImportRun.ts verifyPdfBytes only"
+      ],
+      "dependencies": [
+        "Complete plan reviewed and production actions authorized in this chat",
+        "Idle nightly and source SHA guard"
+      ],
+      "before": "Encrypted=true forces decrypt even when complete source is already clear.",
+      "after": "Structurally valid complete source bytes are kept exact; otherwise existing decryption and structural validation run unchanged.",
+      "ownership": "Preserve current deployed export findRow and all unrelated code. This data-validity rule does not rename/admin-reclassify content.",
+      "dedup": "No database writes in this action.",
+      "risk": "Accepting header-only/truncated bytes would publish invalid data; regression explicitly rejects both. Existing structural gate is heuristic, not a full parser; the two recovery files additionally passed strict parser/render.",
+      "rollback": "Restore exact deployed source backup only if current file still matches the new SHA; no restart required for CLI source loaded next run.",
+      "acceptance": [
+        "Regression red before/4 green after",
+        "True ciphertext remains accepted only after valid decryption",
+        "Wrong-key, HTML, header-only and truncated input rejected",
+        "Remote source hash matches reviewed patched file"
+      ],
+      "sourceBeforeSha256": "7c048eb22eb29ad1d6f4e5a04f9321a73e69f3db49d82819a1707fc3722cf516",
+      "sourceAfterSha256": "ff85c1b06fba5f6dd69b0ca55b952feea10a1836f0d129e132b804da52fb3be3"
+    },
+    {
+      "id": "PDF-2",
+      "action": "Recover exactly two eligible standalone PDF file units",
+      "cause": "PDF-1 failure; source bytes valid and currently readable unsigned with official PDF referer.",
+      "scope": [
+        "6ad94017c9735682f0130807",
+        "6ad94018c9735682f013080e"
+      ],
+      "dependencies": [
+        "PDF-1",
+        "Refresh source/current plan and assert same hashes and course43 row32909/32910 references",
+        "Private before snapshot of both ledger docs and any existing hash/key twins; HEAD deterministic B2 target keys"
+      ],
+      "before": "Both ledger statuses failed; no pdfId; no hash twins found in audit snapshot.",
+      "after": "Both entries done, error null, valid pdfId/hash/size; at most two new PDF docs/objects or reuse by SHA.",
+      "ownership": "Use ordinary import taxonomy/metadata path and source titles. These are standalone library files; existing importer intentionally creates no CoursePdf placement. Do not claim new student course visibility or invent placements.",
+      "dedup": "Re-read tenant781 ledger fileKey/pdfId and sha256 twin before upload; exact 2-file scope and no noteTargets; idempotent rerun must write zero.",
+      "risk": "Partial upload/ledger failure; overwrite collision; published bytes differ from preview; accidental broad note attachment. Stop on target-key preexistence with mismatched hash/size, changed source/ledger or shared admin edits.",
+      "rollback": "Version-guard restore the 2 before ledger docs; remove only newly-created PDF docs and B2 keys after proving no references and matching recorded IDs/hash; never delete reused existing objects. Keep source-handler rollback separate.",
+      "acceptance": [
+        "Exact source full hashes match full-pdf-validation.json",
+        "B2 full GET sha256 equals validated source and recorded metadata",
+        "Both ledger records done with existing Pdf",
+        "No Class/Pdf notes or Course/CourseClass/CoursePdf unrelated changes",
+        "Second scoped dry run no-op"
+      ]
+    },
+    {
+      "id": "PDF-3",
+      "action": "Classify historical failed/pending notes; do not retry or attach inactive/superseded files",
+      "cause": "Old ledger status survived changes in current AppX visibility/links. Multi-version importer intentionally holds a whole slot until every eligible variant is fetched.",
+      "scope": {
+        "failedFiles": 10,
+        "failedFileRowOccurrences": 17,
+        "uniqueDisabledRows": 16,
+        "pendingFiles": 5,
+        "pendingHistoricalSources": 9,
+        "ledgerIds": [
+          "6ad1e05bc9735682f0ead25e",
+          "6ad1e05cc9735682f0ead281",
+          "6ad1dcabc9735682f0ea6b3f",
+          "6ad1da42c9735682f0e8a6dd",
+          "6ad1da41c9735682f0e8a6c6",
+          "6ad1da44c9735682f0e8a6e1",
+          "6ad1dae5c9735682f0e8b126",
+          "6ad1dae3c9735682f0e8b107",
+          "6ad1dae6c9735682f0e8c2d4",
+          "6ad1dca5c9735682f0ea6aec",
+          "6ad1dcaac9735682f0ea6b28",
+          "6ad1dca7c9735682f0ea6afe",
+          "6ad1dca8c9735682f0ea6b0e",
+          "6ad1e449c9735682f0ebd409",
+          "6ad1ed33c9735682f0efbf9c"
+        ]
+      },
+      "dependencies": [
+        "Current daily plan and raw visibility check before any future retry",
+        "Source/admin ownership review if visibility later changes"
+      ],
+      "before": "Raw ledger status alone suggests 15 remaining active failures/pending files.",
+      "after": "Actionable backlog reports zero current eligible units from these 15; historical statuses preserved and explicitly labelled disabled/superseded.",
+      "ownership": "Seven pending source occurrences are item-disabled; two old source URLs disappeared and current versions already exist/are attached. Do not activate hidden content, replace manual assignments or delete historical PDFs.",
+      "dedup": "Shared Class notes are global; preserve pdfIds/pdfAssignments, append once per distinct Pdf only if a later approved active current target requires it.",
+      "risk": "Blind retry could reactivate hidden notes or append obsolete variants.",
+      "rollback": "No production write proposed. If report/monitor classification is added, revert report/query logic only.",
+      "acceptance": [
+        "All 10 failed files absent from current plan; all 17 file/row matches item disabled",
+        "All 5 pending files absent from current plan",
+        "Two current replacement Pdfs already present in both Class pdfIds and pdfAssignments",
+        "Every historical ID/source retained in plan JSON"
+      ]
+    },
+    {
+      "id": "CAPTURE-1",
+      "action": "Renew maintained CMS session through normal Vidyagram admin login",
+      "cause": "Current session isActive=false,lastHttpStatus307; CMS listing rejects SessionLost while public student root works.",
+      "scope": "Vidyagram customer781/AppX org2177599 apxsessions only",
+      "dependencies": [
+        "Human logs into cms.appx.co.in with the Vidyagram account through approved secret-safe path",
+        "Complete action plan reviewed; session mutation separately authorized"
+      ],
+      "before": "Global CMS listing/signing blocked as of13:46:53Z.",
+      "after": "Bounded CMS list read succeeds, exactly one correct tenant/org active session, keepalive200.",
+      "ownership": "Do not use another tenant account or paste cookies in chat. Existing reference/scripts/vidyagram-set-apx-session.cjs prompts hidden input and validates CMS dashboard before updating one tenant session.",
+      "dedup": "One active session for781/org2177599; preserve previous doc privately for rollback.",
+      "risk": "Wrong organisation cookie, account throttling, exposing secret.",
+      "rollback": "Restore prior tenant session doc only if version unchanged; never touch Quicktricks.",
+      "acceptance": [
+        "Real CMS listing returns rows",
+        "Public student root still works",
+        "No secret in logs/evidence"
+      ]
+    },
+    {
+      "id": "CAPTURE-2",
+      "action": "Isolated fresh capture of course96, promote only after existing completeness gate passes",
+      "cause": "Earlier capture attempts failed upstream; last good capture was retained (latest successful daily2026-10-22). Four source calls succeeded12:44Z, but current CMS session is now inactive.",
+      "scope": "Only apxcatalogcourses course96, its raw rows/tree pages and referenced content bodies under a new repair run ID; no Class, CourseClass, Course, PDF or ingest import",
+      "dependencies": [
+        "CAPTURE-1",
+        "Idle shared nightly/exclusive lock",
+        "Private before snapshot of course96 capture+attempt/detail/listRow/folder paths, all its rows/tree pages and all referenced shared content docs; inventory newly-created docs for rollback"
+      ],
+      "before": "Readers use last successful course96 capture; failed attempt remains diagnostic.",
+      "after": "Either unchanged successful pointer with bounded failed-attempt evidence, or new complete run pointer after all completeness invariants pass.",
+      "ownership": "Do not force promotion, reuse stale attempt as fresh, clear completeness warnings, or execute broad nightly import. Content bodies may be shared by other courses; preserve/guard all shared references.",
+      "dedup": "Use existing staged attempt/runView/promotion implementation with fresh=true and exact courseIds=[96]. No student-visible content import in this action.",
+      "risk": "Upstream timeouts, long listing, partial promotion, shared-body updates; requires snapshot and new-run version guard.",
+      "rollback": "Only if capture still points to repair run: restore exact96before docs/pointer and changed shared bodies; delete only newly-created96docs recorded in manifest; preserve old run views and avoid unrelated concurrent writes.",
+      "acceptance": [
+        "capture.status done and completeness.ok true",
+        "No unexplained/truncated/count mismatch",
+        "AppX raw row/tree counts reconcile",
+        "Rebuild only96plan and send diff to root for review before any import",
+        "No student-visible records changed"
+      ]
+    },
+    {
+      "id": "BACKUP-1",
+      "action": "Obtain independent-copy inventory and retention evidence before restore testing",
+      "cause": "Only primary R2 video and B2 document objects demonstrated; R2 replication/versioning/lifecycle requests denied403.",
+      "scope": "Read-only inventory for Vidyagram-specific second destination and scheduled backup jobs/manifests, plus source-to-copy hashes/size/sample coverage for bulk and daily delta",
+      "dependencies": [
+        "Correct read-only backup control-plane capability or operator-provided inventory/retention evidence",
+        "Named separate destination, tenant scope and latest successful backup manifest"
+      ],
+      "before": "No independently verified backup, recovery point or retention policy. Primary object existence is verified only by bounded samples.",
+      "after": "Either documented independent bulk/delta coverage and retention, or explicit unresolved missing-backup decision. Do not infer absence solely from403.",
+      "ownership": "Quicktricks mirror-deps optional secondary target is customer472-only and does not prove781 replication. CF_BACKUP credential naming is not a second copy.",
+      "dedup": "Compare asset identity and object hashes, not job-running counts. Retention/versioning in the same failure domain is not automatically independent DR.",
+      "risk": "Cross-tenant inventory or interpreting primary copies as backups. No production restore allowed.",
+      "rollback": "Read-only inventory needs no rollback.",
+      "acceptance": [
+        "Separate destination identified with intended tenant prefix",
+        "Bulk manifest counts and daily delta coverage/freshness verified",
+        "Retention and source deletion behavior documented",
+        "Permission errors and unverified portions clearly stated"
+      ]
+    },
+    {
+      "id": "BACKUP-2",
+      "action": "Conditional isolated restore test from an actually independent copy",
+      "cause": "Recoverability cannot be established by primary HEAD samples.",
+      "scope": "Small representative old/new video+PDF sample restored to a private local/scratch target only; never overwrite production",
+      "dependencies": [
+        "BACKUP-1 confirms independent copy",
+        "Reviewed restore target/sampling plan and read-only source access"
+      ],
+      "before": "No restore test executed.",
+      "after": "Independent sample restored, hashes agree with manifest/source, PDF parser/render and video playlist/segment/decode checks pass, timings recorded.",
+      "ownership": "Do not describe downloading primary R2/B2 again as independent backup restore. No changes to production URLs, permissions or objects.",
+      "dedup": "Scratch outputs isolated by run ID; preserve manifest references.",
+      "risk": "Accidentally testing primary instead of backup or restoring over prod.",
+      "rollback": "Remove scratch outputs only after evidence saved.",
+      "acceptance": [
+        "Independent-copy provenance",
+        "Full-file/object hash checks",
+        "PDF parser/render and video playable rendition checks",
+        "RPO/RTO evidence and known full-coverage limits"
+      ]
+    },
+    {
+      "id": "VERIFY-1",
+      "action": "Verify bounded recovery convergence and observe the next scheduled nightly after approved application",
+      "cause": "Manual patch success alone does not establish recurring importer stability.",
+      "scope": "Exact2PDF recovery no-op; course96 read-only plan; next scheduled nightly02:30IST2026-10-27 and its per-step outcomes",
+      "dependencies": [
+        "Approved relevant actions applied",
+        "Global CMS session healthy"
+      ],
+      "before": "No approved production repair applied in this track.",
+      "after": "Bounded reruns make no duplicates and next real scheduled run preserves results, or explicitly report scheduled verification pending.",
+      "ownership": "Do not run full nightly manually or modify other tracks while they own Class/placement writes.",
+      "dedup": "Same tenant file/hash/run guards; no blanket historical retries.",
+      "risk": "Claiming future run success without evidence.",
+      "rollback": "Validation is read-only; repair rollback remains action-specific.",
+      "acceptance": [
+        "No duplicate Pdf or extra attachments",
+        "Actionable current backlog exactly reconciles",
+        "Next scheduled run actual evidence or pending label"
+      ]
+    }
+  ],
+  "pdfCurrentPlan": {
+    "at": "2026-10-26T13:50:49.532Z",
+    "files": 10403,
+    "currentEligibleFailures": [
+      {
+        "id": "6ad94017c9735682f0130807",
+        "status": "failed",
+        "error": "decrypted bytes failed the PDF validity check",
+        "kind": "standalone",
+        "pdfId": null,
+        "currentPlan": true,
+        "currentSources": [
+          {
+            "course": "43",
+            "rowId": "32909",
+            "field": "link",
+            "kind": "standalone",
+            "classAssetKey": null,
+            "active": true
+          }
+        ],
+        "oldSources": [],
+        "rawRows": [
+          {
+            "_id": "6ace3176c9735682f047e5e1",
+            "apxCourseId": "43",
+            "hiddenReason": null,
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "32909",
+              "title": "Height and Distance (ClassRoom Sheet-Mains)",
+              "enable": "1",
+              "deleted": "0"
+            }
+          }
+        ],
+        "targets": []
+      },
+      {
+        "id": "6ad94018c9735682f013080e",
+        "status": "failed",
+        "error": "decrypted bytes failed the PDF validity check",
+        "kind": "standalone",
+        "pdfId": null,
+        "currentPlan": true,
+        "currentSources": [
+          {
+            "course": "43",
+            "rowId": "32910",
+            "field": "link",
+            "kind": "standalone",
+            "classAssetKey": null,
+            "active": true
+          }
+        ],
+        "oldSources": [],
+        "rawRows": [
+          {
+            "_id": "6ace3176c9735682f047e5e2",
+            "apxCourseId": "43",
+            "hiddenReason": null,
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "32910",
+              "title": "Height & Distance (Pro Level Sheet_Mains) ",
+              "enable": "1",
+              "deleted": "0"
+            }
+          }
+        ],
+        "targets": []
+      }
+    ],
+    "historicalFailedNotes": [
+      {
+        "id": "6ad1e05bc9735682f0ead25e",
+        "status": "failed",
+        "error": "Student source row not found in mirrored tree",
+        "kind": "note",
+        "pdfId": null,
+        "currentPlan": false,
+        "oldSources": [],
+        "rawRows": [
+          {
+            "_id": "6ace32a5c9735682f0480adc",
+            "apxCourseId": "63",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "39862",
+              "title": "🔴SSC GD 2026 Maths Practice Set 01 | पेपर में यही सवाल छपेंगे! 😱| ",
+              "enable": "0",
+              "deleted": "0"
+            }
+          }
+        ],
+        "targets": []
+      },
+      {
+        "id": "6ad1e05cc9735682f0ead281",
+        "status": "failed",
+        "error": "Student source row not found in mirrored tree",
+        "kind": "note",
+        "pdfId": null,
+        "currentPlan": false,
+        "oldSources": [],
+        "rawRows": [
+          {
+            "_id": "6ace32a5c9735682f0480adc",
+            "apxCourseId": "63",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "39862",
+              "title": "🔴SSC GD 2026 Maths Practice Set 01 | पेपर में यही सवाल छपेंगे! 😱| ",
+              "enable": "0",
+              "deleted": "0"
+            }
+          }
+        ],
+        "targets": []
+      },
+      {
+        "id": "6ad1dcabc9735682f0ea6b3f",
+        "status": "failed",
+        "error": "Student source row not found in mirrored tree",
+        "kind": "note",
+        "pdfId": null,
+        "currentPlan": false,
+        "oldSources": [],
+        "rawRows": [
+          {
+            "_id": "6ace326ac9735682f0480641",
+            "apxCourseId": "59",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "39868",
+              "title": " Percentage 14",
+              "enable": "0",
+              "deleted": "0"
+            }
+          }
+        ],
+        "targets": []
+      },
+      {
+        "id": "6ad1da41c9735682f0e8a6c6",
+        "status": "failed",
+        "error": "Student source row not found in mirrored tree",
+        "kind": "note",
+        "pdfId": null,
+        "currentPlan": false,
+        "oldSources": [],
+        "rawRows": [
+          {
+            "_id": "6ace31c5c9735682f047f3ae",
+            "apxCourseId": "48",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "177635",
+              "title": "Time, Speed & Distance 09",
+              "enable": "0",
+              "deleted": "0"
+            }
+          },
+          {
+            "_id": "6ace31fec9735682f047fbea",
+            "apxCourseId": "52",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "44487",
+              "title": "Time, Speed & Distance 09",
+              "enable": "0",
+              "deleted": "0"
+            }
+          },
+          {
+            "_id": "6ace3239c9735682f0480289",
+            "apxCourseId": "55",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "45165",
+              "title": "Time, Speed & Distance 09",
+              "enable": "0",
+              "deleted": "0"
+            }
+          },
+          {
+            "_id": "6ace3248c9735682f048041a",
+            "apxCourseId": "56",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "45270",
+              "title": "Time, Speed & Distance 09",
+              "enable": "0",
+              "deleted": "0"
+            }
+          },
+          {
+            "_id": "6ace32c0c9735682f0480c79",
+            "apxCourseId": "67",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "40555",
+              "title": "Time, Speed & Distance 09",
+              "enable": "0",
+              "deleted": "0"
+            }
+          }
+        ],
+        "targets": []
+      },
+      {
+        "id": "6ad1da44c9735682f0e8a6e1",
+        "status": "failed",
+        "error": "Student source row not found in mirrored tree",
+        "kind": "note",
+        "pdfId": null,
+        "currentPlan": false,
+        "oldSources": [],
+        "rawRows": [
+          {
+            "_id": "6ace6c14c9735682f04e9c66",
+            "apxCourseId": "74",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "40554",
+              "title": "Time, Speed & Distance 09",
+              "enable": "0",
+              "deleted": "0"
+            }
+          }
+        ],
+        "targets": []
+      },
+      {
+        "id": "6ad1dae3c9735682f0e8b107",
+        "status": "failed",
+        "error": "Student source row not found in mirrored tree",
+        "kind": "note",
+        "pdfId": null,
+        "currentPlan": false,
+        "oldSources": [],
+        "rawRows": [
+          {
+            "_id": "6ace31fec9735682f047fbd9",
+            "apxCourseId": "52",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "44464",
+              "title": "Pipe & Cistern 02",
+              "enable": "0",
+              "deleted": "0"
+            }
+          },
+          {
+            "_id": "6ace3248c9735682f0480466",
+            "apxCourseId": "56",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "175667",
+              "title": "Pipe & Cistern 02",
+              "enable": "0",
+              "deleted": "0"
+            }
+          },
+          {
+            "_id": "6ace32c0c9735682f0480ca5",
+            "apxCourseId": "67",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "43326",
+              "title": "Pipe & Cistern 02",
+              "enable": "0",
+              "deleted": "0"
+            }
+          }
+        ],
+        "targets": []
+      },
+      {
+        "id": "6ad1dae6c9735682f0e8c2d4",
+        "status": "failed",
+        "error": "Student source row not found in mirrored tree",
+        "kind": "note",
+        "pdfId": null,
+        "currentPlan": false,
+        "oldSources": [],
+        "rawRows": [
+          {
+            "_id": "6ace6c14c9735682f04e9d04",
+            "apxCourseId": "74",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "43325",
+              "title": "Pipe & Cistern 02",
+              "enable": "0",
+              "deleted": "0"
+            }
+          }
+        ],
+        "targets": []
+      },
+      {
+        "id": "6ad1dca5c9735682f0ea6aec",
+        "status": "failed",
+        "error": "Student source row not found in mirrored tree",
+        "kind": "note",
+        "pdfId": null,
+        "currentPlan": false,
+        "oldSources": [],
+        "rawRows": [
+          {
+            "_id": "6ace326ac9735682f04806ad",
+            "apxCourseId": "59",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "176705",
+              "title": "Partnership 02",
+              "enable": "0",
+              "deleted": "0"
+            }
+          }
+        ],
+        "targets": []
+      },
+      {
+        "id": "6ad1dca7c9735682f0ea6afe",
+        "status": "failed",
+        "error": "Student source row not found in mirrored tree",
+        "kind": "note",
+        "pdfId": null,
+        "currentPlan": false,
+        "oldSources": [],
+        "rawRows": [
+          {
+            "_id": "6ace32c0c9735682f0480cd2",
+            "apxCourseId": "67",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "176704",
+              "title": "Partnership 02",
+              "enable": "0",
+              "deleted": "0"
+            }
+          }
+        ],
+        "targets": []
+      },
+      {
+        "id": "6ad1dca8c9735682f0ea6b0e",
+        "status": "failed",
+        "error": "Student source row not found in mirrored tree",
+        "kind": "note",
+        "pdfId": null,
+        "currentPlan": false,
+        "oldSources": [],
+        "rawRows": [
+          {
+            "_id": "6ad5d973c9735682f0a02373",
+            "apxCourseId": "105",
+            "raw": {
+              "id": "190331",
+              "title": "Partnership 02",
+              "enable": "0",
+              "deleted": "0"
+            },
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26"
+          },
+          {
+            "_id": "6ace6c14c9735682f04e9df6",
+            "apxCourseId": "74",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "176703",
+              "title": "Partnership 02",
+              "enable": "0",
+              "deleted": "0"
+            }
+          }
+        ],
+        "targets": []
+      }
+    ],
+    "historicalPendingNotes": [
+      {
+        "id": "6ad1da42c9735682f0e8a6dd",
+        "status": "pending",
+        "error": null,
+        "kind": "note",
+        "pdfId": "6ad1d9d5a3d5e866aea7b104",
+        "currentPlan": false,
+        "oldSources": [
+          {
+            "course": "53",
+            "rowId": "175477",
+            "field": "pdf_link",
+            "kind": "note",
+            "classAssetKey": "vid:armaths-data:3707471-1778652610",
+            "state": "pending"
+          },
+          {
+            "course": "59",
+            "rowId": "40556",
+            "field": "pdf_link",
+            "kind": "note",
+            "classAssetKey": "vid:armaths-data:3707471-1778652610",
+            "state": "pending"
+          },
+          {
+            "course": "103",
+            "rowId": "44155",
+            "field": "pdf_link",
+            "kind": "note",
+            "classAssetKey": "vid:armaths-data:3707471-1778652610",
+            "state": "pending"
+          }
+        ],
+        "rawRows": [
+          {
+            "_id": "6ace3762c9735682f04884e2",
+            "apxCourseId": "103",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "44155",
+              "title": "Time, Speed & Distance 09",
+              "enable": "0",
+              "deleted": "0"
+            }
+          },
+          {
+            "_id": "6ace3227c9735682f047ffbe",
+            "apxCourseId": "53",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "175477",
+              "title": "Time, Speed & Distance 09",
+              "enable": "0",
+              "deleted": "0"
+            }
+          },
+          {
+            "_id": "6ace326ac9735682f048064f",
+            "apxCourseId": "59",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "40556",
+              "title": "Time, Speed & Distance 09",
+              "enable": "0",
+              "deleted": "0"
+            }
+          }
+        ],
+        "targets": []
+      },
+      {
+        "id": "6ad1dae5c9735682f0e8b126",
+        "status": "pending",
+        "error": null,
+        "kind": "note",
+        "pdfId": "6ad1dacfa3d5e866aea7b1a0",
+        "currentPlan": false,
+        "oldSources": [
+          {
+            "course": "55",
+            "rowId": "175572",
+            "field": "pdf_link",
+            "kind": "note",
+            "classAssetKey": "vid:armaths-data:3850851-1781068931",
+            "state": "pending"
+          },
+          {
+            "course": "59",
+            "rowId": "43327",
+            "field": "pdf_link",
+            "kind": "note",
+            "classAssetKey": "vid:armaths-data:3850851-1781068931",
+            "state": "pending"
+          },
+          {
+            "course": "103",
+            "rowId": "44207",
+            "field": "pdf_link",
+            "kind": "note",
+            "classAssetKey": "vid:armaths-data:3850851-1781068931",
+            "state": "pending"
+          }
+        ],
+        "rawRows": [
+          {
+            "_id": "6ace3762c9735682f0488506",
+            "apxCourseId": "103",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "44207",
+              "title": "Pipe & Cistern 02",
+              "enable": "0",
+              "deleted": "0"
+            }
+          },
+          {
+            "_id": "6ace3239c9735682f04802cf",
+            "apxCourseId": "55",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "175572",
+              "title": "Pipe & Cistern 02",
+              "enable": "0",
+              "deleted": "0"
+            }
+          },
+          {
+            "_id": "6ace326ac9735682f048067e",
+            "apxCourseId": "59",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "43327",
+              "title": "Pipe & Cistern 02",
+              "enable": "0",
+              "deleted": "0"
+            }
+          }
+        ],
+        "targets": []
+      },
+      {
+        "id": "6ad1dcaac9735682f0ea6b28",
+        "status": "pending",
+        "error": null,
+        "kind": "note",
+        "pdfId": "6ad1dba8a3d5e866aea7b25f",
+        "currentPlan": false,
+        "oldSources": [
+          {
+            "course": "92",
+            "rowId": "176702",
+            "field": "pdf_link",
+            "kind": "note",
+            "classAssetKey": "vid:armaths-data:4059093-1784527991",
+            "state": "pending"
+          }
+        ],
+        "rawRows": [
+          {
+            "_id": "6ace3526c9735682f0483206",
+            "apxCourseId": "92",
+            "hiddenReason": "item disabled",
+            "lastSeenRunId": "daily-2026-10-26",
+            "raw": {
+              "id": "176702",
+              "title": "Partnership 02",
+              "enable": "0",
+              "deleted": "0"
+            }
+          }
+        ],
+        "targets": []
+      },
+      {
+        "id": "6ad1e449c9735682f0ebd409",
+        "status": "pending",
+        "error": null,
+        "kind": "note",
+        "pdfId": "6ad5b33ef269676d2259f810",
+        "currentPlan": false,
+        "oldSources": [
+          {
+            "course": "94",
+            "rowId": "188859",
+            "field": "pdf_link",
+            "kind": "note",
+            "classAssetKey": "vid:armaths-data:4468130-1790186981",
+            "state": "pending"
+          }
+        ],
+        "rawRows": [],
+        "targets": [
+          {
+            "classAssetKey": "vid:armaths-data:4468130-1790186981",
+            "slots": [
+              {
+                "slot": "pdf_link",
+                "variants": [
+                  {
+                    "ledgerId": "6ad69cabc9735682f0bfb407",
+                    "status": "done",
+                    "pdfId": "6ad69cabe36abd47ea38d894",
+                    "fileHash": "7dbb123383bdd18387c5419f965661e293b0393fc161e44832445afe20e0281b",
+                    "course": "70",
+                    "rowId": "188851"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "6ad1ed33c9735682f0efbf9c",
+        "status": "pending",
+        "error": null,
+        "kind": "note",
+        "pdfId": "6ad5b341f269676d2259f813",
+        "currentPlan": false,
+        "oldSources": [
+          {
+            "course": "95",
+            "rowId": "189655",
+            "field": "pdf_link",
+            "kind": "note",
+            "classAssetKey": "vid:armaths-data:4607176-1791984898",
+            "state": "pending"
+          }
+        ],
+        "rawRows": [],
+        "targets": [
+          {
+            "classAssetKey": "vid:armaths-data:4607176-1791984898",
+            "slots": [
+              {
+                "slot": "pdf_link",
+                "variants": [
+                  {
+                    "ledgerId": "6ad69c69c9735682f0bfb18f",
+                    "status": "done",
+                    "pdfId": "6ad69c69e36abd47ea38d83e",
+                    "fileHash": "7fd808e3b30d2521ae1c6175a3aa2de5d9ba9f5a3e940b5f5693900bbd3de2dd",
+                    "course": "74",
+                    "rowId": "189656"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "pendingSourcesAndClassLinks": [
+    {
+      "id": "6ad1da42c9735682f0e8a6dd",
+      "status": "pending",
+      "error": null,
+      "pdfId": "6ad1d9d5a3d5e866aea7b104",
+      "kind": "note",
+      "inCurrentPlan": false,
+      "rawRows": [
+        {
+          "_id": "6ace3762c9735682f04884e2",
+          "apxCourseId": "103",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "44155",
+            "title": "Time, Speed & Distance 09",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        },
+        {
+          "_id": "6ace3227c9735682f047ffbe",
+          "apxCourseId": "53",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "175477",
+            "title": "Time, Speed & Distance 09",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        },
+        {
+          "_id": "6ace326ac9735682f048064f",
+          "apxCourseId": "59",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "40556",
+            "title": "Time, Speed & Distance 09",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        }
+      ],
+      "sourceCount": 3,
+      "sources": [
+        {
+          "apxCourseId": "53",
+          "rowId": "175477",
+          "field": "pdf_link",
+          "kind": "note",
+          "classAssetKey": "vid:armaths-data:3707471-1778652610",
+          "state": "pending",
+          "class": {
+            "_id": "6ace9aac8752d955968b72af",
+            "title": "Time, Speed & Distance 09 (2) · Time, Speed & Distance",
+            "apxAssetKey": "vid:armaths-data:3707471-1778652610"
+          },
+          "importLedger": {
+            "_id": "6ace9aacc9735682f04f0a7f",
+            "classId": "6ace9aac8752d955968b72af",
+            "kind": "ingest"
+          }
+        },
+        {
+          "apxCourseId": "59",
+          "rowId": "40556",
+          "field": "pdf_link",
+          "kind": "note",
+          "classAssetKey": "vid:armaths-data:3707471-1778652610",
+          "state": "pending",
+          "class": {
+            "_id": "6ace9aac8752d955968b72af",
+            "title": "Time, Speed & Distance 09 (2) · Time, Speed & Distance",
+            "apxAssetKey": "vid:armaths-data:3707471-1778652610"
+          },
+          "importLedger": {
+            "_id": "6ace9aacc9735682f04f0a7f",
+            "classId": "6ace9aac8752d955968b72af",
+            "kind": "ingest"
+          }
+        },
+        {
+          "apxCourseId": "103",
+          "rowId": "44155",
+          "field": "pdf_link",
+          "kind": "note",
+          "classAssetKey": "vid:armaths-data:3707471-1778652610",
+          "state": "pending",
+          "class": {
+            "_id": "6ace9aac8752d955968b72af",
+            "title": "Time, Speed & Distance 09 (2) · Time, Speed & Distance",
+            "apxAssetKey": "vid:armaths-data:3707471-1778652610"
+          },
+          "importLedger": {
+            "_id": "6ace9aacc9735682f04f0a7f",
+            "classId": "6ace9aac8752d955968b72af",
+            "kind": "ingest"
+          }
+        }
+      ]
+    },
+    {
+      "id": "6ad1dae5c9735682f0e8b126",
+      "status": "pending",
+      "error": null,
+      "pdfId": "6ad1dacfa3d5e866aea7b1a0",
+      "kind": "note",
+      "inCurrentPlan": false,
+      "rawRows": [
+        {
+          "_id": "6ace3762c9735682f0488506",
+          "apxCourseId": "103",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "44207",
+            "title": "Pipe & Cistern 02",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        },
+        {
+          "_id": "6ace3239c9735682f04802cf",
+          "apxCourseId": "55",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "175572",
+            "title": "Pipe & Cistern 02",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        },
+        {
+          "_id": "6ace326ac9735682f048067e",
+          "apxCourseId": "59",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "43327",
+            "title": "Pipe & Cistern 02",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        }
+      ],
+      "sourceCount": 3,
+      "sources": [
+        {
+          "apxCourseId": "55",
+          "rowId": "175572",
+          "field": "pdf_link",
+          "kind": "note",
+          "classAssetKey": "vid:armaths-data:3850851-1781068931",
+          "state": "pending",
+          "class": {
+            "_id": "6ace9b3d8752d955968b7915",
+            "title": "Pipe & Cistern 02 (2)",
+            "apxAssetKey": "vid:armaths-data:3850851-1781068931"
+          },
+          "importLedger": {
+            "_id": "6ace9b3dc9735682f04f0c76",
+            "classId": "6ace9b3d8752d955968b7915",
+            "kind": "ingest"
+          }
+        },
+        {
+          "apxCourseId": "59",
+          "rowId": "43327",
+          "field": "pdf_link",
+          "kind": "note",
+          "classAssetKey": "vid:armaths-data:3850851-1781068931",
+          "state": "pending",
+          "class": {
+            "_id": "6ace9b3d8752d955968b7915",
+            "title": "Pipe & Cistern 02 (2)",
+            "apxAssetKey": "vid:armaths-data:3850851-1781068931"
+          },
+          "importLedger": {
+            "_id": "6ace9b3dc9735682f04f0c76",
+            "classId": "6ace9b3d8752d955968b7915",
+            "kind": "ingest"
+          }
+        },
+        {
+          "apxCourseId": "103",
+          "rowId": "44207",
+          "field": "pdf_link",
+          "kind": "note",
+          "classAssetKey": "vid:armaths-data:3850851-1781068931",
+          "state": "pending",
+          "class": {
+            "_id": "6ace9b3d8752d955968b7915",
+            "title": "Pipe & Cistern 02 (2)",
+            "apxAssetKey": "vid:armaths-data:3850851-1781068931"
+          },
+          "importLedger": {
+            "_id": "6ace9b3dc9735682f04f0c76",
+            "classId": "6ace9b3d8752d955968b7915",
+            "kind": "ingest"
+          }
+        }
+      ]
+    },
+    {
+      "id": "6ad1dcaac9735682f0ea6b28",
+      "status": "pending",
+      "error": null,
+      "pdfId": "6ad1dba8a3d5e866aea7b25f",
+      "kind": "note",
+      "inCurrentPlan": false,
+      "rawRows": [
+        {
+          "_id": "6ace3526c9735682f0483206",
+          "apxCourseId": "92",
+          "lastSeenRunId": "daily-2026-10-26",
+          "raw": {
+            "id": "176702",
+            "title": "Partnership 02",
+            "type": "LIVE_STREAM",
+            "is_pdf_encrypted": "0",
+            "pdf_encryption_version": "1",
+            "is_pdf2_encrypted": "0",
+            "pdf2_encryption_version": "1"
+          }
+        }
+      ],
+      "sourceCount": 1,
+      "sources": [
+        {
+          "apxCourseId": "92",
+          "rowId": "176702",
+          "field": "pdf_link",
+          "kind": "note",
+          "classAssetKey": "vid:armaths-data:4059093-1784527991",
+          "state": "pending",
+          "class": {
+            "_id": "6ace9c8b8752d955968b7c2c",
+            "title": "Partnership 02 (2) · Partnership",
+            "apxAssetKey": "vid:armaths-data:4059093-1784527991"
+          },
+          "importLedger": {
+            "_id": "6ace9c8cc9735682f04f0e3c",
+            "classId": "6ace9c8b8752d955968b7c2c",
+            "kind": "ingest"
+          }
+        }
+      ]
+    },
+    {
+      "id": "6ad1e449c9735682f0ebd409",
+      "status": "pending",
+      "error": null,
+      "pdfId": "6ad5b33ef269676d2259f810",
+      "kind": "note",
+      "inCurrentPlan": false,
+      "rawRows": [],
+      "sourceCount": 1,
+      "sources": [
+        {
+          "apxCourseId": "94",
+          "rowId": "188859",
+          "field": "pdf_link",
+          "kind": "note",
+          "classAssetKey": "vid:armaths-data:4468130-1790186981",
+          "state": "pending",
+          "class": {
+            "_id": "6acea23f8752d955968b8bb7",
+            "title": "Puzzle 03 · PUZZLE (2)",
+            "apxAssetKey": "vid:armaths-data:4468130-1790186981"
+          },
+          "importLedger": {
+            "_id": "6acea240c9735682f04f15e7",
+            "classId": "6acea23f8752d955968b8bb7",
+            "kind": "ingest"
+          }
+        }
+      ]
+    },
+    {
+      "id": "6ad1ed33c9735682f0efbf9c",
+      "status": "pending",
+      "error": null,
+      "pdfId": "6ad5b341f269676d2259f813",
+      "kind": "note",
+      "inCurrentPlan": false,
+      "rawRows": [],
+      "sourceCount": 1,
+      "sources": [
+        {
+          "apxCourseId": "95",
+          "rowId": "189655",
+          "field": "pdf_link",
+          "kind": "note",
+          "classAssetKey": "vid:armaths-data:4607176-1791984898",
+          "state": "pending",
+          "class": {
+            "_id": "6ad1e3ddb520d957233cc16b",
+            "title": "Fundamental Rights 04",
+            "apxAssetKey": "vid:armaths-data:4607176-1791984898"
+          },
+          "importLedger": {
+            "_id": "6ad1e3ddc9735682f0ebcc1a",
+            "classId": "6ad1e3ddb520d957233cc16b",
+            "kind": "ingest"
+          }
+        }
+      ]
+    }
+  ],
+  "currentClassNoteAssignments": [
+    {
+      "_id": "6ace9aac8752d955968b72af",
+      "title": "Time, Speed & Distance 09 (2) · Time, Speed & Distance",
+      "pdfIds": [
+        "6ad1d9d5a3d5e866aea7b104"
+      ],
+      "apxAssetKey": "vid:armaths-data:3707471-1778652610",
+      "pdfAssignments": [
+        {
+          "_id": "6ad5b862f269676d2259fce0",
+          "pdfId": "6ad1d9d5a3d5e866aea7b104",
+          "priority": 1,
+          "isFree": false
+        }
+      ]
+    },
+    {
+      "_id": "6ace9b3d8752d955968b7915",
+      "title": "Pipe & Cistern 02 (2)",
+      "pdfIds": [
+        "6ad1dacfa3d5e866aea7b1a0"
+      ],
+      "apxAssetKey": "vid:armaths-data:3850851-1781068931",
+      "pdfAssignments": [
+        {
+          "_id": "6ad5b861f269676d2259fc58",
+          "pdfId": "6ad1dacfa3d5e866aea7b1a0",
+          "priority": 1,
+          "isFree": false
+        }
+      ]
+    },
+    {
+      "_id": "6ace9c8b8752d955968b7c2c",
+      "title": "Partnership 02 (2) · Partnership",
+      "pdfIds": [
+        "6ad1dba8a3d5e866aea7b25f"
+      ],
+      "apxAssetKey": "vid:armaths-data:4059093-1784527991",
+      "pdfAssignments": [
+        {
+          "_id": "6ad5b861f269676d2259fc52",
+          "pdfId": "6ad1dba8a3d5e866aea7b25f",
+          "priority": 1,
+          "isFree": false
+        }
+      ]
+    },
+    {
+      "_id": "6acea23f8752d955968b8bb7",
+      "title": "Puzzle 03 · PUZZLE (2)",
+      "pdfIds": [
+        "6ad5b33ef269676d2259f810",
+        "6ad69cabe36abd47ea38d894"
+      ],
+      "apxAssetKey": "vid:armaths-data:4468130-1790186981",
+      "pdfAssignments": [
+        {
+          "_id": "6ad5b861f269676d2259fc5e",
+          "pdfId": "6ad5b33ef269676d2259f810",
+          "priority": 1,
+          "isFree": false
+        },
+        {
+          "_id": "6ad69f29e36abd47ea38e685",
+          "pdfId": "6ad69cabe36abd47ea38d894",
+          "priority": 2,
+          "isFree": false
+        }
+      ]
+    },
+    {
+      "_id": "6ad1e3ddb520d957233cc16b",
+      "title": "Fundamental Rights 04",
+      "pdfIds": [
+        "6ad5b341f269676d2259f813",
+        "6ad69c69e36abd47ea38d83e"
+      ],
+      "apxAssetKey": "vid:armaths-data:4607176-1791984898",
+      "pdfAssignments": [
+        {
+          "_id": "6ad5b861f269676d2259fc60",
+          "pdfId": "6ad5b341f269676d2259f813",
+          "priority": 1,
+          "isFree": false
+        },
+        {
+          "_id": "6ad69f2fe36abd47ea38ecc3",
+          "pdfId": "6ad69c69e36abd47ea38d83e",
+          "priority": 2,
+          "isFree": false
+        }
+      ]
+    }
+  ],
+  "fullFileValidation": [
+    {
+      "id": "6ad94017c9735682f0130807",
+      "bytes": 2330256,
+      "sha256": "21e19d30dabc659ce40baecac90f97d997b4747ebdc460cb5d327098ae30f937",
+      "pdfinfoExit": 0,
+      "pdfinfo": "Title:           \nSubject:         \nKeywords:        \nAuthor:          \nCreator:         \nProducer:        Foxit Reader PDF Printer Version 7.1.0.112\nCreationDate:    Wed Sep 18 14:01:05 2024 IST\nModDate:         Tue Nov  4 19:01:58 2025 IST\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           5\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       2330256 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "strictParserPageCount": 5,
+      "allPageTextLengths": [
+        0,
+        4006,
+        4949,
+        4558,
+        2020
+      ],
+      "renderExit": 0,
+      "renderedPages": 5,
+      "parserWarnings": "Syntax Warning: Mismatch between font type and embedded font file\nSyntax Warning: Mismatch between font type and embedded font file\nSyntax Warning: Mismatch between font type and embedded font file\nSyntax Warning: Mismatch between font type and embedded font file\nSyntax Warning: Mismatch between font type and embedded font file\nSyntax Warning: Mismatch between font type and embedded font file\nSyntax Warning: Mismatch between font type and embedded font file\nSyntax Warning: Mismatch between font type and embedded font file\n"
+    },
+    {
+      "id": "6ad94018c9735682f013080e",
+      "bytes": 3178306,
+      "sha256": "36fddbd2145da3f9adc33b02a192dfee27d75127fffd1f272ebb29e652442946",
+      "pdfinfoExit": 0,
+      "pdfinfo": "Title:           \nSubject:         \nKeywords:        \nAuthor:          \nCreator:         \nProducer:        Foxit Reader PDF Printer Version 7.1.0.112\nCreationDate:    Sat Nov 29 11:36:34 2025 IST\nModDate:         Sat Nov 29 12:06:10 2025 IST\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            AcroForm\nJavaScript:      no\nPages:           8\nEncrypted:       no\nPage size:       595.276 x 841.89 pts (A4)\nPage rot:        0\nFile size:       3178306 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "strictParserPageCount": 8,
+      "allPageTextLengths": [
+        0,
+        4365,
+        5086,
+        4497,
+        1214,
+        1150,
+        1036,
+        1006
+      ],
+      "renderExit": 0,
+      "renderedPages": 8,
+      "parserWarnings": "Syntax Warning: Mismatch between font type and embedded font file\nSyntax Warning: Mismatch between font type and embedded font file\nSyntax Warning: Mismatch between font type and embedded font file\nSyntax Warning: Mismatch between font type and embedded font file\n"
+    }
+  ],
+  "session": {
+    "at": "2026-10-26T13:46:53.752Z",
+    "session": {
+      "isActive": false,
+      "updatedAt": "2026-10-26T13:46:00.143Z",
+      "lastCheckedAt": "2026-10-26T13:26:00.038Z",
+      "lastHttpStatus": 307
+    },
+    "checks": [
+      {
+        "label": "cmsListOne",
+        "ok": false,
+        "error": "SessionLost",
+        "http": null,
+        "ms": 10
+      },
+      {
+        "label": "studentRoot85",
+        "ok": true,
+        "ms": 167,
+        "rows": 1,
+        "total": 1,
+        "more": null
+      }
+    ]
+  },
+  "backupConfig": {
+    "at": "2026-10-26T13:47:07.192Z",
+    "bucket": "recordedvideos-vidyagram",
+    "checks": [
+      {
+        "name": "replication",
+        "ok": false,
+        "error": "AccessDenied",
+        "http": 403
+      },
+      {
+        "name": "versioning",
+        "ok": false,
+        "error": "AccessDenied",
+        "http": 403
+      },
+      {
+        "name": "lifecycle",
+        "ok": false,
+        "error": "AccessDenied",
+        "http": 403
+      }
+    ]
+  },
+  "videoFailuresOwner": "media-video/rules_review separate action map;183dead source failures not retried by this track"
+}

@@ -1,0 +1,120 @@
+diff --git a/src/services/apx/apxCatalogHttpSource.ts b/src/services/apx/apxCatalogHttpSource.ts
+index 76cefb7e6..fcf1eb7a0 100644
+--- a/src/services/apx/apxCatalogHttpSource.ts
++++ b/src/services/apx/apxCatalogHttpSource.ts
+@@ -33,6 +33,7 @@ export interface HttpSourceOptions {
+   tenantApiBase: string;
+   baseUrl?: string; // CMS origin, default APX_BASE_URL
+   gapMs?: number;
++  studentGapMs?: number; // serial student calls, default 1 s after each response
+   timeoutMs?: number; // per CMS call, default 60 s
+   listingTimeoutMs?: number; // get_pc4_contents and getFolderPaths, default 300 s
+ }
+@@ -83,6 +84,9 @@ export function createHttpCatalogSource(options: HttpSourceOptions): ApxCatalogS
+   const listingTimeoutMs = options.listingTimeoutMs ?? 300000;
+   let queue: Promise<unknown> = Promise.resolve();
+   let lastAt = 0;
++  let studentQueue: Promise<unknown> = Promise.resolve();
++  let studentLastAt = 0;
++  const studentGapMs = options.studentGapMs ?? 1000;
+ 
+   // One CMS request at a time, gapMs apart, fresh session each time.
+   const cms = (
+@@ -190,21 +194,33 @@ export function createHttpCatalogSource(options: HttpSourceOptions): ApxCatalogS
+       return null;
+     },
+ 
+-    async folderContents(courseId, parentId) {
+-      const response = await axios.get(`${tenantApiBase.replace(/\/$/, '')}/get/folder_contentsv3`, {
+-        params: { course_id: courseId, parent_id: parentId, start: '-1' },
+-        timeout: 30000,
+-        maxRedirects: 0,
+-        family: 4,
+-        validateStatus: () => true,
+-        headers: { 'Auth-Key': 'appxapi', 'Client-Service': 'Appx', source: 'website', 'User-Agent': USER_AGENT },
+-      });
+-      const body = response.data as RawRow;
+-      if (response.status !== 200 || !Array.isArray(body?.data)) {
+-        throw new Error(`folder_contentsv3 course ${courseId} parent ${parentId}: HTTP ${response.status}, status ${body?.status ?? 'n/a'}`);
+-      }
+-      const total = Number(body.total);
+-      return { data: body.data, total: body.total == null || !Number.isFinite(total) ? null : total };
++    folderContents(courseId, parentId) {
++      const call = async () => {
++        const wait = studentLastAt + studentGapMs - Date.now();
++        if (wait > 0) await sleep(wait);
++        let response;
++        try {
++          response = await axios.get(`${tenantApiBase.replace(/\/$/, '')}/get/folder_contentsv3`, {
++            params: { course_id: courseId, parent_id: parentId, start: '-1' },
++            timeout: 30000,
++            maxRedirects: 0,
++            family: 4,
++            validateStatus: () => true,
++            headers: { 'Auth-Key': 'appxapi', 'Client-Service': 'Appx', source: 'website', 'User-Agent': USER_AGENT },
++          });
++        } finally {
++          studentLastAt = Date.now();
++        }
++        const body = response.data as RawRow;
++        if (response.status !== 200 || !Array.isArray(body?.data)) {
++          throw new Error(`folder_contentsv3 course ${courseId} parent ${parentId}: HTTP ${response.status}, status ${body?.status ?? 'n/a'}`);
++        }
++        const total = Number(body.total);
++        return { data: body.data, total: body.total == null || !Number.isFinite(total) ? null : total };
++      };
++      const result = studentQueue.then(call, call);
++      studentQueue = result.catch(() => undefined);
++      return result;
+     },
+   };
+ }
+diff --git a/src/services/apx/vidyagramNightlySteps.ts b/src/services/apx/vidyagramNightlySteps.ts
+index efa173f3c..f88502fcb 100644
+--- a/src/services/apx/vidyagramNightlySteps.ts
++++ b/src/services/apx/vidyagramNightlySteps.ts
+@@ -80,6 +80,7 @@ export const realNightlySteps: NightlySteps = {
+   async capture({ db, sessionDb, runId, sleep, log }) {
+     const source = createHttpCatalogSource({
+       db, sessionDb, customerId: CUSTOMER, orgId: APX_ORG_ID, tenantApiBase: APX_TENANT_API_BASE_URL,
++      gapMs: 250, studentGapMs: 250,
+     });
+     const pass = async (courseIds?: string[]) => {
+       const summary = await runCatalogCapture({ db, source, customerId: CUSTOMER, runId, courseIds, log });
+diff --git a/src/tests/apxCatalogHttpSourcePacing.test.ts b/src/tests/apxCatalogHttpSourcePacing.test.ts
+new file mode 100644
+index 000000000..1a12f4ce5
+--- /dev/null
++++ b/src/tests/apxCatalogHttpSourcePacing.test.ts
+@@ -0,0 +1,31 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import axios from 'axios';
++import { createHttpCatalogSource } from '../services/apx/apxCatalogHttpSource';
++
++test('concurrent folder calls are serial and paced, including after a failed response', async (t) => {
++  const starts: number[] = [];
++  const ends: number[] = [];
++  let active = 0;
++  let maxActive = 0;
++  t.mock.method(axios, 'get', async () => {
++    const index = starts.length;
++    starts.push(Date.now());
++    maxActive = Math.max(maxActive, ++active);
++    await new Promise(resolve => setTimeout(resolve, 20));
++    active--;
++    ends[index] = Date.now();
++    if (index === 0) throw new Error('connection reset');
++    return { status: 200, data: { data: [{ id: String(index) }], total: 1 } };
++  });
++  const source = createHttpCatalogSource({
++    db: {} as any, customerId: '781', orgId: '2177599', tenantApiBase: 'https://example.invalid', studentGapMs: 100,
++  });
++  const results = await Promise.allSettled(['-1', '10', '20'].map(parent => source.folderContents('85', parent)));
++  assert.equal(results[0].status, 'rejected');
++  assert.equal(results[1].status, 'fulfilled');
++  assert.equal(results[2].status, 'fulfilled');
++  assert.equal(maxActive, 1);
++  assert.ok(starts[1] - ends[0] >= 90, 'failure must not bypass the gap');
++  assert.ok(starts[2] - ends[1] >= 90, 'concurrent callers must not bypass the gap');
++});

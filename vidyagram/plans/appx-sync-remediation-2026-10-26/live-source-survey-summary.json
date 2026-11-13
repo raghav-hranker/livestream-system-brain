@@ -1,0 +1,16 @@
+{
+  "observedAt": "2026-10-26T14:08:39.506Z",
+  "completedAt": "2026-10-26T14:09:45.324Z",
+  "requests": 29,
+  "courseIdsAdded": [],
+  "courseIdsRemoved": [],
+  "geometryAssetOccurrencesConfirmed": 4,
+  "pdfOccurrencesConfirmed": 2,
+  "deadSampleCounts": {
+    "200": 2,
+    "404": 2,
+    "noPlayableURL": 4
+  },
+  "productionWrites": 0,
+  "temporaryHandoffRemoved": true
+}

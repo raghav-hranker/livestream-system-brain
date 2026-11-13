@@ -1,0 +1,51 @@
+<!doctype html>
+<!--
+  PROTOTYPE, throwaway. Question: what should the first screen of the Vidyagram homepage be?
+  Hero sections only, five original directions. Switch with ?variant=1..5, the bottom bar or the arrow keys.
+  Content is a snapshot of arvidyagram.com (2026-11-05). Not for deploy.
+  Run: preview_start "vg-launch-hero", then http://localhost:3482
+-->
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vidyagram hero · PROTOTYPE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wdth,wght@75..125,400..800&family=Anek+Latin:wdth,wght@75..125,400..800&family=Hind:wght@400;500;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&family=Mukta:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none;cursor:pointer}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+#proto-bar{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:1000;display:flex;align-items:center;gap:4px;padding:4px;border-radius:999px;background:#fff;color:#111;border:2px solid #111;box-shadow:0 8px 24px rgba(0,0,0,.3);font:600 12px/1 ui-sans-serif,system-ui,sans-serif;white-space:nowrap}
+#proto-bar button{width:26px;height:26px;border-radius:50%;background:#111;color:#fff;font-size:13px}
+#proto-label{padding:0 10px;min-width:150px;text-align:center}
+</style>
+<link rel="stylesheet" href="v1.css">
+<link rel="stylesheet" href="v2.css">
+<link rel="stylesheet" href="v3.css">
+<link rel="stylesheet" href="v4.css">
+<link rel="stylesheet" href="v5.css">
+</head>
+<body>
+<div id="root"></div>
+<nav id="proto-bar" aria-label="Prototype variant switcher">
+  <button id="proto-prev" aria-label="Previous variant">←</button>
+  <span id="proto-label"></span>
+  <button id="proto-next" aria-label="Next variant">→</button>
+</nav>
+<script>
+const VARIANTS = {};
+const LOGO = 'assets/vidyagram-logo.png', FOUNDER = 'assets/aditya-ranjan-sir-founder-of-vidyagram.png';
+</script>
+<script src="v1.js"></script>
+<script src="v2.js"></script>
+<script src="v3.js"></script>
+<script src="v4.js"></script>
+<script src="v5.js"></script>
+<script src="shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,1109 @@
+[
+ {
+  "id": "6ab15ed5d3c7033a6d43adde",
+  "title": "Testing Course 5",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": true,
+  "TT": 3,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6ab15e22d3c7033a6d43acb9",
+  "title": "Testing Course 4",
+  "upd": "2026-09-22T11:51:52.856Z",
+  "isTT": true,
+  "TT": 1,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6ab15d93d3c7033a6d43abd4",
+  "title": "Testing Course 3",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": true,
+  "TT": 1,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6ab158cdd3c7033a6d43a478",
+  "title": "Testing Course 2",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6ab14711d3c7033a6d43852b",
+  "title": "Testing Course 1",
+  "upd": "2026-09-24T20:08:57.420Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455af5ebb42f585d9bd15c",
+  "title": "Railway Foundations Mastery Batches (RMB",
+  "upd": "2026-09-22T12:27:31.694Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4558c2ebb42f585d9a8326",
+  "title": "NTPC CBT - 2 & ALP CBT - 2 Classes",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6aaa871b64f0a963b8347b42",
+  "title": "Course Class - TESTING",
+  "upd": "2026-09-22T08:41:31.384Z",
+  "isTT": true,
+  "TT": 2,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6aa3fdaac699331789164a14",
+  "title": "Railway Foundation Batch (TESTING)",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": true,
+  "TT": 1,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4558c2ebb42f585d9a838b",
+  "title": "RRB NTPC UG Expected Papers",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4558c2ebb42f585d9a8360",
+  "title": "YT Sunday Marathon Classes",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4558c3ebb42f585d9a8422",
+  "title": "RAILWAY EXPRESS SERIES",
+  "upd": "2026-09-22T08:23:00.087Z",
+  "isTT": true,
+  "TT": 1,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a3903d283f65d7af3c02c4c",
+  "title": "Railway Group D Maths Crash Course 2026",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4558c9ebb42f585d9a88f7",
+  "title": "ALP CBT 2 (2026) Score Booster Batch",
+  "upd": "2026-09-22T14:09:33.538Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4558d6ebb42f585d9a9195",
+  "title": "GK Combo\u00a0Prime\u00a0Batch (2026-27)",
+  "upd": "2026-09-22T09:26:30.079Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4558ceebb42f585d9a8be7",
+  "title": "Maths + Reasoning Prime\u00a0Batch (2026-27)",
+  "upd": "2026-09-22T09:26:17.741Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4558e6ebb42f585d9a9d48",
+  "title": "Maths Prime\u00a0Batch (2026-27)",
+  "upd": "2026-09-22T16:51:32.691Z",
+  "isTT": true,
+  "TT": 2,
+  "status": 1,
+  "fac": "Sahil Sir"
+ },
+ {
+  "id": "6a4558e8ebb42f585d9a9f29",
+  "title": "Railway Prime\u00a0Batch (2026-27)",
+  "upd": "2026-09-22T09:25:21.810Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4558e3ebb42f585d9a9b0f",
+  "title": "Reasoning Prime\u00a0Batch (2026-27)",
+  "upd": "2026-09-22T09:25:07.075Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4558dfebb42f585d9a9839",
+  "title": "Science Prime\u00a0Batch (2026-27)",
+  "upd": "2026-09-22T14:43:56.076Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4558f9ebb42f585d9aaa8b",
+  "title": "Free Topic Wise Current Affairs 2025-26",
+  "upd": "2026-09-22T08:23:46.917Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455900ebb42f585d9aafa2",
+  "title": "GK 100 Days Target Batch 2026",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455915ebb42f585d9abf2a",
+  "title": "OSSC CGL 70 Days Target Batch (2025-26)",
+  "upd": "2026-09-22T09:45:11.822Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455926ebb42f585d9acabb",
+  "title": "Maths SSC Foundation (VOD + LIVE) Batch ",
+  "upd": "2026-09-22T09:05:39.219Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455967ebb42f585d9af4dc",
+  "title": "COMBO 100 Days Target Batch 2026",
+  "upd": "2026-09-22T08:57:05.596Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455960ebb42f585d9af0fe",
+  "title": "Maths 100 Days Target Batch 2026",
+  "upd": "2026-09-22T08:56:13.355Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455950ebb42f585d9ae788",
+  "title": "Maths SSC GD 2026",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455955ebb42f585d9aea68",
+  "title": "Reasoning 100 Days Target Batch 2026",
+  "upd": "2026-09-22T08:57:29.620Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455910ebb42f585d9abb18",
+  "title": "Science 100 Days Target Batch 2026",
+  "upd": "2026-09-22T08:57:51.976Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455975ebb42f585d9afd2b",
+  "title": "Railway Section Controller Foundation Ba",
+  "upd": "2026-09-22T09:33:32.444Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4559a1ebb42f585d9b16b8",
+  "title": "All India Free Test Series",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": true,
+  "TT": 1,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4559a1ebb42f585d9b16bc",
+  "title": "Demo Classes Batch",
+  "upd": "2026-09-22T08:24:36.286Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4559a3ebb42f585d9b17b3",
+  "title": "General Awareness for IB ACIO - II",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4559c3ebb42f585d9b2c04",
+  "title": "RRB NTPC CBT 2 GA Merit Masters",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4559d3ebb42f585d9b3480",
+  "title": "RRB NTPC CBT 2 Mathematics Merit Masters",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4559ceebb42f585d9b31d2",
+  "title": "RRB NTPC CBT 2 Reasoning Merit Masters",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4559ddebb42f585d9b3ab7",
+  "title": "RRB NTPC CBT 2 The Merit Masters",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4559f2ebb42f585d9b4602",
+  "title": "RRB Technician Grade 1 Batch",
+  "upd": "2026-09-22T09:34:41.770Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455a24ebb42f585d9b6494",
+  "title": "Computer Foundation Batch",
+  "upd": "2026-09-22T08:54:01.495Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455a29ebb42f585d9b674e",
+  "title": "Current Affairs 2024-25 for All Exams: F",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455a29ebb42f585d9b6752",
+  "title": "RRB NTPC 2024-25 Free Crash Course (All ",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455a29ebb42f585d9b674a",
+  "title": "SSC CGL (35 Days Selection Ka Action Pla",
+  "upd": "2026-09-22T14:46:22.697Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455a29ebb42f585d9b6756",
+  "title": "ALP Psycho Exams (\u0930\u0947\u0932\u0935\u0947 \u0938\u093e\u0907\u0915\u094b \u092c\u094d\u0930\u092e\u0939\u093e\u0938\u094d\u0924\u094d",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455a49ebb42f585d9b7714",
+  "title": "Bihar Police Constable",
+  "upd": "2026-09-22T09:31:38.183Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455a2aebb42f585d9b675a",
+  "title": "Delhi Police SI and Constable",
+  "upd": "2026-09-22T09:32:06.020Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455a5aebb42f585d9b8078",
+  "title": "UP Police SI and Constable",
+  "upd": "2026-09-22T09:30:58.962Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455a77ebb42f585d9b8e52",
+  "title": "BS & E Foundation Mastery  Batch (Techni",
+  "upd": "2026-09-22T08:54:06.982Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455a6febb42f585d9b8a8a",
+  "title": "BS & E Foundation Mastery Batch (ALP)",
+  "upd": "2026-09-22T08:54:01.495Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455a94ebb42f585d9b9da8",
+  "title": "GK + GS Foundation Mastery Batch",
+  "upd": "2026-09-22T08:54:01.495Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455ac9ebb42f585d9bbc8f",
+  "title": "Maths Foundation Mastery Batch (MMB)",
+  "upd": "2026-09-22T08:54:01.495Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455abbebb42f585d9bb5c0",
+  "title": "Reasoning Foundation Mastery Batch",
+  "upd": "2026-09-22T08:54:01.495Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455a83ebb42f585d9b94ab",
+  "title": "Science Foundation Mastery Batch",
+  "upd": "2026-09-22T08:54:01.495Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455b65ebb42f585d9c08c8",
+  "title": "Previous Year Papers",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455b65ebb42f585d9c08cc",
+  "title": "Our Selections",
+  "upd": "2026-09-22T09:56:15.635Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455b65ebb42f585d9c08d0",
+  "title": "RAILWAY EXAMS 2025 SCIENCE \u0915\u093e FOUNDATION",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455b7aebb42f585d9c12d7",
+  "title": "RRB ALP CBT-2 \"PART-B\" Electrician/Wirem",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455b7febb42f585d9c153e",
+  "title": "ALP CBT 2 (B) DIESEL MECHANIC TEST",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455b7febb42f585d9c1536",
+  "title": "ALP CBT 2 (B) FITTER TEST",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455b7febb42f585d9c1526",
+  "title": "ALP CBT 2 (B) HEAT ENGINE TEST",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455b7febb42f585d9c153a",
+  "title": "ALP CBT 2 (B) MMV TEST",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455b7febb42f585d9c1532",
+  "title": "ALP CBT 2 (B) RAC TEST",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455b7febb42f585d9c152e",
+  "title": "ALP CBT 2 (B) TRACTOR MECHANIC TEST",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455b7febb42f585d9c152a",
+  "title": "ALP CBT 2 (B) TURNER MACHINIST TEST",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455b80ebb42f585d9c1542",
+  "title": "BS & E Specific Batch (ALP CBT-2 2024/20",
+  "upd": "2026-09-22T08:54:46.989Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455b8febb42f585d9c1c0d",
+  "title": "Maths Specific Batch (ALP CBT-2 2024/202",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455b8bebb42f585d9c1a3a",
+  "title": "Reasoning Specific Batch (ALP CBT-2 2024",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455b98ebb42f585d9c1fc5",
+  "title": "Selection Specific Batch (ALP CBT-2 2024",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455bacebb42f585d9c2830",
+  "title": "Railway GK/GS  Foundation + (ATM) Comple",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455c29ebb42f585d9c60e7",
+  "title": "Railway Maths Foundation + (ATM) Complet",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455c0bebb42f585d9c5238",
+  "title": "Railway Reasoning Foundation + (ATM) Com",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455bddebb42f585d9c3d01",
+  "title": "Railway Science Foundation + (ATM) Compl",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455c71ebb42f585d9c804b",
+  "title": "RRB ALP CBT 2  DIESEL MECHANIC BATCH",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4558f8ebb42f585d9aaa42",
+  "title": "RRB ALP CBT 2 DIESEL MECHANIC BATCH (Par",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455c64ebb42f585d9c7aa3",
+  "title": "RRB ALP CBT 2 FITTER BATCH",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4558f8ebb42f585d9aaa6b",
+  "title": "RRB ALP CBT 2 FITTER BATCH (Part B)",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4558f7ebb42f585d9aa9b8",
+  "title": "RRB ALP CBT 2 MACHINIST BATCH (Part B)",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4558f8ebb42f585d9aa9f0",
+  "title": "RRB ALP CBT 2 MMV Batch (Part B)",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455c6cebb42f585d9c7e13",
+  "title": "RRB ALP CBT 2 Motor Mechanic",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455c69ebb42f585d9c7ca8",
+  "title": "RRB ALP CBT 2 TURNER & MACHINIST BATCH",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4558f8ebb42f585d9aaa19",
+  "title": "RRB ALP CBT 2 TURNER BATCH (Part B)",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455ca1ebb42f585d9c9424",
+  "title": "\u0939\u0941\u0901\u0915\u093e\u0930 \u092c\u0948\u091a 3.0 SSC GD 2025 MATHS COMPLET",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455ca7ebb42f585d9c96c5",
+  "title": "Basic Science & Engineering Drawing",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455cb1ebb42f585d9c9b4d",
+  "title": "RRB GENERAL AWARENESS FOUNDATION BATCH (",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455cd5ebb42f585d9ca997",
+  "title": "Average To Master (ATM) Full BATCH",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455d0eebb42f585d9cc033",
+  "title": "Maths (CRASH COURSE) ATM Batch",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455d28ebb42f585d9ccda1",
+  "title": "Reasoning ATM Batch",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455d32ebb42f585d9cd19b",
+  "title": "Science ATM Batch",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455d3eebb42f585d9cd638",
+  "title": "Static GK/GA ATM Batch",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455d4aebb42f585d9cdaaa",
+  "title": "testing",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455d4bebb42f585d9cdaed",
+  "title": "MATHS  FOUNDATION BATCH (ARITHMETIC + AD",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455c76ebb42f585d9c8215",
+  "title": "MATHS COMPLETE FOUNDATION BATCH (SSC CHS",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455d7aebb42f585d9cef63",
+  "title": "REASONING COMPLETE FOUNDATION BATCH (SSC",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455da9ebb42f585d9d02ad",
+  "title": "TARGET BATCH (SSC CHSL/CGL 2025)",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455d90ebb42f585d9cf829",
+  "title": "TARGET ENGLISH BATCH (SSC CHSL/CGL)",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455d8aebb42f585d9cf5fd",
+  "title": "TARGET GK BATCH (SSC CHSL/CGL)",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455da2ebb42f585d9cffa7",
+  "title": "TARGET MATHS BATCH (SSC CHSL/CGL)",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455d9aebb42f585d9cfc73",
+  "title": "TARGET REASONING BATCH (SSC CHSL/CGL)",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455dc1ebb42f585d9d0c42",
+  "title": "GS/GK FOUNDATION BATCH FOR SSC EXAMS",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455de5ebb42f585d9d1a90",
+  "title": "BASICS OF COMPUTER APPLICATION (Theory +",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455decebb42f585d9d1d70",
+  "title": "Railway ALP Maths Selection Booster Batc",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455df1ebb42f585d9d1f56",
+  "title": "RPF SI/CONSTABLE 2025 TARGET FOUNDATION ",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455e59ebb42f585d9d47eb",
+  "title": "RPF SI/CONSTABLE MATHS FOUNDATION BATCH",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455e70ebb42f585d9d5048",
+  "title": "UP POLICE CONSTABLE HINDI (COMPLETE BATC",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455e83ebb42f585d9d583f",
+  "title": "UP POLICE CONSTABLE MATHS (LIVE+VOD)",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455e7cebb42f585d9d554f",
+  "title": "UP POLICE CONSTABLE REASONING (PRACTICE ",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455e9debb42f585d9d611b",
+  "title": "(MATH + REASONING) COMBO FOR BSSC INTER ",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455ea8ebb42f585d9d658a",
+  "title": "Reasoning  \u0938\u092b\u0932\u0924\u093e \u092c\u0948\u091a For Bihar SSC Inter",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455eacebb42f585d9d6747",
+  "title": "ENGLISH FOUNDATION BATCH FOR ALL SSC EXA",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455fdeebb42f585d9dddc2",
+  "title": "SSC RECORD BREAKING Batch (SRB Batch ) V",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455ec1ebb42f585d9d6fcc",
+  "title": "SSC GD (\u0939\u0941\u0901\u0915\u093e\u0930 \u092c\u0948\u091a 2.0) MATH SPECIAL BAT",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455ec8ebb42f585d9d725d",
+  "title": "Important Classes & Announcement",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455ec9ebb42f585d9d730f",
+  "title": "SSC GD 2023-24 (\u0939\u0941\u0901\u0915\u093e\u0930 \u092c\u0948\u091a 2.0) Complete",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455edfebb42f585d9d7b2d",
+  "title": "Reasoning Complete Foundation For All Ex",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455f15ebb42f585d9d8e35",
+  "title": "SCIENCE FOUNDATION BATCH(FOR ALL EXAMS)",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455ef3ebb42f585d9d823e",
+  "title": "\u0906\u0927\u093e\u0930 GK Foundation Batch For ALL Exams 2",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a4560a9ebb42f585d9e2b91",
+  "title": "(RRB Batch) Railway Record Breaking Batc",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455f31ebb42f585d9d98c6",
+  "title": "RAILWAY GENERAL SCIENCE FOUNDATION BATCH",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455f60ebb42f585d9daa39",
+  "title": "RAILWAY MATHS FOUNDATION BATCH (VOD) @",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 1,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455f4eebb42f585d9da39b",
+  "title": "RAILWAY REASONING FOUNDATION BATCH 2025 ",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455fa5ebb42f585d9dc650",
+  "title": "MATHS SPL FOUNDATION (LIVE + VOD) @",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455f95ebb42f585d9dbfd2",
+  "title": "\u0938\u0902\u0915\u0932\u094d\u092a BATCH(BPSC TRE 2.0)CRASH COURSE*",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455f9cebb42f585d9dc2e1",
+  "title": "\u0938\u092b\u0932\u0924\u093e \u092c\u0948\u091a For Bihar SSC Inter Level MATH",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ },
+ {
+  "id": "6a455fa1ebb42f585d9dc4d9",
+  "title": "\u0939\u0941\u0901\u0915\u093e\u0930 \u092c\u0948\u091a -01 SSC GD 2023-24 (Practice ",
+  "upd": "2026-09-22T06:25:27.543Z",
+  "isTT": false,
+  "TT": 0,
+  "status": 0,
+  "fac": "Quick Tricks Team"
+ }
+]

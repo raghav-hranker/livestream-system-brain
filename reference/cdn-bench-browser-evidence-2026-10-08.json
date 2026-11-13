@@ -1,0 +1,82 @@
+{
+  "capturedAt": "2026-10-08T10:18:39Z",
+  "captureMethod": "Chrome via cua_repl CDP and read-only performance resource entries; Claude in Chrome/read_network_requests tools unavailable",
+  "quicktricks": {
+    "class": "Data Arrangement",
+    "classId": "6a45595eebb42f585d9af008",
+    "recorded": true,
+    "videoDurationS": 3788,
+    "quality": "480p",
+    "master": "https://recordedvideosv2.hranker.org/v/[redacted]/472/6a45595eebb42f585d9af008/hls/master.m3u8",
+    "media": "https://recordedvideosv2.hranker.org/v/[redacted]/472/6a45595eebb42f585d9af008/hls/480p.m3u8",
+    "samples": [
+      "https://recordedvideosv2.hranker.org/v/[redacted]/472/6a45595eebb42f585d9af008/hls/480p_0.ts",
+      "https://recordedvideosv2.hranker.org/v/[redacted]/472/6a45595eebb42f585d9af008/hls/480p_97.ts",
+      "https://recordedvideosv2.hranker.org/v/[redacted]/472/6a45595eebb42f585d9af008/hls/480p_240.ts"
+    ],
+    "headers": {
+      "server": "cloudflare",
+      "cf-cache-status": "HIT",
+      "cf-ray": "a4746730fc473a31-BOM",
+      "via": null,
+      "x-cache": null,
+      "cdn-cache": null,
+      "age": null
+    },
+    "startup": {
+      "navigationToFirstSegmentRequestMs": 3721,
+      "navigationToFirstSegmentCompleteMs": 7696,
+      "playbackMintToFirstSegmentRequestMs": 3314,
+      "firstSegmentRequestToCompleteMs": 3975,
+      "firstSegmentPrefetchedBeforePlayClick": true,
+      "videoAPIsBeforeFirstSegment": 1,
+      "otherAPIsBeforeFirstSegment": 5,
+      "preflightCountPlayback": 1
+    },
+    "seeksS": [
+      1217,
+      2668
+    ]
+  },
+  "vidyagram": {
+    "class": "Matter and Atom",
+    "videoId": "186711",
+    "recorded": true,
+    "videoDurationS": 4015.89953,
+    "quality": "480p",
+    "master": null,
+    "media": "https://transcoded-videos.classx.co.in/videos/armaths-data/4525317-1790927325/hls-34f060/480p/master-3963802.9099085135.m3u8?[redacted]",
+    "samples": [
+      "https://transcoded-videos.classx.co.in/videos/armaths-data/4525317-1790927325/hls-34f060/480p/master-3963802.90990851350.ts?[redacted]",
+      "https://transcoded-videos.classx.co.in/videos/armaths-data/4525317-1790927325/hls-34f060/480p/master-3963802.909908513543.ts?[redacted]",
+      "https://transcoded-videos.classx.co.in/videos/armaths-data/4525317-1790927325/hls-34f060/480p/master-3963802.9099085135149.ts?[redacted]"
+    ],
+    "serverFromShell": "Google-Edge-Cache",
+    "edgePoP": null,
+    "apiServer": "openresty/1.31.1.1",
+    "apiVia": "1.1 google",
+    "startup": {
+      "qualitySelectionToFirstSegmentRequestMs": 2862,
+      "qualitySelectionToFirstSegmentCompleteMs": 3309,
+      "iframeNavigationToFirstSegmentRequestMs": 2813,
+      "iframeNavigationToFirstSegmentCompleteMs": 3260,
+      "videoAPIsBeforeQualitySelection": 3,
+      "preflightCount": 3,
+      "apiNames": [
+        "fetchVideoDetailsById",
+        "watch_videov2",
+        "getVideoCompletion"
+      ],
+      "fetchDetailsRequestToResponseMs": 468,
+      "clickToDetailsRequestMs": 64,
+      "detailsThenParallelWatchAndCompletionCompleteMs": 692,
+      "manualQualitySelectionDelayExcluded": true,
+      "clickToFirstFrame": null
+    },
+    "seeksS": [
+      557,
+      1783
+    ],
+    "notes": "Restored near 09:00 on initial playback, then manually sought near 29:43. Slider drag generated intermediate requests. Browser exploration separate from shell benchmark."
+  }
+}

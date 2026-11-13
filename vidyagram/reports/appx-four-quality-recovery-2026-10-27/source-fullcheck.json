@@ -1,0 +1,521 @@
+{
+  "observedAt": "2026-10-27T12:18:45.888Z",
+  "readOnly": true,
+  "scope": 4,
+  "steps": [
+    {
+      "name": "authenticated course list",
+      "ok": true,
+      "at": "2026-10-27T12:18:46.665Z"
+    },
+    {
+      "name": "known-good control course71",
+      "ok": true,
+      "at": "2026-10-27T12:18:52.439Z"
+    },
+    {
+      "name": "known-good video token control",
+      "ok": true,
+      "at": "2026-10-27T12:18:53.407Z"
+    },
+    {
+      "name": "course listing 22",
+      "ok": true,
+      "at": "2026-10-27T12:19:02.263Z"
+    },
+    {
+      "name": "course listing 24",
+      "ok": true,
+      "at": "2026-10-27T12:19:07.469Z"
+    }
+  ],
+  "controls": [
+    {
+      "name": "Glands01",
+      "at": "2026-10-27T12:18:53.407Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    }
+  ],
+  "candidates": [
+    {
+      "job": "6ace9397c9735682f04ee9c4",
+      "classId": "6ace93978752d955968b1376",
+      "oldAssetKey": "vid:rgvikramjeet-data:412887-1702040847",
+      "category": "source404",
+      "course": "22",
+      "rowId": "16294",
+      "originalFailure": null,
+      "checkedAt": "2026-10-27T12:19:07.469Z",
+      "source": {
+        "title": "काल ",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1194,
+      "outcome": "confirmed source segment gap",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 398,
+          "validMediaPlaylist": true,
+          "inventoryHash": "156ccf28a8f6514830d489ce13dc4e0b0b8662b1fc27f6abf71d5450cd5c0924"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 398,
+          "validMediaPlaylist": true,
+          "inventoryHash": "42482453f835f088951a1b3d4ebd5a798ce05fde3f1f92d9ad02325475e4c9ba"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 398,
+          "validMediaPlaylist": true,
+          "inventoryHash": "0beeb419a6269a904731de9ee99654ba9be906e55aa7f46060ebaf5549768779"
+        }
+      ],
+      "segmentChecks": {
+        "uniqueSegments": 1194,
+        "checked": 409,
+        "passed": 406,
+        "failures": [
+          {
+            "rung": "360p",
+            "index": 7,
+            "file": "master-7067310.971135514.m3u87.ts",
+            "originalFailure": false,
+            "http": 404,
+            "bytes": 507,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 507,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          },
+          {
+            "rung": "360p",
+            "index": 8,
+            "file": "master-7067310.971135514.m3u88.ts",
+            "originalFailure": false,
+            "http": 404,
+            "bytes": 507,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 507,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          },
+          {
+            "rung": "360p",
+            "index": 9,
+            "file": "master-7067310.971135514.m3u89.ts",
+            "originalFailure": false,
+            "http": 404,
+            "bytes": 507,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 507,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 0,
+        "originalFailureChecked": 0,
+        "complete": false
+      }
+    },
+    {
+      "job": "6ace93c4c9735682f04eeb1c",
+      "classId": "6ace93c48752d955968b1671",
+      "oldAssetKey": "vid:rgvikramjeet-data:410747-1701962427",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15410",
+      "originalFailure": null,
+      "checkedAt": "2026-10-27T12:21:27.239Z",
+      "source": {
+        "title": "CLASS 01",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 936,
+      "outcome": "confirmed source segment gap",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 312,
+          "validMediaPlaylist": true,
+          "inventoryHash": "c390c70ce972fd05f04d76303097ff8c6ed17a9a193730eae6fd4652b2adabc1"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 312,
+          "validMediaPlaylist": true,
+          "inventoryHash": "4bb4ecf0a809bbb37f510b672b1c93c3ccc136bc6903c4156d1bee59a225562d"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 312,
+          "validMediaPlaylist": true,
+          "inventoryHash": "94bdadb432ec5f2fa321dae34cc8e8c0f1715cf1aeea7e9649736fb329638b5c"
+        }
+      ],
+      "segmentChecks": {
+        "uniqueSegments": 936,
+        "checked": 6,
+        "passed": 3,
+        "failures": [
+          {
+            "rung": "240p",
+            "index": 4,
+            "file": "master-7308944.860638292.m3u84.ts",
+            "originalFailure": false,
+            "http": 404,
+            "bytes": 507,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 507,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          },
+          {
+            "rung": "240p",
+            "index": 3,
+            "file": "master-7308944.860638292.m3u83.ts",
+            "originalFailure": false,
+            "http": 404,
+            "bytes": 507,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 507,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          },
+          {
+            "rung": "240p",
+            "index": 5,
+            "file": "master-7308944.860638292.m3u85.ts",
+            "originalFailure": false,
+            "http": 404,
+            "bytes": 507,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 507,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 0,
+        "originalFailureChecked": 0,
+        "complete": false
+      }
+    },
+    {
+      "job": "6ace93c5c9735682f04eeb20",
+      "classId": "6ace93c58752d955968b167f",
+      "oldAssetKey": "vid:rgvikramjeet-data:410875-1701975160",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15409",
+      "originalFailure": null,
+      "checkedAt": "2026-10-27T12:21:38.435Z",
+      "source": {
+        "title": "Size And Location (Practice Class)",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1012,
+      "outcome": "confirmed source segment gap",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 338,
+          "validMediaPlaylist": true,
+          "inventoryHash": "d97a8343d1483d727832284b4c3bb29164e91afa66fe48618c5f35c12b84073f"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 337,
+          "validMediaPlaylist": true,
+          "inventoryHash": "1c57a60ef6e1735cced059bea707cae80306e62ce97326a66fab398342bdcc9d"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 337,
+          "validMediaPlaylist": true,
+          "inventoryHash": "d93170545867dcad773fef78077bb0235db872b500832a296036c4b7f618c15d"
+        }
+      ],
+      "segmentChecks": {
+        "uniqueSegments": 1012,
+        "checked": 356,
+        "passed": 353,
+        "failures": [
+          {
+            "rung": "360p",
+            "index": 16,
+            "file": "master-9327300.716198197.m3u816.ts",
+            "originalFailure": false,
+            "http": 404,
+            "bytes": 508,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 508,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          },
+          {
+            "rung": "360p",
+            "index": 14,
+            "file": "master-9327300.716198197.m3u814.ts",
+            "originalFailure": false,
+            "http": 404,
+            "bytes": 508,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 508,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          },
+          {
+            "rung": "360p",
+            "index": 15,
+            "file": "master-9327300.716198197.m3u815.ts",
+            "originalFailure": false,
+            "http": 404,
+            "bytes": 504,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 508,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 0,
+        "originalFailureChecked": 0,
+        "complete": false
+      }
+    },
+    {
+      "job": "6ace9550c9735682f04ef228",
+      "classId": "6ace95508752d955968b2b78",
+      "oldAssetKey": "vid:rgvikramjeet-data:413406-1702104829",
+      "category": "source404",
+      "course": "24",
+      "rowId": "17883",
+      "originalFailure": null,
+      "checkedAt": "2026-10-27T12:23:48.760Z",
+      "source": {
+        "title": "Demo 01 (Percentage) ",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1008,
+      "outcome": "confirmed source segment gap",
+      "renditions": [
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 504,
+          "validMediaPlaylist": true,
+          "inventoryHash": "0268bf7abb5405432394f10b009de0040235e5b3601550e73f8b4e732890bf35"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 504,
+          "validMediaPlaylist": true,
+          "inventoryHash": "c5631ec40c45a934749891567e43b5dc31264c77a0b84e42a85a6001d8331dda"
+        }
+      ],
+      "segmentChecks": {
+        "uniqueSegments": 1008,
+        "checked": 83,
+        "passed": 81,
+        "failures": [
+          {
+            "rung": "360p",
+            "index": 58,
+            "file": "master-5377367.930973194.m3u858.ts",
+            "originalFailure": false,
+            "http": 404,
+            "bytes": 508,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 508,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          },
+          {
+            "rung": "360p",
+            "index": 72,
+            "file": "master-5377367.930973194.m3u872.ts",
+            "originalFailure": false,
+            "http": 404,
+            "bytes": 508,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 508,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 0,
+        "originalFailureChecked": 0,
+        "complete": false
+      }
+    }
+  ],
+  "requests": 885,
+  "cmsRequests": 9,
+  "mediaRequests": 876,
+  "requestBudget": 120000,
+  "segmentBytes": 874392,
+  "productionWrites": 0,
+  "policy": {
+    "mediaConcurrency": 4,
+    "mediaRequestsPerSecond": 8,
+    "cmsGapMs": 1100,
+    "range": "0-1023",
+    "stopAfterConfirmedGap": true
+  },
+  "courseList": {
+    "count": 147,
+    "total": 147
+  },
+  "completedAt": "2026-10-27T12:24:02.119Z",
+  "allScopeConsidered": true,
+  "all43Considered": false,
+  "checkpoint": true,
+  "transport": "direct local HTTPS; session cookie only to cms.appx.co.in"
+}

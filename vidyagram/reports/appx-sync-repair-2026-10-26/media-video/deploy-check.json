@@ -1,0 +1,7 @@
+{
+  "apply": false,
+  "oldSha256": "8308086db7ff8b82632ac03e931804a0c8c1ef9099033745dd14d0bfa037dfbb",
+  "newSha256": "339fbd448374b740c4104f1e3c0c07361d63d662afb5f15c55bcda94ded3b59b",
+  "service": "failed",
+  "target": "/home/raghav/vidyagram-nightly-20261019/src/services/apx/apxCatalogClassCommit.ts"
+}

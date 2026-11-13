@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="pele pele-state" viewBox="0 0 1434 825" width="1434" height="825" style="max-width:100%;height:auto;--_bg:var(--pele-bg,#fff);--_fg:var(--pele-fg,#1f1f1f);--_m:var(--pele-muted,#6e6e6e);--_l:var(--pele-line,#1f1f1f);--_s:var(--pele-surface,#f3f3f3);--_a:var(--pele-surface-alt,#e6e6e6);--_b:var(--pele-border,#8a8a8a);--_c:var(--pele-accent,#5b7bd5);color:var(--_fg);--_tw:var(--pele-title-weight,bold);--_fm:var(--pele-font-mono,monospace);font:16px sans-serif;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;font-family:var(--pele-font,sans-serif)" fill="var(--_fg)" role="graphics-document document" aria-roledescription="state"><style>.pele {
+  --pele-bg: #ffffff;
+  --pele-fg: #1c1c1c;
+  --pele-muted: #656565;
+  --pele-line: #808080;
+  --pele-surface: #fcfcfc;
+  --pele-surface-alt: #f1f1f1;
+  --pele-border: #c9c9c9;
+}
+.pele .blue rect { fill: #c3e0ff; }
+.pele .orange rect { fill: #f0d3bf; }
+.pele .purple rect { fill: #e3d5ff; }
+.pele .yellow rect { fill: #f0dcbf; }
+.pele .teal rect { fill: #bfe3df; }
+.pele .tan rect { fill: #e5d9ce; }
+.pele .pink rect { fill: #ffcbe6; }
+.pele .breaks rect {
+  fill: #ffecee !important;
+  stroke: #e72e3b !important;
+  stroke-width: 2.5px !important;
+}
+.pele .breaks text {
+  fill: #cd2834 !important;
+}
+.pele .mayBreak rect {
+  fill: #fff3e6 !important;
+  stroke: #e8730c !important;
+  stroke-width: 2.5px !important;
+}
+.pele .mayBreak text {
+  fill: #b85a06 !important;
+}
+.pele .bugPath rect {
+  stroke: #1680f3 !important;
+  stroke-width: 2.5px !important;
+}
+.pele .repeats rect {
+  stroke: #9b35d6 !important;
+  stroke-width: 2.5px !important;
+  stroke-dasharray: 6 3;
+}
+@media (prefers-color-scheme: dark) {
+  .pele {
+    --pele-bg: #1f1f1f;
+    --pele-fg: #f5f5f5;
+    --pele-muted: #acacac;
+    --pele-line: #939393;
+    --pele-surface: #121212;
+    --pele-surface-alt: #2c2c2c;
+    --pele-border: #4e4e4e;
+  }
+  .pele .blue rect { fill: #1b3857; }
+  .pele .orange rect { fill: #573117; }
+  .pele .purple rect { fill: #3c2e57; }
+  .pele .yellow rect { fill: #573d17; }
+  .pele .teal rect { fill: #174641; }
+  .pele .tan rect { fill: #3d3127; }
+  .pele .pink rect { fill: #57233e; }
+  .pele .breaks rect {
+    fill: #2e2021 !important;
+    stroke: #cf2b35 !important;
+  }
+  .pele .breaks text {
+    fill: #ff6463 !important;
+  }
+  .pele .mayBreak rect {
+    fill: #2e2619 !important;
+    stroke: #d0700f !important;
+  }
+  .pele .mayBreak text {
+    fill: #ffa257 !important;
+  }
+  .pele .bugPath rect {
+    stroke: #116dd2 !important;
+  }
+  .pele .repeats rect {
+    stroke: #9a3fcf !important;
+  }
+}
+</style><text class="pele-title" font-weight="var(--_tw)" text-anchor="middle" xml:space="preserve"><tspan x="717" y="25.6">Free-course enroll, one student and one course (ENFORCE_ORDER_EXPIRY off)</tspan></text><g transform="translate(0,36)"><g class="pele-clusters"><g class="pele-cluster pele-state-composite" data-id="legend"><rect x="585.16" y="8" width="263.18" height="130" rx="10" fill="var(--_a)" fill-opacity="0.5" stroke="var(--_b)"/><path d="M585.16,44H848.34" fill="none" stroke="var(--_b)"/><text class="pele-cluster-label" x="716.75" y="31.6" text-anchor="middle">Legend</text></g><g class="pele-cluster pele-state-composite" data-id="all"><rect x="8" y="178" width="1417.5" height="603" rx="10" fill="var(--_a)" fill-opacity="0.5" stroke="var(--_b)"/><path d="M8,214H1425.5" fill="none" stroke="var(--_b)"/><text class="pele-cluster-label" x="716.75" y="201.6" text-anchor="middle">At the same time</text></g><g class="pele-cluster pele-state-composite" data-id="r0"><rect x="34" y="240" width="677.42" height="515" rx="10" fill="var(--_a)" fill-opacity="0.5" stroke="var(--_b)"/><path d="M34,276H711.42" fill="none" stroke="var(--_b)"/><text class="pele-cluster-label" x="372.71" y="263.6" text-anchor="middle">Admin set</text></g><g class="pele-cluster pele-state-composite" data-id="r1"><rect x="771.42" y="283" width="210.5" height="429" rx="10" fill="var(--_a)" fill-opacity="0.5" stroke="var(--_b)"/><path d="M771.42,319H981.92" fill="none" stroke="var(--_b)"/><text class="pele-cluster-label" x="876.67" y="306.6" text-anchor="middle">Enrollment</text></g><g class="pele-cluster pele-state-composite" data-id="r2"><rect x="1041.92" y="284.5" width="357.59" height="426" rx="10" fill="var(--_a)" fill-opacity="0.5" stroke="var(--_b)"/><path d="M1041.92,320.5H1399.5" fill="none" stroke="var(--_b)"/><text class="pele-cluster-label" x="1220.71" y="308.1" text-anchor="middle">Order</text></g></g><g class="pele-dividers" stroke-dasharray="4 4" fill="none" stroke="var(--_b)"><path class="pele-divider" d="M741.42,214V781"/><path class="pele-divider" d="M1011.92,214V781"/></g><g class="pele-edges" fill="none" stroke="var(--_l)" stroke-linecap="round"><g class="pele-edge pele-transition" data-id="edge0"><path d="M499.43,306C499.43,321.5 296.92,321.5 296.92,337L296.92,343"/><path class="pele-marker" d="M296.92,350L293.56,342L300.28,342Z" fill="var(--_l)" stroke="none"/></g><g class="pele-edge pele-transition" data-id="edge1"><path d="M499.43,306C499.43,328 515.45,328 515.45,350L515.45,492C515.45,501.5 431.41,501.5 431.41,511L431.41,517"/><path class="pele-marker" d="M431.41,524L428.05,516L434.77,516Z" fill="var(--_l)" stroke="none"/></g><g class="pele-edge pele-transition" data-id="edge2"><path d="M499.43,306C499.43,328 695.42,328 695.42,350L695.42,608.75C695.42,645.38 546.79,645.38 546.79,682L546.79,688"/><path class="pele-marker" d="M546.79,695L543.43,687L550.15,687Z" fill="var(--_l)" stroke="none"/></g><g class="pele-edge pele-transition" data-id="edge3"><path d="M251.68,394L251.68,422C251.68,442 229.12,442 229.12,462L229.12,502C229.12,505.34 380.73,509.91 380.73,513.25L380.73,517"/><path class="pele-marker" d="M380.73,524L377.37,516L384.09,516Z" fill="var(--_l)" stroke="none"/></g><g class="pele-edge pele-transition" data-id="edge4"><path d="M235.68,394L235.68,406.25C235.68,416.02 215.36,422 182.21,422C149.07,422 128.75,441 128.75,472L128.75,608.75C128.75,644.87 196.02,667 305.77,667C415.52,667 482.79,672.99 482.79,682.75L482.79,688"/><path class="pele-marker" d="M482.79,695L479.43,687L486.15,687Z" fill="var(--_l)" stroke="none"/></g><g class="pele-edge pele-transition" data-id="edge5"><path d="M415.41,524L415.41,514.38C415.41,508.19 422.47,508.19 422.47,502L422.47,462C422.47,444.64 404.45,434 375.04,434C345.64,434 327.62,423.74 327.62,407L327.62,401"/><path class="pele-marker" d="M327.62,394L330.98,402L324.26,402Z" fill="var(--_l)" stroke="none"/></g><g class="pele-edge pele-transition" data-id="edge6"><path d="M380.73,568L380.73,577.63C380.73,583.25 271.74,584.38 271.74,590L271.74,615C271.74,639.8 314.88,655 385.26,655C455.65,655 498.79,665.26 498.79,682L498.79,688"/><path class="pele-marker" d="M498.79,695L495.43,687L502.15,687Z" fill="var(--_l)" stroke="none"/></g><g class="pele-edge pele-transition" data-id="edge7"><path d="M530.79,695L530.79,682C530.79,645.38 589.32,645.38 589.32,608.75L589.32,472C589.32,441 542.64,422 466.47,422C390.3,422 343.62,416.02 343.62,406.25L343.62,401"/><path class="pele-marker" d="M343.62,394L346.98,402L340.26,402Z" fill="var(--_l)" stroke="none"/></g><g class="pele-edge pele-transition" data-id="edge8"><path d="M514.79,695L514.79,682C514.79,657.82 504.16,643 486.82,643C469.49,643 458.86,632.36 458.86,615L458.86,575"/><path class="pele-marker" d="M458.86,568L462.22,576L455.5,576Z" fill="var(--_l)" stroke="none"/></g><g class="pele-edge pele-transition" data-id="edge9"><path d="M876.67,349L876.67,386"/><path class="pele-marker" d="M876.67,393L873.31,385L880.03,385Z" fill="var(--_l)" stroke="none"/></g><g class="pele-edge pele-transition" data-id="edge10"><path d="M876.67,437L876.67,532"/><path class="pele-marker" d="M876.67,539L873.31,531L880.03,531Z" fill="var(--_l)" stroke="none"/></g><g class="pele-edge pele-transition" data-id="edge11"><path d="M876.67,583L876.67,645"/><path class="pele-marker" d="M876.67,652L873.31,644L880.03,644Z" fill="var(--_l)" stroke="none"/></g><g class="pele-edge pele-transition" data-id="edge12"><path d="M1201.84,350.5L1201.84,387.5"/><path class="pele-marker" d="M1201.84,394.5L1198.48,386.5L1205.2,386.5Z" fill="var(--_l)" stroke="none"/></g><g class="pele-edge pele-transition" data-id="edge13"><path d="M1201.84,438.5L1201.84,515.5"/><path class="pele-marker" d="M1201.84,522.5L1198.48,514.5L1205.2,514.5Z" fill="var(--_l)" stroke="none"/></g><g class="pele-edge pele-transition" data-id="edge14"><path d="M1193.84,566.5L1193.84,576.13C1193.84,582.31 1116.44,582.31 1116.44,588.5L1116.44,628.5C1116.44,634.13 1188.93,634.13 1188.93,639.75L1188.93,643.5"/><path class="pele-marker" d="M1188.93,650.5L1185.57,642.5L1192.29,642.5Z" fill="var(--_l)" stroke="none"/></g><g class="pele-edge pele-transition" data-id="edge15"><path d="M1214.74,650.5L1214.74,640.88C1214.74,634.69 1287.23,634.69 1287.23,628.5L1287.23,588.5C1287.23,582.88 1209.84,582.88 1209.84,577.25L1209.84,573.5"/><path class="pele-marker" d="M1209.84,566.5L1213.2,574.5L1206.48,574.5Z" fill="var(--_l)" stroke="none"/></g></g><g class="pele-edge-labels" font-size="14"><g class="pele-edge-label" data-id="edge3"><rect x="138.75" y="471.5" width="180.75" height="21" rx="3" fill="var(--_bg)"/><text x="229.12" y="486.9" text-anchor="middle">admin sets Free, open to all</text></g><g class="pele-edge-label" data-id="edge4"><rect x="52" y="535.5" width="153.5" height="21" rx="3" fill="var(--_bg)"/><text x="128.75" y="550.9" text-anchor="middle">admin sets Paid course</text></g><g class="pele-edge-label" data-id="edge5"><rect x="339.5" y="464" width="165.95" height="36" rx="3" fill="var(--_bg)"/><text text-anchor="middle" xml:space="preserve"><tspan x="422.47" y="477.9">admin sets Free, enroll to</tspan><tspan x="422.47" y="495.9">unlock</tspan></text></g><g class="pele-edge-label" data-id="edge6"><rect x="194.99" y="592" width="153.5" height="21" rx="3" fill="var(--_bg)"/><text x="271.74" y="607.4" text-anchor="middle">admin sets Paid course</text></g><g class="pele-edge-label" data-id="edge7"><rect x="506.35" y="528" width="165.95" height="36" rx="3" fill="var(--_bg)"/><text text-anchor="middle" xml:space="preserve"><tspan x="589.32" y="541.9">admin sets Free, enroll to</tspan><tspan x="589.32" y="559.9">unlock</tspan></text></g><g class="pele-edge-label" data-id="edge8"><rect x="368.49" y="592" width="180.75" height="21" rx="3" fill="var(--_bg)"/><text x="458.86" y="607.4" text-anchor="middle">admin sets Free, open to all</text></g><g class="pele-edge-label" data-id="edge10"><rect x="789.42" y="457.5" width="174.5" height="54" rx="3" fill="var(--_bg)"/><text text-anchor="middle" xml:space="preserve"><tspan x="876.67" y="471.4">student taps Enroll [when</tspan><tspan x="876.67" y="489.4">Admin set is Free, enroll to</tspan><tspan x="876.67" y="507.4">unlock]</tspan></text></g><g class="pele-edge-label" data-id="edge11"><rect x="800.69" y="603.5" width="151.95" height="21" rx="3" fill="var(--_bg)"/><text x="876.67" y="618.9" text-anchor="middle">the enrollment is saved</text></g><g class="pele-edge-label" data-id="edge13"><rect x="1107.56" y="459" width="188.54" height="36" rx="3" fill="var(--_bg)"/><text text-anchor="middle" xml:space="preserve"><tspan x="1201.84" y="472.9">student buys or is granted an</tspan><tspan x="1201.84" y="490.9">order</tspan></text></g><g class="pele-edge-label" data-id="edge14"><rect x="1059.92" y="598" width="113.04" height="21" rx="3" fill="var(--_bg)"/><text x="1116.44" y="613.4" text-anchor="middle">the order expires</text></g><g class="pele-edge-label" data-id="edge15"><rect x="1192.96" y="590.5" width="188.54" height="36" rx="3" fill="var(--_bg)"/><text text-anchor="middle" xml:space="preserve"><tspan x="1287.23" y="604.4">student buys or is granted an</tspan><tspan x="1287.23" y="622.4">order</tspan></text></g></g><g class="pele-nodes"><g class="pele-node pele-state bugPath" data-id="lg0" transform="translate(716.75,91)"><rect x="-115.59" y="-31" width="231.18" height="62" rx="10" fill="var(--_s)" stroke="var(--_b)"/><text class="pele-label" text-anchor="middle" xml:space="preserve"><tspan x="0" y="-4.9">Path to the</tspan><tspan x="0" y="16.1">EnrollOnlyInEnrollMode bug</tspan></text></g><g class="pele-node pele-state bugPath" data-id="s0" transform="translate(296.92,372)"><rect x="-90.7" y="-22" width="181.39" height="44" rx="10" fill="var(--_s)" stroke="var(--_b)"/><text class="pele-label" x="0" y="5.6" text-anchor="middle">Free, enroll to unlock</text></g><g class="pele-node pele-state" data-id="s1" transform="translate(402.54,546)"><rect x="-73.81" y="-22" width="147.62" height="44" rx="10" fill="var(--_s)" stroke="var(--_b)"/><text class="pele-label" x="0" y="5.6" text-anchor="middle">Free, open to all</text></g><g class="pele-node pele-state bugPath" data-id="s2" transform="translate(516.03,717)"><rect x="-58.24" y="-22" width="116.48" height="44" rx="10" fill="var(--_s)" stroke="var(--_b)"/><text class="pele-label" x="0" y="5.6" text-anchor="middle">Paid course</text></g><g class="pele-node pele-state-start" data-id="r0_start" transform="translate(499.43,299)"><circle r="7" fill="var(--_l)"/></g><g class="pele-node pele-state bugPath" data-id="s3" transform="translate(876.67,415)"><rect x="-59.13" y="-22" width="118.26" height="44" rx="10" fill="var(--_s)" stroke="var(--_b)"/><text class="pele-label" x="0" y="5.6" text-anchor="middle">Not enrolled</text></g><g class="pele-node pele-state bugPath" data-id="s4" transform="translate(876.67,561)"><rect x="-61.79" y="-22" width="123.58" height="44" rx="10" fill="var(--_s)" stroke="var(--_b)"/><text class="pele-label" x="0" y="5.6" text-anchor="middle">Enroll saving</text></g><g class="pele-node pele-state bugPath" data-id="s5" transform="translate(876.67,674)"><rect x="-45.34" y="-22" width="90.69" height="44" rx="10" fill="var(--_s)" stroke="var(--_b)"/><text class="pele-label" x="0" y="5.6" text-anchor="middle">Enrolled</text></g><g class="pele-node pele-state-start" data-id="r1_start" transform="translate(876.67,342)"><circle r="7" fill="var(--_l)"/></g><g class="pele-node pele-state bugPath" data-id="s6" transform="translate(1201.84,416.5)"><rect x="-47.12" y="-22" width="94.24" height="44" rx="10" fill="var(--_s)" stroke="var(--_b)"/><text class="pele-label" x="0" y="5.6" text-anchor="middle">No order</text></g><g class="pele-node pele-state" data-id="s7" transform="translate(1201.84,544.5)"><rect x="-59.57" y="-22" width="119.14" height="44" rx="10" fill="var(--_s)" stroke="var(--_b)"/><text class="pele-label" x="0" y="5.6" text-anchor="middle">Order active</text></g><g class="pele-node pele-state" data-id="s8" transform="translate(1201.84,672.5)"><rect x="-64.9" y="-22" width="129.81" height="44" rx="10" fill="var(--_s)" stroke="var(--_b)"/><text class="pele-label" x="0" y="5.6" text-anchor="middle">Order expired</text></g><g class="pele-node pele-state-start" data-id="r2_start" transform="translate(1201.84,343.5)"><circle r="7" fill="var(--_l)"/></g></g></g></svg>

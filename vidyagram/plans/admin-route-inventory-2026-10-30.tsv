@@ -1,0 +1,491 @@
+method	route	origin_file_line	auth_at_origin	now_on_feat_vg_admin_audit_17	allow	owner	reason	admin_panel_callers	admin_sends_token
+POST	/api/razorpay/webhook	routes/razorpayWebhookRoutes.ts:9	open	open		webhook	provider webhook; verifies its signature		
+POST	/api/razorpay/website-webhook	routes/razorpayWebhookRoutes.ts:11	open	open		webhook	provider webhook; verifies its signature		
+POST	/api/whatsapp/webhook	routes/whatsAppWebhookRoutes.ts:9	open	open		webhook	provider webhook; verifies its signature		
+POST	/api/webhooks/apple-iap	routes/appleIapWebhookRoutes.ts:8	open	open		webhook	provider webhook; verifies its signature		
+POST	/api/app-events	routes/appEventRoutes.ts:19	open	open		telemetry	anonymous event intake by design		
+POST	/api/app-events/bulk	routes/appEventRoutes.ts:20	open	open		telemetry	anonymous event intake by design		
+POST	/api/sync/sections	routes/phpSyncRoutes.ts:16	open	open		own-auth	PHP sync; checks PHP_SYNC_SECRET (phpSyncController assertSyncSecret)		
+POST	/api/sync/topics	routes/phpSyncRoutes.ts:17	open	open		own-auth	PHP sync; checks PHP_SYNC_SECRET (phpSyncController assertSyncSecret)		
+POST	/api/sync/sub-topics	routes/phpSyncRoutes.ts:18	open	open		own-auth	PHP sync; checks PHP_SYNC_SECRET (phpSyncController assertSyncSecret)		
+POST	/api/sync/series	routes/phpSyncRoutes.ts:19	open	open		own-auth	PHP sync; checks PHP_SYNC_SECRET (phpSyncController assertSyncSecret)		
+POST	/api/sync/packages	routes/phpSyncRoutes.ts:20	open	open		own-auth	PHP sync; checks PHP_SYNC_SECRET (phpSyncController assertSyncSecret)		
+POST	/api/sync/custom-tags	routes/phpSyncRoutes.ts:21	open	open		own-auth	PHP sync; checks PHP_SYNC_SECRET (phpSyncController assertSyncSecret)		
+POST	/api/sync/assign-ques	routes/phpSyncRoutes.ts:22	open	open		own-auth	PHP sync; checks PHP_SYNC_SECRET (phpSyncController assertSyncSecret)		
+POST	/api/sync/assign-packages	routes/phpSyncRoutes.ts:23	open	open		own-auth	PHP sync; checks PHP_SYNC_SECRET (phpSyncController assertSyncSecret)		
+POST	/api/sync/migration-issues	routes/phpSyncRoutes.ts:24	open	open		own-auth	PHP sync; checks PHP_SYNC_SECRET (phpSyncController assertSyncSecret)		
+POST	/api/main-categories	routes/mainCategoryRoutes.ts:317	open	gated:CATEGORIES	admin	route-gate (task 17)	admin panel only	app/admin/main-category/add/page.tsx:27	yes
+PUT	/api/main-categories/reorder	routes/mainCategoryRoutes.ts:321	open	gated:CATEGORIES	admin	route-gate (task 17)	admin panel only	components/admin/category-manager.tsx:106	yes
+PATCH	/api/main-categories/:id	routes/mainCategoryRoutes.ts:565	open	gated:CATEGORIES	admin	route-gate (task 17)	admin panel only	app/admin/main-category/add/page.tsx:42, app/admin/main-category/edit/[id]/page.tsx:42, app/admin/main-category/edit/[id]/page.tsx:53	yes
+PUT	/api/main-categories/:id	routes/mainCategoryRoutes.ts:565	open	gated:CATEGORIES	admin	route-gate (task 17)	admin panel only	none found	-
+POST	/api/categories	routes/categoryRoutes.ts:238	open	gated:CATEGORIES	admin	route-gate (task 17)	admin panel only	app/admin/category/add/page.tsx:52	yes
+PUT	/api/categories/reorder	routes/categoryRoutes.ts:247	open	gated:CATEGORIES	admin	route-gate (task 17)	admin panel only	components/admin/category-manager.tsx:106	yes
+PATCH	/api/categories/:id	routes/categoryRoutes.ts:533	open	gated:CATEGORIES	admin	route-gate (task 17)	admin panel only	app/admin/category/add/page.tsx:65, app/admin/category/edit/[id]/page.tsx:53, app/admin/category/edit/[id]/page.tsx:64	yes
+PUT	/api/categories/:id	routes/categoryRoutes.ts:533	open	gated:CATEGORIES	admin	route-gate (task 17)	admin panel only	none found	-
+POST	/api/sections	routes/sectionRoutes.ts:96	open	gated:TAXONOMY	admin	route-gate (task 17)	admin panel only	hooks/api/use-sections.ts:140	yes
+POST	/api/sections/import-csv	routes/sectionRoutes.ts:100	open	gated:TAXONOMY	admin	route-gate (task 17)	admin panel only	none found	-
+POST	/api/sections/search	routes/sectionRoutes.ts:101	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+PUT	/api/sections/:id	routes/sectionRoutes.ts:296	open	gated:TAXONOMY	admin	route-gate (task 17)	admin panel only	hooks/api/use-sections.ts:162, hooks/api/use-sections.ts:185	yes
+POST	/api/topics	routes/topicRoutes.ts:172	open	gated:TAXONOMY	admin	route-gate (task 17)	admin panel only	hooks/api/use-topics.ts:116	yes
+POST	/api/topics/import-csv	routes/topicRoutes.ts:176	open	gated:TAXONOMY	admin	route-gate (task 17)	admin panel only	none found	-
+POST	/api/topics/ai-section-topic	routes/topicRoutes.ts:378	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/topics/ai-section-topics	routes/topicRoutes.ts:379	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/topics/search	routes/topicRoutes.ts:380	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+PUT	/api/topics/:id	routes/topicRoutes.ts:384	open	gated:TAXONOMY	admin	route-gate (task 17)	admin panel only	hooks/api/use-topics.ts:138, hooks/api/use-topics.ts:180	yes
+POST	/api/subtopics	routes/subTopicRoutes.ts:165	open	gated:TAXONOMY	admin	route-gate (task 17)	admin panel only	hooks/api/use-subtopics.ts:78	yes
+PUT	/api/subtopics/:id	routes/subTopicRoutes.ts:369	open	gated:TAXONOMY	admin	route-gate (task 17)	admin panel only	hooks/api/use-subtopics.ts:134, hooks/api/use-subtopics.ts:97	yes
+POST	/api/classes/filter	routes/classRoutes.ts:248	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/courses/:courseId/classes	routes/courseClassRoutes.ts:36	open	gated:COURSE_ASSIGN	admin	route-gate (task 17)	admin panel only	hooks/api/use-course-classes.ts:186, hooks/api/use-course-classes.ts:214, hooks/api/legacy/use-course-classes.ts:183, hooks/api/legacy/use-course-classes.ts:211	yes
+POST	/api/courses/:courseId/todays-classes	routes/courseClassRoutes.ts:51	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/courses/:courseId/class-tabs	routes/courseClassRoutes.ts:56	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/courses/:courseId/search	routes/courseClassRoutes.ts:61	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+PUT	/api/courses/:courseId/classes/priority	routes/courseClassRoutes.ts:77	open	gated:COURSE_ASSIGN	admin	route-gate (task 17)	admin panel only	hooks/api/legacy/use-course-classes.ts:392, hooks/api/use-course-classes.ts:395	yes
+PUT	/api/courses/:courseId/classes/reorder	routes/courseClassRoutes.ts:82	open	gated:COURSE_ASSIGN	admin	route-gate (task 17)	admin panel only	none found	-
+PATCH	/api/courses/:courseId/classes/:classId/toggle	routes/courseClassRoutes.ts:92	open	gated:COURSE_ASSIGN	admin	route-gate (task 17)	admin panel only	none found	-
+POST	/api/course-folders	routes/courseFolderRoutes.ts:41	open	gated:COURSE_FOLDERS (create branch only)	admin	route-gate (task 17)	admin panel only	hooks/api/use-course-folders.ts:154	yes
+POST	/api/course-folders/:id/courses/assign	routes/courseFolderRoutes.ts:47	open	gated:COURSE_FOLDERS	admin	route-gate (task 17)	admin panel only	hooks/api/use-course-folders.ts:204	yes
+DELETE	/api/course-folders/:id/courses/:courseId	routes/courseFolderRoutes.ts:48	open	gated:COURSE_FOLDERS	admin	route-gate (task 17)	admin panel only	hooks/api/use-course-folders.ts:220	yes
+PATCH	/api/course-folders/:id/courses/:courseId/priority	routes/courseFolderRoutes.ts:49	open	gated:COURSE_FOLDERS	admin	route-gate (task 17)	admin panel only	hooks/api/use-course-folders.ts:235	yes
+POST	/api/course-folders/:id/duplicate	routes/courseFolderRoutes.ts:50	open	gated:COURSE_FOLDERS	admin	route-gate (task 17)	admin panel only	hooks/api/use-course-folders.ts:191	yes
+DELETE	/api/course-folders/:id	routes/courseFolderRoutes.ts:52	open	gated:COURSE_FOLDERS	admin	route-gate (task 17)	admin panel only	hooks/api/use-course-folders.ts:180	yes
+PUT	/api/course-folders/:id	routes/courseFolderRoutes.ts:52	open	gated:COURSE_FOLDERS	admin	route-gate (task 17)	admin panel only	hooks/api/use-course-folders.ts:167	yes
+POST	/api/course-folders/:id	routes/courseFolderRoutes.ts:52	open	open		read-via-POST	alias of GET /:id (getCourseFolderById)		
+POST	/api/courses/filter	routes/courseRoutes.ts:53	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/courses/batch-filter	routes/courseRoutes.ts:54	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/courses/my-courses	routes/courseRoutes.ts:55	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/courses/user	routes/courseRoutes.ts:56	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/courses/report-class	routes/courseRoutes.ts:59	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/courses/by-id-2	routes/courseRoutes.ts:90	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/courses/:courseId/tests	routes/courseTestRoutes.ts:22	open	gated:COURSE_ASSIGN	admin	route-gate (task 17)	admin panel only	hooks/api/use-course-tests.ts:160	yes
+PUT	/api/courses/:courseId/tests/reorder	routes/courseTestRoutes.ts:25	open	gated:COURSE_ASSIGN	admin	route-gate (task 17)	admin panel only	none found	-
+PUT	/api/courses/:courseId/tests/:testId/priority	routes/courseTestRoutes.ts:26	open	gated:COURSE_ASSIGN	admin	route-gate (task 17)	admin panel only	hooks/api/use-course-tests.ts:291	yes
+PATCH	/api/courses/:courseId/tests/bulk-update	routes/courseTestRoutes.ts:27	open	gated:COURSE_ASSIGN	admin	route-gate (task 17)	admin panel only	hooks/api/use-course-tests.ts:312	yes
+PATCH	/api/courses/:courseId/tests/override-section/bulk	routes/courseTestRoutes.ts:28	open	gated:COURSE_ASSIGN	admin	route-gate (task 17)	admin panel only	hooks/api/use-course-tests.ts:362	yes
+PATCH	/api/courses/:courseId/tests/:testId/override-section	routes/courseTestRoutes.ts:29	open	gated:COURSE_ASSIGN	admin	route-gate (task 17)	admin panel only	hooks/api/use-course-tests.ts:346	yes
+PATCH	/api/courses/:courseId/tests/:testId	routes/courseTestRoutes.ts:30	open	gated:COURSE_ASSIGN	admin	route-gate (task 17)	admin panel only	hooks/api/use-course-tests.ts:273	yes
+PATCH	/api/courses/:courseId/tests/:testId/toggle-status	routes/courseTestRoutes.ts:31	open	gated:COURSE_ASSIGN	admin	route-gate (task 17)	admin panel only	none found	-
+DELETE	/api/courses/:courseId/tests/bulk-remove	routes/courseTestRoutes.ts:32	open	gated:COURSE_ASSIGN	admin	route-gate (task 17)	admin panel only	hooks/api/use-course-tests.ts:330	yes
+POST	/api/apx-courses	routes/apxCourseRoutes.ts:53	open	gated:APX_COURSES	admin	route-gate (task 17)	admin panel only	hooks/api/use-apx-courses.ts:15	yes
+POST	/api/apx-courses/build-all	routes/apxCourseRoutes.ts:131	open	gated:APX_COURSES	admin	route-gate (task 17)	admin panel only	none found	-
+POST	/api/apx-courses/process-all	routes/apxCourseRoutes.ts:167	open	gated:APX_COURSES	admin	route-gate (task 17)	admin panel only	none found	-
+PATCH	/api/apx-courses/:id/processed	routes/apxCourseRoutes.ts:278	open	gated:APX_COURSES	admin	route-gate (task 17)	admin panel only	none found	-
+POST	/api/apx-courses/:id/migrate	routes/apxCourseRoutes.ts:333	open	gated:APX_COURSES	admin	route-gate (task 17)	admin panel only	hooks/api/use-apx-courses.ts:115	yes
+POST	/api/apx-ingest-jobs/claim	routes/apxIngestJobRoutes.ts:27	open	gated:APX_INGEST_SECRET_GATE	transcoder-secret	machine-caller (task 17b)	apx-ingest-container worker; X-Transcoder-Secret = TRANSCODER_WEBHOOK_SECRET, APX_INGEST_SECRET_GATE off|report|enforce (report by default). Worker (video-transcoder apx-ingest-container/lms-client.js) sends no header yet: it must send its TRANSCODER_SECRET	none (machine caller)	-
+POST	/api/apx-ingest-jobs/:id/downloading	routes/apxIngestJobRoutes.ts:49	open	gated:APX_INGEST_SECRET_GATE	transcoder-secret	machine-caller (task 17b)	apx-ingest-container worker; X-Transcoder-Secret = TRANSCODER_WEBHOOK_SECRET, APX_INGEST_SECRET_GATE off|report|enforce (report by default). Worker (video-transcoder apx-ingest-container/lms-client.js) sends no header yet: it must send its TRANSCODER_SECRET	none (machine caller)	-
+POST	/api/apx-ingest-jobs/:id/uploading	routes/apxIngestJobRoutes.ts:71	open	gated:APX_INGEST_SECRET_GATE	transcoder-secret	machine-caller (task 17b)	apx-ingest-container worker; X-Transcoder-Secret = TRANSCODER_WEBHOOK_SECRET, APX_INGEST_SECRET_GATE off|report|enforce (report by default). Worker (video-transcoder apx-ingest-container/lms-client.js) sends no header yet: it must send its TRANSCODER_SECRET	none (machine caller)	-
+POST	/api/apx-ingest-jobs/:id/complete	routes/apxIngestJobRoutes.ts:93	open	gated:APX_INGEST_SECRET_GATE	transcoder-secret	machine-caller (task 17b)	apx-ingest-container worker; X-Transcoder-Secret = TRANSCODER_WEBHOOK_SECRET, APX_INGEST_SECRET_GATE off|report|enforce (report by default). Worker (video-transcoder apx-ingest-container/lms-client.js) sends no header yet: it must send its TRANSCODER_SECRET	none (machine caller)	-
+POST	/api/apx-ingest-jobs/:id/fail	routes/apxIngestJobRoutes.ts:124	open	gated:APX_INGEST_SECRET_GATE	transcoder-secret	machine-caller (task 17b)	apx-ingest-container worker; X-Transcoder-Secret = TRANSCODER_WEBHOOK_SECRET, APX_INGEST_SECRET_GATE off|report|enforce (report by default). Worker (video-transcoder apx-ingest-container/lms-client.js) sends no header yet: it must send its TRANSCODER_SECRET	none (machine caller)	-
+POST	/api/apx-ingest-jobs/:id/progress	routes/apxIngestJobRoutes.ts:169	open	gated:APX_INGEST_SECRET_GATE	transcoder-secret	machine-caller (task 17b)	apx-ingest-container worker; X-Transcoder-Secret = TRANSCODER_WEBHOOK_SECRET, APX_INGEST_SECRET_GATE off|report|enforce (report by default). Worker (video-transcoder apx-ingest-container/lms-client.js) sends no header yet: it must send its TRANSCODER_SECRET	none (machine caller)	-
+POST	/api/apx-sessions	routes/apxSessionRoutes.ts:46	open	gated:APX_COURSES	admin	route-gate (task 17)	admin panel only	hooks/api/use-apx-sessions.ts:25	yes
+PATCH	/api/apx-sessions/:orgId/active	routes/apxSessionRoutes.ts:117	open	gated:APX_COURSES	admin	route-gate (task 17)	admin panel only	hooks/api/use-apx-sessions.ts:67	yes
+PUT	/api/apx-sessions/:orgId/subsessions/:refKey	routes/apxSessionRoutes.ts:181	open	gated:APX_COURSES	admin	route-gate (task 17)	admin panel only	none found	-
+PATCH	/api/apx-sessions/:orgId/subsessions/:refKey/active	routes/apxSessionRoutes.ts:221	open	gated:APX_COURSES	admin	route-gate (task 17)	admin panel only	none found	-
+DELETE	/api/apx-sessions/:orgId/subsessions/:refKey	routes/apxSessionRoutes.ts:222	open	gated:APX_COURSES	admin	route-gate (task 17)	admin panel only	none found	-
+POST	/api/orders/payment-link	routes/orderRoutes.ts:33	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/orders/get-razorpay-order	routes/orderRoutes.ts:36	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/orders/get-website-razorpay-order	routes/orderRoutes.ts:41	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/orders/user	routes/orderRoutes.ts:71	open	gated:ORDER_READ	admin	route-gate (task 02-04); ALSO on student-gate list			
+POST	/api/orders	routes/orderRoutes.ts:82	open	gated:ORDER_WRITE	admin	route-gate (task 02-04); ALSO on student-gate list			
+POST	/api/orders/assign-plan	routes/orderRoutes.ts:87	open	gated:ORDER_WRITE	admin	route-gate (task 02-04); ALSO on student-gate list			
+POST	/api/orders/assign-plans	routes/orderRoutes.ts:90	open	gated:ORDER_WRITE	admin	route-gate (task 02-04); ALSO on student-gate list			
+PUT	/api/orders/:id	routes/orderRoutes.ts:113	open	gated:ORDER_WRITE	admin	route-gate (task 02-04); ALSO on student-gate list			
+POST	/api/qr-codes/webhook	routes/qrCodeRoutes.ts:16	open	open		webhook	provider webhook; verifies its signature		
+POST	/api/qr-codes	routes/qrCodeRoutes.ts:20	open	gated:QR_CODES	self-or-admin (body.userId)	route-gate (task 17)	app/website checkout or self-service; see allow	none found	-
+POST	/api/qr-codes/:id/sync	routes/qrCodeRoutes.ts:30	open	gated:QR_CODES	self-or-admin (QR owner)	route-gate (task 17)	app/website checkout or self-service; see allow	none found	-
+POST	/api/qr-codes/:id/close	routes/qrCodeRoutes.ts:33	open	gated:QR_CODES	self-or-admin (QR owner)	route-gate (task 17)	app/website checkout or self-service; see allow	none found	-
+POST	/api/class-progress	routes/classProgressRoutes.ts:7	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/course-progress	routes/courseProgressRoutes.ts:77	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/course-progress/mark-class-as-complete	routes/courseProgressRoutes.ts:121	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/course-progress/mark-class-as-uncomplete	routes/courseProgressRoutes.ts:163	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/test-results	routes/testResultRoutes.ts:531	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/test-results/search	routes/testResultRoutes.ts:534	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/test-results/analysis	routes/testResultRoutes.ts:537	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/schedules/batch	routes/scheduleRoutes.ts:7	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/views/track-class-view	routes/viewRoutes.ts:112	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/banners/:bannerId/likes	routes/bannerLikeRoutes.ts:7	open	open		student-action	the app user likes a banner		
+POST	/api/banners/:bannerId/likes/list	routes/bannerLikeRoutes.ts:8	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/banners/:bannerId/comment	routes/bannerCommentRoutes.ts:10	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/banners/:bannerId/comment/list	routes/bannerCommentRoutes.ts:12	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/rank-scores	routes/rankScoreRoutes.ts:95	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/rank-scores/max	routes/rankScoreRoutes.ts:127	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/faqs	routes/faqRoutes.ts:17	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/useFAQ.ts:63	yes
+PUT	/api/faqs/:id	routes/faqRoutes.ts:29	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/useFAQ.ts:81	yes
+PUT	/api/faqs/course/:courseId	routes/faqRoutes.ts:41	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/useFAQ.ts:139	yes
+POST	/api/user-stats/journey-so-far	routes/userStatsRoutes.ts:16	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/series/update-test/:id/questions-map	routes/series.routes.ts:54	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	components/admin/SeriesDashboard.tsx:58	yes
+POST	/api/series/ai-test	routes/series.routes.ts:67	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/series/live-test	routes/series.routes.ts:70	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/series/live-test/register	routes/series.routes.ts:76	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/series/quiz	routes/series.routes.ts:79	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/series/daily-quiz	routes/series.routes.ts:83	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/series/type/:main_menu_slug	routes/series.routes.ts:86	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/series/package/:main_menu_slug	routes/series.routes.ts:92	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/series/register-test	routes/series.routes.ts:95	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/series/:seriesId/sections	routes/series.routes.ts:114	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	none found	-
+PUT	/api/series/:seriesId/sections/:detailId	routes/series.routes.ts:115	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	none found	-
+POST	/api/series/:seriesId/cutoffs	routes/series.routes.ts:118	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	none found	-
+PUT	/api/series/:seriesId/cutoffs/:detailId	routes/series.routes.ts:119	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	none found	-
+PATCH	/api/series/:seriesId/questions/update-bulk	routes/series.routes.ts:122	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-series.ts:129	yes
+POST	/api/series/:seriesId/questions	routes/series.routes.ts:123	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-series-question-map.ts:31	yes
+DELETE	/api/series/:seriesId/questions/:questionId	routes/series.routes.ts:124	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-series-question-map.ts:41	yes
+POST	/api/ai-test/generate	routes/aiTest.routes.ts:8	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/ai-test-pattern	routes/aiTestPattern.routes.ts:21	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-ai-test-pattern.ts:189	yes
+PATCH	/api/ai-test-pattern/toggle-original	routes/aiTestPattern.routes.ts:22	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-ai-test-pattern.ts:194	yes
+PATCH	/api/ai-test-pattern/toggle-status	routes/aiTestPattern.routes.ts:23	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-ai-test-pattern.ts:200	yes
+DELETE	/api/ai-test-pattern/:categoryId	routes/aiTestPattern.routes.ts:24	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-ai-test-pattern.ts:205	yes
+POST	/api/instructions	routes/instructionRoute.ts:18	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/useInstructions.ts:96	yes
+PUT	/api/instructions/:id	routes/instructionRoute.ts:22	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/useInstructions.ts:105	yes
+POST	/api/series-question-maps/:seriesId/questions	routes/seriesQuestionMap.routes.ts:10	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	none found	-
+POST	/api/packages/slug/:slug	routes/package.routes.ts:80	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/packages/user-package-analytics	routes/package.routes.ts:81	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/packages/enrolled-packages	routes/package.routes.ts:83	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/packages/free-packages	routes/package.routes.ts:84	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/main-menus	routes/mainMenu.routes.ts:18	open	gated:CATEGORIES	admin	route-gate (task 17)	admin panel only	hooks/api/use-main-menus.ts:56	yes
+PUT	/api/main-menus/:id	routes/mainMenu.routes.ts:20	open	gated:CATEGORIES	admin	route-gate (task 17)	admin panel only	hooks/api/use-main-menus.ts:65	yes
+POST	/api/ebooks/user-ebook	routes/ebook.routes.ts:32	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/books/user-ebook	routes/ebook.routes.ts:32	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/packages/:packageId/assign-series	routes/packageSeriesRoute.ts:11	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-package-series.ts:157	yes
+POST	/api/packages/package-series/bulk-unassign	routes/packageSeriesRoute.ts:15	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-package-series.ts:166	yes
+PATCH	/api/packages/package-series/bulk-update	routes/packageSeriesRoute.ts:19	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-package-series.ts:145	yes
+PATCH	/api/packages/package-series/inline-update	routes/packageSeriesRoute.ts:20	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-package-series.ts:175	yes
+POST	/api/typing-test/save-result	routes/typingTestResultRoutes.ts:25	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/typing-test/series	routes/typingTestResultRoutes.ts:28	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/typing-test/analysis	routes/typingTestResultRoutes.ts:31	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/typing-test/all-toppers	routes/typingTestResultRoutes.ts:34	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/typing-test/all-leaderboard-toppers	routes/typingTestResultRoutes.ts:37	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/typing-test/topper	routes/typingTestResultRoutes.ts:40	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/score/save-upsi-score-content	routes/scoresRoutes.ts:10	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/score/get-score-content	routes/scoresRoutes.ts:12	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/user-test/save	routes/userTestDataRoutes.ts:31	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/user-test/attempted	routes/userTestDataRoutes.ts:34	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/user-test/generated-unattempted	routes/userTestDataRoutes.ts:37	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/user-test/save-pause-test	routes/userTestDataRoutes.ts:101	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/user-test/save-pause-test-delete	routes/userTestDataRoutes.ts:104	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/user-test/resume-test	routes/userTestDataRoutes.ts:107	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/package-order	routes/packageOrderRoutes.ts:133	open	gated:ORDER_WRITE	admin	route-gate (task 02-04); ALSO on student-gate list			
+PUT	/api/package-order/:id	routes/packageOrderRoutes.ts:284	open	gated:ORDER_WRITE	admin	route-gate (task 02-04); ALSO on student-gate list			
+POST	/api/package-order/user	routes/packageOrderRoutes.ts:331	open	gated:ORDER_READ	admin	route-gate (task 02-04); ALSO on student-gate list			
+POST	/api/custom-tags	routes/customTagRoutes.ts:17	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-customtags.ts:110	yes
+PUT	/api/custom-tags/:id	routes/customTagRoutes.ts:24	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-customtags.ts:132, hooks/api/use-customtags.ts:155	yes
+POST	/api/tags/search	routes/tagRoutes.ts:7	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/tags	routes/tagRoutes.ts:11	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-tags.ts:103	yes
+PUT	/api/tags/:id	routes/tagRoutes.ts:15	open	gated:TEST_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-tags.ts:121, hooks/api/use-tags.ts:140	yes
+POST	/api/room-test-leaderboard/match-history	routes/roomTestLeaderboardRoutes.ts:11	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/room-test-leaderboard/find	routes/roomTestLeaderboardRoutes.ts:13	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/plans/filter-active/:userId	routes/planRoutes.ts:31	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/coupons/apply-coupon	routes/couponRoutes.ts:21	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/saved-questions/unsave	routes/savedQuestionRoutes.ts:20	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/saved-questions	routes/savedQuestionRoutes.ts:27	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+PUT	/api/saved-questions/:id	routes/savedQuestionRoutes.ts:34	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/report-questions/detail	routes/reportQuestionRoutes.ts:35	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/report-questions	routes/reportQuestionRoutes.ts:39	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/authors	routes/authorRoutes.ts:15	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-authors.ts:96	yes
+PUT	/api/authors/:id	routes/authorRoutes.ts:17	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-authors.ts:108	yes
+POST	/api/publishers	routes/publisherRoutes.ts:15	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-publishers.ts:96	yes
+PUT	/api/publishers/:id	routes/publisherRoutes.ts:17	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	components/admin/PublishersDashboard.tsx:39, hooks/api/use-publishers.ts:108	yes
+POST	/api/user-test-dlq/retry	routes/userTestDLQServiceRoutes.ts:8	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/users/register	routes/userRoutes.ts:86	open	open		auth-flow	login/registration flow; checks credentials itself		
+POST	/api/users/batch-register	routes/userRoutes.ts:114	open	gated:USER_BULK	admin	route-gate (task 17b)	admin-style bulk user create with no login and no admin-panel caller	none	-
+POST	/api/users/login	routes/userRoutes.ts:138	open	open		auth-flow	login/registration flow; checks credentials itself		
+POST	/api/users/forgot-password	routes/userRoutes.ts:160	open	open		auth-flow	login/registration flow; checks credentials itself		
+POST	/api/users/mobile-login	routes/userRoutes.ts:184	open	open		auth-flow	login/registration flow; checks credentials itself		
+POST	/api/users/verify-login-otp	routes/userRoutes.ts:228	open	open		auth-flow	login/registration flow; checks credentials itself		
+POST	/api/users/refresh-token	routes/userRoutes.ts:367	open	open		auth-flow	login/registration flow; checks credentials itself		
+POST	/api/users/logout-session/:id	routes/userRoutes.ts:404	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/users/logout	routes/userRoutes.ts:418	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/users/search	routes/userRoutes.ts:537	open	gated:USER_LIST	admin	route-gate (task 02-04); ALSO on student-gate list			
+POST	/api/users/change-password	routes/userRoutes.ts:620	open	gated:CHANGE_PASSWORD	self-or-admin (body.user_id)	route-gate (task 02-04); ALSO on student-gate list			
+POST	/api/users/update-user	routes/userRoutes.ts:624	open	gated:USER_SELF_EDIT	self-or-admin (body.user_id)	route-gate (task 02-04)			
+POST	/api/users/fcm-token	routes/userRoutes.ts:647	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+PUT	/api/users/:id	routes/userRoutes.ts:769	open	gated:USER_WRITE	admin	route-gate (task 02-04)			
+DELETE	/api/users/:id	routes/userRoutes.ts:770	open	gated:USER_WRITE	admin	route-gate (task 02-04); ALSO on student-gate list			
+POST	/api/v1/room/:id/notes	routes/v1/roomRoutes.ts:7	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/v1/channels	routes/v1/chatChannelRoutes.ts:18	open	gated:CHAT_CHANNELS	admin	route-gate (task 17)	admin panel only	hooks/api/use-channels.ts:57	yes
+DELETE	/api/v1/channels/:id	routes/v1/chatChannelRoutes.ts:26	open	gated:CHAT_CHANNELS	admin	route-gate (task 17)	admin panel only	hooks/api/use-channels.ts:82	yes
+PUT	/api/v1/channels/:id	routes/v1/chatChannelRoutes.ts:26	open	gated:CHAT_CHANNELS	admin	route-gate (task 17)	admin panel only	hooks/api/use-channels.ts:66, hooks/api/use-channels.ts:76	yes
+POST	/api/v1/channels/:id/subscribe	routes/v1/chatChannelRoutes.ts:31	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+DELETE	/api/v1/channels/:id/subscribers/:userId	routes/v1/chatChannelRoutes.ts:37	open	gated:CHAT_CHANNELS	self-or-admin (params.userId)	route-gate (task 17)	app/website checkout or self-service; see allow	hooks/api/use-channels.ts:205	yes
+POST	/api/v1/channels/:id/messages	routes/v1/chatMessageRoutes.ts:11	open	gated:CHAT_CHANNELS	admin	route-gate (task 17)	admin panel only	hooks/api/use-chat-messages.ts:155	yes
+DELETE	/api/v1/messages/:id	routes/v1/chatMessageRoutes.ts:18	open	gated:CHAT_CHANNELS	admin	route-gate (task 17)	admin panel only	hooks/api/use-chat-messages.ts:107	yes
+PUT	/api/v1/messages/:id	routes/v1/chatMessageRoutes.ts:18	open	gated:CHAT_CHANNELS	admin	route-gate (task 17)	admin panel only	hooks/api/use-chat-messages.ts:191	yes
+PUT	/api/v1/messages/:id/pin	routes/v1/chatMessageRoutes.ts:22	open	gated:CHAT_CHANNELS	admin	route-gate (task 17)	admin panel only	hooks/api/use-chat-messages.ts:216	yes
+PUT	/api/v1/messages/:id/unpin	routes/v1/chatMessageRoutes.ts:25	open	gated:CHAT_CHANNELS	admin	route-gate (task 17)	admin panel only	hooks/api/use-chat-messages.ts:225	yes
+POST	/api/v1/messages/:id/react	routes/v1/chatMessageRoutes.ts:28	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/v1/messages/:id/vote	routes/v1/chatMessageRoutes.ts:34	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/v1/messages/:id/view	routes/v1/chatMessageRoutes.ts:37	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/v1/auth/handshake	routes/v1/chatAuthRoutes.ts:7	open	open		auth-flow	login/registration flow; checks credentials itself		
+DELETE	/api/v1/users/device-token	routes/v1/deviceTokenRoutes.ts:7	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/v1/users/device-token	routes/v1/deviceTokenRoutes.ts:7	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/user-points	routes/userPointsHistoryRoutes.ts:49	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/user-coins	routes/userCoinsRoutes.ts:8	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/admins/login	routes/adminRoutes.ts:25	open	open		auth-flow	login/registration flow; checks credentials itself		
+POST	/api/admins/verify-login-otp	routes/adminRoutes.ts:26	open	open		auth-flow	login/registration flow; checks credentials itself		
+POST	/api/blog-types	routes/blogTypeRoutes.ts:47	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-blog-types.ts:69	yes
+PUT	/api/blog-types/:id	routes/blogTypeRoutes.ts:120	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	components/admin/BlogTypesDashboard.tsx:42, components/admin/BlogTypesDashboard.tsx:78, hooks/api/use-blog-types.ts:82	yes
+DELETE	/api/blog-types/:id	routes/blogTypeRoutes.ts:121	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-blog-types.ts:93	yes
+POST	/api/blog-comments	routes/blogCommentRoutes.ts:36	open	open		student-action	the website/app user comments on a blog		
+POST	/api/blog-comments/:id/like	routes/blogCommentRoutes.ts:69	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/practice-batch/list	routes/practiceBatchRoutes.ts:70	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/practice-batch/detail	routes/practiceBatchRoutes.ts:71	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/delete-account	routes/legacyApiRoutes.ts:32	open	open		auth-flow	login/registration flow; checks credentials itself		
+POST	/api/get-practice-batch-list-v5	routes/legacyApiRoutes.ts:40	open	open		read-via-POST	legacy practice-batch list		
+POST	/api/get-practice-batch-detail-v5	routes/legacyApiRoutes.ts:43	open	open		read-via-POST	legacy practice-batch detail		
+POST	/api/get-practice-batch-schedule-v5	routes/legacyApiRoutes.ts:49	open	open		read-via-POST	legacy practice-batch schedule		
+POST	/api/leader-board-home-batch	routes/legacyApiRoutes.ts:57	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/words/user-word	routes/wordRoutes.ts:30	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/words/bookmark	routes/wordRoutes.ts:40	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/words/report	routes/wordRoutes.ts:41	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/words/seen	routes/wordRoutes.ts:42	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/words/:id/image	routes/wordRoutes.ts:43	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	none found	-
+POST	/api/words	routes/wordRoutes.ts:45	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-words.ts:153	yes
+PUT	/api/words/:id	routes/wordRoutes.ts:46	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-words.ts:164	yes
+DELETE	/api/words/:id	routes/wordRoutes.ts:47	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-words.ts:172	yes
+POST	/api/editorial-tags	routes/editorialTagRoutes.ts:14	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-editorials.ts:314	yes
+DELETE	/api/editorial-tags/:id	routes/editorialTagRoutes.ts:15	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-editorials.ts:339	yes
+PUT	/api/editorial-tags/:id	routes/editorialTagRoutes.ts:15	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-editorials.ts:327	yes
+POST	/api/editorial-journals/ckeditor/upload	routes/editorialJournalRoutes.ts:32	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	none found	-
+POST	/api/editorial-journals/:id/like	routes/editorialJournalRoutes.ts:33	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/editorial-journals/:id/save	routes/editorialJournalRoutes.ts:34	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+PUT	/api/editorial-journals/:id/series	routes/editorialJournalRoutes.ts:37	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-editorials.ts:256	yes
+POST	/api/editorial-journals/:id/series/bulk-assign	routes/editorialJournalRoutes.ts:38	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	none found	-
+POST	/api/editorial-journals/:id/series/bulk-unassign	routes/editorialJournalRoutes.ts:39	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	none found	-
+PATCH	/api/editorial-journals/:id/series/inline-update	routes/editorialJournalRoutes.ts:40	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	none found	-
+POST	/api/editorial-journals/:id/assign-series	routes/editorialJournalRoutes.ts:41	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	none found	-
+POST	/api/editorial-journals/:id/image	routes/editorialJournalRoutes.ts:42	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	none found	-
+POST	/api/editorial-journals/:id/audio	routes/editorialJournalRoutes.ts:43	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	none found	-
+POST	/api/editorial-journals/:id/parts/:part/attempt	routes/editorialJournalRoutes.ts:44	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/editorial-journals/:id/parts/attempt	routes/editorialJournalRoutes.ts:45	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/editorial-journals	routes/editorialJournalRoutes.ts:51	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-editorials.ts:198	yes
+PUT	/api/editorial-journals/:id	routes/editorialJournalRoutes.ts:52	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-editorials.ts:220	yes
+DELETE	/api/editorial-journals/:id	routes/editorialJournalRoutes.ts:53	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-editorials.ts:240	yes
+POST	/api/editorial/like	routes/editorialRoutes.ts:11	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/editorial/save	routes/editorialRoutes.ts:12	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/editorial/feedback	routes/editorialRoutes.ts:13	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/editorial/part-attempt	routes/editorialRoutes.ts:14	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/testimonials/submit	routes/testimonialRoutes.ts:73	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/testimonials	routes/testimonialRoutes.ts:85	open	open		public	public story submission, creates a pending row (admin uses POST /testimonials/admin with requireAdmin)		
+POST	/api/brand-settings	routes/brandSettingRoutes.ts:16	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-brand-images.ts:104	yes
+PUT	/api/brand-settings/:id	routes/brandSettingRoutes.ts:17	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-brand-images.ts:119, hooks/api/use-brand-settings.ts:40	yes
+DELETE	/api/brand-settings/:id	routes/brandSettingRoutes.ts:18	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-brand-images.ts:126	yes
+POST	/api/feeds	routes/feedRoutes.ts:21	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-feeds.ts:94	yes
+PUT	/api/feeds/:id	routes/feedRoutes.ts:22	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-feeds.ts:101	yes
+DELETE	/api/feeds/:id	routes/feedRoutes.ts:23	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-feeds.ts:108	yes
+POST	/api/feeds/:id/like	routes/feedRoutes.ts:24	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/feeds/:id/view	routes/feedRoutes.ts:25	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/feeds/:id/share	routes/feedRoutes.ts:26	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/feeds/:id/comments	routes/feedRoutes.ts:27	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/feeds/:id/comments/:commentId/like	routes/feedRoutes.ts:28	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/feeds/:id/comments/:commentId/replies	routes/feedRoutes.ts:29	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/feeds/:id/comments/:commentId/replies/:replyId/like	routes/feedRoutes.ts:30	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/latest-sections	routes/latestSectionRoutes.ts:15	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-latest-sections.ts:75	yes
+PUT	/api/latest-sections/:id	routes/latestSectionRoutes.ts:16	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-latest-sections.ts:89	yes
+PATCH	/api/latest-sections/:id/status	routes/latestSectionRoutes.ts:17	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-latest-sections.ts:106	yes
+DELETE	/api/latest-sections/:id	routes/latestSectionRoutes.ts:18	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-latest-sections.ts:117	yes
+POST	/api/latest-sections/:id/like	routes/latestSectionRoutes.ts:21	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/latest-sections/:id/view	routes/latestSectionRoutes.ts:22	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/latest-sections/:id/share	routes/latestSectionRoutes.ts:23	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/latest-sections/:id/comments	routes/latestSectionRoutes.ts:24	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/latest-sections/:id/comments/:commentId/like	routes/latestSectionRoutes.ts:25	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/latest-sections/:id/comments/:commentId/replies	routes/latestSectionRoutes.ts:26	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/latest-sections/:id/comments/:commentId/replies/:replyId/like	routes/latestSectionRoutes.ts:27	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/uploads/images	routes/uploadRoutes.ts:7	open	gated:UPLOADS	admin	route-gate (task 17)	admin panel only	components/admin/ChannelForm.tsx:51, hooks/api/use-exam-score.ts:49, hooks/api/use-home-top-picks.ts:57, hooks/api/use-vg-tests.ts:149	NO for components/admin/ChannelForm.tsx:51 (plain fetch)
+POST	/api/uploads/files	routes/uploadRoutes.ts:8	open	gated:UPLOADS	admin	route-gate (task 17)	admin panel only	components/admin/BrandImageForm.tsx:269, components/admin/BulkSaleForm.tsx:617, components/admin/EditorialForm.tsx:109, components/admin/LatestSectionForm.tsx:92, components/admin/MessagesDashboard.tsx:489, components/admin/PlanForm.tsx:548, components/admin/TestimonialForm.tsx:217, components/admin/WordForm.tsx:139, app/api/editorial-media-upload/route.ts:41, app/api/question-media-upload/route.ts:44	NO for the two Next server routes app/api/editorial-media-upload and app/api/question-media-upload (their B2-failure fallback posts with no Authorization)
+POST	/api/pdfs/upload	routes/pdfUploadRoutes.ts:37	open	gated:UPLOADS	admin	route-gate (task 17)	admin panel only	none found	-
+DELETE	/api/pdfs/:id	routes/pdfUploadRoutes.ts:41	open	open		unreachable	shadowed: pdfRoutes DELETE /api/pdfs/:id (requireAdmin) is mounted first and always answers		
+POST	/api/slot-machine/setup	routes/slotMachineRoutes.ts:7	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/slot-machine/redeem	routes/slotMachineRoutes.ts:9	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/streak	routes/streakRoutes.ts:12	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/streak/summary	routes/streakRoutes.ts:13	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/streak/missions	routes/streakRoutes.ts:14	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/streak/calendar	routes/streakRoutes.ts:15	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/streak/rewards	routes/streakRoutes.ts:16	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/streaks	routes/streakRoutes.ts:12	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/streaks/summary	routes/streakRoutes.ts:13	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/streaks/missions	routes/streakRoutes.ts:14	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/streaks/calendar	routes/streakRoutes.ts:15	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/streaks/rewards	routes/streakRoutes.ts:16	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/coins	routes/coinRoutes.ts:13	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/coins/history-dummy	routes/coinRoutes.ts:17	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/coins/my-referrals	routes/coinRoutes.ts:18	open	open		student-gate	listed in feat/vg-student-auth-gate STUDENT_ROUTES		
+POST	/api/admin/learn-library	routes/learnLibraryRoutes.ts:54	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-learn-library.ts:349	yes
+PUT	/api/admin/learn-library/:id	routes/learnLibraryRoutes.ts:55	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-learn-library.ts:359	yes
+DELETE	/api/admin/learn-library/:id	routes/learnLibraryRoutes.ts:56	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-learn-library.ts:369	yes
+POST	/api/learn-library	routes/learnLibraryRoutes.ts:54	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	none found	-
+PUT	/api/learn-library/:id	routes/learnLibraryRoutes.ts:55	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	none found	-
+DELETE	/api/learn-library/:id	routes/learnLibraryRoutes.ts:56	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	none found	-
+POST	/api/grammar/topics	routes/grammarRoutes.ts:29	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-grammar.ts:264	yes
+DELETE	/api/grammar/topics/:id	routes/grammarRoutes.ts:33	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-grammar.ts:280	yes
+PUT	/api/grammar/topics/:id	routes/grammarRoutes.ts:33	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-grammar.ts:272	yes
+POST	/api/grammar/subtopics	routes/grammarRoutes.ts:38	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-grammar.ts:297	yes
+DELETE	/api/grammar/subtopics/:id	routes/grammarRoutes.ts:42	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-grammar.ts:314	yes
+PUT	/api/grammar/subtopics/:id	routes/grammarRoutes.ts:42	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-grammar.ts:306	yes
+POST	/api/grammar/subtopics/:id/pdf	routes/grammarRoutes.ts:46	open	gated:LEARN_CONTENT	admin	route-gate (task 17)	admin panel only	lib/upload-with-progress.ts:33	yes
+POST	/api/grammar/subtopics/:id/like	routes/grammarRoutes.ts:47	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/grammar/topics/:id/like	routes/grammarRoutes.ts:49	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/top-bar-announcements	routes/topBarAnnouncementRoutes.ts:16	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-top-bar-announcements.ts:70	yes
+POST	/api/top-bar-announcements/bulk	routes/topBarAnnouncementRoutes.ts:17	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	none found	-
+PUT	/api/top-bar-announcements/:id	routes/topBarAnnouncementRoutes.ts:19	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-top-bar-announcements.ts:84	yes
+DELETE	/api/top-bar-announcements/:id	routes/topBarAnnouncementRoutes.ts:20	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-top-bar-announcements.ts:95	yes
+POST	/api/search	routes/searchRoutes.ts:34	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/search/click	routes/searchRoutes.ts:35	open	open		telemetry	anonymous event intake by design		
+POST	/api/admin/in-app-banner/popups	routes/adminInAppBannerRoutes.ts:20	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	none found	-
+PUT	/api/admin/in-app-banner/popups/:id	routes/adminInAppBannerRoutes.ts:22	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	none found	-
+DELETE	/api/admin/in-app-banner/popups/:id	routes/adminInAppBannerRoutes.ts:23	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	none found	-
+POST	/api/admin/in-app-banner	routes/adminInAppBannerRoutes.ts:28	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-in-app-banner.ts:95	yes
+PUT	/api/admin/in-app-banner	routes/adminInAppBannerRoutes.ts:29	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-in-app-banner.ts:84	yes
+DELETE	/api/admin/in-app-banner	routes/adminInAppBannerRoutes.ts:30	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-in-app-banner.ts:106	yes
+POST	/api/updates	routes/updateRoutes.ts:15	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	none found	-
+POST	/api/updates/:id/like	routes/updateRoutes.ts:17	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/notices	routes/noticeRoutes.ts:27	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-notices.ts:131	yes
+PUT	/api/notices/:id	routes/noticeRoutes.ts:28	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	components/admin/FeedForm.tsx:204, hooks/api/use-notices.ts:141	yes
+DELETE	/api/notices/:id	routes/noticeRoutes.ts:29	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-notices.ts:150	yes
+POST	/api/notices/:id/like	routes/noticeRoutes.ts:32	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/notices/:id/read	routes/noticeRoutes.ts:33	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/notices/:id/vote	routes/noticeRoutes.ts:34	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/notices/:id/view	routes/noticeRoutes.ts:35	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/notices/:id/comments	routes/noticeRoutes.ts:39	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/notices/:id/comments/:commentId/like	routes/noticeRoutes.ts:40	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/notices/:id/poll/vote	routes/noticeRoutes.ts:43	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/exam-updates	routes/examUpdateRoutes.ts:16	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	components/admin/FeedForm.tsx:187	yes
+PUT	/api/exam-updates/:id	routes/examUpdateRoutes.ts:17	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	components/admin/FeedForm.tsx:185, hooks/api/use-exam-updates.ts:67	yes
+DELETE	/api/exam-updates/:id	routes/examUpdateRoutes.ts:18	open	gated:CONTENT	admin	route-gate (task 17)	admin panel only	hooks/api/use-exam-updates.ts:75	yes
+POST	/api/shorts/:id/like	routes/shortRoutes.ts:47	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/exam-score/exams/:slug/evaluate	routes/examScoreRoutes.ts:25	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/exam-score/save-score-content	routes/examScoreRoutes.ts:27	open	open		student-action	the app/website user acts on their own data or engagement; not an admin write		
+POST	/api/exam-score/get-exam-wise-rank	routes/examScoreRoutes.ts:29	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/exam-score/get-exam-wise-rank-top-ten	routes/examScoreRoutes.ts:30	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/exam-score/compare-with-exam-wise-topper	routes/examScoreRoutes.ts:31	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/exam-score/get-exam-shift-wise-rank	routes/examScoreRoutes.ts:33	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/exam-score/get-exam-shift-wise-rank-top-ten	routes/examScoreRoutes.ts:34	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/exam-score/get-exam-category-wise-rank	routes/examScoreRoutes.ts:35	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/exam-score/get-exam-category-wise-rank-top-ten	routes/examScoreRoutes.ts:36	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/exam-score/get-exam-zone-wise-rank	routes/examScoreRoutes.ts:37	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/exam-score/get-exam-zone-wise-rank-top-ten	routes/examScoreRoutes.ts:38	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/exam-score/get-exam-wise-normalized-rank	routes/examScoreRoutes.ts:39	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/exam-score/get-exam-wise-normalized-rank-top-ten	routes/examScoreRoutes.ts:40	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/exam-score/get-all-exam-category-wise-raw-score	routes/examScoreRoutes.ts:42	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/exam-score/get-shift-wise-average-score	routes/examScoreRoutes.ts:43	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/exam-score/download/score-card	routes/examScoreRoutes.ts:44	open	open		read-via-POST	POST that reads or computes, writes nothing an admin owns		
+POST	/api/save-user-track	routes/userTrackRoutes.ts:6	open	open		telemetry	anonymous event intake by design		
+POST	/api/qr-codes/webhook	app.ts:581	open	open		webhook	provider webhook; verifies its signature		
+POST	/api/advance-notifications	routes/advanceNotificationRoutes.ts:65	authenticateToken	gated:NOTIFICATIONS	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-advance-notifications.ts:248	yes
+DELETE	/api/advance-notifications/:id	routes/advanceNotificationRoutes.ts:122	authenticateToken	gated:NOTIFICATIONS	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-advance-notifications.ts:303	yes
+PUT	/api/advance-notifications/:id	routes/advanceNotificationRoutes.ts:121	authenticateToken	gated:NOTIFICATIONS	admin	route-gate (task 17b)	admin write any student token could call	none	-
+POST	/api/advance-notifications/:id/resend	routes/advanceNotificationRoutes.ts:126	authenticateToken	gated:NOTIFICATIONS	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-advance-notifications.ts:321	yes
+POST	/api/advance-notifications/audience-estimate	routes/advanceNotificationRoutes.ts:78	authenticateToken	gated:NOTIFICATIONS	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-advance-notifications.ts:192	yes
+POST	/api/advance-notifications/bulk-create	routes/advanceNotificationRoutes.ts:70	authenticateToken	gated:NOTIFICATIONS	admin	route-gate (task 17b)	admin write any student token could call	none	-
+POST	/api/advance-notifications/demo-watch	routes/advanceNotificationRoutes.ts:109	authenticateToken	authenticateToken (left alone)		student-action	the app reports a student watching a demo class (body userId); no admin caller (task 17b)		
+DELETE	/api/advance-notifications/in-app/:userId/:notificationId	routes/advanceNotificationRoutes.ts:104	authenticateToken	authenticateToken (left alone)		student-action	the app marks, clears or removes the logged-in student's own in-app notifications; not an admin write. Handler trusts :userId (no ownership check): a self-or-admin gate on params.userId is a follow-up (task 17b)		
+POST	/api/advance-notifications/in-app/:userId/:notificationId	routes/advanceNotificationRoutes.ts:105	authenticateToken	authenticateToken (left alone)		student-action	the app marks, clears or removes the logged-in student's own in-app notifications; not an admin write. Handler trusts :userId (no ownership check): a self-or-admin gate on params.userId is a follow-up (task 17b)		
+PATCH	/api/advance-notifications/in-app/:userId/:notificationId/read	routes/advanceNotificationRoutes.ts:100	authenticateToken	authenticateToken (left alone)		student-action	the app marks, clears or removes the logged-in student's own in-app notifications; not an admin write. Handler trusts :userId (no ownership check): a self-or-admin gate on params.userId is a follow-up (task 17b)		
+POST	/api/advance-notifications/in-app/:userId/:notificationId/read	routes/advanceNotificationRoutes.ts:101	authenticateToken	authenticateToken (left alone)		student-action	the app marks, clears or removes the logged-in student's own in-app notifications; not an admin write. Handler trusts :userId (no ownership check): a self-or-admin gate on params.userId is a follow-up (task 17b)		
+DELETE	/api/advance-notifications/in-app/:userId/clear-all	routes/advanceNotificationRoutes.ts:96	authenticateToken	authenticateToken (left alone)		student-action	the app marks, clears or removes the logged-in student's own in-app notifications; not an admin write. Handler trusts :userId (no ownership check): a self-or-admin gate on params.userId is a follow-up (task 17b)		
+POST	/api/advance-notifications/in-app/:userId/clear-all	routes/advanceNotificationRoutes.ts:97	authenticateToken	authenticateToken (left alone)		student-action	the app marks, clears or removes the logged-in student's own in-app notifications; not an admin write. Handler trusts :userId (no ownership check): a self-or-admin gate on params.userId is a follow-up (task 17b)		
+PATCH	/api/advance-notifications/in-app/:userId/read-all	routes/advanceNotificationRoutes.ts:92	authenticateToken	authenticateToken (left alone)		student-action	the app marks, clears or removes the logged-in student's own in-app notifications; not an admin write. Handler trusts :userId (no ownership check): a self-or-admin gate on params.userId is a follow-up (task 17b)		
+POST	/api/advance-notifications/in-app/:userId/read-all	routes/advanceNotificationRoutes.ts:93	authenticateToken	authenticateToken (left alone)		student-action	the app marks, clears or removes the logged-in student's own in-app notifications; not an admin write. Handler trusts :userId (no ownership check): a self-or-admin gate on params.userId is a follow-up (task 17b)		
+DELETE	/api/authors/:id	routes/authorRoutes.ts:24	authenticateToken	gated:CONTENT	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-authors.ts:119	yes
+POST	/api/banners	routes/bannerRoutes.ts:226	authenticateToken	authenticateToken (left alone)		read-via-POST	the app's banner list (JSON body with userId); the admin create on the same path is requireAdmin (task 17b)		
+POST	/api/books	routes/ebook.routes.ts:36	authenticateToken	gated:LEARN_CONTENT	admin	route-gate (task 17b)	admin write any student token could call	none (the panel writes ebooks through /api/learn-library)	-
+DELETE	/api/books/:id	routes/ebook.routes.ts:41	authenticateToken	gated:LEARN_CONTENT	admin	route-gate (task 17b)	admin write any student token could call	none (the panel writes ebooks through /api/learn-library)	-
+PUT	/api/books/:id	routes/ebook.routes.ts:40	authenticateToken	gated:LEARN_CONTENT	admin	route-gate (task 17b)	admin write any student token could call	none (the panel writes ebooks through /api/learn-library)	-
+DELETE	/api/categories/:id	routes/categoryRoutes.ts:540	authenticateToken	gated:CATEGORIES	admin	route-gate (task 17b)	admin write any student token could call	none (the panel has no category delete)	-
+DELETE	/api/courses/:courseId/classes/:classId	routes/courseClassRoutes.ts:90	authenticateToken	gated:COURSE_ASSIGN	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-course-classes.ts:306, :335	yes
+DELETE	/api/courses/:courseId/tests/:testId	routes/courseTestRoutes.ts:36	authenticateToken	gated:COURSE_ASSIGN	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-course-tests.ts:168	yes
+POST	/api/courses/:id/certificate/claim	routes/courseRoutes.ts:73	authenticateToken	authenticateToken (left alone)		student-action	the student claims/previews their own course certificate (task 17b)		
+POST	/api/courses/:id/certificate/preview	routes/courseRoutes.ts:72	authenticateToken	authenticateToken (left alone)		student-action	the student claims/previews their own course certificate (task 17b)		
+POST	/api/current-affairs/days/:date/video-views	routes/currentAffairsRoutes.ts:26	authenticateToken	authenticateToken (left alone)		student-action	the student's own bookmark / video view (task 17b)		
+DELETE	/api/current-affairs/stories/:storyId/bookmark	routes/currentAffairsRoutes.ts:29	authenticateToken	authenticateToken (left alone)		student-action	the student's own bookmark / video view (task 17b)		
+PUT	/api/current-affairs/stories/:storyId/bookmark	routes/currentAffairsRoutes.ts:28	authenticateToken	authenticateToken (left alone)		student-action	the student's own bookmark / video view (task 17b)		
+DELETE	/api/custom-tags/:id	routes/customTagRoutes.ts:30	authenticateToken	gated:TEST_CONTENT	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-customtags.ts:178	yes
+POST	/api/ebooks	routes/ebook.routes.ts:36	authenticateToken	gated:LEARN_CONTENT	admin	route-gate (task 17b)	admin write any student token could call	none (the panel writes ebooks through /api/learn-library)	-
+DELETE	/api/ebooks/:id	routes/ebook.routes.ts:41	authenticateToken	gated:LEARN_CONTENT	admin	route-gate (task 17b)	admin write any student token could call	none (the panel writes ebooks through /api/learn-library)	-
+PUT	/api/ebooks/:id	routes/ebook.routes.ts:40	authenticateToken	gated:LEARN_CONTENT	admin	route-gate (task 17b)	admin write any student token could call	none (the panel writes ebooks through /api/learn-library)	-
+DELETE	/api/faqs/:id	routes/faqRoutes.ts:36	authenticateToken	gated:CONTENT	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/useFAQ.ts:99	yes
+PUT	/api/feedback	routes/feedbackRoutes.ts:9	authenticateToken	authenticateToken (left alone)		student-action	the student's own feedback (task 17b)		
+POST	/api/get-batch-stats	routes/legacyApiRoutes.ts:52	authenticateToken	authenticateToken (left alone)		read-via-POST	the app reads its study-plan schedule/stats (task 17b)		
+DELETE	/api/instructions/:id	routes/instructionRoute.ts:28	authenticateToken	gated:TEST_CONTENT	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/useInstructions.ts:114	yes
+DELETE	/api/main-categories/:id	routes/mainCategoryRoutes.ts:572	authenticateToken	gated:CATEGORIES	admin	route-gate (task 17b)	admin write any student token could call	none (the panel has no main-category delete)	-
+DELETE	/api/main-menus/:id	routes/mainMenu.routes.ts:26	authenticateToken	gated:CATEGORIES	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-main-menus.ts:80	yes
+PATCH	/api/main-menus/:id/status	routes/mainMenu.routes.ts:22	authenticateToken	gated:CATEGORIES	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-main-menus.ts:74	yes
+POST	/api/notifications	routes/notificationRoutes.ts:69	authenticateToken	gated:NOTIFICATIONS	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-notifications.ts:234	yes
+DELETE	/api/notifications/:id	routes/notificationRoutes.ts:131	authenticateToken	gated:NOTIFICATIONS	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-notifications.ts:289	yes
+PUT	/api/notifications/:id	routes/notificationRoutes.ts:130	authenticateToken	gated:NOTIFICATIONS	admin	route-gate (task 17b)	admin write any student token could call	none	-
+POST	/api/notifications/:id/resend	routes/notificationRoutes.ts:135	authenticateToken	gated:NOTIFICATIONS	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-notifications.ts:307	yes
+POST	/api/notifications/:id/resume	routes/notificationRoutes.ts:143	authenticateToken	gated:NOTIFICATIONS	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-notifications.ts:370	yes
+POST	/api/notifications/:id/stop	routes/notificationRoutes.ts:139	authenticateToken	gated:NOTIFICATIONS	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-notifications.ts:347	yes
+POST	/api/notifications/:id/track	routes/notificationRoutes.ts:147	authenticateToken	authenticateToken (left alone)		student-action	the app reports a push open/click/dismiss (task 17b)		
+POST	/api/notifications/audience-estimate	routes/notificationRoutes.ts:86	authenticateToken	gated:NOTIFICATIONS	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-notifications.ts:195	yes
+POST	/api/notifications/bulk-create	routes/notificationRoutes.ts:74	authenticateToken	gated:NOTIFICATIONS	admin	route-gate (task 17b)	admin write any student token could call	none	-
+POST	/api/notifications/demo-watch	routes/notificationRoutes.ts:118	authenticateToken	authenticateToken (left alone)		student-action	the app reports a student watching a demo class (body userId); no admin caller (task 17b)		
+DELETE	/api/notifications/in-app/:userId/:notificationId	routes/notificationRoutes.ts:113	authenticateToken	authenticateToken (left alone)		student-action	the app marks, clears or removes the logged-in student's own in-app notifications; not an admin write. Handler trusts :userId (no ownership check): a self-or-admin gate on params.userId is a follow-up (task 17b)		
+POST	/api/notifications/in-app/:userId/:notificationId	routes/notificationRoutes.ts:114	authenticateToken	authenticateToken (left alone)		student-action	the app marks, clears or removes the logged-in student's own in-app notifications; not an admin write. Handler trusts :userId (no ownership check): a self-or-admin gate on params.userId is a follow-up (task 17b)		
+PATCH	/api/notifications/in-app/:userId/:notificationId/read	routes/notificationRoutes.ts:109	authenticateToken	authenticateToken (left alone)		student-action	the app marks, clears or removes the logged-in student's own in-app notifications; not an admin write. Handler trusts :userId (no ownership check): a self-or-admin gate on params.userId is a follow-up (task 17b)		
+POST	/api/notifications/in-app/:userId/:notificationId/read	routes/notificationRoutes.ts:110	authenticateToken	authenticateToken (left alone)		student-action	the app marks, clears or removes the logged-in student's own in-app notifications; not an admin write. Handler trusts :userId (no ownership check): a self-or-admin gate on params.userId is a follow-up (task 17b)		
+DELETE	/api/notifications/in-app/:userId/clear-all	routes/notificationRoutes.ts:105	authenticateToken	authenticateToken (left alone)		student-action	the app marks, clears or removes the logged-in student's own in-app notifications; not an admin write. Handler trusts :userId (no ownership check): a self-or-admin gate on params.userId is a follow-up (task 17b)		
+POST	/api/notifications/in-app/:userId/clear-all	routes/notificationRoutes.ts:106	authenticateToken	authenticateToken (left alone)		student-action	the app marks, clears or removes the logged-in student's own in-app notifications; not an admin write. Handler trusts :userId (no ownership check): a self-or-admin gate on params.userId is a follow-up (task 17b)		
+PATCH	/api/notifications/in-app/:userId/read-all	routes/notificationRoutes.ts:101	authenticateToken	authenticateToken (left alone)		student-action	the app marks, clears or removes the logged-in student's own in-app notifications; not an admin write. Handler trusts :userId (no ownership check): a self-or-admin gate on params.userId is a follow-up (task 17b)		
+POST	/api/notifications/in-app/:userId/read-all	routes/notificationRoutes.ts:102	authenticateToken	authenticateToken (left alone)		student-action	the app marks, clears or removes the logged-in student's own in-app notifications; not an admin write. Handler trusts :userId (no ownership check): a self-or-admin gate on params.userId is a follow-up (task 17b)		
+POST	/api/notifications/rules	routes/notificationRoutes.ts:91	authenticateToken	gated:NOTIFICATIONS	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-notifications.ts:437	yes
+POST	/api/orders/:id/exchange-self	routes/orderRoutes.ts:117	authenticateToken	authenticateToken (left alone)		student-action	student checkout / IAP / self exchange (task 17b)		
+POST	/api/orders/build-checkout	routes/orderRoutes.ts:64	authenticateToken	authenticateToken (left alone)		student-action	student checkout / IAP / self exchange (task 17b)		
+POST	/api/orders/submit-apple-iap-order	routes/orderRoutes.ts:60	authenticateToken	authenticateToken (left alone)		student-action	student checkout / IAP / self exchange (task 17b)		
+POST	/api/practice-batch/:batchId/classes	routes/practiceBatchRoutes.ts:95	authenticateToken	gated:PRACTICE_BATCH	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-practice-batch-classes.ts:77	yes
+DELETE	/api/practice-batch/:batchId/classes/:assignmentId	routes/practiceBatchRoutes.ts:98	authenticateToken	gated:PRACTICE_BATCH	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-practice-batch-classes.ts:113	yes
+PATCH	/api/practice-batch/:batchId/classes/:assignmentId	routes/practiceBatchRoutes.ts:97	authenticateToken	gated:PRACTICE_BATCH	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-practice-batch-classes.ts:100	yes
+POST	/api/practice-batch/:batchId/pdfs	routes/practiceBatchRoutes.ts:89	authenticateToken	gated:PRACTICE_BATCH	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-practice-batch-pdfs.ts:77	yes
+DELETE	/api/practice-batch/:batchId/pdfs/:assignmentId	routes/practiceBatchRoutes.ts:93	authenticateToken	gated:PRACTICE_BATCH	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-practice-batch-pdfs.ts:113	yes
+PATCH	/api/practice-batch/:batchId/pdfs/:assignmentId	routes/practiceBatchRoutes.ts:92	authenticateToken	gated:PRACTICE_BATCH	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-practice-batch-pdfs.ts:100	yes
+POST	/api/practice-batch/:batchId/tests	routes/practiceBatchRoutes.ts:84	authenticateToken	gated:PRACTICE_BATCH	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-practice-batch-tests.ts:77	yes
+DELETE	/api/practice-batch/:batchId/tests/:assignmentId	routes/practiceBatchRoutes.ts:87	authenticateToken	gated:PRACTICE_BATCH	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-practice-batch-tests.ts:113	yes
+PATCH	/api/practice-batch/:batchId/tests/:assignmentId	routes/practiceBatchRoutes.ts:86	authenticateToken	gated:PRACTICE_BATCH	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-practice-batch-tests.ts:100	yes
+POST	/api/practice-batch/schedule	routes/practiceBatchRoutes.ts:72	authenticateToken	authenticateToken (left alone)		read-via-POST	the app reads its study-plan schedule/stats (task 17b)		
+POST	/api/practice-batch/stats	routes/practiceBatchRoutes.ts:73	authenticateToken	authenticateToken (left alone)		read-via-POST	the app reads its study-plan schedule/stats (task 17b)		
+DELETE	/api/publishers/:id	routes/publisherRoutes.ts:24	authenticateToken	gated:CONTENT	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-publishers.ts:119	yes
+POST	/api/pyq/exams/:examId/topics/:topicId/practice	routes/vgTestsRoutes.ts:20	authenticateToken	authenticateToken (left alone)		student-action	the student starts a practice (task 17b)		
+DELETE	/api/report-questions/:id	routes/reportQuestionRoutes.ts:52	authenticateToken	gated:REPORT_QUESTIONS	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-report-questions.ts:160	yes
+PUT	/api/report-questions/:id	routes/reportQuestionRoutes.ts:51	authenticateToken	gated:REPORT_QUESTIONS	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-report-questions.ts:124	yes
+PATCH	/api/report-questions/:id/resolve	routes/reportQuestionRoutes.ts:44	authenticateToken	gated:REPORT_QUESTIONS	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-report-questions.ts:133	yes
+POST	/api/samaroh/:eventId/photos	routes/samarohRoutes.ts:56	authenticateToken	authenticateToken (left alone)		student-action	the student's own RSVP, photo or selection (task 17b)		
+DELETE	/api/samaroh/:eventId/rsvp	routes/samarohRoutes.ts:55	authenticateToken	authenticateToken (left alone)		student-action	the student's own RSVP, photo or selection (task 17b)		
+PUT	/api/samaroh/:eventId/rsvp	routes/samarohRoutes.ts:54	authenticateToken	authenticateToken (left alone)		student-action	the student's own RSVP, photo or selection (task 17b)		
+POST	/api/samaroh/selections	routes/samarohRoutes.ts:53	authenticateToken	authenticateToken (left alone)		student-action	the student's own RSVP, photo or selection (task 17b)		
+DELETE	/api/saved-questions/:id	routes/savedQuestionRoutes.ts:37	authenticateToken	authenticateToken (left alone)		student-action	the app deletes the student's saved question; no admin caller. Handler has no ownership check (follow-up) (task 17b)		
+DELETE	/api/sections/:id	routes/sectionRoutes.ts:302	authenticateToken	gated:TAXONOMY	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-sections.ts:208	yes
+DELETE	/api/series/:seriesId/cutoffs/:detailId	routes/series.routes.ts:122	authenticateToken	gated:TEST_CONTENT	admin	route-gate (task 17b)	admin write any student token could call	none (SeriesForm edits cutoffs through PUT /api/series/:id)	-
+DELETE	/api/series/:seriesId/sections/:detailId	routes/series.routes.ts:118	authenticateToken	gated:TEST_CONTENT	admin	route-gate (task 17b)	admin write any student token could call	none (SeriesForm edits section details through PUT /api/series/:id)	-
+POST	/api/shorts	routes/shortRoutes.ts:23	authenticateToken	gated:SHORTS	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-shorts.ts:95	yes
+DELETE	/api/shorts/:id	routes/shortRoutes.ts:35	authenticateToken	gated:SHORTS	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-shorts.ts:125	yes
+PUT	/api/shorts/:id	routes/shortRoutes.ts:34	authenticateToken	gated:SHORTS	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-shorts.ts:104	yes
+PATCH	/api/shorts/:id/status	routes/shortRoutes.ts:38	authenticateToken	gated:SHORTS	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-shorts.ts:113	yes
+PATCH	/api/shorts/:id/video	routes/shortRoutes.ts:43	authenticateToken	gated:SHORTS	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-shorts.ts:136	yes
+POST	/api/shorts/:id/watched	routes/shortRoutes.ts:50	authenticateToken	authenticateToken (left alone)		student-action	Watch write, identity from the JWT (ADR-0019) (task 17b)		
+DELETE	/api/subtopics/:id	routes/subTopicRoutes.ts:375	authenticateToken	gated:TAXONOMY	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-subtopics.ts:117	yes
+POST	/api/support-chat/attachments	routes/supportChatRoutes.ts:24	authenticateToken	authenticateToken (left alone)		student-action	the student's own support chat/ticket (task 17b)		
+POST	/api/support-chat/messages	routes/supportChatRoutes.ts:23	authenticateToken	authenticateToken (left alone)		student-action	the student's own support chat/ticket (task 17b)		
+PATCH	/api/support-chat/read	routes/supportChatRoutes.ts:25	authenticateToken	authenticateToken (left alone)		student-action	the student's own support chat/ticket (task 17b)		
+POST	/api/support-tickets	routes/supportTicketRoutes.ts:8	authenticateToken	authenticateToken (left alone)		student-action	the student's own support chat/ticket (task 17b)		
+POST	/api/support-tickets/:id/replies	routes/supportTicketRoutes.ts:10	authenticateToken	authenticateToken (left alone)		student-action	the student's own support chat/ticket (task 17b)		
+DELETE	/api/tags/:id	routes/tagRoutes.ts:21	authenticateToken	gated:TEST_CONTENT	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-tags.ts:159	yes
+DELETE	/api/test-results/:id	routes/testResultRoutes.ts:541	authenticateToken	authenticateToken (left alone)		student-action	no admin caller; may be the app resetting an attempt. Handler soft-deletes any id with no ownership check (follow-up: self-or-admin) (task 17b)		
+POST	/api/testimonials/interview-requests	routes/testimonialRoutes.ts:81	authenticateToken	authenticateToken (left alone)		student-action	the student's own testimonial (task 17b)		
+POST	/api/testimonials/mine/photo	routes/testimonialRoutes.ts:80	authenticateToken	authenticateToken (left alone)		student-action	the student's own testimonial (task 17b)		
+POST	/api/timetable	routes/courseClassRoutes.ts:32	authenticateToken	authenticateToken (left alone)		read-via-POST	the app reads its timetable (task 17b)		
+POST	/api/timetable/:userId	routes/courseClassRoutes.ts:32	authenticateToken	authenticateToken (left alone)		read-via-POST	the app reads its timetable (task 17b)		
+DELETE	/api/topics/:id	routes/topicRoutes.ts:390	authenticateToken	gated:TAXONOMY	admin	route-gate (task 17b)	admin write any student token could call	hooks/api/use-topics.ts:161	yes
+POST	/api/user-question-answers	routes/userQuestionAnswerRoutes.ts:25	authenticateToken	authenticateToken (left alone)		student-action	the student's own answers; no admin caller. Handlers have no ownership check (follow-up) (task 17b)		
+DELETE	/api/user-question-answers/:id	routes/userQuestionAnswerRoutes.ts:33	authenticateToken	authenticateToken (left alone)		student-action	the student's own answers; no admin caller. Handlers have no ownership check (follow-up) (task 17b)		
+PUT	/api/user-question-answers/:id	routes/userQuestionAnswerRoutes.ts:32	authenticateToken	authenticateToken (left alone)		student-action	the student's own answers; no admin caller. Handlers have no ownership check (follow-up) (task 17b)		
+DELETE	/api/users/me	routes/userRoutes.ts:725	authenticateToken	authenticateToken (left alone)		student-action	the student's own account (me/profile/zones/chat-bans) (task 17b)		
+POST	/api/users/me/chat-bans	routes/userRoutes.ts (inline)	authenticateToken	authenticateToken (left alone)		student-action	the student's own account (me/profile/zones/chat-bans) (task 17b)		
+POST	/api/users/me/delete	routes/userRoutes.ts:773	authenticateToken	authenticateToken (left alone)		student-action	the student's own account (me/profile/zones/chat-bans) (task 17b)		
+POST	/api/users/me/delete/otp	routes/userRoutes.ts:728	authenticateToken	authenticateToken (left alone)		student-action	the student's own account (me/profile/zones/chat-bans) (task 17b)		
+POST	/api/users/me/delete/send-otp	routes/userRoutes.ts:769	authenticateToken	authenticateToken (left alone)		student-action	the student's own account (me/profile/zones/chat-bans) (task 17b)		
+POST	/api/users/me/delete/verify-otp	routes/userRoutes.ts:770	authenticateToken	authenticateToken (left alone)		student-action	the student's own account (me/profile/zones/chat-bans) (task 17b)		
+POST	/api/users/me/verify/:channel/confirm	routes/userRoutes.ts:667	authenticateToken	authenticateToken (left alone)		student-action	the student's own account (me/profile/zones/chat-bans) (task 17b)		
+POST	/api/users/me/verify/:channel/send	routes/userRoutes.ts:666	authenticateToken	authenticateToken (left alone)		student-action	the student's own account (me/profile/zones/chat-bans) (task 17b)		
+PATCH	/api/users/profile-details	routes/userRoutes.ts:657	authenticateToken	authenticateToken (left alone)		student-action	the student's own account (me/profile/zones/chat-bans) (task 17b)		
+POST	/api/users/profile-details	routes/userRoutes.ts:658	authenticateToken	authenticateToken (left alone)		student-action	the student's own account (me/profile/zones/chat-bans) (task 17b)		
+POST	/api/users/zones	routes/userRoutes.ts:660	authenticateToken	authenticateToken (left alone)		student-action	the student's own account (me/profile/zones/chat-bans) (task 17b)		
+DELETE	/api/v1/channels/:id/mute	routes/v1/chatChannelRoutes.ts:27	authenticateToken	authenticateToken (left alone)		student-action	the student mutes a channel for themself (task 17b)		
+POST	/api/v1/channels/:id/mute	routes/v1/chatChannelRoutes.ts:26	authenticateToken	authenticateToken (left alone)		student-action	the student mutes a channel for themself (task 17b)		
+POST	/api/views/track-pdf-impression	routes/viewRoutes.ts:147	authenticateToken	authenticateToken (left alone)		student-action	the app tracks a PDF impression (task 17b)		

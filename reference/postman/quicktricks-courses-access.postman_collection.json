@@ -1,0 +1,640 @@
+{
+  "info": {
+    "name": "Quicktricks — Courses Access",
+    "description": "Client-side contracts for course-level listings + PDF access on the secured backend (quicktricks-admin merge, Aug 2026).\n\n**Auth model**\n- Listing endpoints are public (pre-login course browsing is a product feature). The **response shape is the security boundary**: listings never contain a fetchable media/PDF URL or raw storage reference.\n- The PDF `/access` endpoint takes `Authorization: Bearer <token>` (student login access token).\n- Signed URLs are short-lived — request at open time, never persist.\n\n**Migration notes for existing clients**\n1. Course class listings no longer include `mp4Recordings`. Media comes exclusively from the class endpoints: `GET /api/classes/:classId/playback` (HLS) and `GET /api/classes/:classId/downloads` (MP4) — see the companion 'Classes Access' collection.\n2. A PDF's `isFree` in listings is now the **effective** value: free if EITHER the course placement OR the global PDF flag is free. Render locks off this field directly — it always agrees with what `/access` grants.\n3. PDF rows carry an `asset` summary (`state`/`mimeType`/`sizeBytes?`) instead of a URL. To open a PDF, call the `/access` endpoint.\n\n**Variables**: set `baseUrl`, `authToken`, `courseId`, `pdfId`, `userId` at collection level.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{authToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://quicktricks.multistreaming.site"
+    },
+    {
+      "key": "authToken",
+      "value": ""
+    },
+    {
+      "key": "courseId",
+      "value": ""
+    },
+    {
+      "key": "pdfId",
+      "value": ""
+    },
+    {
+      "key": "userId",
+      "value": ""
+    },
+    {
+      "key": "testEmail",
+      "value": "postman.tester@quicktricks.test",
+      "description": "Test-account email for the Login request / auto-login (use an email-only account — no mobile — to avoid OTP 2FA). Never commit a real value."
+    },
+    {
+      "key": "testPassword",
+      "value": "QtTest-bea707c5",
+      "description": "Test-account password. Never commit a real value; distribute via a Postman environment."
+    },
+    {
+      "key": "preAuthToken",
+      "value": "",
+      "description": "Set automatically by Login when the account requires OTP 2FA; consumed by Verify login OTP."
+    }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "description": "Gets a bearer token so every other request works. Set `testEmail` + `testPassword` in the collection variables (or a Postman environment), then either run **Login (get token)** once, or just send any request — the collection pre-request script auto-authenticates whenever `authToken` is missing or expired (expired tokens are **refreshed** via `/api/users/refresh-token` — same session, no new login; missing tokens or failed refreshes fall back to login), and a 401 on any request clears the token so the next send recovers.\n\nNotes:\n- If the account has a **mobile number**, the API enforces OTP 2FA: login returns `requiresOtp: true` + a `preAuthToken` (saved automatically), and you must run **Verify login OTP** with the SMS OTP. For hands-off auth use an **email-only** test account.\n- The API enforces a **max concurrent session** limit per user (429 with `active_sessions`); the scripts reuse the saved token until it expires or 401s, so normal use stays under the limit.\n- Never commit real credentials into the collection file — distribute them via a Postman environment.",
+      "item": [
+        {
+          "name": "Login (get token)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json && json.data && json.data.token) {",
+                  "    pm.collectionVariables.set('authToken', json.data.token);",
+                  "    console.log('authToken saved — every other request in this collection is now authorized.');",
+                  "} else if (json && json.data && json.data.requiresOtp) {",
+                  "    pm.collectionVariables.set('preAuthToken', json.data.preAuthToken);",
+                  "    console.warn('This account has a mobile number, so the API requires OTP 2FA. An OTP was sent to ' + json.data.maskedMobile + '. Run \"Verify login OTP\" next with that OTP. For fully hands-off auth, use an email-only test account (no mobile on the user record).');",
+                  "} else {",
+                  "    console.error('Login failed (' + pm.response.code + '): ' + (json && json.msg));",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"{{testEmail}}\",\n    \"password\": \"{{testPassword}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "login"
+              ]
+            },
+            "description": "Logs in and saves `data.token` into the `authToken` collection variable (see the Tests tab). Accepts `email` or `mobile` (plus optional `customer_id`). If the account has a mobile number the response is `requiresOtp: true` + `preAuthToken` instead of a token — continue with **Verify login OTP**."
+          }
+        },
+        {
+          "name": "Refresh token (expired token → fresh token)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json && json.data && json.data.token) {",
+                  "    pm.collectionVariables.set('authToken', json.data.token);",
+                  "    console.log('authToken refreshed (same session).');",
+                  "} else {",
+                  "    console.error('Refresh failed (' + pm.response.code + '): ' + (json && json.msg) + ' — run Login instead.');",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/users/refresh-token",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "refresh-token"
+              ]
+            },
+            "description": "Single-token refresh: send the CURRENT access token (even if already expired) as the bearer — there is no separate refresh token in this API. The server verifies the signature ignoring expiry, checks the token’s `session_id` is still an active session, and returns a fresh `data.token` (saved into `authToken` automatically). A terminated/logged-out session returns 401 `Session has been terminated` — then a full Login is required. Clients should prefer this over re-login on expiry: it keeps the same session and avoids the max-concurrent-session limit. The collection pre-request script already does this automatically (refresh on expired, login as fallback). Auth is inherited from the collection (`Bearer {{authToken}}`), so just Send."
+          }
+        },
+        {
+          "name": "Verify login OTP (only if 2FA)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json && json.data && json.data.token) {",
+                  "    pm.collectionVariables.set('authToken', json.data.token);",
+                  "    console.log('authToken saved — every other request in this collection is now authorized.');",
+                  "} else {",
+                  "    console.error('OTP verification failed (' + pm.response.code + '): ' + (json && json.msg));",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"otp\": \"<4-digit OTP from SMS>\",\n    \"preAuthToken\": \"{{preAuthToken}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/users/verify-login-otp",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "verify-login-otp"
+              ]
+            },
+            "description": "Second step when Login returned `requiresOtp: true` (account has a mobile number). `preAuthToken` was saved automatically by the Login request; paste the 4-digit OTP from SMS. Saves `data.token` into `authToken`."
+          }
+        }
+      ]
+    },
+    {
+      "name": "List course classes (grouped by topic)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/courses/{{courseId}}/classes?sortBy=priority",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "courses",
+            "{{courseId}}",
+            "classes"
+          ],
+          "query": [
+            {
+              "key": "sortBy",
+              "value": "priority"
+            }
+          ]
+        },
+        "description": "Public listing of a course's active classes, grouped by topic.\n\n- **`mp4Recordings` is no longer present** on class rows. To play or download a class, use the class endpoints (`/playback`, `/downloads`) with the row's `classId`.\n- `isLive` on a class row is a stored scheduling snapshot, not runtime truth — do not gate live UI on it."
+      },
+      "response": [
+        {
+          "name": "200 — classes grouped by topic",
+          "originalRequest": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/courses/{{courseId}}/classes?sortBy=priority",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{courseId}}",
+                "classes"
+              ],
+              "query": [
+                {
+                  "key": "sortBy",
+                  "value": "priority"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"state\": 200,\n  \"msg\": \"Classes retrieved and grouped by topic successfully\",\n  \"data\": {\n    \"course\": {\n      \"id\": \"665000000000000000000010\",\n      \"title\": \"Complete Course\",\n      \"isLive\": true,\n      \"isRecorded\": false,\n      \"isFree\": false,\n      \"mainCategory\": \"665000000000000000000011\",\n      \"category\": \"665000000000000000000012\"\n    },\n    \"classes\": [\n      {\n        \"topicName\": \"Algebra\",\n        \"topicId\": \"665000000000000000000013\",\n        \"classes\": [\n          {\n            \"classId\": \"665000000000000000000014\",\n            \"title\": \"Lecture 1\",\n            \"description\": \"\",\n            \"teacherName\": \"T\",\n            \"duration\": 3600,\n            \"priority\": 1,\n            \"isActive\": true,\n            \"isFree\": false,\n            \"isLive\": true,\n            \"isYoutubeRedirect\": false,\n            \"image\": \"\",\n            \"link\": \"\",\n            \"class_link\": \"\",\n            \"viewCount\": 0,\n            \"uniqueViewCount\": 0,\n            \"startDate\": \"2026-08-13T09:00:00.000Z\",\n            \"endDate\": \"2026-08-13T10:00:00.000Z\",\n            \"mainCategory\": { \"_id\": \"...\", \"mainCategoryName\": \"MC\" },\n            \"category\": { \"_id\": \"...\", \"categoryName\": \"Cat\" },\n            \"section\": { \"_id\": \"...\", \"sectionName\": \"Sec\" },\n            \"topic\": { \"_id\": \"...\", \"topicName\": \"Algebra\" }\n          }\n        ]\n      }\n    ]\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Today's classes for course",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": \"{{userId}}\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/courses/{{courseId}}/todays-classes",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "courses",
+            "{{courseId}}",
+            "todays-classes"
+          ]
+        },
+        "description": "Classes scheduled today (UTC) for the course, plus `classToWatch` (resume pointer computed from the user's watch progress when `userId` is sent; `userId` is optional).\n\n- `isFree` on each row is effective (placement OR class flag).\n- **No `mp4Recordings`** — use the class `/playback` / `/downloads` endpoints for media."
+      },
+      "response": [
+        {
+          "name": "200 — today's classes",
+          "originalRequest": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/courses/{{courseId}}/todays-classes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{courseId}}",
+                "todays-classes"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": \"{{userId}}\"\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"state\": 200,\n  \"msg\": \"Todays classes retrieved successfully\",\n  \"data\": {\n    \"classes\": [\n      {\n        \"courseClassId\": \"665000000000000000000020\",\n        \"classId\": \"665000000000000000000014\",\n        \"title\": \"Lecture 1\",\n        \"teacherName\": \"T\",\n        \"duration\": 3600,\n        \"priority\": 1,\n        \"isActive\": true,\n        \"isFree\": true,\n        \"isBlinking\": false,\n        \"isCompleted\": false,\n        \"isChat\": true,\n        \"startDate\": \"2026-08-13T09:00:00.000Z\",\n        \"endDate\": \"2026-08-13T10:00:00.000Z\",\n        \"class_link\": \"\",\n        \"image\": \"\",\n        \"viewCount\": 0,\n        \"uniqueViewCount\": 0,\n        \"classPdf\": [],\n        \"classTest\": [],\n        \"mainCategory\": { \"_id\": \"...\", \"mainCategoryName\": \"MC\" },\n        \"category\": { \"_id\": \"...\", \"categoryName\": \"Cat\" },\n        \"topic\": { \"_id\": \"...\", \"topicName\": \"Algebra\" }\n      }\n    ],\n    \"classToWatch\": null\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "List course PDFs (paginated)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/courses/{{courseId}}/pdfs?page=1&limit=25&groupBy=none&search=",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "courses",
+            "{{courseId}}",
+            "pdfs"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1",
+              "description": "1-based"
+            },
+            {
+              "key": "limit",
+              "value": "25",
+              "description": "max 50"
+            },
+            {
+              "key": "groupBy",
+              "value": "none",
+              "description": "'none' (paginated flat list) or 'topic' (grouped)"
+            },
+            {
+              "key": "search",
+              "value": "",
+              "description": "case-insensitive title filter"
+            }
+          ]
+        },
+        "description": "Public paginated listing of a course's assigned PDFs.\n\n- `isFree` is the **effective** value (course placement OR global flag) — safe to drive the paid/free lock directly.\n- `asset` (`state`/`mimeType`/`sizeBytes?`) replaces any file URL. Open PDFs via the `/access` endpoint below.\n- `section`/`topic` names are the placement's own snapshot when present (a shared PDF shows each course's folder names).\n- `groupBy=topic` returns `data.topics: [{ topicName, pdfs: [...] }]` instead of the flat paginated shape."
+      },
+      "response": [
+        {
+          "name": "200 — flat paginated list",
+          "originalRequest": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/courses/{{courseId}}/pdfs?page=1&limit=25&groupBy=none",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{courseId}}",
+                "pdfs"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "25"
+                },
+                {
+                  "key": "groupBy",
+                  "value": "none"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"state\": 200,\n  \"msg\": \"Assigned PDFs retrieved successfully\",\n  \"data\": {\n    \"pdfs\": [\n      {\n        \"id\": \"665000000000000000000001\",\n        \"title\": \"Chapter 1 Notes\",\n        \"description\": \"\",\n        \"asset\": { \"state\": \"ready\", \"mimeType\": \"application/pdf\", \"sizeBytes\": 1048576 },\n        \"image\": \"\",\n        \"teacherName\": \"T\",\n        \"status\": 1,\n        \"isFree\": true,\n        \"isDownloadable\": false,\n        \"priority\": 1,\n        \"overrideSectionName\": null,\n        \"mainCategory\": { \"id\": \"...\", \"mainCategoryName\": \"MC\" },\n        \"category\": { \"id\": \"...\", \"categoryName\": \"Cat\" },\n        \"section\": { \"id\": \"...\", \"sectionName\": \"Biology\" },\n        \"topic\": { \"id\": \"...\", \"topicName\": \"Cells\" },\n        \"createdAt\": \"2026-08-01T00:00:00.000Z\",\n        \"updatedAt\": \"2026-08-01T00:00:00.000Z\"\n      }\n    ],\n    \"totalPages\": 1,\n    \"currentPage\": 1,\n    \"totalResults\": 1\n  }\n}"
+        },
+        {
+          "name": "200 — grouped by topic",
+          "originalRequest": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/courses/{{courseId}}/pdfs?groupBy=topic",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{courseId}}",
+                "pdfs"
+              ],
+              "query": [
+                {
+                  "key": "groupBy",
+                  "value": "topic"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"state\": 200,\n  \"msg\": \"PDFs grouped by topics retrieved successfully\",\n  \"data\": {\n    \"topics\": [\n      {\n        \"topicName\": \"Cells\",\n        \"pdfs\": [\n          {\n            \"id\": \"665000000000000000000001\",\n            \"title\": \"Chapter 1 Notes\",\n            \"asset\": { \"state\": \"ready\", \"mimeType\": \"application/pdf\" },\n            \"isFree\": true,\n            \"isDownloadable\": false,\n            \"topic\": { \"id\": \"...\", \"topicName\": \"Cells\" }\n          }\n        ]\n      }\n    ]\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get PDF access URL (course placement)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/courses/{{courseId}}/pdfs/{{pdfId}}/access",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "courses",
+            "{{courseId}}",
+            "pdfs",
+            "{{pdfId}}",
+            "access"
+          ]
+        },
+        "description": "Mints a short-lived **signed PDF URL** for a PDF placed in this course. Open/download via `data.url`; re-request rather than persisting.\n\nAccess is granted when the placement is free, the PDF is globally free, or the student holds an active order for the course.\n\n**Errors**: `401` unauthenticated · `403` not entitled · `404` course/PDF not found or PDF not placed in this course."
+      },
+      "response": [
+        {
+          "name": "200 — signed PDF URL",
+          "originalRequest": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/courses/{{courseId}}/pdfs/{{pdfId}}/access",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{courseId}}",
+                "pdfs",
+                "{{pdfId}}",
+                "access"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"state\": 200,\n  \"msg\": \"success\",\n  \"data\": {\n    \"url\": \"https://docs.cdn.example.net/pdfs/<key>.pdf?token=...&expires=1765000000\",\n    \"expiresAt\": 1765000000,\n    \"mimeType\": \"application/pdf\",\n    \"fileName\": \"chapter-1-notes.pdf\",\n    \"state\": \"ready\"\n  }\n}"
+        },
+        {
+          "name": "403 — not entitled",
+          "originalRequest": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/courses/{{courseId}}/pdfs/{{pdfId}}/access",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{courseId}}",
+                "pdfs",
+                "{{pdfId}}",
+                "access"
+              ]
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"state\": 403,\n  \"msg\": \"You do not have access to this course.\",\n  \"data\": null\n}"
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Auto-auth: if authToken is missing or expired, obtain one before this request runs.",
+          "//   expired + session alive  → POST /api/users/refresh-token (same session, no new login)",
+          "//   missing / refresh failed → POST /api/users/login with testEmail/testPassword",
+          "// Credentials come from the testEmail + testPassword collection variables (or a",
+          "// Postman environment the team distributes — never commit real credentials).",
+          "const path = pm.request.url.getPath();",
+          "const isAuthRequest = ['/api/users/login', '/api/users/verify-login-otp', '/api/users/refresh-token']",
+          "    .some(function (p) { return path.indexOf(p) !== -1; });",
+          "",
+          "function tokenState(token) {",
+          "    if (!token) return 'missing';",
+          "    try {",
+          "        const payload = JSON.parse(atob(token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/')));",
+          "        // 30s of slack so a token about to expire is renewed now, not mid-request",
+          "        return !payload.exp || payload.exp * 1000 > Date.now() + 30000 ? 'valid' : 'expired';",
+          "    } catch (e) {",
+          "        // Can't decode — assume it's fine rather than re-authing on every request",
+          "        // (each login creates a session and the API enforces a max-session limit).",
+          "        return 'valid';",
+          "    }",
+          "}",
+          "",
+          "function doLogin() {",
+          "    const email = pm.collectionVariables.get('testEmail');",
+          "    const password = pm.collectionVariables.get('testPassword');",
+          "    if (!email || !password) return;",
+          "    pm.sendRequest({",
+          "        url: pm.collectionVariables.get('baseUrl') + '/api/users/login',",
+          "        method: 'POST',",
+          "        header: { 'Content-Type': 'application/json' },",
+          "        body: { mode: 'raw', raw: JSON.stringify({ email: email, password: password }) },",
+          "    }, function (err, res) {",
+          "        if (err) { console.error('Auto-login failed:', err); return; }",
+          "        const json = res.json();",
+          "        if (json && json.data && json.data.token) {",
+          "            pm.collectionVariables.set('authToken', json.data.token);",
+          "            console.log('Auto-auth: logged in, authToken saved.');",
+          "        } else if (json && json.data && json.data.requiresOtp) {",
+          "            console.warn('Auto-login blocked: this account requires OTP 2FA (it has a mobile number). Use the Auth folder manually, or switch testEmail to an email-only account.');",
+          "        } else {",
+          "            console.error('Auto-login failed (' + res.code + '): ' + (json && json.msg));",
+          "        }",
+          "    });",
+          "}",
+          "",
+          "function doRefresh(staleToken) {",
+          "    pm.sendRequest({",
+          "        url: pm.collectionVariables.get('baseUrl') + '/api/users/refresh-token',",
+          "        method: 'POST',",
+          "        header: { Authorization: 'Bearer ' + staleToken },",
+          "    }, function (err, res) {",
+          "        const json = !err && res.json();",
+          "        if (json && json.data && json.data.token) {",
+          "            pm.collectionVariables.set('authToken', json.data.token);",
+          "            console.log('Auto-auth: expired token refreshed (same session).');",
+          "        } else {",
+          "            console.warn('Auto-auth: refresh failed (' + (err ? err : res.code + ' ' + (json && json.msg)) + ') — falling back to login.');",
+          "            doLogin();",
+          "        }",
+          "    });",
+          "}",
+          "",
+          "if (!isAuthRequest) {",
+          "    const token = pm.collectionVariables.get('authToken');",
+          "    const state = tokenState(token);",
+          "    if (state === 'expired') doRefresh(token);",
+          "    else if (state === 'missing') doLogin();",
+          "}"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Session-liveness recovery: tokens carry a session_id and die when the session is",
+          "// terminated server-side, so expiry checks alone aren't enough. On a 401, clear the",
+          "// token — the pre-request auto-login will mint a fresh one on the next send.",
+          "const path = pm.request.url.getPath();",
+          "const isAuthRequest = path.indexOf('/api/users/login') !== -1 || path.indexOf('/api/users/verify-login-otp') !== -1;",
+          "if (pm.response.code === 401 && !isAuthRequest) {",
+          "    pm.collectionVariables.set('authToken', '');",
+          "    console.warn('Got 401 — cleared authToken. Send the request again and auto-login will fetch a fresh token.');",
+          "}"
+        ]
+      }
+    }
+  ]
+}

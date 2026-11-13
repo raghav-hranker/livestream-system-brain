@@ -1,0 +1,50 @@
+---
+title: "Free-course enroll, one student and one course (ENFORCE_ORDER_EXPIRY off)"
+---
+stateDiagram-v2
+  direction LR
+  state "Legend" as legend {
+    lg0: Path to the EnrollOnlyInEnrollMode bug
+  }
+  class lg0 bugPath
+  state "At the same time" as all {
+    state "Admin set" as r0 {
+      s0: Free, enroll to unlock
+      s1: Free, open to all
+      s2: Paid course
+      [*] --> s0
+      [*] --> s1
+      [*] --> s2
+      s0 --> s1: admin sets Free, open to all
+      s0 --> s2: admin sets Paid course
+      s1 --> s0: admin sets Free, enroll to unlock
+      s1 --> s2: admin sets Paid course
+      s2 --> s0: admin sets Free, enroll to unlock
+      s2 --> s1: admin sets Free, open to all
+    }
+    --
+    state "Enrollment" as r1 {
+      s3: Not enrolled
+      s4: Enroll saving
+      s5: Enrolled
+      [*] --> s3
+      s3 --> s4: student taps Enroll [when Admin set is Free, enroll to unlock]
+      s4 --> s5: the enrollment is saved
+    }
+    --
+    state "Order" as r2 {
+      s6: No order
+      s7: Order active
+      s8: Order expired
+      [*] --> s6
+      s6 --> s7: student buys or is granted an order
+      s7 --> s8: the order expires
+      s8 --> s7: student buys or is granted an order
+    }
+  }
+  class s0 bugPath
+  class s2 bugPath
+  class s3 bugPath
+  class s4 bugPath
+  class s5 bugPath
+  class s6 bugPath

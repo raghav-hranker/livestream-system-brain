@@ -1,0 +1,2056 @@
+[
+  {
+    "_id": "6ace3763c9735682f04885c5",
+    "apxCourseId": "104",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 1028,
+        "hiddenRows": 103,
+        "folderPaths": 318,
+        "treeParents": 305,
+        "visibleFolders": 304,
+        "visibleItems": 984,
+        "visibleChecked": 984,
+        "crossListed": 59,
+        "contentFetched": 108,
+        "pc4NotVisibleExplained": 103,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 0,
+        "reused": 108,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 43,
+          "hidden": 60,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-26T00:08:35.714Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 108,
+        "contentFailed": 0,
+        "treePages": 305,
+        "updatedAt": "2026-10-26T00:08:35.714Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace37aac9735682f0488a33",
+    "apxCourseId": "105",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 714,
+        "hiddenRows": 111,
+        "folderPaths": 235,
+        "treeParents": 215,
+        "visibleFolders": 214,
+        "visibleItems": 678,
+        "visibleChecked": 676,
+        "crossListed": 73,
+        "contentFetched": 108,
+        "pc4NotVisibleExplained": 111,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 0,
+        "reused": 108,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 33,
+          "hidden": 78,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-26T00:12:30.112Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 108,
+        "contentFailed": 0,
+        "treePages": 215,
+        "updatedAt": "2026-10-26T00:12:30.112Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace3868c9735682f04896e1",
+    "apxCourseId": "114",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 373,
+        "hiddenRows": 28,
+        "folderPaths": 79,
+        "treeParents": 81,
+        "visibleFolders": 80,
+        "visibleItems": 364,
+        "visibleChecked": 364,
+        "crossListed": 19,
+        "contentFetched": 46,
+        "pc4NotVisibleExplained": 28,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 0,
+        "reused": 46,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 9,
+          "hidden": 19,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-26T00:21:17.624Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 46,
+        "contentFailed": 0,
+        "treePages": 81,
+        "updatedAt": "2026-10-26T00:21:17.624Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace3899c9735682f0489a25",
+    "apxCourseId": "120",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 47,
+        "hiddenRows": 1,
+        "folderPaths": 10,
+        "treeParents": 12,
+        "visibleFolders": 11,
+        "visibleItems": 46,
+        "visibleChecked": 46,
+        "crossListed": 0,
+        "contentFetched": 9,
+        "pc4NotVisibleExplained": 1,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 0,
+        "reused": 9,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 1,
+          "hidden": 0,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-26T00:22:09.868Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 9,
+        "contentFailed": 0,
+        "treePages": 12,
+        "updatedAt": "2026-10-26T00:22:09.868Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace38bcc9735682f0489c1b",
+    "apxCourseId": "129",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 405,
+        "hiddenRows": 42,
+        "folderPaths": 158,
+        "treeParents": 150,
+        "visibleFolders": 149,
+        "visibleItems": 384,
+        "visibleChecked": 384,
+        "crossListed": 21,
+        "contentFetched": 42,
+        "pc4NotVisibleExplained": 42,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 0,
+        "reused": 42,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 15,
+          "hidden": 27,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-26T00:27:00.738Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 42,
+        "contentFailed": 0,
+        "treePages": 150,
+        "updatedAt": "2026-10-26T00:27:00.738Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace38e7c9735682f0489ee2",
+    "apxCourseId": "133",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 163,
+        "hiddenRows": 22,
+        "folderPaths": 39,
+        "treeParents": 41,
+        "visibleFolders": 40,
+        "visibleItems": 156,
+        "visibleChecked": 156,
+        "crossListed": 15,
+        "contentFetched": 38,
+        "pc4NotVisibleExplained": 22,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 0,
+        "reused": 38,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 7,
+          "hidden": 15,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-26T00:28:29.268Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 38,
+        "contentFailed": 0,
+        "treePages": 41,
+        "updatedAt": "2026-10-26T00:28:29.268Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace38fdc9735682f0489fef",
+    "apxCourseId": "135",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 20,
+        "hiddenRows": 0,
+        "folderPaths": 3,
+        "treeParents": 5,
+        "visibleFolders": 4,
+        "visibleItems": 20,
+        "visibleChecked": 20,
+        "crossListed": 0,
+        "contentFetched": 5,
+        "pc4NotVisibleExplained": 0,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 0,
+        "reused": 5,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 0,
+          "hidden": 0,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-26T00:28:39.730Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 5,
+        "contentFailed": 0,
+        "treePages": 5,
+        "updatedAt": "2026-10-26T00:28:39.730Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace3900c9735682f048a00a",
+    "apxCourseId": "136",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 20,
+        "hiddenRows": 0,
+        "folderPaths": 3,
+        "treeParents": 5,
+        "visibleFolders": 4,
+        "visibleItems": 20,
+        "visibleChecked": 20,
+        "crossListed": 0,
+        "contentFetched": 5,
+        "pc4NotVisibleExplained": 0,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 0,
+        "reused": 5,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 0,
+          "hidden": 0,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-26T00:28:44.962Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 5,
+        "contentFailed": 0,
+        "treePages": 5,
+        "updatedAt": "2026-10-26T00:28:44.962Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace390dc9735682f048a068",
+    "apxCourseId": "142",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 43,
+        "hiddenRows": 0,
+        "folderPaths": 4,
+        "treeParents": 6,
+        "visibleFolders": 5,
+        "visibleItems": 43,
+        "visibleChecked": 43,
+        "crossListed": 0,
+        "contentFetched": 5,
+        "pc4NotVisibleExplained": 0,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 0,
+        "reused": 5,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 0,
+          "hidden": 0,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-26T00:28:59.934Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 5,
+        "contentFailed": 0,
+        "treePages": 6,
+        "updatedAt": "2026-10-26T00:28:59.934Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace3916c9735682f048a0b5",
+    "apxCourseId": "147",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 93,
+        "hiddenRows": 12,
+        "folderPaths": 6,
+        "treeParents": 8,
+        "visibleFolders": 7,
+        "visibleItems": 81,
+        "visibleChecked": 81,
+        "crossListed": 0,
+        "contentFetched": 17,
+        "pc4NotVisibleExplained": 12,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 0,
+        "reused": 17,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 0,
+          "hidden": 12,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-26T00:29:15.055Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 17,
+        "contentFailed": 0,
+        "treePages": 8,
+        "updatedAt": "2026-10-26T00:29:15.055Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace275ec9735682f0474901",
+    "apxCourseId": "151",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 234,
+        "hiddenRows": 33,
+        "folderPaths": 89,
+        "treeParents": 86,
+        "visibleFolders": 85,
+        "visibleItems": 204,
+        "visibleChecked": 204,
+        "crossListed": 3,
+        "contentFetched": 20,
+        "pc4NotVisibleExplained": 33,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 0,
+        "reused": 20,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 13,
+          "hidden": 20,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-26T00:31:08.160Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 20,
+        "contentFailed": 0,
+        "treePages": 86,
+        "updatedAt": "2026-10-26T00:31:08.160Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace393cc9735682f048a25f",
+    "apxCourseId": "154",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 22,
+        "hiddenRows": 2,
+        "folderPaths": 4,
+        "treeParents": 6,
+        "visibleFolders": 5,
+        "visibleItems": 20,
+        "visibleChecked": 20,
+        "crossListed": 0,
+        "contentFetched": 6,
+        "pc4NotVisibleExplained": 2,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 0,
+        "reused": 6,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 2,
+          "hidden": 0,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-26T00:31:33.531Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 6,
+        "contentFailed": 0,
+        "treePages": 6,
+        "updatedAt": "2026-10-26T00:31:33.531Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace394ac9735682f048a2f9",
+    "apxCourseId": "158",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 644,
+        "hiddenRows": 496,
+        "folderPaths": 63,
+        "treeParents": 65,
+        "visibleFolders": 64,
+        "visibleItems": 148,
+        "visibleChecked": 148,
+        "crossListed": 0,
+        "contentFetched": 9,
+        "pc4NotVisibleExplained": 496,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 0,
+        "reused": 9,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 496,
+          "hidden": 0,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-26T00:33:30.023Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 9,
+        "contentFailed": 0,
+        "treePages": 65,
+        "updatedAt": "2026-10-26T00:33:30.023Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace395cc9735682f048a449",
+    "apxCourseId": "160",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 372,
+        "hiddenRows": 59,
+        "folderPaths": 174,
+        "treeParents": 163,
+        "visibleFolders": 162,
+        "visibleItems": 324,
+        "visibleChecked": 324,
+        "crossListed": 11,
+        "contentFetched": 31,
+        "pc4NotVisibleExplained": 59,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 0,
+        "reused": 31,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 37,
+          "hidden": 22,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-26T00:36:57.374Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 31,
+        "contentFailed": 0,
+        "treePages": 163,
+        "updatedAt": "2026-10-26T00:36:57.374Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace3962c9735682f048a4bd",
+    "apxCourseId": "161",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 290,
+        "hiddenRows": 41,
+        "folderPaths": 98,
+        "treeParents": 96,
+        "visibleFolders": 95,
+        "visibleItems": 249,
+        "visibleChecked": 249,
+        "crossListed": 0,
+        "contentFetched": 11,
+        "pc4NotVisibleExplained": 41,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 0,
+        "reused": 11,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 30,
+          "hidden": 11,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-26T00:38:40.514Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 11,
+        "contentFailed": 0,
+        "treePages": 96,
+        "updatedAt": "2026-10-26T00:38:40.514Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace3965c9735682f048a4ce",
+    "apxCourseId": "162",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 12,
+        "hiddenRows": 0,
+        "folderPaths": 4,
+        "treeParents": 6,
+        "visibleFolders": 5,
+        "visibleItems": 12,
+        "visibleChecked": 12,
+        "crossListed": 0,
+        "contentFetched": 5,
+        "pc4NotVisibleExplained": 0,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 0,
+        "reused": 5,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 0,
+          "hidden": 0,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-26T00:38:46.813Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 5,
+        "contentFailed": 0,
+        "treePages": 6,
+        "updatedAt": "2026-10-26T00:38:46.813Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace2ec0c9735682f0479698",
+    "apxCourseId": "22",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 1634,
+        "hiddenRows": 162,
+        "folderPaths": 623,
+        "treeParents": 625,
+        "visibleFolders": 624,
+        "visibleItems": 1472,
+        "visibleChecked": 1472,
+        "crossListed": 0,
+        "contentFetched": 22,
+        "pc4NotVisibleExplained": 162,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 0,
+        "reused": 22,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 162,
+          "hidden": 0,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-25T21:54:52.437Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 22,
+        "contentFailed": 0,
+        "treePages": 625,
+        "updatedAt": "2026-10-25T21:54:52.437Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace311ec9735682f047da94",
+    "apxCourseId": "42",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 1913,
+        "hiddenRows": 144,
+        "folderPaths": 673,
+        "treeParents": 675,
+        "visibleFolders": 674,
+        "visibleItems": 1769,
+        "visibleChecked": 1769,
+        "crossListed": 0,
+        "contentFetched": 20,
+        "pc4NotVisibleExplained": 144,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 0,
+        "reused": 20,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 144,
+          "hidden": 0,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-25T22:49:02.046Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 20,
+        "contentFailed": 0,
+        "treePages": 675,
+        "updatedAt": "2026-10-25T22:49:02.046Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace2d7ac9735682f04764bc",
+    "apxCourseId": "5",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 937,
+        "hiddenRows": 329,
+        "folderPaths": 165,
+        "treeParents": 167,
+        "visibleFolders": 166,
+        "visibleItems": 608,
+        "visibleChecked": 608,
+        "crossListed": 0,
+        "contentFetched": 2,
+        "pc4NotVisibleExplained": 329,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 0,
+        "reused": 2,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 329,
+          "hidden": 0,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-25T21:08:44.227Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 2,
+        "contentFailed": 0,
+        "treePages": 167,
+        "updatedAt": "2026-10-25T21:08:44.227Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace32fcc9735682f0480fc3",
+    "apxCourseId": "70",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 128,
+        "hiddenRows": 11,
+        "folderPaths": 30,
+        "treeParents": 32,
+        "visibleFolders": 31,
+        "visibleItems": 117,
+        "visibleChecked": 117,
+        "crossListed": 0,
+        "contentFetched": 23,
+        "pc4NotVisibleExplained": 11,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 0,
+        "reused": 23,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 11,
+          "hidden": 0,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-25T23:22:02.704Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 23,
+        "contentFailed": 0,
+        "treePages": 32,
+        "updatedAt": "2026-10-25T23:22:02.704Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace3308c9735682f04810aa",
+    "apxCourseId": "71",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 583,
+        "hiddenRows": 176,
+        "folderPaths": 226,
+        "treeParents": 185,
+        "visibleFolders": 184,
+        "visibleItems": 555,
+        "visibleChecked": 555,
+        "crossListed": 148,
+        "contentFetched": 215,
+        "pc4NotVisibleExplained": 176,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 1,
+        "reused": 214,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 29,
+          "hidden": 147,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-25T23:25:48.018Z",
+      "progress": {
+        "contentDone": 1,
+        "contentReused": 214,
+        "contentFailed": 0,
+        "treePages": 185,
+        "updatedAt": "2026-10-25T23:25:48.018Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace3397c9735682f04816e2",
+    "apxCourseId": "74",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 1113,
+        "hiddenRows": 409,
+        "folderPaths": 425,
+        "treeParents": 313,
+        "visibleFolders": 312,
+        "visibleItems": 1035,
+        "visibleChecked": 1032,
+        "crossListed": 323,
+        "contentFetched": 395,
+        "pc4NotVisibleExplained": 409,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 5,
+        "lookups": 3,
+        "reused": 395,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 78,
+          "hidden": 331,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 5
+        },
+        "appxUnavailable": 5,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-25T23:37:55.458Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 395,
+        "contentFailed": 3,
+        "treePages": 313,
+        "updatedAt": "2026-10-25T23:37:55.458Z"
+      },
+      "appxUnavailable": [
+        {
+          "rowId": "174813",
+          "title": "Animal Kingdom 03",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 174813: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T14:36:17.551Z",
+          "lastFailedAt": "2026-10-25T23:35:55.223Z"
+        },
+        {
+          "rowId": "174815",
+          "title": "Botany 02",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 174815: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T14:39:02.968Z",
+          "lastFailedAt": "2026-10-24T23:40:11.127Z"
+        },
+        {
+          "rowId": "174817",
+          "title": "Botany 03",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 174817: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T14:41:52.198Z",
+          "lastFailedAt": "2026-10-24T23:40:47.090Z"
+        },
+        {
+          "rowId": "174818",
+          "title": "Botany 04",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 174818: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T14:44:04.757Z",
+          "lastFailedAt": "2026-10-25T23:36:54.972Z"
+        },
+        {
+          "rowId": "189880",
+          "title": "Glands 05",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 189880: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T14:47:01.488Z",
+          "lastFailedAt": "2026-10-25T23:37:55.133Z"
+        }
+      ]
+    }
+  },
+  {
+    "_id": "6ace3451c9735682f0482c8c",
+    "apxCourseId": "77",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 596,
+        "hiddenRows": 283,
+        "folderPaths": 232,
+        "treeParents": 185,
+        "visibleFolders": 184,
+        "visibleItems": 552,
+        "visibleChecked": 552,
+        "crossListed": 217,
+        "contentFetched": 285,
+        "pc4NotVisibleExplained": 283,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 22,
+        "lookups": 4,
+        "reused": 284,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 116,
+          "hidden": 167,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 22
+        },
+        "appxUnavailable": 22,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-25T23:41:55.650Z",
+      "progress": {
+        "contentDone": 1,
+        "contentReused": 284,
+        "contentFailed": 3,
+        "treePages": 185,
+        "updatedAt": "2026-10-25T23:41:55.650Z"
+      },
+      "appxUnavailable": [
+        {
+          "rowId": "177263",
+          "title": "Excretory System 01",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 177263: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T15:52:14.718Z",
+          "lastFailedAt": "2026-10-19T21:56:06.698Z"
+        },
+        {
+          "rowId": "177264",
+          "title": "Excretory System 02",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 177264: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T15:55:20.956Z",
+          "lastFailedAt": "2026-10-19T21:57:06.958Z"
+        },
+        {
+          "rowId": "177261",
+          "title": "Skeleton System, Joints and Muscles 01",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 177261: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T15:58:29.130Z",
+          "lastFailedAt": "2026-10-19T21:58:07.220Z"
+        },
+        {
+          "rowId": "177262",
+          "title": "Skeleton System, Joints and Muscles 02",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 177262: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T16:00:42.872Z",
+          "lastFailedAt": "2026-10-20T21:55:23.188Z"
+        },
+        {
+          "rowId": "177265",
+          "title": "Genetics",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 177265: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T16:03:51.043Z",
+          "lastFailedAt": "2026-10-20T21:56:23.449Z"
+        },
+        {
+          "rowId": "177266",
+          "title": "Genetics Practice Set",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 177266: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T16:06:59.222Z",
+          "lastFailedAt": "2026-10-20T21:57:23.711Z"
+        },
+        {
+          "rowId": "177267",
+          "title": "Animal Kingdom 01",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 177267: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T16:08:23.282Z",
+          "lastFailedAt": "2026-10-21T21:54:53.529Z"
+        },
+        {
+          "rowId": "177268",
+          "title": "Animal kingdom 02",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 177268: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T16:11:31.452Z",
+          "lastFailedAt": "2026-10-21T21:55:13.796Z"
+        },
+        {
+          "rowId": "177270",
+          "title": "Animal Kingdom 03",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 177270: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T16:13:42.612Z",
+          "lastFailedAt": "2026-10-21T21:56:14.055Z"
+        },
+        {
+          "rowId": "177271",
+          "title": "Botany 01",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 177271: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T16:16:50.781Z",
+          "lastFailedAt": "2026-10-22T23:36:41.428Z"
+        },
+        {
+          "rowId": "177273",
+          "title": "Botany 02",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 177273: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T16:19:58.952Z",
+          "lastFailedAt": "2026-10-22T23:37:41.589Z"
+        },
+        {
+          "rowId": "177274",
+          "title": "Botany 03",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 177274: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T16:22:18.264Z",
+          "lastFailedAt": "2026-10-22T23:38:07.278Z"
+        },
+        {
+          "rowId": "177275",
+          "title": "Botany 04",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 177275: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T16:24:30.376Z",
+          "lastFailedAt": "2026-10-23T23:43:23.867Z"
+        },
+        {
+          "rowId": "177276",
+          "title": "Botany 05",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 177276: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T16:27:37.161Z",
+          "lastFailedAt": "2026-10-23T23:44:20.563Z"
+        },
+        {
+          "rowId": "177277",
+          "title": "Botany 06",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 177277: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T16:29:40.922Z",
+          "lastFailedAt": "2026-10-23T23:45:20.723Z"
+        },
+        {
+          "rowId": "177278",
+          "title": "Botany 07",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 177278: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T16:32:49.094Z",
+          "lastFailedAt": "2026-10-24T23:45:27.817Z"
+        },
+        {
+          "rowId": "177279",
+          "title": "Botany Practice",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 177279: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T16:35:04.730Z",
+          "lastFailedAt": "2026-10-24T23:46:27.982Z"
+        },
+        {
+          "rowId": "189837",
+          "title": "Glands 01",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 189837: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T16:38:51.735Z",
+          "lastFailedAt": "2026-10-24T23:47:03.266Z"
+        },
+        {
+          "rowId": "189838",
+          "title": "Glands 02",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 189838: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T16:41:59.917Z",
+          "lastFailedAt": "2026-10-25T23:41:55.039Z"
+        },
+        {
+          "rowId": "189839",
+          "title": "Glands 03",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 189839: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T16:45:00.435Z",
+          "lastFailedAt": "2026-10-25T23:41:55.226Z"
+        },
+        {
+          "rowId": "189840",
+          "title": "Glands 04",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 189840: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T16:47:15.179Z",
+          "lastFailedAt": "2026-10-25T23:41:55.416Z"
+        },
+        {
+          "rowId": "189843",
+          "title": "Glands 05",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 189843: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T16:49:23.379Z",
+          "lastFailedAt": "2026-10-14T16:49:23.379Z"
+        }
+      ]
+    }
+  },
+  {
+    "_id": "6ace353bc9735682f048344b",
+    "apxCourseId": "94",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 107,
+        "hiddenRows": 6,
+        "folderPaths": 25,
+        "treeParents": 27,
+        "visibleFolders": 26,
+        "visibleItems": 101,
+        "visibleChecked": 101,
+        "crossListed": 0,
+        "contentFetched": 19,
+        "pc4NotVisibleExplained": 6,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 0,
+        "lookups": 0,
+        "reused": 19,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 6,
+          "hidden": 0,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 0
+        },
+        "appxUnavailable": 0,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-25T23:46:02.016Z",
+      "progress": {
+        "contentDone": 0,
+        "contentReused": 19,
+        "contentFailed": 0,
+        "treePages": 27,
+        "updatedAt": "2026-10-25T23:46:02.016Z"
+      },
+      "appxUnavailable": []
+    }
+  },
+  {
+    "_id": "6ace3544c9735682f0483502",
+    "apxCourseId": "95",
+    "capture": {
+      "runId": "daily-2026-10-26",
+      "status": "done",
+      "counts": {
+        "pc4Rows": 798,
+        "hiddenRows": 165,
+        "folderPaths": 283,
+        "treeParents": 246,
+        "visibleFolders": 245,
+        "visibleItems": 754,
+        "visibleChecked": 754,
+        "crossListed": 120,
+        "contentFetched": 187,
+        "pc4NotVisibleExplained": 187,
+        "foldersOnlyInTree": 0,
+        "appxUnavailable": 45,
+        "lookups": 11,
+        "reused": 186,
+        "vanishedFolders": 0
+      },
+      "completeness": {
+        "ok": true,
+        "catalogTotal": 146,
+        "catalogRows": 146,
+        "explained": {
+          "deleted": 0,
+          "disabled": 41,
+          "hidden": 124,
+          "awaitingRecording": 0,
+          "homeFolders": 1,
+          "outsideHome": 0,
+          "appxUnavailable": 45
+        },
+        "appxUnavailable": 45,
+        "unexplained": {
+          "visibleNotInPc4": [],
+          "pc4NotVisible": [],
+          "truncatedTreePages": [],
+          "catalogCountMismatch": false
+        },
+        "warnings": {
+          "foldersOnlyInTree": []
+        }
+      },
+      "error": null,
+      "completedAt": "2026-10-25T23:53:30.669Z",
+      "progress": {
+        "contentDone": 8,
+        "contentReused": 186,
+        "contentFailed": 3,
+        "treePages": 246,
+        "updatedAt": "2026-10-25T23:53:30.669Z"
+      },
+      "appxUnavailable": [
+        {
+          "rowId": "43058",
+          "title": "Glands 01",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43058: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T16:52:49.227Z",
+          "lastFailedAt": "2026-10-19T08:39:10.335Z"
+        },
+        {
+          "rowId": "43059",
+          "title": "Glands 03",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43059: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T16:55:46.503Z",
+          "lastFailedAt": "2026-10-19T08:39:43.613Z"
+        },
+        {
+          "rowId": "43060",
+          "title": "Glands 02",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43060: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T16:58:15.984Z",
+          "lastFailedAt": "2026-10-19T08:40:43.870Z"
+        },
+        {
+          "rowId": "43061",
+          "title": "Glands 04",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43061: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T17:00:41.379Z",
+          "lastFailedAt": "2026-10-19T22:01:50.899Z"
+        },
+        {
+          "rowId": "43063",
+          "title": "Human Glands Handwritten Notes",
+          "kind": "PDF",
+          "error": "get_content_by_id 43063: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T17:02:49.109Z",
+          "lastFailedAt": "2026-10-19T22:01:51.187Z"
+        },
+        {
+          "rowId": "43089",
+          "title": "Glands 05",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43089: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T17:05:57.276Z",
+          "lastFailedAt": "2026-10-19T22:02:21.674Z"
+        },
+        {
+          "rowId": "43099",
+          "title": "Excretory System 01",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43099: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T17:08:09.630Z",
+          "lastFailedAt": "2026-10-20T22:01:17.263Z"
+        },
+        {
+          "rowId": "43133",
+          "title": "Excretory System 02",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43133: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T17:11:10.945Z",
+          "lastFailedAt": "2026-10-20T22:02:18.463Z"
+        },
+        {
+          "rowId": "43219",
+          "title": "Skeleton System, Joints and Muscles 01",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43219: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T17:13:02.838Z",
+          "lastFailedAt": "2026-10-20T22:03:18.724Z"
+        },
+        {
+          "rowId": "43241",
+          "title": "Skeleton System, Joints and Muscles 02",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43241: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T17:16:08.825Z",
+          "lastFailedAt": "2026-10-21T22:00:48.560Z"
+        },
+        {
+          "rowId": "43330",
+          "title": "Genetics",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43330: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T17:19:17.100Z",
+          "lastFailedAt": "2026-10-21T22:01:48.819Z"
+        },
+        {
+          "rowId": "43348",
+          "title": "Genetics Practice Set",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43348: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T17:22:20.540Z",
+          "lastFailedAt": "2026-10-21T22:02:16.181Z"
+        },
+        {
+          "rowId": "43412",
+          "title": "Animal Kingdom 01",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 43412: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T17:25:29.167Z",
+          "lastFailedAt": "2026-10-22T23:47:38.453Z"
+        },
+        {
+          "rowId": "44856",
+          "title": "Botany 01",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 44856: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T17:30:52.069Z",
+          "lastFailedAt": "2026-10-22T23:48:02.223Z"
+        },
+        {
+          "rowId": "44867",
+          "title": "Animal Kingdom 03",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 44867: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T17:33:02.242Z",
+          "lastFailedAt": "2026-10-22T23:49:02.934Z"
+        },
+        {
+          "rowId": "45395",
+          "title": "Botany 02",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 45395: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T17:35:26.683Z",
+          "lastFailedAt": "2026-10-23T23:54:56.761Z"
+        },
+        {
+          "rowId": "45407",
+          "title": "Botany 03",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 45407: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T17:38:29.638Z",
+          "lastFailedAt": "2026-10-23T23:55:40.869Z"
+        },
+        {
+          "rowId": "45515",
+          "title": "Botany 04",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 45515: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T17:41:21.578Z",
+          "lastFailedAt": "2026-10-23T23:56:41.032Z"
+        },
+        {
+          "rowId": "45519",
+          "title": "Botany 05",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 45519: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T17:43:13.883Z",
+          "lastFailedAt": "2026-10-24T23:56:42.041Z"
+        },
+        {
+          "rowId": "45684",
+          "title": "Botany 06",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 45684: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T17:45:22.082Z",
+          "lastFailedAt": "2026-10-24T23:57:42.204Z"
+        },
+        {
+          "rowId": "45705",
+          "title": "Botany 07",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 45705: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T17:48:07.172Z",
+          "lastFailedAt": "2026-10-24T23:57:43.101Z"
+        },
+        {
+          "rowId": "45842",
+          "title": "Botany Practice",
+          "kind": "LIVE_STREAM",
+          "error": "get_content_by_id 45842: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T17:50:52.785Z",
+          "lastFailedAt": "2026-10-25T23:51:34.434Z"
+        },
+        {
+          "rowId": "188429",
+          "title": "Glands 01",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188429: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T17:54:42.788Z",
+          "lastFailedAt": "2026-10-25T23:52:35.029Z"
+        },
+        {
+          "rowId": "188431",
+          "title": "Glands 02",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188431: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T17:56:57.212Z",
+          "lastFailedAt": "2026-10-25T23:53:30.420Z"
+        },
+        {
+          "rowId": "188430",
+          "title": "Glands 03",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188430: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T17:59:26.333Z",
+          "lastFailedAt": "2026-10-14T17:59:26.333Z"
+        },
+        {
+          "rowId": "188432",
+          "title": "Glands 04",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188432: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T18:01:43.636Z",
+          "lastFailedAt": "2026-10-14T18:01:43.636Z"
+        },
+        {
+          "rowId": "188435",
+          "title": "Glands 05",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188435: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T18:03:28.425Z",
+          "lastFailedAt": "2026-10-14T18:03:28.425Z"
+        },
+        {
+          "rowId": "188436",
+          "title": "Glands (Handwritten Notes)",
+          "kind": "PDF",
+          "error": "get_content_by_id 188436: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T18:06:13.980Z",
+          "lastFailedAt": "2026-10-14T18:06:13.980Z"
+        },
+        {
+          "rowId": "188439",
+          "title": "Excretory System 01",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188439: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T18:08:21.816Z",
+          "lastFailedAt": "2026-10-14T18:08:21.816Z"
+        },
+        {
+          "rowId": "188440",
+          "title": "Excretory System 02",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188440: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T18:11:08.529Z",
+          "lastFailedAt": "2026-10-14T18:11:08.529Z"
+        },
+        {
+          "rowId": "188443",
+          "title": "Skeleton System, Joints and Muscles 01",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188443: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T18:13:13.732Z",
+          "lastFailedAt": "2026-10-14T18:13:13.732Z"
+        },
+        {
+          "rowId": "188444",
+          "title": "Skeleton System, Joints and Muscles 02",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188444: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T18:15:59.988Z",
+          "lastFailedAt": "2026-10-14T18:15:59.988Z"
+        },
+        {
+          "rowId": "188447",
+          "title": "Genetics",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188447: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T18:18:40.437Z",
+          "lastFailedAt": "2026-10-14T18:18:40.437Z"
+        },
+        {
+          "rowId": "188448",
+          "title": "Genetics Practice Set",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188448: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T18:21:11.403Z",
+          "lastFailedAt": "2026-10-14T18:21:11.403Z"
+        },
+        {
+          "rowId": "188453",
+          "title": "Animal Kingdom 01",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188453: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T18:23:47.022Z",
+          "lastFailedAt": "2026-10-14T18:23:47.022Z"
+        },
+        {
+          "rowId": "188455",
+          "title": "Animal kingdom 02",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188455: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T18:26:39.121Z",
+          "lastFailedAt": "2026-10-14T18:26:39.121Z"
+        },
+        {
+          "rowId": "188456",
+          "title": "Animal Kingdom 03",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188456: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T18:28:56.156Z",
+          "lastFailedAt": "2026-10-14T18:28:56.156Z"
+        },
+        {
+          "rowId": "188459",
+          "title": "Botany 01",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188459: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T18:31:41.854Z",
+          "lastFailedAt": "2026-10-14T18:31:41.854Z"
+        },
+        {
+          "rowId": "188461",
+          "title": "Botany 02",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188461: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T18:33:49.449Z",
+          "lastFailedAt": "2026-10-14T18:33:49.449Z"
+        },
+        {
+          "rowId": "188462",
+          "title": "Botany 03",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188462: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T18:36:30.422Z",
+          "lastFailedAt": "2026-10-14T18:36:30.422Z"
+        },
+        {
+          "rowId": "188463",
+          "title": "Botany 04",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188463: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T18:38:37.601Z",
+          "lastFailedAt": "2026-10-14T18:38:37.601Z"
+        },
+        {
+          "rowId": "188464",
+          "title": "Botany 05",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188464: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T18:41:38.088Z",
+          "lastFailedAt": "2026-10-14T18:41:38.088Z"
+        },
+        {
+          "rowId": "188465",
+          "title": "Botany 06",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188465: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T18:44:24.603Z",
+          "lastFailedAt": "2026-10-14T18:44:24.603Z"
+        },
+        {
+          "rowId": "188466",
+          "title": "Botany 07",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188466: timeout of 60000ms exceeded",
+          "firstFailedAt": "2026-10-14T18:46:06.211Z",
+          "lastFailedAt": "2026-10-14T18:46:06.211Z"
+        },
+        {
+          "rowId": "188467",
+          "title": "Botany Practice",
+          "kind": "VIDEO",
+          "error": "get_content_by_id 188467: paid_course4/get_content_by_id answered HTTP 500",
+          "firstFailedAt": "2026-10-14T18:48:29.571Z",
+          "lastFailedAt": "2026-10-14T18:48:29.571Z"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1364 @@
+{
+  "observedAt": "2026-10-27T11:54:49.155Z",
+  "readOnly": true,
+  "scope": 7,
+  "steps": [
+    {
+      "name": "authenticated course list",
+      "ok": true,
+      "at": "2026-10-27T11:54:49.961Z"
+    },
+    {
+      "name": "known-good control course71",
+      "ok": true,
+      "at": "2026-10-27T11:54:56.982Z"
+    },
+    {
+      "name": "known-good video token control",
+      "ok": true,
+      "at": "2026-10-27T11:54:57.514Z"
+    },
+    {
+      "name": "course listing 131",
+      "ok": true,
+      "at": "2026-10-27T11:54:58.563Z"
+    }
+  ],
+  "controls": [
+    {
+      "name": "Glands01",
+      "at": "2026-10-27T11:54:57.514Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    }
+  ],
+  "candidates": [
+    {
+      "job": "6acea4e3c9735682f04f1967",
+      "classId": "6acea4e38752d955968b933c",
+      "oldAssetKey": "vid:armaths-data:3802821-1780151643",
+      "category": "noPlayableURL",
+      "course": "71",
+      "rowId": "189848",
+      "originalFailure": null,
+      "fullCheckedAt": "2026-10-27T11:11:29.638Z",
+      "fullSegmentCount": 953,
+      "previousInventories": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 320,
+          "validMediaPlaylist": true,
+          "inventoryHash": "634f3370b99c1268d80f3f0f8ac45856ff6a0c79a40fa5cf6f50f5d36dea439b"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 316,
+          "validMediaPlaylist": true,
+          "inventoryHash": "d6299d6820a5bc3e998f5f2830556d708cf7c3e36cc64177574441e81829278c"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 317,
+          "validMediaPlaylist": true,
+          "inventoryHash": "92eddb9bbf6637254a2284df1de1ca2c84305e4d0ada74beb60d9b484487ade0"
+        }
+      ],
+      "checkedAt": "2026-10-27T11:54:58.563Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 320,
+          "validMediaPlaylist": true,
+          "inventoryHash": "634f3370b99c1268d80f3f0f8ac45856ff6a0c79a40fa5cf6f50f5d36dea439b"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 316,
+          "validMediaPlaylist": true,
+          "inventoryHash": "d6299d6820a5bc3e998f5f2830556d708cf7c3e36cc64177574441e81829278c"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 317,
+          "validMediaPlaylist": true,
+          "inventoryHash": "92eddb9bbf6637254a2284df1de1ca2c84305e4d0ada74beb60d9b484487ade0"
+        }
+      ],
+      "source": {
+        "title": "Glands 02",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 953,
+      "fullInventoryHashesUnchanged": true,
+      "freshSamples": [
+        {
+          "rung": "240p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "240p",
+          "index": 160,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "240p",
+          "index": 319,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "360p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "360p",
+          "index": 158,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "360p",
+          "index": 315,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "index": 158,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "index": 316,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        }
+      ],
+      "outcome": "unchanged complete inventory and fresh samples passed"
+    },
+    {
+      "job": "6acea4e8c9735682f04f196d",
+      "classId": "6acea4e88752d955968b9343",
+      "oldAssetKey": "vid:armaths-data:3809395-1780324441",
+      "category": "noPlayableURL",
+      "course": "71",
+      "rowId": "189849",
+      "originalFailure": null,
+      "fullCheckedAt": "2026-10-27T11:14:44.805Z",
+      "fullSegmentCount": 848,
+      "previousInventories": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 286,
+          "validMediaPlaylist": true,
+          "inventoryHash": "0ae5624b2e16f3ba2049987ab6a74754d9ea3fb13f2f2a9bf779dbc2e0233c41"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 281,
+          "validMediaPlaylist": true,
+          "inventoryHash": "7940bc48d7eaaaf3201e27e5f7a74bb031ae133582df5887fc0f9e484de9040a"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 281,
+          "validMediaPlaylist": true,
+          "inventoryHash": "ae9f84b4098263b684184478fefbbd6a8b632ab8d33196cf3faba27eb8be7b91"
+        }
+      ],
+      "checkedAt": "2026-10-27T11:55:03.851Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 286,
+          "validMediaPlaylist": true,
+          "inventoryHash": "0ae5624b2e16f3ba2049987ab6a74754d9ea3fb13f2f2a9bf779dbc2e0233c41"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 281,
+          "validMediaPlaylist": true,
+          "inventoryHash": "7940bc48d7eaaaf3201e27e5f7a74bb031ae133582df5887fc0f9e484de9040a"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 281,
+          "validMediaPlaylist": true,
+          "inventoryHash": "ae9f84b4098263b684184478fefbbd6a8b632ab8d33196cf3faba27eb8be7b91"
+        }
+      ],
+      "source": {
+        "title": "Glands 03",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 848,
+      "fullInventoryHashesUnchanged": true,
+      "freshSamples": [
+        {
+          "rung": "240p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "240p",
+          "index": 143,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "240p",
+          "index": 285,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "360p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "360p",
+          "index": 140,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "360p",
+          "index": 280,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "index": 140,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "index": 280,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        }
+      ],
+      "outcome": "unchanged complete inventory and fresh samples passed"
+    },
+    {
+      "job": "6acea4ecc9735682f04f1971",
+      "classId": "6acea4ec8752d955968b934a",
+      "oldAssetKey": "vid:armaths-data:3815152-1780410494",
+      "category": "noPlayableURL",
+      "course": "71",
+      "rowId": "189850",
+      "originalFailure": null,
+      "fullCheckedAt": "2026-10-27T11:17:26.825Z",
+      "fullSegmentCount": 831,
+      "previousInventories": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 277,
+          "validMediaPlaylist": true,
+          "inventoryHash": "f7a10c014ac59625ff00b45ee6eef681326dd9b4d16affa59c79cef695ff1a10"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 277,
+          "validMediaPlaylist": true,
+          "inventoryHash": "1e61b4d7bf891ef4cb1276c4049ef6ebfe14a9a98bd4e2c582d8c2db48636108"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 277,
+          "validMediaPlaylist": true,
+          "inventoryHash": "0ba47f8a0a80c266abe2d21663310fbab455b4187c897e1d1dd311e58627c1c3"
+        }
+      ],
+      "checkedAt": "2026-10-27T11:55:08.445Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 277,
+          "validMediaPlaylist": true,
+          "inventoryHash": "f7a10c014ac59625ff00b45ee6eef681326dd9b4d16affa59c79cef695ff1a10"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 277,
+          "validMediaPlaylist": true,
+          "inventoryHash": "1e61b4d7bf891ef4cb1276c4049ef6ebfe14a9a98bd4e2c582d8c2db48636108"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 277,
+          "validMediaPlaylist": true,
+          "inventoryHash": "0ba47f8a0a80c266abe2d21663310fbab455b4187c897e1d1dd311e58627c1c3"
+        }
+      ],
+      "source": {
+        "title": "Glands 04",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 831,
+      "fullInventoryHashesUnchanged": true,
+      "freshSamples": [
+        {
+          "rung": "240p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "240p",
+          "index": 138,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "240p",
+          "index": 276,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "360p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "360p",
+          "index": 138,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "360p",
+          "index": 276,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "index": 138,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "index": 276,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        }
+      ],
+      "outcome": "unchanged complete inventory and fresh samples passed"
+    },
+    {
+      "job": "6acea4f0c9735682f04f1973",
+      "classId": "6acea4f08752d955968b9351",
+      "oldAssetKey": "vid:armaths-data:3818401-1780474757",
+      "category": "noPlayableURL",
+      "course": "71",
+      "rowId": "189853",
+      "originalFailure": null,
+      "fullCheckedAt": "2026-10-27T11:19:52.341Z",
+      "fullSegmentCount": 681,
+      "previousInventories": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 227,
+          "validMediaPlaylist": true,
+          "inventoryHash": "87c9bf983d9ed537444f46d5013d3f723ffcba4df8d8ec7b7cc899cd2ccc05d3"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 227,
+          "validMediaPlaylist": true,
+          "inventoryHash": "608379f1d6ae6a32a9ebe00825f4502866b76433c1d8c1af7c42928fefe614e4"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 227,
+          "validMediaPlaylist": true,
+          "inventoryHash": "683ef225f0652a68833ed77841e441ea277c2606b539a1c11c65841f7000802d"
+        }
+      ],
+      "checkedAt": "2026-10-27T11:55:13.609Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 227,
+          "validMediaPlaylist": true,
+          "inventoryHash": "87c9bf983d9ed537444f46d5013d3f723ffcba4df8d8ec7b7cc899cd2ccc05d3"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 227,
+          "validMediaPlaylist": true,
+          "inventoryHash": "608379f1d6ae6a32a9ebe00825f4502866b76433c1d8c1af7c42928fefe614e4"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 227,
+          "validMediaPlaylist": true,
+          "inventoryHash": "683ef225f0652a68833ed77841e441ea277c2606b539a1c11c65841f7000802d"
+        }
+      ],
+      "source": {
+        "title": "Glands 05",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 681,
+      "fullInventoryHashesUnchanged": true,
+      "freshSamples": [
+        {
+          "rung": "240p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "240p",
+          "index": 113,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "240p",
+          "index": 226,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "360p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "360p",
+          "index": 113,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "360p",
+          "index": 226,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "index": 113,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "index": 226,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        }
+      ],
+      "outcome": "unchanged complete inventory and fresh samples passed"
+    },
+    {
+      "job": "6ad5df30c9735682f0a0c5d4",
+      "classId": "6ad5df3064b695f53d872c12",
+      "oldAssetKey": "vid:armaths-data:4603716-1791963341",
+      "category": "noPlayableURL",
+      "course": "131",
+      "rowId": "193431",
+      "originalFailure": null,
+      "fullCheckedAt": "2026-10-27T11:21:57.635Z",
+      "fullSegmentCount": 1030,
+      "previousInventories": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 259,
+          "validMediaPlaylist": true,
+          "inventoryHash": "4d34cdf6b6c23930067d2ae80f83f7f50691abb15936e5327261cc0cfe196b42"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 257,
+          "validMediaPlaylist": true,
+          "inventoryHash": "2b4529aa6720503ad61fe6d25d1b2605e625371a4dd0ef4144129b1d57eaacce"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 257,
+          "validMediaPlaylist": true,
+          "inventoryHash": "391acc6d811af455a7993bc9b5398f91b4cb4f91aceb2dd499dd54b0a7b5f8b7"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 257,
+          "validMediaPlaylist": true,
+          "inventoryHash": "b6598cf01305eec33d3de2c010b66c7a70eca66c9b74db831a8aa44acf5a3b5c"
+        }
+      ],
+      "checkedAt": "2026-10-27T11:55:19.283Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 259,
+          "validMediaPlaylist": true,
+          "inventoryHash": "4d34cdf6b6c23930067d2ae80f83f7f50691abb15936e5327261cc0cfe196b42"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 257,
+          "validMediaPlaylist": true,
+          "inventoryHash": "2b4529aa6720503ad61fe6d25d1b2605e625371a4dd0ef4144129b1d57eaacce"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 257,
+          "validMediaPlaylist": true,
+          "inventoryHash": "391acc6d811af455a7993bc9b5398f91b4cb4f91aceb2dd499dd54b0a7b5f8b7"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 257,
+          "validMediaPlaylist": true,
+          "inventoryHash": "b6598cf01305eec33d3de2c010b66c7a70eca66c9b74db831a8aa44acf5a3b5c"
+        }
+      ],
+      "source": {
+        "title": "Internet",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1030,
+      "fullInventoryHashesUnchanged": true,
+      "freshSamples": [
+        {
+          "rung": "240p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "240p",
+          "index": 129,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "240p",
+          "index": 258,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "360p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "360p",
+          "index": 128,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "360p",
+          "index": 256,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "index": 128,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "index": 256,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "1080p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "1080p",
+          "index": 128,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "1080p",
+          "index": 256,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        }
+      ],
+      "outcome": "unchanged complete inventory and fresh samples passed"
+    },
+    {
+      "job": "6ad5df31c9735682f0a0c5d7",
+      "classId": "6ad5df3164b695f53d872c19",
+      "oldAssetKey": "vid:armaths-data:4611456-1792049999",
+      "category": "noPlayableURL",
+      "course": "131",
+      "rowId": "193432",
+      "originalFailure": null,
+      "fullCheckedAt": "2026-10-27T11:24:41.311Z",
+      "fullSegmentCount": 1104,
+      "previousInventories": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 282,
+          "validMediaPlaylist": true,
+          "inventoryHash": "deedce2bb732cfdea10b384ea89975a5f041d7630e0e49300d797ec6ca8e60b8"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 275,
+          "validMediaPlaylist": true,
+          "inventoryHash": "af8a3bf94ca90919c4669f7a8f018c60e023128d76c7ae9747704bd2aa986959"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 273,
+          "validMediaPlaylist": true,
+          "inventoryHash": "e3c9c84ce9037f2b39afd9c517db7a8441bae48240288866b16f3445e975c225"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 274,
+          "validMediaPlaylist": true,
+          "inventoryHash": "b14d8a76fc5a6eac28b309891d4780146fbcceb7507bd038e9c9f28c7c1b457e"
+        }
+      ],
+      "checkedAt": "2026-10-27T11:55:25.987Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 282,
+          "validMediaPlaylist": true,
+          "inventoryHash": "deedce2bb732cfdea10b384ea89975a5f041d7630e0e49300d797ec6ca8e60b8"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 275,
+          "validMediaPlaylist": true,
+          "inventoryHash": "af8a3bf94ca90919c4669f7a8f018c60e023128d76c7ae9747704bd2aa986959"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 273,
+          "validMediaPlaylist": true,
+          "inventoryHash": "e3c9c84ce9037f2b39afd9c517db7a8441bae48240288866b16f3445e975c225"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 274,
+          "validMediaPlaylist": true,
+          "inventoryHash": "b14d8a76fc5a6eac28b309891d4780146fbcceb7507bd038e9c9f28c7c1b457e"
+        }
+      ],
+      "source": {
+        "title": "Internet 02",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1104,
+      "fullInventoryHashesUnchanged": true,
+      "freshSamples": [
+        {
+          "rung": "240p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "240p",
+          "index": 141,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "240p",
+          "index": 281,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "360p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "360p",
+          "index": 137,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "360p",
+          "index": 274,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "index": 136,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "index": 272,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "1080p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "1080p",
+          "index": 137,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "1080p",
+          "index": 273,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        }
+      ],
+      "outcome": "unchanged complete inventory and fresh samples passed"
+    },
+    {
+      "job": "6ad5df31c9735682f0a0c5da",
+      "classId": "6ad5df3164b695f53d872c20",
+      "oldAssetKey": "vid:armaths-data:4619107-1792135845",
+      "category": "noPlayableURL",
+      "course": "131",
+      "rowId": "193434",
+      "originalFailure": null,
+      "fullCheckedAt": "2026-10-27T11:30:04.367Z",
+      "fullSegmentCount": 961,
+      "previousInventories": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 246,
+          "validMediaPlaylist": true,
+          "inventoryHash": "578739a55a8ba66b1d079388e8ebcdd47df207b1b888624278aa317cd07ad590"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 238,
+          "validMediaPlaylist": true,
+          "inventoryHash": "a416073da040861b5de3b60154ab640d532f77e950ce9f0b0730fd7023fac58b"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 238,
+          "validMediaPlaylist": true,
+          "inventoryHash": "cc696e87bf1bc4013ab55279e3012c39958e7723f47a759c627f4df8ba6106f4"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 239,
+          "validMediaPlaylist": true,
+          "inventoryHash": "17d9df41c683b1f68a064dc15da7ce6da3b2242bb98ee84c3f43f9865a0b1a21"
+        }
+      ],
+      "checkedAt": "2026-10-27T11:55:35.126Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 246,
+          "validMediaPlaylist": true,
+          "inventoryHash": "578739a55a8ba66b1d079388e8ebcdd47df207b1b888624278aa317cd07ad590"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 238,
+          "validMediaPlaylist": true,
+          "inventoryHash": "a416073da040861b5de3b60154ab640d532f77e950ce9f0b0730fd7023fac58b"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 238,
+          "validMediaPlaylist": true,
+          "inventoryHash": "cc696e87bf1bc4013ab55279e3012c39958e7723f47a759c627f4df8ba6106f4"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 239,
+          "validMediaPlaylist": true,
+          "inventoryHash": "17d9df41c683b1f68a064dc15da7ce6da3b2242bb98ee84c3f43f9865a0b1a21"
+        }
+      ],
+      "source": {
+        "title": "Internet 03",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 961,
+      "fullInventoryHashesUnchanged": true,
+      "freshSamples": [
+        {
+          "rung": "240p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "240p",
+          "index": 123,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "240p",
+          "index": 245,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "360p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "360p",
+          "index": 119,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "360p",
+          "index": 237,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "index": 119,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "index": 237,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "1080p",
+          "index": 0,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "1080p",
+          "index": 119,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        },
+        {
+          "rung": "1080p",
+          "index": 238,
+          "http": 206,
+          "bytes": 1024,
+          "tsSync": true,
+          "mp4": false,
+          "ok": true
+        }
+      ],
+      "outcome": "unchanged complete inventory and fresh samples passed"
+    }
+  ],
+  "requests": 107,
+  "cmsRequests": 11,
+  "mediaRequests": 96,
+  "requestBudget": 120000,
+  "segmentBytes": 73728,
+  "productionWrites": 0,
+  "policy": {
+    "mediaConcurrency": 4,
+    "mediaRequestsPerSecond": 8,
+    "cmsGapMs": 1100,
+    "range": "0-1023",
+    "stopAfterConfirmedGap": true
+  },
+  "courseList": {
+    "count": 147,
+    "total": 147
+  },
+  "completedAt": "2026-10-27T11:55:46.380Z",
+  "allScopeConsidered": true,
+  "all43Considered": false,
+  "checkpoint": true,
+  "transport": "direct local HTTPS; session cookie only to cms.appx.co.in"
+}

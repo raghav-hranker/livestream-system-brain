@@ -273,14 +273,14 @@ certificate: {
   state: 'issued' | 'eligible' | 'ineligible',
   reason?: 'not_enabled' | 'not_purchased' | 'no_classes' | 'incomplete' | 'claims_closed',
   progress?: number,   // left out for ineligible/not_enabled: those courses skip the progress read
-  code?, imageUrl?, pdfUrl?, shareUrl?
+  code?, imageUrl?, pdfUrl?
 }
 ```
 
 - The field is `null` when `CERTIFICATES_ENABLED` is off.
 - For courses not marked complete it carries `state: 'ineligible'` and `reason: 'not_enabled'`. The app uses
   that to decide whether to show the "Reach 100%" line at all.
-- `pdfUrl` and `shareUrl` are the same link; `imageUrl` is the PNG.
+- `pdfUrl` is the PDF and also the link the app shares; `imageUrl` is the PNG. (`shareUrl` was dropped on 2026-10-26 as a duplicate of `pdfUrl`.)
 
 Student routes. All of them take the user from the login token and return 404 when the feature is off.
 
@@ -290,7 +290,7 @@ Student routes. All of them take the user from the login token and return 404 wh
 - `POST /api/courses/:id/certificate/preview` with `{ name }` returns `image/png`. It returns 409 with the `reason`
   when the student isn't eligible, and 400 `invalid_name`.
 - `POST /api/courses/:id/certificate/claim` with `{ name }`:
-  - returns 201 with `{ code, courseId, name, courseTitle, completionDate, imageUrl, pdfUrl, shareUrl }`;
+  - returns 201 with `{ code, courseId, name, courseTitle, completionDate, imageUrl, pdfUrl }`;
   - returns 200 with the same body when a certificate already exists;
   - returns 409 with the `reason` when the student isn't eligible, and 400 `invalid_name`.
 - `GET /api/certificates/mine` returns every certificate the student holds, newest first.

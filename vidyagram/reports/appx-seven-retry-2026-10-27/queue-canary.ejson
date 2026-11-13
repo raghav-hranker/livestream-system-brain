@@ -1,0 +1,15 @@
+{
+  "queuedAt": {
+    "$date": {
+      "$numberLong": "1793102192551"
+    }
+  },
+  "jobs": [
+    "6acea4e3c9735682f04f1967",
+    "6ad5df30c9735682f0a0c5d4"
+  ],
+  "held": [],
+  "count": {
+    "$numberInt": "2"
+  }
+}

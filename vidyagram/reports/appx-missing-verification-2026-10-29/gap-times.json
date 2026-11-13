@@ -1,0 +1,226 @@
+{
+  "observedAt": "2026-10-29T12:48:24.711Z",
+  "readOnly": true,
+  "scope": 6,
+  "steps": [],
+  "controls": [
+    {
+      "at": "2026-10-29T12:48:30.036Z",
+      "hasUsableUrl": true
+    },
+    {
+      "at": "2026-10-29T12:49:19.781Z",
+      "hasUsableUrl": true
+    }
+  ],
+  "candidates": [
+    {
+      "title": "Algebra Class 08 · ALGEBRA (बीजगणित )",
+      "course": "15",
+      "rowId": "9770",
+      "job": "6ace92d2c9735682f04ee56f",
+      "quality": "240p",
+      "priorIndex": 215,
+      "file": "master-2498548.7862000368215.ts",
+      "classDate": "2024-01-25 19:00:00",
+      "index": 215,
+      "startSec": 2624.15,
+      "endSec": 2636.65,
+      "segmentDurationSec": 12.5,
+      "videoDurationSec": 4087.45,
+      "timelineStartTag": null,
+      "http": 404,
+      "confirmationHttp": 404,
+      "confirmedMissing": true,
+      "neighbors": [
+        {
+          "index": 214,
+          "http": 206,
+          "mediaReadable": true
+        },
+        {
+          "index": 216,
+          "http": 206,
+          "mediaReadable": true
+        }
+      ],
+      "outcome": "confirmed gap with elapsed timestamps"
+    },
+    {
+      "title": "Algebra Class 11 · ALGEBRA (बीजगणित )",
+      "course": "15",
+      "rowId": "9773",
+      "job": "6ace92d4c9735682f04ee575",
+      "quality": "480p",
+      "priorIndex": 227,
+      "file": "master-2790433.1646571243227.ts",
+      "classDate": "2024-01-30 18:30:00",
+      "index": 227,
+      "startSec": 2786.1000000000004,
+      "endSec": 2798.6000000000004,
+      "segmentDurationSec": 12.5,
+      "videoDurationSec": 3921.4,
+      "timelineStartTag": null,
+      "http": 404,
+      "confirmationHttp": 404,
+      "confirmedMissing": true,
+      "neighbors": [
+        {
+          "index": 226,
+          "http": 206,
+          "mediaReadable": true
+        },
+        {
+          "index": 228,
+          "http": 206,
+          "mediaReadable": true
+        }
+      ],
+      "outcome": "confirmed gap with elapsed timestamps"
+    },
+    {
+      "title": "Algebra Class 16 · ALGEBRA (बीजगणित )",
+      "course": "15",
+      "rowId": "9779",
+      "job": "6ace92d6c9735682f04ee580",
+      "quality": "360p",
+      "priorIndex": 249,
+      "file": "master-9081993.356434247249.ts",
+      "classDate": "2024-02-05 18:30:00",
+      "index": 249,
+      "startSec": 3047.3,
+      "endSec": 3059.8,
+      "segmentDurationSec": 12.5,
+      "videoDurationSec": 3753.5000000000005,
+      "timelineStartTag": null,
+      "http": 404,
+      "confirmationHttp": 404,
+      "confirmedMissing": true,
+      "neighbors": [
+        {
+          "index": 248,
+          "http": 206,
+          "mediaReadable": true
+        },
+        {
+          "index": 250,
+          "http": 206,
+          "mediaReadable": true
+        }
+      ],
+      "outcome": "confirmed gap with elapsed timestamps"
+    },
+    {
+      "title": "Analogy 03 · Analogy",
+      "course": "22",
+      "rowId": "15166",
+      "job": "6ace9424c9735682f04eeceb",
+      "quality": "240p",
+      "priorIndex": 59,
+      "file": "master-8583872.38851573759.ts",
+      "classDate": "2024-04-22 17:50:00",
+      "index": 59,
+      "startSec": 737.5,
+      "endSec": 750,
+      "segmentDurationSec": 12.5,
+      "videoDurationSec": 3421.1000000000004,
+      "timelineStartTag": null,
+      "http": 404,
+      "confirmationHttp": 404,
+      "confirmedMissing": true,
+      "neighbors": [
+        {
+          "index": 58,
+          "http": 206,
+          "mediaReadable": true
+        },
+        {
+          "index": 60,
+          "http": 206,
+          "mediaReadable": true
+        }
+      ],
+      "outcome": "confirmed gap with elapsed timestamps"
+    },
+    {
+      "title": "Average Class 18",
+      "course": "10",
+      "rowId": "6463",
+      "job": "6ace9257c9735682f04ee309",
+      "quality": "480p",
+      "priorIndex": 2,
+      "file": "master-3439011.0149725396.m3u82.ts",
+      "classDate": "2023-12-07 19:00:00",
+      "index": 2,
+      "startSec": 20.833333,
+      "endSec": 33.333332999999996,
+      "segmentDurationSec": 12.5,
+      "videoDurationSec": 3642.116597000006,
+      "timelineStartTag": null,
+      "http": 404,
+      "confirmationHttp": 404,
+      "confirmedMissing": true,
+      "neighbors": [
+        {
+          "index": 1,
+          "http": 206,
+          "mediaReadable": true
+        },
+        {
+          "index": 3,
+          "http": 206,
+          "mediaReadable": true
+        }
+      ],
+      "outcome": "confirmed gap with elapsed timestamps"
+    },
+    {
+      "title": "Botany 03 · BOTANY",
+      "course": "42",
+      "rowId": "31407",
+      "job": "6ace98acc9735682f04f025a",
+      "quality": "240p",
+      "priorIndex": 145,
+      "file": "master-115758.48027206348145.ts",
+      "classDate": "2024-05-30 07:00:00",
+      "index": 145,
+      "startSec": 1458.0666390000022,
+      "endSec": 1460.3333060000023,
+      "segmentDurationSec": 2.266667,
+      "videoDurationSec": 2989.3999450000056,
+      "timelineStartTag": null,
+      "http": 404,
+      "confirmationHttp": 404,
+      "confirmedMissing": true,
+      "neighbors": [
+        {
+          "index": 144,
+          "http": 206,
+          "mediaReadable": true
+        },
+        {
+          "index": 146,
+          "http": 206,
+          "mediaReadable": true
+        }
+      ],
+      "outcome": "confirmed gap with elapsed timestamps"
+    }
+  ],
+  "requests": 43,
+  "cmsRequests": 13,
+  "mediaRequests": 30,
+  "requestBudget": 120000,
+  "segmentBytes": 18418,
+  "productionWrites": 0,
+  "policy": {
+    "mediaConcurrency": 4,
+    "mediaRequestsPerSecond": 8,
+    "cmsGapMs": 1100,
+    "range": "0-1023",
+    "stopAfterConfirmedGap": true
+  },
+  "completedAt": "2026-10-29T12:49:19.781Z",
+  "allScopeConsidered": true,
+  "checkpoint": true
+}

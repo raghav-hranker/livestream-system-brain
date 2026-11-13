@@ -1,0 +1,515 @@
+{
+  "observedAt": "2026-10-27T08:21:32.258Z",
+  "readOnly": true,
+  "budget": 1100,
+  "steps": [
+    {
+      "name": "authentication and course list",
+      "ok": true,
+      "at": "2026-10-27T08:21:32.260Z",
+      "milliseconds": 262
+    },
+    {
+      "name": "fallback course listing 71",
+      "ok": true,
+      "at": "2026-10-27T08:21:32.522Z",
+      "milliseconds": 5567
+    },
+    {
+      "name": "dead token 189847",
+      "ok": true,
+      "at": "2026-10-27T08:21:38.089Z",
+      "milliseconds": 4612
+    },
+    {
+      "name": "dead token 189848",
+      "ok": true,
+      "at": "2026-10-27T08:21:42.702Z",
+      "milliseconds": 5482
+    },
+    {
+      "name": "dead token 189849",
+      "ok": true,
+      "at": "2026-10-27T08:21:48.186Z",
+      "milliseconds": 5507
+    },
+    {
+      "name": "dead token 189850",
+      "ok": true,
+      "at": "2026-10-27T08:21:53.694Z",
+      "milliseconds": 5516
+    },
+    {
+      "name": "dead token 189853",
+      "ok": true,
+      "at": "2026-10-27T08:21:59.212Z",
+      "milliseconds": 5474
+    }
+  ],
+  "deadSourceSamples": [
+    {
+      "job": "6acea4e1c9735682f04f1965",
+      "classId": "6acea4e08752d955968b9335",
+      "oldAssetKey": "vid:armaths-data:3797570-1780065241",
+      "category": "noPlayableURL",
+      "currentlyPlanned": true,
+      "course": "71",
+      "rowId": "189847",
+      "source": {
+        "id": "189847",
+        "title": "Glands 01",
+        "type": "LIVE_STREAM",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:armaths-data:3797570-1780065241",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 135,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 270,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 271,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6acea4e3c9735682f04f1967",
+      "classId": "6acea4e38752d955968b933c",
+      "oldAssetKey": "vid:armaths-data:3802821-1780151643",
+      "category": "noPlayableURL",
+      "currentlyPlanned": true,
+      "course": "71",
+      "rowId": "189848",
+      "source": {
+        "id": "189848",
+        "title": "Glands 02",
+        "type": "LIVE_STREAM",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:armaths-data:3802821-1780151643",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 158,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 316,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 317,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6acea4e8c9735682f04f196d",
+      "classId": "6acea4e88752d955968b9343",
+      "oldAssetKey": "vid:armaths-data:3809395-1780324441",
+      "category": "noPlayableURL",
+      "currentlyPlanned": true,
+      "course": "71",
+      "rowId": "189849",
+      "source": {
+        "id": "189849",
+        "title": "Glands 03",
+        "type": "LIVE_STREAM",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:armaths-data:3809395-1780324441",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 140,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 280,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 281,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6acea4ecc9735682f04f1971",
+      "classId": "6acea4ec8752d955968b934a",
+      "oldAssetKey": "vid:armaths-data:3815152-1780410494",
+      "category": "noPlayableURL",
+      "currentlyPlanned": true,
+      "course": "71",
+      "rowId": "189850",
+      "source": {
+        "id": "189850",
+        "title": "Glands 04",
+        "type": "LIVE_STREAM",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:armaths-data:3815152-1780410494",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 138,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 276,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 277,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    },
+    {
+      "job": "6acea4f0c9735682f04f1973",
+      "classId": "6acea4f08752d955968b9351",
+      "oldAssetKey": "vid:armaths-data:3818401-1780474757",
+      "category": "noPlayableURL",
+      "currentlyPlanned": true,
+      "course": "71",
+      "rowId": "189853",
+      "source": {
+        "id": "189853",
+        "title": "Glands 05",
+        "type": "LIVE_STREAM",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:armaths-data:3818401-1780474757",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "hasUsableUrl": true,
+        "segments": [
+          {
+            "index": 0,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 113,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          },
+          {
+            "index": 226,
+            "http": 206,
+            "bytesRead": 4096,
+            "tsSync": true,
+            "mp4": false,
+            "looksLikeError": false,
+            "mediaLike": true
+          }
+        ],
+        "sourceHttp": 200,
+        "manifest": true,
+        "segmentCount": 227,
+        "endList": true,
+        "encrypted": false,
+        "allSampledSegmentsReadable": true
+      }
+    }
+  ],
+  "geometry": [],
+  "pdfMetadata": [],
+  "requestTelemetry": [
+    {
+      "endpoint": "get_all_courses",
+      "http": 200,
+      "rows": 146,
+      "total": "146"
+    },
+    {
+      "endpoint": "get_pc4_contents",
+      "http": 200,
+      "rows": 588,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 206,
+      "rows": null,
+      "total": null
+    }
+  ],
+  "courseList": {
+    "count": 146,
+    "total": 146
+  },
+  "completedAt": "2026-10-27T08:22:04.687Z",
+  "requests": 27,
+  "sessionLost": false,
+  "transport": "direct local HTTPS; session cookie only to cms.appx.co.in"
+}

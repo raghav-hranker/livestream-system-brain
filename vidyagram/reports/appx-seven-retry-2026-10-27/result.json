@@ -1,0 +1,15 @@
+{
+  "completedAt": "2026-10-27T12:04:47.863Z",
+  "recoveredVideos": 7,
+  "courseLocations": 11,
+  "copiedSegments": 6408,
+  "storedRenditions": 24,
+  "originSamples": 72,
+  "cdnSamples": 72,
+  "allPlaybackMints200": true,
+  "allFirstRetryAttempt": true,
+  "blocked36Unchanged": true,
+  "coursePlacementsUnchanged": true,
+  "catalogLedgersUnchanged": true,
+  "activeRetryJobs": 0
+}

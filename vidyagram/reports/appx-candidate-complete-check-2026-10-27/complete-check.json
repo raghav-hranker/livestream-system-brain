@@ -1,0 +1,3790 @@
+{
+  "observedAt": "2026-10-27T11:06:30.900Z",
+  "readOnly": true,
+  "scope": 43,
+  "steps": [
+    {
+      "name": "authenticated course list",
+      "ok": true,
+      "at": "2026-10-27T11:06:31.621Z"
+    },
+    {
+      "name": "known-good control course71",
+      "ok": true,
+      "at": "2026-10-27T11:06:37.806Z"
+    },
+    {
+      "name": "known-good video token control",
+      "ok": true,
+      "at": "2026-10-27T11:06:38.292Z"
+    },
+    {
+      "name": "course listing 10",
+      "ok": true,
+      "at": "2026-10-27T11:06:43.102Z"
+    },
+    {
+      "name": "course listing 13",
+      "ok": true,
+      "at": "2026-10-27T11:06:48.333Z"
+    },
+    {
+      "name": "course listing 15",
+      "ok": true,
+      "at": "2026-10-27T11:06:54.109Z"
+    },
+    {
+      "name": "course listing 17",
+      "ok": true,
+      "at": "2026-10-27T11:06:58.992Z"
+    },
+    {
+      "name": "course listing 18",
+      "ok": true,
+      "at": "2026-10-27T11:07:05.909Z"
+    },
+    {
+      "name": "course listing 22",
+      "ok": true,
+      "at": "2026-10-27T11:07:16.164Z"
+    },
+    {
+      "name": "course listing 24",
+      "ok": true,
+      "at": "2026-10-27T11:07:21.614Z"
+    },
+    {
+      "name": "course listing 25",
+      "ok": true,
+      "at": "2026-10-27T11:07:27.339Z"
+    },
+    {
+      "name": "course listing 42",
+      "ok": true,
+      "at": "2026-10-27T11:07:39.098Z"
+    },
+    {
+      "name": "course listing 45",
+      "ok": true,
+      "at": "2026-10-27T11:07:43.281Z"
+    },
+    {
+      "name": "course listing 87",
+      "ok": true,
+      "at": "2026-10-27T11:07:46.039Z"
+    },
+    {
+      "name": "course listing 131",
+      "ok": true,
+      "at": "2026-10-27T11:07:47.603Z"
+    }
+  ],
+  "controls": [
+    {
+      "name": "Glands01",
+      "at": "2026-10-27T11:06:38.292Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    }
+  ],
+  "candidates": [
+    {
+      "job": "6ace9257c9735682f04ee309",
+      "classId": "6ace92578752d955968aff91",
+      "oldAssetKey": "vid:rgvikramjeet-data:410702-1701967965",
+      "category": "source404",
+      "course": "10",
+      "rowId": "6463",
+      "originalFailure": {
+        "host": "transcoded-recordings.classx.co.in",
+        "file": "master-3439011.0149725396.m3u82.ts",
+        "rung": "480p"
+      },
+      "checkedAt": "2026-10-27T11:07:47.603Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 365,
+          "validMediaPlaylist": true,
+          "inventoryHash": "df3c36efa863722ed3518f5637824346c86482b76c5eb91a0146b942da58c3a6"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 365,
+          "validMediaPlaylist": true,
+          "inventoryHash": "0622eab6e7b69e14f424e5dcf90976a79445514b20a987267ef28ac3136fc638"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 365,
+          "validMediaPlaylist": true,
+          "inventoryHash": "ed989543594315887ad808631bc232a591c58204b37cdbb4cc083cc699c53888"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 365,
+          "validMediaPlaylist": true,
+          "inventoryHash": "3c6fafd9aba87d4840f2088d74aacb997ec010f890ab4d7c5f206bc71d596d24"
+        }
+      ],
+      "source": {
+        "title": "Average Class 18",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1460,
+      "segmentChecks": {
+        "uniqueSegments": 1460,
+        "checked": 14,
+        "passed": 12,
+        "failures": [
+          {
+            "rung": "480p",
+            "index": 2,
+            "file": "master-3439011.0149725396.m3u82.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 508,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 508,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          },
+          {
+            "rung": "1080p",
+            "index": 2,
+            "file": "master-3439011.0149725396.m3u82.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 509,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 509,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace92b8c9735682f04ee4f3",
+      "classId": "6ace92b88752d955968b0568",
+      "oldAssetKey": "drm:790be452-5d22-4ebf-8800-4a885e9481c2",
+      "category": "source404",
+      "course": "13",
+      "rowId": "8149",
+      "originalFailure": {
+        "host": "transcoded-recordings.classx.co.in",
+        "file": "master-6487914.198526845.m3u8239.ts",
+        "rung": "drm-hls"
+      },
+      "checkedAt": "2026-10-27T11:07:56.312Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 385,
+          "validMediaPlaylist": true,
+          "inventoryHash": "d2f60cbac376a3ec21161c526e2023693054fb180ee828b21885cdcec3f8e8a4"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 385,
+          "validMediaPlaylist": true,
+          "inventoryHash": "4b431acdf0667896b58ce76f7d31aeecac15d003fada737f57f5cd979141c87c"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 385,
+          "validMediaPlaylist": true,
+          "inventoryHash": "540ea66780ef7526bf7ed399f3ff92e17bc46f36103c1be8cce578052d22d21c"
+        }
+      ],
+      "source": {
+        "title": "Ratio 02",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1155,
+      "segmentChecks": {
+        "uniqueSegments": 1155,
+        "checked": 12,
+        "passed": 11,
+        "failures": [
+          {
+            "rung": "240p",
+            "index": 239,
+            "file": "master-6487914.198526845.m3u8239.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 511,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 511,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 3,
+        "originalFailureChecked": 3,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace92d2c9735682f04ee56f",
+      "classId": "6ace92d28752d955968b070c",
+      "oldAssetKey": "vid:rgvikramjeet-data:526735-1706263373",
+      "category": "source404",
+      "course": "15",
+      "rowId": "9770",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-2498548.7862000368215.ts",
+        "rung": "240p"
+      },
+      "checkedAt": "2026-10-27T11:08:03.278Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 336,
+          "validMediaPlaylist": true,
+          "inventoryHash": "09c951b9f6c0014b0977842e90b979c1c0221764a199169204034ef4f9a6bf64"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 332,
+          "validMediaPlaylist": true,
+          "inventoryHash": "61f542c63254da2788b3c8554058e9d692f3222cdaeb77bcf3fa004057b81d3b"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 333,
+          "validMediaPlaylist": true,
+          "inventoryHash": "6aac047fe443cfbd5b7c47f42dd757c4ae36d8d6e32659fde711ed14dd5bab4e"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 334,
+          "validMediaPlaylist": true,
+          "inventoryHash": "d594fefb24ed1a846a1546fac1f7a2056126a15e9d5baf6db5290afa9178d3bb"
+        }
+      ],
+      "source": {
+        "title": "Algebra Class 08",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1335,
+      "segmentChecks": {
+        "uniqueSegments": 1335,
+        "checked": 14,
+        "passed": 13,
+        "failures": [
+          {
+            "rung": "240p",
+            "index": 215,
+            "file": "master-2498548.7862000368215.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 512,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 512,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace92d4c9735682f04ee575",
+      "classId": "6ace92d38752d955968b0721",
+      "oldAssetKey": "vid:rgvikramjeet-data:536119-1706624740",
+      "category": "source404",
+      "course": "15",
+      "rowId": "9773",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-2790433.1646571243227.ts",
+        "rung": "480p"
+      },
+      "checkedAt": "2026-10-27T11:08:09.947Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 321,
+          "validMediaPlaylist": true,
+          "inventoryHash": "a033272fd23a9b7969a038e6881b67ec3983731f2a2635cf1e411d7377f9fea4"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 320,
+          "validMediaPlaylist": true,
+          "inventoryHash": "b23ac72a2c7ca34d843366e9b770958da9951659527e9f18b6c0bfe65c14203b"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 320,
+          "validMediaPlaylist": true,
+          "inventoryHash": "ac8541d65ce3aaad1623b736ab132ce07a739a8c0fe224cad355a575971ec877"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 322,
+          "validMediaPlaylist": true,
+          "inventoryHash": "79c9500db8854141af4e060347ba66cfe446b27eab9eb06f6e950f4fb6f0f40d"
+        }
+      ],
+      "source": {
+        "title": "Algebra Class 11",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1283,
+      "segmentChecks": {
+        "uniqueSegments": 1283,
+        "checked": 10,
+        "passed": 9,
+        "failures": [
+          {
+            "rung": "480p",
+            "index": 227,
+            "file": "master-2790433.1646571243227.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 512,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 512,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace92d6c9735682f04ee580",
+      "classId": "6ace92d68752d955968b0744",
+      "oldAssetKey": "vid:rgvikramjeet-data:550360-1707143202",
+      "category": "source404",
+      "course": "15",
+      "rowId": "9779",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-9081993.356434247249.ts",
+        "rung": "360p"
+      },
+      "checkedAt": "2026-10-27T11:08:15.627Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 306,
+          "validMediaPlaylist": true,
+          "inventoryHash": "71326e83a40af3c26ed302e1fff1e86192ac1565c74e5b53b4daa94588612188"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 307,
+          "validMediaPlaylist": true,
+          "inventoryHash": "975b3f5acb5079491bbdbf6ec5f0efd8fc77470fc7c14e93ea2e77626f90f876"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 308,
+          "validMediaPlaylist": true,
+          "inventoryHash": "5c64c9208fddf09d489820aa3933668465f70c813f3a34245edc4e0495f0a1ff"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 308,
+          "validMediaPlaylist": true,
+          "inventoryHash": "83662babbf403a34e9e60e4431d66ff442f462fe0fc7bf41b3122eb91240d2e5"
+        }
+      ],
+      "source": {
+        "title": "Algebra Class 16",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1229,
+      "segmentChecks": {
+        "uniqueSegments": 1229,
+        "checked": 14,
+        "passed": 13,
+        "failures": [
+          {
+            "rung": "360p",
+            "index": 249,
+            "file": "master-9081993.356434247249.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 511,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 511,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace92d8c9735682f04ee586",
+      "classId": "6ace92d88752d955968b0759",
+      "oldAssetKey": "vid:rgvikramjeet-data:558454-1707402144",
+      "category": "source404",
+      "course": "15",
+      "rowId": "9782",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-9455795.630963989289.ts",
+        "rung": "240p"
+      },
+      "checkedAt": "2026-10-27T11:08:20.952Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 295,
+          "validMediaPlaylist": true,
+          "inventoryHash": "66d6df116b3832f91e66d806e95cd743812c9440714c5e651e2884e879552278"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 294,
+          "validMediaPlaylist": true,
+          "inventoryHash": "403eecc1b3b7b59ca8055d1406cbc49ee4229184a42c28d94d0f7202dab5959d"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 295,
+          "validMediaPlaylist": true,
+          "inventoryHash": "5161a97f14ed2cf49f6d1f63107a0d9fcb9861ab85d5bbe3a86715c2f09440cf"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 294,
+          "validMediaPlaylist": true,
+          "inventoryHash": "a1e96c011c4aad9cded812387bd3b5876f9c02849f2615405b8b8eeae072d941"
+        }
+      ],
+      "source": {
+        "title": "Algebra Class 19",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1178,
+      "segmentChecks": {
+        "uniqueSegments": 1178,
+        "checked": 13,
+        "passed": 12,
+        "failures": [
+          {
+            "rung": "240p",
+            "index": 289,
+            "file": "master-9455795.630963989289.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 511,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 511,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace92efc9735682f04ee5fe",
+      "classId": "6ace92ef8752d955968b08cc",
+      "oldAssetKey": "vid:rgvikramjeet-data:653682-1710764795",
+      "category": "source404",
+      "course": "17",
+      "rowId": "11239",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-816945.4351954287144.ts",
+        "rung": "240p"
+      },
+      "checkedAt": "2026-10-27T11:08:26.380Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 323,
+          "validMediaPlaylist": true,
+          "inventoryHash": "70136f663bf0b1fbe4ee715413a0814f04b310ca4a82bb188f75e44223840f2d"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 319,
+          "validMediaPlaylist": true,
+          "inventoryHash": "a13da7392cb5d54908694f023ad54f52d8c179adc923725eb53c145ea1a106f2"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 320,
+          "validMediaPlaylist": true,
+          "inventoryHash": "511dee9c0a92974612cac34d7324f422a8f8a348871cbb3da4b93708581467f8"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 320,
+          "validMediaPlaylist": true,
+          "inventoryHash": "573e509268cdda6cc8d117460cee6971f6d92bf96cbd843faeebb19ed2bee2aa"
+        }
+      ],
+      "source": {
+        "title": "Compound Interest Class 07",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1282,
+      "segmentChecks": {
+        "uniqueSegments": 1282,
+        "checked": 9,
+        "passed": 8,
+        "failures": [
+          {
+            "rung": "240p",
+            "index": 144,
+            "file": "master-816945.4351954287144.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 511,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 511,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace92f6c9735682f04ee61c",
+      "classId": "6ace92f68752d955968b092e",
+      "oldAssetKey": "vid:rgvikramjeet-data:656581-1710846175",
+      "category": "source404",
+      "course": "17",
+      "rowId": "10970",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-3087529.165850677559.ts",
+        "rung": "480p"
+      },
+      "checkedAt": "2026-10-27T11:08:33.445Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 442,
+          "validMediaPlaylist": true,
+          "inventoryHash": "3c33d42ec6b12849be8b41a98c110a4df06c133662194f95250308618e59ff59"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 442,
+          "validMediaPlaylist": true,
+          "inventoryHash": "fcd8021b6a6612d6903c56cfc89e4cc88e6ba1c102e1aaeec03b343a112eb393"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 442,
+          "validMediaPlaylist": true,
+          "inventoryHash": "8fb91daac03e9809f55a2a2df1fef26d16eaa26d9110eaa6ef615b1d7c18a110"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 443,
+          "validMediaPlaylist": true,
+          "inventoryHash": "a0e82f573ed1df23812883a234fc5bb13fb2f25575df15786035b73c33f3e3d3"
+        }
+      ],
+      "source": {
+        "title": "Trigonometry Class 19",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1769,
+      "segmentChecks": {
+        "uniqueSegments": 1769,
+        "checked": 14,
+        "passed": 13,
+        "failures": [
+          {
+            "rung": "480p",
+            "index": 59,
+            "file": "master-3087529.165850677559.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 511,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 511,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace9300c9735682f04ee656",
+      "classId": "6ace93008752d955968b09dd",
+      "oldAssetKey": "vid:rgvikramjeet-data:800648-1715257156",
+      "category": "source404",
+      "course": "18",
+      "rowId": "11652",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-594613.04872550324.ts",
+        "rung": "480p"
+      },
+      "checkedAt": "2026-10-27T11:08:41.207Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 299,
+          "validMediaPlaylist": true,
+          "inventoryHash": "0e59bff47fd899f8745353fc81cc8bdbd8216d1915a4d21d1cb7907939506fea"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 298,
+          "validMediaPlaylist": true,
+          "inventoryHash": "f66b0b25854f358ade86ebb9dc6ff76d286dffd73fb7c705738a924b9b56b655"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 298,
+          "validMediaPlaylist": true,
+          "inventoryHash": "db85144d9c06cdc74aac64be21cd5533c78eaf99ffcb7f9468be46a094e94329"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 298,
+          "validMediaPlaylist": true,
+          "inventoryHash": "2b0f20265c9e5c53074b37ccf59e9d04ce9bc62a27c0ac818250c22e7e732c64"
+        }
+      ],
+      "source": {
+        "title": "Profit & Loss Class 12",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1193,
+      "segmentChecks": {
+        "uniqueSegments": 1193,
+        "checked": 15,
+        "passed": 14,
+        "failures": [
+          {
+            "rung": "480p",
+            "index": 24,
+            "file": "master-594613.04872550324.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 509,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 509,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace9317c9735682f04ee6ce",
+      "classId": "6ace93178752d955968b0b50",
+      "oldAssetKey": "vid:rgvikramjeet-data:812233-1715610696",
+      "category": "source404",
+      "course": "18",
+      "rowId": "12067",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-5097525.297748557154.ts",
+        "rung": "360p"
+      },
+      "checkedAt": "2026-10-27T11:08:47.133Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 300,
+          "validMediaPlaylist": true,
+          "inventoryHash": "a32a370376ae796ca2342ab08fc00d7f1fdca8b74b606daaa1e9679f1e73b74a"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 299,
+          "validMediaPlaylist": true,
+          "inventoryHash": "04a85842f21bb59d73c9fb70841a735f23c2572c415d90c0f25f5897919dca2e"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 300,
+          "validMediaPlaylist": true,
+          "inventoryHash": "c978f5bb76391347b19ca846da250ae68006c4b0143357e65a3caf195b508322"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 300,
+          "validMediaPlaylist": true,
+          "inventoryHash": "6877a1d2a9cb53800705561a2531ce227a8d41c07eaeeb3cf66b64bdf0624e64"
+        }
+      ],
+      "source": {
+        "title": "Remainder Class 06",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1199,
+      "segmentChecks": {
+        "uniqueSegments": 1199,
+        "checked": 10,
+        "passed": 9,
+        "failures": [
+          {
+            "rung": "360p",
+            "index": 154,
+            "file": "master-5097525.297748557154.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 511,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 511,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace937fc9735682f04ee94b",
+      "classId": "6ace937f8752d955968b11ee",
+      "oldAssetKey": "vid:rgvikramjeet-data:465612-1703938355",
+      "category": "source404",
+      "course": "22",
+      "rowId": "16552",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-8289280.93313873257.ts",
+        "rung": "480p"
+      },
+      "checkedAt": "2026-10-27T11:08:51.925Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 226,
+          "validMediaPlaylist": true,
+          "inventoryHash": "4684fa96bd1d3b72b166c2080a620c4339f356608f7fe6db9da908b8a2cea370"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 225,
+          "validMediaPlaylist": true,
+          "inventoryHash": "da0d28f71ff71912644a639f56ccbbbd8bad08122a3fe79d99771bbd21e237ce"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 225,
+          "validMediaPlaylist": true,
+          "inventoryHash": "e11dc46a84782e03a94074a74765effe2e481835b7a043a50ea97a757d8be32a"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 225,
+          "validMediaPlaylist": true,
+          "inventoryHash": "cb3cd627ad313d3e55e125e62d2f96e46f443d11f74a4e7b70a894cf914144ac"
+        }
+      ],
+      "source": {
+        "title": "तत्सम और तद्भव शब्द 02",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 901,
+      "segmentChecks": {
+        "uniqueSegments": 901,
+        "checked": 10,
+        "passed": 9,
+        "failures": [
+          {
+            "rung": "480p",
+            "index": 57,
+            "file": "master-8289280.93313873257.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 510,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 510,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace9397c9735682f04ee9c4",
+      "classId": "6ace93978752d955968b1376",
+      "oldAssetKey": "vid:rgvikramjeet-data:412887-1702040847",
+      "category": "source404",
+      "course": "22",
+      "rowId": "16294",
+      "originalFailure": {
+        "host": "transcoded-recordings.classx.co.in",
+        "file": "master-7067310.971135514.m3u87.ts",
+        "rung": "360p"
+      },
+      "checkedAt": "2026-10-27T11:08:59.542Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 398,
+          "validMediaPlaylist": true,
+          "inventoryHash": "156ccf28a8f6514830d489ce13dc4e0b0b8662b1fc27f6abf71d5450cd5c0924"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 398,
+          "validMediaPlaylist": true,
+          "inventoryHash": "42482453f835f088951a1b3d4ebd5a798ce05fde3f1f92d9ad02325475e4c9ba"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 398,
+          "validMediaPlaylist": true,
+          "inventoryHash": "0beeb419a6269a904731de9ee99654ba9be906e55aa7f46060ebaf5549768779"
+        },
+        {
+          "rung": "1080p",
+          "http": 404,
+          "endList": false,
+          "segments": 0,
+          "validMediaPlaylist": false
+        }
+      ],
+      "source": {
+        "title": "काल ",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": false,
+      "listedSegmentReferences": null,
+      "outcome": "required rendition playlist unavailable or unsupported"
+    },
+    {
+      "job": "6ace93a4c9735682f04eea7e",
+      "classId": "6ace93a48752d955968b145d",
+      "oldAssetKey": "vid:rgvikramjeet-data:538157-1706701056",
+      "category": "source404",
+      "course": "22",
+      "rowId": "16028",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-1053160.616287805359.ts",
+        "rung": "240p"
+      },
+      "checkedAt": "2026-10-27T11:09:05.179Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 391,
+          "validMediaPlaylist": true,
+          "inventoryHash": "53613fef0eb3d81eef9c1d8cc2a2c42dde73b89aea60e8a5e945f898de61fb4d"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 375,
+          "validMediaPlaylist": true,
+          "inventoryHash": "6ff02469eb3a5f6a21611e0c6f1cc4f5bf09c635fdc8aaf99dc762276cd9f772"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 377,
+          "validMediaPlaylist": true,
+          "inventoryHash": "d2e2ac160590bf97cbfa34ce789eb36d2cb12df430a504f8add23d1a1522f734"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 375,
+          "validMediaPlaylist": true,
+          "inventoryHash": "a6745b603199db59e5678a5bfea5a86720ce90f48f81e4a034e5c04d94d3ebe9"
+        }
+      ],
+      "source": {
+        "title": "हिंदी साहित्य ",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1518,
+      "segmentChecks": {
+        "uniqueSegments": 1518,
+        "checked": 7,
+        "passed": 6,
+        "failures": [
+          {
+            "rung": "240p",
+            "index": 359,
+            "file": "master-1053160.616287805359.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 511,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 511,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace93a4c9735682f04eea80",
+      "classId": "6ace93a48752d955968b1464",
+      "oldAssetKey": "vid:rgvikramjeet-data:553312-1707238241",
+      "category": "source404",
+      "course": "22",
+      "rowId": "16029",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-5559088.641012216.ts",
+        "rung": "480p"
+      },
+      "checkedAt": "2026-10-27T11:09:12.245Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 433,
+          "validMediaPlaylist": true,
+          "inventoryHash": "b0eeac00cefffae3777476115bda29be3769622bf6ea9dc68615439ab1a499b1"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 415,
+          "validMediaPlaylist": true,
+          "inventoryHash": "050959a6a5f8fa9c9e57edebb5c57e2b419944522224f4993ef7e17eb3392a0e"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 415,
+          "validMediaPlaylist": true,
+          "inventoryHash": "766586a0b21741a41e78110c6336cfc21aa35dfde39932c7683652769d491be7"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 415,
+          "validMediaPlaylist": true,
+          "inventoryHash": "7a3556e48dee9edec1db8c40a4acce748bdce3b7779bc0891fc358257d1d0b10"
+        }
+      ],
+      "source": {
+        "title": "हिंदी साहित्य 02",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1678,
+      "segmentChecks": {
+        "uniqueSegments": 1678,
+        "checked": 9,
+        "passed": 8,
+        "failures": [
+          {
+            "rung": "480p",
+            "index": 216,
+            "file": "master-5559088.641012216.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 508,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 508,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace93a9c9735682f04eea96",
+      "classId": "6ace93a88752d955968b14b1",
+      "oldAssetKey": "vid:rgvikramjeet-data:520124-1706028252",
+      "category": "source404",
+      "course": "22",
+      "rowId": "16039",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-3182605.55528042168.ts",
+        "rung": "360p"
+      },
+      "checkedAt": "2026-10-27T11:09:19.086Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 228,
+          "validMediaPlaylist": true,
+          "inventoryHash": "5c599735a2043aa494c846e7a52ef0afcb7378eb58ae7d8020b22cbc6f86a610"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 222,
+          "validMediaPlaylist": true,
+          "inventoryHash": "01cf950a13c12adbca23b9043e21e45395a01f7bd48a992362ffa618ec76912d"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 223,
+          "validMediaPlaylist": true,
+          "inventoryHash": "5b55d3cb0badfc49e93e7a1b005533e544c0ee8c4ad566883340e0335bb917f0"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 222,
+          "validMediaPlaylist": true,
+          "inventoryHash": "802bb24226eec334a6292a335521216756a4ad5e45dcc2f6e4fb5c20634f5311"
+        }
+      ],
+      "source": {
+        "title": "अलंकार 02",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 895,
+      "segmentChecks": {
+        "uniqueSegments": 895,
+        "checked": 10,
+        "passed": 9,
+        "failures": [
+          {
+            "rung": "360p",
+            "index": 168,
+            "file": "master-3182605.55528042168.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 510,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 510,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace93c4c9735682f04eeb1c",
+      "classId": "6ace93c48752d955968b1671",
+      "oldAssetKey": "vid:rgvikramjeet-data:410747-1701962427",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15410",
+      "originalFailure": {
+        "host": "transcoded-recordings.classx.co.in",
+        "file": "master-7308944.860638292.m3u83.ts",
+        "rung": "240p"
+      },
+      "checkedAt": "2026-10-27T11:09:27.994Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 312,
+          "validMediaPlaylist": true,
+          "inventoryHash": "c390c70ce972fd05f04d76303097ff8c6ed17a9a193730eae6fd4652b2adabc1"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 312,
+          "validMediaPlaylist": true,
+          "inventoryHash": "4bb4ecf0a809bbb37f510b672b1c93c3ccc136bc6903c4156d1bee59a225562d"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 312,
+          "validMediaPlaylist": true,
+          "inventoryHash": "94bdadb432ec5f2fa321dae34cc8e8c0f1715cf1aeea7e9649736fb329638b5c"
+        },
+        {
+          "rung": "1080p",
+          "http": 404,
+          "endList": false,
+          "segments": 0,
+          "validMediaPlaylist": false
+        }
+      ],
+      "source": {
+        "title": "CLASS 01",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": false,
+      "listedSegmentReferences": null,
+      "outcome": "required rendition playlist unavailable or unsupported"
+    },
+    {
+      "job": "6ace93c5c9735682f04eeb20",
+      "classId": "6ace93c58752d955968b167f",
+      "oldAssetKey": "vid:rgvikramjeet-data:410875-1701975160",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15409",
+      "originalFailure": {
+        "host": "transcoded-recordings.classx.co.in",
+        "file": "master-9327300.716198197.m3u83.ts",
+        "rung": "480p"
+      },
+      "checkedAt": "2026-10-27T11:09:31.705Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 338,
+          "validMediaPlaylist": true,
+          "inventoryHash": "d97a8343d1483d727832284b4c3bb29164e91afa66fe48618c5f35c12b84073f"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 337,
+          "validMediaPlaylist": true,
+          "inventoryHash": "1c57a60ef6e1735cced059bea707cae80306e62ce97326a66fab398342bdcc9d"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 337,
+          "validMediaPlaylist": true,
+          "inventoryHash": "d93170545867dcad773fef78077bb0235db872b500832a296036c4b7f618c15d"
+        },
+        {
+          "rung": "1080p",
+          "http": 404,
+          "endList": false,
+          "segments": 0,
+          "validMediaPlaylist": false
+        }
+      ],
+      "source": {
+        "title": "Size And Location (Practice Class)",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": false,
+      "listedSegmentReferences": null,
+      "outcome": "required rendition playlist unavailable or unsupported"
+    },
+    {
+      "job": "6ace93d2c9735682f04eeb64",
+      "classId": "6ace93d28752d955968b175f",
+      "oldAssetKey": "drm:59d7aef1-ca2e-472e-917d-45e22bb4de25",
+      "category": "source404",
+      "course": "22",
+      "rowId": "16137",
+      "originalFailure": {
+        "host": "transcoded-recordings.classx.co.in",
+        "file": "master-9982953.22576129.m3u8106.ts",
+        "rung": "drm-hls"
+      },
+      "checkedAt": "2026-10-27T11:09:35.319Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 300,
+          "validMediaPlaylist": true,
+          "inventoryHash": "5b13a9fd02e5d5009d788b74817e04ac2d3947e379ed5b5f9d064b537a9034b9"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 300,
+          "validMediaPlaylist": true,
+          "inventoryHash": "e2521ce3bf3b0453ef38b8d0cf9032f81b81cf73f5c05e709bd61965c8c36a76"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 300,
+          "validMediaPlaylist": true,
+          "inventoryHash": "384e89601c39a822852477da2590659a186770418a69a9c1b582a1c47d2e2b3f"
+        }
+      ],
+      "source": {
+        "title": "Class 13 (World Geography)",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 900,
+      "segmentChecks": {
+        "uniqueSegments": 900,
+        "checked": 10,
+        "passed": 9,
+        "failures": [
+          {
+            "rung": "480p",
+            "index": 106,
+            "file": "master-9982953.22576129.m3u8106.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 510,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 510,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 3,
+        "originalFailureChecked": 3,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace93e9c9735682f04eebd9",
+      "classId": "6ace93e98752d955968b18d2",
+      "oldAssetKey": "drm:4863eace-e19a-4f4d-a493-826688568333",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15990",
+      "originalFailure": {
+        "host": "transcoded-recordings.classx.co.in",
+        "file": "master-568573.8267311224.m3u8249.ts",
+        "rung": "drm-hls"
+      },
+      "checkedAt": "2026-10-27T11:09:44.641Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 279,
+          "validMediaPlaylist": true,
+          "inventoryHash": "e699ab941ee594ed8a4f417cda79db2c904ce130a091b5954ab49533242e5fdc"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 280,
+          "validMediaPlaylist": true,
+          "inventoryHash": "4f51cac9b8c70e5ee8b2b8f4ed04b19a015d257cf65b92e5946bf1a944316d96"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 280,
+          "validMediaPlaylist": true,
+          "inventoryHash": "98310688a04888522bd679b1d1d04d3dc24f595cd3b4bc95d2eb857a36db49b8"
+        }
+      ],
+      "source": {
+        "title": "commission (आयोग) ",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 839,
+      "segmentChecks": {
+        "uniqueSegments": 839,
+        "checked": 11,
+        "passed": 10,
+        "failures": [
+          {
+            "rung": "480p",
+            "index": 249,
+            "file": "master-568573.8267311224.m3u8249.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 511,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 511,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 3,
+        "originalFailureChecked": 3,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace9424c9735682f04eeceb",
+      "classId": "6ace94248752d955968b1c3d",
+      "oldAssetKey": "vid:rgvikramjeet-data:746409-1713792675",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15166",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-8583872.38851573759.ts",
+        "rung": "240p"
+      },
+      "checkedAt": "2026-10-27T11:09:53.182Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 280,
+          "validMediaPlaylist": true,
+          "inventoryHash": "5a381d9772ef2ff9e4c66cff00ac51fae1efb1667b313e5f059658520582c822"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 276,
+          "validMediaPlaylist": true,
+          "inventoryHash": "8e8a8007b742f2b8fb66311562b9eb49ddc21984480df876c7708b0273e38657"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 276,
+          "validMediaPlaylist": true,
+          "inventoryHash": "075a82b9016ae648f653eb1627e6d2bbf1229113b7d3aaca069b2d5766b99672"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 275,
+          "validMediaPlaylist": true,
+          "inventoryHash": "d0cdfdf5bc4de75ba20be6ecce84cdcb7787a36a4d65fe64a79d66f811214ce6"
+        }
+      ],
+      "source": {
+        "title": "Analogy 03",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1107,
+      "segmentChecks": {
+        "uniqueSegments": 1107,
+        "checked": 12,
+        "passed": 11,
+        "failures": [
+          {
+            "rung": "240p",
+            "index": 59,
+            "file": "master-8583872.38851573759.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 510,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 510,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace9427c9735682f04eecf8",
+      "classId": "6ace94278752d955968b1c67",
+      "oldAssetKey": "vid:rgvikramjeet-data:781903-1714744514",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15391",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-976936.2217248445308.ts",
+        "rung": "480p"
+      },
+      "checkedAt": "2026-10-27T11:09:58.904Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 312,
+          "validMediaPlaylist": true,
+          "inventoryHash": "38e2e24802274dc851710160fb02cc1e8b998ba7a7526f25f3576163200061c6"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 311,
+          "validMediaPlaylist": true,
+          "inventoryHash": "285318215fc2a729d25008510233292fce33d9b8b6a1b2f993b4dc3131ec0f95"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 311,
+          "validMediaPlaylist": true,
+          "inventoryHash": "87e26d94cb7b8fa6eb598e58a666494f600d3d903ea75e4a16ec904ef45385bd"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 311,
+          "validMediaPlaylist": true,
+          "inventoryHash": "d2985fec46a577ba95844d422cf547be4b7b9088d388e0e819f7af6d99f6ac5a"
+        }
+      ],
+      "source": {
+        "title": "Similarity 03",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1245,
+      "segmentChecks": {
+        "uniqueSegments": 1245,
+        "checked": 15,
+        "passed": 14,
+        "failures": [
+          {
+            "rung": "480p",
+            "index": 308,
+            "file": "master-976936.2217248445308.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 511,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 511,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace9446c9735682f04eed33",
+      "classId": "6ace94468752d955968b1d1d",
+      "oldAssetKey": "vid:rgvikramjeet-data:838439-1716298822",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15352",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-4948664.169707267174.ts",
+        "rung": "360p"
+      },
+      "checkedAt": "2026-10-27T11:10:04.299Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 379,
+          "validMediaPlaylist": true,
+          "inventoryHash": "8be0ce459ba8e7be9386699ab56f010053ac131918b2061b4be2c18e8708207d"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 379,
+          "validMediaPlaylist": true,
+          "inventoryHash": "b0f37ca64b65d3a3a99b25ef90755161e2deb4ef2496e412545ca1b143ba615a"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 379,
+          "validMediaPlaylist": true,
+          "inventoryHash": "4edd5085128c9d0fd9aab345cd5990f88863a1e9fd5bde32816da50f3826e072"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 379,
+          "validMediaPlaylist": true,
+          "inventoryHash": "9ac4cdad5bcf7f0991eee94d446a593b22da7947a02ab5f5043685f1d4b587c8"
+        }
+      ],
+      "source": {
+        "title": "Statement - Assumption 02",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1516,
+      "segmentChecks": {
+        "uniqueSegments": 1516,
+        "checked": 14,
+        "passed": 13,
+        "failures": [
+          {
+            "rung": "360p",
+            "index": 174,
+            "file": "master-4948664.169707267174.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 511,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 511,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace9470c9735682f04eedc0",
+      "classId": "6ace94708752d955968b1ecf",
+      "oldAssetKey": "drm:ecfdd952-1ce5-4a93-a21c-08eaab8a4f64",
+      "category": "source404",
+      "course": "22",
+      "rowId": "16186",
+      "originalFailure": {
+        "host": "transcoded-recordings.classx.co.in",
+        "file": "master-4524532.516188366.m3u85.ts",
+        "rung": "drm-hls"
+      },
+      "checkedAt": "2026-10-27T11:10:10.899Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 313,
+          "validMediaPlaylist": true,
+          "inventoryHash": "87bf184b78ae3d4ec5017c48a0bcfa4ea3e35e3cf8916335e5bac75725114862"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 313,
+          "validMediaPlaylist": true,
+          "inventoryHash": "67e8e830d85f59b9fd4599adc7cd238354ec0ee9ffce244ee3d27cab6b82ee1c"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 313,
+          "validMediaPlaylist": true,
+          "inventoryHash": "63e3f09645765dd5369f378c8cd2422bf58900ecc45011bd3c1fc1edfc90ee7b"
+        }
+      ],
+      "source": {
+        "title": "Preamble (CLASS 01)",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 939,
+      "segmentChecks": {
+        "uniqueSegments": 939,
+        "checked": 5,
+        "passed": 4,
+        "failures": [
+          {
+            "rung": "240p",
+            "index": 5,
+            "file": "master-4524532.516188366.m3u85.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 509,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 509,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 3,
+        "originalFailureChecked": 3,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace947ac9735682f04eedf2",
+      "classId": "6ace947a8752d955968b1f77",
+      "oldAssetKey": "vid:rgvikramjeet-data:611217-1709311330",
+      "category": "source404",
+      "course": "22",
+      "rowId": "16237",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-8676875.7950856767.ts",
+        "rung": "240p"
+      },
+      "checkedAt": "2026-10-27T11:10:16.606Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 235,
+          "validMediaPlaylist": true,
+          "inventoryHash": "4238243cfe86dde55b06dbe71e1668e6b01159c68a5202c95c2d8af3a8dc5b5a"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 235,
+          "validMediaPlaylist": true,
+          "inventoryHash": "ebd5cc4a8fae43590cc32ee63f8f24949492b013ce047a4fe4f95a470f9e153c"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 235,
+          "validMediaPlaylist": true,
+          "inventoryHash": "973dfedeb6784bee7c6a36ab1520594e6b1776abf94e1f5d533ce67383619071"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 235,
+          "validMediaPlaylist": true,
+          "inventoryHash": "25ee3dec208affcbebeaf4894ec4636749800a416b162fc7ea72e7d00fe3e73c"
+        }
+      ],
+      "source": {
+        "title": "PARLIAMENT 04",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 940,
+      "segmentChecks": {
+        "uniqueSegments": 940,
+        "checked": 8,
+        "passed": 7,
+        "failures": [
+          {
+            "rung": "240p",
+            "index": 67,
+            "file": "master-8676875.7950856767.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 509,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 509,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace9480c9735682f04eee0f",
+      "classId": "6ace94808752d955968b1fd9",
+      "oldAssetKey": "vid:rgvikramjeet-data:514137-1705732556",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15824",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-5328907.909013107147.ts",
+        "rung": "360p"
+      },
+      "checkedAt": "2026-10-27T11:10:23.460Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 203,
+          "validMediaPlaylist": true,
+          "inventoryHash": "f047186784141c422203f94f988838f3859565c69c01bed4d543cb4f6f37c4b4"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 203,
+          "validMediaPlaylist": true,
+          "inventoryHash": "6b975e3a34b0938be622016f6b62df88fd62418947d4c098eb6fd0ddb0e64bfe"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 205,
+          "validMediaPlaylist": true,
+          "inventoryHash": "d8683057b42d90d50bbac7fffaf52a6c83041cfec8faa7864b7969b1a3428c93"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 200,
+          "validMediaPlaylist": true,
+          "inventoryHash": "1d6bec30568e648f17a2b80685e52b8ac79de2b1950e403c5dafb0740d14a8da"
+        }
+      ],
+      "source": {
+        "title": "Economics Class 03",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 811,
+      "segmentChecks": {
+        "uniqueSegments": 811,
+        "checked": 9,
+        "passed": 8,
+        "failures": [
+          {
+            "rung": "360p",
+            "index": 147,
+            "file": "master-5328907.909013107147.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 511,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 511,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace94d7c9735682f04ef00e",
+      "classId": "6ace94d78752d955968b2506",
+      "oldAssetKey": "drm:7a18a6fb-213e-4eeb-a807-01f1e781fa1d",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15706",
+      "originalFailure": {
+        "host": "transcoded-recordings.classx.co.in",
+        "file": "master-7959432.9834825415.m3u8158.ts",
+        "rung": "drm-hls"
+      },
+      "checkedAt": "2026-10-27T11:10:30.525Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 314,
+          "validMediaPlaylist": true,
+          "inventoryHash": "22ef122fd7ec9ada113268dc5dd1d129069bbbe86424f2440682edefb901fca0"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 314,
+          "validMediaPlaylist": true,
+          "inventoryHash": "aa4ccbbc5c0ca416f4b33e5b3d2b6ed85ff3bac7005bd04fcb161f6247e56b7b"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 314,
+          "validMediaPlaylist": true,
+          "inventoryHash": "f2f65b1a42b8d72bd2060f3e1f2a62efa5d68c11ff9a86d3db1962e73ac958f5"
+        }
+      ],
+      "source": {
+        "title": "Carbon & Its Compouns 01 ",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 942,
+      "segmentChecks": {
+        "uniqueSegments": 942,
+        "checked": 9,
+        "passed": 8,
+        "failures": [
+          {
+            "rung": "360p",
+            "index": 158,
+            "file": "master-7959432.9834825415.m3u8158.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 512,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 512,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 3,
+        "originalFailureChecked": 3,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace94ecc9735682f04ef087",
+      "classId": "6ace94eb8752d955968b2641",
+      "oldAssetKey": "vid:rgvikramjeet-data:416836-1702276104",
+      "category": "source404",
+      "course": "22",
+      "rowId": "16484",
+      "originalFailure": {
+        "host": "transcoded-recordings.classx.co.in",
+        "file": "master-5884975.94777049.m3u814.ts",
+        "rung": "360p"
+      },
+      "checkedAt": "2026-10-27T11:10:37.805Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 201,
+          "validMediaPlaylist": true,
+          "inventoryHash": "f065f12cd0f736e1749cbfff79f13bd6899a072296669e8b6f2a166ab095662e"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 201,
+          "validMediaPlaylist": true,
+          "inventoryHash": "2f698731c108ac7058898461f2a7cbda67be9dd9569f19a8ef8bffd54f489532"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 201,
+          "validMediaPlaylist": true,
+          "inventoryHash": "15866650c1922ae49dee2bc07a96b5e6a9c35eac4c4a739c1ba812db58546691"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 201,
+          "validMediaPlaylist": true,
+          "inventoryHash": "f2d610f6acab0d7df9b756bf731af77381546bcb3f16b9ea15a78766bce61fa8"
+        }
+      ],
+      "source": {
+        "title": "IMPORTANT AWARD (महत्वपूर्ण पुरस्कार )",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 804,
+      "segmentChecks": {
+        "uniqueSegments": 804,
+        "checked": 9,
+        "passed": 8,
+        "failures": [
+          {
+            "rung": "360p",
+            "index": 14,
+            "file": "master-5884975.94777049.m3u814.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 507,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 507,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace9550c9735682f04ef228",
+      "classId": "6ace95508752d955968b2b78",
+      "oldAssetKey": "vid:rgvikramjeet-data:413406-1702104829",
+      "category": "source404",
+      "course": "24",
+      "rowId": "17883",
+      "originalFailure": {
+        "host": "transcoded-recordings.classx.co.in",
+        "file": "master-5377367.930973194.m3u8.m3u8",
+        "rung": "240p"
+      },
+      "checkedAt": "2026-10-27T11:10:45.690Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 404,
+          "endList": false,
+          "segments": 0,
+          "validMediaPlaylist": false
+        }
+      ],
+      "source": {
+        "title": "Demo 01 (Percentage) ",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": false,
+      "listedSegmentReferences": null,
+      "outcome": "required rendition playlist unavailable or unsupported"
+    },
+    {
+      "job": "6ace9582c9735682f04ef311",
+      "classId": "6ace95828752d955968b2e73",
+      "oldAssetKey": "vid:rgvikramjeet-data:584252-1708404954",
+      "category": "source404",
+      "course": "25",
+      "rowId": "18628",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-2183562.6497600093141.ts",
+        "rung": "360p"
+      },
+      "checkedAt": "2026-10-27T11:10:47.613Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 320,
+          "validMediaPlaylist": true,
+          "inventoryHash": "1da03f6b1d2cfc4afc61c09b25047855fc9bd4157aa38547e9d0b0ea2040fed1"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 314,
+          "validMediaPlaylist": true,
+          "inventoryHash": "6de5b64b681ce074ed9d71779a7ca26641bf83b70b4ea50d191df01c26e5ea26"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 314,
+          "validMediaPlaylist": true,
+          "inventoryHash": "e994389270850d370a8c1df156cd52ffaa1ad3ad301b97b591568e94854cad4f"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 314,
+          "validMediaPlaylist": true,
+          "inventoryHash": "132048343fa59b62bb577cefc965d8c211d79751d6dcc5ea2df700bd45345a93"
+        }
+      ],
+      "source": {
+        "title": "Trigonometry Class 02",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1262,
+      "segmentChecks": {
+        "uniqueSegments": 1262,
+        "checked": 15,
+        "passed": 14,
+        "failures": [
+          {
+            "rung": "360p",
+            "index": 141,
+            "file": "master-2183562.6497600093141.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 512,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 512,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace9583c9735682f04ef319",
+      "classId": "6ace95838752d955968b2e81",
+      "oldAssetKey": "vid:rgvikramjeet-data:656721-1710847787",
+      "category": "source404",
+      "course": "25",
+      "rowId": "18648",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-6052796.37528637545.ts",
+        "rung": "360p"
+      },
+      "checkedAt": "2026-10-27T11:10:53.055Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 442,
+          "validMediaPlaylist": true,
+          "inventoryHash": "5bc51ea723b209b3a4fa6ce9302d5b39605166e9e11a5a0b7f66c04b735af930"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 442,
+          "validMediaPlaylist": true,
+          "inventoryHash": "814031ef819cda29e2badce682bde1324ae83b01f8acd25f4b27e4e3efccfb99"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 442,
+          "validMediaPlaylist": true,
+          "inventoryHash": "cec6256c302629ba77d506c195b3b2b367ccea9395c0c72263722a3ce9f8ae5c"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 443,
+          "validMediaPlaylist": true,
+          "inventoryHash": "0462f495e669fbd73ddea55b1481c0c658ae31e7f43ae403fe7c0cf109fbcced"
+        }
+      ],
+      "source": {
+        "title": "Trigonometry Class 19",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1769,
+      "segmentChecks": {
+        "uniqueSegments": 1769,
+        "checked": 22,
+        "passed": 21,
+        "failures": [
+          {
+            "rung": "360p",
+            "index": 45,
+            "file": "master-6052796.37528637545.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 510,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 510,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace98acc9735682f04f025a",
+      "classId": "6ace98ac8752d955968b5b90",
+      "oldAssetKey": "vid:rgvikramjeet-data:866003-1717036990",
+      "category": "source404",
+      "course": "42",
+      "rowId": "31407",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-115758.48027206348145.ts",
+        "rung": "240p"
+      },
+      "checkedAt": "2026-10-27T11:10:59.595Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 299,
+          "validMediaPlaylist": true,
+          "inventoryHash": "6030d3257e14611b0a39488258169e1ff6af565364bfdf606230c64ab8cfdd85"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 299,
+          "validMediaPlaylist": true,
+          "inventoryHash": "b91756744f57463de510f5dfad4f3ae919b7481a59d78cb012fd351ebbb8a080"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 299,
+          "validMediaPlaylist": true,
+          "inventoryHash": "3d5c3bad98d7b886f66601697bede237643b517b1c438a162fb9b8736501fbf7"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 299,
+          "validMediaPlaylist": true,
+          "inventoryHash": "0683dae095365934f19d84718020779bb4e8067a6311b891f6ee8e2e4838b7b3"
+        }
+      ],
+      "source": {
+        "title": "Botany 03",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1196,
+      "segmentChecks": {
+        "uniqueSegments": 1196,
+        "checked": 19,
+        "passed": 18,
+        "failures": [
+          {
+            "rung": "240p",
+            "index": 145,
+            "file": "master-115758.48027206348145.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 512,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 512,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace98afc9735682f04f0266",
+      "classId": "6ace98ae8752d955968b5bba",
+      "oldAssetKey": "vid:rgvikramjeet-data:897148-1717904603",
+      "category": "source404",
+      "course": "42",
+      "rowId": "31414",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-3948535.203345184748.ts",
+        "rung": "360p"
+      },
+      "checkedAt": "2026-10-27T11:11:05.801Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 363,
+          "validMediaPlaylist": true,
+          "inventoryHash": "fc21c41a4b1d57081f5004fc9e50e3da1878625787da10e2fa81f60f71d59d00"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 363,
+          "validMediaPlaylist": true,
+          "inventoryHash": "7053834c89ddbe6a14d3645cd599ebd0a6b9f05cfaacbe0551573d54749994f0"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 363,
+          "validMediaPlaylist": true,
+          "inventoryHash": "ab70efafb00f24293ba515f03dc978b06007f783a5772867bce644108e6eaa7c"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 363,
+          "validMediaPlaylist": true,
+          "inventoryHash": "ed8f8f199091f54aca00673df15a149a0ed438727019e9e46862e0efbec5312a"
+        }
+      ],
+      "source": {
+        "title": "Botany 09",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1452,
+      "segmentChecks": {
+        "uniqueSegments": 1452,
+        "checked": 12,
+        "passed": 11,
+        "failures": [
+          {
+            "rung": "360p",
+            "index": 48,
+            "file": "master-3948535.203345184748.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 511,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 511,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace98d2c9735682f04f0326",
+      "classId": "6ace98d18752d955968b5e0d",
+      "oldAssetKey": "vid:rgvikramjeet-data:840565-1716363637",
+      "category": "source404",
+      "course": "42",
+      "rowId": "31789",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-9148746.37931428321.ts",
+        "rung": "240p"
+      },
+      "checkedAt": "2026-10-27T11:11:13.025Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 337,
+          "validMediaPlaylist": true,
+          "inventoryHash": "fe201f4d89c4e7c1027706b993f26a64488990d99ceae0a7074e431d41c6ebf3"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 337,
+          "validMediaPlaylist": true,
+          "inventoryHash": "cc8318f80d10c69147a551a5ec91db7402887efcba18a47074420b1b84a3f912"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 337,
+          "validMediaPlaylist": true,
+          "inventoryHash": "47e44be7d28a0fb610e649318beb811f756483226ef81e7ec997429b5a723985"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 337,
+          "validMediaPlaylist": true,
+          "inventoryHash": "e96b38edcbf40fcafbc46c03348e5fce55649936728b2b6be2a910bcbc53de53"
+        }
+      ],
+      "source": {
+        "title": "Electric Potential",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1348,
+      "segmentChecks": {
+        "uniqueSegments": 1348,
+        "checked": 10,
+        "passed": 9,
+        "failures": [
+          {
+            "rung": "240p",
+            "index": 21,
+            "file": "master-9148746.37931428321.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 510,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 510,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ace98fcc9735682f04f03fb",
+      "classId": "6ace98fc8752d955968b60c6",
+      "oldAssetKey": "vid:rgvikramjeet-data:806069-1715411053",
+      "category": "source404",
+      "course": "45",
+      "rowId": "33744",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-8907740.747797674279.ts",
+        "rung": "240p"
+      },
+      "checkedAt": "2026-10-27T11:11:20.535Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 296,
+          "validMediaPlaylist": true,
+          "inventoryHash": "7d11d1871dd5a381cc569c0faca28a1c9c37bf561bbff17461dc1ddc080bb840"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 296,
+          "validMediaPlaylist": true,
+          "inventoryHash": "7ef7194f4893197cb34fb10375755196d014a6f5f1debe7da318745f5dcdf3c4"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 296,
+          "validMediaPlaylist": true,
+          "inventoryHash": "4a00e4cefa58d2f54aede29610ddd74fa1cdf33109e1c6e1a3ace2de6414bf8d"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 296,
+          "validMediaPlaylist": true,
+          "inventoryHash": "517a29938904e989aed6d0be5d98603240b117281a9fde43395a6b1f102874bc"
+        }
+      ],
+      "source": {
+        "title": "Work & Wages Class 01",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1184,
+      "segmentChecks": {
+        "uniqueSegments": 1184,
+        "checked": 8,
+        "passed": 7,
+        "failures": [
+          {
+            "rung": "240p",
+            "index": 279,
+            "file": "master-8907740.747797674279.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 511,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 511,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 4,
+        "originalFailureChecked": 4,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6acea4e3c9735682f04f1967",
+      "classId": "6acea4e38752d955968b933c",
+      "oldAssetKey": "vid:armaths-data:3802821-1780151643",
+      "category": "noPlayableURL",
+      "course": "71",
+      "rowId": "189848",
+      "originalFailure": null,
+      "checkedAt": "2026-10-27T11:11:29.638Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 320,
+          "validMediaPlaylist": true,
+          "inventoryHash": "634f3370b99c1268d80f3f0f8ac45856ff6a0c79a40fa5cf6f50f5d36dea439b"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 316,
+          "validMediaPlaylist": true,
+          "inventoryHash": "d6299d6820a5bc3e998f5f2830556d708cf7c3e36cc64177574441e81829278c"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 317,
+          "validMediaPlaylist": true,
+          "inventoryHash": "92eddb9bbf6637254a2284df1de1ca2c84305e4d0ada74beb60d9b484487ade0"
+        }
+      ],
+      "source": {
+        "title": "Glands 02",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 953,
+      "segmentChecks": {
+        "uniqueSegments": 953,
+        "checked": 953,
+        "passed": 953,
+        "failures": [],
+        "originalFailureReferences": 0,
+        "originalFailureChecked": 0,
+        "complete": true
+      },
+      "outcome": "all required segment references readable"
+    },
+    {
+      "job": "6acea4e8c9735682f04f196d",
+      "classId": "6acea4e88752d955968b9343",
+      "oldAssetKey": "vid:armaths-data:3809395-1780324441",
+      "category": "noPlayableURL",
+      "course": "71",
+      "rowId": "189849",
+      "originalFailure": null,
+      "checkedAt": "2026-10-27T11:14:44.805Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 286,
+          "validMediaPlaylist": true,
+          "inventoryHash": "0ae5624b2e16f3ba2049987ab6a74754d9ea3fb13f2f2a9bf779dbc2e0233c41"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 281,
+          "validMediaPlaylist": true,
+          "inventoryHash": "7940bc48d7eaaaf3201e27e5f7a74bb031ae133582df5887fc0f9e484de9040a"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 281,
+          "validMediaPlaylist": true,
+          "inventoryHash": "ae9f84b4098263b684184478fefbbd6a8b632ab8d33196cf3faba27eb8be7b91"
+        }
+      ],
+      "source": {
+        "title": "Glands 03",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 848,
+      "segmentChecks": {
+        "uniqueSegments": 848,
+        "checked": 848,
+        "passed": 848,
+        "failures": [],
+        "originalFailureReferences": 0,
+        "originalFailureChecked": 0,
+        "complete": true
+      },
+      "outcome": "all required segment references readable"
+    },
+    {
+      "job": "6acea4ecc9735682f04f1971",
+      "classId": "6acea4ec8752d955968b934a",
+      "oldAssetKey": "vid:armaths-data:3815152-1780410494",
+      "category": "noPlayableURL",
+      "course": "71",
+      "rowId": "189850",
+      "originalFailure": null,
+      "checkedAt": "2026-10-27T11:17:26.825Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 277,
+          "validMediaPlaylist": true,
+          "inventoryHash": "f7a10c014ac59625ff00b45ee6eef681326dd9b4d16affa59c79cef695ff1a10"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 277,
+          "validMediaPlaylist": true,
+          "inventoryHash": "1e61b4d7bf891ef4cb1276c4049ef6ebfe14a9a98bd4e2c582d8c2db48636108"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 277,
+          "validMediaPlaylist": true,
+          "inventoryHash": "0ba47f8a0a80c266abe2d21663310fbab455b4187c897e1d1dd311e58627c1c3"
+        }
+      ],
+      "source": {
+        "title": "Glands 04",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 831,
+      "segmentChecks": {
+        "uniqueSegments": 831,
+        "checked": 831,
+        "passed": 831,
+        "failures": [],
+        "originalFailureReferences": 0,
+        "originalFailureChecked": 0,
+        "complete": true
+      },
+      "outcome": "all required segment references readable"
+    },
+    {
+      "job": "6acea4f0c9735682f04f1973",
+      "classId": "6acea4f08752d955968b9351",
+      "oldAssetKey": "vid:armaths-data:3818401-1780474757",
+      "category": "noPlayableURL",
+      "course": "71",
+      "rowId": "189853",
+      "originalFailure": null,
+      "checkedAt": "2026-10-27T11:19:52.341Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 227,
+          "validMediaPlaylist": true,
+          "inventoryHash": "87c9bf983d9ed537444f46d5013d3f723ffcba4df8d8ec7b7cc899cd2ccc05d3"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 227,
+          "validMediaPlaylist": true,
+          "inventoryHash": "608379f1d6ae6a32a9ebe00825f4502866b76433c1d8c1af7c42928fefe614e4"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 227,
+          "validMediaPlaylist": true,
+          "inventoryHash": "683ef225f0652a68833ed77841e441ea277c2606b539a1c11c65841f7000802d"
+        }
+      ],
+      "source": {
+        "title": "Glands 05",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 681,
+      "segmentChecks": {
+        "uniqueSegments": 681,
+        "checked": 681,
+        "passed": 681,
+        "failures": [],
+        "originalFailureReferences": 0,
+        "originalFailureChecked": 0,
+        "complete": true
+      },
+      "outcome": "all required segment references readable"
+    },
+    {
+      "job": "6aceab0fc9735682f04f2157",
+      "classId": "6aceab0f8752d955968ba1ad",
+      "oldAssetKey": "vid:englishjaisir-data:611321-1709317626",
+      "category": "source404",
+      "course": "87",
+      "rowId": "42132",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-9934889.858943759875.ts",
+        "rung": "480p"
+      },
+      "checkedAt": "2026-10-27T11:21:36.664Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 950,
+          "validMediaPlaylist": true,
+          "inventoryHash": "991c441533358a00b740824db01354144b17cb3a6c3d8f616d83ae7f02b35091"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 950,
+          "validMediaPlaylist": true,
+          "inventoryHash": "f58d8aee5c471a9d2e1fe1a322ecb87600e93533d28424bda2e27690e1d19697"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 950,
+          "validMediaPlaylist": true,
+          "inventoryHash": "31a2a3bfca78f6b3d95410cead80bfa6584d0116e2e086eb3b23ec7bbac4ff8c"
+        }
+      ],
+      "source": {
+        "title": "SUPER SET-01 (HIGH LEVEL)",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 2850,
+      "segmentChecks": {
+        "uniqueSegments": 2850,
+        "checked": 13,
+        "passed": 12,
+        "failures": [
+          {
+            "rung": "480p",
+            "index": 875,
+            "file": "master-9934889.858943759875.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 512,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 512,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 3,
+        "originalFailureChecked": 3,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6aceab1bc9735682f04f2198",
+      "classId": "6aceab1b8752d955968ba1d0",
+      "oldAssetKey": "vid:englishjaisir-data:641040-1710352954",
+      "category": "source404",
+      "course": "87",
+      "rowId": "42137",
+      "originalFailure": {
+        "host": "transcoded-videos-legacy.classx.co.in",
+        "file": "master-7262268.954336431533.ts",
+        "rung": "480p"
+      },
+      "checkedAt": "2026-10-27T11:21:46.823Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 827,
+          "validMediaPlaylist": true,
+          "inventoryHash": "82cfb7231f58da9db48defb2020bd11687699fca671a83b67a4f7a13a136ca58"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 827,
+          "validMediaPlaylist": true,
+          "inventoryHash": "868654c9bc0afa4232358105e975e8e5e9ac216c4832f89c31c7b831a4a1498c"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 827,
+          "validMediaPlaylist": true,
+          "inventoryHash": "ab9677a20e085f152116f7f463ba452c6b6062aff2b3239abb1330538b0e3392"
+        }
+      ],
+      "source": {
+        "title": "SUPER SET-06 (HIGH LEVEL)",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 2481,
+      "segmentChecks": {
+        "uniqueSegments": 2481,
+        "checked": 12,
+        "passed": 11,
+        "failures": [
+          {
+            "rung": "480p",
+            "index": 533,
+            "file": "master-7262268.954336431533.ts",
+            "originalFailure": true,
+            "http": 404,
+            "bytes": 512,
+            "tsSync": false,
+            "mp4": false,
+            "ok": false,
+            "confirmation": {
+              "http": 404,
+              "bytes": 512,
+              "tsSync": false,
+              "mp4": false,
+              "ok": false
+            }
+          }
+        ],
+        "originalFailureReferences": 3,
+        "originalFailureChecked": 3,
+        "complete": false
+      },
+      "outcome": "confirmed source segment gap"
+    },
+    {
+      "job": "6ad5df30c9735682f0a0c5d4",
+      "classId": "6ad5df3064b695f53d872c12",
+      "oldAssetKey": "vid:armaths-data:4603716-1791963341",
+      "category": "noPlayableURL",
+      "course": "131",
+      "rowId": "193431",
+      "originalFailure": null,
+      "checkedAt": "2026-10-27T11:21:57.635Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 259,
+          "validMediaPlaylist": true,
+          "inventoryHash": "4d34cdf6b6c23930067d2ae80f83f7f50691abb15936e5327261cc0cfe196b42"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 257,
+          "validMediaPlaylist": true,
+          "inventoryHash": "2b4529aa6720503ad61fe6d25d1b2605e625371a4dd0ef4144129b1d57eaacce"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 257,
+          "validMediaPlaylist": true,
+          "inventoryHash": "391acc6d811af455a7993bc9b5398f91b4cb4f91aceb2dd499dd54b0a7b5f8b7"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 257,
+          "validMediaPlaylist": true,
+          "inventoryHash": "b6598cf01305eec33d3de2c010b66c7a70eca66c9b74db831a8aa44acf5a3b5c"
+        }
+      ],
+      "source": {
+        "title": "Internet",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1030,
+      "segmentChecks": {
+        "uniqueSegments": 1030,
+        "checked": 1030,
+        "passed": 1030,
+        "failures": [],
+        "originalFailureReferences": 0,
+        "originalFailureChecked": 0,
+        "complete": true
+      },
+      "outcome": "all required segment references readable"
+    },
+    {
+      "job": "6ad5df31c9735682f0a0c5d7",
+      "classId": "6ad5df3164b695f53d872c19",
+      "oldAssetKey": "vid:armaths-data:4611456-1792049999",
+      "category": "noPlayableURL",
+      "course": "131",
+      "rowId": "193432",
+      "originalFailure": null,
+      "checkedAt": "2026-10-27T11:24:41.311Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 282,
+          "validMediaPlaylist": true,
+          "inventoryHash": "deedce2bb732cfdea10b384ea89975a5f041d7630e0e49300d797ec6ca8e60b8"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 275,
+          "validMediaPlaylist": true,
+          "inventoryHash": "af8a3bf94ca90919c4669f7a8f018c60e023128d76c7ae9747704bd2aa986959"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 273,
+          "validMediaPlaylist": true,
+          "inventoryHash": "e3c9c84ce9037f2b39afd9c517db7a8441bae48240288866b16f3445e975c225"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 274,
+          "validMediaPlaylist": true,
+          "inventoryHash": "b14d8a76fc5a6eac28b309891d4780146fbcceb7507bd038e9c9f28c7c1b457e"
+        }
+      ],
+      "source": {
+        "title": "Internet 02",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 1104,
+      "segmentChecks": {
+        "uniqueSegments": 1104,
+        "checked": 1104,
+        "passed": 1104,
+        "failures": [],
+        "originalFailureReferences": 0,
+        "originalFailureChecked": 0,
+        "complete": true
+      },
+      "outcome": "all required segment references readable"
+    },
+    {
+      "job": "6ad5df31c9735682f0a0c5da",
+      "classId": "6ad5df3164b695f53d872c20",
+      "oldAssetKey": "vid:armaths-data:4619107-1792135845",
+      "category": "noPlayableURL",
+      "course": "131",
+      "rowId": "193434",
+      "originalFailure": null,
+      "checkedAt": "2026-10-27T11:27:47.202Z",
+      "renditions": [],
+      "source": {
+        "title": "Internet 03",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    }
+  ],
+  "requests": 6066,
+  "cmsRequests": 58,
+  "mediaRequests": 6008,
+  "requestBudget": 120000,
+  "segmentBytes": 5960604,
+  "productionWrites": 0,
+  "policy": {
+    "mediaConcurrency": 4,
+    "mediaRequestsPerSecond": 8,
+    "cmsGapMs": 1100,
+    "range": "0-1023",
+    "stopAfterConfirmedGap": true
+  },
+  "courseList": {
+    "count": 147,
+    "total": 147
+  },
+  "completedAt": "2026-10-27T11:27:47.912Z",
+  "all43Considered": true,
+  "checkpoint": true,
+  "transport": "direct local HTTPS; session cookie only to cms.appx.co.in"
+}

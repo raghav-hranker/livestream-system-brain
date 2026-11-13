@@ -1,0 +1,31 @@
+{
+  "filter": {
+    "_id": {
+      "$oid": "6ace9397c9735682f04ee9c4"
+    },
+    "status": "dead",
+    "attempts": {
+      "$numberInt": "5"
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1791939099175"
+      }
+    }
+  },
+  "set": {
+    "status": "claimed",
+    "attempts": {
+      "$numberInt": "6"
+    },
+    "error": null,
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1793104394356"
+      }
+    },
+    "course_id": "22",
+    "video_id": "16294",
+    "video_url": "https://appx-recordings-mcdn.akamai.net.in/videos/rgvikramjeet-data/412887-1702040847/hls/1080p/master-7067310.971135514.m3u8.m3u8"
+  }
+}

@@ -1,0 +1,20 @@
+== encoder vidyagram-livestream
+ 15:42:21 up  1:17,  1 user,  load average: 2.26, 2.13, 2.03
+/dev/nvme0n1p1  197G  7.1G  182G   4% /
+│ id │ name                    │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+│ 0  │ vidyagram-livestream    │ default     │ 1.0.0   │ fork    │ 598      │ 77m    │ 0    │ online    │ 0%       │ 334.7mb  │ raghav   │ disabled │
+ffmpeg processes: 1
+connections on 8937: 2
+
+== classes in vidyagramdb
+now 2026-11-04 21:12:23
+6aeb40abc408c8bdb18f7c25 | test 00 | live | isLive false | start - | updated 2026-11-04 21:09:51 | asset live 781/6aeb40abc408c8bdb18f7c25/playlist.m3u8
+
+== signed walk of 6aeb40abc408c8bdb18f7c25
+{"streamStatus":"live","key":"781/6aeb40abc408c8bdb18f7c25/playlist.m3u8","provider":"cloudflare","master":"vidyagram-live.hranker.org/v/<token>/781/6aeb40abc408c8bdb18f7c25/playlist.m3u8"}
+{"master":200,"renditions":["0/playlist.m3u8","1/playlist.m3u8","2/playlist.m3u8","3/playlist.m3u8","4/playlist.m3u8"]}
+{"rel":"0/playlist.m3u8","status":200,"segments":1088,"seconds":4325,"endlist":false,"probe":[{"seg":"segment_0.ts","status":200,"bytes":193264,"ts":true,"cache":"HIT"},{"seg":"segment_544.ts","status":200,"bytes":546516,"ts":true,"cache":"MISS"},{"seg":"segment_1087.ts","status":200,"bytes":463232,"ts":true,"cache":"MISS"}]}
+{"rel":"1/playlist.m3u8","status":200,"segments":1088,"seconds":4325,"endlist":false,"probe":[{"seg":"segment_0.ts","status":200,"bytes":122764,"ts":true,"cache":"HIT"},{"seg":"segment_544.ts","status":200,"bytes":331820,"ts":true,"cache":"MISS"},{"seg":"segment_1087.ts","status":200,"bytes":301740,"ts":true,"cache":"MISS"}]}
+{"rel":"2/playlist.m3u8","status":200,"segments":1089,"seconds":4330,"endlist":false,"probe":[{"seg":"segment_0.ts","status":200,"bytes":100016,"ts":true,"cache":"HIT"},{"seg":"segment_544.ts","status":200,"bytes":264516,"ts":true,"cache":"MISS"},{"seg":"segment_1088.ts","status":200,"bytes":377128,"ts":true,"cache":"MISS"}]}
+{"rel":"3/playlist.m3u8","status":200,"segments":1089,"seconds":4330,"endlist":false,"probe":[{"seg":"segment_0.ts","status":200,"bytes":76704,"ts":true,"cache":"HIT"},{"seg":"segment_544.ts","status":200,"bytes":181796,"ts":true,"cache":"MISS"},{"seg":"segment_1088.ts","status":200,"bytes":268276,"ts":true,"cache":"MISS"}]}
+{"rel":"4/playlist.m3u8","status":200,"segments":1090,"seconds":4333,"endlist":false,"probe":[{"seg":"segment_0.ts","status":200,"bytes":127464,"ts":true,"cache":"HIT"},{"seg":"segment_545.ts","status":200,"bytes":151340,"ts":true,"cache":"MISS"},{"seg":"segment_1089.ts","status":200,"bytes":173712,"ts":true,"cache":"MISS"}]}

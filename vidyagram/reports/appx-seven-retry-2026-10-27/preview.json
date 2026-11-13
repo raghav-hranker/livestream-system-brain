@@ -1,0 +1,158 @@
+{
+  "at": "2026-10-27T11:55:41.941Z",
+  "tenant": "781",
+  "database": "vidyagramdb",
+  "targets": [
+    {
+      "job": "6acea4e3c9735682f04f1967",
+      "classId": "6acea4e38752d955968b933c",
+      "title": "Glands 02 · Biology",
+      "status": "dead",
+      "attempts": 1,
+      "progress": {
+        "segmentsDone": 0,
+        "segmentsTotal": 0
+      },
+      "errorSummary": "AppX returned no playable URL for this video",
+      "hasHls": false,
+      "sameUpdatedAt": true,
+      "sameSourcePair": false,
+      "jobSourceCourse": "71",
+      "jobSourceRow": "177031",
+      "surveyCourse": "71",
+      "surveyRow": "189848",
+      "visiblePlacements": 2
+    },
+    {
+      "job": "6acea4e8c9735682f04f196d",
+      "classId": "6acea4e88752d955968b9343",
+      "title": "Glands 03 · Biology",
+      "status": "dead",
+      "attempts": 1,
+      "progress": {
+        "segmentsDone": 0,
+        "segmentsTotal": 0
+      },
+      "errorSummary": "AppX returned no playable URL for this video",
+      "hasHls": false,
+      "sameUpdatedAt": true,
+      "sameSourcePair": false,
+      "jobSourceCourse": "71",
+      "jobSourceRow": "177032",
+      "surveyCourse": "71",
+      "surveyRow": "189849",
+      "visiblePlacements": 2
+    },
+    {
+      "job": "6acea4ecc9735682f04f1971",
+      "classId": "6acea4ec8752d955968b934a",
+      "title": "Glands 04 · Biology",
+      "status": "dead",
+      "attempts": 1,
+      "progress": {
+        "segmentsDone": 0,
+        "segmentsTotal": 0
+      },
+      "errorSummary": "AppX returned no playable URL for this video",
+      "hasHls": false,
+      "sameUpdatedAt": true,
+      "sameSourcePair": false,
+      "jobSourceCourse": "71",
+      "jobSourceRow": "177033",
+      "surveyCourse": "71",
+      "surveyRow": "189850",
+      "visiblePlacements": 2
+    },
+    {
+      "job": "6acea4f0c9735682f04f1973",
+      "classId": "6acea4f08752d955968b9351",
+      "title": "Glands 05 · Biology",
+      "status": "dead",
+      "attempts": 1,
+      "progress": {
+        "segmentsDone": 0,
+        "segmentsTotal": 0
+      },
+      "errorSummary": "AppX returned no playable URL for this video",
+      "hasHls": false,
+      "sameUpdatedAt": true,
+      "sameSourcePair": false,
+      "jobSourceCourse": "71",
+      "jobSourceRow": "177036",
+      "surveyCourse": "71",
+      "surveyRow": "189853",
+      "visiblePlacements": 2
+    },
+    {
+      "job": "6ad5df30c9735682f0a0c5d4",
+      "classId": "6ad5df3064b695f53d872c12",
+      "title": "Internet",
+      "status": "dead",
+      "attempts": 1,
+      "progress": {
+        "segmentsDone": 0,
+        "segmentsTotal": 0
+      },
+      "errorSummary": "AppX returned no playable URL for this video",
+      "hasHls": false,
+      "sameUpdatedAt": true,
+      "sameSourcePair": false,
+      "jobSourceCourse": "131",
+      "jobSourceRow": "189895",
+      "surveyCourse": "131",
+      "surveyRow": "193431",
+      "visiblePlacements": 1
+    },
+    {
+      "job": "6ad5df31c9735682f0a0c5d7",
+      "classId": "6ad5df3164b695f53d872c19",
+      "title": "Internet 02 · Internet (2)",
+      "status": "dead",
+      "attempts": 1,
+      "progress": {
+        "segmentsDone": 0,
+        "segmentsTotal": 0
+      },
+      "errorSummary": "AppX returned no playable URL for this video",
+      "hasHls": false,
+      "sameUpdatedAt": true,
+      "sameSourcePair": false,
+      "jobSourceCourse": "131",
+      "jobSourceRow": "190209",
+      "surveyCourse": "131",
+      "surveyRow": "193432",
+      "visiblePlacements": 1
+    },
+    {
+      "job": "6ad5df31c9735682f0a0c5da",
+      "classId": "6ad5df3164b695f53d872c20",
+      "title": "Internet 03 · Internet (2)",
+      "status": "dead",
+      "attempts": 1,
+      "progress": {
+        "segmentsDone": 0,
+        "segmentsTotal": 0
+      },
+      "errorSummary": "AppX returned no playable URL for this video",
+      "hasHls": false,
+      "sameUpdatedAt": true,
+      "sameSourcePair": false,
+      "jobSourceCourse": "131",
+      "jobSourceRow": "191152",
+      "surveyCourse": "131",
+      "surveyRow": "193434",
+      "visiblePlacements": 1
+    }
+  ],
+  "summary": {
+    "jobs": 7,
+    "statuses": {
+      "dead": 7
+    },
+    "alreadyHls": 0,
+    "changed": 0,
+    "sourcePairDifferences": 7,
+    "visiblePlacements": 11
+  },
+  "writes": 0
+}

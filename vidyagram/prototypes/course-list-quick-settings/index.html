@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Courses list: quick settings + price and validity (prototype)</title>
+<style>
+/* PROTOTYPE, throwaway. Variants of the Vidyagram admin Courses list (/admin/courses/v2),
+   switchable via ?variant=D|B|C (D = the blend; A was dropped). Question: how should the row carry the Settings-step switches
+   (Is Free, Live, Recorded, Show in New, Old batch, Status, Priority) and the price + validity,
+   shortest validity first. Sample data, nothing is saved. */
+:root{--bg:#f8fafc;--surface:#fff;--ink:#0f172a;--muted:#64748b;--faint:#94a3b8;--line:#e2e8f0;--hover:#f8fafc;
+  --blue:#2563eb;--blue-soft:#dbeafe;--blue-ink:#1e40af;--green:#16a34a;--green-soft:#dcfce7;--green-ink:#166534;
+  --red:#dc2626;--red-soft:#fee2e2;--red-ink:#b91c1c;--purple-soft:#f3e8ff;--purple-ink:#6b21a8;
+  --amber-soft:#fef3c7;--amber-ink:#92400e;--gray-soft:#f1f5f9;--gray-ink:#334155}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:400 14px/1.4 Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.page{max-width:1280px;margin:0 auto;padding:18px 20px 120px}
+h1{font-size:20px;margin:0 0 2px}
+.sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.search{flex:1;min-width:200px;max-width:340px;height:38px;border:1px solid var(--line);border-radius:8px;padding:0 12px;background:var(--surface)}
+.seg{display:flex;border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:3px;gap:2px}
+.seg span{padding:5px 11px;border-radius:6px;font-weight:500;font-size:13px}
+.seg .on{background:var(--gray-soft)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow-x:auto}
+table{border-collapse:collapse;width:100%}
+th{font-weight:500;color:var(--muted);text-align:left;font-size:13px;padding:11px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:12px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:0}
+tbody tr:hover td{background:var(--hover)}
+.banner{width:64px;height:38px;border-radius:5px;display:grid;place-items:center;color:#fff;font-size:10px;font-weight:700;letter-spacing:.03em}
+.title{font-weight:500;max-width:330px;line-height:1.3}
+.pills{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.pill{border:1px solid transparent;border-radius:999px;padding:1px 9px;font-size:12px;font-weight:600;line-height:1.5;background:var(--gray-soft);color:var(--gray-ink);white-space:nowrap}
+.pill.free{background:var(--green-soft);color:var(--green-ink)}.pill.paid{background:var(--blue-soft);color:var(--blue-ink)}
+.pill.live{background:var(--red-soft);color:var(--red-ink)}.pill.rec{background:var(--purple-soft);color:var(--purple-ink)}
+.pill.new{background:var(--amber-soft);color:var(--amber-ink)}.pill.old{background:#e2e8f0;color:#334155}
+button.pill.off{background:transparent;border:1px dashed #cbd5e1;color:var(--faint);font-weight:500}
+button.pill:hover{border-color:var(--ink);border-style:solid}
+button.pill:disabled{opacity:.45;cursor:not-allowed;border-style:dashed;border-color:#cbd5e1}
+.btn{height:34px;padding:0 11px;border:1px solid var(--line);border-radius:7px;background:var(--surface);font-weight:500;font-size:13px;white-space:nowrap}
+.btn:hover{background:var(--gray-soft)}
+.btn.icon{width:34px;padding:0}
+.actions{display:flex;gap:6px;justify-content:flex-end}
+.sw{position:relative;width:36px;height:20px;border-radius:999px;border:0;background:#cbd5e1;flex:none;padding:0}
+.sw::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:left .12s}
+.sw[aria-checked=true]{background:var(--blue)}.sw[aria-checked=true]::after{left:18px}
+.sw:disabled{opacity:.4;cursor:not-allowed}
+.status{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;white-space:nowrap}
+.on-txt{color:var(--green)}.off-txt{color:var(--red)}
+.num{font-variant-numeric:tabular-nums}
+.price{white-space:nowrap}
+.price b{font-size:15px}
+.price s{color:var(--faint);font-size:12px;margin-left:4px}
+.price .len{color:var(--muted);font-size:12.5px}
+.price .more{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.price .none{color:var(--faint);font-size:12.5px;white-space:normal;max-width:150px;display:block}
+.linkbtn{border:0;background:none;padding:0;color:var(--blue);font-size:12px;font-weight:500}
+.prio{width:46px;height:28px;text-align:center;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+/* popover (variant B, refined) */
+.btn{display:inline-flex;align-items:center;gap:6px}
+.btn.icon{justify-content:center}
+.btn.ghost{border-color:transparent}
+.btn.set[aria-expanded=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.vb tr.open td{background:#f1f5f9}
+.vb .pills .pill,.vb .pills .pill.free,.vb .pills .pill.paid,.vb .pills .pill.live,.vb .pills .pill.rec,.vb .pills .pill.new,.vb .pills .pill.old{background:#fff;border:1px solid var(--line);color:var(--gray-ink);font-weight:500;border-radius:6px;padding:1px 7px}
+.vb .pills .pill.live::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--red);margin-right:5px;vertical-align:1px}
+.vb .pills .pill.unset{border-style:dashed;color:var(--faint)}
+.pop{position:absolute;z-index:20;width:372px;max-width:calc(100vw - 16px);background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 1px 2px rgba(15,23,42,.06),0 16px 40px rgba(15,23,42,.16)}
+.phead{display:flex;gap:10px;align-items:center;padding:12px 10px 12px 14px;border-bottom:1px solid var(--line)}
+.phead .banner{width:44px;height:28px;font-size:8px;flex:none}
+.pt{flex:1;min-width:0}
+.pt b{display:block;font-size:14px}
+.pt span{display:block;color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.srow{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:0 14px;min-height:44px}
+.srow+.srow{border-top:1px solid #f1f5f9}
+.sl{min-width:0;padding:6px 0}
+.sl b{display:block;font-weight:500;font-size:13.5px}
+.sl span{display:block;color:var(--muted);font-size:12px;line-height:1.3}
+.sl .warn{color:var(--amber-ink)}
+.srow select{height:30px;border:1px solid var(--line);border-radius:7px;background:var(--surface);padding:0 6px;font-size:13px}
+.segc{display:inline-flex;background:var(--gray-soft);border-radius:8px;padding:2px;flex:none}
+.segc button{border:0;background:none;height:26px;padding:0 10px;border-radius:6px;font-size:12.5px;font-weight:500;color:var(--muted)}
+.segc button[aria-checked=true]{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(15,23,42,.14)}
+.segc button:disabled{opacity:.4;cursor:not-allowed}
+.plans{border-top:1px solid var(--line);padding:10px 14px 12px;background:#fafbfc}
+.ph{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.ph b{font-weight:500;font-size:13.5px}
+.plans table{width:100%}
+.plans td{padding:4px 0;border:0;font-size:13px;color:var(--muted);background:none!important}
+.plans .r{text-align:right;padding-left:10px;white-space:nowrap}
+.plans s{color:var(--faint);font-size:12px}
+.plans .pr{color:var(--ink);font-weight:500}
+.plans .first td{color:var(--ink);font-weight:600}
+.plans .offp{color:var(--green-ink);font-size:12px;width:1%}
+.plans p{margin:2px 0 0;color:var(--muted);font-size:12.5px}
+.tag{margin-left:7px;color:var(--muted);font-size:11.5px;font-weight:400}
+.pfoot{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;border-top:1px solid var(--line)}
+.saved{color:var(--green-ink);font-size:12px;font-weight:500;visibility:hidden}
+.saved.show{visibility:visible}
+/* grid (variant C) */
+.grid th,.grid td{padding:7px 10px}
+.grid th.c,.grid td.c{text-align:center;width:1%}
+.grid input[type=checkbox]{width:17px;height:17px;accent-color:var(--blue);cursor:pointer}
+.grid input:disabled{cursor:not-allowed}
+.grid .title{min-width:230px;max-width:380px;font-size:13.5px}
+.grid td:last-child,.grid th:last-child{position:sticky;right:0;background:var(--surface);box-shadow:-8px 0 8px -8px rgba(15,23,42,.18)}
+.grid tr.sel td:last-child{background:#eff6ff}
+.grid tr.sel td{background:#eff6ff}
+.bulk{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:9px 12px;border-bottom:1px solid var(--line);background:#eff6ff;font-size:13px}
+.bulk b{margin-right:4px}
+.bulk .btn{height:30px;background:#fff}
+.pricebtn{border:0;background:none;padding:4px 6px;margin:-4px -6px;border-radius:6px;text-align:left}
+.pricebtn:hover{background:var(--gray-soft)}
+.pair{display:inline-flex;align-items:center;border:1px solid #bfdbfe;border-radius:7px;background:#fff;overflow:hidden;font-size:12.5px}
+.pair span{padding:0 8px;font-weight:600}
+.pair button{border:0;border-left:1px solid #bfdbfe;background:#fff;height:28px;padding:0 9px;font-weight:500}
+.pair button:hover{background:var(--blue-soft)}
+/* prototype chrome */
+.log{position:fixed;left:16px;bottom:16px;max-width:min(440px,calc(100vw - 32px));background:#0f172a;color:#e2e8f0;border-radius:8px;padding:8px 11px;font:12px/1.45 ui-monospace,Menlo,monospace;white-space:pre-wrap;z-index:30}
+.log em{color:#94a3b8;font-style:normal}
+.switcher{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);display:flex;align-items:center;gap:4px;background:#111827;color:#fff;border-radius:999px;padding:5px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:40;font-size:13px}
+.switcher button{border:0;background:#374151;color:#fff;width:30px;height:30px;border-radius:50%}
+.switcher span{padding:0 12px;font-weight:600;white-space:nowrap}
+@media (max-width:900px){.log{bottom:64px}}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>Courses</h1>
+  <p class="sub" id="variantNote"></p>
+  <div class="toolbar">
+    <input class="search" placeholder="Search by course name..." aria-label="Search">
+    <div class="seg"><span class="on">All</span><span>Active</span><span>Inactive</span><span>Draft</span></div>
+  </div>
+  <div class="card" id="root"></div>
+</div>
+<div class="log" id="log"><em>Change something: the save it would send shows here.</em></div>
+<div class="switcher"><button id="prev" aria-label="Previous variant">&larr;</button><span id="vlabel"></span><button id="next" aria-label="Next variant">&rarr;</button></div>
+
+<script>
+// ---------- sample data (titles from the live list; prices and lengths are made up) ----------
+const L = (n, unit, price, mrp) => ({ n, unit, price, mrp })
+const courses = [
+  { id: 1, title: "VOD", color: "#0ea5e9", priority: 0, status: "inactive", isFree: false, isLive: false, isRecorded: false, isNew: false, isOld: false, freeAccess: "open", lengths: [L(1,"year",499,999)] },
+  { id: 2, title: "UPSSSC MAINS (ALL IN ONE) FOUNDATION BATCH 2026-27", color: "#334155", priority: 0, status: "inactive", isFree: false, isLive: false, isRecorded: false, isNew: false, isOld: false, freeAccess: "open", lengths: [L(2,"year",799,2999), L(6,"month",449,1499), L(1,"year",599,1999)] },
+  { id: 3, title: "छठी मइया Series", color: "#ea580c", priority: 0, status: "active", isFree: true, isLive: false, isRecorded: false, isNew: false, isOld: false, freeAccess: "open", lengths: [] },
+  { id: 4, title: "Practice Pro Batch by Jai Sir (Recorded Batch)", color: "#0f766e", priority: 0, status: "inactive", isFree: false, isLive: false, isRecorded: true, isNew: false, isOld: true, freeAccess: "open", lengths: [L(1,"year",199,999)] },
+  { id: 5, title: "Maths VOD BATCH by Aditya Ranjan Sir | Arithmetic + Advance (Pre to Mains) | For all Govt Exams", color: "#1d4ed8", priority: 0, status: "inactive", isFree: false, isLive: false, isRecorded: true, isNew: false, isOld: false, freeAccess: "open", lengths: [L(1,"year",699,2499), L(3,"month",299,999)] },
+  { id: 6, title: "CHAMPIONS Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)(Pre + Mains) For all Exams", color: "#b91c1c", priority: 0, status: "active", isFree: false, isLive: true, isRecorded: false, isNew: true, isOld: false, freeAccess: "open", lengths: [L(18,"month",899,3999), L(6,"month",499,1999), L(1,"year",699,2999)] },
+  { id: 7, title: "Railway Group D Target Batch", color: "#475569", priority: 2, status: "active", isFree: false, isLive: true, isRecorded: false, isNew: false, isOld: false, freeAccess: "open", lengths: [] },
+]
+// ---------- shared rules (same as the form's Settings step) ----------
+const days = l => l.n * ({ day: 1, month: 30, year: 365 })[l.unit]
+const sorted = c => [...c.lengths].sort((a, b) => days(a) - days(b) || a.price - b.price)   // shortest validity first
+const lenText = l => `${l.n} ${l.unit}${l.n > 1 ? "s" : ""}`
+const rs = n => "₹" + n.toLocaleString("en-IN")
+const FLAGS = [
+  { key: "isFree", label: "Is Free", short: "Free", cls: "free", desc: "Students get this course without paying." },
+  { key: "isLive", label: "Live Course", short: "Live", cls: "live", desc: "Has live classes. Switches Recorded off." },
+  { key: "isRecorded", label: "Recorded Course", short: "Recorded", cls: "rec", desc: "Made of recorded classes. Switches Live off." },
+  { key: "isNew", label: "Show in New section", short: "New", cls: "new", desc: "Lists it under the New tab." },
+  { key: "isOld", label: "Old batch", short: "Old", cls: "old", desc: "Listed only under the Old tab. Buyers keep access." },
+]
+const disabledWhy = (c, key) => key === "isLive" && c.isOld ? "An old batch can't be live. Switch off Old batch first." : ""
+const newBlockers = c => { const b = []; if (c.status !== "active") b.push("not active"); if (!c.isLive && !c.isRecorded) b.push("type not set"); if (c.isOld) b.push("old batch"); return b }
+function setFlag(c, key, value) {
+  const sent = { [key]: value }; c[key] = value
+  if (key === "isLive" && value) { c.isRecorded = false; sent.isRecorded = false }
+  if (key === "isRecorded" && value) { c.isLive = false; sent.isLive = false }
+  if (key === "isOld" && value) { c.isLive = false; sent.isLive = false }
+  if (key === "isFree" && value) sent.price = 0
+  return sent
+}
+function change(c, key, value) { log(c, setFlag(c, key, value)); render() }
+function log(c, sent, n) {
+  savedId = c ? c.id : null
+  const body = JSON.stringify(sent).replace(/"isNew"/, '"showInBatchFilter"')
+  document.getElementById("log").innerHTML = `<em>${n ? `${n} courses, each: ` : ""}PUT /courses/${n ? ":id" : c.id}</em>\n${body}`
+}
+const esc = s => s.replace(/[&<>"]/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[m])
+const banner = c => `<div class="banner" style="background:${c.color}">${esc(c.title.slice(0, 3).toUpperCase())}</div>`
+const statusCell = c => `<div class="status"><button class="sw" role="switch" aria-label="Status" aria-checked="${c.status === "active"}" data-act="status" data-id="${c.id}"></button><span class="${c.status === "active" ? "on-txt" : "off-txt"}">${c.status === "active" ? "Active" : "Inactive"}</span></div>`
+const svg = d => `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`
+const IC = { edit: svg('<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>'), more: svg('<circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/>'),
+  classes: svg('<path d="M3 6h12M3 12h9M3 18h9"/><path d="m16 12 5 3-5 3z"/>'), pdf: svg('<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/>') }
+const actions = (c, extra = "") => `<div class="actions">${extra}<button class="btn icon" aria-label="Edit course">${IC.edit}</button><button class="btn">${IC.classes}Classes</button><button class="btn">${IC.pdf}PDFs</button><button class="btn icon" aria-label="More">${IC.more}</button></div>`
+function priceCell(c, mode) {
+  if (c.isFree) return `<div class="price"><b>Free</b><span class="more">${c.freeAccess === "enroll" ? "Students who enroll" : "Everyone"}</span></div>`
+  const ls = sorted(c)
+  if (!ls.length) return `<div class="price"><span class="none">No price: sold only inside combos</span></div>`
+  const [first, ...rest] = ls
+  const head = `<b class="num">${rs(first.price)}</b>${first.mrp ? `<s class="num">${rs(first.mrp)}</s>` : ""} <span class="len">· ${lenText(first)}</span>`
+  if (mode === "two") return `<div class="price"><b class="num">${rs(first.price)}</b>${first.mrp ? `<s class="num">${rs(first.mrp)}</s>` : ""}<span class="more">${lenText(first)}${rest.length ? ` · +${rest.length} longer` : ""}</span></div>`
+  if (mode === "stack") return `<div class="price">${head}${rest.map(l => `<span class="more num">${rs(l.price)} · ${lenText(l)}</span>`).join("")}</div>`
+  if (mode === "one") return `<div class="price">${head}${rest.length ? `<span class="more">+${rest.length} longer</span>` : ""}</div>`
+  return `<div class="price">${head}${rest.length ? `<span class="more">+${rest.length} more, up to ${lenText(rest[rest.length - 1])} at ${rs(rest[rest.length - 1].price)}</span>` : ""}</div>`
+}
+
+// ---------- Variant B (refined): quiet row, Settings popover ----------
+// The row is read-only: pills, one price line, a Settings button. The popover is the only
+// place settings change. Choices that exclude each other are one control, not two switches:
+// Status (Active / Inactive / Draft), Price (Paid / Free), Class type (Live / Recorded / Not set).
+// Notes appear only when something is locked or won't take effect. Changes save as they are made.
+let openId = null, savedId = null
+const ico = d => `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`
+const I = {
+  sliders: ico('<path d="M3 6h10M17 6h4M3 12h4M11 12h10M3 18h12M19 18h2"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/>'),
+  x: ico('<path d="M18 6 6 18M6 6l12 12"/>'),
+}
+function VariantB() {
+  const type = c => c.isLive ? `<span class="pill live">Live</span>` : c.isRecorded ? `<span class="pill rec">Recorded</span>` : `<span class="pill unset">Type not set</span>`
+  const pills = c => `<span class="pill ${c.isFree ? "free" : "paid"}">${c.isFree ? "Free" : "Paid"}</span>${type(c)}${c.isNew ? `<span class="pill new">New</span>` : ""}${c.isOld ? `<span class="pill old">Old</span>` : ""}`
+  return `<table class="vb"><thead><tr><th>Banner</th><th>Title</th><th>Price &amp; validity</th><th>Priority</th><th>Faculty</th><th>Status</th><th style="text-align:right">Actions</th></tr></thead><tbody>${courses.map(c => `
+    <tr class="${openId === c.id ? "open" : ""}"><td>${banner(c)}</td>
+    <td><div class="title">${esc(c.title)}</div><div class="pills">${pills(c)}</div></td>
+    <td><button class="pricebtn" data-act="open" data-id="${c.id}" title="See every pricing plan">${priceCell(c, "two")}</button></td>
+    <td class="num" style="color:var(--muted)">${c.priority}</td><td>Vidyagram Team</td><td>${statusCell(c)}</td>
+    <td>${actions(c, `<button class="btn set" data-gear data-act="open" data-id="${c.id}" aria-expanded="${openId === c.id}">${I.sliders}Quick edit</button>`)}</td></tr>`).join("")}</tbody></table>`
+}
+function popover(c, anchor) {
+  const r = anchor.getBoundingClientRect(), ls = sorted(c)
+  const seg = (act, label, value, opts) => `<div class="segc" role="radiogroup" aria-label="${label}">${opts.map(o => `<button role="radio" aria-checked="${o.v === value}" ${o.off ? `disabled title="${esc(o.off)}"` : ""} data-act="${act}" data-val="${o.v}" data-id="${c.id}">${o.l}</button>`).join("")}</div>`
+  const line = (label, control, note, warn) => `<div class="srow"><div class="sl"><b>${label}</b>${note ? `<span class="${warn ? "warn" : ""}">${note}</span>` : ""}</div>${control}</div>`
+  const sw = (key, label) => `<button class="sw" role="switch" aria-label="${label}" aria-checked="${c[key]}" data-act="flag" data-key="${key}" data-id="${c.id}"></button>`
+  const typeVal = c.isLive ? "live" : c.isRecorded ? "recorded" : "none"
+  const blocked = c.isNew && newBlockers(c).length ? `Won't show in New yet: ${newBlockers(c).join(", ")}` : ""
+  const off = l => l.mrp > l.price ? Math.round((1 - l.price / l.mrp) * 100) + "% off" : ""
+  const plans = c.isFree ? "" : `<div class="plans"><div class="ph"><b>Pricing plans</b><button class="linkbtn">Edit pricing</button></div>${ls.length
+    ? `<table>${ls.map((l, i) => `<tr class="${i ? "" : "first"}"><td>${lenText(l)}${i ? "" : `<span class="tag">On the list</span>`}</td><td class="num r"><s>${l.mrp ? rs(l.mrp) : ""}</s></td><td class="num r pr">${rs(l.price)}</td><td class="r offp">${off(l)}</td></tr>`).join("")}</table>`
+    : `<p>No price set. This course is sold only inside combos.</p>`}</div>`
+  const el = document.createElement("div"); el.className = "pop"; el.id = "pop"; el.setAttribute("role", "dialog"); el.setAttribute("aria-label", "Quick edit")
+  el.innerHTML = `<div class="phead">${banner(c)}<div class="pt"><b>Quick edit</b><span>${esc(c.title)}</span></div><button class="btn icon ghost" data-act="close" aria-label="Close">${I.x}</button></div>
+    ${line("Status", seg("statusSet", "Status", c.status, [{ v: "active", l: "Active" }, { v: "inactive", l: "Inactive" }, { v: "draft", l: "Draft" }]), c.status === "inactive" ? "Off sale. Buyers keep access." : "")}
+    ${line("Price", seg("paid", "Price", c.isFree ? "free" : "paid", [{ v: "paid", l: "Paid" }, { v: "free", l: "Free" }]))}
+    ${c.isFree ? line("Who can watch", `<select data-act="access" data-id="${c.id}" aria-label="Who can watch"><option value="open" ${c.freeAccess === "open" ? "selected" : ""}>Everyone</option><option value="enroll" ${c.freeAccess === "enroll" ? "selected" : ""}>Students who enroll</option></select>`) : ""}
+    ${line("Class type", seg("type", "Class type", typeVal, [{ v: "live", l: "Live", off: c.isOld ? "An old batch can't be live" : "" }, { v: "recorded", l: "Recorded" }, { v: "none", l: "Not set" }]), c.isOld ? "An old batch can't be live." : "")}
+    ${line("Show in New section", sw("isNew", "Show in New section"), blocked, true)}
+    ${line("Old batch", sw("isOld", "Old batch"), c.isOld ? "Listed only under the Old tab." : "")}
+    ${line("Priority", `<input class="prio num" value="${c.priority}" inputmode="numeric" aria-label="Priority" data-act="prio" data-id="${c.id}">`, "Lower lists earlier")}
+    ${plans}
+    <div class="pfoot"><span class="saved ${savedId === c.id ? "show" : ""}">✓ Saved</span><button class="linkbtn">Open full form</button></div>`
+  document.body.appendChild(el)
+  // Beside the button, kept inside the window, so it never covers the row it belongs to.
+  const w = el.offsetWidth, h = el.offsetHeight, side = r.left - w - 10 >= 8
+  const top = side ? Math.max(8, Math.min(r.top - 48, window.innerHeight - h - 64)) : Math.min(r.bottom + 8, Math.max(8, window.innerHeight - h - 64))
+  el.style.top = window.scrollY + top + "px"
+  el.style.left = window.scrollX + (side ? r.left - w - 10 : Math.max(8, Math.min(r.right - w, window.innerWidth - w - 8))) + "px"
+}
+
+// ---------- Variant C: settings grid with bulk edit ----------
+// A dense sheet: one tick column per setting, so a whole column can be scanned and fixed.
+// Tick rows on the left to set a flag on many courses at once.
+const selected = new Set()
+function VariantC() {
+  const cell = (c, f) => { const why = disabledWhy(c, f.key); return `<td class="c"><input type="checkbox" ${c[f.key] ? "checked" : ""} ${why ? "disabled" : ""} title="${esc(why || f.label)}" aria-label="${f.label}" data-act="flag" data-key="${f.key}" data-id="${c.id}"></td>` }
+  const bulk = selected.size ? `<div class="bulk"><b>${selected.size} selected</b>${FLAGS.map(f => `<button class="btn" data-act="bulk" data-key="${f.key}" data-val="1">${f.short} on</button>`).join("")}<span style="color:var(--faint)">|</span>${FLAGS.slice(1).map(f => `<button class="btn" data-act="bulk" data-key="${f.key}" data-val="">${f.short} off</button>`).join("")}<button class="linkbtn" data-act="clear">Clear</button></div>` : ""
+  return `${bulk}<table class="grid"><thead><tr><th class="c"><input type="checkbox" aria-label="Select all" data-act="all" ${selected.size === courses.length ? "checked" : ""}></th><th>Title</th><th>Price &amp; validity</th>${FLAGS.map(f => `<th class="c">${f.short}</th>`).join("")}<th class="c">Priority</th><th>Status</th><th style="text-align:right">Actions</th></tr></thead><tbody>${courses.map(c => `
+    <tr class="${selected.has(c.id) ? "sel" : ""}"><td class="c"><input type="checkbox" aria-label="Select ${esc(c.title)}" ${selected.has(c.id) ? "checked" : ""} data-act="sel" data-id="${c.id}"></td>
+    <td><div class="title">${esc(c.title)}</div>${!c.isLive && !c.isRecorded ? `<span class="summary">Type not set</span>` : ""}</td>
+    <td>${priceCell(c, "range")}</td>${FLAGS.map(f => cell(c, f)).join("")}
+    <td class="c"><input class="prio num" value="${c.priority}" aria-label="Priority" data-act="prio" data-id="${c.id}"></td>
+    <td>${statusCell(c)}</td><td><div class="actions"><button class="btn icon" aria-label="Edit course">✎</button><button class="btn icon" aria-label="More">⋯</button></div></td></tr>`).join("")}</tbody></table>`
+}
+
+// ---------- Variant D: blend of B and C ----------
+// C's grid does the work: one tick column per setting, row selection and the bulk bar.
+// B's popover sits behind the gear for what a tick can't hold: Status incl. Draft,
+// who can watch a free course, why a switch is locked, and the full price ladder.
+// The row keeps B's banner and Classes / PDFs buttons. Clicking the price also opens the popover.
+function VariantD() {
+  const cell = (c, f) => { const why = disabledWhy(c, f.key); return `<td class="c"><input type="checkbox" ${c[f.key] ? "checked" : ""} ${why ? "disabled" : ""} title="${esc(why || f.label)}" aria-label="${f.label}" data-act="flag" data-key="${f.key}" data-id="${c.id}"></td>` }
+  const bulk = selected.size ? `<div class="bulk"><b>${selected.size} selected</b>${FLAGS.map(f => `<span class="pair"><span>${f.short}</span><button data-act="bulk" data-key="${f.key}" data-val="1">On</button><button data-act="bulk" data-key="${f.key}" data-val="">Off</button></span>`).join("")}<button class="linkbtn" data-act="clear">Clear</button></div>` : ""
+  const hint = c => c.isNew && newBlockers(c).length ? `<span class="summary" style="color:var(--amber-ink)">Not in New yet: ${newBlockers(c).join(", ")}</span>` : !c.isLive && !c.isRecorded ? `<span class="summary">Type not set</span>` : ""
+  return `${bulk}<table class="grid"><thead><tr><th class="c"><input type="checkbox" aria-label="Select all" data-act="all" ${selected.size === courses.length ? "checked" : ""}></th><th>Banner</th><th>Title</th><th>Price &amp; validity</th>${FLAGS.map(f => `<th class="c">${f.short}</th>`).join("")}<th class="c">Priority</th><th>Status</th><th style="text-align:right">Actions</th></tr></thead><tbody>${courses.map(c => `
+    <tr class="${selected.has(c.id) ? "sel" : ""}"><td class="c"><input type="checkbox" aria-label="Select ${esc(c.title)}" ${selected.has(c.id) ? "checked" : ""} data-act="sel" data-id="${c.id}"></td>
+    <td>${banner(c)}</td>
+    <td><div class="title">${esc(c.title)}</div>${hint(c)}</td>
+    <td><button class="pricebtn" data-act="open" data-id="${c.id}" title="See all lengths and settings">${priceCell(c, "one")}</button></td>${FLAGS.map(f => cell(c, f)).join("")}
+    <td class="c"><input class="prio num" value="${c.priority}" aria-label="Priority" data-act="prio" data-id="${c.id}"></td>
+    <td>${statusCell(c)}</td><td>${actions(c, `<button class="btn icon" data-gear data-act="open" data-id="${c.id}" aria-label="Settings" aria-expanded="${openId === c.id}">⚙</button>`)}</td></tr>`).join("")}</tbody></table>`
+}
+
+// ---------- switcher + wiring ----------
+const VARIANTS = {
+  D: { name: "Blend: grid + popover", fn: VariantD, note: "Tick columns and bulk bar from C; the gear (or the price) opens B's popover for Status, who can watch and the full price list." },
+  B: { name: "Quick edit panel", fn: VariantB, note: "The row is read-only. Quick edit (or the price) opens one panel where everything changes; the price shown is the shortest validity." },
+  C: { name: "Settings grid + bulk", fn: VariantC, note: "One tick column per setting; tick rows on the left to change many courses at once. Price column shows the shortest validity and the range." },
+}
+const keys = ["B", "D", "C"]
+const current = () => { const v = new URLSearchParams(location.search).get("variant"); return VARIANTS[v] ? v : "B" }
+function render() {
+  const v = current(), keepOpen = openId
+  document.getElementById("pop")?.remove()
+  document.getElementById("root").innerHTML = VARIANTS[v].fn()
+  document.getElementById("vlabel").textContent = `${v} (${VARIANTS[v].name})`
+  document.getElementById("variantNote").textContent = VARIANTS[v].note
+  if ((v === "B" || v === "D") && keepOpen != null) { const a = document.querySelector(`[data-gear][data-id="${keepOpen}"]`) || document.querySelector(`[data-act=open][data-id="${keepOpen}"]`); if (a) popover(courses.find(c => c.id === keepOpen), a) }
+}
+function go(d) { const i = (keys.indexOf(current()) + d + keys.length) % keys.length; const u = new URL(location.href); u.searchParams.set("variant", keys[i]); history.replaceState(null, "", u); openId = null; selected.clear(); render() }
+document.getElementById("prev").onclick = () => go(-1)
+document.getElementById("next").onclick = () => go(1)
+document.addEventListener("keydown", e => {
+  if (e.target.matches("input,textarea,select,[contenteditable]")) return
+  if (e.key === "ArrowLeft") go(-1); if (e.key === "ArrowRight") go(1); if (e.key === "Escape") { openId = null; render() }
+})
+document.addEventListener("click", e => {
+  const t = e.target.closest("[data-act]")
+  if (!t) { if (openId != null && !e.target.closest("#pop")) { openId = null; render() } return }
+  const c = courses.find(x => x.id === Number(t.dataset.id)), act = t.dataset.act
+  if (act === "flag") change(c, t.dataset.key, !c[t.dataset.key])
+  else if (act === "status") { c.status = c.status === "active" ? "inactive" : "active"; log(c, { status: c.status }); render() }
+  else if (act === "close") { openId = null; render() }
+  else if (act === "statusSet") { c.status = t.dataset.val; log(c, { status: c.status }); render() }
+  else if (act === "paid") change(c, "isFree", t.dataset.val === "free")
+  else if (act === "type") { const v = t.dataset.val; if (v === "none") { c.isLive = c.isRecorded = false; log(c, { isLive: false, isRecorded: false }); render() } else change(c, v === "live" ? "isLive" : "isRecorded", true) }
+  else if (act === "open") { savedId = null; openId = openId === c.id ? null : c.id; render() }
+  else if (act === "sel") { selected.has(c.id) ? selected.delete(c.id) : selected.add(c.id); render() }
+  else if (act === "all") { selected.size === courses.length ? selected.clear() : courses.forEach(x => selected.add(x.id)); render() }
+  else if (act === "clear") { selected.clear(); render() }
+  else if (act === "bulk") { let sent = {}, n = 0; courses.filter(x => selected.has(x.id)).forEach(x => { if (disabledWhy(x, t.dataset.key) && t.dataset.val) return; sent = setFlag(x, t.dataset.key, Boolean(t.dataset.val)); n++ }); log(null, sent, n); render() }
+})
+document.addEventListener("change", e => {
+  const t = e.target.closest("[data-act]"); if (!t) return
+  const c = courses.find(x => x.id === Number(t.dataset.id))
+  if (t.dataset.act === "prio") { c.priority = Number(t.value) || 0; log(c, { priority: c.priority }); render() }
+  if (t.dataset.act === "statusSel") { c.status = t.value; log(c, { status: c.status }); render() }
+  if (t.dataset.act === "access") { c.freeAccess = t.value; log(c, { freeAccess: c.freeAccess }); render() }
+})
+render()
+</script>
+</body>
+</html>

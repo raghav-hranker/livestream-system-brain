@@ -1,0 +1,188 @@
+[
+  {
+    "_id": "6ad5d93bc9735682f0a01a85",
+    "apxCourseId": "104",
+    "parentId": "192479",
+    "rows": [
+      {
+        "id": "192480",
+        "Title": "इतिहास का वर्णन (Class 01)",
+        "material_type": "VIDEO",
+        "free_flag": 0
+      }
+    ],
+    "lastSeenRunId": "daily-2026-10-26"
+  },
+  {
+    "_id": "6ace3900c9735682f048a009",
+    "apxCourseId": "135",
+    "parentId": "184863",
+    "lastSeenRunId": "daily-2026-10-26",
+    "rows": [
+      {
+        "id": "189020",
+        "Title": "Doubt Class 04",
+        "material_type": "VIDEO",
+        "free_flag": 0
+      }
+    ]
+  },
+  {
+    "_id": "6ace3903c9735682f048a026",
+    "apxCourseId": "136",
+    "parentId": "184868",
+    "lastSeenRunId": "daily-2026-10-26",
+    "rows": [
+      {
+        "id": "189019",
+        "Title": "Doubt Class 04",
+        "material_type": "VIDEO",
+        "free_flag": 0
+      }
+    ]
+  },
+  {
+    "_id": "6ace3911c9735682f048a0a4",
+    "apxCourseId": "142",
+    "parentId": "184331",
+    "lastSeenRunId": "daily-2026-10-26",
+    "rows": [
+      {
+        "id": "184332",
+        "Title": "SSC CGL 2026 Maths Score Booster Test 01",
+        "material_type": "VIDEO",
+        "free_flag": 1
+      },
+      {
+        "id": "184521",
+        "Title": "SSC CGL 2026 Maths Score Booster Test 02",
+        "material_type": "VIDEO",
+        "free_flag": 1
+      },
+      {
+        "id": "184803",
+        "Title": "SSC CGL 2026 Maths Score Booster Test 03",
+        "material_type": "VIDEO",
+        "free_flag": 1
+      },
+      {
+        "id": "184908",
+        "Title": "SSC CGL 2026 Maths Score Booster Test 04",
+        "material_type": "VIDEO",
+        "free_flag": 1
+      },
+      {
+        "id": "185167",
+        "Title": "SSC CGL 2026 Maths Score Booster Test 05",
+        "material_type": "VIDEO",
+        "free_flag": 1
+      },
+      {
+        "id": "185265",
+        "Title": "SSC CGL 2026 Maths Score Booster Test 06",
+        "material_type": "VIDEO",
+        "free_flag": 1
+      },
+      {
+        "id": "185592",
+        "Title": "SSC CGL 2026 Maths Score Booster Test 07",
+        "material_type": "VIDEO",
+        "free_flag": 1
+      },
+      {
+        "id": "185805",
+        "Title": "SSC CGL 2026 Maths Score Booster Test 08",
+        "material_type": "VIDEO",
+        "free_flag": 1
+      },
+      {
+        "id": "186189",
+        "Title": "SSC CGL 2026 Maths Score Booster Test 09",
+        "material_type": "VIDEO",
+        "free_flag": 1
+      }
+    ]
+  },
+  {
+    "_id": "6ace3967c9735682f048a4e0",
+    "parentId": "189203",
+    "apxCourseId": "162",
+    "lastSeenRunId": "daily-2026-10-26",
+    "rows": [
+      {
+        "id": "189205",
+        "Title": "Tone & Theme 01",
+        "material_type": "VIDEO",
+        "free_flag": 1
+      },
+      {
+        "id": "189206",
+        "Title": "Tone & Theme 02",
+        "material_type": "VIDEO",
+        "free_flag": 1
+      },
+      {
+        "id": "189267",
+        "Title": "Tone & Theme 03",
+        "material_type": "VIDEO",
+        "free_flag": 1
+      }
+    ]
+  },
+  {
+    "_id": "6ace3884c9735682f0489916",
+    "apxCourseId": "114",
+    "parentId": "184304",
+    "lastSeenRunId": "daily-2026-10-26",
+    "rows": [
+      {
+        "id": "184309",
+        "Title": "Line Graph | By Aditya Ranjan Sir",
+        "material_type": "VIDEO",
+        "free_flag": 1
+      }
+    ]
+  },
+  {
+    "_id": "6ace3382c9735682f04814b3",
+    "apxCourseId": "71",
+    "parentId": "187069",
+    "lastSeenRunId": "daily-2026-10-24",
+    "rows": [
+      {
+        "id": "187075",
+        "Title": "Announcement",
+        "material_type": "VIDEO",
+        "free_flag": 0
+      }
+    ]
+  },
+  {
+    "_id": "6acf95ebc9735682f06172a5",
+    "parentId": "187068",
+    "apxCourseId": "77",
+    "lastSeenRunId": "daily-2026-10-24",
+    "rows": [
+      {
+        "id": "187074",
+        "Title": "Announcement",
+        "material_type": "VIDEO",
+        "free_flag": 0
+      }
+    ]
+  },
+  {
+    "_id": "6acfb2a0c9735682f06ce24d",
+    "apxCourseId": "95",
+    "parentId": "187067",
+    "lastSeenRunId": "daily-2026-10-24",
+    "rows": [
+      {
+        "id": "187073",
+        "Title": "Announcement",
+        "material_type": "VIDEO",
+        "free_flag": 0
+      }
+    ]
+  }
+]

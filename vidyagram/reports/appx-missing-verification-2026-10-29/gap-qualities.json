@@ -1,0 +1,5167 @@
+{
+  "observedAt": "2026-11-10T18:22:42.138Z",
+  "readOnly": true,
+  "scope": 33,
+  "steps": [
+    {
+      "name": "authenticated course list",
+      "ok": true,
+      "at": "2026-11-10T18:22:43.111Z"
+    }
+  ],
+  "controls": [
+    {
+      "name": "Glands01",
+      "at": "2026-11-10T18:22:46.380Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    },
+    {
+      "name": "Glands01 ending control",
+      "at": "2026-11-10T20:31:40.819Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    },
+    {
+      "name": "Glands01 ending control",
+      "at": "2026-11-10T20:31:42.732Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    }
+  ],
+  "candidates": [
+    {
+      "job": "6ace92d2c9735682f04ee56f",
+      "classId": "6ace92d28752d955968b070c",
+      "title": "Algebra Class 08 · ALGEBRA (बीजगणित )",
+      "oldAssetKey": "vid:rgvikramjeet-data:526735-1706263373",
+      "category": "source404",
+      "course": "15",
+      "rowId": "9770",
+      "occurrences": [
+        {
+          "course": "15",
+          "rowId": "9770",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 08",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "240p",
+        "index": 215,
+        "file": "master-2498548.7862000368215.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 512,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 512,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T18:23:08.816Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 334,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 334,
+            "checked": 334,
+            "passed": 334,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 333,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 333,
+            "checked": 333,
+            "passed": 333,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 332,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 332,
+            "checked": 332,
+            "passed": 332,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 336,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 336,
+            "checked": 233,
+            "passed": 232,
+            "failures": [
+              {
+                "rung": "240p",
+                "index": 215,
+                "file": "master-2498548.7862000368215.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 512,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 512,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        }
+      ],
+      "source": {
+        "title": "Algebra Class 08",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "720p",
+        "360p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace92d4c9735682f04ee575",
+      "classId": "6ace92d38752d955968b0721",
+      "title": "Algebra Class 11 · ALGEBRA (बीजगणित )",
+      "oldAssetKey": "vid:rgvikramjeet-data:536119-1706624740",
+      "category": "source404",
+      "course": "15",
+      "rowId": "9773",
+      "occurrences": [
+        {
+          "course": "15",
+          "rowId": "9773",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 11",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "480p",
+        "index": 227,
+        "file": "master-2790433.1646571243227.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 512,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 512,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T18:26:03.414Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 322,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 322,
+            "checked": 322,
+            "passed": 322,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 320,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 320,
+            "checked": 247,
+            "passed": 246,
+            "failures": [
+              {
+                "rung": "720p",
+                "index": 227,
+                "file": "master-2790433.1646571243227.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 512,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 512,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 320,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 320,
+            "checked": 320,
+            "passed": 320,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 321,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 321,
+            "checked": 321,
+            "passed": 321,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        }
+      ],
+      "source": {
+        "title": "Algebra Class 11",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "360p",
+        "240p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace92d6c9735682f04ee580",
+      "classId": "6ace92d68752d955968b0744",
+      "title": "Algebra Class 16 · ALGEBRA (बीजगणित )",
+      "oldAssetKey": "vid:rgvikramjeet-data:550360-1707143202",
+      "category": "source404",
+      "course": "15",
+      "rowId": "9779",
+      "occurrences": [
+        {
+          "course": "15",
+          "rowId": "9779",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 16",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "360p",
+        "index": 249,
+        "file": "master-9081993.356434247249.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 511,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 511,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T18:28:38.211Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 308,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 308,
+            "checked": 308,
+            "passed": 308,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 308,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 308,
+            "checked": 308,
+            "passed": 308,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 307,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 307,
+            "checked": 276,
+            "passed": 275,
+            "failures": [
+              {
+                "rung": "360p",
+                "index": 249,
+                "file": "master-9081993.356434247249.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 511,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 511,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 306,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 306,
+            "checked": 306,
+            "passed": 306,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        }
+      ],
+      "source": {
+        "title": "Algebra Class 16",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "720p",
+        "240p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace92d8c9735682f04ee586",
+      "classId": "6ace92d88752d955968b0759",
+      "title": "Algebra Class 19",
+      "oldAssetKey": "vid:rgvikramjeet-data:558454-1707402144",
+      "category": "source404",
+      "course": "15",
+      "rowId": "9782",
+      "occurrences": [
+        {
+          "course": "15",
+          "rowId": "9782",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 19",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "240p",
+        "index": 289,
+        "file": "master-9455795.630963989289.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 511,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 511,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T18:31:22.916Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 294,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 294,
+            "checked": 294,
+            "passed": 294,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 295,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 295,
+            "checked": 295,
+            "passed": 295,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 294,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 294,
+            "checked": 294,
+            "passed": 294,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 295,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 295,
+            "checked": 295,
+            "passed": 294,
+            "failures": [
+              {
+                "rung": "240p",
+                "index": 289,
+                "file": "master-9455795.630963989289.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 511,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 511,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        }
+      ],
+      "source": {
+        "title": "Algebra Class 19",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "720p",
+        "360p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace9424c9735682f04eeceb",
+      "classId": "6ace94248752d955968b1c3d",
+      "title": "Analogy 03 · Analogy",
+      "oldAssetKey": "vid:rgvikramjeet-data:746409-1713792675",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15166",
+      "occurrences": [
+        {
+          "course": "22",
+          "rowId": "15166",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Analogy 03",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "240p",
+        "index": 59,
+        "file": "master-8583872.38851573759.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 510,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 510,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T18:34:28.123Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 275,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 275,
+            "checked": 275,
+            "passed": 275,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 276,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 276,
+            "checked": 276,
+            "passed": 276,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 276,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 276,
+            "checked": 276,
+            "passed": 276,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 280,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 280,
+            "checked": 82,
+            "passed": 81,
+            "failures": [
+              {
+                "rung": "240p",
+                "index": 59,
+                "file": "master-8583872.38851573759.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 510,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 510,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        }
+      ],
+      "source": {
+        "title": "Analogy 03",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "720p",
+        "360p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace9257c9735682f04ee309",
+      "classId": "6ace92578752d955968aff91",
+      "title": "Average Class 18",
+      "oldAssetKey": "vid:rgvikramjeet-data:410702-1701967965",
+      "category": "source404",
+      "course": "10",
+      "rowId": "6463",
+      "occurrences": [
+        {
+          "course": "10",
+          "rowId": "6463",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Average Class 18",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "480p",
+        "index": 2,
+        "file": "master-3439011.0149725396.m3u82.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 508,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 508,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T18:36:32.450Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 365,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 365,
+            "checked": 6,
+            "passed": 2,
+            "failures": [
+              {
+                "rung": "1080p",
+                "index": 2,
+                "file": "master-3439011.0149725396.m3u82.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 509,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 509,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              },
+              {
+                "rung": "1080p",
+                "index": 3,
+                "file": "master-3439011.0149725396.m3u83.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 509,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 509,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              },
+              {
+                "rung": "1080p",
+                "index": 5,
+                "file": "master-3439011.0149725396.m3u85.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 509,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 509,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              },
+              {
+                "rung": "1080p",
+                "index": 4,
+                "file": "master-3439011.0149725396.m3u84.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 509,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 509,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 365,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 365,
+            "checked": 36,
+            "passed": 33,
+            "failures": [
+              {
+                "rung": "720p",
+                "index": 2,
+                "file": "master-3439011.0149725396.m3u82.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 508,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 508,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              },
+              {
+                "rung": "720p",
+                "index": 20,
+                "file": "master-3439011.0149725396.m3u820.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 509,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 509,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              },
+              {
+                "rung": "720p",
+                "index": 21,
+                "file": "master-3439011.0149725396.m3u821.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 509,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 509,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 365,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 365,
+            "checked": 35,
+            "passed": 34,
+            "failures": [
+              {
+                "rung": "360p",
+                "index": 8,
+                "file": "master-3439011.0149725396.m3u88.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 508,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 508,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 365,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 365,
+            "checked": 365,
+            "passed": 365,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        }
+      ],
+      "source": {
+        "title": "Average Class 18",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "240p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "240p"
+    },
+    {
+      "job": "6ace98acc9735682f04f025a",
+      "classId": "6ace98ac8752d955968b5b90",
+      "title": "Botany 03 · BOTANY",
+      "oldAssetKey": "vid:rgvikramjeet-data:866003-1717036990",
+      "category": "source404",
+      "course": "42",
+      "rowId": "31407",
+      "occurrences": [
+        {
+          "course": "42",
+          "rowId": "31407",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Botany 03",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "240p",
+        "index": 145,
+        "file": "master-115758.48027206348145.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 512,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 512,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T18:37:45.522Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 299,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 299,
+            "checked": 299,
+            "passed": 299,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 299,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 299,
+            "checked": 299,
+            "passed": 299,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 299,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 299,
+            "checked": 299,
+            "passed": 299,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 299,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 299,
+            "checked": 159,
+            "passed": 158,
+            "failures": [
+              {
+                "rung": "240p",
+                "index": 145,
+                "file": "master-115758.48027206348145.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 512,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 512,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        }
+      ],
+      "source": {
+        "title": "Botany 03",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "720p",
+        "360p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace98afc9735682f04f0266",
+      "classId": "6ace98ae8752d955968b5bba",
+      "title": "Botany 09",
+      "oldAssetKey": "vid:rgvikramjeet-data:897148-1717904603",
+      "category": "source404",
+      "course": "42",
+      "rowId": "31414",
+      "occurrences": [
+        {
+          "course": "42",
+          "rowId": "31414",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Botany 09",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "360p",
+        "index": 48,
+        "file": "master-3948535.203345184748.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 511,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 511,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T18:40:35.206Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 363,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 363,
+            "checked": 363,
+            "passed": 363,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 363,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 363,
+            "checked": 363,
+            "passed": 363,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 363,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 363,
+            "checked": 65,
+            "passed": 64,
+            "failures": [
+              {
+                "rung": "360p",
+                "index": 48,
+                "file": "master-3948535.203345184748.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 511,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 511,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 363,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 363,
+            "checked": 363,
+            "passed": 363,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        }
+      ],
+      "source": {
+        "title": "Botany 09",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "720p",
+        "240p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace94d7c9735682f04ef00e",
+      "classId": "6ace94d78752d955968b2506",
+      "title": "Carbon & Its Compouns 01",
+      "oldAssetKey": "drm:7a18a6fb-213e-4eeb-a807-01f1e781fa1d",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15706",
+      "occurrences": [
+        {
+          "course": "22",
+          "rowId": "15706",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Carbon & Its Compouns 01 ",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "360p",
+        "index": 158,
+        "file": "master-7959432.9834825415.m3u8158.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 512,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 512,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T18:43:51.629Z",
+      "qualityChecks": [
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 314,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 314,
+            "checked": 314,
+            "passed": 314,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 314,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 314,
+            "checked": 162,
+            "passed": 161,
+            "failures": [
+              {
+                "rung": "360p",
+                "index": 158,
+                "file": "master-7959432.9834825415.m3u8158.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 508,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 508,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 314,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 314,
+            "checked": 314,
+            "passed": 314,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        }
+      ],
+      "source": {
+        "title": "Carbon & Its Compouns 01 ",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "720p",
+        "240p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "720p"
+    },
+    {
+      "job": "6ace93d2c9735682f04eeb64",
+      "classId": "6ace93d28752d955968b175f",
+      "title": "Class 13 (World Geography)",
+      "oldAssetKey": "drm:59d7aef1-ca2e-472e-917d-45e22bb4de25",
+      "category": "source404",
+      "course": "22",
+      "rowId": "16137",
+      "occurrences": [
+        {
+          "course": "22",
+          "rowId": "16137",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Class 13 (World Geography)",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "480p",
+        "index": 106,
+        "file": "master-9982953.22576129.m3u8106.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 510,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 510,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T18:49:28.223Z",
+      "qualityChecks": [
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 300,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 300,
+            "checked": 128,
+            "passed": 127,
+            "failures": [
+              {
+                "rung": "720p",
+                "index": 106,
+                "file": "master-9982953.22576129.m3u8106.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 510,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 510,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 300,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 300,
+            "checked": 300,
+            "passed": 300,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 300,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 300,
+            "checked": 300,
+            "passed": 300,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        }
+      ],
+      "source": {
+        "title": "Class 13 (World Geography)",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "360p",
+        "240p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "360p"
+    },
+    {
+      "job": "6ace93e9c9735682f04eebd9",
+      "classId": "6ace93e98752d955968b18d2",
+      "title": "commission (आयोग)",
+      "oldAssetKey": "drm:4863eace-e19a-4f4d-a493-826688568333",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15990",
+      "occurrences": [
+        {
+          "course": "22",
+          "rowId": "15990",
+          "listingCaptured": true,
+          "found": true,
+          "title": "commission (आयोग) ",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "480p",
+        "index": 249,
+        "file": "master-568573.8267311224.m3u8249.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 511,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 511,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T18:53:53.659Z",
+      "qualityChecks": [
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 280,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 280,
+            "checked": 256,
+            "passed": 255,
+            "failures": [
+              {
+                "rung": "720p",
+                "index": 249,
+                "file": "master-568573.8267311224.m3u8249.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 511,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 511,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 280,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 280,
+            "checked": 280,
+            "passed": 280,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 279,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 279,
+            "checked": 279,
+            "passed": 279,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        }
+      ],
+      "source": {
+        "title": "commission (आयोग) ",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "360p",
+        "240p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "360p"
+    },
+    {
+      "job": "6ace92efc9735682f04ee5fe",
+      "classId": "6ace92ef8752d955968b08cc",
+      "title": "Compound Interest Class 07 · Compound Interest (चक्रवृद्धि ब्याज) (3)",
+      "oldAssetKey": "vid:rgvikramjeet-data:653682-1710764795",
+      "category": "source404",
+      "course": "17",
+      "rowId": "11239",
+      "occurrences": [
+        {
+          "course": "17",
+          "rowId": "11239",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Compound Interest Class 07",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "240p",
+        "index": 144,
+        "file": "master-816945.4351954287144.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 511,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 511,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T18:59:37.899Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 320,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 320,
+            "checked": 320,
+            "passed": 320,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 320,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 320,
+            "checked": 320,
+            "passed": 320,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 319,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 319,
+            "checked": 319,
+            "passed": 319,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 323,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 323,
+            "checked": 151,
+            "passed": 150,
+            "failures": [
+              {
+                "rung": "240p",
+                "index": 144,
+                "file": "master-816945.4351954287144.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 511,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 511,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        }
+      ],
+      "source": {
+        "title": "Compound Interest Class 07",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "720p",
+        "360p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace9480c9735682f04eee0f",
+      "classId": "6ace94808752d955968b1fd9",
+      "title": "Economics Class 03",
+      "oldAssetKey": "vid:rgvikramjeet-data:514137-1705732556",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15824",
+      "occurrences": [
+        {
+          "course": "22",
+          "rowId": "15824",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Economics Class 03",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "360p",
+        "index": 147,
+        "file": "master-5328907.909013107147.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 511,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 511,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T19:02:19.207Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 200,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 200,
+            "checked": 200,
+            "passed": 200,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 205,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 205,
+            "checked": 205,
+            "passed": 205,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 203,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 203,
+            "checked": 158,
+            "passed": 157,
+            "failures": [
+              {
+                "rung": "360p",
+                "index": 147,
+                "file": "master-5328907.909013107147.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 511,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 511,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 203,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 203,
+            "checked": 203,
+            "passed": 203,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        }
+      ],
+      "source": {
+        "title": "Economics Class 03",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "720p",
+        "240p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace98d2c9735682f04f0326",
+      "classId": "6ace98d18752d955968b5e0d",
+      "title": "Electric Potential",
+      "oldAssetKey": "vid:rgvikramjeet-data:840565-1716363637",
+      "category": "source404",
+      "course": "42",
+      "rowId": "31789",
+      "occurrences": [
+        {
+          "course": "42",
+          "rowId": "31789",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Electric Potential",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "240p",
+        "index": 21,
+        "file": "master-9148746.37931428321.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 510,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 510,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T19:06:10.093Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 337,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 337,
+            "checked": 337,
+            "passed": 337,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 337,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 337,
+            "checked": 337,
+            "passed": 337,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 337,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 337,
+            "checked": 337,
+            "passed": 337,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 337,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 337,
+            "checked": 29,
+            "passed": 28,
+            "failures": [
+              {
+                "rung": "240p",
+                "index": 21,
+                "file": "master-9148746.37931428321.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 510,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 510,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        }
+      ],
+      "source": {
+        "title": "Electric Potential",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "720p",
+        "360p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace94ecc9735682f04ef087",
+      "classId": "6ace94eb8752d955968b2641",
+      "title": "IMPORTANT AWARD (महत्वपूर्ण पुरस्कार )",
+      "oldAssetKey": "vid:rgvikramjeet-data:416836-1702276104",
+      "category": "source404",
+      "course": "22",
+      "rowId": "16484",
+      "occurrences": [
+        {
+          "course": "22",
+          "rowId": "16484",
+          "listingCaptured": true,
+          "found": true,
+          "title": "IMPORTANT AWARD (महत्वपूर्ण पुरस्कार )",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "360p",
+        "index": 14,
+        "file": "master-5884975.94777049.m3u814.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 507,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 507,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T19:08:34.741Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 201,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 201,
+            "checked": 201,
+            "passed": 201,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 201,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 201,
+            "checked": 201,
+            "passed": 201,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 201,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 201,
+            "checked": 17,
+            "passed": 15,
+            "failures": [
+              {
+                "rung": "360p",
+                "index": 14,
+                "file": "master-5884975.94777049.m3u814.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 507,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 507,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              },
+              {
+                "rung": "360p",
+                "index": 15,
+                "file": "master-5884975.94777049.m3u815.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 507,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 507,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 201,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 201,
+            "checked": 80,
+            "passed": 79,
+            "failures": [
+              {
+                "rung": "240p",
+                "index": 72,
+                "file": "master-5884975.94777049.m3u872.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 503,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 507,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        }
+      ],
+      "source": {
+        "title": "IMPORTANT AWARD (महत्वपूर्ण पुरस्कार )",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "720p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace947ac9735682f04eedf2",
+      "classId": "6ace947a8752d955968b1f77",
+      "title": "PARLIAMENT 04",
+      "oldAssetKey": "vid:rgvikramjeet-data:611217-1709311330",
+      "category": "source404",
+      "course": "22",
+      "rowId": "16237",
+      "occurrences": [
+        {
+          "course": "22",
+          "rowId": "16237",
+          "listingCaptured": true,
+          "found": true,
+          "title": "PARLIAMENT 04",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "240p",
+        "index": 67,
+        "file": "master-8676875.7950856767.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 509,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 509,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T19:11:41.121Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 235,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 235,
+            "checked": 235,
+            "passed": 235,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 235,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 235,
+            "checked": 235,
+            "passed": 235,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 235,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 235,
+            "checked": 235,
+            "passed": 235,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 235,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 235,
+            "checked": 77,
+            "passed": 76,
+            "failures": [
+              {
+                "rung": "240p",
+                "index": 67,
+                "file": "master-8676875.7950856767.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 509,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 509,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        }
+      ],
+      "source": {
+        "title": "PARLIAMENT 04",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "720p",
+        "360p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace94dac9735682f04ef02b",
+      "classId": "6ace94da8752d955968b2537",
+      "title": "Periodic Table PYQs",
+      "oldAssetKey": "vid:rgvikramjeet-data:410865-1701967649",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15716",
+      "occurrences": [
+        {
+          "course": "22",
+          "rowId": "15716",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Periodic Table PYQs ",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-11-10T19:14:14.659Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 322,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 322,
+            "checked": 16,
+            "passed": 15,
+            "failures": [
+              {
+                "rung": "1080p",
+                "index": 10,
+                "file": "master-9816393.6791487.m3u810.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 507,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 503,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 322,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 322,
+            "checked": 8,
+            "passed": 4,
+            "failures": [
+              {
+                "rung": "720p",
+                "index": 5,
+                "file": "master-9816393.6791487.m3u85.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 505,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 505,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              },
+              {
+                "rung": "720p",
+                "index": 4,
+                "file": "master-9816393.6791487.m3u84.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 505,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 505,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              },
+              {
+                "rung": "720p",
+                "index": 6,
+                "file": "master-9816393.6791487.m3u86.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 505,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 505,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              },
+              {
+                "rung": "720p",
+                "index": 7,
+                "file": "master-9816393.6791487.m3u87.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 505,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 505,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 322,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 322,
+            "checked": 37,
+            "passed": 36,
+            "failures": [
+              {
+                "rung": "360p",
+                "index": 21,
+                "file": "master-9816393.6791487.m3u821.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 506,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 506,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 322,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 322,
+            "checked": 322,
+            "passed": 322,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        }
+      ],
+      "source": {
+        "title": "Periodic Table PYQs ",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "240p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "240p"
+    },
+    {
+      "job": "6ace9470c9735682f04eedc0",
+      "classId": "6ace94708752d955968b1ecf",
+      "title": "Preamble (CLASS 01)",
+      "oldAssetKey": "drm:ecfdd952-1ce5-4a93-a21c-08eaab8a4f64",
+      "category": "source404",
+      "course": "22",
+      "rowId": "16186",
+      "occurrences": [
+        {
+          "course": "22",
+          "rowId": "16186",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Preamble (CLASS 01)",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "240p",
+        "index": 5,
+        "file": "master-4524532.516188366.m3u85.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 509,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 509,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T19:17:03.546Z",
+      "qualityChecks": [
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 313,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 313,
+            "checked": 313,
+            "passed": 313,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 313,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 313,
+            "checked": 313,
+            "passed": 313,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 313,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 313,
+            "checked": 18,
+            "passed": 17,
+            "failures": [
+              {
+                "rung": "240p",
+                "index": 5,
+                "file": "master-4524532.516188366.m3u85.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 509,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 509,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        }
+      ],
+      "source": {
+        "title": "Preamble (CLASS 01)",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "720p",
+        "360p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "720p"
+    },
+    {
+      "job": "6ace9300c9735682f04ee656",
+      "classId": "6ace93008752d955968b09dd",
+      "title": "Profit & Loss Class 12 · Profit & Loss (लाभ और हानि) (3)",
+      "oldAssetKey": "vid:rgvikramjeet-data:800648-1715257156",
+      "category": "source404",
+      "course": "18",
+      "rowId": "11652",
+      "occurrences": [
+        {
+          "course": "18",
+          "rowId": "11652",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Profit & Loss Class 12",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "480p",
+        "index": 24,
+        "file": "master-594613.04872550324.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 509,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 509,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T19:21:46.392Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 298,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 298,
+            "checked": 298,
+            "passed": 298,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 298,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 298,
+            "checked": 43,
+            "passed": 42,
+            "failures": [
+              {
+                "rung": "720p",
+                "index": 24,
+                "file": "master-594613.04872550324.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 509,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 509,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 298,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 298,
+            "checked": 298,
+            "passed": 298,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 299,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 299,
+            "checked": 299,
+            "passed": 299,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        }
+      ],
+      "source": {
+        "title": "Profit & Loss Class 12",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "360p",
+        "240p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace92b8c9735682f04ee4f3",
+      "classId": "6ace92b88752d955968b0568",
+      "title": "Ratio 02 · RATIO (अनुपात)",
+      "oldAssetKey": "drm:790be452-5d22-4ebf-8800-4a885e9481c2",
+      "category": "source404",
+      "course": "13",
+      "rowId": "8149",
+      "occurrences": [
+        {
+          "course": "13",
+          "rowId": "8149",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Ratio 02",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "240p",
+        "index": 239,
+        "file": "master-6487914.198526845.m3u8239.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 511,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 511,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T19:23:58.627Z",
+      "qualityChecks": [
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 385,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 385,
+            "checked": 385,
+            "passed": 385,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 385,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 385,
+            "checked": 385,
+            "passed": 385,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 385,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 385,
+            "checked": 269,
+            "passed": 268,
+            "failures": [
+              {
+                "rung": "240p",
+                "index": 239,
+                "file": "master-6487914.198526845.m3u8239.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 507,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 507,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        }
+      ],
+      "source": {
+        "title": "Ratio 02",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "720p",
+        "360p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "720p"
+    },
+    {
+      "job": "6ace9317c9735682f04ee6ce",
+      "classId": "6ace93178752d955968b0b50",
+      "title": "Remainder Class 06",
+      "oldAssetKey": "vid:rgvikramjeet-data:812233-1715610696",
+      "category": "source404",
+      "course": "18",
+      "rowId": "12067",
+      "occurrences": [
+        {
+          "course": "18",
+          "rowId": "12067",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Remainder Class 06",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "360p",
+        "index": 154,
+        "file": "master-5097525.297748557154.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 511,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 511,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T19:26:11.147Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 300,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 300,
+            "checked": 300,
+            "passed": 300,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 300,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 300,
+            "checked": 300,
+            "passed": 300,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 299,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 299,
+            "checked": 183,
+            "passed": 182,
+            "failures": [
+              {
+                "rung": "360p",
+                "index": 154,
+                "file": "master-5097525.297748557154.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 511,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 511,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 300,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 300,
+            "checked": 300,
+            "passed": 300,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        }
+      ],
+      "source": {
+        "title": "Remainder Class 06",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "720p",
+        "240p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace9427c9735682f04eecf8",
+      "classId": "6ace94278752d955968b1c67",
+      "title": "Similarity 03",
+      "oldAssetKey": "vid:rgvikramjeet-data:781903-1714744514",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15391",
+      "occurrences": [
+        {
+          "course": "22",
+          "rowId": "15391",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Similarity 03",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "480p",
+        "index": 308,
+        "file": "master-976936.2217248445308.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 511,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 511,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T19:28:49.390Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 311,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 311,
+            "checked": 311,
+            "passed": 311,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 311,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 311,
+            "checked": 311,
+            "passed": 310,
+            "failures": [
+              {
+                "rung": "720p",
+                "index": 308,
+                "file": "master-976936.2217248445308.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 507,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 507,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 311,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 311,
+            "checked": 311,
+            "passed": 311,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 312,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 312,
+            "checked": 312,
+            "passed": 312,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        }
+      ],
+      "source": {
+        "title": "Similarity 03",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "360p",
+        "240p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace9446c9735682f04eed33",
+      "classId": "6ace94468752d955968b1d1d",
+      "title": "Statement - Assumption 02",
+      "oldAssetKey": "vid:rgvikramjeet-data:838439-1716298822",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15352",
+      "occurrences": [
+        {
+          "course": "22",
+          "rowId": "15352",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Statement - Assumption 02",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "360p",
+        "index": 174,
+        "file": "master-4948664.169707267174.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 511,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 511,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T19:31:32.472Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 379,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 379,
+            "checked": 379,
+            "passed": 379,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 379,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 379,
+            "checked": 379,
+            "passed": 379,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 379,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 379,
+            "checked": 175,
+            "passed": 171,
+            "failures": [
+              {
+                "rung": "360p",
+                "index": 158,
+                "file": "master-4948664.169707267158.ts",
+                "originalFailure": false,
+                "error": "AxiosError",
+                "http": null,
+                "ok": false,
+                "confirmation": {
+                  "http": 206,
+                  "bytes": 1024,
+                  "tsSync": true,
+                  "mp4": false,
+                  "ok": true
+                }
+              },
+              {
+                "rung": "360p",
+                "index": 124,
+                "file": "master-4948664.169707267124.ts",
+                "originalFailure": false,
+                "error": "AxiosError",
+                "http": null,
+                "ok": false,
+                "confirmation": {
+                  "http": 206,
+                  "bytes": 1024,
+                  "tsSync": true,
+                  "mp4": false,
+                  "ok": true
+                }
+              },
+              {
+                "rung": "360p",
+                "index": 174,
+                "file": "master-4948664.169707267174.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 511,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 511,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              },
+              {
+                "rung": "360p",
+                "index": 167,
+                "file": "master-4948664.169707267167.ts",
+                "originalFailure": false,
+                "error": "AxiosError",
+                "http": null,
+                "ok": false,
+                "confirmation": {
+                  "http": 206,
+                  "bytes": 1024,
+                  "tsSync": true,
+                  "mp4": false,
+                  "ok": true
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 379,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 379,
+            "checked": 379,
+            "passed": 379,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        }
+      ],
+      "source": {
+        "title": "Statement - Assumption 02",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "720p",
+        "240p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6aceab0fc9735682f04f2157",
+      "classId": "6aceab0f8752d955968ba1ad",
+      "title": "SUPER SET-01 (HIGH LEVEL)",
+      "oldAssetKey": "vid:englishjaisir-data:611321-1709317626",
+      "category": "source404",
+      "course": "87",
+      "rowId": "42132",
+      "occurrences": [
+        {
+          "course": "87",
+          "rowId": "42132",
+          "listingCaptured": true,
+          "found": true,
+          "title": "SUPER SET-01 (HIGH LEVEL)",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "480p",
+        "index": 875,
+        "file": "master-9934889.858943759875.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 512,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 512,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T19:35:35.192Z",
+      "qualityChecks": [
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 950,
+          "endList": true,
+          "outcome": "source response unresolved",
+          "segmentChecks": {
+            "uniqueSegments": 950,
+            "checked": 597,
+            "passed": 596,
+            "failures": [
+              {
+                "rung": "720p",
+                "index": 550,
+                "file": "master-9934889.858943759550.ts",
+                "originalFailure": false,
+                "error": "AxiosError",
+                "http": null,
+                "ok": false,
+                "confirmation": {
+                  "http": 206,
+                  "bytes": 1024,
+                  "tsSync": true,
+                  "mp4": false,
+                  "ok": true
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 950,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 950,
+            "checked": 950,
+            "passed": 950,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 950,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 950,
+            "checked": 950,
+            "passed": 950,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        }
+      ],
+      "source": {
+        "title": "SUPER SET-01 (HIGH LEVEL)",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "360p",
+        "240p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "360p"
+    },
+    {
+      "job": "6aceab1bc9735682f04f2198",
+      "classId": "6aceab1b8752d955968ba1d0",
+      "title": "SUPER SET-06 (HIGH LEVEL)",
+      "oldAssetKey": "vid:englishjaisir-data:641040-1710352954",
+      "category": "source404",
+      "course": "87",
+      "rowId": "42137",
+      "occurrences": [
+        {
+          "course": "87",
+          "rowId": "42137",
+          "listingCaptured": true,
+          "found": true,
+          "title": "SUPER SET-06 (HIGH LEVEL)",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "480p",
+        "index": 533,
+        "file": "master-7262268.954336431533.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 512,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 512,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T19:43:54.618Z",
+      "qualityChecks": [
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 827,
+          "endList": true,
+          "outcome": "source response unresolved",
+          "segmentChecks": {
+            "uniqueSegments": 827,
+            "checked": 505,
+            "passed": 504,
+            "failures": [
+              {
+                "rung": "720p",
+                "index": 491,
+                "file": "master-7262268.954336431491.ts",
+                "originalFailure": false,
+                "error": "Error",
+                "http": null,
+                "ok": false,
+                "confirmation": {
+                  "http": 206,
+                  "bytes": 1024,
+                  "tsSync": true,
+                  "mp4": false,
+                  "ok": true
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 827,
+          "endList": true,
+          "outcome": "source response unresolved",
+          "segmentChecks": {
+            "uniqueSegments": 827,
+            "checked": 73,
+            "passed": 72,
+            "failures": [
+              {
+                "rung": "360p",
+                "index": 69,
+                "file": "master-7262268.95433643169.ts",
+                "originalFailure": false,
+                "error": "Error",
+                "http": null,
+                "ok": false,
+                "confirmation": {
+                  "http": 206,
+                  "bytes": 1024,
+                  "tsSync": true,
+                  "mp4": false,
+                  "ok": true
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 827,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 827,
+            "checked": 827,
+            "passed": 827,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        }
+      ],
+      "source": {
+        "title": "SUPER SET-06 (HIGH LEVEL)",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "240p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "240p"
+    },
+    {
+      "job": "6ace9582c9735682f04ef311",
+      "classId": "6ace95828752d955968b2e73",
+      "title": "Trigonometry Class 02 · TRIGONOMETRY (6)",
+      "oldAssetKey": "vid:rgvikramjeet-data:584252-1708404954",
+      "category": "source404",
+      "course": "25",
+      "rowId": "18628",
+      "occurrences": [
+        {
+          "course": "25",
+          "rowId": "18628",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Trigonometry Class 02",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "360p",
+        "index": 141,
+        "file": "master-2183562.6497600093141.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 512,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 512,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T19:50:21.119Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 314,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 314,
+            "checked": 314,
+            "passed": 314,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 314,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 314,
+            "checked": 314,
+            "passed": 314,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 314,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 314,
+            "checked": 172,
+            "passed": 171,
+            "failures": [
+              {
+                "rung": "360p",
+                "index": 141,
+                "file": "master-2183562.6497600093141.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 512,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 512,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 320,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 320,
+            "checked": 320,
+            "passed": 320,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        }
+      ],
+      "source": {
+        "title": "Trigonometry Class 02",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "720p",
+        "240p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace92f6c9735682f04ee61c",
+      "classId": "6ace92f68752d955968b092e",
+      "title": "Trigonometry Class 19 · TRIGONOMETRY (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:656581-1710846175",
+      "category": "source404",
+      "course": "17",
+      "rowId": "10970",
+      "occurrences": [
+        {
+          "course": "17",
+          "rowId": "10970",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Trigonometry Class 19",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "480p",
+        "index": 59,
+        "file": "master-3087529.165850677559.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 511,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 511,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T19:53:02.514Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 443,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 443,
+            "checked": 443,
+            "passed": 443,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 442,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 442,
+            "checked": 68,
+            "passed": 67,
+            "failures": [
+              {
+                "rung": "720p",
+                "index": 59,
+                "file": "master-3087529.165850677559.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 511,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 511,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 442,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 442,
+            "checked": 306,
+            "passed": 305,
+            "failures": [
+              {
+                "rung": "360p",
+                "index": 295,
+                "file": "master-3087529.1658506775295.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 512,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 512,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 442,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 442,
+            "checked": 345,
+            "passed": 344,
+            "failures": [
+              {
+                "rung": "240p",
+                "index": 330,
+                "file": "master-3087529.1658506775330.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 512,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 508,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        }
+      ],
+      "source": {
+        "title": "Trigonometry Class 19",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace9583c9735682f04ef319",
+      "classId": "6ace95838752d955968b2e81",
+      "title": "Trigonometry Class 19 · TRIGONOMETRY (7)",
+      "oldAssetKey": "vid:rgvikramjeet-data:656721-1710847787",
+      "category": "source404",
+      "course": "25",
+      "rowId": "18648",
+      "occurrences": [
+        {
+          "course": "25",
+          "rowId": "18648",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Trigonometry Class 19",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "360p",
+        "index": 45,
+        "file": "master-6052796.37528637545.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 510,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 510,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T19:59:15.717Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 443,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 443,
+            "checked": 443,
+            "passed": 443,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 442,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 442,
+            "checked": 442,
+            "passed": 442,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 442,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 442,
+            "checked": 66,
+            "passed": 65,
+            "failures": [
+              {
+                "rung": "360p",
+                "index": 45,
+                "file": "master-6052796.37528637545.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 506,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 510,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 442,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 442,
+            "checked": 442,
+            "passed": 442,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        }
+      ],
+      "source": {
+        "title": "Trigonometry Class 19",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "720p",
+        "240p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace98fcc9735682f04f03fb",
+      "classId": "6ace98fc8752d955968b60c6",
+      "title": "Work & Wages Class 01 · WORK & WAGES (4)",
+      "oldAssetKey": "vid:rgvikramjeet-data:806069-1715411053",
+      "category": "source404",
+      "course": "45",
+      "rowId": "33744",
+      "occurrences": [
+        {
+          "course": "45",
+          "rowId": "33744",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Work & Wages Class 01",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "240p",
+        "index": 279,
+        "file": "master-8907740.747797674279.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 511,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 511,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T20:02:17.062Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 296,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 296,
+            "checked": 296,
+            "passed": 296,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 296,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 296,
+            "checked": 296,
+            "passed": 296,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 296,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 296,
+            "checked": 296,
+            "passed": 296,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 296,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 296,
+            "checked": 288,
+            "passed": 287,
+            "failures": [
+              {
+                "rung": "240p",
+                "index": 279,
+                "file": "master-8907740.747797674279.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 511,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 511,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        }
+      ],
+      "source": {
+        "title": "Work & Wages Class 01",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "720p",
+        "360p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace93a9c9735682f04eea96",
+      "classId": "6ace93a88752d955968b14b1",
+      "title": "अलंकार 02 · अलंकार",
+      "oldAssetKey": "vid:rgvikramjeet-data:520124-1706028252",
+      "category": "source404",
+      "course": "22",
+      "rowId": "16039",
+      "occurrences": [
+        {
+          "course": "22",
+          "rowId": "16039",
+          "listingCaptured": true,
+          "found": true,
+          "title": "अलंकार 02",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "360p",
+        "index": 168,
+        "file": "master-3182605.55528042168.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 510,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 510,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T20:08:30.311Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 222,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 222,
+            "checked": 222,
+            "passed": 222,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 223,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 223,
+            "checked": 223,
+            "passed": 223,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 222,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 222,
+            "checked": 177,
+            "passed": 176,
+            "failures": [
+              {
+                "rung": "360p",
+                "index": 168,
+                "file": "master-3182605.55528042168.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 510,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 510,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 228,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 228,
+            "checked": 228,
+            "passed": 228,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        }
+      ],
+      "source": {
+        "title": "अलंकार 02",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "720p",
+        "240p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace937fc9735682f04ee94b",
+      "classId": "6ace937f8752d955968b11ee",
+      "title": "तत्सम और तद्भव शब्द 02",
+      "oldAssetKey": "vid:rgvikramjeet-data:465612-1703938355",
+      "category": "source404",
+      "course": "22",
+      "rowId": "16552",
+      "occurrences": [
+        {
+          "course": "22",
+          "rowId": "16552",
+          "listingCaptured": true,
+          "found": true,
+          "title": "तत्सम और तद्भव शब्द 02",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "480p",
+        "index": 57,
+        "file": "master-8289280.93313873257.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 510,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 510,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T20:13:03.928Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 225,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 225,
+            "checked": 225,
+            "passed": 225,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 225,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 225,
+            "checked": 65,
+            "passed": 64,
+            "failures": [
+              {
+                "rung": "720p",
+                "index": 57,
+                "file": "master-8289280.93313873257.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 510,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 510,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 225,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 225,
+            "checked": 225,
+            "passed": 225,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 226,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 226,
+            "checked": 226,
+            "passed": 226,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        }
+      ],
+      "source": {
+        "title": "तत्सम और तद्भव शब्द 02",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "360p",
+        "240p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace93a4c9735682f04eea7e",
+      "classId": "6ace93a48752d955968b145d",
+      "title": "हिंदी साहित्य",
+      "oldAssetKey": "vid:rgvikramjeet-data:538157-1706701056",
+      "category": "source404",
+      "course": "22",
+      "rowId": "16028",
+      "occurrences": [
+        {
+          "course": "22",
+          "rowId": "16028",
+          "listingCaptured": true,
+          "found": true,
+          "title": "हिंदी साहित्य ",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "240p",
+        "index": 359,
+        "file": "master-1053160.616287805359.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 511,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 511,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T20:15:23.494Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 375,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 375,
+            "checked": 375,
+            "passed": 375,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 377,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 377,
+            "checked": 377,
+            "passed": 377,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 375,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 375,
+            "checked": 375,
+            "passed": 375,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 391,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 391,
+            "checked": 372,
+            "passed": 371,
+            "failures": [
+              {
+                "rung": "240p",
+                "index": 359,
+                "file": "master-1053160.616287805359.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 511,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 511,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        }
+      ],
+      "source": {
+        "title": "हिंदी साहित्य ",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "720p",
+        "360p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace93a4c9735682f04eea80",
+      "classId": "6ace93a48752d955968b1464",
+      "title": "हिंदी साहित्य 02",
+      "oldAssetKey": "vid:rgvikramjeet-data:553312-1707238241",
+      "category": "source404",
+      "course": "22",
+      "rowId": "16029",
+      "occurrences": [
+        {
+          "course": "22",
+          "rowId": "16029",
+          "listingCaptured": true,
+          "found": true,
+          "title": "हिंदी साहित्य 02",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "480p",
+        "index": 216,
+        "file": "master-5559088.641012216.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 508,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 508,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-11-10T20:23:34.519Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 415,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 415,
+            "checked": 415,
+            "passed": 415,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 415,
+          "endList": true,
+          "outcome": "confirmed source segment gap",
+          "segmentChecks": {
+            "uniqueSegments": 415,
+            "checked": 223,
+            "passed": 222,
+            "failures": [
+              {
+                "rung": "720p",
+                "index": 216,
+                "file": "master-5559088.641012216.ts",
+                "originalFailure": false,
+                "http": 404,
+                "bytes": 508,
+                "tsSync": false,
+                "mp4": false,
+                "ok": false,
+                "confirmation": {
+                  "http": 404,
+                  "bytes": 508,
+                  "tsSync": false,
+                  "mp4": false,
+                  "ok": false
+                }
+              }
+            ],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": false
+          }
+        },
+        {
+          "quality": "360p",
+          "http": 200,
+          "segments": 415,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 415,
+            "checked": 415,
+            "passed": 415,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        },
+        {
+          "quality": "240p",
+          "http": 200,
+          "segments": 433,
+          "endList": true,
+          "outcome": "all required segment references readable",
+          "segmentChecks": {
+            "uniqueSegments": 433,
+            "checked": 433,
+            "passed": 433,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          }
+        }
+      ],
+      "source": {
+        "title": "हिंदी साहित्य 02",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "completeQualities": [
+        "1080p",
+        "360p",
+        "240p"
+      ],
+      "outcome": "complete source quality readable",
+      "readableQuality": "1080p"
+    }
+  ],
+  "requests": 35108,
+  "cmsRequests": 48,
+  "mediaRequests": 35060,
+  "requestBudget": 200000,
+  "segmentBytes": 35718892,
+  "productionWrites": 0,
+  "policy": {
+    "mediaConcurrency": 4,
+    "mediaRequestsPerSecond": 8,
+    "cmsGapMs": 1100,
+    "range": "0-1023",
+    "stopAfterConfirmedGap": true
+  },
+  "completedAt": "2026-11-10T20:31:42.732Z",
+  "allScopeConsidered": true,
+  "checkpoint": true
+}

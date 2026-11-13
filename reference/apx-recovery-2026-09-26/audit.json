@@ -1,0 +1,2419 @@
+{
+  "updatedAt": "2026-09-25T18:47:23.435375+00:00",
+  "audited": 100,
+  "published": 27,
+  "recoverable": 27,
+  "uhsRecordings": 22,
+  "sourceMissing": 51,
+  "enabledCourseClasses": {
+    "recoverable": 25,
+    "source_missing": 3,
+    "uhs_recording": 5
+  },
+  "rows": [
+    {
+      "classId": "6a455e1aebb42f585d9d2f71",
+      "jobId": "6a4564a13aed5ba9f314e9a8",
+      "title": "CLASS-04 || Rivers in India",
+      "inEnabledCourse": true,
+      "enabledPlacements": 3,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "480p"
+      ],
+      "playbackQualities": [
+        "480p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "playlist_404",
+          "rung": "360p",
+          "checked": 0
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 469,
+          "total": 469
+        },
+        {
+          "result": "segment_404",
+          "rung": "240p",
+          "index": 7,
+          "total": 469,
+          "segment": "master-8961671.702634862.m3u86.ts",
+          "checked": 2
+        }
+      ],
+      "apxCourseId": "32",
+      "apxVideoId": "7470",
+      "verification": {
+        "segmentChecks": 3,
+        "mp4Checks": 1,
+        "hasHls": true,
+        "duration": 4689
+      }
+    },
+    {
+      "classId": "6a455eb8ebb42f585d9d6c1e",
+      "jobId": "6a4564b13aed5ba9f314eef7",
+      "title": "Class-01 || Causitive Verb",
+      "inEnabledCourse": true,
+      "enabledPlacements": 1,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "480p"
+      ],
+      "playbackQualities": [
+        "480p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "segment_404",
+          "rung": "360p",
+          "index": 264,
+          "total": 357,
+          "segment": "master-2000381.6540123753263.ts",
+          "checked": 265
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 357,
+          "total": 357
+        },
+        {
+          "result": "segment_404",
+          "rung": "240p",
+          "index": 59,
+          "total": 357,
+          "segment": "master-2000381.654012375358.ts",
+          "checked": 54
+        }
+      ],
+      "apxCourseId": "24",
+      "apxVideoId": "12628",
+      "verification": {
+        "segmentChecks": 3,
+        "mp4Checks": 1,
+        "hasHls": true,
+        "duration": 3571
+      }
+    },
+    {
+      "classId": "6a455bf5ebb42f585d9c485f",
+      "jobId": "6a4564a73aed5ba9f314ebc5",
+      "title": "Class-01 || Gravitation",
+      "inEnabledCourse": true,
+      "enabledPlacements": 3,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "480p",
+        "240p"
+      ],
+      "playbackQualities": [
+        "480p",
+        "144p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "segment_404",
+          "rung": "360p",
+          "index": 15,
+          "total": 255,
+          "segment": "master-7693317.23676229814.ts",
+          "checked": 27
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 256,
+          "total": 256
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "240p",
+          "checked": 256,
+          "total": 256
+        }
+      ],
+      "apxCourseId": "66",
+      "apxVideoId": "24386",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 3185
+      }
+    },
+    {
+      "classId": "6a4559a3ebb42f585d9b17bc",
+      "jobId": "6a4564ae3aed5ba9f314ee00",
+      "title": "Class-01 || Indus Valley Civilisation - सिंधु घाटी सभ्यता",
+      "inEnabledCourse": true,
+      "enabledPlacements": 3,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "480p",
+        "240p"
+      ],
+      "playbackQualities": [
+        "480p",
+        "144p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "segment_404",
+          "rung": "360p",
+          "index": 3,
+          "total": 289,
+          "segment": "master-2947043.67112662132.ts",
+          "checked": 5
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 289,
+          "total": 289
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "240p",
+          "checked": 289,
+          "total": 289
+        }
+      ],
+      "apxCourseId": "115",
+      "apxVideoId": "38206",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 2890
+      }
+    },
+    {
+      "classId": "6a455eb5ebb42f585d9d6a9a",
+      "jobId": "6a4564ab3aed5ba9f314ece9",
+      "title": "Class-01 || Speech & Narration",
+      "inEnabledCourse": true,
+      "enabledPlacements": 1,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "480p",
+        "240p"
+      ],
+      "playbackQualities": [
+        "480p",
+        "144p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "segment_404",
+          "rung": "360p",
+          "index": 427,
+          "total": 527,
+          "segment": "master-7247095.717016356426.ts",
+          "checked": 426
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 527,
+          "total": 527
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "240p",
+          "checked": 527,
+          "total": 527
+        }
+      ],
+      "apxCourseId": "24",
+      "apxVideoId": "9990",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 5271
+      }
+    },
+    {
+      "classId": "6a455c13ebb42f585d9c5636",
+      "jobId": "6a4564ac3aed5ba9f314ed4c",
+      "title": "Class-02 || Sitting Arrangement",
+      "inEnabledCourse": true,
+      "enabledPlacements": 3,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "480p",
+        "240p"
+      ],
+      "playbackQualities": [
+        "480p",
+        "144p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "segment_404",
+          "rung": "360p",
+          "index": 162,
+          "total": 326,
+          "segment": "master-592886.5989443333161.ts",
+          "checked": 160
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 326,
+          "total": 326
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "240p",
+          "checked": 326,
+          "total": 326
+        }
+      ],
+      "apxCourseId": "65",
+      "apxVideoId": "23888",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 3261
+      }
+    },
+    {
+      "classId": "6a455eb7ebb42f585d9d6b7f",
+      "jobId": "6a4564ae3aed5ba9f314edcb",
+      "title": "Class-03 || Preposition",
+      "inEnabledCourse": true,
+      "enabledPlacements": 1,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "360p",
+        "480p"
+      ],
+      "playbackQualities": [
+        "360p",
+        "480p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "all_segments_ok",
+          "rung": "360p",
+          "checked": 520,
+          "total": 520
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 520,
+          "total": 520
+        },
+        {
+          "result": "segment_404",
+          "rung": "240p",
+          "index": 64,
+          "total": 520,
+          "segment": "master-9752278.94164685263.ts",
+          "checked": 63
+        }
+      ],
+      "apxCourseId": "24",
+      "apxVideoId": "10924",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 5200
+      }
+    },
+    {
+      "classId": "6a455eb5ebb42f585d9d6aae",
+      "jobId": "6a4564ab3aed5ba9f314ecf3",
+      "title": "Class-03 || Speech & Narration",
+      "inEnabledCourse": true,
+      "enabledPlacements": 1,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "360p",
+        "240p"
+      ],
+      "playbackQualities": [
+        "360p",
+        "144p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "all_segments_ok",
+          "rung": "360p",
+          "checked": 535,
+          "total": 535
+        },
+        {
+          "result": "segment_404",
+          "rung": "480p",
+          "index": 254,
+          "total": 536,
+          "segment": "master-7081165.057004888253.ts",
+          "checked": 261
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "240p",
+          "checked": 536,
+          "total": 536
+        }
+      ],
+      "apxCourseId": "24",
+      "apxVideoId": "9988",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 5358
+      }
+    },
+    {
+      "classId": "6a455c0febb42f585d9c5472",
+      "jobId": "6a4564a73aed5ba9f314ebc1",
+      "title": "Class-04 || ORDER AND RANKING",
+      "inEnabledCourse": true,
+      "enabledPlacements": 3,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "480p",
+        "240p"
+      ],
+      "playbackQualities": [
+        "480p",
+        "144p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "segment_404",
+          "rung": "360p",
+          "index": 15,
+          "total": 254,
+          "segment": "master-8319771.34648991514.ts",
+          "checked": 30
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 254,
+          "total": 254
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "240p",
+          "checked": 255,
+          "total": 255
+        }
+      ],
+      "apxCourseId": "65",
+      "apxVideoId": "23846",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 3131
+      }
+    },
+    {
+      "classId": "6a455eb7ebb42f585d9d6b89",
+      "jobId": "6a4564ae3aed5ba9f314edda",
+      "title": "Class-04 || Preposition",
+      "inEnabledCourse": true,
+      "enabledPlacements": 1,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "480p",
+        "240p"
+      ],
+      "playbackQualities": [
+        "480p",
+        "144p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "segment_404",
+          "rung": "360p",
+          "index": 168,
+          "total": 422,
+          "segment": "master-1766707.0973679544167.ts",
+          "checked": 166
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 422,
+          "total": 422
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "240p",
+          "checked": 422,
+          "total": 422
+        }
+      ],
+      "apxCourseId": "24",
+      "apxVideoId": "10978",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 4221
+      }
+    },
+    {
+      "classId": "6a455eb4ebb42f585d9d6a3d",
+      "jobId": "6a4564ab3aed5ba9f314ecce",
+      "title": "Class-06 || Active and Passive Voice",
+      "inEnabledCourse": true,
+      "enabledPlacements": 1,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "480p",
+        "240p"
+      ],
+      "playbackQualities": [
+        "480p",
+        "144p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "segment_404",
+          "rung": "360p",
+          "index": 17,
+          "total": 467,
+          "segment": "master-543714.389423319816.ts",
+          "checked": 18
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 467,
+          "total": 467
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "240p",
+          "checked": 467,
+          "total": 467
+        }
+      ],
+      "apxCourseId": "24",
+      "apxVideoId": "9733",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 4671
+      }
+    },
+    {
+      "classId": "6a455eb5ebb42f585d9d6abb",
+      "jobId": "6a4564ac3aed5ba9f314ed50",
+      "title": "Class-07 || Adjectives",
+      "inEnabledCourse": true,
+      "enabledPlacements": 1,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "360p",
+        "480p"
+      ],
+      "playbackQualities": [
+        "360p",
+        "480p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "all_segments_ok",
+          "rung": "360p",
+          "checked": 397,
+          "total": 397
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 398,
+          "total": 398
+        },
+        {
+          "result": "segment_404",
+          "rung": "240p",
+          "index": 138,
+          "total": 397,
+          "segment": "master-4172704.085544101137.ts",
+          "checked": 135
+        }
+      ],
+      "apxCourseId": "24",
+      "apxVideoId": "10383",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 3972
+      }
+    },
+    {
+      "classId": "6a455be3ebb42f585d9c3fd6",
+      "jobId": "6a4564a63aed5ba9f314eb6e",
+      "title": "Class-09 || प्रजनन तंत्र (Reproductive system)",
+      "inEnabledCourse": true,
+      "enabledPlacements": 3,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "360p",
+        "480p"
+      ],
+      "playbackQualities": [
+        "360p",
+        "480p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "all_segments_ok",
+          "rung": "360p",
+          "checked": 350,
+          "total": 350
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 350,
+          "total": 350
+        },
+        {
+          "result": "segment_404",
+          "rung": "240p",
+          "index": 251,
+          "total": 353,
+          "segment": "master-975306.1543590302250.ts",
+          "checked": 264
+        }
+      ],
+      "apxCourseId": "66",
+      "apxVideoId": "24252",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 4351
+      }
+    },
+    {
+      "classId": "6a455be3ebb42f585d9c3fea",
+      "jobId": "6a4564a63aed5ba9f314eb80",
+      "title": "Class-11 || प्रजनन तंत्र (Reproductive system)",
+      "inEnabledCourse": true,
+      "enabledPlacements": 3,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "360p",
+        "480p"
+      ],
+      "playbackQualities": [
+        "360p",
+        "480p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "all_segments_ok",
+          "rung": "360p",
+          "checked": 280,
+          "total": 280
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 279,
+          "total": 279
+        },
+        {
+          "result": "segment_404",
+          "rung": "240p",
+          "index": 61,
+          "total": 282,
+          "segment": "master-7055067.24562066560.ts",
+          "checked": 62
+        }
+      ],
+      "apxCourseId": "66",
+      "apxVideoId": "24254",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 3451
+      }
+    },
+    {
+      "classId": "6a455de6ebb42f585d9d1b31",
+      "jobId": "6a4564af3aed5ba9f314ee2b",
+      "title": "Class-12 || Output Device",
+      "inEnabledCourse": true,
+      "enabledPlacements": 2,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "480p",
+        "240p"
+      ],
+      "playbackQualities": [
+        "480p",
+        "144p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "segment_404",
+          "rung": "360p",
+          "index": 90,
+          "total": 313,
+          "segment": "master-8445898.39190442789.ts",
+          "checked": 109
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 313,
+          "total": 313
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "240p",
+          "checked": 313,
+          "total": 313
+        }
+      ],
+      "apxCourseId": "34",
+      "apxVideoId": "11827",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 3128
+      }
+    },
+    {
+      "classId": "6a455937ebb42f585d9ad622",
+      "jobId": "6a4564b53aed5ba9f314f020",
+      "title": "Class-15 || Mensuration 3D",
+      "inEnabledCourse": true,
+      "enabledPlacements": 13,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "360p",
+        "480p"
+      ],
+      "playbackQualities": [
+        "360p",
+        "480p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "all_segments_ok",
+          "rung": "360p",
+          "checked": 404,
+          "total": 404
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 404,
+          "total": 404
+        },
+        {
+          "result": "segment_404",
+          "rung": "240p",
+          "index": 352,
+          "total": 404,
+          "segment": "master-310446.3818126191351.ts",
+          "checked": 350
+        }
+      ],
+      "apxCourseId": "123",
+      "apxVideoId": "45872",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 4037
+      }
+    },
+    {
+      "classId": "6a455de8ebb42f585d9d1baf",
+      "jobId": "6a4564b13aed5ba9f314eeec",
+      "title": "Class-26 || Network",
+      "inEnabledCourse": true,
+      "enabledPlacements": 2,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "360p",
+        "480p"
+      ],
+      "playbackQualities": [
+        "360p",
+        "480p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "all_segments_ok",
+          "rung": "360p",
+          "checked": 296,
+          "total": 296
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 295,
+          "total": 295
+        },
+        {
+          "result": "segment_404",
+          "rung": "240p",
+          "index": 213,
+          "total": 296,
+          "segment": "master-7584563.247327274212.ts",
+          "checked": 211
+        }
+      ],
+      "apxCourseId": "34",
+      "apxVideoId": "12555",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 2954
+      }
+    },
+    {
+      "classId": "6a455942ebb42f585d9ade00",
+      "jobId": "6a4564aa3aed5ba9f314ecc5",
+      "title": "Class-29 || Number System",
+      "inEnabledCourse": true,
+      "enabledPlacements": 13,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "360p",
+        "480p"
+      ],
+      "playbackQualities": [
+        "360p",
+        "480p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "all_segments_ok",
+          "rung": "360p",
+          "checked": 488,
+          "total": 488
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 488,
+          "total": 488
+        },
+        {
+          "result": "segment_404",
+          "rung": "240p",
+          "index": 122,
+          "total": 488,
+          "segment": "master-11014.113425462658121.ts",
+          "checked": 125
+        }
+      ],
+      "apxCourseId": "123",
+      "apxVideoId": "45821",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 4880
+      }
+    },
+    {
+      "classId": "6a455942ebb42f585d9ade14",
+      "jobId": "6a4564ab3aed5ba9f314eccd",
+      "title": "Class-31 || Number System",
+      "inEnabledCourse": true,
+      "enabledPlacements": 13,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "480p",
+        "240p"
+      ],
+      "playbackQualities": [
+        "480p",
+        "144p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "segment_404",
+          "rung": "360p",
+          "index": 118,
+          "total": 484,
+          "segment": "master-3774943.3485942287117.ts",
+          "checked": 127
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 484,
+          "total": 484
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "240p",
+          "checked": 484,
+          "total": 484
+        }
+      ],
+      "apxCourseId": "123",
+      "apxVideoId": "45823",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 4843
+      }
+    },
+    {
+      "classId": "6a455de9ebb42f585d9d1c24",
+      "jobId": "6a4564b43aed5ba9f314efd1",
+      "title": "Class-39 || Internet",
+      "inEnabledCourse": true,
+      "enabledPlacements": 2,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "360p",
+        "240p"
+      ],
+      "playbackQualities": [
+        "360p",
+        "144p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "all_segments_ok",
+          "rung": "360p",
+          "checked": 272,
+          "total": 272
+        },
+        {
+          "result": "segment_404",
+          "rung": "480p",
+          "index": 10,
+          "total": 272,
+          "segment": "master-9543324.016547019.ts",
+          "checked": 6
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "240p",
+          "checked": 272,
+          "total": 272
+        }
+      ],
+      "apxCourseId": "34",
+      "apxVideoId": "13048",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 2717
+      }
+    },
+    {
+      "classId": "6a455eb3ebb42f585d9d69d3",
+      "jobId": "6a4564a93aed5ba9f314ec64",
+      "title": "Class-4 || Time And Tense",
+      "inEnabledCourse": true,
+      "enabledPlacements": 1,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "480p",
+        "240p"
+      ],
+      "playbackQualities": [
+        "480p",
+        "144p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "segment_404",
+          "rung": "360p",
+          "index": 312,
+          "total": 317,
+          "segment": "master-420931.1517140302311.ts",
+          "checked": 312
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 317,
+          "total": 317
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "240p",
+          "checked": 317,
+          "total": 317
+        }
+      ],
+      "apxCourseId": "24",
+      "apxVideoId": "9210",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 3176
+      }
+    },
+    {
+      "classId": "6a455eb3ebb42f585d9d69e7",
+      "jobId": "6a4564a93aed5ba9f314ec73",
+      "title": "Class-6 || Time And Tense",
+      "inEnabledCourse": true,
+      "enabledPlacements": 1,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "360p",
+        "240p"
+      ],
+      "playbackQualities": [
+        "360p",
+        "144p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "all_segments_ok",
+          "rung": "360p",
+          "checked": 505,
+          "total": 505
+        },
+        {
+          "result": "segment_404",
+          "rung": "480p",
+          "index": 80,
+          "total": 505,
+          "segment": "master-7873265.16403061679.ts",
+          "checked": 78
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "240p",
+          "checked": 504,
+          "total": 504
+        }
+      ],
+      "apxCourseId": "24",
+      "apxVideoId": "9274",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 5047
+      }
+    },
+    {
+      "classId": "6a455eb3ebb42f585d9d69f1",
+      "jobId": "6a4564aa3aed5ba9f314ec79",
+      "title": "Class-7 || Time And Tense",
+      "inEnabledCourse": true,
+      "enabledPlacements": 1,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "360p",
+        "480p"
+      ],
+      "playbackQualities": [
+        "360p",
+        "480p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "all_segments_ok",
+          "rung": "360p",
+          "checked": 465,
+          "total": 465
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 465,
+          "total": 465
+        },
+        {
+          "result": "segment_404",
+          "rung": "240p",
+          "index": 464,
+          "total": 465,
+          "segment": "master-6096662.569787159463.ts",
+          "checked": 460
+        }
+      ],
+      "apxCourseId": "24",
+      "apxVideoId": "9304",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 4648
+      }
+    },
+    {
+      "classId": "6a455a41ebb42f585d9b7364",
+      "jobId": "6a4564a13aed5ba9f314e9a2",
+      "title": "Live Class-161 | Time Speed Distance | Part-15",
+      "inEnabledCourse": true,
+      "enabledPlacements": 8,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "360p",
+        "480p"
+      ],
+      "playbackQualities": [
+        "360p",
+        "480p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "all_segments_ok",
+          "rung": "360p",
+          "checked": 440,
+          "total": 440
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 440,
+          "total": 440
+        },
+        {
+          "result": "segment_404",
+          "rung": "240p",
+          "index": 384,
+          "total": 440,
+          "segment": "master-5296302.933745029.m3u8383.ts",
+          "checked": 379
+        }
+      ],
+      "apxCourseId": "101",
+      "apxVideoId": "34396",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 4401
+      }
+    },
+    {
+      "classId": "6a455defebb42f585d9d1eab",
+      "jobId": "6a4564ad3aed5ba9f314ed71",
+      "title": "PYQ Set-01",
+      "inEnabledCourse": true,
+      "enabledPlacements": 1,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "480p",
+        "240p"
+      ],
+      "playbackQualities": [
+        "480p",
+        "144p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "segment_404",
+          "rung": "360p",
+          "index": 186,
+          "total": 279,
+          "segment": "master-2141261.1400699853185.ts",
+          "checked": 183
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 279,
+          "total": 279
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "240p",
+          "checked": 279,
+          "total": 279
+        }
+      ],
+      "apxCourseId": "33",
+      "apxVideoId": "10551",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 2785
+      }
+    },
+    {
+      "classId": "6a455c54ebb42f585d9c7348",
+      "jobId": "6a4564723aed5ba9f314d78e",
+      "title": "Class-7 || Ratio & Proportion",
+      "inEnabledCourse": true,
+      "enabledPlacements": 2,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh source playlists return HTTP 404 at 240p, 360p, 480p and 720p",
+      "rungAudit": [
+        {
+          "result": "playlist_404",
+          "rung": "360p",
+          "checked": 0
+        },
+        {
+          "result": "playlist_404",
+          "rung": "480p",
+          "checked": 0
+        },
+        {
+          "result": "playlist_404",
+          "rung": "240p",
+          "checked": 0
+        }
+      ],
+      "apxCourseId": "64",
+      "apxVideoId": "28940"
+    },
+    {
+      "classId": "6a92f66146d593ad820a3b62",
+      "jobId": "6a934d6a3aed5ba9f3d45f87",
+      "title": "Revision Class",
+      "inEnabledCourse": true,
+      "enabledPlacements": 1,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "140",
+      "apxVideoId": "52830"
+    },
+    {
+      "classId": "6a4559bbebb42f585d9b26f2",
+      "jobId": "6a4564713aed5ba9f314d750",
+      "title": "World Geography || Class-62 || Solar System - Part 8",
+      "inEnabledCourse": true,
+      "enabledPlacements": 1,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "115",
+      "apxVideoId": "38000"
+    },
+    {
+      "classId": "6a455a96ebb42f585d9b9e8f",
+      "jobId": "6a4564923aed5ba9f314e438",
+      "title": "Class- 17 || Peninsular India- Part 3",
+      "inEnabledCourse": true,
+      "enabledPlacements": 2,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "93",
+      "apxVideoId": "35161"
+    },
+    {
+      "classId": "6a4559bdebb42f585d9b27f6",
+      "jobId": "6a4564983aed5ba9f314e661",
+      "title": "Economics || Class - 24 || Five Years Plan + Another Important Topics",
+      "inEnabledCourse": true,
+      "enabledPlacements": 3,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "115",
+      "apxVideoId": "38028"
+    },
+    {
+      "classId": "6a455a95ebb42f585d9b9e21",
+      "jobId": "6a45648f3aed5ba9f314e304",
+      "title": "Geography Weekly Revision and Sectional Test 02",
+      "inEnabledCourse": true,
+      "enabledPlacements": 2,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "93",
+      "apxVideoId": "34933"
+    },
+    {
+      "classId": "6a455b95ebb42f585d9c1e5c",
+      "jobId": "6a45647e3aed5ba9f314dcd1",
+      "title": "RPF SI 2024 Top Questions",
+      "inEnabledCourse": true,
+      "enabledPlacements": 2,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "70",
+      "apxVideoId": "31116"
+    },
+    {
+      "classId": "6a4559b5ebb42f585d9b22dc",
+      "jobId": "6a4564843aed5ba9f314df38",
+      "title": "Static Gk || Class-60 || Tiger Reserves",
+      "inEnabledCourse": true,
+      "enabledPlacements": 5,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "115",
+      "apxVideoId": "37894"
+    },
+    {
+      "classId": "6a455da4ebb42f585d9d0094",
+      "jobId": "6a4564b43aed5ba9f314efec",
+      "title": "Class-03 || SI & CI (07 Jun 2024)",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "360p",
+        "480p"
+      ],
+      "playbackQualities": [
+        "360p",
+        "480p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "all_segments_ok",
+          "rung": "360p",
+          "checked": 308,
+          "total": 308
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 308,
+          "total": 308
+        },
+        {
+          "result": "segment_404",
+          "rung": "240p",
+          "index": 207,
+          "total": 308,
+          "segment": "master-3626257.6879452136206.ts",
+          "checked": 215
+        }
+      ],
+      "apxCourseId": "37",
+      "apxVideoId": "13130",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 3085
+      }
+    },
+    {
+      "classId": "6a455e74ebb42f585d9d5225",
+      "jobId": "6a4564a73aed5ba9f314ebc6",
+      "title": "Class-वर्तनी MCQ",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "recoverable",
+      "published": true,
+      "sourceQualities": [
+        "480p",
+        "240p"
+      ],
+      "playbackQualities": [
+        "480p",
+        "144p"
+      ],
+      "reason": "Restored and verified through signed CDN playback",
+      "rungAudit": [
+        {
+          "result": "segment_404",
+          "rung": "360p",
+          "index": 262,
+          "total": 328,
+          "segment": "master-1397437.442577809261.ts",
+          "checked": 260
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "480p",
+          "checked": 328,
+          "total": 328
+        },
+        {
+          "result": "all_segments_ok",
+          "rung": "240p",
+          "checked": 328,
+          "total": 328
+        }
+      ],
+      "apxCourseId": "29",
+      "apxVideoId": "8463",
+      "verification": {
+        "segmentChecks": 6,
+        "mp4Checks": 2,
+        "hasHls": true,
+        "duration": 4093
+      }
+    },
+    {
+      "classId": "6a455e7aebb42f585d9d54b8",
+      "jobId": "6a4564713aed5ba9f314d754",
+      "title": "CLASS - 10 || History [8793]",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "29",
+      "apxVideoId": "8793"
+    },
+    {
+      "classId": "6a4559d3ebb42f585d9b34f7",
+      "jobId": "6a4564713aed5ba9f314d770",
+      "title": "Class - 12 || Simplification",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "111",
+      "apxVideoId": "38436"
+    },
+    {
+      "classId": "6a4559d6ebb42f585d9b3638",
+      "jobId": "6a4564713aed5ba9f314d760",
+      "title": "Class 09 || P.4 EXCLUSIVE PAPER CTM (PART 2)",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "111",
+      "apxVideoId": "40722"
+    },
+    {
+      "classId": "6a455922ebb42f585d9ac810",
+      "jobId": "6a4564713aed5ba9f314d765",
+      "title": "Class 10 || Clock Part-5",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "124",
+      "apxVideoId": "47076"
+    },
+    {
+      "classId": "6aab038eaacb88187198a451",
+      "jobId": "6aab07ef3aed5ba9f3458a44",
+      "title": "Class 131 || State (राज्य)",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "138",
+      "apxVideoId": "53630"
+    },
+    {
+      "classId": "6a95ebd96ac37707ba23f9d0",
+      "jobId": "6a95f2103aed5ba9f3db3748",
+      "title": "Class 192 || Last 6 Month Current Affairs -140",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "127",
+      "apxVideoId": "53369"
+    },
+    {
+      "classId": "6a455902ebb42f585d9ab0be",
+      "jobId": "6a4564713aed5ba9f314d768",
+      "title": "Class 27 || महत्वपूर्ण अनुच्छेद (Important articles)",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "126",
+      "apxVideoId": "48254"
+    },
+    {
+      "classId": "6a455923ebb42f585d9ac8ce",
+      "jobId": "6a4564713aed5ba9f314d767",
+      "title": "Class 28 || Coding Decoding part -1",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "124",
+      "apxVideoId": "47970"
+    },
+    {
+      "classId": "6a455946ebb42f585d9ae04a",
+      "jobId": "6a4564713aed5ba9f314d769",
+      "title": "Class 32 || Simplification (Surds and Indices)",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "123",
+      "apxVideoId": "50038"
+    },
+    {
+      "classId": "6a4558d4ebb42f585d9a9094",
+      "jobId": "6a4564713aed5ba9f314d773",
+      "title": "Class 42 || Syllogism Part-6",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "139",
+      "apxVideoId": "51326"
+    },
+    {
+      "classId": "6a455d4bebb42f585d9cdadc",
+      "jobId": "6a4564713aed5ba9f314d774",
+      "title": "Class quality testing",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "43",
+      "apxVideoId": "51141"
+    },
+    {
+      "classId": "6a45599febb42f585d9b154f",
+      "jobId": "6a4564713aed5ba9f314d762",
+      "title": "Class- 02 || Analogy ( सादृश्यता ) Part -2",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "118",
+      "apxVideoId": "43023"
+    },
+    {
+      "classId": "6a455a87ebb42f585d9b9666",
+      "jobId": "6a4564713aed5ba9f314d771",
+      "title": "Class- 35 || Human Eye &  Eye Disease (मानव आंख & नेत्र रोग)",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "94",
+      "apxVideoId": "35789"
+    },
+    {
+      "classId": "6a455d9eebb42f585d9cfe3a",
+      "jobId": "6a4564713aed5ba9f314d759",
+      "title": "Class- 49 I SSC CGL PYP 3",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "38",
+      "apxVideoId": "14894"
+    },
+    {
+      "classId": "6a455e0febb42f585d9d2b1f",
+      "jobId": "6a4564713aed5ba9f314d756",
+      "title": "Class-02 || Statement and Assumption [11669]",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "32",
+      "apxVideoId": "11669"
+    },
+    {
+      "classId": "6a455e23ebb42f585d9d3353",
+      "jobId": "6a4564713aed5ba9f314d76a",
+      "title": "Class-10 || polity special class",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "32",
+      "apxVideoId": "13108"
+    },
+    {
+      "classId": "6a455e0eebb42f585d9d2ad7",
+      "jobId": "6a4564713aed5ba9f314d755",
+      "title": "Class-11 || Sitting Arrangement [10719]",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "32",
+      "apxVideoId": "10719"
+    },
+    {
+      "classId": "6a455e3eebb42f585d9d3dec",
+      "jobId": "6a4564713aed5ba9f314d75b",
+      "title": "Class-29 || World Geo graphy -North America - Class - 01",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "32",
+      "apxVideoId": "20805"
+    },
+    {
+      "classId": "6a4559b0ebb42f585d9b1fe4",
+      "jobId": "6a4564713aed5ba9f314d75d",
+      "title": "Class-58 || Geography - Agriculture in India (Part-4)",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "115",
+      "apxVideoId": "37818"
+    },
+    {
+      "classId": "6a45591febb42f585d9ac60d",
+      "jobId": "6a4564713aed5ba9f314d772",
+      "title": "Computer Weekly Revision and Sectional Test 10",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "124",
+      "apxVideoId": "46436"
+    },
+    {
+      "classId": "6a455b83ebb42f585d9c16a3",
+      "jobId": "6a4564713aed5ba9f314d74f",
+      "title": "I.T. Literacy  - Logic Gates",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "72",
+      "apxVideoId": "30019"
+    },
+    {
+      "classId": "6a4559c0ebb42f585d9b29f7",
+      "jobId": "6a4564713aed5ba9f314d76e",
+      "title": "Indian Polity || Class -50 || Parliament Part-9 ( Class with Error)",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "115",
+      "apxVideoId": "38084"
+    },
+    {
+      "classId": "6a455bccebb42f585d9c3583",
+      "jobId": "6a45646e3aed5ba9f314d616",
+      "title": "Indian Polity || Class -50 || Parliament Part-9 ( Class with Error) [33221]",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "67",
+      "apxVideoId": "33221"
+    },
+    {
+      "classId": "6a455fdcebb42f585d9ddcb5",
+      "jobId": "6a4564713aed5ba9f314d753",
+      "title": "Live Class-120| Average | Part-14 [125]",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "3",
+      "apxVideoId": "125"
+    },
+    {
+      "classId": "6a4559f4ebb42f585d9b47ab",
+      "jobId": "6a4564713aed5ba9f314d763",
+      "title": "Practice Set -4 (Engineering)",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "109",
+      "apxVideoId": "44053"
+    },
+    {
+      "classId": "6a4559f6ebb42f585d9b48d3",
+      "jobId": "6a4564713aed5ba9f314d764",
+      "title": "Practice Set -5 (Engineering)",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "109",
+      "apxVideoId": "44605"
+    },
+    {
+      "classId": "6a455921ebb42f585d9ac72e",
+      "jobId": "6a4564713aed5ba9f314d766",
+      "title": "Practice Set 9",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "124",
+      "apxVideoId": "47381"
+    },
+    {
+      "classId": "6a455c99ebb42f585d9c90a5",
+      "jobId": "6a4564713aed5ba9f314d74c",
+      "title": "RPF ALP Top Questions 2024",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "58",
+      "apxVideoId": "30302"
+    },
+    {
+      "classId": "6a455c99ebb42f585d9c90af",
+      "jobId": "6a4564713aed5ba9f314d74d",
+      "title": "RRB Technician Grade - 3 2024 Top Questions",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "58",
+      "apxVideoId": "30953"
+    },
+    {
+      "classId": "6a455c1aebb42f585d9c5a04",
+      "jobId": "6a4564713aed5ba9f314d75a",
+      "title": "Rapid Fire Session - 6",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "65",
+      "apxVideoId": "23980"
+    },
+    {
+      "classId": "6a455a0debb42f585d9b5857",
+      "jobId": "6a4564713aed5ba9f314d751",
+      "title": "Reasoning Weekly Revision and Sectional Test 05",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "109",
+      "apxVideoId": "36316"
+    },
+    {
+      "classId": "6a455ed3ebb42f585d9d76ae",
+      "jobId": "6a4564713aed5ba9f314d752",
+      "title": "SSC GD PYP 16 || (Basic Approach+  Tricks के साथ) [4699]",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "20",
+      "apxVideoId": "4699"
+    },
+    {
+      "classId": "6a4559b5ebb42f585d9b2304",
+      "jobId": "6a45646e3aed5ba9f314d619",
+      "title": "STATIC GK || Class-64 || Wildlife Sanctuaries ( Internet Error )",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "115",
+      "apxVideoId": "37898"
+    },
+    {
+      "classId": "6a455cc6ebb42f585d9ca3b2",
+      "jobId": "6a45646e3aed5ba9f314d615",
+      "title": "STATIC GK || Class-64 || Wildlife Sanctuaries ( Internet Error ) [31464]",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "55",
+      "apxVideoId": "31464"
+    },
+    {
+      "classId": "6a455dd6ebb42f585d9d14ab",
+      "jobId": "6a4564713aed5ba9f314d76d",
+      "title": "STATIC GK || Class-64 || Wildlife Sanctuaries ( Internet Error ) [31465]",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "35",
+      "apxVideoId": "31465"
+    },
+    {
+      "classId": "6a455bc0ebb42f585d9c309a",
+      "jobId": "6a45646e3aed5ba9f314d617",
+      "title": "STATIC GK || Class-64 || Wildlife Sanctuaries ( Internet Error ) [35895]",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "67",
+      "apxVideoId": "35895"
+    },
+    {
+      "classId": "6a455ab7ebb42f585d9bb39c",
+      "jobId": "6a45646e3aed5ba9f314d61a",
+      "title": "STATIC GK || Class-64 || Wildlife Sanctuaries ( Internet Error ) [44158]",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "93",
+      "apxVideoId": "44158"
+    },
+    {
+      "classId": "6a455b40ebb42f585d9bf78c",
+      "jobId": "6a45646e3aed5ba9f314d61b",
+      "title": "STATIC GK || Class-64 || Wildlife Sanctuaries ( Internet Error ) [44420]",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "90",
+      "apxVideoId": "44420"
+    },
+    {
+      "classId": "6a4559b6ebb42f585d9b2390",
+      "jobId": "6a4564713aed5ba9f314d76f",
+      "title": "Static GK || Class-77 || Famous Places in World Part-2 ( Error Class ))",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "115",
+      "apxVideoId": "37912"
+    },
+    {
+      "classId": "6a455bc1ebb42f585d9c30ff",
+      "jobId": "6a45646e3aed5ba9f314d618",
+      "title": "Static GK || Class-77 || Famous Places in World Part-2 ( Error Class )) [35909]",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "67",
+      "apxVideoId": "35909"
+    },
+    {
+      "classId": "6a4559b7ebb42f585d9b2478",
+      "jobId": "6a4564713aed5ba9f314d75e",
+      "title": "Static GK || Class-99 || First in India- Part 3",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "115",
+      "apxVideoId": "37937"
+    },
+    {
+      "classId": "6a455bceebb42f585d9c36a3",
+      "jobId": "6a4564713aed5ba9f314d75f",
+      "title": "Static Gk || Class-1 || Festival in India",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "67",
+      "apxVideoId": "35677"
+    },
+    {
+      "classId": "6a455b7bebb42f585d9c12e8",
+      "jobId": "6a4564713aed5ba9f314d76b",
+      "title": "TREE PHASE INDUCTION MOTOR",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "81",
+      "apxVideoId": "30894"
+    },
+    {
+      "classId": "6a455c76ebb42f585d9c8223",
+      "jobId": "6a4564713aed5ba9f314d757",
+      "title": "Testing",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "58",
+      "apxVideoId": "20876"
+    },
+    {
+      "classId": "6a455b7aebb42f585d9c12df",
+      "jobId": "6a4564713aed5ba9f314d76c",
+      "title": "Three phase induction motor",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "81",
+      "apxVideoId": "30895"
+    },
+    {
+      "classId": "6a455d4aebb42f585d9cdaaf",
+      "jobId": "6a4564713aed5ba9f314d758",
+      "title": "abc",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "43",
+      "apxVideoId": "12782"
+    },
+    {
+      "classId": "6a455d4bebb42f585d9cdac1",
+      "jobId": "6a4564713aed5ba9f314d761",
+      "title": "test notification",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "43",
+      "apxVideoId": "41052"
+    },
+    {
+      "classId": "6a455de5ebb42f585d9d1a9e",
+      "jobId": "6a4564713aed5ba9f314d74e",
+      "title": "testing - 2",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "source_missing",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "Fresh APX metadata lists no recording; old live link is unusable",
+      "rungAudit": [],
+      "apxCourseId": "34",
+      "apxVideoId": "12340"
+    },
+    {
+      "classId": "6a455b74ebb42f585d9c0fc3",
+      "jobId": "6a4564873aed5ba9f314e00e",
+      "title": "Class - 10 || Atomic Structure (परमाणु सिद्धांत) Part - 2",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "82",
+      "apxVideoId": "32673"
+    },
+    {
+      "classId": "6a455b74ebb42f585d9c0fcc",
+      "jobId": "6a4564873aed5ba9f314e021",
+      "title": "Class - 11 || Atomic Rules (परमाणुक नियम)",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "82",
+      "apxVideoId": "32707"
+    },
+    {
+      "classId": "6a455b74ebb42f585d9c0fd5",
+      "jobId": "6a4564873aed5ba9f314e041",
+      "title": "Class - 12 || Atomic Rules (परमाणुक नियम) Questions Practice",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "82",
+      "apxVideoId": "32746"
+    },
+    {
+      "classId": "6a455b75ebb42f585d9c101d",
+      "jobId": "6a4564893aed5ba9f314e0d9",
+      "title": "Class - 20 || Metal (धातु)",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "82",
+      "apxVideoId": "33021"
+    },
+    {
+      "classId": "6a455b75ebb42f585d9c1026",
+      "jobId": "6a4564893aed5ba9f314e0f4",
+      "title": "Class - 21 || Metal (धातु) Part - 2",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "82",
+      "apxVideoId": "33061"
+    },
+    {
+      "classId": "6a455b75ebb42f585d9c1041",
+      "jobId": "6a45648a3aed5ba9f314e158",
+      "title": "Class - 24 || Metal & Non-metal (धातु & अधातु) Part - 3",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "82",
+      "apxVideoId": "33367"
+    },
+    {
+      "classId": "6a455b75ebb42f585d9c104a",
+      "jobId": "6a45648a3aed5ba9f314e16d",
+      "title": "Class - 25 || Metal & Non-metal (धातु & अधातु) Part - 4",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "82",
+      "apxVideoId": "33369"
+    },
+    {
+      "classId": "6a455b75ebb42f585d9c1053",
+      "jobId": "6a45648a3aed5ba9f314e181",
+      "title": "Class - 26 || Metal & Non-metal (धातु & अधातु) Part - 5",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "82",
+      "apxVideoId": "33407"
+    },
+    {
+      "classId": "6a455b76ebb42f585d9c1092",
+      "jobId": "6a45648d3aed5ba9f314e29a",
+      "title": "Class - 33 || Organic Chemistry ( कार्बनिक रसायन ) Part 1",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "82",
+      "apxVideoId": "34826"
+    },
+    {
+      "classId": "6a455b71ebb42f585d9c0e4f",
+      "jobId": "6a4564873aed5ba9f314e068",
+      "title": "Class - 41 || Genetics (आनुवांशिकी) Part - 1",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "82",
+      "apxVideoId": "32853"
+    },
+    {
+      "classId": "6a455b72ebb42f585d9c0e85",
+      "jobId": "6a4564893aed5ba9f314e0d5",
+      "title": "Class - 47 || Plant Tissue (पौध ऊतक) Part - 3",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "82",
+      "apxVideoId": "33020"
+    },
+    {
+      "classId": "6a455b72ebb42f585d9c0e8e",
+      "jobId": "6a4564893aed5ba9f314e0f2",
+      "title": "Class - 48 || Animal Tissue (जंतु ऊतक)",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "82",
+      "apxVideoId": "33060"
+    },
+    {
+      "classId": "6a455b72ebb42f585d9c0ea9",
+      "jobId": "6a45648a3aed5ba9f314e155",
+      "title": "Class - 51 || Cell (कोशिका) Part-1",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "82",
+      "apxVideoId": "33366"
+    },
+    {
+      "classId": "6a455b72ebb42f585d9c0eb2",
+      "jobId": "6a45648a3aed5ba9f314e16a",
+      "title": "Class - 52 || Cell (कोशिका) Part-2",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "82",
+      "apxVideoId": "33368"
+    },
+    {
+      "classId": "6a455b72ebb42f585d9c0ebb",
+      "jobId": "6a45648a3aed5ba9f314e17f",
+      "title": "Class - 53 || Cell (कोशिका) Part-3",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "82",
+      "apxVideoId": "33406"
+    },
+    {
+      "classId": "6a455b77ebb42f585d9c111c",
+      "jobId": "6a4564993aed5ba9f314e6a0",
+      "title": "Class- 05 || Unit and Measurements (इकाई और मापन) Part 5",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "82",
+      "apxVideoId": "35853"
+    },
+    {
+      "classId": "6a455b70ebb42f585d9c0dec",
+      "jobId": "6a4564843aed5ba9f314df43",
+      "title": "Class-30 || Excretory System ( उत्सर्जन तंत्र ) Part-3",
+      "inEnabledCourse": false,
+      "enabledPlacements": 0,
+      "category": "uhs_recording",
+      "published": false,
+      "sourceQualities": [],
+      "playbackQualities": [],
+      "reason": "APX lists UHS 3 recordings; standard token response has no HLS URLs. Direct legacy paths return 404. Economics UHS player returned error 4002: Limit reached for today.",
+      "rungAudit": [],
+      "apxCourseId": "82",
+      "apxVideoId": "31336"
+    }
+  ]
+}

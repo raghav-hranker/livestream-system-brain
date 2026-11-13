@@ -1,0 +1,37 @@
+<!doctype html>
+<!--
+  PROTOTYPE, throwaway. Question: what should the Vidyagram launch homepage look like?
+  Round 2: three restrained, founder-led directions (round 1's concept pages were rejected as gimmicky).
+  Switch with ?variant=A|B|C, the bottom bar or the arrow keys.
+  Content is a snapshot of arvidyagram.com (2026-11-05). Nothing talks to a backend. Not for deploy.
+  Run: open this file, or preview_start "vg-launch-home".
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vidyagram launch homepage · PROTOTYPE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Figtree:wght@400;500;600;700;800&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shell.css">
+<link rel="stylesheet" href="sections.css">
+<link rel="stylesheet" href="variant-a.css">
+<link rel="stylesheet" href="variant-b.css">
+<link rel="stylesheet" href="variant-c.css">
+</head>
+<body>
+<div id="root"></div>
+<nav id="proto-bar" aria-label="Prototype variant switcher">
+  <button id="proto-prev" aria-label="Previous variant">←</button>
+  <span id="proto-label"></span>
+  <button id="proto-next" aria-label="Next variant">→</button>
+</nav>
+<script src="data.js"></script>
+<script src="sections.js"></script>
+<script src="variant-a.js"></script>
+<script src="variant-b.js"></script>
+<script src="variant-c.js"></script>
+<script src="shell.js"></script>
+</body>
+</html>

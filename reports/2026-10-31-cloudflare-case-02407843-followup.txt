@@ -1,0 +1,42 @@
+Additional live-class evidence — 31 October 2026, class identifier prefix 6ae54be9…, start approximately 17:13  IST (11:43 UTC). Student names are omitted.
+
+
+
+
+The strongest comparison is the same student, same live class, and same Vodafone Idea network, with failed playback via MAA followed by healthy playback via DEL approximately three minutes later:
+
+- 17:19:31 IST (11:49:31 UTC), Vi via MAA: segment 97, then 98 at +11 s, 100 at +43 s, and 121 at +99 s.
+
+- Next playback at 17:22:27 IST (11:52:27 UTC), Vi via DEL: 602 requests over 33 minutes, segments every 2–5 s, all HTTP 200.
+
+This supports a delivery-path issue specific to Vi via MAA; it does not by itself prove packet loss or isolate the exact faulty hop.
+
+
+
+
+We could correlate five complaining viewers to their own playback requests because they joined after the opening rush. All five were Vodafone Idea via MAA. Their segment delivery was too slow to sustain playback of 4-second segments:
+
+1. 17:18:41 IST (11:48:41 UTC): segment 82, then 88 at +25 s, 89 at +49 s, 90 at +73 s, then stopped.
+
+2. The MAA-to-DEL comparison above.
+
+3. 17:14:35 IST (11:44:35 UTC): segment 20, then 21 at +34 s. The viewer explicitly reported using a Vi SIM.
+
+4. 17:35:48 IST (12:05:48 UTC): segment 339, 341 at +14 s, 342 at +18 s, then stopped.
+
+5. 17:18:22 IST (11:48:22 UTC): only a playlist, no segments. The same viewer subsequently reopened the class 66 times, roughly every 5 s during 17:45–17:51 IST (12:15–12:21 UTC).
+
+
+
+
+During the same minutes, Airtel, Jio, and Vi viewers via DEL or BOM played without stalls. On our side, encoder output was within 2–6 s of R2 on all quality rungs, no missing segments or 404 bursts were observed, and edge TTFB p99 was below 0.75 s.
+
+
+
+
+Chat context: 563 messages from 92 users; 16 users mentioned buffering, mainly 17:14–17:21 IST, although a few also reported it was fine. We could not reliably attribute requests for viewers joining in the initial rush because many shared the same token timestamp, so those viewers are excluded from the five correlated examples.
+
+
+
+
+Please correlate these windows with the MAA ↔ Vodafone Idea path and investigate the contrast with DEL. We continue to request network engineering escalation and confirmation of the support handling available through unlimitededucation.in's Business subscription on this account.

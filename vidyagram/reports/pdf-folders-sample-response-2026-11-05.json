@@ -1,0 +1,117 @@
+{
+ "note": "Local run on a scratch database seeded from live public APIs, 2026-11-05. Not a live response. PDF list cut to 2 of 29.",
+ "GET /api/topic-and-section?courseId=6ad5fa91308a95d039c38632&includePdfFolders=1 (the appended row)": {
+  "topicId": "6aeb8c64117d0719352f6fdc",
+  "topicName": "Printable Practice Workbook",
+  "topicNameOverride": null,
+  "topicImage": null,
+  "mainCategory": {
+   "_id": null,
+   "mainCategoryName": null,
+   "mainCategoryNameOverride": null
+  },
+  "category": {
+   "_id": null,
+   "categoryName": null,
+   "categoryNameOverride": null
+  },
+  "priority": 2,
+  "classCount": 0,
+  "totalClasses": 0,
+  "watchedClasses": 0,
+  "newClassCount": 0,
+  "completionPercentage": 0,
+  "isStarted": false,
+  "isCompleted": false,
+  "isBlinking": false,
+  "sections": [
+   {
+    "_id": "6ad5fa90308a95d039c38610",
+    "sectionName": "Upgk",
+    "sectionNameOverride": null,
+    "sectionImage": null,
+    "classCount": 0,
+    "facultyName": null,
+    "facultyImage": null,
+    "isBlinking": false,
+    "classTests": [],
+    "subTopics": []
+   }
+  ],
+  "pdfCount": 29
+ },
+ "GET /api/topics/:topicId/classes?courseId=6ad5fa91308a95d039c38632": {
+  "topicId": "6aeb8c64117d0719352f6fdc",
+  "courseId": "6ad5fa91308a95d039c38632",
+  "subTopic": [],
+  "classes": [],
+  "pdfs": [
+   {
+    "_id": "6ae932313fd4aeae52c68892",
+    "id": "6ae9313f3fd4aeae52c657f5",
+    "title": "01 - UP Mapping",
+    "teacherName": "Vidyagram Team",
+    "status": 1,
+    "isFree": false,
+    "isDownloadable": true,
+    "createdAt": "2026-11-03T00:56:31.974Z",
+    "updatedAt": "2026-11-03T00:56:31.974Z",
+    "priority": 2,
+    "mainCategory": {
+     "id": "6ace4d459e33840b2256c218",
+     "mainCategoryName": "Vidyagram"
+    },
+    "category": {
+     "id": "6ace4d469e33840b2256c21b",
+     "categoryName": "All Courses"
+    },
+    "overrideSectionName": null,
+    "section": {
+     "id": "6ace4d469e33840b2256c21f",
+     "sectionName": "Upgk"
+    },
+    "topic": {
+     "topicName": "Printable Practice Workbook"
+    },
+    "asset": {
+     "state": "ready",
+     "mimeType": "application/pdf",
+     "sizeBytes": 529722
+    }
+   },
+   {
+    "_id": "6ae932313fd4aeae52c68893",
+    "id": "6ae9313e3fd4aeae52c657f2",
+    "title": "02 -संगठन व संस्थान (Organisations & Institutions)",
+    "teacherName": "Vidyagram Team",
+    "status": 1,
+    "isFree": false,
+    "isDownloadable": true,
+    "createdAt": "2026-11-03T00:56:30.360Z",
+    "updatedAt": "2026-11-03T00:56:30.360Z",
+    "priority": 3,
+    "mainCategory": {
+     "id": "6ace4d459e33840b2256c218",
+     "mainCategoryName": "Vidyagram"
+    },
+    "category": {
+     "id": "6ace4d469e33840b2256c21b",
+     "categoryName": "All Courses"
+    },
+    "overrideSectionName": null,
+    "section": {
+     "id": "6ace4d469e33840b2256c21f",
+     "sectionName": "Upgk"
+    },
+    "topic": {
+     "topicName": "Printable Practice Workbook"
+    },
+    "asset": {
+     "state": "ready",
+     "mimeType": "application/pdf",
+     "sizeBytes": 548899
+    }
+   }
+  ]
+ }
+}

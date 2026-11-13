@@ -1,0 +1,44 @@
+{
+  "completedAt": "2026-10-29T12:34:14.721Z",
+  "selected": 3,
+  "imported": 3,
+  "totalSegments": 1922,
+  "allSegmentBodiesCopiedAndValidated": true,
+  "storageVerified": true,
+  "signedAdminPlaybackVerified": true,
+  "visibilityPreserved": true,
+  "allRemainHidden": true,
+  "otherJobsUnchanged": 168,
+  "assets": [
+    {
+      "classId": "6ace996c8752d955968b678e",
+      "job": "6ace996cc9735682f04f067c",
+      "title": "Time, Speed & Distance Class 03 · TIME , SPEED & DISTANCE (2)",
+      "sourceCourse": "45",
+      "sourceRow": "34046",
+      "quality": "900p",
+      "segments": 380,
+      "durationSec": 3795.366594000007
+    },
+    {
+      "classId": "6ace99558752d955968b6629",
+      "job": "6ace9955c9735682f04f0614",
+      "title": "Train Class 01 · TRAIN (4)",
+      "sourceCourse": "45",
+      "sourceRow": "33822",
+      "quality": "900p",
+      "segments": 286,
+      "durationSec": 3374.85
+    },
+    {
+      "classId": "6ace99fd8752d955968b70be",
+      "job": "6ace99fec9735682f04f0950",
+      "title": "Percentage Class 14 (2)",
+      "sourceCourse": "47",
+      "sourceRow": "35200",
+      "quality": "480p",
+      "segments": 1256,
+      "durationSec": 15557.650000000003
+    }
+  ]
+}

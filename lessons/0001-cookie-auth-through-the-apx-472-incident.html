@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cookie authentication through the APX 472 incident</title>
+  <style>
+    :root {
+      --ink: #15201b;
+      --muted: #5c6c63;
+      --paper: #fbfcf9;
+      --panel: #ffffff;
+      --line: #dce5de;
+      --green: #147a52;
+      --green-soft: #e9f5ef;
+      --amber: #9a5a00;
+      --amber-soft: #fff3dc;
+      --red: #a43838;
+      --red-soft: #fff0ee;
+      --blue: #2d5f9a;
+      --blue-soft: #eef5ff;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 0%, #edf7ef 0, transparent 28rem),
+        var(--paper);
+      font: 17px/1.58 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main { width: min(900px, calc(100% - 36px)); margin: 0 auto; padding: 64px 0 96px; }
+    header { margin-bottom: 42px; }
+    .eyebrow { color: var(--green); font-size: 13px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    h1 { max-width: 760px; margin: 10px 0 12px; font: 750 clamp(38px, 7vw, 66px)/1.02 Georgia, serif; letter-spacing: -.035em; }
+    .lede { max-width: 720px; margin: 0; color: var(--muted); font-size: 21px; }
+    h2 { margin: 58px 0 16px; font: 700 31px/1.15 Georgia, serif; letter-spacing: -.02em; }
+    h3 { margin: 26px 0 8px; font-size: 18px; }
+    p { margin: 10px 0 16px; }
+    code { padding: .08em .34em; border: 1px solid var(--line); border-radius: 5px; background: #f4f7f4; font: .9em var(--mono); }
+    a { color: var(--blue); text-underline-offset: 3px; }
+    .thesis { padding: 24px 26px; border-left: 5px solid var(--green); border-radius: 10px; background: var(--green-soft); font-size: 21px; }
+    .thesis strong { color: #0d5f3e; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .card { min-width: 0; padding: 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); box-shadow: 0 7px 24px rgba(27, 56, 38, .045); }
+    .card .num { display: inline-grid; width: 30px; height: 30px; place-items: center; border-radius: 50%; background: var(--blue-soft); color: var(--blue); font: 800 13px var(--mono); }
+    .card h3 { margin-top: 13px; }
+    .card p { margin: 0; color: var(--muted); font-size: 15px; }
+    .wire { overflow-x: auto; padding: 24px; border: 1px solid #cfdcd4; border-radius: 14px; background: #13231b; color: #e7f4eb; font: 14px/1.7 var(--mono); white-space: pre; }
+    .note { margin: 22px 0; padding: 18px 20px; border-radius: 12px; }
+    .note.amber { color: #704100; background: var(--amber-soft); border: 1px solid #f0d097; }
+    .note.red { color: #742626; background: var(--red-soft); border: 1px solid #edc3bd; }
+    .trace { display: grid; gap: 0; margin-top: 18px; counter-reset: trace; }
+    .event { position: relative; margin-left: 20px; padding: 0 0 26px 36px; border-left: 2px solid var(--line); }
+    .event:last-child { padding-bottom: 0; border-left-color: transparent; }
+    .event::before { counter-increment: trace; content: counter(trace); position: absolute; left: -16px; top: -2px; display: grid; width: 30px; height: 30px; place-items: center; border-radius: 50%; color: white; background: var(--green); font: 800 12px var(--mono); }
+    .event.bad::before { background: var(--red); }
+    .event h3 { margin: 0 0 4px; }
+    .event p { margin: 0; color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; margin: 18px 0; background: white; }
+    th, td { padding: 13px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--muted); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+    td:first-child { font-family: var(--mono); font-size: 14px; }
+    .quiz { margin-top: 22px; padding: 24px; border: 1px solid var(--line); border-radius: 14px; background: white; }
+    .answers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 16px; }
+    button { padding: 12px 14px; border: 1px solid #b9c9bf; border-radius: 9px; color: var(--ink); background: white; font: 700 14px/1.2 inherit; cursor: pointer; }
+    button:hover { border-color: var(--green); background: var(--green-soft); }
+    button.correct { border-color: var(--green); color: #0d5f3e; background: var(--green-soft); }
+    button.wrong { border-color: var(--red); color: #742626; background: var(--red-soft); }
+    .feedback { min-height: 27px; margin: 14px 0 0; color: var(--muted); font-weight: 650; }
+    .sources { color: var(--muted); font-size: 14px; }
+    .next { margin-top: 50px; padding: 25px; border-radius: 14px; color: white; background: #173f2e; }
+    .next h2 { margin: 0 0 10px; color: white; }
+    .next p { margin: 0; color: #dcebe2; }
+    @media (max-width: 720px) { .grid, .answers { grid-template-columns: 1fr; } main { padding-top: 38px; } }
+    @media print {
+      body { background: white; font-size: 13px; }
+      main { width: 100%; padding: 0; }
+      h1 { font-size: 40px; }
+      h2 { margin-top: 32px; }
+      .card, .quiz { box-shadow: none; }
+      .next, .wire { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      button { display: none; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">Lesson 01 · APX client 472</div>
+    <h1>A cookie is not proof of authentication</h1>
+    <p class="lede">A compact mental model for understanding why client 472 had a cookie in the browser, a session in MongoDB, and a running cron—yet every APX course request still returned 401.</p>
+  </header>
+
+  <div class="thesis"><strong>The whole lesson:</strong> a session cookie is usually an opaque lookup key. Authentication exists only while the upstream server still maps that key to an authenticated session.</div>
+
+  <h2>1. Separate the three concepts</h2>
+  <div class="grid">
+    <article class="card"><span class="num">A</span><h3>Authentication</h3><p>“Who are you?” Credentials or OTP establish identity and create a session.</p></article>
+    <article class="card"><span class="num">B</span><h3>Session</h3><p>“Do I still remember you?” APX stores authenticated state under a random session ID.</p></article>
+    <article class="card"><span class="num">C</span><h3>Authorization</h3><p>“May you do this?” A valid identity may still lack permission for a particular operation.</p></article>
+  </div>
+
+  <p>HTTP itself is stateless. Cookies let a server give a browser a small value in a <code>Set-Cookie</code> response header; the browser returns applicable values later in a <code>Cookie</code> request header. That exchange is defined by <a href="https://datatracker.ietf.org/doc/html/rfc6265.html">RFC 6265</a>.</p>
+
+  <div class="wire">LOGIN
+APX → Browser: Set-Cookie: ci_session=S1; Path=/; Secure; HttpOnly
+
+LATER REQUEST
+Browser → APX: Cookie: ci_session=S1
+APX session store: S1 → { user: 472, authenticated: true }
+APX → Browser: 200 courses JSON</div>
+
+  <p>The cookie does not normally contain the user, password, or permissions. It is closer to a cloakroom ticket: possession lets the server locate the real state. If APX deletes or invalidates the record behind <code>S1</code>, the browser can keep sending <code>S1</code> forever and still be logged out.</p>
+
+  <h2>2. This system has three copies of “session state”</h2>
+  <table>
+    <thead><tr><th>Place</th><th>What it holds</th><th>What it proves</th></tr></thead>
+    <tbody>
+      <tr><td>Browser</td><td><code>ci_session</code> sent to the admin-dashboard proxy</td><td>Only that the browser has a string</td></tr>
+      <tr><td>MongoDB</td><td><code>ApxSession.session_id</code> for org <code>8680775</code></td><td>Only that our backend saved a string</td></tr>
+      <tr><td>APX</td><td>The server-side record mapped from that session ID</td><td>The actual authentication truth</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note amber"><strong>Important:</strong> equality between the browser cookie and MongoDB does not prove validity. Only a request to an APX endpoint that requires authentication can prove that APX still accepts the session.</div>
+
+  <h2>3. The proxy changes who owns cookie handling</h2>
+  <p>The browser does not call APX directly for courses. It calls a Next.js route in <code>admin-dashboard</code>. That route reads the dashboard’s cookie, constructs an upstream <code>Cookie</code> header, calls APX, reads the result, and returns a new response to the browser.</p>
+
+  <div class="wire">Browser
+  Cookie: ci_session=S1
+    │
+    ▼
+admin-dashboard /api/proxy/courses
+  manually sends Cookie: ci_session=S1
+    │
+    ▼
+APX /paid_course4/get_all_courses
+  validates S1 against APX's session store</div>
+
+  <p>This matters because the proxy is now a cookie boundary. If APX returns <code>Set-Cookie: ci_session=S2</code>, the proxy must deliberately decide how to carry that rotation back into the dashboard’s session system. A server-side HTTP client is not the user’s browser and does not automatically keep the browser’s cookie jar synchronized.</p>
+
+  <h2>4. Replay the 472 incident</h2>
+  <div class="trace">
+    <section class="event"><h3>Client 472 had authenticated session S1</h3><p>The browser and MongoDB held a usable APX session ID for org <code>8680775</code>.</p></section>
+    <section class="event bad"><h3>APX invalidated or expired S1</h3><p>The exact initiating event is not retained. Likely candidates are logout/new login elsewhere, expiry, or missed keepalives during APX timeout/TLS failures.</p></section>
+    <section class="event bad"><h3>The cron tested S1 against <code>/dashboard</code></h3><p>APX answered <code>307 Location: /login</code> and issued a new anonymous <code>ci_session=A1</code> for the login page.</p></section>
+    <section class="event bad"><h3>The cron mistook rotation for renewal</h3><p>It extracted A1 from every <code>Set-Cookie</code> without first proving the response was authenticated, then overwrote MongoDB’s S1 with A1.</p></section>
+    <section class="event bad"><h3>The browser synchronized to A1</h3><p>The dashboard’s 401 recovery copied the latest MongoDB value, but that value now represented an anonymous login-page session.</p></section>
+    <section class="event bad"><h3>Courses and users kept failing</h3><p>APX returned login HTML. The proxy recognized HTML where JSON was expected and deliberately translated that into HTTP 401.</p></section>
+  </div>
+
+  <div class="note red"><strong>Why the UI was misleading:</strong> <code>isActive: true</code> meant “the keepalive cron will process this record.” It did not mean “APX considers this session authenticated.” The live evidence was <code>lastHttpStatus: 307</code>, not the boolean.</div>
+
+  <h2>5. Keepalive is not re-authentication</h2>
+  <p>A keepalive can create activity so an idle timeout does not fire. It cannot overcome logout, revocation, an absolute timeout, a password/security event, or an already-expired session. Those require credentials or OTP again. OWASP distinguishes idle, absolute, and renewal timeouts and recommends lifecycle logging for creation, renewal, expiration, and destruction.</p>
+
+  <table>
+    <thead><tr><th>Event</th><th>Can cron solve it?</th><th>Required response</th></tr></thead>
+    <tbody>
+      <tr><td>Idle clock approaching</td><td>Usually yes</td><td>Authenticated keepalive request</td></tr>
+      <tr><td>Session ID rotates</td><td>Yes</td><td>Accept new ID only after authenticated response</td></tr>
+      <tr><td>Session already expired</td><td>No</td><td>Fresh login or OTP</td></tr>
+      <tr><td>User logs out elsewhere</td><td>No</td><td>Fresh login or OTP</td></tr>
+      <tr><td>Absolute timeout reached</td><td>No</td><td>Fresh login or OTP</td></tr>
+    </tbody>
+  </table>
+
+  <h2>6. The production diagnostic loop</h2>
+  <ol>
+    <li><strong>Name the hop.</strong> Browser→proxy, proxy→APX, cron→APX, or browser→our backend?</li>
+    <li><strong>Use an auth-required probe.</strong> A public/read-session endpoint returning 200 proves almost nothing.</li>
+    <li><strong>Inspect status + intent together.</strong> <code>200</code> authenticated content differs from <code>307 /login</code>, even if both responses contain <code>Set-Cookie</code>.</li>
+    <li><strong>Compare secrets by hash only.</strong> Record a short SHA-256 prefix and length; never print raw session IDs.</li>
+    <li><strong>Track transitions.</strong> Log “authenticated renewal,” “login redirect,” “network error,” and “revoked/expired” as different events.</li>
+  </ol>
+
+  <h2>7. Retrieval check</h2>
+  <div class="quiz" data-answer="1">
+    <strong>Mongo and the browser contain the same <code>ci_session</code>, but APX redirects an authenticated endpoint to <code>/login</code>. What is the strongest conclusion?</strong>
+    <div class="answers">
+      <button type="button">Browser omitted cookie</button>
+      <button type="button">Server rejected session</button>
+      <button type="button">Proxy dropped response</button>
+      <button type="button">User lacks permission</button>
+    </div>
+    <p class="feedback" aria-live="polite"></p>
+  </div>
+  <div class="quiz" data-answer="2">
+    <strong>The cron receives <code>307 /login</code> plus a new <code>ci_session</code>. What should it do?</strong>
+    <div class="answers">
+      <button type="button">Persist cookie immediately</button>
+      <button type="button">Retry request forever</button>
+      <button type="button">Preserve cookie unchanged</button>
+      <button type="button">Trust active boolean</button>
+    </div>
+    <p class="feedback" aria-live="polite"></p>
+  </div>
+
+  <h2>8. What the permanent fix should encode</h2>
+  <ul>
+    <li>Update MongoDB’s session ID only after a proven authenticated response—at minimum, expected 200 content and no login redirect.</li>
+    <li>On <code>3xx → /login</code>, preserve the previous ID for evidence, record an explicit expired/revoked state, and ask for re-authentication.</li>
+    <li>Rename or explain <code>isActive</code> as “keepalive enabled”; add a separate liveness/authentication status.</li>
+    <li>Teach the proxy how to handle legitimate session rotation instead of silently dropping upstream <code>Set-Cookie</code>.</li>
+    <li>Log timestamps, status, redirect target, and hashed old/new IDs—never raw cookies.</li>
+  </ul>
+
+  <section class="sources">
+    <h2>Primary references</h2>
+    <p><a href="https://datatracker.ietf.org/doc/html/rfc6265.html">IETF RFC 6265</a> · <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies">MDN cookie guide</a> · <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie">MDN Set-Cookie reference</a> · <a href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html">OWASP Session Management Cheat Sheet</a></p>
+    <p><a href="../reference/cookie-auth-debugging.html">Open the one-page cookie-auth debugging card →</a></p>
+  </section>
+
+  <section class="next">
+    <h2>Your next move</h2>
+    <p>Answer the two checks, then ask about any unclear hop. A useful follow-up is: “Show me exactly where browser cookies and upstream APX cookies diverge in our Next.js proxy.”</p>
+  </section>
+</main>
+<script>
+  document.querySelectorAll('.quiz').forEach((quiz) => {
+    const answer = Number(quiz.dataset.answer);
+    const buttons = [...quiz.querySelectorAll('button')];
+    const feedback = quiz.querySelector('.feedback');
+    buttons.forEach((button, index) => button.addEventListener('click', () => {
+      buttons.forEach((item) => item.classList.remove('correct', 'wrong'));
+      if (index === answer) {
+        button.classList.add('correct');
+        feedback.textContent = 'Correct. APX is the authority on whether the session still represents an authenticated user.';
+      } else {
+        button.classList.add('wrong');
+        buttons[answer].classList.add('correct');
+        feedback.textContent = 'Not quite. Follow the request to the authority that validates the session: APX.';
+      }
+    }));
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,1047 @@
+{
+  "observedAt": "2026-10-29T11:33:28.700Z",
+  "readOnly": true,
+  "scope": 48,
+  "steps": [
+    {
+      "name": "authenticated course list",
+      "ok": true,
+      "at": "2026-10-29T11:33:30.615Z"
+    },
+    {
+      "name": "known-good control course71",
+      "ok": true,
+      "at": "2026-10-29T11:33:33.675Z"
+    },
+    {
+      "name": "known-good video token control",
+      "ok": true,
+      "at": "2026-10-29T11:33:35.513Z"
+    },
+    {
+      "name": "course listing 7",
+      "ok": true,
+      "at": "2026-10-29T11:33:37.001Z"
+    },
+    {
+      "name": "course listing 46",
+      "ok": true,
+      "at": "2026-10-29T11:33:39.909Z"
+    },
+    {
+      "name": "course listing 21",
+      "ok": true,
+      "at": "2026-10-29T11:33:42.732Z"
+    },
+    {
+      "name": "course listing 42",
+      "ok": true,
+      "at": "2026-10-29T11:33:45.829Z"
+    },
+    {
+      "name": "course listing 30",
+      "ok": true,
+      "at": "2026-10-29T11:33:48.714Z"
+    },
+    {
+      "name": "course listing 69",
+      "ok": true,
+      "at": "2026-10-29T11:33:51.570Z"
+    },
+    {
+      "name": "course listing 114",
+      "ok": true,
+      "at": "2026-10-29T11:33:54.240Z"
+    },
+    {
+      "name": "course listing 10",
+      "ok": true,
+      "at": "2026-10-29T11:33:57.186Z"
+    },
+    {
+      "name": "course listing 24",
+      "ok": true,
+      "at": "2026-10-29T11:34:00.038Z"
+    },
+    {
+      "name": "course listing 47",
+      "ok": true,
+      "at": "2026-10-29T11:34:02.844Z"
+    },
+    {
+      "name": "course listing 3",
+      "ok": true,
+      "at": "2026-10-29T11:34:05.833Z"
+    },
+    {
+      "name": "course listing 23",
+      "ok": true,
+      "at": "2026-10-29T11:34:08.758Z"
+    },
+    {
+      "name": "course listing 101",
+      "ok": true,
+      "at": "2026-10-29T11:34:11.763Z"
+    },
+    {
+      "name": "course listing 31",
+      "ok": true,
+      "at": "2026-10-29T11:34:14.464Z"
+    },
+    {
+      "name": "course listing 28",
+      "ok": true,
+      "at": "2026-10-29T11:34:17.399Z"
+    },
+    {
+      "name": "course listing 66",
+      "ok": true,
+      "at": "2026-10-29T11:34:20.085Z"
+    },
+    {
+      "name": "course listing 45",
+      "ok": true,
+      "at": "2026-10-29T11:34:22.857Z"
+    }
+  ],
+  "controls": [
+    {
+      "name": "Glands01",
+      "at": "2026-10-29T11:33:35.513Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    }
+  ],
+  "candidates": [
+    {
+      "job": "6ace91cbc9735682f04ee01a",
+      "classId": "6ace91cb8752d955968af72f",
+      "title": "08 Chemical Bonding",
+      "oldAssetKey": "drm:5509dbdd-db50-4900-9673-d826a3755c81",
+      "category": "source404",
+      "course": "7",
+      "rowId": "4362",
+      "occurrences": [
+        {
+          "course": "7",
+          "rowId": "4362",
+          "listingCaptured": true,
+          "found": true,
+          "title": "08 Chemical Bonding",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:34:22.857Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 404,
+          "endList": false,
+          "segments": 0,
+          "validMediaPlaylist": false
+        }
+      ],
+      "source": {
+        "title": "08 Chemical Bonding",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": false,
+      "listedSegmentReferences": null,
+      "outcome": "required rendition playlist unavailable or unsupported"
+    },
+    {
+      "job": "6ace91cbc9735682f04ee01c",
+      "classId": "6ace91cb8752d955968af736",
+      "title": "12 Periodic Classification of Elements",
+      "oldAssetKey": "drm:eaa56b5d-5eef-4684-ad66-26f0a28140ab",
+      "category": "source404",
+      "course": "7",
+      "rowId": "4363",
+      "occurrences": [
+        {
+          "course": "7",
+          "rowId": "4363",
+          "listingCaptured": true,
+          "found": true,
+          "title": "12 Periodic Classification of Elements",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:34:26.445Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 404,
+          "endList": false,
+          "segments": 0,
+          "validMediaPlaylist": false
+        }
+      ],
+      "source": {
+        "title": "12 Periodic Classification of Elements",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": false,
+      "listedSegmentReferences": null,
+      "outcome": "required rendition playlist unavailable or unsupported"
+    },
+    {
+      "job": "6ace99b9c9735682f04f07fc",
+      "classId": "6ace99b98752d955968b6c5e",
+      "title": "Alligation 01 (2) · ALLIGATION (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:109306-1726211450",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34371",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34371",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Alligation 01",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:34:29.106Z",
+      "renditions": [],
+      "source": {
+        "title": "Alligation 01",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace99bac9735682f04f07fe",
+      "classId": "6ace99ba8752d955968b6c65",
+      "title": "Alligation 02 (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:110085-1726299279",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34372",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34372",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Alligation 02",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:34:31.290Z",
+      "renditions": [],
+      "source": {
+        "title": "Alligation 02",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace99bac9735682f04f0800",
+      "classId": "6ace99ba8752d955968b6c6c",
+      "title": "Alligation 03 · ALLIGATION (3)",
+      "oldAssetKey": "vid:rgvikramjeet-data:111836-1726550563",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34373",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34373",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Alligation 03",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:34:33.488Z",
+      "renditions": [],
+      "source": {
+        "title": "Alligation 03",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace99cbc9735682f04f0853",
+      "classId": "6ace99cb8752d955968b6d84",
+      "title": "Alligation 03 (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:111047-1726472266",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34616",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34616",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Alligation 03",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:34:35.822Z",
+      "renditions": [],
+      "source": {
+        "title": "Alligation 03",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace937dc9735682f04ee93f",
+      "classId": "6ace937d8752d955968b11c4",
+      "title": "Circle 10 (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:120511-1727359300",
+      "category": "noPlayableURL",
+      "course": "21",
+      "rowId": "14232",
+      "occurrences": [
+        {
+          "course": "21",
+          "rowId": "14232",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Circle 10",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:34:38.113Z",
+      "renditions": [],
+      "source": {
+        "title": "Circle 10",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace98ddc9735682f04f035b",
+      "classId": "6ace98dd8752d955968b5ec3",
+      "title": "Classification 05 (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:111691-1726537062",
+      "category": "noPlayableURL",
+      "course": "42",
+      "rowId": "31450",
+      "occurrences": [
+        {
+          "course": "42",
+          "rowId": "31450",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Classification 05",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:34:40.347Z",
+      "renditions": [],
+      "source": {
+        "title": "Classification 05",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace98dec9735682f04f035d",
+      "classId": "6ace98de8752d955968b5eca",
+      "title": "Classification 09 (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:114112-1726804720",
+      "category": "noPlayableURL",
+      "course": "42",
+      "rowId": "31454",
+      "occurrences": [
+        {
+          "course": "42",
+          "rowId": "31454",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Classification 09",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:34:43.395Z",
+      "renditions": [],
+      "source": {
+        "title": "Classification 09",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace91c6c9735682f04ee00b",
+      "classId": "6ace91c68752d955968af6fe",
+      "title": "COMPOUND INTEREST & SIMPLE INTEREST CLASS 02",
+      "oldAssetKey": "drm:00c27ef3-7931-4113-995b-0995dfab8ef8",
+      "category": "source404",
+      "course": "7",
+      "rowId": "4222",
+      "occurrences": [
+        {
+          "course": "7",
+          "rowId": "4222",
+          "listingCaptured": true,
+          "found": true,
+          "title": " COMPOUND INTEREST & SIMPLE INTEREST CLASS 02",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:34:45.712Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 404,
+          "endList": false,
+          "segments": 0,
+          "validMediaPlaylist": false
+        }
+      ],
+      "source": {
+        "title": " COMPOUND INTEREST & SIMPLE INTEREST CLASS 02",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": false,
+      "listedSegmentReferences": null,
+      "outcome": "required rendition playlist unavailable or unsupported"
+    },
+    {
+      "job": "6ace98e4c9735682f04f037e",
+      "classId": "6ace98e48752d955968b5f33",
+      "title": "Electric Charge (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:120931-1727422657",
+      "category": "noPlayableURL",
+      "course": "42",
+      "rowId": "31782",
+      "occurrences": [
+        {
+          "course": "42",
+          "rowId": "31782",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Electric Charge ",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:34:49.168Z",
+      "renditions": [],
+      "source": {
+        "title": "Electric Charge ",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace963ac9735682f04ef6ee",
+      "classId": "6ace963a8752d955968b3a0b",
+      "title": "Height & Distance 01 · HEIGHT & DISTANCE (3)",
+      "oldAssetKey": "vid:rgvikramjeet-data:112405-1726637096",
+      "category": "noPlayableURL",
+      "course": "30",
+      "rowId": "22999",
+      "occurrences": [
+        {
+          "course": "30",
+          "rowId": "22999",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Height & Distance 01",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:34:51.278Z",
+      "renditions": [],
+      "source": {
+        "title": "Height & Distance 01",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6acea133c9735682f04f145f",
+      "classId": "6acea1338752d955968b8925",
+      "title": "HISTORY OF COMPUTER",
+      "oldAssetKey": "url:https://liveclasses.cloud-front.in/live/T_177736747270163748_appxabr.m3u8",
+      "category": "noPlayableURL",
+      "course": "69",
+      "rowId": "40106",
+      "occurrences": [
+        {
+          "course": "69",
+          "rowId": "40106",
+          "listingCaptured": true,
+          "found": true,
+          "title": "HISTORY OF COMPUTER",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:34:53.754Z",
+      "renditions": [],
+      "source": {
+        "title": "HISTORY OF COMPUTER",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6acea13bc9735682f04f146d",
+      "classId": "6acea13b8752d955968b893a",
+      "title": "Internet 02 (2)",
+      "oldAssetKey": "url:https://liveclasses.cloud-front.in/live/T_178125740881857401_appxabr.m3u8",
+      "category": "noPlayableURL",
+      "course": "69",
+      "rowId": "43443",
+      "occurrences": [
+        {
+          "course": "69",
+          "rowId": "43443",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Internet 02",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:34:55.410Z",
+      "renditions": [],
+      "source": {
+        "title": "Internet 02",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6acec26ec9735682f04f401e",
+      "classId": "6acec26e8752d955968bdd9a",
+      "title": "Matter & it's States",
+      "oldAssetKey": "url:https://liveclasses.cloud-front.in/live/T_178755800114426710_appxabr.m3u8",
+      "category": "noPlayableURL",
+      "course": "114",
+      "rowId": "181076",
+      "occurrences": [
+        {
+          "course": "114",
+          "rowId": "181076",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Matter & it's States",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:34:57.005Z",
+      "renditions": [],
+      "source": {
+        "title": "Matter & it's States",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace99c0c9735682f04f081a",
+      "classId": "6ace99c08752d955968b6cc7",
+      "title": "Mixture 06 · MIXTURE (3)",
+      "oldAssetKey": "vid:rgvikramjeet-data:107758-1726038647",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34460",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34460",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Mixture 06",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:34:58.498Z",
+      "renditions": [],
+      "source": {
+        "title": "Mixture 06",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace99c0c9735682f04f081c",
+      "classId": "6ace99c08752d955968b6cce",
+      "title": "Mixture 07 · MIXTURE (3)",
+      "oldAssetKey": "vid:rgvikramjeet-data:108543-1726125408",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34461",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34461",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Mixture 07",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:35:00.807Z",
+      "renditions": [],
+      "source": {
+        "title": "Mixture 07",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace9277c9735682f04ee3ac",
+      "classId": "6ace92778752d955968b015f",
+      "title": "Percentage 09 · PERCENTAGE (प्रतिशत )",
+      "oldAssetKey": "drm:002f1676-07a3-4645-adf5-523d567ae007",
+      "category": "source404",
+      "course": "10",
+      "rowId": "5973",
+      "occurrences": [
+        {
+          "course": "10",
+          "rowId": "5973",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Percentage 09",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:35:03.107Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 404,
+          "endList": false,
+          "segments": 0,
+          "validMediaPlaylist": false
+        }
+      ],
+      "source": {
+        "title": "Percentage 09",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": false,
+      "listedSegmentReferences": null,
+      "outcome": "required rendition playlist unavailable or unsupported"
+    },
+    {
+      "job": "6ace9567c9735682f04ef28d",
+      "classId": "6ace95678752d955968b2cc8",
+      "title": "Percentage Class 01 · PERCENTAGE (प्रतिशत ) (8)",
+      "oldAssetKey": "vid:rgvikramjeet-data:414656-1702116699",
+      "category": "source404",
+      "course": "24",
+      "rowId": "17884",
+      "occurrences": [
+        {
+          "course": "24",
+          "rowId": "17884",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Percentage Class 01",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:35:07.113Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 404,
+          "endList": false,
+          "segments": 0,
+          "validMediaPlaylist": false
+        }
+      ],
+      "source": {
+        "title": "Percentage Class 01",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": false,
+      "listedSegmentReferences": null,
+      "outcome": "required rendition playlist unavailable or unsupported"
+    },
+    {
+      "job": "6ace99fec9735682f04f0950",
+      "classId": "6ace99fd8752d955968b70be",
+      "title": "Percentage Class 14 (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:702536-1712398752",
+      "category": "source404",
+      "course": "47",
+      "rowId": "35200",
+      "occurrences": [
+        {
+          "course": "47",
+          "rowId": "35200",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Percentage Class 14",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:35:09.918Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 1274,
+          "validMediaPlaylist": true,
+          "inventoryHash": "110cdf18173289212bf1ab1dbe8362d24d19201b30ffe34efe36e975073b4021"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 1256,
+          "validMediaPlaylist": true,
+          "inventoryHash": "1b2021ad877908ad6ddd8f8fcff9b6f76f610203738b6cae2bf165a15fd83410"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 1256,
+          "validMediaPlaylist": true,
+          "inventoryHash": "7573ab8d497ae2ac249d941c4664817db38afdd75af4776783c77ab6afb774b3"
+        }
+      ],
+      "source": {
+        "title": "Percentage Class 14",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 3786,
+      "segmentChecks": {
+        "uniqueSegments": 3786,
+        "checked": 600,
+        "passed": 600,
+        "failures": [],
+        "originalFailureReferences": 0,
+        "originalFailureChecked": 0,
+        "complete": false
+      }
+    }
+  ],
+  "requests": 651,
+  "cmsRequests": 40,
+  "mediaRequests": 611,
+  "requestBudget": 20000,
+  "segmentBytes": 614400,
+  "productionWrites": 0,
+  "policy": {
+    "mediaConcurrency": 4,
+    "mediaRequestsPerSecond": 8,
+    "cmsGapMs": 1100,
+    "range": "0-1023",
+    "stopAfterConfirmedGap": true
+  },
+  "courseList": {
+    "count": 148,
+    "total": 148
+  },
+  "checkpoint": true
+}

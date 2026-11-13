@@ -1,0 +1,60 @@
+== GPU
+name, driver_version, memory.used [MiB], memory.total [MiB], utilization.gpu [%], encoder.stats.sessionCount
+NVIDIA RTX 4000 SFF Ada Generation, 580.178.04, 3217 MiB, 20475 MiB, 58 %, 21
+    Product Name                                       : NVIDIA RTX 4000 SFF Ada Generation
+    Product Brand                                      : NVIDIA RTX
+    Product Architecture                               : Ada Lovelace
+== running containers
+      1 51147f403eb0  Up 11 minutes
+      1 51147f403eb0  Up 15 minutes
+      2 51147f403eb0  Up About a minute
+      2 apx-ingest:r2-mirror-20260910  Up 6 days
+      1 bluenviron/mediamtx:1.19.3-ffmpeg  Up 6 days (healthy)
+      1 hls-to-mp4-processor:latest  Up About an hour
+== image ffmpeg
+ffmpeg version 4.4.2-0ubuntu0.22.04.1 Copyright (c) 2000-2021 the FFmpeg developers
+== encodes (round 2)
+  encoder 83% busy (production jobs) — waiting 30 s
+  encoder 92% busy (production jobs) — waiting 30 s
+  encoder 86% busy (production jobs) — waiting 30 s
+  W1_N_1080p_cq35 4s
+  W1_N_1080p_cq39 3s
+  W1_N_1080p_constqp29_nocap 4s
+  W1_N_1080p_hq_cq29 8s
+  W1_N_1080p_hq_cq33 8s
+  W1_N_1080p_hq_cq37 9s
+  encoder 81% busy (production jobs) — waiting 30 s
+  encoder 85% busy (production jobs) — waiting 30 s
+  encoder 93% busy (production jobs) — waiting 30 s
+  encoder 93% busy (production jobs) — waiting 30 s
+  encoder 90% busy (production jobs) — waiting 30 s
+  encoder 99% busy (production jobs) — waiting 30 s
+  encoder 88% busy (production jobs) — waiting 30 s
+  encoder 97% busy (production jobs) — waiting 30 s
+  encoder 89% busy (production jobs) — waiting 30 s
+  encoder 72% busy (production jobs) — waiting 30 s
+  W2_N_1080p_cq35 4s
+  W2_N_1080p_cq39 5s
+  W2_N_1080p_constqp29_nocap 5s
+  W2_N_1080p_hq_cq29 11s
+  encoder 79% busy (production jobs) — waiting 30 s
+  encoder 86% busy (production jobs) — waiting 30 s
+  encoder 83% busy (production jobs) — waiting 30 s
+  W2_N_1080p_hq_cq33 9s
+  W2_N_1080p_hq_cq37 9s
+== done
+total 167112
+drwxr-xr-x 2 root root     4096 Oct 20 10:01 .
+drwxr-xr-x 3 root root     4096 Oct 20 09:51 ..
+-rw-r--r-- 1 root root 20772479 Oct 20 09:53 W1_N_1080p_constqp29_nocap.mp4
+-rw-r--r-- 1 root root 15698036 Oct 20 09:53 W1_N_1080p_cq35.mp4
+-rw-r--r-- 1 root root  9736924 Oct 20 09:53 W1_N_1080p_cq39.mp4
+-rw-r--r-- 1 root root 18675327 Oct 20 09:53 W1_N_1080p_hq_cq29.mp4
+-rw-r--r-- 1 root root 17157266 Oct 20 09:53 W1_N_1080p_hq_cq33.mp4
+-rw-r--r-- 1 root root 11278483 Oct 20 09:54 W1_N_1080p_hq_cq37.mp4
+-rw-r--r-- 1 root root 15786445 Oct 20 09:59 W2_N_1080p_constqp29_nocap.mp4
+-rw-r--r-- 1 root root 12602940 Oct 20 09:59 W2_N_1080p_cq35.mp4
+-rw-r--r-- 1 root root  7749145 Oct 20 09:59 W2_N_1080p_cq39.mp4
+-rw-r--r-- 1 root root 17627833 Oct 20 09:59 W2_N_1080p_hq_cq29.mp4
+-rw-r--r-- 1 root root 14552520 Oct 20 10:01 W2_N_1080p_hq_cq33.mp4
+-rw-r--r-- 1 root root  9456903 Oct 20 10:01 W2_N_1080p_hq_cq37.mp4

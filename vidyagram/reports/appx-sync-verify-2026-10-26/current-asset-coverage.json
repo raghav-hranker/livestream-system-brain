@@ -1,0 +1,703 @@
+{
+  "videoOccurrences": 30202,
+  "gapOccurrences": 77,
+  "counts": {
+    "no ledger for current asset; noUsableLink=True": 73,
+    "no ledger for current asset; noUsableLink=False": 4
+  },
+  "gaps": [
+    {
+      "course": "42",
+      "rowId": "31186",
+      "title": "Independence (Class 17)",
+      "assetKey": "apx:31186",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "74",
+      "rowId": "189880",
+      "title": "Glands 05",
+      "assetKey": "apx:189880",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "74",
+      "rowId": "174813",
+      "title": "Animal Kingdom 03",
+      "assetKey": "apx:174813",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "74",
+      "rowId": "174815",
+      "title": "Botany 02",
+      "assetKey": "apx:174815",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "74",
+      "rowId": "174817",
+      "title": "Botany 03",
+      "assetKey": "apx:174817",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "74",
+      "rowId": "174818",
+      "title": "Botany 04",
+      "assetKey": "apx:174818",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "189837",
+      "title": "Glands 01",
+      "assetKey": "apx:189837",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "189838",
+      "title": "Glands 02",
+      "assetKey": "apx:189838",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "189839",
+      "title": "Glands 03",
+      "assetKey": "apx:189839",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "189840",
+      "title": "Glands 04",
+      "assetKey": "apx:189840",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "189843",
+      "title": "Glands 05",
+      "assetKey": "apx:189843",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "177263",
+      "title": "Excretory System 01",
+      "assetKey": "apx:177263",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "177264",
+      "title": "Excretory System 02",
+      "assetKey": "apx:177264",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "177261",
+      "title": "Skeleton System, Joints and Muscles 01",
+      "assetKey": "apx:177261",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "177262",
+      "title": "Skeleton System, Joints and Muscles 02",
+      "assetKey": "apx:177262",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "177265",
+      "title": "Genetics",
+      "assetKey": "apx:177265",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "177266",
+      "title": "Genetics Practice Set",
+      "assetKey": "apx:177266",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "177267",
+      "title": "Animal Kingdom 01",
+      "assetKey": "apx:177267",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "177268",
+      "title": "Animal kingdom 02",
+      "assetKey": "apx:177268",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "177270",
+      "title": "Animal Kingdom 03",
+      "assetKey": "apx:177270",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "177271",
+      "title": "Botany 01",
+      "assetKey": "apx:177271",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "177273",
+      "title": "Botany 02",
+      "assetKey": "apx:177273",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "177274",
+      "title": "Botany 03",
+      "assetKey": "apx:177274",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "177275",
+      "title": "Botany 04",
+      "assetKey": "apx:177275",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "177276",
+      "title": "Botany 05",
+      "assetKey": "apx:177276",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "177277",
+      "title": "Botany 06",
+      "assetKey": "apx:177277",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "177278",
+      "title": "Botany 07",
+      "assetKey": "apx:177278",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "77",
+      "rowId": "177279",
+      "title": "Botany Practice",
+      "assetKey": "apx:177279",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188429",
+      "title": "Glands 01",
+      "assetKey": "apx:188429",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188431",
+      "title": "Glands 02",
+      "assetKey": "apx:188431",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188430",
+      "title": "Glands 03",
+      "assetKey": "apx:188430",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188432",
+      "title": "Glands 04",
+      "assetKey": "apx:188432",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188435",
+      "title": "Glands 05",
+      "assetKey": "apx:188435",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188439",
+      "title": "Excretory System 01",
+      "assetKey": "apx:188439",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188440",
+      "title": "Excretory System 02",
+      "assetKey": "apx:188440",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188443",
+      "title": "Skeleton System, Joints and Muscles 01",
+      "assetKey": "apx:188443",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188444",
+      "title": "Skeleton System, Joints and Muscles 02",
+      "assetKey": "apx:188444",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188447",
+      "title": "Genetics",
+      "assetKey": "apx:188447",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188448",
+      "title": "Genetics Practice Set",
+      "assetKey": "apx:188448",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188453",
+      "title": "Animal Kingdom 01",
+      "assetKey": "apx:188453",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188455",
+      "title": "Animal kingdom 02",
+      "assetKey": "apx:188455",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188456",
+      "title": "Animal Kingdom 03",
+      "assetKey": "apx:188456",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188459",
+      "title": "Botany 01",
+      "assetKey": "apx:188459",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188461",
+      "title": "Botany 02",
+      "assetKey": "apx:188461",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188462",
+      "title": "Botany 03",
+      "assetKey": "apx:188462",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188463",
+      "title": "Botany 04",
+      "assetKey": "apx:188463",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188464",
+      "title": "Botany 05",
+      "assetKey": "apx:188464",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188465",
+      "title": "Botany 06",
+      "assetKey": "apx:188465",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188466",
+      "title": "Botany 07",
+      "assetKey": "apx:188466",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "95",
+      "rowId": "188467",
+      "title": "Botany Practice",
+      "assetKey": "apx:188467",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "53189",
+      "title": "Introduction of Science",
+      "assetKey": "apx:53189",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188513",
+      "title": "Glands 01",
+      "assetKey": "apx:188513",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188515",
+      "title": "Glands 02",
+      "assetKey": "apx:188515",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188514",
+      "title": "Glands 03",
+      "assetKey": "apx:188514",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188516",
+      "title": "Glands 04",
+      "assetKey": "apx:188516",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188519",
+      "title": "Glands 05",
+      "assetKey": "apx:188519",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188524",
+      "title": "Excretory System 01",
+      "assetKey": "apx:188524",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188525",
+      "title": "Excretory System 02",
+      "assetKey": "apx:188525",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188528",
+      "title": "Skeleton System, Joints and Muscles 01",
+      "assetKey": "apx:188528",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188529",
+      "title": "Skeleton System, Joints and Muscles 02",
+      "assetKey": "apx:188529",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188532",
+      "title": "Genetics",
+      "assetKey": "apx:188532",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188533",
+      "title": "Genetics Practice Set",
+      "assetKey": "apx:188533",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188536",
+      "title": "Animal Kingdom 01",
+      "assetKey": "apx:188536",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188537",
+      "title": "Animal kingdom 02",
+      "assetKey": "apx:188537",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188539",
+      "title": "Animal Kingdom 03",
+      "assetKey": "apx:188539",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188542",
+      "title": "Botany 01",
+      "assetKey": "apx:188542",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188544",
+      "title": "Botany 02",
+      "assetKey": "apx:188544",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188545",
+      "title": "Botany 03",
+      "assetKey": "apx:188545",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188546",
+      "title": "Botany 04",
+      "assetKey": "apx:188546",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188547",
+      "title": "Botany 05",
+      "assetKey": "apx:188547",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188548",
+      "title": "Botany 06",
+      "assetKey": "apx:188548",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188549",
+      "title": "Botany 07",
+      "assetKey": "apx:188549",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "96",
+      "rowId": "188550",
+      "title": "Botany Practice",
+      "assetKey": "apx:188550",
+      "noUsableLink": true,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "160",
+      "rowId": "193547",
+      "title": "Geometry 03",
+      "assetKey": "vid:armaths-data:4656486-1792746126",
+      "noUsableLink": false,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "160",
+      "rowId": "193550",
+      "title": "Geometry 04",
+      "assetKey": "vid:armaths-data:4657426-1792753322",
+      "noUsableLink": false,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "161",
+      "rowId": "193541",
+      "title": "Geometry 03",
+      "assetKey": "vid:armaths-data:4656486-1792746126",
+      "noUsableLink": false,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    },
+    {
+      "course": "161",
+      "rowId": "193549",
+      "title": "Geometry 04",
+      "assetKey": "vid:armaths-data:4657426-1792753322",
+      "noUsableLink": false,
+      "reason": "no ledger for current asset",
+      "existingClass": null
+    }
+  ]
+}

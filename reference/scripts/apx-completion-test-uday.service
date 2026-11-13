@@ -1,0 +1,33 @@
+[Unit]
+Description=Appx paid completion token worker on test-uday
+Wants=network-online.target
+After=network-online.target
+StartLimitIntervalSec=900
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=raghav
+Group=raghav
+WorkingDirectory=/home/raghav/apx-completion-paid
+Environment=PATH=/home/raghav/.nvm/versions/node/v24.14.0/bin:/usr/local/bin:/usr/bin:/bin
+Environment=ENV_PATH=/home/raghav/quicktricks-backend/.env.development
+Environment=FLEET_WORKTREE=/home/raghav/apx-completion-paid
+Environment=FLEET_ROLE=prewarm
+Environment=FLEET_LOG=/home/raghav/apx-completion-prewarm.jsonl
+Environment=APX_OTP_RATE_LIMIT_KEY=apx-otp-rate-limit-cooldown-completion-test-uday
+Environment=FLEET_AUTH_BACKOFF_SECONDS=3600
+Environment=FLEET_AUTH_BACKOFF_MAX_SECONDS=21600
+Environment=TS_NODE_TRANSPILE_ONLY=true
+Environment=DISABLE_CRONS=true
+Environment=NODE_OPTIONS=
+ExecStart=/bin/bash /home/raghav/apx-completion-supervisor.sh
+Restart=on-failure
+RestartSec=120
+RestartPreventExitStatus=2
+KillMode=control-group
+TimeoutStopSec=30
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,103 @@
+{
+  "sheetObservedAt": "2026-10-29T10:12:30.937Z",
+  "observedAt": "2026-10-29T10:15:38.654Z",
+  "completedAt": "2026-10-29T10:31:23.458Z",
+  "scope": 169,
+  "processed": 169,
+  "allScopeConsidered": true,
+  "productionWrites": 0,
+  "catalogue": {
+    "Present; disabled/deleted source occurrences": 48,
+    "Present; enabled source occurrence": 119,
+    "Absent from all listed course occurrences": 2
+  },
+  "media": {
+    "Source disabled or changed; media not tested": 48,
+    "Confirmed missing source segment(s)": 33,
+    "AppX returned no playable URL; missing media unproven": 82,
+    "Required source quality playlist unavailable": 4,
+    "Absent from listed course; media not tested": 2
+  },
+  "previousGapScope": 32,
+  "previousGapsInSheet": 32,
+  "previousGapOutcomes": {
+    "Confirmed missing source segment(s)": 32
+  },
+  "placements": 465,
+  "requests": 1273,
+  "controls": [
+    {
+      "name": "Glands01",
+      "at": "2026-10-29T10:15:50.288Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    },
+    {
+      "name": "Glands01",
+      "at": "2026-10-29T10:31:44.362Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    },
+    {
+      "name": "Glands01 ending control",
+      "at": "2026-10-29T10:42:13.034Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    },
+    {
+      "name": "Glands01",
+      "at": "2026-10-29T10:42:36.410Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    },
+    {
+      "name": "Glands01 ending control",
+      "at": "2026-10-29T10:44:21.375Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    }
+  ],
+  "alternateChecks": 162,
+  "alternateScope": 162,
+  "allAlternatesConsidered": true,
+  "recheckScope": 6,
+  "recheckProcessed": 6,
+  "allRechecksConsidered": true,
+  "recheckCompletedAt": "2026-10-29T10:44:21.375Z",
+  "alternateCompletedAt": "2026-10-29T10:42:13.034Z"
+}

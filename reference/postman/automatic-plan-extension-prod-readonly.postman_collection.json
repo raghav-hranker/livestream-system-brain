@@ -1,0 +1,363 @@
+{
+  "info": {
+    "name": "Automatic plan extension — real prod data (read-only)",
+    "description": "Listings only, against local port 3110 connected to production with the Mongo read-only guard. No checkout: writes are blocked. Snapshot assertions were verified on 2026-09-25 and may change with new orders or plan prices. The ₹5 placeholder, ₹0 renewal, and empty copy cases document current behavior that needs a product decision or task 07; they are not desired acceptance criteria.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_prod_ro",
+      "value": "http://localhost:3110",
+      "type": "string"
+    },
+    {
+      "key": "user_0894",
+      "value": "6a449e673aed5ba9f311765f",
+      "type": "string"
+    },
+    {
+      "key": "plan_rrb",
+      "value": "6a4e29966fa69a07a377e485",
+      "type": "string"
+    },
+    {
+      "key": "plan_science",
+      "value": "6a5281f63e468f15425de439",
+      "type": "string"
+    },
+    {
+      "key": "plan_combo",
+      "value": "6a5151c40fd4a3a3f6caceae",
+      "type": "string"
+    },
+    {
+      "key": "plan_sectional_inactive",
+      "value": "6a4ea2ebdc1c855f91350dc2",
+      "type": "string"
+    },
+    {
+      "key": "user_9504",
+      "value": "6a4590c03aed5ba9f3156693",
+      "type": "string"
+    },
+    {
+      "key": "user_8836",
+      "value": "6a8b89d4f76f81d266ff1fc4",
+      "type": "string"
+    },
+    {
+      "key": "plan_spl_real",
+      "value": "6a4e2c139e03ff1961d818b7",
+      "type": "string"
+    },
+    {
+      "key": "plan_spl_copy",
+      "value": "6a4e2c129e03ff1961d818ae",
+      "type": "string"
+    },
+    {
+      "key": "plan_free_ebook",
+      "value": "6a500ac48eb18cb2cf1fb028",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "…0894 — RRB Batch: original ₹1899, current list ₹1699 ⇒ ₹850 / 183 days",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_prod_ro}}/api/plans/filter-active/{{user_0894}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"subscriptionId\": \"{{plan_rrb}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const plan = (pm.response.json().data || [])[0];",
+              "pm.test('one plan returned', () => pm.expect(plan.id).to.eql(pm.collectionVariables.get('plan_rrb')));",
+              "pm.test('₹850 = half of capped ₹1699 list, rounded up', () => pm.expect(plan.amount).to.eql('850'));",
+              "pm.test('183 days', () => pm.expect(plan.duration).to.eql(183));",
+              "pm.test('list price ₹1699 kept as originalAmount', () => pm.expect(plan.originalAmount).to.eql('1699'));",
+              "pm.test('Extension title', () => pm.expect(plan.title).to.match(/ : Extension$/));",
+              "pm.test('is_expire = 1', () => pm.expect(plan.is_expire).to.eql(1));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Real student — Science 100 Days (active) ⇒ no offer, purchased",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_prod_ro}}/api/plans/filter-active/{{user_0894}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"subscriptionId\": \"{{plan_science}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "{",
+              "const plan = (pm.response.json().data || [])[0];",
+              "pm.test('list ₹99', () => pm.expect(plan.amount).to.eql('99'));",
+              "pm.test('is_buy = 1', () => pm.expect(plan.is_buy).to.eql(1));",
+              "pm.test('is_expire = 0', () => pm.expect(plan.is_expire).to.eql(0));",
+              "}"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Real student — COMBO 100 Days (active) ⇒ no offer, purchased",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_prod_ro}}/api/plans/filter-active/{{user_0894}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"subscriptionId\": \"{{plan_combo}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "{",
+              "const plan = (pm.response.json().data || [])[0];",
+              "pm.test('list ₹499', () => pm.expect(plan.amount).to.eql('499'));",
+              "pm.test('is_buy = 1', () => pm.expect(plan.is_buy).to.eql(1));",
+              "pm.test('is_expire = 0', () => pm.expect(plan.is_expire).to.eql(0));",
+              "}"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "…0894 — inactive Maths Sectional Test: current ₹5 placeholder offer",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_prod_ro}}/api/plans/filter-active/{{user_0894}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"subscriptionId\": \"{{plan_sectional_inactive}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const plan = (pm.response.json().data || [])[0];",
+              "pm.test('inactive plan is listed for its lapsed holder', () => pm.expect(plan.id).to.eql(pm.collectionVariables.get('plan_sectional_inactive')));",
+              "pm.test('current placeholder offer ₹5', () => pm.expect(plan.amount).to.eql('5'));",
+              "pm.test('183 days and Extension title', () => { pm.expect(plan.duration).to.eql(183); pm.expect(plan.title).to.match(/ : Extension$/); });",
+              "pm.test('is_expire = 1', () => pm.expect(plan.is_expire).to.eql(1));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "…9504 — real SPL Foundation: ₹799 paid, ₹599 list ⇒ ₹300",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_prod_ro}}/api/plans/filter-active/{{user_9504}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"subscriptionId\": \"{{plan_spl_real}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const plan = (pm.response.json().data || [])[0];",
+              "pm.test('one plan returned', () => pm.expect(plan.id).to.eql(pm.collectionVariables.get('plan_spl_real')));",
+              "pm.test('current offer ₹300', () => pm.expect(plan.amount).to.eql('300'));",
+              "pm.test('183 days and Extension title', () => { pm.expect(plan.duration).to.eql(183); pm.expect(plan.title).to.match(/ : Extension$/); });",
+              "pm.test('is_expire = 1', () => pm.expect(plan.is_expire).to.eql(1));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "…9504 — empty SPL Foundation copy: current duplicate ₹300 offer (task 07)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_prod_ro}}/api/plans/filter-active/{{user_9504}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"subscriptionId\": \"{{plan_spl_copy}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const plan = (pm.response.json().data || [])[0];",
+              "pm.test('one plan returned', () => pm.expect(plan.id).to.eql(pm.collectionVariables.get('plan_spl_copy')));",
+              "pm.test('current offer ₹300', () => pm.expect(plan.amount).to.eql('300'));",
+              "pm.test('183 days and Extension title', () => { pm.expect(plan.duration).to.eql(183); pm.expect(plan.title).to.match(/ : Extension$/); });",
+              "pm.test('is_expire = 1', () => pm.expect(plan.is_expire).to.eql(1));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "…9504 — free E-Book: current ₹0 extension (task 07)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_prod_ro}}/api/plans/filter-active/{{user_9504}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"subscriptionId\": \"{{plan_free_ebook}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const plan = (pm.response.json().data || [])[0];",
+              "pm.test('one plan returned', () => pm.expect(plan.id).to.eql(pm.collectionVariables.get('plan_free_ebook')));",
+              "pm.test('current offer ₹0', () => pm.expect(plan.amount).to.eql('0'));",
+              "pm.test('183 days and Extension title', () => { pm.expect(plan.duration).to.eql(183); pm.expect(plan.title).to.match(/ : Extension$/); });",
+              "pm.test('is_expire = 1', () => pm.expect(plan.is_expire).to.eql(1));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "…8836 — active holder: no Extension cards",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_prod_ro}}/api/plans/filter-active/{{user_8836}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const offers = (pm.response.json().data || []).filter(plan => plan.is_expire === 1);",
+              "pm.test('no Extension cards for this active holder', () => pm.expect(offers).to.have.length(0));"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "observedAt": "2026-10-27T12:28:05.647Z",
+  "readOnly": true,
+  "scope": 1,
+  "steps": [
+    {
+      "name": "authenticated course list",
+      "ok": true,
+      "at": "2026-10-27T12:28:06.591Z"
+    },
+    {
+      "name": "known-good control course71",
+      "ok": true,
+      "at": "2026-10-27T12:28:12.695Z"
+    },
+    {
+      "name": "known-good video token control",
+      "ok": true,
+      "at": "2026-10-27T12:28:13.302Z"
+    },
+    {
+      "name": "course listing 22",
+      "ok": true,
+      "at": "2026-10-27T12:28:23.487Z"
+    }
+  ],
+  "controls": [
+    {
+      "name": "Glands01",
+      "at": "2026-10-27T12:28:13.302Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    }
+  ],
+  "candidates": [
+    {
+      "job": "6ace93c4c9735682f04eeb1c",
+      "classId": "6ace93c48752d955968b1671",
+      "oldAssetKey": "vid:rgvikramjeet-data:410747-1701962427",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15410",
+      "originalFailure": null,
+      "checkedAt": "2026-10-27T12:28:23.487Z",
+      "source": {
+        "title": "CLASS 01",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": null,
+      "outcome": "all required segment references readable",
+      "renditions": [
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 312,
+          "validMediaPlaylist": true,
+          "inventoryHash": "4bb4ecf0a809bbb37f510b672b1c93c3ccc136bc6903c4156d1bee59a225562d"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 312,
+          "validMediaPlaylist": true,
+          "inventoryHash": "94bdadb432ec5f2fa321dae34cc8e8c0f1715cf1aeea7e9649736fb329638b5c"
+        }
+      ],
+      "qualityChecks": [
+        {
+          "rung": "240p",
+          "segments": 312,
+          "ok": false,
+          "reason": "confirmed missing segment in unchanged inventory"
+        },
+        {
+          "rung": "360p",
+          "segments": 312,
+          "segmentChecks": {
+            "uniqueSegments": 312,
+            "checked": 312,
+            "passed": 312,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          },
+          "outcome": "all required segment references readable",
+          "ok": true
+        },
+        {
+          "rung": "480p",
+          "segments": 312,
+          "segmentChecks": {
+            "uniqueSegments": 312,
+            "checked": 312,
+            "passed": 312,
+            "failures": [],
+            "originalFailureReferences": 0,
+            "originalFailureChecked": 0,
+            "complete": true
+          },
+          "outcome": "all required segment references readable",
+          "ok": true
+        }
+      ],
+      "excludedRenditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 312,
+          "validMediaPlaylist": true,
+          "inventoryHash": "c390c70ce972fd05f04d76303097ff8c6ed17a9a193730eae6fd4652b2adabc1"
+        }
+      ],
+      "segmentChecks": {
+        "complete": true,
+        "uniqueSegments": 624,
+        "checked": 624,
+        "passed": 624
+      }
+    }
+  ],
+  "requests": 632,
+  "cmsRequests": 5,
+  "mediaRequests": 627,
+  "requestBudget": 120000,
+  "segmentBytes": 638976,
+  "productionWrites": 0,
+  "policy": {
+    "mediaConcurrency": 4,
+    "mediaRequestsPerSecond": 8,
+    "cmsGapMs": 1100,
+    "range": "0-1023",
+    "stopAfterConfirmedGap": true
+  },
+  "courseList": {
+    "count": 147,
+    "total": 147
+  },
+  "completedAt": "2026-10-27T12:32:33.428Z",
+  "allScopeConsidered": true,
+  "all43Considered": false,
+  "checkpoint": true,
+  "transport": "direct local HTTPS; session cookie only to cms.appx.co.in"
+}

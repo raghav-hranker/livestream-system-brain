@@ -1,0 +1,65 @@
+group,copyId,copyName,customer_id,role,testPapers,studentAttemptsOnThosePapers,scoresOnCopy,answersOnCopy,savedOnCopy,reportedOnCopy,apxSeriesMaps,aiTestPatterns
+01 static gk / ca,6a4558c3ebb42f585d9a83fb,Static GK / CA,472,keep (current plan),0,0,0,0,0,0,0,0
+01 static gk / ca,6a4558c2ebb42f585d9a8348,Static Gk / CA,472,merge away,0,0,0,0,0,0,0,0
+02 introduction,6a8d68ddad4789cb1b01fa1c,Introduction,472,keep (current plan),0,0,0,0,0,0,0,0
+02 introduction,6a3d2ac13aed5ba9f3fe6c15,INTRODUCTION,472,merge away,0,0,0,0,0,0,0,0
+03 biology,6a885af03aed5ba9f3a20f27,Biology,0,keep (current plan),2,0,2,4,0,0,0,0
+03 biology,6a914daa709253fd90707de4,Biology,472,merge away,0,0,0,0,0,0,0,0
+04 chemistry,6a885af03aed5ba9f3a20f28,Chemistry,0,keep (current plan),1,0,0,0,0,0,0,0
+04 chemistry,6a455d36ebb42f585d9cd357,Chemistry,472,merge away,0,0,0,0,0,0,0,0
+05 e-book,6a4cdfdf42211ae83977d84d,E-BOOK,472,keep (current plan),13,752,752,7520,1,0,12,0
+05 e-book,6a946eb629f16f98cfd7caea,E-Book,472,merge away,0,0,0,0,0,0,0,0
+06 physics,6a885af03aed5ba9f3a20f1e,Physics,0,keep (current plan),13,0,0,499,2,0,0,0
+06 physics,6a455d33ebb42f585d9cd1f3,Physics,472,merge away,0,0,0,0,0,0,0,0
+06 physics,6a885af03aed5ba9f3a20f29,Physics,0,merge away,1,0,0,0,0,0,0,0
+07 general knowledge and current affairs,6a885af03aed5ba9f3a20fa8,General Knowledge and Current Affairs,0,keep (current plan),11,18,18,20,0,0,0,0
+07 general knowledge and current affairs,6a885af03aed5ba9f3a20f5f,General Knowledge and Current Affairs,0,merge away,2,5,5,0,0,0,0,0
+08 computer,6a45591cebb42f585d9ac3d3,Computer,472,keep (current plan),0,0,0,0,0,0,0,0
+08 computer,6a885af03aed5ba9f3a20f17,Computer,0,merge away,0,0,0,0,0,0,0,0
+09 current affairs,6a3d2ac13aed5ba9f3fe6c0c,Current Affairs,472,keep (current plan),0,0,0,0,0,0,0,0
+09 current affairs,6a885af03aed5ba9f3a20f9c,Current Affairs,0,merge away,0,0,0,0,0,0,0,0
+10 history,6a455d3eebb42f585d9cd648,History,472,keep (current plan),0,0,0,0,0,0,0,0
+10 history,6a885af03aed5ba9f3a20f26,History,0,merge away,0,0,0,9,0,0,0,0
+10 history,6a916a83e4114180890befde,HISTORY,472,merge away,0,0,0,0,0,0,0,0
+11 gk/gs weekly sectional test,6a3d2ac13aed5ba9f3fe6c09,GK/GS Weekly Sectional Test,472,keep (current plan),34,7371,7371,228617,4,0,0,0
+11 gk/gs weekly sectional test,6ab434d75b97b9154439eb7d,GK/GS Weekly Sectional Test,472,merge away,0,0,0,45,0,0,0,0
+12 computer knowledge,6a885af03aed5ba9f3a20fba,Computer Knowledge,0,keep (current plan),0,0,1118,13300,40,1,0,0
+12 computer knowledge,6a885af03aed5ba9f3a20f21,Computer Knowledge,0,merge away,14,0,202,1046,1,1,0,0
+13 bs & e sectional test,6a3d2ac13aed5ba9f3fe6c06,BS & E Sectional Test,472,keep (current plan),34,828,828,32193,0,1,0,0
+13 bs & e sectional test,6ab434565b97b9154439e2d1,BS & E Sectional Test,472,merge away,0,0,0,40,0,0,0,0
+14 maths sectional test,6a3d2ac13aed5ba9f3fe6c0a,Maths Sectional Test,472,keep (current plan),40,40537,40537,1228065,30,5,0,0
+14 maths sectional test,6ab434e25b97b9154439eea9,Maths Sectional Test,472,merge away,0,0,0,176,0,0,0,0
+15 reasoning sectional test,6a3d2ac13aed5ba9f3fe6c07,Reasoning Sectional Test,472,keep (current plan),41,3892,3892,124117,1,2,0,0
+15 reasoning sectional test,6ab434955b97b9154439e5ed,Reasoning Sectional Test,472,merge away,0,0,0,84,0,0,0,0
+16 science sectional test,6a3d2ac13aed5ba9f3fe6c08,Science Sectional Test,472,keep (current plan),42,4796,4796,125954,16,2,0,0
+16 science sectional test,6ab434c05b97b9154439e902,Science Sectional Test,472,merge away,0,0,0,117,0,1,0,0
+17 advance,6a9023049a9d53af06e3bf8e,ADVANCE,472,keep (current plan),0,0,3,3,0,0,0,0
+17 advance,6a9047fb0bcee98f4c7f6696,Advance,472,merge away,0,0,0,0,0,0,0,0
+18 science,6a4558c2ebb42f585d9a8376,Science,472,keep (current plan),33,15356,15356,463165,0,0,0,0
+18 science,6ab435085b97b9154439f1a7,Science,472,merge away,0,0,0,7,0,0,0,0
+18 science,6a885af03aed5ba9f3a20fa4,Science,0,merge away,8,0,0,0,0,0,0,0
+19 arithmetic,6a9023049a9d53af06e3bf8f,ARITHMETIC,472,keep (current plan),0,0,0,0,0,0,0,0
+19 arithmetic,6a9047fb0bcee98f4c7f6697,Arithmetic,472,merge away,0,0,0,0,0,0,0,0
+19 arithmetic,6a9d0afa3aed5ba9f3f0395d,Arithmetic,0,merge away,0,0,57,1832,0,0,0,0
+19 arithmetic,6a885af03aed5ba9f3a20fe4,Arithmetic,0,merge away,145,81,81,1400,3,0,0,2
+19 arithmetic,6a885af03aed5ba9f3a20f98,Arithmetic,1,merge away,30,38,0,0,0,0,0,0
+20 classes,6a4558d6ebb42f585d9a91ab,Classes,472,keep (current plan),0,0,0,0,0,0,0,0
+20 classes,6a455e7cebb42f585d9d5553,CLASSES,472,merge away,0,0,0,0,0,0,0,0
+21 reasoning,6a4558c2ebb42f585d9a8333,Reasoning,472,keep (current plan),105,21415,21415,1012183,7,3,0,0
+21 reasoning,6ab42f555c6b06f491007bb0,Reasoning,472,merge away,0,0,0,103,0,0,0,0
+21 reasoning,6a455e06ebb42f585d9d27d7,REASONING,472,merge away,0,0,0,0,0,0,0,0
+21 reasoning,6a885af03aed5ba9f3a20f86,Reasoning,0,merge away,5,0,0,0,0,0,0,0
+22 maths,6a3d2ac13aed5ba9f3fe6c0e,Maths,472,keep (current plan),0,0,0,0,0,0,0,0
+22 maths,6a4ca8613e29123ffb5e1141,maths,472,merge away,12,154,154,3875,2,1,13,0
+22 maths,6a885af03aed5ba9f3a20f1f,Maths,0,merge away,14,0,0,127,0,0,0,0
+22 maths,6a91f62edce17876b773972c,MATHS,472,merge away,0,0,0,0,0,0,0,0
+23 general science,6a885af03aed5ba9f3a20f2a,General Science,0,keep (current plan),15889,15919,15920,487923,597,36,0,4
+23 general science,6a9211ea6708f6e9bcfa334c,GENERAL SCIENCE,472,merge away,0,0,10318,512607,1335,30,0,0
+23 general science,6a45605debb42f585d9e0e4c,General Science,472,merge away,0,0,1,1,0,0,0,0
+24 logical reasoning,6a885af03aed5ba9f3a20f1b,Logical Reasoning,0,keep (current plan),14297,15474,14939,312205,364,27,0,9
+24 logical reasoning,6a91697d0ec8510cb6e0281c,Logical Reasoning,472,merge away,0,0,10317,558354,787,202,0,0
+25 general awareness,6a885af03aed5ba9f3a20f19,General Awareness,0,keep (current plan),16045,16479,15867,223622,454,14,0,7
+25 general awareness,6a4558c8ebb42f585d9a8801,General Awareness,472,merge away,76,21879,21879,1061594,0,1,0,0
+25 general awareness,6ab433b95b97b9154439d900,General Awareness,472,merge away,0,0,10302,139190,413,6,0,0
+25 general awareness,6a455e17ebb42f585d9d2e6c,GENERAL AWARENESS,472,merge away,0,0,0,0,0,0,0,0
+25 general awareness,6ab42193f5441565c1f27dfe,General Awareness,0,merge away,0,0,0,0,0,0,0,0

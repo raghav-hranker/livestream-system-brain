@@ -1,0 +1,2198 @@
+[
+  {
+    "course": {
+      "apxCourseId": "160",
+      "title": "Combo Special - SSC CGL Mains Batch 2026 🔥",
+      "enabled": true,
+      "status": {
+        "$numberInt": "1"
+      },
+      "isFree": false,
+      "price": {
+        "$numberInt": "1999"
+      },
+      "priceSentinel": null,
+      "mrp": {
+        "$numberInt": "0"
+      },
+      "description": "<h3>🚀 SSC Mains Batch 2026 | अब तैयारी होगी Selection की!</h3>\r\n\r\n<p><strong>सपना SSC में Selection का है, तो तैयारी भी Mains Level की होनी चाहिए! 🎯</strong></p>\r\n\r\n<p>SSC CGL, CHSL &amp; CPO Mains के लिए लेकर आए हैं <strong>SSC Mains Batch 2026 &ndash; Combo Special</strong>, जहाँ आपकी तैयारी को मिलेगा सही Direction, सही Guidance और लगातार Practice का साथ। 💪</p>\r\n\r\n<p>✨ <strong>Batch में मिलेगा:</strong><br />\r\n✅ Live Classes<br />\r\n✅ Complete Mains Revision<br />\r\n✅ PYQ Based Learning<br />\r\n✅ Practice Sheets<br />\r\n✅ Doubt Solving Sessions<br />\r\n✅ Classroom Board PDFs<br />\r\n✅ Regular Mains Mock Tests<br />\r\n✅ Mains Focused Preparation</p>\r\n\r\n<p>👨&zwj;🏫 <strong>Experienced Faculty Team</strong> के साथ करें अपनी तैयारी को और मजबूत।</p>\r\n\r\n<p>📅 <strong>Batch Starts:</strong> 10 October<br />\r\n💰 <strong>Course Fee:</strong> ₹1999<br />\r\n⏳ <strong>Validity:</strong> 1 Year</p>\r\n\r\n<p>🔥 <strong>Believe in your preparation, stay consistent &amp; keep moving towards your Selection!</strong></p>\r\n\r\n<p>📲 <strong>Vidyagram App पर आज ही Join करें और Mains की तैयारी को एक नई शुरुआत दें।</strong></p>",
+      "validity": {
+        "value": {
+          "$numberInt": "12"
+        },
+        "unit": "MONTHS"
+      },
+      "image": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-08-0_8083265489246739.jpeg",
+      "startDate": "2026-10-07",
+      "endDate": null,
+      "faculty": null,
+      "flags": []
+    },
+    "courseSection": null,
+    "appxUnavailable": [],
+    "outline": [
+      {
+        "section": "Maths",
+        "topics": [
+          {
+            "topic": "Mains Batch VOD 🎥",
+            "items": [],
+            "subTopics": [
+              {
+                "subTopic": "Calculation Videos",
+                "items": [
+                  "191431",
+                  "191432",
+                  "191433",
+                  "191435",
+                  "191434",
+                  "191436",
+                  "191437",
+                  "191438",
+                  "191439",
+                  "191440",
+                  "191441",
+                  "191442",
+                  "191443",
+                  "191444",
+                  "191445"
+                ]
+              },
+              {
+                "subTopic": "Percentage (प्रतिशत)",
+                "items": [
+                  "191514",
+                  "191519",
+                  "191520",
+                  "191515",
+                  "191517",
+                  "191518",
+                  "191521",
+                  "191522",
+                  "191523"
+                ]
+              },
+              {
+                "subTopic": "Profit & Loss (लाभ और हानि)",
+                "items": [
+                  "191250",
+                  "191251",
+                  "191252",
+                  "191253",
+                  "191254",
+                  "191255",
+                  "191256",
+                  "191257",
+                  "191259",
+                  "191258"
+                ]
+              },
+              {
+                "subTopic": "Discount (छूट)",
+                "items": [
+                  "191469",
+                  "191472",
+                  "191471",
+                  "191474",
+                  "191475",
+                  "191476",
+                  "191477",
+                  "191478",
+                  "191479"
+                ]
+              },
+              {
+                "subTopic": "Simple Interest (साधारण ब्याज)",
+                "items": [
+                  "191345",
+                  "191346",
+                  "191347",
+                  "191348",
+                  "191349"
+                ]
+              },
+              {
+                "subTopic": "Compound Interest (चक्रवृद्धि ब्याज)",
+                "items": [
+                  "191352",
+                  "191353",
+                  "191355",
+                  "191356",
+                  "191357",
+                  "191358"
+                ]
+              },
+              {
+                "subTopic": "S. I. & C. I. Installment",
+                "items": [
+                  "191360",
+                  "191361",
+                  "191362",
+                  "191363"
+                ]
+              },
+              {
+                "subTopic": "Time & Work (समय और कार्य)",
+                "items": [
+                  "191446",
+                  "191447",
+                  "191450",
+                  "191451",
+                  "191453",
+                  "191455",
+                  "191454",
+                  "191456"
+                ]
+              },
+              {
+                "subTopic": "Time, Speed & Distance",
+                "items": [
+                  "191480",
+                  "191481",
+                  "191482",
+                  "191483",
+                  "191484",
+                  "191485",
+                  "191486",
+                  "191487"
+                ]
+              },
+              {
+                "subTopic": "Race & Circular Motion",
+                "items": [
+                  "191290",
+                  "191291",
+                  "191292",
+                  "191293"
+                ]
+              },
+              {
+                "subTopic": "BOAT & STREAM.",
+                "items": [
+                  "191375",
+                  "191377",
+                  "191376",
+                  "191378"
+                ]
+              },
+              {
+                "subTopic": "RATIO & PROPORTION",
+                "items": [
+                  "191261",
+                  "191264",
+                  "191265",
+                  "191266",
+                  "191268",
+                  "191270",
+                  "191269",
+                  "191271"
+                ]
+              },
+              {
+                "subTopic": "PARTNERSHIP",
+                "items": [
+                  "191272",
+                  "191273",
+                  "191274",
+                  "191275"
+                ]
+              },
+              {
+                "subTopic": "MIXTURE",
+                "items": [
+                  "191301",
+                  "191304",
+                  "191303",
+                  "191305",
+                  "191306",
+                  "191307"
+                ]
+              },
+              {
+                "subTopic": "ALLIGATION",
+                "items": [
+                  "191276",
+                  "191277",
+                  "191278",
+                  "191279"
+                ]
+              },
+              {
+                "subTopic": "Average (New)",
+                "items": [
+                  "191405",
+                  "191406",
+                  "191404",
+                  "191407",
+                  "191408",
+                  "191409"
+                ]
+              },
+              {
+                "subTopic": "SIMPLIFICATION",
+                "items": [
+                  "191295",
+                  "191297",
+                  "191299",
+                  "191298",
+                  "191300"
+                ]
+              },
+              {
+                "subTopic": "SURDS & INDICES",
+                "items": [
+                  "191370",
+                  "191369",
+                  "191371",
+                  "191373",
+                  "191372",
+                  "191374"
+                ]
+              },
+              {
+                "subTopic": "Number System (संख्या पद्धति)",
+                "items": [
+                  "191457",
+                  "191458",
+                  "191459",
+                  "191460",
+                  "191461",
+                  "191462",
+                  "191463",
+                  "191464",
+                  "191465",
+                  "191466",
+                  "191467",
+                  "191468"
+                ]
+              },
+              {
+                "subTopic": "Arithmetic and Geometric Progression (AP & GP)",
+                "items": [
+                  "191418",
+                  "191419",
+                  "191417",
+                  "191416",
+                  "191420",
+                  "191421",
+                  "191422",
+                  "191424",
+                  "191423"
+                ]
+              },
+              {
+                "subTopic": "HCF & LCM.",
+                "items": [
+                  "191364",
+                  "191365",
+                  "191366",
+                  "191367"
+                ]
+              },
+              {
+                "subTopic": "Algebra (बीजगणित)",
+                "items": [
+                  "191504",
+                  "191505",
+                  "191506",
+                  "191507",
+                  "191508",
+                  "191509",
+                  "191511",
+                  "191512",
+                  "191513"
+                ]
+              },
+              {
+                "subTopic": "TRIGONOMETRY",
+                "items": [
+                  "191280",
+                  "191281",
+                  "191282",
+                  "191283",
+                  "191284",
+                  "191285",
+                  "191286",
+                  "191289",
+                  "191287",
+                  "191288"
+                ]
+              },
+              {
+                "subTopic": "HEIGHT & DISTANCE",
+                "items": [
+                  "191311",
+                  "191313",
+                  "191312",
+                  "191314"
+                ]
+              },
+              {
+                "subTopic": "Geometry (ज्यामिति)",
+                "items": [
+                  "191488",
+                  "191490",
+                  "191492",
+                  "191495",
+                  "191494",
+                  "191496",
+                  "191497",
+                  "191498",
+                  "191499",
+                  "191500",
+                  "191501",
+                  "191502",
+                  "191503"
+                ]
+              },
+              {
+                "subTopic": "Co-Ordinate Geometry..",
+                "items": [
+                  "191427",
+                  "191425",
+                  "191426",
+                  "191429",
+                  "191428",
+                  "191430"
+                ]
+              },
+              {
+                "subTopic": "Probability.",
+                "items": [
+                  "191379",
+                  "191380",
+                  "191381",
+                  "191382",
+                  "191383",
+                  "191384",
+                  "191385",
+                  "191386",
+                  "191387",
+                  "191390",
+                  "191388",
+                  "191389"
+                ]
+              },
+              {
+                "subTopic": "Permutation & Combination",
+                "items": [
+                  "191525",
+                  "191526",
+                  "191527",
+                  "191528",
+                  "191529",
+                  "191530",
+                  "191531"
+                ]
+              },
+              {
+                "subTopic": "Data Interpretation (D.I)",
+                "items": [
+                  "191315",
+                  "191316",
+                  "191317",
+                  "191318",
+                  "191320",
+                  "191321",
+                  "191322",
+                  "191323",
+                  "191324",
+                  "191325",
+                  "191326",
+                  "191327",
+                  "191328",
+                  "191329",
+                  "191331",
+                  "191330",
+                  "191332",
+                  "191333",
+                  "191334",
+                  "191335",
+                  "191336",
+                  "191337",
+                  "191338",
+                  "191339",
+                  "191340",
+                  "191341",
+                  "191343",
+                  "191344"
+                ]
+              },
+              {
+                "subTopic": "Statistics (सांख्यिकी).",
+                "items": [
+                  "191391",
+                  "191392",
+                  "191393",
+                  "191396",
+                  "191394",
+                  "191395"
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "GEOMETRY",
+            "items": [
+              "193545",
+              "193546",
+              "193547",
+              "193550",
+              "193548"
+            ],
+            "subTopics": []
+          }
+        ]
+      },
+      {
+        "section": "Reasoning",
+        "topics": [
+          {
+            "topic": "Dice",
+            "items": [
+              "189091",
+              "189092",
+              "189278",
+              "189692"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Syllogism",
+            "items": [
+              "190282",
+              "190681",
+              "192474"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Inequality",
+            "items": [
+              "192412",
+              "193471"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Order and Ranking",
+            "items": [
+              "194527"
+            ],
+            "subTopics": []
+          }
+        ]
+      },
+      {
+        "section": "English",
+        "topics": [
+          {
+            "topic": "Reading Comprehension (Tone & Theme)",
+            "items": [
+              "189201",
+              "189207",
+              "189268",
+              "189696",
+              "190688",
+              "192457"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Noun & Pronoun",
+            "items": [
+              "194610",
+              "194594",
+              "194721"
+            ],
+            "subTopics": []
+          }
+        ]
+      },
+      {
+        "section": "GK/GS",
+        "topics": [
+          {
+            "topic": "GS",
+            "items": [],
+            "subTopics": [
+              {
+                "subTopic": "Demo",
+                "items": [
+                  "194635"
+                ]
+              },
+              {
+                "subTopic": "PYQ's Classes",
+                "items": [
+                  "189089",
+                  "189332",
+                  "189662",
+                  "190239"
+                ]
+              },
+              {
+                "subTopic": "Polity",
+                "items": [
+                  "192217",
+                  "193855",
+                  "193856",
+                  "193857",
+                  "193859",
+                  "194609",
+                  "194813"
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "Demo",
+            "items": [
+              "194637"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Economics",
+            "items": [],
+            "subTopics": [
+              {
+                "subTopic": "Introduction",
+                "items": [
+                  "189082"
+                ]
+              },
+              {
+                "subTopic": "National Income",
+                "items": [
+                  "189304",
+                  "190222"
+                ]
+              },
+              {
+                "subTopic": "FYP",
+                "items": [
+                  "189609"
+                ]
+              },
+              {
+                "subTopic": "Taxation",
+                "items": [
+                  "190180",
+                  "190683"
+                ]
+              },
+              {
+                "subTopic": "Public Finance",
+                "items": [
+                  "190627"
+                ]
+              },
+              {
+                "subTopic": "Inflation",
+                "items": [
+                  "192142",
+                  "192458"
+                ]
+              },
+              {
+                "subTopic": "Money & Banking",
+                "items": [
+                  "193423"
+                ]
+              },
+              {
+                "subTopic": "Market",
+                "items": [
+                  "193507"
+                ]
+              },
+              {
+                "subTopic": "Poverty and Unemployment",
+                "items": [
+                  "193876"
+                ]
+              },
+              {
+                "subTopic": "World Organisation",
+                "items": [
+                  "194537"
+                ]
+              },
+              {
+                "subTopic": "Practice MCQ",
+                "items": [
+                  "194734"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": "Science",
+        "topics": [
+          {
+            "topic": "Demo",
+            "items": [
+              "194642"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Chemistry",
+            "items": [],
+            "subTopics": [
+              {
+                "subTopic": "Matter & Atom",
+                "items": [
+                  "194626",
+                  "194627"
+                ]
+              },
+              {
+                "subTopic": "Acid Base Salt",
+                "items": [
+                  "194628",
+                  "194629"
+                ]
+              },
+              {
+                "subTopic": "Metals and Non Metals",
+                "items": [
+                  "194630",
+                  "194631"
+                ]
+              },
+              {
+                "subTopic": "Periodic Table",
+                "items": [
+                  "194632",
+                  "194633"
+                ]
+              },
+              {
+                "subTopic": "Organic Chemistry",
+                "items": [
+                  "194785"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": "Computer",
+        "topics": [
+          {
+            "topic": "Demo",
+            "items": [
+              "189076"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Architecture of Computer",
+            "items": [
+              "194468",
+              "194469",
+              "194470"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "History of Computer",
+            "items": [
+              "189781",
+              "190207"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Hardware",
+            "items": [
+              "190729",
+              "192157",
+              "193385",
+              "193584",
+              "193890"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Software",
+            "items": [
+              "194565",
+              "194788"
+            ],
+            "subTopics": []
+          }
+        ]
+      }
+    ],
+    "items": [
+      {
+        "rowId": "193547",
+        "kind": "LIVE_STREAM",
+        "title": "Geometry 03 (2)",
+        "apxTitle": "Geometry 03",
+        "active": true,
+        "free": false,
+        "priority": {
+          "$numberInt": "246"
+        },
+        "path": [
+          "Home",
+          "Maths",
+          "GEOMETRY",
+          "Video"
+        ],
+        "placement": {
+          "section": "Maths",
+          "topic": "GEOMETRY",
+          "subTopic": null
+        },
+        "placements": {
+          "$numberInt": "1"
+        },
+        "crossListed": false,
+        "assetKey": "vid:armaths-data:4656486-1792746126",
+        "urlHost": "transcoded-videos-v2.classx.co.in",
+        "youtubeLink": null,
+        "noUsableLink": false,
+        "facultyHint": null
+      },
+      {
+        "rowId": "193550",
+        "kind": "LIVE_STREAM",
+        "title": "Geometry 04 (2)",
+        "apxTitle": "Geometry 04",
+        "active": true,
+        "free": false,
+        "priority": {
+          "$numberInt": "247"
+        },
+        "path": [
+          "Home",
+          "Maths",
+          "GEOMETRY",
+          "Video"
+        ],
+        "placement": {
+          "section": "Maths",
+          "topic": "GEOMETRY",
+          "subTopic": null
+        },
+        "placements": {
+          "$numberInt": "1"
+        },
+        "crossListed": false,
+        "assetKey": "vid:armaths-data:4657426-1792753322",
+        "urlHost": "transcoded-videos-v2.classx.co.in",
+        "youtubeLink": null,
+        "noUsableLink": false,
+        "facultyHint": null
+      }
+    ],
+    "excluded": [
+      {
+        "rowId": "194655",
+        "title": "Geometry 05",
+        "type": "VIDEO",
+        "reason": "awaiting recording",
+        "detail": null
+      },
+      {
+        "rowId": "194729",
+        "title": "Order and Ranking 02",
+        "type": "VIDEO",
+        "reason": "awaiting recording",
+        "detail": null
+      },
+      {
+        "rowId": "194919",
+        "title": "Noun & Pronoun 04",
+        "type": "VIDEO",
+        "reason": "awaiting recording",
+        "detail": null
+      },
+      {
+        "rowId": "195031",
+        "title": "Advance Practice Set (Class 08)",
+        "type": "VIDEO",
+        "reason": "awaiting recording",
+        "detail": null
+      },
+      {
+        "rowId": "194985",
+        "title": "Important Doubts",
+        "type": "VIDEO",
+        "reason": "awaiting recording",
+        "detail": null
+      },
+      {
+        "rowId": "194962",
+        "title": "Organic Chemistry 02",
+        "type": "VIDEO",
+        "reason": "awaiting recording",
+        "detail": null
+      },
+      {
+        "rowId": "195007",
+        "title": "Software and Programming language",
+        "type": "VIDEO",
+        "reason": "awaiting recording",
+        "detail": null
+      },
+      {
+        "rowId": "188899",
+        "title": "Light",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "Home > GK/GS > Science  (Deleted)"
+      },
+      {
+        "rowId": "189109",
+        "title": "Matter & Atom",
+        "type": "LIVE_STREAM",
+        "reason": "folder deleted",
+        "detail": "Home > GK/GS > Science  (Deleted)"
+      },
+      {
+        "rowId": "189322",
+        "title": "Matter & Atom 02",
+        "type": "LIVE_STREAM",
+        "reason": "folder deleted",
+        "detail": "Home > GK/GS > Science  (Deleted)"
+      },
+      {
+        "rowId": "189766",
+        "title": "Geometry 02",
+        "type": "LIVE_STREAM",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "190262",
+        "title": "Acid Base Salt",
+        "type": "LIVE_STREAM",
+        "reason": "folder deleted",
+        "detail": "Home > GK/GS > Science  (Deleted)"
+      },
+      {
+        "rowId": "190287",
+        "title": "Geometry 02",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "190762",
+        "title": "Acid Base Salt 02",
+        "type": "LIVE_STREAM",
+        "reason": "folder deleted",
+        "detail": "Home > GK/GS > Science  (Deleted)"
+      },
+      {
+        "rowId": "191260",
+        "title": "Ratio 01",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191262",
+        "title": "Ratio 02",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191263",
+        "title": "Ratio 03",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191267",
+        "title": "Ratio 05",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191294",
+        "title": "Simplification 01",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191296",
+        "title": "Simplification 02",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191302",
+        "title": "Mixture 02",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191308",
+        "title": "Height & Distance 01",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191309",
+        "title": "Height & Distance Completed",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191310",
+        "title": "Height & Distance Completed",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191319",
+        "title": "D.I Class 06 (BAR GRAPH DI)",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191342",
+        "title": "DATA INTERPRETATION (ClassRoom Sheet_Mains)",
+        "type": "PDF",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191350",
+        "title": "Compound Interest 01",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191351",
+        "title": "Compound Interest 02",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191354",
+        "title": "Compound Interest 03",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191359",
+        "title": "S.I. & C. I. Installment",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191368",
+        "title": "Surds & Indices 01",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191397",
+        "title": "Mensuration 2D 01",
+        "type": "VIDEO",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "191398",
+        "title": "Mensuration 2D 02",
+        "type": "VIDEO",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "191399",
+        "title": "Mensuration-2D (ClassRoom Sheet)",
+        "type": "PDF",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "191400",
+        "title": "Mensuration 2D (Class Notes_Mains)",
+        "type": "PDF",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "191401",
+        "title": "Mensuration-2D (Pro Level Sheet_Mains)",
+        "type": "PDF",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "191402",
+        "title": "Average 01",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191403",
+        "title": "Average 02",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191410",
+        "title": "Mensuration 3D 01",
+        "type": "VIDEO",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "191411",
+        "title": "Mensuration 3D 02",
+        "type": "VIDEO",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "191412",
+        "title": "Mensuration 3D 03",
+        "type": "VIDEO",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "191413",
+        "title": "Mensuration-3D (ClassRoom Sheet_Mains)",
+        "type": "PDF",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "191414",
+        "title": "Mensuration 3D (Class Notes_Mains)",
+        "type": "PDF",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "191415",
+        "title": "Mensuration-3D (Pro Level Sheet_Mains)",
+        "type": "PDF",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "191448",
+        "title": "Time & Work 03",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191449",
+        "title": "Time & Work 04",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191452",
+        "title": "Time & Work 05",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191470",
+        "title": "Discount 02",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191473",
+        "title": "Discount 04",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191489",
+        "title": "Geometry 02",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191491",
+        "title": "Geometry 03",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191493",
+        "title": "Geometry 04",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191510",
+        "title": "Algebra 17",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191516",
+        "title": "Percentage 05",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191524",
+        "title": "Permutation & Combination 01",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "192240",
+        "title": "Metals and Non Metals",
+        "type": "LIVE_STREAM",
+        "reason": "folder deleted",
+        "detail": "Home > GK/GS > Science  (Deleted)"
+      },
+      {
+        "rowId": "192392",
+        "title": "Hardware 03",
+        "type": "LIVE_STREAM",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "192504",
+        "title": "Metals and Non Metals 02",
+        "type": "LIVE_STREAM",
+        "reason": "folder deleted",
+        "detail": "Home > GK/GS > Science  (Deleted)"
+      },
+      {
+        "rowId": "193345",
+        "title": "Hardware 03",
+        "type": "LIVE_STREAM",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "193357",
+        "title": "Polity (Fundamental Rights)",
+        "type": "LIVE_STREAM",
+        "reason": "folder deleted",
+        "detail": "Home > GK/GS > GS By Himanshu Sir > Polity > Fundamental Rights (Deleted) > Video (Deleted)"
+      },
+      {
+        "rowId": "193402",
+        "title": "Periodic Table",
+        "type": "LIVE_STREAM",
+        "reason": "folder deleted",
+        "detail": "Home > GK/GS > Science  (Deleted)"
+      },
+      {
+        "rowId": "193479",
+        "title": "Fundamental Rights 02 (Advanced MCQs)",
+        "type": "LIVE_STREAM",
+        "reason": "folder deleted",
+        "detail": "Home > GK/GS > GS By Himanshu Sir > Polity > Fundamental Rights (Deleted) > Video (Deleted)"
+      },
+      {
+        "rowId": "193605",
+        "title": "Important Articles (Class 04)",
+        "type": "LIVE_STREAM",
+        "reason": "folder deleted",
+        "detail": "Home > GK/GS > GS By Himanshu Sir > Polity > Fundamental Rights (Deleted) > Video (Deleted)"
+      },
+      {
+        "rowId": "193849",
+        "title": "Polity",
+        "type": "LIVE_STREAM",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "193866",
+        "title": "Order and Ranking 01",
+        "type": "LIVE_STREAM",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "194559",
+        "title": "Periodic Table (Practice Class 02)",
+        "type": "LIVE_STREAM",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      }
+    ],
+    "unfiled": [
+      {
+        "rowId": "188144",
+        "title": "SSC CGL MAINS 2026 BATCH PLANNER",
+        "kind": "PDF",
+        "active": true,
+        "path": "Home",
+        "reason": "too shallow"
+      },
+      {
+        "rowId": "190772",
+        "title": "START HERE - BATCH GUIDE",
+        "kind": "VIDEO",
+        "active": true,
+        "path": "Home",
+        "reason": "too shallow"
+      }
+    ],
+    "counts": {
+      "items": {
+        "$numberInt": "317"
+      },
+      "active": {
+        "$numberInt": "317"
+      },
+      "inactive": {
+        "$numberInt": "0"
+      },
+      "sections": {
+        "$numberInt": "6"
+      },
+      "topics": {
+        "$numberInt": "18"
+      },
+      "subTopics": {
+        "$numberInt": "49"
+      },
+      "unfiled": {
+        "$numberInt": "2"
+      },
+      "excluded": {
+        "$numberInt": "66"
+      },
+      "appxUnavailable": {
+        "$numberInt": "0"
+      }
+    }
+  },
+  {
+    "course": {
+      "apxCourseId": "161",
+      "title": "Maths Special - SSC CGL Mains Batch 2026 🔥",
+      "enabled": true,
+      "status": {
+        "$numberInt": "1"
+      },
+      "isFree": false,
+      "price": {
+        "$numberInt": "899"
+      },
+      "priceSentinel": null,
+      "mrp": {
+        "$numberInt": "0"
+      },
+      "description": "<h3>Maths Special - SSC Mains Batch 2026 🔥</h3>\r\n\r\n<p>SSC CGL, CHSL &amp; CPO Mains की तैयारी को दें एक <strong>Advanced &amp; Exam-Oriented Direction</strong> 🚀</p>\r\n\r\n<p>🎯 <strong>Batch Highlights:</strong><br />\r\n✅ Live Classes<br />\r\n✅ Classroom Board PDFs<br />\r\n✅ Daily Class-wise Tests<br />\r\n✅ Classroom Sheets<br />\r\n✅ PRO Level Sheets<br />\r\n✅ Regular Mains Mocks<br />\r\n✅ Doubt Solving Sessions<br />\r\n✅ Mains Students के लिए Specially Designed Content</p>\r\n\r\n<p>🔥 <strong>Mains की तैयारी सिर्फ पढ़ने से नहीं, सही Practice और Strategy से होती है!</strong><br />\r\nअपनी तैयारी को अगले Level पर ले जाने के लिए जुड़िए <strong>SSC Mains Batch 2026</strong> से।</p>\r\n\r\n<p>👨&zwj;🏫 <strong>Aditya Ranjan Sir &ndash; Maths Expert</strong><br />\r\n📅 <strong>1 Year Validity</strong><br />\r\n📲 <strong>Vidyagram App पर Available</strong></p>\r\n\r\n<p><strong>अब तैयारी होगी Mains Level की &mdash; Selection के लक्ष्य के साथ! 🎯</strong></p>\r\n\r\n<p><!--$--><!--/$--></p>\r\n\r\n<p class=\"placeholder\">&nbsp;</p>\r\n\r\n<p><!--&--></p>\r\n\r\n<p><!--$--><!--/$--></p>\r\n\r\n<p><strong><!--/&--></strong></p>",
+      "validity": {
+        "value": {
+          "$numberInt": "12"
+        },
+        "unit": "MONTHS"
+      },
+      "image": "https://appx-content-v2.classx.co.in/paid_course3/2026-10-08-0_8994439553901232.jpeg",
+      "startDate": "2026-10-07",
+      "endDate": null,
+      "faculty": null,
+      "flags": []
+    },
+    "courseSection": {
+      "apxCourseId": "161",
+      "title": "Maths Special - SSC CGL Mains Batch 2026 🔥",
+      "section": "Maths",
+      "source": "proposed",
+      "items": {
+        "$numberInt": "5"
+      }
+    },
+    "appxUnavailable": [],
+    "outline": [
+      {
+        "section": "Special Mains VOD",
+        "topics": [
+          {
+            "topic": "Calculation Videos",
+            "items": [
+              "191027",
+              "191028",
+              "191029",
+              "191031",
+              "191030",
+              "191032",
+              "191033",
+              "191034",
+              "191035",
+              "191036",
+              "191037",
+              "191038",
+              "191039",
+              "191040",
+              "191041"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Percentage (प्रतिशत)",
+            "items": [
+              "191131",
+              "191136",
+              "191137",
+              "191132",
+              "191134",
+              "191135",
+              "191138",
+              "191139",
+              "191140"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Profit & Loss (लाभ और हानि)",
+            "items": [
+              "190777",
+              "190778",
+              "190779",
+              "190780",
+              "190781",
+              "190782",
+              "190783",
+              "190784",
+              "190786",
+              "190785"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Discount (छूट)",
+            "items": [
+              "191074",
+              "191077",
+              "191076",
+              "191079",
+              "191080",
+              "191081",
+              "191082",
+              "191083",
+              "191084"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Simple Interest (साधारण ब्याज)",
+            "items": [
+              "190902",
+              "190903",
+              "190904",
+              "190905",
+              "190906"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Compound Interest (चक्रवृद्धि ब्याज)",
+            "items": [
+              "190912",
+              "190913",
+              "190915",
+              "190916",
+              "190917",
+              "190918"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "S. I. & C. I. Installment",
+            "items": [
+              "190923",
+              "190924",
+              "190925",
+              "190926"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Time & Work (समय और कार्य)",
+            "items": [
+              "191045",
+              "191046",
+              "191049",
+              "191050",
+              "191052",
+              "191054",
+              "191053",
+              "191055"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Time, Speed & Distance",
+            "items": [
+              "191088",
+              "191089",
+              "191090",
+              "191091",
+              "191092",
+              "191093",
+              "191094",
+              "191095"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Race & Circular Motion",
+            "items": [
+              "190832",
+              "190833",
+              "190834",
+              "190835"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "BOAT & STREAM.",
+            "items": [
+              "190947",
+              "190949",
+              "190948",
+              "190950"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "RATIO & PROPORTION",
+            "items": [
+              "190791",
+              "190794",
+              "190795",
+              "190796",
+              "190798",
+              "190800",
+              "190799",
+              "190801"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "PARTNERSHIP",
+            "items": [
+              "190805",
+              "190806",
+              "190807",
+              "190808"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "MIXTURE",
+            "items": [
+              "190849",
+              "190852",
+              "190851",
+              "190853",
+              "190854",
+              "190855"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "ALLIGATION",
+            "items": [
+              "190812",
+              "190813",
+              "190814",
+              "190815"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Average (New)",
+            "items": [
+              "190989",
+              "190990",
+              "190988",
+              "190991",
+              "190992",
+              "190993"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "SIMPLIFICATION",
+            "items": [
+              "190840",
+              "190842",
+              "190844",
+              "190843",
+              "190845"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "SURDS & INDICES",
+            "items": [
+              "190939",
+              "190938",
+              "190940",
+              "190942",
+              "190941",
+              "190943"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Number System (संख्या पद्धति)",
+            "items": [
+              "191059",
+              "191060",
+              "191061",
+              "191062",
+              "191063",
+              "191064",
+              "191065",
+              "191066",
+              "191067",
+              "191068",
+              "191069",
+              "191070"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Arithmetic and Geometric Progression (AP & GP)",
+            "items": [
+              "191008",
+              "191009",
+              "191007",
+              "191006",
+              "191010",
+              "191011",
+              "191012",
+              "191014",
+              "191013"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "HCF & LCM.",
+            "items": [
+              "190930",
+              "190931",
+              "190932",
+              "190933"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Algebra (बीजगणित)",
+            "items": [
+              "191118",
+              "191119",
+              "191120",
+              "191121",
+              "191122",
+              "191123",
+              "191125",
+              "191126",
+              "191127"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "TRIGONOMETRY",
+            "items": [
+              "190819",
+              "190820",
+              "190821",
+              "190822",
+              "190823",
+              "190824",
+              "190825",
+              "190828",
+              "190826",
+              "190827"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "HEIGHT & DISTANCE",
+            "items": [
+              "190862",
+              "190864",
+              "190863",
+              "190865"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Geometry (ज्यामिति)",
+            "items": [
+              "191099",
+              "191101",
+              "191103",
+              "191106",
+              "191105",
+              "191107",
+              "191108",
+              "191109",
+              "191110",
+              "191111",
+              "191112",
+              "191113",
+              "191114"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Co-Ordinate Geometry..",
+            "items": [
+              "191020",
+              "191018",
+              "191019",
+              "191022",
+              "191021",
+              "191023"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Probability.",
+            "items": [
+              "190954",
+              "190955",
+              "190956",
+              "190957",
+              "190958",
+              "190959",
+              "190960",
+              "190961",
+              "190962",
+              "190965",
+              "190963",
+              "190964"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Permutation & Combination",
+            "items": [
+              "191145",
+              "191146",
+              "191147",
+              "191148",
+              "191149",
+              "191150",
+              "191151"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Data Interpretation (D.I)",
+            "items": [
+              "190869",
+              "190870",
+              "190871",
+              "190872",
+              "190874",
+              "190875",
+              "190876",
+              "190877",
+              "190878",
+              "190879",
+              "190880",
+              "190881",
+              "190882",
+              "190883",
+              "190885",
+              "190884",
+              "190886",
+              "190887",
+              "190888",
+              "190889",
+              "190890",
+              "190891",
+              "190892",
+              "190893",
+              "190894",
+              "190895",
+              "190897",
+              "190898"
+            ],
+            "subTopics": []
+          },
+          {
+            "topic": "Statistics (सांख्यिकी).",
+            "items": [
+              "190969",
+              "190970",
+              "190971",
+              "190974",
+              "190972",
+              "190973"
+            ],
+            "subTopics": []
+          }
+        ]
+      },
+      {
+        "section": "Maths",
+        "topics": [
+          {
+            "topic": "GEOMETRY",
+            "items": [
+              "193539",
+              "193540",
+              "193541",
+              "193549",
+              "193542"
+            ],
+            "subTopics": []
+          }
+        ]
+      }
+    ],
+    "items": [
+      {
+        "rowId": "193541",
+        "kind": "LIVE_STREAM",
+        "title": "Geometry 03 (2)",
+        "apxTitle": "Geometry 03",
+        "active": true,
+        "free": false,
+        "priority": {
+          "$numberInt": "246"
+        },
+        "path": [
+          "Home",
+          "GEOMETRY",
+          "Video"
+        ],
+        "placement": {
+          "section": "Maths",
+          "topic": "GEOMETRY",
+          "subTopic": null
+        },
+        "placements": {
+          "$numberInt": "1"
+        },
+        "crossListed": false,
+        "assetKey": "vid:armaths-data:4656486-1792746126",
+        "urlHost": "transcoded-videos-v2.classx.co.in",
+        "youtubeLink": null,
+        "noUsableLink": false,
+        "facultyHint": null
+      },
+      {
+        "rowId": "193549",
+        "kind": "LIVE_STREAM",
+        "title": "Geometry 04 (2)",
+        "apxTitle": "Geometry 04",
+        "active": true,
+        "free": false,
+        "priority": {
+          "$numberInt": "247"
+        },
+        "path": [
+          "Home",
+          "GEOMETRY",
+          "Video"
+        ],
+        "placement": {
+          "section": "Maths",
+          "topic": "GEOMETRY",
+          "subTopic": null
+        },
+        "placements": {
+          "$numberInt": "1"
+        },
+        "crossListed": false,
+        "assetKey": "vid:armaths-data:4657426-1792753322",
+        "urlHost": "transcoded-videos-v2.classx.co.in",
+        "youtubeLink": null,
+        "noUsableLink": false,
+        "facultyHint": null
+      }
+    ],
+    "excluded": [
+      {
+        "rowId": "194654",
+        "title": "Geometry 05",
+        "type": "VIDEO",
+        "reason": "awaiting recording",
+        "detail": null
+      },
+      {
+        "rowId": "190790",
+        "title": "Ratio 01",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "190792",
+        "title": "Ratio 02",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "190793",
+        "title": "Ratio 03",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "190797",
+        "title": "Ratio 05",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "190839",
+        "title": "Simplification 01",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "190841",
+        "title": "Simplification 02",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "190850",
+        "title": "Mixture 02",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "190859",
+        "title": "Height & Distance 01",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "190860",
+        "title": "Height & Distance Completed",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "190861",
+        "title": "Height & Distance Completed",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "190873",
+        "title": "D.I Class 06 (BAR GRAPH DI)",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "190896",
+        "title": "DATA INTERPRETATION (ClassRoom Sheet_Mains)",
+        "type": "PDF",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "190910",
+        "title": "Compound Interest 01",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "190911",
+        "title": "Compound Interest 02",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "190914",
+        "title": "Compound Interest 03",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "190922",
+        "title": "S.I. & C. I. Installment",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "190937",
+        "title": "Surds & Indices 01",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "190978",
+        "title": "Mensuration 2D 01",
+        "type": "VIDEO",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "190979",
+        "title": "Mensuration 2D 02",
+        "type": "VIDEO",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "190980",
+        "title": "Mensuration-2D (ClassRoom Sheet)",
+        "type": "PDF",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "190981",
+        "title": "Mensuration 2D (Class Notes_Mains)",
+        "type": "PDF",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "190982",
+        "title": "Mensuration-2D (Pro Level Sheet_Mains)",
+        "type": "PDF",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "190986",
+        "title": "Average 01",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "190987",
+        "title": "Average 02",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "190997",
+        "title": "Mensuration 3D 01",
+        "type": "VIDEO",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "190998",
+        "title": "Mensuration 3D 02",
+        "type": "VIDEO",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "190999",
+        "title": "Mensuration 3D 03",
+        "type": "VIDEO",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "191000",
+        "title": "Mensuration-3D (ClassRoom Sheet_Mains)",
+        "type": "PDF",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "191001",
+        "title": "Mensuration 3D (Class Notes_Mains)",
+        "type": "PDF",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "191002",
+        "title": "Mensuration-3D (Pro Level Sheet_Mains)",
+        "type": "PDF",
+        "reason": "folder disabled",
+        "detail": null
+      },
+      {
+        "rowId": "191047",
+        "title": "Time & Work 03",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191048",
+        "title": "Time & Work 04",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191051",
+        "title": "Time & Work 05",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191075",
+        "title": "Discount 02",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191078",
+        "title": "Discount 04",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191100",
+        "title": "Geometry 02",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191102",
+        "title": "Geometry 03",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191104",
+        "title": "Geometry 04",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191124",
+        "title": "Algebra 17",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191133",
+        "title": "Percentage 05",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      },
+      {
+        "rowId": "191144",
+        "title": "Permutation & Combination 01",
+        "type": "VIDEO",
+        "reason": "folder deleted",
+        "detail": "item disabled"
+      }
+    ],
+    "unfiled": [
+      {
+        "rowId": "190769",
+        "title": "SSC CGL MAINS 2026 MATHS PLANNER",
+        "kind": "PDF",
+        "active": true,
+        "path": "Home",
+        "reason": "too shallow"
+      },
+      {
+        "rowId": "192082",
+        "title": "START HERE - BATCH GUIDE",
+        "kind": "VIDEO",
+        "active": true,
+        "path": "Home",
+        "reason": "too shallow"
+      }
+    ],
+    "counts": {
+      "items": {
+        "$numberInt": "248"
+      },
+      "active": {
+        "$numberInt": "248"
+      },
+      "inactive": {
+        "$numberInt": "0"
+      },
+      "sections": {
+        "$numberInt": "2"
+      },
+      "topics": {
+        "$numberInt": "31"
+      },
+      "subTopics": {
+        "$numberInt": "0"
+      },
+      "unfiled": {
+        "$numberInt": "2"
+      },
+      "excluded": {
+        "$numberInt": "42"
+      },
+      "appxUnavailable": {
+        "$numberInt": "0"
+      }
+    }
+  }
+]

@@ -1,0 +1,78 @@
+{
+  "_id": {
+    "$oid": "6ace8f53c9735682f04ed914"
+  },
+  "classId": {
+    "$oid": "6ace8f538752d955968ae359"
+  },
+  "__v": {
+    "$numberInt": "0"
+  },
+  "apxClassId": "907",
+  "apxCourseId": {
+    "$oid": "6ace2d3fc9735682f0475cf4"
+  },
+  "attempts": {
+    "$numberInt": "3"
+  },
+  "course_id": "3",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1791922003674"
+    }
+  },
+  "error": null,
+  "status": "downloading",
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1793091048566"
+    }
+  },
+  "video_id": "907",
+  "video_url": "https://appx-recordings-mcdn.akamai.net.in/videos/rgvikramjeet-data/411823-1702027232/hls/1080p/master-6452701.24023549.m3u8.m3u8",
+  "progress": {
+    "phase": "failed",
+    "rungs": {
+      "480p": {
+        "segsTotal": {
+          "$numberInt": "376"
+        },
+        "segsDone": {
+          "$numberInt": "376"
+        },
+        "bytes": {
+          "$numberInt": "307871056"
+        }
+      },
+      "240p": {
+        "segsTotal": {
+          "$numberInt": "376"
+        },
+        "segsDone": {
+          "$numberInt": "343"
+        },
+        "bytes": {
+          "$numberInt": "120462692"
+        }
+      },
+      "360p": {
+        "segsTotal": {
+          "$numberInt": "376"
+        },
+        "segsDone": {
+          "$numberInt": "376"
+        },
+        "bytes": {
+          "$numberInt": "230856292"
+        }
+      }
+    },
+    "classLink": null,
+    "error": "fetch https://transcoded-recordings.classx.co.in/videos/rgvikramjeet-data/411823-1702027232/hls/240p/master-6452701.24023549.m3u829.ts?edge-cache-token=Expires=1793101645~_GO=Generated~URLPrefix=aHR0cHM6Ly90cmFuc2NvZGVkLXJlY29yZGluZ3MuY2xhc3N4LmNvLmluL3ZpZGVvcy9yZ3Zpa3JhbWplZXQtZGF0YS80MTE4MjMtMTcwMjAyNzIzMg~Signature=Afe4kG0Md0uj0uA67lkoQdMWJ5LLIEpVfN1CNSmpfBPcM2muTvOTCJt8pkFu298OBEzQq-8wdcMQN7rpHhL3JfXwLLIG failed: 404"
+  },
+  "progressUpdatedAt": {
+    "$date": {
+      "$numberLong": "1793091048566"
+    }
+  }
+}

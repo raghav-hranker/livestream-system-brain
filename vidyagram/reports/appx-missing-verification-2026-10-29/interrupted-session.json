@@ -1,0 +1,1773 @@
+{
+  "observedAt": "2026-10-29T10:13:16.982Z",
+  "readOnly": true,
+  "scope": 169,
+  "steps": [
+    {
+      "name": "authenticated course list",
+      "ok": true,
+      "at": "2026-10-29T10:13:17.526Z"
+    },
+    {
+      "name": "known-good control course71",
+      "ok": true,
+      "at": "2026-10-29T10:13:24.200Z"
+    },
+    {
+      "name": "known-good video token control",
+      "ok": true,
+      "at": "2026-10-29T10:13:24.731Z"
+    },
+    {
+      "name": "course listing 7",
+      "ok": true,
+      "at": "2026-10-29T10:13:27.962Z"
+    },
+    {
+      "name": "course listing 15",
+      "ok": true,
+      "at": "2026-10-29T10:13:33.463Z"
+    },
+    {
+      "name": "course listing 17",
+      "ok": true,
+      "at": "2026-10-29T10:13:38.862Z"
+    },
+    {
+      "name": "course listing 18",
+      "ok": true,
+      "at": "2026-10-29T10:13:44.448Z"
+    },
+    {
+      "name": "course listing 21",
+      "ok": true,
+      "at": "2026-10-29T10:13:49.528Z"
+    },
+    {
+      "name": "course listing 22",
+      "ok": true,
+      "at": "2026-10-29T10:13:59.677Z"
+    },
+    {
+      "name": "course listing 23",
+      "ok": false,
+      "at": "2026-10-29T10:14:00.849Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 24",
+      "ok": false,
+      "at": "2026-10-29T10:14:02.060Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 28",
+      "ok": false,
+      "at": "2026-10-29T10:14:03.247Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 46",
+      "ok": false,
+      "at": "2026-10-29T10:14:04.415Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 47",
+      "ok": false,
+      "at": "2026-10-29T10:14:05.842Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 10",
+      "ok": false,
+      "at": "2026-10-29T10:14:07.043Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 13",
+      "ok": false,
+      "at": "2026-10-29T10:14:08.378Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 19",
+      "ok": false,
+      "at": "2026-10-29T10:14:09.557Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 42",
+      "ok": false,
+      "at": "2026-10-29T10:14:10.735Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 31",
+      "ok": false,
+      "at": "2026-10-29T10:14:11.948Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 25",
+      "ok": false,
+      "at": "2026-10-29T10:14:13.136Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 26",
+      "ok": false,
+      "at": "2026-10-29T10:14:14.330Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 27",
+      "ok": false,
+      "at": "2026-10-29T10:14:15.531Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 29",
+      "ok": false,
+      "at": "2026-10-29T10:14:16.699Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 45",
+      "ok": false,
+      "at": "2026-10-29T10:14:17.902Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 30",
+      "ok": false,
+      "at": "2026-10-29T10:14:19.081Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 35",
+      "ok": false,
+      "at": "2026-10-29T10:14:20.292Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 43",
+      "ok": false,
+      "at": "2026-10-29T10:14:21.488Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 32",
+      "ok": false,
+      "at": "2026-10-29T10:14:22.665Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 33",
+      "ok": false,
+      "at": "2026-10-29T10:14:23.837Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 34",
+      "ok": false,
+      "at": "2026-10-29T10:14:25.022Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 37",
+      "ok": false,
+      "at": "2026-10-29T10:14:26.189Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 39",
+      "ok": false,
+      "at": "2026-10-29T10:14:27.387Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 41",
+      "ok": false,
+      "at": "2026-10-29T10:14:28.585Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 44",
+      "ok": false,
+      "at": "2026-10-29T10:14:29.783Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 107",
+      "ok": false,
+      "at": "2026-10-29T10:14:30.980Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 69",
+      "ok": false,
+      "at": "2026-10-29T10:14:32.153Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 159",
+      "ok": false,
+      "at": "2026-10-29T10:14:33.379Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 74",
+      "ok": false,
+      "at": "2026-10-29T10:14:34.567Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 95",
+      "ok": false,
+      "at": "2026-10-29T10:14:35.783Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 114",
+      "ok": false,
+      "at": "2026-10-29T10:14:36.954Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 3",
+      "ok": false,
+      "at": "2026-10-29T10:14:38.129Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 4",
+      "ok": false,
+      "at": "2026-10-29T10:14:39.343Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 5",
+      "ok": false,
+      "at": "2026-10-29T10:14:40.558Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 6",
+      "ok": false,
+      "at": "2026-10-29T10:14:41.739Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 9",
+      "ok": false,
+      "at": "2026-10-29T10:14:42.919Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 14",
+      "ok": false,
+      "at": "2026-10-29T10:14:44.461Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 101",
+      "ok": false,
+      "at": "2026-10-29T10:14:45.675Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 87",
+      "ok": false,
+      "at": "2026-10-29T10:14:46.996Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 72",
+      "ok": false,
+      "at": "2026-10-29T10:14:48.165Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 66",
+      "ok": false,
+      "at": "2026-10-29T10:14:49.390Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 160",
+      "ok": false,
+      "at": "2026-10-29T10:14:50.571Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 161",
+      "ok": false,
+      "at": "2026-10-29T10:14:51.830Z",
+      "error": "SessionLost",
+      "http": null
+    },
+    {
+      "name": "course listing 104",
+      "ok": false,
+      "at": "2026-10-29T10:14:53.026Z",
+      "error": "SessionLost",
+      "http": null
+    }
+  ],
+  "controls": [
+    {
+      "name": "Glands01",
+      "at": "2026-10-29T10:13:24.731Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    }
+  ],
+  "candidates": [
+    {
+      "job": "6ace91cbc9735682f04ee01a",
+      "classId": "6ace91cb8752d955968af72f",
+      "title": "08 Chemical Bonding",
+      "oldAssetKey": "drm:5509dbdd-db50-4900-9673-d826a3755c81",
+      "category": "source404",
+      "course": "7",
+      "rowId": "4362",
+      "occurrences": [
+        {
+          "course": "7",
+          "rowId": "4362",
+          "listingCaptured": true,
+          "found": true,
+          "title": "08 Chemical Bonding",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:14:53.027Z",
+      "renditions": [],
+      "source": {
+        "title": "08 Chemical Bonding",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "outcome": "source identity or visibility changed"
+    },
+    {
+      "job": "6ace91cbc9735682f04ee01c",
+      "classId": "6ace91cb8752d955968af736",
+      "title": "12 Periodic Classification of Elements",
+      "oldAssetKey": "drm:eaa56b5d-5eef-4684-ad66-26f0a28140ab",
+      "category": "source404",
+      "course": "7",
+      "rowId": "4363",
+      "occurrences": [
+        {
+          "course": "7",
+          "rowId": "4363",
+          "listingCaptured": true,
+          "found": true,
+          "title": "12 Periodic Classification of Elements",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:14:53.034Z",
+      "renditions": [],
+      "source": {
+        "title": "12 Periodic Classification of Elements",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "outcome": "source identity or visibility changed"
+    },
+    {
+      "job": "6ace92d2c9735682f04ee56f",
+      "classId": "6ace92d28752d955968b070c",
+      "title": "Algebra Class 08 · ALGEBRA (बीजगणित )",
+      "oldAssetKey": "vid:rgvikramjeet-data:526735-1706263373",
+      "category": "source404",
+      "course": "15",
+      "rowId": "9770",
+      "occurrences": [
+        {
+          "course": "15",
+          "rowId": "9770",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 08",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "17",
+          "rowId": "10908",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 08",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "18",
+          "rowId": "11731",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 08",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "21",
+          "rowId": "13817",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 08",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "22",
+          "rowId": "14595",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 08",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "23",
+          "rowId": "16882",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "24",
+          "rowId": "17734",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "28",
+          "rowId": "21205",
+          "listingCaptured": false,
+          "found": false
+        }
+      ],
+      "originalFailure": {
+        "rung": "240p",
+        "index": 215,
+        "file": "master-2498548.7862000368215.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 512,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 512,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-10-29T10:14:53.036Z",
+      "renditions": [],
+      "source": {
+        "title": "Algebra Class 08",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace92d4c9735682f04ee575",
+      "classId": "6ace92d38752d955968b0721",
+      "title": "Algebra Class 11 · ALGEBRA (बीजगणित )",
+      "oldAssetKey": "vid:rgvikramjeet-data:536119-1706624740",
+      "category": "source404",
+      "course": "15",
+      "rowId": "9773",
+      "occurrences": [
+        {
+          "course": "15",
+          "rowId": "9773",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 11",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "17",
+          "rowId": "10911",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 11",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "18",
+          "rowId": "11734",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 11",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "21",
+          "rowId": "13820",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 11",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "22",
+          "rowId": "14599",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 11",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "23",
+          "rowId": "16885",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "24",
+          "rowId": "17738",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "28",
+          "rowId": "21209",
+          "listingCaptured": false,
+          "found": false
+        }
+      ],
+      "originalFailure": {
+        "rung": "480p",
+        "index": 227,
+        "file": "master-2790433.1646571243227.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 512,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 512,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-10-29T10:14:54.237Z",
+      "renditions": [],
+      "source": {
+        "title": "Algebra Class 11",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace92d6c9735682f04ee580",
+      "classId": "6ace92d68752d955968b0744",
+      "title": "Algebra Class 16 · ALGEBRA (बीजगणित )",
+      "oldAssetKey": "vid:rgvikramjeet-data:550360-1707143202",
+      "category": "source404",
+      "course": "15",
+      "rowId": "9779",
+      "occurrences": [
+        {
+          "course": "15",
+          "rowId": "9779",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 16",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "17",
+          "rowId": "10917",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 16",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "18",
+          "rowId": "11740",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 16",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "21",
+          "rowId": "13826",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 16",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "22",
+          "rowId": "14605",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 16",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "23",
+          "rowId": "16891",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "24",
+          "rowId": "17744",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "28",
+          "rowId": "21215",
+          "listingCaptured": false,
+          "found": false
+        }
+      ],
+      "originalFailure": {
+        "rung": "360p",
+        "index": 249,
+        "file": "master-9081993.356434247249.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 511,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 511,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-10-29T10:14:55.383Z",
+      "renditions": [],
+      "source": {
+        "title": "Algebra Class 16",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace92d8c9735682f04ee586",
+      "classId": "6ace92d88752d955968b0759",
+      "title": "Algebra Class 19",
+      "oldAssetKey": "vid:rgvikramjeet-data:558454-1707402144",
+      "category": "source404",
+      "course": "15",
+      "rowId": "9782",
+      "occurrences": [
+        {
+          "course": "15",
+          "rowId": "9782",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 19",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "17",
+          "rowId": "10920",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 19",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "18",
+          "rowId": "11743",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 19",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "21",
+          "rowId": "13829",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 19",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "22",
+          "rowId": "14608",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Algebra Class 19",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "23",
+          "rowId": "16894",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "24",
+          "rowId": "17747",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "28",
+          "rowId": "21218",
+          "listingCaptured": false,
+          "found": false
+        }
+      ],
+      "originalFailure": {
+        "rung": "240p",
+        "index": 289,
+        "file": "master-9455795.630963989289.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 511,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 511,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-10-29T10:14:56.463Z",
+      "renditions": [],
+      "source": {
+        "title": "Algebra Class 19",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace99b9c9735682f04f07fc",
+      "classId": "6ace99b98752d955968b6c5e",
+      "title": "Alligation 01 (2) · ALLIGATION (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:109306-1726211450",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34371",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34371"
+        },
+        {
+          "course": "47",
+          "rowId": "35126"
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:14:57.563Z",
+      "renditions": [],
+      "outcome": "exact source occurrence not available"
+    },
+    {
+      "job": "6ace99bac9735682f04f07fe",
+      "classId": "6ace99ba8752d955968b6c65",
+      "title": "Alligation 02 (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:110085-1726299279",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34372",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34372"
+        },
+        {
+          "course": "47",
+          "rowId": "35127"
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:14:57.563Z",
+      "renditions": [],
+      "outcome": "exact source occurrence not available"
+    },
+    {
+      "job": "6ace99bac9735682f04f0800",
+      "classId": "6ace99ba8752d955968b6c6c",
+      "title": "Alligation 03 · ALLIGATION (3)",
+      "oldAssetKey": "vid:rgvikramjeet-data:111836-1726550563",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34373",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34373"
+        },
+        {
+          "course": "47",
+          "rowId": "35128"
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:14:57.565Z",
+      "renditions": [],
+      "outcome": "exact source occurrence not available"
+    },
+    {
+      "job": "6ace99cbc9735682f04f0853",
+      "classId": "6ace99cb8752d955968b6d84",
+      "title": "Alligation 03 (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:111047-1726472266",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34616",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34616"
+        },
+        {
+          "course": "47",
+          "rowId": "35316"
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:14:57.565Z",
+      "renditions": [],
+      "outcome": "exact source occurrence not available"
+    },
+    {
+      "job": "6ace9424c9735682f04eeceb",
+      "classId": "6ace94248752d955968b1c3d",
+      "title": "Analogy 03 · Analogy",
+      "oldAssetKey": "vid:rgvikramjeet-data:746409-1713792675",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15166",
+      "occurrences": [
+        {
+          "course": "22",
+          "rowId": "15166",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Analogy 03",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "240p",
+        "index": 59,
+        "file": "master-8583872.38851573759.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 510,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 510,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-10-29T10:14:57.566Z",
+      "renditions": [],
+      "source": {
+        "title": "Analogy 03",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace9257c9735682f04ee309",
+      "classId": "6ace92578752d955968aff91",
+      "title": "Average Class 18",
+      "oldAssetKey": "vid:rgvikramjeet-data:410702-1701967965",
+      "category": "source404",
+      "course": "10",
+      "rowId": "6463",
+      "occurrences": [
+        {
+          "course": "10",
+          "rowId": "6463"
+        },
+        {
+          "course": "13",
+          "rowId": "8576"
+        },
+        {
+          "course": "15",
+          "rowId": "10419"
+        },
+        {
+          "course": "17",
+          "rowId": "11562"
+        },
+        {
+          "course": "18",
+          "rowId": "12405"
+        },
+        {
+          "course": "19",
+          "rowId": "13391"
+        },
+        {
+          "course": "21",
+          "rowId": "14464"
+        },
+        {
+          "course": "22",
+          "rowId": "15021"
+        },
+        {
+          "course": "23",
+          "rowId": "17560"
+        },
+        {
+          "course": "28",
+          "rowId": "21844"
+        }
+      ],
+      "originalFailure": {
+        "rung": "480p",
+        "index": 2,
+        "file": "master-3439011.0149725396.m3u82.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 508,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 508,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-10-29T10:14:58.629Z",
+      "renditions": [],
+      "outcome": "exact source occurrence not available"
+    },
+    {
+      "job": "6ace98acc9735682f04f025a",
+      "classId": "6ace98ac8752d955968b5b90",
+      "title": "Botany 03 · BOTANY",
+      "oldAssetKey": "vid:rgvikramjeet-data:866003-1717036990",
+      "category": "source404",
+      "course": "42",
+      "rowId": "31407",
+      "occurrences": [
+        {
+          "course": "42",
+          "rowId": "31407"
+        }
+      ],
+      "originalFailure": {
+        "rung": "240p",
+        "index": 145,
+        "file": "master-115758.48027206348145.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 512,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 512,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-10-29T10:14:58.632Z",
+      "renditions": [],
+      "outcome": "exact source occurrence not available"
+    },
+    {
+      "job": "6ace98afc9735682f04f0266",
+      "classId": "6ace98ae8752d955968b5bba",
+      "title": "Botany 09",
+      "oldAssetKey": "vid:rgvikramjeet-data:897148-1717904603",
+      "category": "source404",
+      "course": "42",
+      "rowId": "31414",
+      "occurrences": [
+        {
+          "course": "42",
+          "rowId": "31414"
+        }
+      ],
+      "originalFailure": {
+        "rung": "360p",
+        "index": 48,
+        "file": "master-3948535.203345184748.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 511,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 511,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-10-29T10:14:58.632Z",
+      "renditions": [],
+      "outcome": "exact source occurrence not available"
+    },
+    {
+      "job": "6ace94d7c9735682f04ef00e",
+      "classId": "6ace94d78752d955968b2506",
+      "title": "Carbon & Its Compouns 01",
+      "oldAssetKey": "drm:7a18a6fb-213e-4eeb-a807-01f1e781fa1d",
+      "category": "source404",
+      "course": "22",
+      "rowId": "15706",
+      "occurrences": [
+        {
+          "course": "22",
+          "rowId": "15706",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Carbon & Its Compouns 01 ",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": {
+        "rung": "360p",
+        "index": 158,
+        "file": "master-7959432.9834825415.m3u8158.ts",
+        "originalFailure": true,
+        "http": 404,
+        "bytes": 512,
+        "tsSync": false,
+        "mp4": false,
+        "ok": false,
+        "confirmation": {
+          "http": 404,
+          "bytes": 512,
+          "tsSync": false,
+          "mp4": false,
+          "ok": false
+        }
+      },
+      "checkedAt": "2026-10-29T10:14:58.633Z",
+      "renditions": [],
+      "source": {
+        "title": "Carbon & Its Compouns 01 ",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace9640c9735682f04ef725",
+      "classId": "6ace96408752d955968b3a74",
+      "title": "CGL Mains 2024 Strategy",
+      "oldAssetKey": "vid:rgvikramjeet-data:112158-1726570541",
+      "category": "noPlayableURL",
+      "course": "31",
+      "rowId": "23241",
+      "occurrences": [
+        {
+          "course": "31",
+          "rowId": "23241"
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:14:59.756Z",
+      "renditions": [],
+      "outcome": "exact source occurrence not available"
+    },
+    {
+      "job": "6ace936dc9735682f04ee8c4",
+      "classId": "6ace936d8752d955968b10ba",
+      "title": "Circle 01 · GEOMETRY (ज्यामिति) (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:111585-1726497103",
+      "category": "noPlayableURL",
+      "course": "21",
+      "rowId": "14221",
+      "occurrences": [
+        {
+          "course": "21",
+          "rowId": "14221",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Circle 01",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "22",
+          "rowId": "14829",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Circle 01",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "23",
+          "rowId": "17320",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "24",
+          "rowId": "18166",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "25",
+          "rowId": "19009",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "26",
+          "rowId": "19912",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "27",
+          "rowId": "20777",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "28",
+          "rowId": "21601",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "29",
+          "rowId": "22522",
+          "listingCaptured": false,
+          "found": false
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:14:59.756Z",
+      "renditions": [],
+      "source": {
+        "title": "Circle 01",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace936dc9735682f04ee8c7",
+      "classId": "6ace936d8752d955968b10c1",
+      "title": "Circle 02 · GEOMETRY (ज्यामिति) (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:112321-1726582960",
+      "category": "noPlayableURL",
+      "course": "21",
+      "rowId": "14222",
+      "occurrences": [
+        {
+          "course": "21",
+          "rowId": "14222",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Circle 02",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "22",
+          "rowId": "14830",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Circle 02",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "23",
+          "rowId": "17321",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "24",
+          "rowId": "18167",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "25",
+          "rowId": "19010",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "26",
+          "rowId": "19913",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "27",
+          "rowId": "20778",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "28",
+          "rowId": "21602",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "29",
+          "rowId": "22523",
+          "listingCaptured": false,
+          "found": false
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:15:00.892Z",
+      "renditions": [],
+      "source": {
+        "title": "Circle 02",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace9566c9735682f04ef287",
+      "classId": "6ace95668752d955968b2cb3",
+      "title": "Circle 03 · GEOMETRY (ज्यामिति) (10)",
+      "oldAssetKey": "vid:rgvikramjeet-data:113390-1726725879",
+      "category": "noPlayableURL",
+      "course": "24",
+      "rowId": "18168",
+      "occurrences": [
+        {
+          "course": "24",
+          "rowId": "18168"
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:15:01.958Z",
+      "renditions": [],
+      "outcome": "exact source occurrence not available"
+    },
+    {
+      "job": "6ace9586c9735682f04ef327",
+      "classId": "6ace95868752d955968b2eb2",
+      "title": "Circle 03 · GEOMETRY (ज्यामिति) (11)",
+      "oldAssetKey": "vid:rgvikramjeet-data:113400-1726726421",
+      "category": "noPlayableURL",
+      "course": "25",
+      "rowId": "19011",
+      "occurrences": [
+        {
+          "course": "25",
+          "rowId": "19011"
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:15:01.959Z",
+      "renditions": [],
+      "outcome": "exact source occurrence not available"
+    },
+    {
+      "job": "6ace95b5c9735682f04ef404",
+      "classId": "6ace95b58752d955968b3198",
+      "title": "Circle 03 · GEOMETRY (ज्यामिति) (12)",
+      "oldAssetKey": "vid:rgvikramjeet-data:113402-1726726601",
+      "category": "noPlayableURL",
+      "course": "26",
+      "rowId": "19914",
+      "occurrences": [
+        {
+          "course": "26",
+          "rowId": "19914"
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:15:01.960Z",
+      "renditions": [],
+      "outcome": "exact source occurrence not available"
+    },
+    {
+      "job": "6ace95eec9735682f04ef524",
+      "classId": "6ace95ed8752d955968b352d",
+      "title": "Circle 03 · GEOMETRY (ज्यामिति) (13)",
+      "oldAssetKey": "vid:rgvikramjeet-data:113405-1726726779",
+      "category": "noPlayableURL",
+      "course": "27",
+      "rowId": "20779",
+      "occurrences": [
+        {
+          "course": "27",
+          "rowId": "20779"
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:15:01.960Z",
+      "renditions": [],
+      "outcome": "exact source occurrence not available"
+    },
+    {
+      "job": "6ace9609c9735682f04ef5c1",
+      "classId": "6ace96098752d955968b36e6",
+      "title": "Circle 03 · GEOMETRY (ज्यामिति) (14)",
+      "oldAssetKey": "vid:rgvikramjeet-data:113409-1726726968",
+      "category": "noPlayableURL",
+      "course": "29",
+      "rowId": "22524",
+      "occurrences": [
+        {
+          "course": "29",
+          "rowId": "22524"
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:15:01.961Z",
+      "renditions": [],
+      "outcome": "exact source occurrence not available"
+    },
+    {
+      "job": "6ace936ec9735682f04ee8cb",
+      "classId": "6ace936e8752d955968b10c8",
+      "title": "Circle 03 · GEOMETRY (ज्यामिति) (7)",
+      "oldAssetKey": "vid:rgvikramjeet-data:113378-1726725340",
+      "category": "noPlayableURL",
+      "course": "21",
+      "rowId": "14223",
+      "occurrences": [
+        {
+          "course": "21",
+          "rowId": "14223",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Circle 03",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:15:01.961Z",
+      "renditions": [],
+      "source": {
+        "title": "Circle 03",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace93c3c9735682f04eeb1a",
+      "classId": "6ace93c38752d955968b166a",
+      "title": "Circle 03 · GEOMETRY (ज्यामिति) (8)",
+      "oldAssetKey": "vid:rgvikramjeet-data:113372-1726725160",
+      "category": "noPlayableURL",
+      "course": "22",
+      "rowId": "14831",
+      "occurrences": [
+        {
+          "course": "22",
+          "rowId": "14831",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Circle 03",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "28",
+          "rowId": "21603",
+          "listingCaptured": false,
+          "found": false
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:15:03.063Z",
+      "renditions": [],
+      "source": {
+        "title": "Circle 03",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    },
+    {
+      "job": "6ace9533c9735682f04ef1c7",
+      "classId": "6ace95328752d955968b2a52",
+      "title": "Circle 03 · GEOMETRY (ज्यामिति) (9)",
+      "oldAssetKey": "vid:rgvikramjeet-data:113387-1726725705",
+      "category": "noPlayableURL",
+      "course": "23",
+      "rowId": "17322",
+      "occurrences": [
+        {
+          "course": "23",
+          "rowId": "17322"
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:15:04.134Z",
+      "renditions": [],
+      "outcome": "exact source occurrence not available"
+    },
+    {
+      "job": "6ace936ec9735682f04ee8ce",
+      "classId": "6ace936e8752d955968b10cf",
+      "title": "Circle 04 · GEOMETRY (ज्यामिति) (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:113837-1726748747",
+      "category": "noPlayableURL",
+      "course": "21",
+      "rowId": "14225",
+      "occurrences": [
+        {
+          "course": "21",
+          "rowId": "14225",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Circle 04",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "22",
+          "rowId": "14833",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Circle 04",
+          "enabled": "1",
+          "deleted": "0",
+          "sameAsset": true
+        },
+        {
+          "course": "23",
+          "rowId": "17324",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "24",
+          "rowId": "18170",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "25",
+          "rowId": "19013",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "26",
+          "rowId": "19916",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "27",
+          "rowId": "20781",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "28",
+          "rowId": "21605",
+          "listingCaptured": false,
+          "found": false
+        },
+        {
+          "course": "29",
+          "rowId": "22526",
+          "listingCaptured": false,
+          "found": false
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T10:15:04.135Z",
+      "renditions": [],
+      "source": {
+        "title": "Circle 04",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "token endpoint supplied no usable URL; completeness unverified"
+    }
+  ],
+  "requests": 64,
+  "cmsRequests": 64,
+  "mediaRequests": 0,
+  "requestBudget": 120000,
+  "segmentBytes": 0,
+  "productionWrites": 0,
+  "policy": {
+    "mediaConcurrency": 4,
+    "mediaRequestsPerSecond": 8,
+    "cmsGapMs": 1100,
+    "range": "0-1023",
+    "stopAfterConfirmedGap": true
+  },
+  "courseList": {
+    "count": 148,
+    "total": 148
+  },
+  "checkpoint": true
+}

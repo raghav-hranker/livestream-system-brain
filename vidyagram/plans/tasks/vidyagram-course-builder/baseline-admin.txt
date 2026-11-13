@@ -1,0 +1,95 @@
+tsc: app/admin/banners/page.tsx TS2459 x1
+tsc: app/admin/brand-images/[id]/page.tsx TS2339 x1
+tsc: app/admin/custom-tags/edit/[id]/page.tsx TS2339 x1
+tsc: app/admin/custom-tags/edit/[id]/page.tsx TS7006 x1
+tsc: app/admin/exam-updates/[id]/page.tsx TS2339 x2
+tsc: app/admin/questions/edit/[id]/page.tsx TS2561 x1
+tsc: app/admin/series/Preview-questions/[id]/page.tsx TS7006 x10
+tsc: app/admin/series/view-questions/[id]/page.tsx TS2322 x3
+tsc: app/admin/tags/edit/[id]/page.tsx TS2339 x1
+tsc: app/admin/tags/edit/[id]/page.tsx TS7006 x1
+tsc: components/admin/AdvanceNotificationAnalyticsPanel.tsx TS2345 x2
+tsc: components/admin/AssignClassModal.tsx TS2339 x2
+tsc: components/admin/AssignClassModal.tsx TS7006 x3
+tsc: components/admin/CategoryForm.tsx TS2339 x1
+tsc: components/admin/CategoryForm.tsx TS2358 x1
+tsc: components/admin/CustomTagsDashboard.tsx TS2322 x1
+tsc: components/admin/EbookDasboard.tsx TS2315 x1
+tsc: components/admin/EbookDasboard.tsx TS7006 x2
+tsc: components/admin/EditorialForm.tsx TS2881 x2
+tsc: components/admin/FeedForm.tsx TS2304 x1
+tsc: components/admin/MainMenuDashboard.tsx TS2322 x1
+tsc: components/admin/NoticeForm.tsx TS2322 x1
+tsc: components/admin/NotificationAnalyticsPanel.tsx TS2345 x2
+tsc: components/admin/ReportQuestionsDashboard.tsx TS2322 x1
+tsc: components/admin/SectionsDashboard.tsx TS2322 x1
+tsc: components/admin/TeacherForm.tsx TS2339 x3
+tsc: components/admin/TopicForm.tsx TS2322 x4
+tsc: components/admin/TopicForm.tsx TS2339 x1
+tsc: components/admin/TopicForm.tsx TS2345 x2
+tsc: components/admin/TopicsDashboard.tsx TS2322 x1
+tsc: components/admin/TopicsDashboard.tsx TS2367 x1
+tsc: components/admin/UsersDashboard.tsx TS7053 x1
+tsc: components/admin/WordDetails.tsx TS2339 x5
+tsc: components/admin/WordDetails.tsx TS2551 x2
+tsc: components/admin/WordDetails.tsx TS7006 x1
+tsc: components/admin/WordForm.tsx TS2322 x7
+tsc: components/ui/Editor.tsx TS7006 x3
+tsc: hooks/api/use-classes.ts TS2322 x1
+tsc: hooks/api/use-classes.ts TS2339 x1
+tsc: hooks/api/use-latest-sections.ts TS2554 x2
+tsc: hooks/use-toast.ts TS2459 x2
+tsc: hooks/use-toast.ts TS2724 x1
+tsc: lib/s3.ts TS2552 x3
+vitest: components/admin/AnalyticsDashboard.test.tsx > cancels obsolete analytics requests when filters change
+vitest: components/admin/AnalyticsDashboard.test.tsx > combines course purchases in one pie, retains Test Pass and opens orders for the applied IST day
+vitest: components/admin/AnalyticsDashboard.test.tsx > does not show the refresh and APX freshness note
+vitest: components/admin/AnalyticsDashboard.test.tsx > hides stale totals while applying a newly selected state filter
+vitest: components/admin/AnalyticsDashboard.test.tsx > opens Other courses with every constituent course and its amounts
+vitest: components/admin/AnalyticsDashboard.test.tsx > refresh refetches all analytics sections but leaves the location catalog cached
+vitest: components/admin/AnalyticsDashboard.test.tsx > renders KPI cards while detailed transactions are pending and keeps them visible if details fail
+vitest: components/admin/AnalyticsDashboard.test.tsx > renders inclusive Other rows and hides test and class performance
+vitest: components/admin/AnalyticsDashboard.test.tsx > separates missing locations and scales bars using only known locations
+vitest: components/admin/AnalyticsDashboard.test.tsx > shows the actual user name and contact in signup records
+vitest: components/admin/AnalyticsDashboard.test.tsx > shows the zero state and supplies all known states to the map
+vitest: components/admin/AnalyticsDashboard.test.tsx > waits for an applied custom range before requesting analytics
+vitest: components/admin/AnalyticsDashboard.test.tsx > wires hover tooltips into every KPI sparkline
+vitest: components/admin/BannedUsersDashboard.test.tsx > BannedUsersDashboard > removes a ban by its row id after the confirm, never by userId
+vitest: components/admin/BannedUsersDashboard.test.tsx > BannedUsersDashboard filters > keeps the chosen filters across an invalidation refetch
+vitest: components/admin/BannedUsersDashboard.test.tsx > BannedUsersDashboard permissions > explains a denied write and re-reads the list so the screen can catch up
+vitest: components/admin/BannedUsersDashboard.test.tsx > BannedUsersDashboard permissions > falls through to the permission state once the re-read is also denied
+vitest: components/admin/BannedUsersDashboard.test.tsx > BannedUsersDashboard row completeness > renders a snapshot-only row that has no live user behind it
+vitest: components/admin/LearnLibraryDashboard.test.tsx > shows the full ebook count and priority controls without redundant columns or export
+vitest: components/admin/LearnLibraryPriorityEditor.test.tsx > Learn Library priority editor > does not save invalid priority 
+vitest: components/admin/LearnLibraryPriorityEditor.test.tsx > Learn Library priority editor > does not save invalid priority -1
+vitest: components/admin/LearnLibraryPriorityEditor.test.tsx > Learn Library priority editor > does not save invalid priority 1.5
+vitest: components/admin/LearnLibraryPriorityEditor.test.tsx > Learn Library priority editor > does not save invalid priority 9007199254740992
+vitest: components/admin/LearnLibraryPriorityEditor.test.tsx > Learn Library priority editor > reflects the priority returned after refreshing the item
+vitest: components/admin/LearnLibraryPriorityEditor.test.tsx > Learn Library priority editor > saves only priority, including zero, through the existing update API
+vitest: components/admin/NotificationForm.audience.test.tsx > NotificationForm plan broadcast audience > Advanced pre-fills the promoted plan and the exact count follows the checkboxes
+vitest: components/admin/NotificationForm.audience.test.tsx > NotificationForm plan broadcast audience > choosing Advanced before the promoted plan pre-fills the row once the plan is picked
+vitest: components/admin/NotificationForm.audience.test.tsx > NotificationForm plan broadcast audience > the audience mode toggle shows only for a Subscription Plan Broadcast
+vitest: components/admin/NotificationForm.audiencePlans.test.tsx > audience plan picker > lists what fetchAudiencePlanOptions returns; an off-sale option and its picked row show the Off-sale badge
+vitest: components/admin/NotificationForm.audiencePlans.test.tsx > extension promoted plan > Advanced chosen before the plan: the base row still pre-fills and gains the base's name
+vitest: components/admin/NotificationForm.audiencePlans.test.tsx > extension promoted plan > Advanced pre-fills the extension's BASE plan, with the base's name and status once loaded
+vitest: components/admin/NotificationForm.audiencePlans.test.tsx > extension promoted plan > Default mode is unchanged: it promotes the extension plan and sends no rows
+vitest: components/admin/NotificationForm.audiencePlans.test.tsx > resending a plan broadcast whose promoted plan is an extension > Advanced chosen before the lookup lands: the pre-filled extension row moves onto the base plan
+vitest: components/admin/NotificationForm.audiencePlans.test.tsx > resending a plan broadcast whose promoted plan is an extension > switching to Advanced pre-fills the BASE plan, not the extension
+vitest: components/admin/NotificationForm.guardrails.test.tsx > NotificationForm plan broadcast guardrails > Schedule is disabled at count 0 too
+vitest: components/admin/NotificationForm.guardrails.test.tsx > NotificationForm plan broadcast guardrails > Send is disabled while the count is 0
+vitest: components/admin/NotificationForm.guardrails.test.tsx > NotificationForm plan broadcast guardrails > Send is disabled while the count is still loading
+vitest: components/admin/NotificationForm.guardrails.test.tsx > NotificationForm plan broadcast guardrails > Send is enabled once a non-zero exact count has arrived
+vitest: components/admin/NotificationForm.guardrails.test.tsx > NotificationForm plan broadcast guardrails > a forced submit (e.g. Enter in a field) with an empty row does not save
+vitest: components/admin/NotificationForm.guardrails.test.tsx > NotificationForm plan broadcast guardrails > a forced submit at count 0 does not save
+vitest: components/admin/NotificationForm.guardrails.test.tsx > NotificationForm plan broadcast guardrails > a row with nothing ticked shows its error and blocks save
+vitest: components/admin/NotificationForm.guardrails.test.tsx > NotificationForm plan broadcast guardrails > other notification types are not blocked by a zero count
+vitest: components/admin/NotificationForm.multirow.test.tsx > NotificationForm — several audience rows > a row without a plan blocks the estimate and the save
+vitest: components/admin/NotificationForm.multirow.test.tsx > NotificationForm — several audience rows > an audience plan other than the promoted plan: the estimate and create carry both rows, without planStatus
+vitest: components/admin/NotificationForm.multirow.test.tsx > NotificationForm — several audience rows > the pre-filled row can be removed; an Advanced audience with no rows is neither estimated nor saved
+vitest: components/admin/NotificationForm.studyPlan.test.tsx > NotificationForm study plan broadcast > paid is the default audience; the estimate counts the plan with it
+vitest: components/admin/NotificationForm.studyPlan.test.tsx > NotificationForm study plan broadcast > remaining switches the audience and the redirect
+vitest: components/admin/NotificationForm.studyPlan.test.tsx > NotificationForm study plan broadcast > send is blocked until a study plan is chosen, then submits the study plan broadcast
+vitest: components/admin/NotificationForm.studyPlan.test.tsx > NotificationForm study plan broadcast > several plans: only the shared study plan is offered (auto-picked) and every plan is sent
+vitest: components/admin/NotificationForm.studyPlan.test.tsx > NotificationForm study plan broadcast > the plan picker lists only plans with an assigned study plan
+vitest: components/admin/PdfForm.section-topic.test.tsx > PdfForm section → topic filtering > pre-selects an edited PDF's section and topic, requesting that section's topics by section=
+vitest: components/admin/PdfForm.section-topic.test.tsx > PdfForm section → topic filtering > reloads topics and clears the stale topic when the section changes

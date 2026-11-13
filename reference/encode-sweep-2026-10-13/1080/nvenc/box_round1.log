@@ -1,0 +1,37 @@
+== GPU
+name, driver_version, memory.used [MiB], memory.total [MiB], utilization.gpu [%], encoder.stats.sessionCount
+NVIDIA RTX 4000 SFF Ada Generation, 580.178.04, 841 MiB, 20475 MiB, 29 %, 9
+    Product Name                                       : NVIDIA RTX 4000 SFF Ada Generation
+    Product Brand                                      : NVIDIA RTX
+    Product Architecture                               : Ada Lovelace
+== running containers
+      1 51147f403eb0  Up 11 minutes
+      1 51147f403eb0  Up 4 minutes
+      1 51147f403eb0  Up 8 minutes
+      2 apx-ingest:r2-mirror-20260910  Up 6 days
+      1 bluenviron/mediamtx:1.19.3-ffmpeg  Up 6 days (healthy)
+      1 hls-to-mp4-processor:latest  Up 13 minutes
+      1 hls-to-mp4-processor:latest  Up 57 minutes
+== image ffmpeg
+ffmpeg version 4.4.2-0ubuntu0.22.04.1 Copyright (c) 2000-2021 the FFmpeg developers
+== encodes
+  W1_N_1080p_abr2500 3s
+  W1_N_1080p_cq27 3s
+  W1_N_1080p_cq29 3s
+  W1_N_1080p_cq31 3s
+  W2_N_1080p_abr2500 3s
+  W2_N_1080p_cq27 3s
+  W2_N_1080p_cq29 3s
+  W2_N_1080p_cq31 3s
+== done
+total 145472
+drwxr-xr-x 2 root root     4096 Oct 20 09:45 .
+drwxr-xr-x 3 root root     4096 Oct 20 09:41 ..
+-rw-r--r-- 1 root root 19927163 Oct 20 09:44 W1_N_1080p_abr2500.mp4
+-rw-r--r-- 1 root root 18714653 Oct 20 09:45 W1_N_1080p_cq27.mp4
+-rw-r--r-- 1 root root 18694187 Oct 20 09:45 W1_N_1080p_cq29.mp4
+-rw-r--r-- 1 root root 18630894 Oct 20 09:45 W1_N_1080p_cq31.mp4
+-rw-r--r-- 1 root root 20285831 Oct 20 09:45 W2_N_1080p_abr2500.mp4
+-rw-r--r-- 1 root root 17838243 Oct 20 09:45 W2_N_1080p_cq27.mp4
+-rw-r--r-- 1 root root 17652774 Oct 20 09:45 W2_N_1080p_cq29.mp4
+-rw-r--r-- 1 root root 17188175 Oct 20 09:45 W2_N_1080p_cq31.mp4

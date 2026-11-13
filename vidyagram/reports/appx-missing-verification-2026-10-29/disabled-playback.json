@@ -1,0 +1,2378 @@
+{
+  "observedAt": "2026-10-29T11:39:06.940Z",
+  "readOnly": true,
+  "scope": 48,
+  "steps": [
+    {
+      "name": "authenticated course list",
+      "ok": true,
+      "at": "2026-10-29T11:39:08.917Z"
+    }
+  ],
+  "controls": [
+    {
+      "name": "Glands01",
+      "at": "2026-10-29T11:39:13.725Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    },
+    {
+      "name": "Glands01 ending control",
+      "at": "2026-10-29T11:42:44.469Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    },
+    {
+      "name": "Glands01 ending control",
+      "at": "2026-10-29T11:42:46.354Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    }
+  ],
+  "candidates": [
+    {
+      "job": "6ace91cbc9735682f04ee01a",
+      "classId": "6ace91cb8752d955968af72f",
+      "title": "08 Chemical Bonding",
+      "oldAssetKey": "drm:5509dbdd-db50-4900-9673-d826a3755c81",
+      "category": "source404",
+      "course": "7",
+      "rowId": "4362",
+      "occurrences": [
+        {
+          "course": "7",
+          "rowId": "4362",
+          "listingCaptured": true,
+          "found": true,
+          "title": "08 Chemical Bonding",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:39:59.177Z",
+      "qualityChecks": [
+        {
+          "quality": "720p",
+          "http": 404,
+          "confirmationHttp": 404
+        },
+        {
+          "quality": "360p",
+          "http": 404,
+          "confirmationHttp": 404
+        },
+        {
+          "quality": "240p",
+          "http": 404,
+          "confirmationHttp": 404
+        }
+      ],
+      "source": {
+        "title": "08 Chemical Bonding",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "all advertised and derived quality playlists return 404"
+    },
+    {
+      "job": "6ace91cbc9735682f04ee01c",
+      "classId": "6ace91cb8752d955968af736",
+      "title": "12 Periodic Classification of Elements",
+      "oldAssetKey": "drm:eaa56b5d-5eef-4684-ad66-26f0a28140ab",
+      "category": "source404",
+      "course": "7",
+      "rowId": "4363",
+      "occurrences": [
+        {
+          "course": "7",
+          "rowId": "4363",
+          "listingCaptured": true,
+          "found": true,
+          "title": "12 Periodic Classification of Elements",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:40:09.924Z",
+      "qualityChecks": [
+        {
+          "quality": "720p",
+          "http": 404,
+          "confirmationHttp": 404
+        },
+        {
+          "quality": "360p",
+          "http": 404,
+          "confirmationHttp": 404
+        },
+        {
+          "quality": "240p",
+          "http": 404,
+          "confirmationHttp": 404
+        }
+      ],
+      "source": {
+        "title": "12 Periodic Classification of Elements",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "all advertised and derived quality playlists return 404"
+    },
+    {
+      "job": "6ace99b9c9735682f04f07fc",
+      "classId": "6ace99b98752d955968b6c5e",
+      "title": "Alligation 01 (2) · ALLIGATION (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:109306-1726211450",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34371",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34371",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Alligation 01",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:40:21.284Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Alligation 01",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace99bac9735682f04f07fe",
+      "classId": "6ace99ba8752d955968b6c65",
+      "title": "Alligation 02 (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:110085-1726299279",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34372",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34372",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Alligation 02",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:40:23.435Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Alligation 02",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace99bac9735682f04f0800",
+      "classId": "6ace99ba8752d955968b6c6c",
+      "title": "Alligation 03 · ALLIGATION (3)",
+      "oldAssetKey": "vid:rgvikramjeet-data:111836-1726550563",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34373",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34373",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Alligation 03",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:40:25.330Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Alligation 03",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace99cbc9735682f04f0853",
+      "classId": "6ace99cb8752d955968b6d84",
+      "title": "Alligation 03 (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:111047-1726472266",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34616",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34616",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Alligation 03",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:40:27.214Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Alligation 03",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace937dc9735682f04ee93f",
+      "classId": "6ace937d8752d955968b11c4",
+      "title": "Circle 10 (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:120511-1727359300",
+      "category": "noPlayableURL",
+      "course": "21",
+      "rowId": "14232",
+      "occurrences": [
+        {
+          "course": "21",
+          "rowId": "14232",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Circle 10",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:40:29.137Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Circle 10",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace98ddc9735682f04f035b",
+      "classId": "6ace98dd8752d955968b5ec3",
+      "title": "Classification 05 (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:111691-1726537062",
+      "category": "noPlayableURL",
+      "course": "42",
+      "rowId": "31450",
+      "occurrences": [
+        {
+          "course": "42",
+          "rowId": "31450",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Classification 05",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:40:30.990Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Classification 05",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace98dec9735682f04f035d",
+      "classId": "6ace98de8752d955968b5eca",
+      "title": "Classification 09 (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:114112-1726804720",
+      "category": "noPlayableURL",
+      "course": "42",
+      "rowId": "31454",
+      "occurrences": [
+        {
+          "course": "42",
+          "rowId": "31454",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Classification 09",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:40:32.977Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Classification 09",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace91c6c9735682f04ee00b",
+      "classId": "6ace91c68752d955968af6fe",
+      "title": "COMPOUND INTEREST & SIMPLE INTEREST CLASS 02",
+      "oldAssetKey": "drm:00c27ef3-7931-4113-995b-0995dfab8ef8",
+      "category": "source404",
+      "course": "7",
+      "rowId": "4222",
+      "occurrences": [
+        {
+          "course": "7",
+          "rowId": "4222",
+          "listingCaptured": true,
+          "found": true,
+          "title": " COMPOUND INTEREST & SIMPLE INTEREST CLASS 02",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:40:34.874Z",
+      "qualityChecks": [
+        {
+          "quality": "720p",
+          "http": 404,
+          "confirmationHttp": 404
+        },
+        {
+          "quality": "360p",
+          "http": 404,
+          "confirmationHttp": 404
+        },
+        {
+          "quality": "240p",
+          "http": 404,
+          "confirmationHttp": 404
+        }
+      ],
+      "source": {
+        "title": " COMPOUND INTEREST & SIMPLE INTEREST CLASS 02",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "all advertised and derived quality playlists return 404"
+    },
+    {
+      "job": "6ace98e4c9735682f04f037e",
+      "classId": "6ace98e48752d955968b5f33",
+      "title": "Electric Charge (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:120931-1727422657",
+      "category": "noPlayableURL",
+      "course": "42",
+      "rowId": "31782",
+      "occurrences": [
+        {
+          "course": "42",
+          "rowId": "31782",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Electric Charge ",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:40:45.442Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Electric Charge ",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace963ac9735682f04ef6ee",
+      "classId": "6ace963a8752d955968b3a0b",
+      "title": "Height & Distance 01 · HEIGHT & DISTANCE (3)",
+      "oldAssetKey": "vid:rgvikramjeet-data:112405-1726637096",
+      "category": "noPlayableURL",
+      "course": "30",
+      "rowId": "22999",
+      "occurrences": [
+        {
+          "course": "30",
+          "rowId": "22999",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Height & Distance 01",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:40:47.651Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Height & Distance 01",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6acea133c9735682f04f145f",
+      "classId": "6acea1338752d955968b8925",
+      "title": "HISTORY OF COMPUTER",
+      "oldAssetKey": "url:https://liveclasses.cloud-front.in/live/T_177736747270163748_appxabr.m3u8",
+      "category": "noPlayableURL",
+      "course": "69",
+      "rowId": "40106",
+      "occurrences": [
+        {
+          "course": "69",
+          "rowId": "40106",
+          "listingCaptured": true,
+          "found": true,
+          "title": "HISTORY OF COMPUTER",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:40:49.895Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "HISTORY OF COMPUTER",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6acea13bc9735682f04f146d",
+      "classId": "6acea13b8752d955968b893a",
+      "title": "Internet 02 (2)",
+      "oldAssetKey": "url:https://liveclasses.cloud-front.in/live/T_178125740881857401_appxabr.m3u8",
+      "category": "noPlayableURL",
+      "course": "69",
+      "rowId": "43443",
+      "occurrences": [
+        {
+          "course": "69",
+          "rowId": "43443",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Internet 02",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:40:51.320Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Internet 02",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6acec26ec9735682f04f401e",
+      "classId": "6acec26e8752d955968bdd9a",
+      "title": "Matter & it's States",
+      "oldAssetKey": "url:https://liveclasses.cloud-front.in/live/T_178755800114426710_appxabr.m3u8",
+      "category": "noPlayableURL",
+      "course": "114",
+      "rowId": "181076",
+      "occurrences": [
+        {
+          "course": "114",
+          "rowId": "181076",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Matter & it's States",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:40:52.832Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Matter & it's States",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace99c0c9735682f04f081a",
+      "classId": "6ace99c08752d955968b6cc7",
+      "title": "Mixture 06 · MIXTURE (3)",
+      "oldAssetKey": "vid:rgvikramjeet-data:107758-1726038647",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34460",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34460",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Mixture 06",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:40:54.442Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Mixture 06",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace99c0c9735682f04f081c",
+      "classId": "6ace99c08752d955968b6cce",
+      "title": "Mixture 07 · MIXTURE (3)",
+      "oldAssetKey": "vid:rgvikramjeet-data:108543-1726125408",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34461",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34461",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Mixture 07",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:40:56.366Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Mixture 07",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace9277c9735682f04ee3ac",
+      "classId": "6ace92778752d955968b015f",
+      "title": "Percentage 09 · PERCENTAGE (प्रतिशत )",
+      "oldAssetKey": "drm:002f1676-07a3-4645-adf5-523d567ae007",
+      "category": "source404",
+      "course": "10",
+      "rowId": "5973",
+      "occurrences": [
+        {
+          "course": "10",
+          "rowId": "5973",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Percentage 09",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:40:58.327Z",
+      "qualityChecks": [
+        {
+          "quality": "720p",
+          "http": 404,
+          "confirmationHttp": 404
+        },
+        {
+          "quality": "360p",
+          "http": 404,
+          "confirmationHttp": 404
+        },
+        {
+          "quality": "240p",
+          "http": 404,
+          "confirmationHttp": 404
+        }
+      ],
+      "source": {
+        "title": "Percentage 09",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "all advertised and derived quality playlists return 404"
+    },
+    {
+      "job": "6ace9567c9735682f04ef28d",
+      "classId": "6ace95678752d955968b2cc8",
+      "title": "Percentage Class 01 · PERCENTAGE (प्रतिशत ) (8)",
+      "oldAssetKey": "vid:rgvikramjeet-data:414656-1702116699",
+      "category": "source404",
+      "course": "24",
+      "rowId": "17884",
+      "occurrences": [
+        {
+          "course": "24",
+          "rowId": "17884",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Percentage Class 01",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:41:10.158Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 404,
+          "confirmationHttp": 404
+        },
+        {
+          "quality": "720p",
+          "http": 404,
+          "confirmationHttp": 404
+        },
+        {
+          "quality": "360p",
+          "http": 404,
+          "confirmationHttp": 404
+        },
+        {
+          "quality": "240p",
+          "http": 404,
+          "confirmationHttp": 404
+        }
+      ],
+      "source": {
+        "title": "Percentage Class 01",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "all advertised and derived quality playlists return 404"
+    },
+    {
+      "job": "6ace99fec9735682f04f0950",
+      "classId": "6ace99fd8752d955968b70be",
+      "title": "Percentage Class 14 (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:702536-1712398752",
+      "category": "source404",
+      "course": "47",
+      "rowId": "35200",
+      "occurrences": [
+        {
+          "course": "47",
+          "rowId": "35200",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Percentage Class 14",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:41:22.540Z",
+      "qualityChecks": [
+        {
+          "quality": "720p",
+          "http": 200,
+          "segments": 1256,
+          "endList": true,
+          "playbackSamples": [
+            {
+              "index": 0,
+              "position": "beginning",
+              "http": 200,
+              "bytes": 944888,
+              "streams": [
+                {
+                  "codec_name": "h264",
+                  "codec_type": "video",
+                  "width": 854,
+                  "height": 480
+                },
+                {
+                  "codec_name": "aac",
+                  "codec_type": "audio"
+                }
+              ],
+              "decodedFrames": 3,
+              "decodeExitCode": 0,
+              "videoDecoded": true,
+              "hasAudio": true,
+              "decodeError": "Error"
+            },
+            {
+              "index": 628,
+              "position": "middle",
+              "http": 200,
+              "bytes": 900896,
+              "streams": [
+                {
+                  "codec_name": "h264",
+                  "codec_type": "video",
+                  "width": 854,
+                  "height": 480
+                },
+                {
+                  "codec_name": "aac",
+                  "codec_type": "audio"
+                }
+              ],
+              "decodedFrames": 3,
+              "decodeExitCode": 0,
+              "videoDecoded": true,
+              "hasAudio": true,
+              "decodeError": "Error"
+            },
+            {
+              "index": 1255,
+              "position": "end",
+              "http": 200,
+              "bytes": 605736,
+              "streams": [
+                {
+                  "codec_name": "h264",
+                  "codec_type": "video",
+                  "width": 854,
+                  "height": 480
+                },
+                {
+                  "codec_name": "aac",
+                  "codec_type": "audio"
+                }
+              ],
+              "decodedFrames": 3,
+              "decodeExitCode": 0,
+              "videoDecoded": true,
+              "hasAudio": true,
+              "decodeError": "Error"
+            }
+          ],
+          "outcome": "video decoded at beginning, middle and end"
+        }
+      ],
+      "source": {
+        "title": "Percentage Class 14",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "video decoded at beginning, middle and end",
+      "readableQuality": "720p"
+    },
+    {
+      "job": "6ace8f99c9735682f04ed9ed",
+      "classId": "6ace8f998752d955968ae61a",
+      "title": "PERCENTAGE(प्रतिशतता) CLASS 11 (2)",
+      "oldAssetKey": "drm:a1622ea1-1924-4ef3-8fa6-a7316b5034f3",
+      "category": "source404",
+      "course": "3",
+      "rowId": "407",
+      "occurrences": [
+        {
+          "course": "3",
+          "rowId": "407",
+          "listingCaptured": true,
+          "found": true,
+          "title": "PERCENTAGE(प्रतिशतता) CLASS 11",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:41:27.875Z",
+      "qualityChecks": [
+        {
+          "quality": "720p",
+          "http": 404,
+          "confirmationHttp": 404
+        },
+        {
+          "quality": "360p",
+          "http": 404,
+          "confirmationHttp": 404
+        },
+        {
+          "quality": "240p",
+          "http": 404,
+          "confirmationHttp": 404
+        }
+      ],
+      "source": {
+        "title": "PERCENTAGE(प्रतिशतता) CLASS 11",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "all advertised and derived quality playlists return 404"
+    },
+    {
+      "job": "6ace9543c9735682f04ef1fa",
+      "classId": "6ace95438752d955968b2aec",
+      "title": "Pipe & Cistern 03 (2) · PIPE & CISTERN",
+      "oldAssetKey": "vid:rgvikramjeet-data:112187-1726573059",
+      "category": "noPlayableURL",
+      "course": "23",
+      "rowId": "16852",
+      "occurrences": [
+        {
+          "course": "23",
+          "rowId": "16852",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Pipe & Cistern 03",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:41:38.106Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Pipe & Cistern 03",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6acea13bc9735682f04f146b",
+      "classId": "6acea13a8752d955968b8933",
+      "title": "Practice Set (11)",
+      "oldAssetKey": "url:https://liveclasses.cloud-front.in/live/T_177883751793238691_appxabr.m3u8",
+      "category": "noPlayableURL",
+      "course": "69",
+      "rowId": "40592",
+      "occurrences": [
+        {
+          "course": "69",
+          "rowId": "40592",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Practice Set",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:41:40.389Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Practice Set",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6acea130c9735682f04f145b",
+      "classId": "6acea1308752d955968b891e",
+      "title": "Practice Set (9)",
+      "oldAssetKey": "url:https://liveclasses.cloud-front.in/live/T_178410684988984087_appxabr.m3u8",
+      "category": "noPlayableURL",
+      "course": "69",
+      "rowId": "176321",
+      "occurrences": [
+        {
+          "course": "69",
+          "rowId": "176321",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Practice Set",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:41:41.904Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Practice Set",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace9635c9735682f04ef6bf",
+      "classId": "6ace96358752d955968b39b0",
+      "title": "Profit & Loss 01 · Profit & Loss (लाभ और हानि) (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:119710-1727317019",
+      "category": "noPlayableURL",
+      "course": "30",
+      "rowId": "22869",
+      "occurrences": [
+        {
+          "course": "30",
+          "rowId": "22869",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Profit & Loss 01",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:41:43.500Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Profit & Loss 01",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace963bc9735682f04ef6f2",
+      "classId": "6ace963b8752d955968b3a12",
+      "title": "Profit, loss & Discount 02",
+      "oldAssetKey": "vid:rgvikramjeet-data:121422-1727462447",
+      "category": "noPlayableURL",
+      "course": "30",
+      "rowId": "23018",
+      "occurrences": [
+        {
+          "course": "30",
+          "rowId": "23018",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Profit, loss & Discount 02",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:41:45.548Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Profit, loss & Discount 02",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace9548c9735682f04ef20d",
+      "classId": "6ace95488752d955968b2b2b",
+      "title": "Ratio 01 (2) · RATIO (अनुपात)",
+      "oldAssetKey": "vid:rgvikramjeet-data:119426-1727264807",
+      "category": "noPlayableURL",
+      "course": "23",
+      "rowId": "17064",
+      "occurrences": [
+        {
+          "course": "23",
+          "rowId": "17064",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Ratio 01",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:41:47.696Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Ratio 01",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace9548c9735682f04ef20f",
+      "classId": "6ace95488752d955968b2b32",
+      "title": "Ratio 03 (2) · RATIO (अनुपात) (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:121198-1727437605",
+      "category": "noPlayableURL",
+      "course": "23",
+      "rowId": "17067",
+      "occurrences": [
+        {
+          "course": "23",
+          "rowId": "17067",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Ratio 03",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:41:49.706Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Ratio 03",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6aceb404c9735682f04f2bfa",
+      "classId": "6aceb4038752d955968bb4cd",
+      "title": "Simplification 06 (2) · Simplification by Anurag Sir",
+      "oldAssetKey": "url:https://liveclasses.cloud-front.in/live/T_178393878977606420_appxabr.m3u8",
+      "category": "noPlayableURL",
+      "course": "101",
+      "rowId": "175414",
+      "occurrences": [
+        {
+          "course": "101",
+          "rowId": "175414",
+          "listingCaptured": true,
+          "found": true,
+          "title": " Simplification 06",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:41:51.838Z",
+      "qualityChecks": [],
+      "source": {
+        "title": " Simplification 06",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace9643c9735682f04ef73f",
+      "classId": "6ace96438752d955968b3a9e",
+      "title": "Strategy & Guidance · STRATEGY & GUIDANCE (11)",
+      "oldAssetKey": "vid:rgvikramjeet-data:112032-1726563521",
+      "category": "noPlayableURL",
+      "course": "31",
+      "rowId": "23240",
+      "occurrences": [
+        {
+          "course": "31",
+          "rowId": "23240",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Strategy & Guidance ",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:41:53.320Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Strategy & Guidance ",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace95f4c9735682f04ef556",
+      "classId": "6ace95f48752d955968b3596",
+      "title": "Strategy & Guidance · STRATEGY & GUIDANCE (9)",
+      "oldAssetKey": "vid:rgvikramjeet-data:117265-1727091113",
+      "category": "noPlayableURL",
+      "course": "28",
+      "rowId": "21142",
+      "occurrences": [
+        {
+          "course": "28",
+          "rowId": "21142",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Strategy & Guidance ",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:41:55.341Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Strategy & Guidance ",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace9dfec9735682f04f105f",
+      "classId": "6ace9dfe8752d955968b81ed",
+      "title": "tesi",
+      "oldAssetKey": "url:https://liveclasses.cloud-front.in/live/T_177729375516283856_appxabr.m3u8",
+      "category": "noPlayableURL",
+      "course": "66",
+      "rowId": "40099",
+      "occurrences": [
+        {
+          "course": "66",
+          "rowId": "40099",
+          "listingCaptured": true,
+          "found": true,
+          "title": "tesi",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:41:57.261Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "tesi",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace9dffc9735682f04f1061",
+      "classId": "6ace9dff8752d955968b81f4",
+      "title": "testing (4)",
+      "oldAssetKey": "url:https://liveclasses.cloud-front.in/live/T_177761560104318276_appxabr.m3u8",
+      "category": "noPlayableURL",
+      "course": "66",
+      "rowId": "40328",
+      "occurrences": [
+        {
+          "course": "66",
+          "rowId": "40328",
+          "listingCaptured": true,
+          "found": true,
+          "title": "testing",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:41:58.775Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "testing",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace9dfdc9735682f04f105b",
+      "classId": "6ace9dfd8752d955968b81df",
+      "title": "Testing (4)",
+      "oldAssetKey": "url:https://liveclasses.cloud-front.in/live/T_17768595083629_appxabr.m3u8",
+      "category": "noPlayableURL",
+      "course": "66",
+      "rowId": "39914",
+      "occurrences": [
+        {
+          "course": "66",
+          "rowId": "39914",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Testing",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:42:00.347Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Testing",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace9dfec9735682f04f105d",
+      "classId": "6ace9dfe8752d955968b81e6",
+      "title": "Testing Reasoning (2)",
+      "oldAssetKey": "url:https://liveclasses.cloud-front.in/live/T_177718660284306053_appxabr.m3u8",
+      "category": "noPlayableURL",
+      "course": "66",
+      "rowId": "40031",
+      "occurrences": [
+        {
+          "course": "66",
+          "rowId": "40031",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Testing Reasoning",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:42:01.937Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Testing Reasoning",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace99cbc9735682f04f0855",
+      "classId": "6ace99cb8752d955968b6d8b",
+      "title": "Time, Speed & Distance 01 (2) · TIME , SPEED & DISTANCE",
+      "oldAssetKey": "vid:rgvikramjeet-data:111947-1726557036",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34655",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34655",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Time, Speed & Distance 01",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:42:03.589Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Time, Speed & Distance 01",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace99ccc9735682f04f0857",
+      "classId": "6ace99cc8752d955968b6d92",
+      "title": "Time, Speed & Distance 02 (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:112629-1726643981",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34656",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34656",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Time, Speed & Distance 02",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:42:06.272Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Time, Speed & Distance 02",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace99ccc9735682f04f0859",
+      "classId": "6ace99cc8752d955968b6d99",
+      "title": "Time, Speed & Distance 03 (2) · TIME , SPEED & DISTANCE (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:113461-1726729668",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34657",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34657",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Time, Speed & Distance 03",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:42:08.307Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Time, Speed & Distance 03",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace99cdc9735682f04f085b",
+      "classId": "6ace99cc8752d955968b6da0",
+      "title": "Time, Speed & Distance 04 (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:114294-1726816419",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34658",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34658",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Time, Speed & Distance 04",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:42:10.371Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Time, Speed & Distance 04",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace99cdc9735682f04f085d",
+      "classId": "6ace99cd8752d955968b6da7",
+      "title": "Time, Speed & Distance 05 (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:116342-1727075617",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34659",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34659",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Time, Speed & Distance 05",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:42:12.292Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Time, Speed & Distance 05",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace99cdc9735682f04f085f",
+      "classId": "6ace99cd8752d955968b6dae",
+      "title": "Time, Speed & Distance 06 (2) · TIME , SPEED & DISTANCE",
+      "oldAssetKey": "vid:rgvikramjeet-data:118203-1727173183",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34660",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34660",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Time, Speed & Distance 06",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:42:14.415Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Time, Speed & Distance 06",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace9a01c9735682f04f0960",
+      "classId": "6ace9a018752d955968b70f6",
+      "title": "Time, Speed & Distance 06 (2) · TIME , SPEED & DISTANCE (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:118204-1727173184",
+      "category": "noPlayableURL",
+      "course": "47",
+      "rowId": "35335",
+      "occurrences": [
+        {
+          "course": "47",
+          "rowId": "35335",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Time, Speed & Distance 06",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:42:16.564Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Time, Speed & Distance 06",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace99cec9735682f04f0861",
+      "classId": "6ace99ce8752d955968b6db5",
+      "title": "Time, Speed & Distance 07 (2) · TIME , SPEED & DISTANCE",
+      "oldAssetKey": "vid:rgvikramjeet-data:119040-1727251121",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34661",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34661",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Time, Speed & Distance 07",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:42:18.521Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Time, Speed & Distance 07",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace9a01c9735682f04f0962",
+      "classId": "6ace9a018752d955968b70fd",
+      "title": "Time, Speed & Distance 07 (2) · TIME , SPEED & DISTANCE (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:119043-1727251300",
+      "category": "noPlayableURL",
+      "course": "47",
+      "rowId": "35336",
+      "occurrences": [
+        {
+          "course": "47",
+          "rowId": "35336",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Time, Speed & Distance 07",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:42:20.427Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Time, Speed & Distance 07",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace99cec9735682f04f0863",
+      "classId": "6ace99ce8752d955968b6dbc",
+      "title": "Time, Speed & Distance 08 (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:120898-1727421219",
+      "category": "noPlayableURL",
+      "course": "46",
+      "rowId": "34662",
+      "occurrences": [
+        {
+          "course": "46",
+          "rowId": "34662",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Time, Speed & Distance 08",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:42:22.441Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "Time, Speed & Distance 08",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    },
+    {
+      "job": "6ace996cc9735682f04f067c",
+      "classId": "6ace996c8752d955968b678e",
+      "title": "Time, Speed & Distance Class 03 · TIME , SPEED & DISTANCE (2)",
+      "oldAssetKey": "vid:rgvikramjeet-data:659808-1710929318",
+      "category": "source404",
+      "course": "45",
+      "rowId": "34046",
+      "occurrences": [
+        {
+          "course": "45",
+          "rowId": "34046",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Time, Speed & Distance Class 03",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:42:24.522Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 380,
+          "endList": true,
+          "playbackSamples": [
+            {
+              "index": 0,
+              "position": "beginning",
+              "http": 200,
+              "bytes": 3432692,
+              "streams": [
+                {
+                  "codec_name": "h264",
+                  "codec_type": "video",
+                  "width": 1600,
+                  "height": 900
+                },
+                {
+                  "codec_name": "aac",
+                  "codec_type": "audio"
+                }
+              ],
+              "decodedFrames": 3,
+              "decodeExitCode": 0,
+              "videoDecoded": true,
+              "hasAudio": true,
+              "decodeError": "Error"
+            },
+            {
+              "index": 190,
+              "position": "middle",
+              "http": 200,
+              "bytes": 1591420,
+              "streams": [
+                {
+                  "codec_name": "h264",
+                  "codec_type": "video",
+                  "width": 1600,
+                  "height": 900
+                },
+                {
+                  "codec_name": "aac",
+                  "codec_type": "audio"
+                }
+              ],
+              "decodedFrames": 3,
+              "decodeExitCode": 0,
+              "videoDecoded": true,
+              "hasAudio": true,
+              "decodeError": "Error"
+            },
+            {
+              "index": 379,
+              "position": "end",
+              "http": 200,
+              "bytes": 519632,
+              "streams": [
+                {
+                  "codec_name": "h264",
+                  "codec_type": "video",
+                  "width": 1600,
+                  "height": 900
+                },
+                {
+                  "codec_name": "aac",
+                  "codec_type": "audio"
+                }
+              ],
+              "decodedFrames": 3,
+              "decodeExitCode": 0,
+              "videoDecoded": true,
+              "hasAudio": true
+            }
+          ],
+          "outcome": "video decoded at beginning, middle and end"
+        }
+      ],
+      "source": {
+        "title": "Time, Speed & Distance Class 03",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "video decoded at beginning, middle and end",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6ace9955c9735682f04f0614",
+      "classId": "6ace99558752d955968b6629",
+      "title": "Train Class 01 · TRAIN (4)",
+      "oldAssetKey": "vid:rgvikramjeet-data:690932-1712122818",
+      "category": "source404",
+      "course": "45",
+      "rowId": "33822",
+      "occurrences": [
+        {
+          "course": "45",
+          "rowId": "33822",
+          "listingCaptured": true,
+          "found": true,
+          "title": "Train Class 01",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:42:32.018Z",
+      "qualityChecks": [
+        {
+          "quality": "1080p",
+          "http": 200,
+          "segments": 286,
+          "endList": true,
+          "playbackSamples": [
+            {
+              "index": 0,
+              "position": "beginning",
+              "http": 200,
+              "bytes": 1290056,
+              "streams": [
+                {
+                  "codec_name": "h264",
+                  "codec_type": "video",
+                  "width": 1600,
+                  "height": 900
+                },
+                {
+                  "codec_name": "aac",
+                  "codec_type": "audio"
+                }
+              ],
+              "decodedFrames": 3,
+              "decodeExitCode": 0,
+              "videoDecoded": true,
+              "hasAudio": true,
+              "decodeError": "Error"
+            },
+            {
+              "index": 143,
+              "position": "middle",
+              "http": 200,
+              "bytes": 1891092,
+              "streams": [
+                {
+                  "codec_name": "h264",
+                  "codec_type": "video",
+                  "width": 1600,
+                  "height": 900
+                },
+                {
+                  "codec_name": "aac",
+                  "codec_type": "audio"
+                }
+              ],
+              "decodedFrames": 3,
+              "decodeExitCode": 0,
+              "videoDecoded": true,
+              "hasAudio": true,
+              "decodeError": "Error"
+            },
+            {
+              "index": 285,
+              "position": "end",
+              "http": 200,
+              "bytes": 330692,
+              "streams": [
+                {
+                  "codec_name": "h264",
+                  "codec_type": "video",
+                  "width": 1600,
+                  "height": 900
+                },
+                {
+                  "codec_name": "aac",
+                  "codec_type": "audio"
+                }
+              ],
+              "decodedFrames": 3,
+              "decodeExitCode": 0,
+              "videoDecoded": true,
+              "hasAudio": true
+            }
+          ],
+          "outcome": "video decoded at beginning, middle and end"
+        }
+      ],
+      "source": {
+        "title": "Train Class 01",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "video decoded at beginning, middle and end",
+      "readableQuality": "1080p"
+    },
+    {
+      "job": "6aceb422c9735682f04f2c16",
+      "classId": "6aceb4228752d955968bb513",
+      "title": "संसद 02",
+      "oldAssetKey": "url:https://liveclasses.cloud-front.in/live/T_179189513377061702_appxabr.m3u8",
+      "category": "noPlayableURL",
+      "course": "101",
+      "rowId": "189321",
+      "occurrences": [
+        {
+          "course": "101",
+          "rowId": "189321",
+          "listingCaptured": true,
+          "found": true,
+          "title": "संसद 02",
+          "enabled": "0",
+          "deleted": "0",
+          "sameAsset": true
+        }
+      ],
+      "originalFailure": null,
+      "checkedAt": "2026-10-29T11:42:40.901Z",
+      "qualityChecks": [],
+      "source": {
+        "title": "संसद 02",
+        "enabled": "0",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 0,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "outcome": "AppX returned no playable URL"
+    }
+  ],
+  "requests": 120,
+  "cmsRequests": 70,
+  "mediaRequests": 50,
+  "requestBudget": 20000,
+  "segmentBytes": 11507104,
+  "productionWrites": 0,
+  "policy": {
+    "mediaConcurrency": 4,
+    "mediaRequestsPerSecond": 8,
+    "cmsGapMs": 1100,
+    "range": "0-1023",
+    "stopAfterConfirmedGap": true
+  },
+  "completedAt": "2026-10-29T11:42:46.354Z",
+  "allScopeConsidered": true,
+  "checkpoint": true
+}

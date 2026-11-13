@@ -1,0 +1,13 @@
+# Exact seven-video retry — 27 October 2026
+
+Direct user authorization in this chat: “do them then”, referring to the seven complete-source candidates. Scope: existing jobs/Classes for Glands02–05 and Internet/Internet02/Internet03;11 existing lesson locations. All36 blocked candidates, earlier two source-gap canaries, historical jobs and Geometry/PDF/structure repairs remain excluded.
+
+Before state: all7 jobs dead, no HLS references, unchanged original job timestamps and exact class/ledger asset identities. Protected full before.ejson saved mode0600. Fresh source preflight checks exact current source rows, active/nondeleted flags, unchanged complete per-rendition inventory hashes from the full6408-segment check, and fresh first/middle/last media samples. No changed inventory is accepted.
+
+First batch: Glands02 and Internet (two jobs,three lesson locations). Remaining five require both first jobs done plus successful destination and production playback/CDN verification. Current worker remains apx-ingest-781 with existing concurrency4,HLS-only,1080p add-level with full-mirror fallback. No deploy,restart,new VM,GPU or Quicktricks change.
+
+Writes: CAS transaction on exact existing jobs, reset attempts0/statuspending/errornull and refresh same-asset course_id/video_id/video_url to current verified rows. Legacy apxCourseId/apxClassId unique pairs are retained. Before state and operations preserve prior attempts/errors. Existing worker copies every required segment to recordedvideos-vidyagram under781/ClassId/hls and updates media/runtime fields on the same Classes. No CourseClass,course,taxonomy,student progress/history or entitlement mutation is planned. Media visibility returns in up to11 already-existing lesson locations.
+
+Stop conditions: current source/asset/admin visibility changes, fresh sample failure, failed copy or failed destination/playback check. Stop releasing further jobs; do not skip missing segments or qualities. A pending unclaimed job can be restored only by exact post-queue CAS; never overwrite an active worker. Failed-copy cleanup, if needed, requires proof of no active transfer and exact state guards. Retain copied/partial objects; no destructive storage cleanup.
+
+Final outcome: all7 jobs done on their first retry attempt,11 existing course locations restored,6408 segments copied,24 stored renditions and72 origin+72 CDN samples passed. All36 blocked jobs,course placements and catalogue ledgers remain unchanged. No active retry jobs. See report.md/result.json/final-audit.json. Original broad43-job gate remains held; this is a separately authorized exact7-job batch.

@@ -1,0 +1,296 @@
+[
+  {
+    "target": "6ace8ef7c9735682f04ed753",
+    "filter": {
+      "_id": {
+        "$oid": "6ace8ef7c9735682f04ed753"
+      },
+      "classId": {
+        "$oid": "6ace8ef78752d955968adeec"
+      },
+      "status": "dead",
+      "attempts": {
+        "$numberInt": "5"
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1791924102939"
+        }
+      }
+    },
+    "set": {
+      "status": "pending",
+      "attempts": {
+        "$numberInt": "0"
+      },
+      "error": null,
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1793090837594"
+        }
+      },
+      "course_id": "3",
+      "video_id": "774",
+      "video_url": "https://appx-recordings-mcdn.akamai.net.in/drm/707d65f4-19e2-463d-b059-9ced0e84b65f/720p/drm-hls/master-7860278.873273978.m3u8.m3u8"
+    },
+    "before": {
+      "_id": {
+        "$oid": "6ace8ef7c9735682f04ed753"
+      },
+      "classId": {
+        "$oid": "6ace8ef78752d955968adeec"
+      },
+      "__v": {
+        "$numberInt": "0"
+      },
+      "apxClassId": "774",
+      "apxCourseId": {
+        "$oid": "6ace2d3fc9735682f0475cf4"
+      },
+      "attempts": {
+        "$numberInt": "5"
+      },
+      "course_id": "3",
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1791921911549"
+        }
+      },
+      "error": "fetch https://transcoded-recordings.classx.co.in/drm/707d65f4-19e2-463d-b059-9ced0e84b65f/480p/drm-hls/master-7860278.873273978.m3u864.ts?edge-cache-token=Expires=1791934702~_GO=Generated~URLPrefix=aHR0cHM6Ly90cmFuc2NvZGVkLXJlY29yZGluZ3MuY2xhc3N4LmNvLmluL2RybS83MDdkNjVmNC0xOWUyLTQ2M2QtYjA1OS05Y2VkMGU4NGI2NWY~Signature=AcdbbdbMIJUH7U9MajZ1qu74f9HXvYUSo4gwliBsspbpXIWi6GyDQLRqhAxbQc4HLU4z2yhYRkPA28JgO0Ln3xcT8NUH failed: 404",
+      "status": "dead",
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1791924102939"
+        }
+      },
+      "video_id": "774",
+      "video_url": "https://appx-recordings-mcdn.akamai.net.in/drm/707d65f4-19e2-463d-b059-9ced0e84b65f/720p/drm-hls/master-7860278.873273978.m3u8.m3u8",
+      "progress": {
+        "phase": "failed",
+        "rungs": {
+          "240p": {
+            "segsTotal": {
+              "$numberInt": "179"
+            },
+            "segsDone": {
+              "$numberInt": "179"
+            },
+            "bytes": {
+              "$numberInt": "104891968"
+            }
+          },
+          "480p": {
+            "segsTotal": {
+              "$numberInt": "179"
+            },
+            "segsDone": {
+              "$numberInt": "173"
+            },
+            "bytes": {
+              "$numberInt": "261058492"
+            }
+          },
+          "360p": {
+            "segsTotal": {
+              "$numberInt": "179"
+            },
+            "segsDone": {
+              "$numberInt": "179"
+            },
+            "bytes": {
+              "$numberInt": "200211164"
+            }
+          }
+        },
+        "classLink": null,
+        "error": "fetch https://transcoded-recordings.classx.co.in/drm/707d65f4-19e2-463d-b059-9ced0e84b65f/480p/drm-hls/master-7860278.873273978.m3u864.ts?edge-cache-token=Expires=1791934702~_GO=Generated~URLPrefix=aHR0cHM6Ly90cmFuc2NvZGVkLXJlY29yZGluZ3MuY2xhc3N4LmNvLmluL2RybS83MDdkNjVmNC0xOWUyLTQ2M2QtYjA1OS05Y2VkMGU4NGI2NWY~Signature=AcdbbdbMIJUH7U9MajZ1qu74f9HXvYUSo4gwliBsspbpXIWi6GyDQLRqhAxbQc4HLU4z2yhYRkPA28JgO0Ln3xcT8NUH failed: 404"
+      },
+      "progressUpdatedAt": {
+        "$date": {
+          "$numberLong": "1791924102939"
+        }
+      }
+    }
+  },
+  {
+    "target": "6ace8f53c9735682f04ed914",
+    "filter": {
+      "_id": {
+        "$oid": "6ace8f53c9735682f04ed914"
+      },
+      "classId": {
+        "$oid": "6ace8f538752d955968ae359"
+      },
+      "status": "dead",
+      "attempts": {
+        "$numberInt": "5"
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1791925104648"
+        }
+      }
+    },
+    "set": {
+      "status": "pending",
+      "attempts": {
+        "$numberInt": "0"
+      },
+      "error": null,
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1793090837594"
+        }
+      },
+      "course_id": "3",
+      "video_id": "907",
+      "video_url": "https://appx-recordings-mcdn.akamai.net.in/videos/rgvikramjeet-data/411823-1702027232/hls/1080p/master-6452701.24023549.m3u8.m3u8"
+    },
+    "before": {
+      "_id": {
+        "$oid": "6ace8f53c9735682f04ed914"
+      },
+      "classId": {
+        "$oid": "6ace8f538752d955968ae359"
+      },
+      "__v": {
+        "$numberInt": "0"
+      },
+      "apxClassId": "907",
+      "apxCourseId": {
+        "$oid": "6ace2d3fc9735682f0475cf4"
+      },
+      "attempts": {
+        "$numberInt": "5"
+      },
+      "course_id": "3",
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1791922003674"
+        }
+      },
+      "error": "fetch https://transcoded-recordings.classx.co.in/videos/rgvikramjeet-data/411823-1702027232/hls/240p/master-6452701.24023549.m3u829.ts?edge-cache-token=Expires=1791935651~_GO=Generated~URLPrefix=aHR0cHM6Ly90cmFuc2NvZGVkLXJlY29yZGluZ3MuY2xhc3N4LmNvLmluL3ZpZGVvcy9yZ3Zpa3JhbWplZXQtZGF0YS80MTE4MjMtMTcwMjAyNzIzMg~Signature=AcdbbdZLo0cDSvQ1Gx20dA2da2T-xZuAm5-7FqXxmYzdKDJ5UU1w1DSjsBIkTmtV7i_-iWXmFNTKEvbxEZbAxpdH1p0N failed: 404",
+      "status": "dead",
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1791925104648"
+        }
+      },
+      "video_id": "907",
+      "video_url": "https://appx-recordings-mcdn.akamai.net.in/videos/rgvikramjeet-data/411823-1702027232/hls/1080p/master-6452701.24023549.m3u8.m3u8",
+      "progress": {
+        "phase": "failed",
+        "rungs": {
+          "240p": {
+            "segsTotal": {
+              "$numberInt": "376"
+            },
+            "segsDone": {
+              "$numberInt": "331"
+            },
+            "bytes": {
+              "$numberInt": "116083420"
+            }
+          },
+          "480p": {
+            "segsTotal": {
+              "$numberInt": "376"
+            },
+            "segsDone": {
+              "$numberInt": "376"
+            },
+            "bytes": {
+              "$numberInt": "307871056"
+            }
+          },
+          "360p": {
+            "segsTotal": {
+              "$numberInt": "376"
+            },
+            "segsDone": {
+              "$numberInt": "376"
+            },
+            "bytes": {
+              "$numberInt": "230856292"
+            }
+          }
+        },
+        "classLink": null,
+        "error": "fetch https://transcoded-recordings.classx.co.in/videos/rgvikramjeet-data/411823-1702027232/hls/240p/master-6452701.24023549.m3u829.ts?edge-cache-token=Expires=1791935651~_GO=Generated~URLPrefix=aHR0cHM6Ly90cmFuc2NvZGVkLXJlY29yZGluZ3MuY2xhc3N4LmNvLmluL3ZpZGVvcy9yZ3Zpa3JhbWplZXQtZGF0YS80MTE4MjMtMTcwMjAyNzIzMg~Signature=AcdbbdZLo0cDSvQ1Gx20dA2da2T-xZuAm5-7FqXxmYzdKDJ5UU1w1DSjsBIkTmtV7i_-iWXmFNTKEvbxEZbAxpdH1p0N failed: 404"
+      },
+      "progressUpdatedAt": {
+        "$date": {
+          "$numberLong": "1791925104648"
+        }
+      }
+    }
+  },
+  {
+    "target": "6acea4e1c9735682f04f1965",
+    "filter": {
+      "_id": {
+        "$oid": "6acea4e1c9735682f04f1965"
+      },
+      "classId": {
+        "$oid": "6acea4e08752d955968b9335"
+      },
+      "status": "dead",
+      "attempts": {
+        "$numberInt": "1"
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1791966639129"
+        }
+      }
+    },
+    "set": {
+      "status": "pending",
+      "attempts": {
+        "$numberInt": "0"
+      },
+      "error": null,
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1793090837594"
+        }
+      },
+      "course_id": "71",
+      "video_id": "189847",
+      "video_url": "https://transcoded-videos-v2.classx.co.in/videos/armaths-data/3797570-1780065241/hls-59f33f/480p/master-5200916.525296471.m3u8"
+    },
+    "before": {
+      "_id": {
+        "$oid": "6acea4e1c9735682f04f1965"
+      },
+      "classId": {
+        "$oid": "6acea4e08752d955968b9335"
+      },
+      "__v": {
+        "$numberInt": "0"
+      },
+      "apxClassId": "177030",
+      "apxCourseId": {
+        "$oid": "6ace3308c9735682f04810aa"
+      },
+      "attempts": {
+        "$numberInt": "1"
+      },
+      "course_id": "71",
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1791927520954"
+        }
+      },
+      "error": "AppX returned no playable URL for this video",
+      "status": "dead",
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1791966639129"
+        }
+      },
+      "video_id": "177030",
+      "video_url": "https://transcoded-videos-v2.classx.co.in/videos/armaths-data/3797570-1780065241/hls-59f33f/480p/master-5200916.525296471.m3u8"
+    }
+  }
+]

@@ -1,0 +1,38 @@
+[
+{
+"_id": "6aa3e13d7b1383bc5b87dd37",
+"planId": "6a8ecd84608ba4ce14c75d27",
+"expireDate": "2027-09-04T11:53:40.710Z",
+"daysLeft": 351,
+"orderId": null,
+"remarks": "Auto-linked test-series package(s) attached to course \"Railway Maths Foundation + (ATM) Complete Practice Batch\" (apxCourseId=64), derived from order ORD-1788522820711-695.",
+"grandTotal": 0
+},
+{
+"_id": "6aa3e13d7b1383bc5b87dd57",
+"planId": "6a8ecd84608ba4ce14c75d27",
+"expireDate": "2027-09-04T11:53:40.710Z",
+"daysLeft": 351,
+"orderId": null,
+"remarks": "Auto-linked test-series package(s) attached to course \"Reasoning 100 Days Target Batch 2026\" (apxCourseId=121), derived from order ORD-1788522820711-695.",
+"grandTotal": 0
+},
+{
+"_id": "6aa3e13d7b1383bc5b87dd4a",
+"planId": "6a8ecd84608ba4ce14c75d27",
+"expireDate": "2027-09-04T11:53:40.710Z",
+"daysLeft": 351,
+"orderId": null,
+"remarks": "Auto-linked test-series package(s) attached to course \"GK + GS Foundation Mastery Batch\" (apxCourseId=93), derived from order ORD-1788522820711-695.",
+"grandTotal": 0
+},
+{
+"_id": "6aa3e13d7b1383bc5b87dd4f",
+"planId": "6a8ecd84608ba4ce14c75d27",
+"expireDate": "2027-09-04T11:53:40.710Z",
+"daysLeft": 351,
+"orderId": null,
+"remarks": "Auto-linked test-series package(s) attached to course \"RRB Technician Grade 1 Batch\" (apxCourseId=109), derived from order ORD-1788522820711-695.",
+"grandTotal": 0
+}
+]

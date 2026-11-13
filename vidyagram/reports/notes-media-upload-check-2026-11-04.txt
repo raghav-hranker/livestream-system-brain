@@ -1,0 +1,21 @@
+== Backend upload route (Q-Hub, editorial, question media)
+  PASS uploads/files image/png upload: HTTP 201, stored as image/png
+  PASS uploads/files image/png fetch: 200 image/png 70b
+  PASS uploads/files audio/wav upload: HTTP 201, stored as audio/wav
+  PASS uploads/files audio/wav fetch: 200 audio/wav 8044b
+  PASS uploads/files audio/webm;codecs=opus upload: HTTP 201, stored as audio/mp4
+  PASS uploads/files audio/webm;codecs=opus fetch: 200 audio/mp4 7223b
+  PASS uploads/files audio/mp4 upload: HTTP 201, stored as audio/mp4
+  PASS uploads/files audio/mp4 fetch: 200 audio/mp4 2970b
+== Class notes (app and viewer)
+  PASS note image/png create: HTTP 201, host vidyagram-live.hranker.org, path /v/<token>/notes/6aeb40abc408c8bdb18f7c25/0000000000000000000a1b2c/1793806952322-probe.png
+  PASS note image/png fetch: 200 image/png 70b
+  PASS note image/png unsigned: blocked (403)
+  PASS note audio/wav create: HTTP 201, host vidyagram-live.hranker.org, path /v/<token>/notes/6aeb40abc408c8bdb18f7c25/0000000000000000000a1b2c/1793806954160-probe.wav
+  PASS note audio/wav fetch: 200 audio/wav 8044b
+  PASS note audio/wav unsigned: blocked (403)
+  PASS note audio/mp4 create: HTTP 201, host vidyagram-live.hranker.org, path /v/<token>/notes/6aeb40abc408c8bdb18f7c25/0000000000000000000a1b2c/1793806955914-probe.m4a
+  PASS note audio/mp4 fetch: 200 audio/mp4 2971b
+  PASS note audio/mp4 unsigned: blocked (403)
+
+VERDICT: all upload paths work end to end

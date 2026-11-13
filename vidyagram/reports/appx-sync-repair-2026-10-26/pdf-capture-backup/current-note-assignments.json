@@ -1,0 +1,96 @@
+[
+  {
+    "_id": "6ace9aac8752d955968b72af",
+    "title": "Time, Speed & Distance 09 (2) · Time, Speed & Distance",
+    "pdfIds": [
+      "6ad1d9d5a3d5e866aea7b104"
+    ],
+    "apxAssetKey": "vid:armaths-data:3707471-1778652610",
+    "pdfAssignments": [
+      {
+        "_id": "6ad5b862f269676d2259fce0",
+        "pdfId": "6ad1d9d5a3d5e866aea7b104",
+        "priority": 1,
+        "isFree": false
+      }
+    ]
+  },
+  {
+    "_id": "6ace9b3d8752d955968b7915",
+    "title": "Pipe & Cistern 02 (2)",
+    "pdfIds": [
+      "6ad1dacfa3d5e866aea7b1a0"
+    ],
+    "apxAssetKey": "vid:armaths-data:3850851-1781068931",
+    "pdfAssignments": [
+      {
+        "_id": "6ad5b861f269676d2259fc58",
+        "pdfId": "6ad1dacfa3d5e866aea7b1a0",
+        "priority": 1,
+        "isFree": false
+      }
+    ]
+  },
+  {
+    "_id": "6ace9c8b8752d955968b7c2c",
+    "title": "Partnership 02 (2) · Partnership",
+    "pdfIds": [
+      "6ad1dba8a3d5e866aea7b25f"
+    ],
+    "apxAssetKey": "vid:armaths-data:4059093-1784527991",
+    "pdfAssignments": [
+      {
+        "_id": "6ad5b861f269676d2259fc52",
+        "pdfId": "6ad1dba8a3d5e866aea7b25f",
+        "priority": 1,
+        "isFree": false
+      }
+    ]
+  },
+  {
+    "_id": "6acea23f8752d955968b8bb7",
+    "title": "Puzzle 03 · PUZZLE (2)",
+    "pdfIds": [
+      "6ad5b33ef269676d2259f810",
+      "6ad69cabe36abd47ea38d894"
+    ],
+    "apxAssetKey": "vid:armaths-data:4468130-1790186981",
+    "pdfAssignments": [
+      {
+        "_id": "6ad5b861f269676d2259fc5e",
+        "pdfId": "6ad5b33ef269676d2259f810",
+        "priority": 1,
+        "isFree": false
+      },
+      {
+        "_id": "6ad69f29e36abd47ea38e685",
+        "pdfId": "6ad69cabe36abd47ea38d894",
+        "priority": 2,
+        "isFree": false
+      }
+    ]
+  },
+  {
+    "_id": "6ad1e3ddb520d957233cc16b",
+    "title": "Fundamental Rights 04",
+    "pdfIds": [
+      "6ad5b341f269676d2259f813",
+      "6ad69c69e36abd47ea38d83e"
+    ],
+    "apxAssetKey": "vid:armaths-data:4607176-1791984898",
+    "pdfAssignments": [
+      {
+        "_id": "6ad5b861f269676d2259fc60",
+        "pdfId": "6ad5b341f269676d2259f813",
+        "priority": 1,
+        "isFree": false
+      },
+      {
+        "_id": "6ad69f2fe36abd47ea38ecc3",
+        "pdfId": "6ad69c69e36abd47ea38d83e",
+        "priority": 2,
+        "isFree": false
+      }
+    ]
+  }
+]

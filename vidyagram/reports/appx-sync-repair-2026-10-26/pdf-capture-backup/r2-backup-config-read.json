@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-26T13:47:07.192Z",
+  "bucket": "recordedvideos-vidyagram",
+  "checks": [
+    {
+      "name": "replication",
+      "ok": false,
+      "error": "AccessDenied",
+      "http": 403
+    },
+    {
+      "name": "versioning",
+      "ok": false,
+      "error": "AccessDenied",
+      "http": 403
+    },
+    {
+      "name": "lifecycle",
+      "ok": false,
+      "error": "AccessDenied",
+      "http": 403
+    }
+  ]
+}

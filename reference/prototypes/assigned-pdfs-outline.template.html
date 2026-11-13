@@ -1,0 +1,558 @@
+<title>Assigned PDFs Outline</title>
+<style>
+/* Layout: the admin's Assigned PDFs tab as one Section › Topic outline (layout A of the classes prototype), with a "what would be saved" log beside it. */
+:root {
+  --bg: #ffffff; --fg: #0b1220; --muted: #f1f5f9; --muted-fg: #64748b; --border: #e2e8f0;
+  --sec-bg: #f8fafc; --top-bg: #f1f5f9; --primary: #2563eb; --primary-fg: #f8fafc; --sel: #eff6ff;
+  --ok: #15803d; --ok-bg: #dcfce7; --warn: #b45309; --warn-bg: #fef3c7; --live: #dc2626;
+  --bar: #0f172a; --bar-fg: #f8fafc; --ghost: rgba(37, 99, 235, .10); --shadow: 0 8px 24px rgba(15, 23, 42, .12);
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #020817; --fg: #f8fafc; --muted: #1e293b; --muted-fg: #94a3b8; --border: #1e293b;
+  --sec-bg: #0b1324; --top-bg: #111a2e; --primary: #3b82f6; --primary-fg: #020817; --sel: #172554;
+  --ok: #4ade80; --ok-bg: #14532d; --warn: #fbbf24; --warn-bg: #422006; --live: #f87171;
+  --bar: #f8fafc; --bar-fg: #0f172a; --ghost: rgba(59, 130, 246, .18); --shadow: 0 8px 24px rgba(0, 0, 0, .5); color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #020817; --fg: #f8fafc; --muted: #1e293b; --muted-fg: #94a3b8; --border: #1e293b;
+  --sec-bg: #0b1324; --top-bg: #111a2e; --primary: #3b82f6; --primary-fg: #020817; --sel: #172554;
+  --ok: #4ade80; --ok-bg: #14532d; --warn: #fbbf24; --warn-bg: #422006; --live: #f87171;
+  --bar: #f8fafc; --bar-fg: #0f172a; --ghost: rgba(59, 130, 246, .18); --shadow: 0 8px 24px rgba(0, 0, 0, .5); color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 14px; line-height: 1.4; }
+.wrap { max-width: 1280px; margin: 0 auto; padding-inline: 16px; padding-block: 16px 48px; }
+button { font: inherit; color: inherit; }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+.banner { display: grid; gap: 4px; padding-block: 10px; padding-inline: 14px; border: 1px dashed var(--border); border-radius: 8px; color: var(--muted-fg); font-size: 13px; }
+.banner b { color: var(--fg); }
+.head { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline; margin-block: 18px 12px; }
+.head h1 { font-size: 20px; margin: 0; text-wrap: balance; }
+.head .sub { color: var(--muted-fg); }
+.tabsbar { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 14px; }
+.tabsbar span { padding: 8px 12px; color: var(--muted-fg); font-weight: 500; }
+.tabsbar span.on { color: var(--fg); border-bottom: 2px solid var(--fg); margin-bottom: -1px; }
+
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 20px; align-items: start; }
+@media (max-width: 960px) { .layout { grid-template-columns: minmax(0, 1fr); } }
+
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 12px; }
+.search { flex: 1 1 240px; min-width: 0; display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 6px; padding-inline: 10px; background: var(--bg); }
+.search input { border: 0; outline: 0; background: transparent; padding-block: 8px; width: 100%; min-width: 0; color: var(--fg); font: inherit; }
+.btn { border: 1px solid var(--border); background: var(--bg); border-radius: 6px; padding: 7px 12px; cursor: pointer; white-space: nowrap; }
+.btn:hover { background: var(--muted); }
+.btn:disabled { opacity: .5; cursor: default; background: var(--bg); }
+.btn.icon { padding: 6px 8px; line-height: 0; }
+.btn.primary { background: var(--primary); border-color: var(--primary); color: var(--primary-fg); }
+.btn.danger { color: var(--live); }
+.btn.danger.solid { background: var(--live); border-color: var(--live); color: var(--bg); }
+.selbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--sel); margin-bottom: 10px; }
+.note { font-size: 12px; color: var(--muted-fg); }
+.ibtn { border: 0; background: transparent; border-radius: 4px; padding: 3px; line-height: 0; color: var(--muted-fg); cursor: pointer; }
+.ibtn:hover { background: var(--muted); color: var(--fg); }
+svg { width: 16px; height: 16px; flex: none; }
+.chev { transition: transform .15s; }
+[aria-expanded="true"] > .chev { transform: rotate(90deg); }
+@media (prefers-reduced-motion: reduce) { .chev { transition: none; } }
+
+.grip { cursor: grab; color: var(--muted-fg); opacity: .55; display: inline-flex; padding: 2px; border-radius: 4px; touch-action: none; }
+.grip:hover { opacity: 1; background: var(--muted); }
+.nodrag .grip { visibility: hidden; }
+.sortable-ghost { background: var(--ghost) !important; outline: 1px dashed var(--primary); }
+.sortable-chosen { box-shadow: var(--shadow); }
+
+.card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--bg); }
+.sec + .sec { border-top: 1px solid var(--border); }
+.hdr { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.hdr .name { font-weight: 600; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hdr .count { color: var(--muted-fg); font-size: 12px; white-space: nowrap; }
+.hdr .spacer { flex: 1; }
+.sec-h { padding: 10px; background: var(--sec-bg); }
+.sec-h .name { font-size: 15px; }
+.top { border-top: 1px solid var(--border); }
+.top-h { padding: 8px 10px 8px 22px; background: var(--top-bg); }
+.top-h .allnotes { font-style: italic; }
+.rows { min-height: 6px; }
+.row { display: grid; grid-template-columns: 20px 20px 28px minmax(0, 1fr) auto; gap: 8px; align-items: center; padding: 8px 10px 8px 22px; border-top: 1px solid var(--border); }
+.row.on { background: var(--sel); }
+.row .seq { font-family: var(--mono); color: var(--muted-fg); font-size: 12px; text-align: right; font-variant-numeric: tabular-nums; }
+.row .t { font-weight: 600; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.row .m { font-size: 12px; color: var(--muted-fg); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ctrls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+.link { border: 0; background: none; color: var(--primary); cursor: pointer; padding: 2px 4px; font-size: 12px; }
+.link:hover { text-decoration: underline; }
+.chk { display: inline-flex; gap: 5px; align-items: center; font-size: 12px; color: var(--fg); cursor: pointer; white-space: nowrap; }
+.chk .q { color: var(--muted-fg); }
+.chk.lockd { cursor: help; color: var(--muted-fg); }
+.chk.lockd svg { width: 12px; height: 12px; }
+.empty { padding: 24px; text-align: center; color: var(--muted-fg); }
+@media (max-width: 640px) {
+  .row { grid-template-columns: 20px 20px 26px minmax(0, 1fr); padding-left: 10px; }
+  .row .ctrls { grid-column: 3 / -1; justify-content: flex-start; }
+  .top-h { padding-left: 10px; }
+}
+
+.log { border: 1px solid var(--border); border-radius: 8px; position: sticky; top: 8px; max-height: calc(100vh - 32px); display: flex; flex-direction: column; }
+.log h2 { font-size: 13px; margin: 0; padding: 10px 12px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.log ol { list-style: none; margin: 0; padding: 0; overflow: auto; }
+.log li { padding: 10px 12px; border-bottom: 1px solid var(--border); display: grid; gap: 4px; }
+.log .w { font-weight: 600; font-size: 13px; }
+.log code { font-family: var(--mono); font-size: 11px; color: var(--primary); overflow-wrap: anywhere; }
+.log .e { font-size: 12px; color: var(--muted-fg); }
+.log .new { font-size: 10px; font-weight: 700; color: var(--live); letter-spacing: .05em; }
+.log .refused { color: var(--warn); }
+@media (max-width: 960px) { .log { position: static; max-height: 360px; } }
+
+.menu { position: absolute; z-index: 30; min-width: 240px; max-width: calc(100vw - 32px); background: var(--bg); border: 1px solid var(--border); border-radius: 8px; box-shadow: var(--shadow); padding: 4px; }
+.mi { display: grid; width: 100%; text-align: left; border: 0; background: none; padding: 7px 10px; border-radius: 5px; cursor: pointer; }
+.mi:hover { background: var(--muted); }
+.mi .hint { font-size: 11px; color: var(--muted-fg); }
+.mi.danger { color: var(--live); }
+.mi:disabled { opacity: .45; cursor: default; background: none; }
+.sep { height: 1px; background: var(--border); margin: 4px 6px; }
+.ov { position: fixed; inset: 0; z-index: 40; background: rgba(2, 6, 23, .45); display: grid; place-items: center; padding: 16px; }
+.dlg { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; width: min(460px, 100%); max-height: calc(100vh - 32px); overflow: auto; padding: 18px; display: grid; gap: 12px; box-shadow: var(--shadow); }
+.dlg h3 { margin: 0; font-size: 16px; }
+.dlg label.f { display: grid; gap: 4px; font-size: 12px; color: var(--muted-fg); }
+.dlg select { font: inherit; color: var(--fg); background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 7px 8px; }
+.dlg .acts { display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }
+.dlg.wide { width: min(660px, 100%); }
+.clist { display: grid; gap: 2px; max-height: 320px; overflow: auto; border: 1px solid var(--border); border-radius: 6px; padding: 4px; }
+.copt { display: flex; gap: 10px; align-items: center; padding: 8px; border-radius: 5px; cursor: pointer; }
+.copt:hover { background: var(--muted); } .copt.on { background: var(--sel); }
+.copt .ct { display: block; font-weight: 600; } .copt .note { display: block; }
+.copt.dis { opacity: .5; cursor: default; }
+.tbl { overflow-x: auto; max-height: 320px; overflow-y: auto; border: 1px solid var(--border); border-radius: 6px; }
+.ptable { width: 100%; border-collapse: collapse; font-size: 13px; }
+.ptable th, .ptable td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.ptable th { position: sticky; top: 0; background: var(--sec-bg); font-weight: 600; color: var(--muted-fg); font-size: 12px; }
+.ptable .num { text-align: right; font-variant-numeric: tabular-nums; }
+.where { padding: 8px 10px; border-radius: 6px; background: var(--sec-bg); font-size: 13px; display: grid; gap: 2px; }
+.where .k { font-size: 11px; color: var(--muted-fg); text-transform: uppercase; letter-spacing: .05em; }
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 50; background: var(--bar); color: var(--bar-fg); padding: 8px 14px; border-radius: 8px; font-size: 13px; max-width: calc(100% - 32px); box-shadow: var(--shadow); }
+</style>
+
+<div class="wrap">
+  <div class="banner">
+    <span><b>Prototype.</b> Nothing here saves. Reload to start over. <span id="dataNote"></span></span>
+    <span>Try: drag a PDF into another topic · tick two PDFs and drag one · the locked <b>Free (all courses)</b> books in Maths › Important for Railway Section Controller · a topic's ⋯ → <i>Add existing PDFs here</i> · ⋯ → <i>Copy to another course</i>.</span>
+  </div>
+  <div class="head"><h1 id="courseTitle"></h1><span class="sub">Courses › Assign PDFs</span></div>
+  <div class="tabsbar" aria-hidden="true"><span>Available PDFs</span><span class="on">Assigned PDFs</span></div>
+  <div class="layout">
+    <main id="main" style="min-width:0"></main>
+    <aside class="log" aria-label="What the real screen would save">
+      <h2><span>What the real screen would save</span><button class="link" id="clearLog">Clear</button></h2>
+      <ol id="log"></ol>
+    </aside>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+<script>
+const RAW = __DATA__;
+const ALL_NOTES = 'All Notes';
+
+const I = {
+  grip: '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="6" r="1.6"/><circle cx="15" cy="6" r="1.6"/><circle cx="9" cy="12" r="1.6"/><circle cx="15" cy="12" r="1.6"/><circle cx="9" cy="18" r="1.6"/><circle cx="15" cy="18" r="1.6"/></svg>',
+  chev: '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>',
+  dots: '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg>',
+  search: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--muted-fg)"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>',
+  lock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>',
+};
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
+const API = {
+  reorder: 'PUT /api/courses/:courseId/pdfs/reorder   (hardened: exact set, distinct numbers)',
+  move: 'POST /api/admin/courses/:courseId/pdfs/move   (new: names + order in one transaction)',
+  bulk: 'PATCH /api/courses/:courseId/pdfs/bulk',
+  remove: 'DELETE /api/courses/:courseId/pdfs/:pdfId',
+  assign: 'POST /api/courses/:courseId/pdfs   (+ this place\'s names)',
+  copy: 'POST /api/admin/courses/:courseId/pdfs/copy-to/:targetCourseId   (new)',
+};
+
+// ---------- state ----------
+let uid = 0; const nid = (p) => p + (++uid);
+let course, collapsed, selected, logItems = [], search = '';
+function load() {
+  uid = 0;
+  const sections = [];
+  const sec = (n) => { let s = sections.find((x) => x.name === n); if (!s) { s = { id: nid('s'), name: n, topics: [] }; sections.push(s); } return s; };
+  const top = (s, n) => { let t = s.topics.find((x) => x.name === n); if (!t) { t = { id: nid('t'), name: n, pdfs: [] }; s.topics.push(t); } return t; };
+  // First appearance in the flat priority order = the Ebooks tab's section chip and topic card order.
+  for (const r of RAW.rows) {
+    const p = { id: nid('p'), title: r[0], ownS: r[3], ownT: r[4] || null, cFree: !!r[5], gFree: !!r[6], dl: !!r[7], other: r[8], pid: r[9], size: r[10] };
+    top(sec(r[1]), r[2] || null).pdfs.push(p);
+  }
+  course = { title: RAW.course, sections, targets: RAW.targets.map((x) => Object.assign({}, x, { have: new Set(x.have), inactive: new Set(x.inactive), tc: Object.assign({}, x.tc) })) };
+  collapsed = new Set(); selected = new Set();
+}
+load();
+
+const allTopics = () => course.sections.flatMap((s) => s.topics);
+const allPdfs = () => allTopics().flatMap((t) => t.pdfs);
+const topicById = (id) => allTopics().find((t) => t.id === id);
+const sectionOf = (t) => course.sections.find((s) => s.topics.includes(t));
+const findPdf = (id) => { for (const t of allTopics()) { const p = t.pdfs.find((x) => x.id === id); if (p) return { p, t }; } return {}; };
+const tName = (n) => n || ALL_NOTES;
+const path = (s, t) => `${s} › ${tName(t)}`;
+const secCount = (s) => s.topics.reduce((n, t) => n + t.pdfs.length, 0);
+const matches = (p, t) => !search || [p.title, tName(t.name), sectionOf(t).name].some((x) => x.toLowerCase().includes(search));
+const move = (arr, from, to) => { const [x] = arr.splice(from, 1); arr.splice(to, 0, x); };
+const fmtSize = (b) => b ? (b >= 1048576 ? (b / 1048576).toFixed(1) + ' MB' : Math.round(b / 1024) + ' KB') : '';
+
+// ---------- operations: each logs the call the real screen would make ----------
+function save(what, api, effect, refused) { logItems.unshift({ what, api, effect, refused }); toast(what); render(); }
+function pruneEmpty() { for (const s of course.sections) s.topics = s.topics.filter((t) => t.pdfs.length); course.sections = course.sections.filter((s) => s.topics.length); }
+const renumberNote = () => `Renumbers all ${allPdfs().length} PDFs in this course, 1 to ${allPdfs().length}, in outline order. Students' Ebooks tab (app and website) shows section chips, topic cards and PDFs in this order. No other course changes.`;
+
+function reorderTopics(s, from, to) { const t = s.topics[from]; move(s.topics, from, to); save(`Moved topic “${tName(t.name)}” within ${s.name}`, API.reorder, renumberNote()); }
+function reorderSections(from, to) { const s = course.sections[from]; move(course.sections, from, to); save(`Moved section “${s.name}” to position ${to + 1}`, API.reorder, renumberNote()); }
+function reverseTopic(t) { t.pdfs.reverse(); save(`Reversed priority in ${tName(t.name)}`, API.reorder, `${sectionOf(t).name} › ${tName(t.name)} comes out in reverse. Section and topic order stay as they are.`); }
+function reverseAll() { allTopics().forEach((t) => t.pdfs.reverse()); save('Reversed priority in every topic', API.reorder, 'One renumbering call. Section and topic order stay as they are.'); }
+function shiftSection(s, d) { const i = course.sections.indexOf(s); const j = i + d; if (j < 0 || j >= course.sections.length) return; reorderSections(i, j); }
+function shiftTopic(t, d) { const s = sectionOf(t); const i = s.topics.indexOf(t); const j = i + d; if (j < 0 || j >= s.topics.length) return; reorderTopics(s, i, j); }
+
+// A PDF can only sit in "All Notes" when it has no topic of its own: the course stores names, and a
+// blank topic name falls back to the PDF's own topic.
+const allNotesBlocked = (pdfs, topicName) => topicName === null ? pdfs.filter((p) => p.ownT) : [];
+function refuseAllNotes(blocked) {
+  const p = blocked[0];
+  save(blocked.length === 1 ? `Not moved: “${p.title}” has its own topic (${p.ownT})` : `Not moved: ${blocked.length} of the PDFs have their own topic`,
+    '— nothing saved —', 'All Notes only holds PDFs that have no topic. Pick a topic instead.', true);
+}
+// Move PDFs into a topic at index (null = last). Creates the topic / section at the end when the course lacks it.
+function placeInto(pdfs, sName, topicName, index, how) {
+  const blocked = allNotesBlocked(pdfs, topicName); if (blocked.length) { refuseAllNotes(blocked); return; }
+  const ids = new Set(pdfs.map((p) => p.id));
+  let s = course.sections.find((x) => x.name === sName); if (!s) { s = { id: nid('s'), name: sName, topics: [] }; course.sections.push(s); }
+  let t = s.topics.find((x) => x.name === topicName); if (!t) { t = { id: nid('t'), name: topicName, pdfs: [] }; s.topics.push(t); }
+  const before = index == null ? null : t.pdfs.slice(index).find((x) => !ids.has(x.id)) || null;
+  for (const x of allTopics()) x.pdfs = x.pdfs.filter((q) => !ids.has(q.id));
+  const at = before ? t.pdfs.indexOf(before) : t.pdfs.length; t.pdfs.splice(at, 0, ...pdfs);
+  pruneEmpty(); collapsed.delete('t:' + t.id); collapsed.delete('s:' + s.id);
+  const label = pdfs.length === 1 ? `“${pdfs[0].title}”` : plural(pdfs.length, 'PDF');
+  save(`${how} ${label} to ${path(sName, topicName)}`, API.move,
+    `This course only: students see ${pdfs.length === 1 ? 'it' : 'them'} under ${path(sName, topicName)}${index == null ? ', last in the topic' : ''}. ` +
+    `Other courses keep their own names. ${renumberNote()}`);
+}
+function outlineOrder(ids) { return allPdfs().filter((p) => ids.has(p.id)); }
+
+function setFree(pdfs, on) {
+  const editable = pdfs.filter((p) => !p.gFree); editable.forEach((p) => { p.cFree = on; });
+  const locked = pdfs.length - editable.length;
+  save(`Set ${editable.length === 1 ? '“' + editable[0].title + '”' : plural(editable.length, 'PDF')} ${on ? 'free' : 'paid'} in this course${locked ? ` (${locked} free in all courses, left alone)` : ''}`,
+    API.bulk + '  { isFree }', `Writes CoursePdf.isFree for ${course.title} only. Today this checkbox writes the shared PDF and frees it in every course; that is the leak this fixes.`);
+}
+function setDl(pdfs, on) {
+  pdfs.forEach((p) => { p.dl = on; });
+  const reach = Math.max(...pdfs.map((p) => p.other + 1));
+  save(`${on ? 'Allowed' : 'Blocked'} download of ${pdfs.length === 1 ? '“' + pdfs[0].title + '”' : plural(pdfs.length, 'PDF')}`, API.bulk + '  { isDownloadable }',
+    `A property of the file: it changes in every course the PDF is in (up to ${plural(reach, 'course')} here).`);
+}
+function removePdfs(pdfs) {
+  const ids = new Set(pdfs.map((p) => p.id)); for (const t of allTopics()) t.pdfs = t.pdfs.filter((p) => !ids.has(p.id));
+  pdfs.forEach((p) => selected.delete(p.id)); pruneEmpty();
+  save(`Removed ${pdfs.length === 1 ? '“' + pdfs[0].title + '”' : plural(pdfs.length, 'PDF')} from this course`, API.remove + (pdfs.length > 1 ? '   × ' + pdfs.length : ''),
+    'Sets the placement inactive. Buyers of this course lose it; assigning it again brings it back in its old place. Other courses are untouched.');
+}
+
+// ---------- rendering ----------
+function rowHtml(p, i, t) {
+  const free = p.gFree
+    ? `<label class="chk lockd" title="Ticked on the PDF page, so it is free in all ${p.other + 1} courses it is in. Untick it there to make it paid again."><input type="checkbox" checked disabled>Free <span class="q">(all courses)</span>${I.lock}</label>`
+    : `<label class="chk"><input type="checkbox" data-act="free" data-p="${p.id}" ${p.cFree ? 'checked' : ''}>Free <span class="q">(this course)</span></label>`;
+  return `<div class="row${selected.has(p.id) ? ' on' : ''}" data-p="${p.id}">
+    <span class="grip g-row" title="Drag. Drop it in any topic of this course.">${I.grip}</span>
+    <input type="checkbox" data-act="sel" data-p="${p.id}" ${selected.has(p.id) ? 'checked' : ''} aria-label="Select ${esc(p.title)}">
+    <span class="seq">${i + 1}</span>
+    <div style="min-width:0"><div class="t" title="${esc(p.title)}">${esc(p.title)}</div>
+      <div class="m">${[fmtSize(p.size), p.other ? `also in ${plural(p.other, 'other course')}` : 'only in this course'].filter(Boolean).join(' · ')}</div></div>
+    <div class="ctrls">${free}
+      <label class="chk" title="A property of the file: applies in every course it is in"><input type="checkbox" data-act="dl" data-p="${p.id}" ${p.dl ? 'checked' : ''}>Download <span class="q">(all courses)</span></label>
+      <button class="link" data-act="preview" data-p="${p.id}">Preview</button>
+      <button class="ibtn" data-act="menu-row" data-p="${p.id}" aria-label="More for ${esc(p.title)}">${I.dots}</button>
+    </div></div>`;
+}
+function renderMain() {
+  const anyOpen = allTopics().some((t) => !collapsed.has('t:' + t.id));
+  const sel = outlineOrder(selected);
+  let out = `<div class="toolbar"><div class="search">${I.search}<input id="q" type="search" placeholder="Search PDFs, topics or sections" value="${esc(search)}" aria-label="Search PDFs"></div>
+    <button class="btn" data-act="toggle-all">${anyOpen ? 'Collapse all' : 'Expand all'}</button>
+    <button class="btn icon" data-act="menu-course" aria-label="More actions">${I.dots}</button></div>`;
+  if (sel.length) out += `<div class="selbar"><b>${sel.length} selected</b>
+    <button class="btn" data-act="sel-move">Move to…</button>
+    <button class="btn" data-act="sel-free">Free (this course)</button>
+    <button class="btn" data-act="sel-dl">Download (all courses)</button>
+    <button class="btn" data-act="sel-copy">Copy to another course</button>
+    <button class="btn danger" data-act="sel-remove">Remove</button>
+    <button class="link" data-act="sel-clear">Clear</button>
+    <span class="note" style="flex-basis:100%">Drag any ticked row to move all ${sel.length} together.</span></div>`;
+  if (search) out += '<p class="note" style="margin:0 0 8px">Dragging is off while searching. Clear the search to reorder.</p>';
+  const secs = course.sections.map((s) => {
+    const topics = s.topics.filter((t) => !search || t.pdfs.some((p) => matches(p, t))); if (search && !topics.length) return '';
+    const sOpen = search || !collapsed.has('s:' + s.id);
+    return `<div class="sec"><div class="hdr sec-h"><span class="grip g-sec" title="Drag section">${I.grip}</span>
+      <button class="ibtn" data-act="toggle" data-key="s:${s.id}" aria-expanded="${!!sOpen}" aria-label="Show or hide ${esc(s.name)}">${I.chev}</button>
+      <span class="name">${esc(s.name)}</span><span class="count">${plural(s.topics.length, 'topic')} · ${plural(secCount(s), 'PDF')}</span>
+      <span class="spacer"></span><button class="ibtn" data-act="menu-section" data-s="${s.id}" aria-label="More for ${esc(s.name)}">${I.dots}</button></div>
+      ${sOpen ? `<div data-sort="topics" data-s="${s.id}">${topics.map((t) => {
+        const open = search || !collapsed.has('t:' + t.id); const rows = t.pdfs.filter((p) => matches(p, t));
+        return `<div class="top"><div class="hdr top-h"><span class="grip g-top" title="Drag topic">${I.grip}</span>
+          <button class="ibtn" data-act="toggle" data-key="t:${t.id}" aria-expanded="${!!open}" aria-label="Show or hide ${esc(tName(t.name))}">${I.chev}</button>
+          <span class="name${t.name ? '' : ' allnotes'}">${esc(tName(t.name))}</span><span class="count">${search ? rows.length + ' of ' : ''}${plural(t.pdfs.length, 'PDF')}</span>
+          <span class="spacer"></span><button class="ibtn" data-act="menu-topic" data-t="${t.id}" aria-label="More for ${esc(tName(t.name))}">${I.dots}</button></div>
+          ${open ? `<div class="rows" data-sort="rows" data-t="${t.id}">${rows.map((p) => rowHtml(p, t.pdfs.indexOf(p), t)).join('')}</div>` : ''}</div>`;
+      }).join('')}</div>` : ''}</div>`;
+  }).join('');
+  return out + `<div class="card${search ? ' nodrag' : ''}" data-sort="sections">${secs || '<div class="empty">No PDFs match.</div>'}</div>`;
+}
+let sortables = [];
+function render() {
+  const main = document.getElementById('main');
+  const q = document.activeElement && document.activeElement.id === 'q'; const caret = q ? document.activeElement.selectionStart : 0;
+  sortables.forEach((s) => s.destroy()); sortables = [];
+  main.innerHTML = renderMain();
+  if (q) { const el = document.getElementById('q'); el.focus(); el.setSelectionRange(caret, caret); }
+  renderLog(); wireSortables(main);
+}
+function renderLog() {
+  document.getElementById('log').innerHTML = logItems.length ? logItems.map((x, i) => `<li>${i === 0 ? '<span class="new">LATEST</span>' : ''}<span class="w${x.refused ? ' refused' : ''}">${esc(x.what)}</span><code>${esc(x.api)}</code><span class="e">${esc(x.effect)}</span></li>`).join('')
+    : '<li><span class="e">Nothing changed yet. Drag a PDF, a topic or a section, or use a ⋯ menu. The call the real screen would make shows up here, with what changes for students.</span></li>';
+}
+function wireSortables(root) {
+  if (!window.Sortable) { if (!document.getElementById('nolib')) root.insertAdjacentHTML('afterbegin', '<p id="nolib" class="note">The drag library did not load. Move to… in each row\'s ⋯ menu still works.</p>'); return; }
+  const base = { animation: 150, disabled: !!search, fallbackOnBody: true };
+  const mk = (el, handle, onMove) => sortables.push(Sortable.create(el, Object.assign({}, base, { handle, group: { name: 'g' + Math.random(), pull: false, put: false },
+    onEnd: (e) => { if (e.oldDraggableIndex !== e.newDraggableIndex) onMove(e.oldDraggableIndex, e.newDraggableIndex); else render(); } })));
+  root.querySelectorAll('[data-sort="sections"]').forEach((el) => mk(el, '.g-sec', reorderSections));
+  root.querySelectorAll('[data-sort="topics"]').forEach((el) => { const s = course.sections.find((x) => x.id === el.dataset.s); mk(el, '.g-top', (a, b) => reorderTopics(s, a, b)); });
+  // Rows share one group: a PDF can be dropped into any open topic. A ticked row carries every ticked row.
+  root.querySelectorAll('[data-sort="rows"]').forEach((el) => sortables.push(Sortable.create(el, Object.assign({}, base, { handle: '.g-row', group: { name: 'rows', pull: true, put: true },
+    onEnd: (e) => {
+      const { p } = findPdf(e.item.dataset.p); const from = topicById(e.from.dataset.t); const to = topicById(e.to.dataset.t);
+      if (e.from === e.to && e.oldDraggableIndex === e.newDraggableIndex) { render(); return; }
+      const moving = selected.has(p.id) ? outlineOrder(selected) : [p];
+      const domIds = [...e.to.querySelectorAll('.row')].map((r) => r.dataset.p);
+      const ids = new Set(moving.map((x) => x.id));
+      const after = domIds.slice(domIds.indexOf(p.id) + 1).find((id) => !ids.has(id));
+      if (moving.length === 1 && from === to) {
+        const byId = new Map(to.pdfs.map((x) => [x.id, x])); to.pdfs = domIds.map((id) => byId.get(id));
+        save(`Moved “${p.title}” to #${to.pdfs.indexOf(p) + 1} in ${tName(to.name)}`, API.reorder, renumberNote()); return;
+      }
+      const idx = after ? to.pdfs.filter((x) => !ids.has(x.id)).indexOf(findPdf(after).p) : null;
+      placeInto(moving, sectionOf(to).name, to.name, idx, 'Moved');
+    } }))));
+}
+
+let toastTimer;
+function toast(msg) {
+  let el = document.querySelector('.toast'); if (!el) { el = document.createElement('div'); el.className = 'toast'; el.setAttribute('role', 'status'); document.body.append(el); }
+  el.textContent = msg; el.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { el.hidden = true; }, 2800);
+}
+let menuEl = null;
+function closeMenu() { if (menuEl) { menuEl.remove(); menuEl = null; } }
+function openMenu(btn, items) {
+  closeMenu(); menuEl = document.createElement('div'); menuEl.className = 'menu'; menuEl.setAttribute('role', 'menu');
+  for (const it of items) {
+    if (it === '-') { const d = document.createElement('div'); d.className = 'sep'; menuEl.append(d); continue; }
+    const b = document.createElement('button'); b.className = 'mi' + (it.danger ? ' danger' : ''); b.setAttribute('role', 'menuitem'); b.disabled = !!it.disabled;
+    b.append(document.createTextNode(it.label));
+    if (it.hint) { const h = document.createElement('span'); h.className = 'hint'; h.textContent = it.hint; b.append(h); }
+    b.onclick = (e) => { e.stopPropagation(); closeMenu(); it.run(); }; menuEl.append(b);
+  }
+  document.body.append(menuEl);
+  const r = btn.getBoundingClientRect(); const w = menuEl.offsetWidth;
+  menuEl.style.top = (r.bottom + window.scrollY + 4) + 'px';
+  menuEl.style.left = (Math.max(16, Math.min(r.right - w, document.documentElement.clientWidth - 16 - w)) + window.scrollX) + 'px';
+  menuEl.querySelector('button:not(:disabled)')?.focus();
+}
+document.addEventListener('click', (e) => { if (menuEl && !menuEl.contains(e.target) && !e.target.closest('[data-act^="menu"]')) closeMenu(); });
+
+// ---------- dialogs ----------
+let ovEl = null;
+function closeDialog() { if (ovEl) { ovEl.remove(); ovEl = null; } }
+function dialog(html, wide) {
+  closeDialog(); ovEl = document.createElement('div'); ovEl.className = 'ov';
+  ovEl.innerHTML = `<div class="dlg${wide ? ' wide' : ''}" role="dialog" aria-modal="true">${html}</div>`;
+  ovEl.onclick = (e) => { if (e.target === ovEl) closeDialog(); }; document.body.append(ovEl); return ovEl;
+}
+const opt = (v, l, sel, dis) => `<option value="${esc(v)}"${sel ? ' selected' : ''}${dis ? ' disabled' : ''}>${esc(l)}</option>`;
+
+// Move to…: the picker lists the PDF library's real sections and topics. Writes this course's names only.
+function openMoveTo(pdfs) {
+  const one = pdfs.length === 1 ? pdfs[0] : null; const here = one ? findPdf(one.id).t : null;
+  const secNames = [...new Set(course.sections.map((s) => s.name).concat(Object.keys(RAW.tax)))];
+  const anyOwnTopic = pdfs.some((p) => p.ownT);
+  const o = dialog(`<h3>Move to…</h3>
+    ${one ? `<div class="where"><span class="k">PDF</span><b>${esc(one.title)}</b>
+      <span class="k" style="margin-top:6px">Now under</span>${esc(path(sectionOf(here).name, here.name))}</div>` : `<div class="note">${plural(pdfs.length, 'selected PDF')}, kept in outline order.</div>`}
+    <label class="f">Section<select id="mvS">${secNames.map((n) => opt(n, n, here ? n === sectionOf(here).name : n === course.sections[0].name)).join('')}</select></label>
+    <label class="f">Topic<select id="mvT"></select></label>
+    <div class="note">Applies to this course only. ${pdfs.length === 1 ? 'The PDF goes' : 'They go'} last in the topic; drag to fine-tune.${anyOwnTopic ? ' All Notes is only for PDFs that have no topic.' : ''}</div>
+    <div class="acts"><button class="btn" id="mvCancel">Cancel</button><button class="btn primary" id="mvSave">Move</button></div>`);
+  const sS = o.querySelector('#mvS'), sT = o.querySelector('#mvT');
+  const fill = (keep) => {
+    const n = sS.value; const inCourse = (course.sections.find((s) => s.name === n)?.topics || []).map((t) => t.name).filter(Boolean);
+    const names = [...new Set(inCourse.concat(RAW.tax[n] || []))];
+    sT.innerHTML = names.map((x) => opt(x, x, keep && here && x === here.name)).join('') + opt('__none', ALL_NOTES + (anyOwnTopic ? ' (not for these PDFs)' : ''), keep && here && !here.name, anyOwnTopic);
+  };
+  sS.onchange = () => fill(false); fill(true);
+  o.querySelector('#mvCancel').onclick = closeDialog;
+  o.querySelector('#mvSave').onclick = () => {
+    const sName = sS.value, topicName = sT.value === '__none' ? null : sT.value; closeDialog();
+    if (here && sName === sectionOf(here).name && topicName === here.name) return;
+    placeInto(pdfs, sName, topicName, null, 'Moved');
+  };
+  sS.focus();
+}
+
+function confirmRemove(pdfs) {
+  const o = dialog(`<h3>Remove ${pdfs.length === 1 ? 'this PDF' : plural(pdfs.length, 'PDF')} from ${esc(course.title)}?</h3>
+    <div class="note">${pdfs.length === 1 ? esc(pdfs[0].title) : pdfs.slice(0, 4).map((p) => esc(p.title)).join('<br>') + (pdfs.length > 4 ? `<br>and ${pdfs.length - 4} more` : '')}</div>
+    <div>Students who bought this course will no longer see ${pdfs.length === 1 ? 'it' : 'them'}. Other courses are not affected. Assigning ${pdfs.length === 1 ? 'it' : 'them'} again brings ${pdfs.length === 1 ? 'it' : 'them'} back.</div>
+    <div class="acts"><button class="btn" id="rmCancel">Cancel</button><button class="btn danger solid" id="rmGo">Remove ${plural(pdfs.length, 'PDF')}</button></div>`);
+  o.querySelector('#rmCancel').onclick = closeDialog; o.querySelector('#rmGo').onclick = () => { closeDialog(); removePdfs(pdfs); }; o.querySelector('#rmCancel').focus();
+}
+
+function openBulkFlag(kind, pdfs) {
+  const free = kind === 'free'; const locked = free ? pdfs.filter((p) => p.gFree).length : 0;
+  const o = dialog(`<h3>${free ? 'Free in this course' : 'Download (all courses)'}</h3>
+    <div class="note">${plural(pdfs.length, 'selected PDF')}.${free ? ` Only ${esc(course.title)} changes.${locked ? ` ${locked} ${locked === 1 ? 'is' : 'are'} free in all courses (set on the PDF page) and stay${locked === 1 ? 's' : ''} as ${locked === 1 ? 'it is' : 'they are'}.` : ''}` : ' This changes the file itself, so it applies in every course these PDFs are in.'}</div>
+    <div class="acts"><button class="btn" id="bfCancel">Cancel</button><button class="btn" id="bfOff">${free ? 'Make paid' : 'Block download'}</button><button class="btn primary" id="bfOn">${free ? 'Make free' : 'Allow download'}</button></div>`);
+  o.querySelector('#bfCancel').onclick = closeDialog;
+  o.querySelector('#bfOn').onclick = () => { closeDialog(); free ? setFree(pdfs, true) : setDl(pdfs, true); };
+  o.querySelector('#bfOff').onclick = () => { closeDialog(); free ? setFree(pdfs, false) : setDl(pdfs, false); };
+}
+
+// Add existing PDFs here: assign library PDFs straight into this topic. They land last; Free is off.
+function openAddHere(t) {
+  const s = sectionOf(t); let q = ''; const pick = new Set();
+  const inCourse = new Set(allPdfs().map((p) => p.pid));
+  const draw = () => {
+    const list = RAW.library.filter((r) => !q || (r[0] + ' ' + (r[1] || '') + ' ' + (r[2] || '')).toLowerCase().includes(q));
+    const blockedNotes = t.name === null;
+    ovEl.querySelector('.dlg').innerHTML = `<h3>Add existing PDFs to ${esc(path(s.name, t.name))}</h3>
+      <div class="search">${I.search}<input id="adQ" type="search" placeholder="Search the PDF library" value="${esc(q)}" aria-label="Search the PDF library"></div>
+      <div class="clist">${list.map((r) => { const there = inCourse.has(r[3]); const noFit = blockedNotes && r[2]; const dis = there || noFit;
+        return `<label class="copt${pick.has(r[3]) ? ' on' : ''}${dis ? ' dis' : ''}"><input type="checkbox" data-id="${r[3]}" ${pick.has(r[3]) ? 'checked' : ''} ${dis ? 'disabled' : ''}>
+          <span style="min-width:0"><span class="ct">${esc(r[0])}</span><span class="note">${there ? 'Already in this course' : noFit ? `Has its own topic (${esc(r[2])})` : 'Filed under ' + esc(path(r[1], r[2]))}</span></span></label>`; }).join('') || '<div class="empty">No PDF matches.</div>'}</div>
+      <div class="note">Prototype: ${RAW.library.length} real PDFs from sibling batches. They land last in ${esc(tName(t.name))}, paid. Students see them under this course's names.</div>
+      <div class="acts"><button class="btn" id="adCancel">Cancel</button><button class="btn primary" id="adGo" ${pick.size ? '' : 'disabled'}>${pick.size ? 'Add ' + plural(pick.size, 'PDF') : 'Add'}</button></div>`;
+    const qi = ovEl.querySelector('#adQ'); qi.oninput = () => { q = qi.value.trim().toLowerCase(); draw(); const n = ovEl.querySelector('#adQ'); n.focus(); n.setSelectionRange(n.value.length, n.value.length); };
+    ovEl.querySelectorAll('.clist input').forEach((c) => { c.onchange = () => { c.checked ? pick.add(c.dataset.id) : pick.delete(c.dataset.id); draw(); }; });
+    ovEl.querySelector('#adCancel').onclick = closeDialog;
+    ovEl.querySelector('#adGo').onclick = () => {
+      const rows = RAW.library.filter((r) => pick.has(r[3]));
+      rows.forEach((r) => t.pdfs.push({ id: nid('p'), title: r[0], ownS: r[1], ownT: r[2] || null, cFree: false, gFree: false, dl: true, other: 1, pid: r[3], size: null }));
+      closeDialog(); collapsed.delete('t:' + t.id);
+      save(`Added ${plural(rows.length, 'PDF')} to ${path(s.name, t.name)}`, API.assign + (rows.length > 1 ? '   × ' + rows.length : ''),
+        `New placements in this course, last in ${tName(t.name)}, paid. A PDF this course once had is reactivated instead of duplicated.`);
+    };
+  };
+  dialog('', true); draw(); ovEl.querySelector('#adQ').focus();
+}
+
+// Copy to another course: the same PDFs get placements there too. Nothing leaves this course.
+function openCopy(pdfs, label) {
+  let pick = null, q = '';
+  dialog('', true);
+  const step1 = () => {
+    const list = course.targets.filter((x) => !q || x.title.toLowerCase().includes(q));
+    ovEl.querySelector('.dlg').innerHTML = `<h3>Copy to another course</h3>
+      <div class="note">${plural(pdfs.length, 'PDF')} from ${esc(label)}. They stay in ${esc(course.title)} as well.</div>
+      <div class="search">${I.search}<input id="cpQ" type="search" placeholder="Search courses" value="${esc(q)}" aria-label="Search courses"></div>
+      <div class="clist" role="radiogroup" aria-label="Course">${list.map((x) => `<label class="copt${pick === x ? ' on' : ''}"><input type="radio" name="cp" value="${course.targets.indexOf(x)}" ${pick === x ? 'checked' : ''}>
+        <span style="min-width:0"><span class="ct">${esc(x.title)}</span><span class="note">${plural(x.total, 'PDF')} · ${plural(x.topics, 'topic')}</span></span></label>`).join('') || '<div class="empty">No course matches.</div>'}</div>
+      <div class="note">Prototype: only ${course.targets.length} real courses are listed here.</div>
+      <div class="acts"><button class="btn" id="cpCancel">Cancel</button><button class="btn primary" id="cpNext" ${pick ? '' : 'disabled'}>Next</button></div>`;
+    const qi = ovEl.querySelector('#cpQ'); qi.oninput = () => { q = qi.value.trim().toLowerCase(); step1(); const n = ovEl.querySelector('#cpQ'); n.focus(); n.setSelectionRange(n.value.length, n.value.length); };
+    ovEl.querySelectorAll('input[name="cp"]').forEach((r) => { r.onchange = () => { pick = course.targets[+r.value]; step1(); }; });
+    ovEl.querySelector('#cpCancel').onclick = closeDialog;
+    ovEl.querySelector('#cpNext').onclick = () => pick && step2();
+  };
+  const step2 = () => {
+    const groups = new Map();
+    for (const p of pdfs) {
+      const t = findPdf(p.id).t; const key = path(sectionOf(t).name, t.name);
+      if (!groups.has(key)) groups.set(key, { add: 0, back: 0, skip: 0 });
+      groups.get(key)[pick.have.has(p.pid) ? 'skip' : pick.inactive.has(p.pid) ? 'back' : 'add']++;
+    }
+    const tot = [...groups.values()].reduce((a, x) => ({ add: a.add + x.add, back: a.back + x.back, skip: a.skip + x.skip }), { add: 0, back: 0, skip: 0 });
+    const n = tot.add + tot.back;
+    const rows = [...groups.entries()].map(([k, x]) => { const there = pick.tc[k];
+      return `<tr><td>${esc(k)}</td><td class="num">${x.add}</td><td class="num">${x.back}</td><td class="num">${x.skip}</td><td>${x.add + x.back ? (there ? `after its ${there}` : 'new topic, at the end') : '—'}</td></tr>`; }).join('');
+    const freeN = pdfs.filter((p) => p.cFree && !pick.have.has(p.pid)).length;
+    ovEl.querySelector('.dlg').innerHTML = `<h3>Copy to ${esc(pick.title)}</h3>
+      <div><b>${plural(n, 'PDF')}</b> will be added${tot.back ? ` (${tot.back} brought back from removed)` : ''}.${tot.skip ? ` <b>${tot.skip}</b> ${tot.skip === 1 ? 'is' : 'are'} already there and will be skipped, keeping that course's own names and order.` : ''}</div>
+      <div class="tbl"><table class="ptable"><thead><tr><th>Section › Topic</th><th class="num">Add</th><th class="num">Bring back</th><th class="num">Skip</th><th>Lands</th></tr></thead><tbody>${rows}</tbody></table></div>
+      <div class="note">Same Section › Topic names and order as students see them here. Free (this course) is copied${freeN ? ` (${freeN} free)` : ''}; Free (all courses) stays a PDF-page setting. Nothing changes in ${esc(course.title)}, and nobody loses access.</div>
+      <div class="acts"><button class="btn" id="cpBack">Back</button><button class="btn primary" id="cpGo" ${n ? '' : 'disabled'}>${n ? 'Copy ' + plural(n, 'PDF') : 'Nothing to copy'}</button></div>`;
+    ovEl.querySelector('#cpBack').onclick = step1;
+    ovEl.querySelector('#cpGo').onclick = () => {
+      for (const p of pdfs) { if (!pick.have.has(p.pid)) { pick.have.add(p.pid); pick.inactive.delete(p.pid); } }
+      for (const [k, x] of groups) if (x.add + x.back) pick.tc[k] = (pick.tc[k] || 0) + x.add + x.back;
+      pick.total += n; pick.topics = Object.keys(pick.tc).length; closeDialog();
+      save(`Copied ${plural(n, 'PDF')} to ${pick.title}${tot.skip ? ` (${tot.skip} skipped)` : ''}`, API.copy,
+        `Adds placements in ${pick.title} under the same Section › Topic names, in this order, after its own PDFs in each topic. ${course.title} is unchanged.`);
+    };
+    ovEl.querySelector('#cpGo').focus();
+  };
+  step1(); ovEl.querySelector('#cpQ').focus();
+}
+
+// ---------- events ----------
+document.getElementById('main').addEventListener('click', (e) => {
+  const el = e.target.closest('[data-act]'); if (!el) return; const a = el.dataset.act;
+  const sel = () => outlineOrder(selected);
+  if (a === 'toggle') { const k = el.dataset.key; collapsed.has(k) ? collapsed.delete(k) : collapsed.add(k); render(); }
+  else if (a === 'toggle-all') { const anyOpen = allTopics().some((t) => !collapsed.has('t:' + t.id)); allTopics().forEach((t) => anyOpen ? collapsed.add('t:' + t.id) : collapsed.delete('t:' + t.id)); render(); }
+  else if (a === 'preview') toast('Opens the signed PDF preview, same as today.');
+  else if (a === 'sel-move') openMoveTo(sel());
+  else if (a === 'sel-free') openBulkFlag('free', sel());
+  else if (a === 'sel-dl') openBulkFlag('dl', sel());
+  else if (a === 'sel-copy') openCopy(sel(), plural(selected.size, 'selected PDF'));
+  else if (a === 'sel-remove') confirmRemove(sel());
+  else if (a === 'sel-clear') { selected.clear(); render(); }
+  else if (a === 'menu-row') { const { p, t } = findPdf(el.dataset.p); openMenu(el, [
+    { label: 'Move to…', hint: 'Another section or topic, this course only', run: () => openMoveTo([p]) },
+    { label: 'Copy to another course…', run: () => openCopy([p], `“${p.title}”`) },
+    '-', { label: 'Remove from this course', danger: true, run: () => confirmRemove([p]) },
+  ]); }
+  else if (a === 'menu-course') openMenu(el, [
+    { label: 'Reverse priority in every topic', hint: 'Section and topic order stay', run: reverseAll },
+    { label: 'Copy to another course…', hint: `All ${allPdfs().length} PDFs`, run: () => openCopy(allPdfs(), 'the whole course') },
+  ]);
+  else if (a === 'menu-topic') { const t = topicById(el.dataset.t); const s = sectionOf(t); const i = s.topics.indexOf(t); openMenu(el, [
+    { label: 'Add existing PDFs here…', hint: 'From the PDF library, last in this topic', run: () => openAddHere(t) },
+    { label: 'Reverse priority', hint: `${tName(t.name)} only`, run: () => reverseTopic(t) },
+    { label: 'Move up', disabled: i === 0, run: () => shiftTopic(t, -1) },
+    { label: 'Move down', disabled: i === s.topics.length - 1, run: () => shiftTopic(t, 1) },
+    { label: 'Copy this topic to another course…', hint: plural(t.pdfs.length, 'PDF'), run: () => openCopy(t.pdfs.slice(), path(s.name, t.name)) },
+  ]); }
+  else if (a === 'menu-section') { const s = course.sections.find((x) => x.id === el.dataset.s); const i = course.sections.indexOf(s); openMenu(el, [
+    { label: 'Move up', disabled: i === 0, run: () => shiftSection(s, -1) },
+    { label: 'Move down', disabled: i === course.sections.length - 1, run: () => shiftSection(s, 1) },
+    { label: 'Copy this section to another course…', hint: plural(secCount(s), 'PDF'), run: () => openCopy(s.topics.flatMap((t) => t.pdfs), s.name) },
+    { label: 'Collapse all topics', run: () => { s.topics.forEach((t) => collapsed.add('t:' + t.id)); render(); } },
+    { label: 'Expand all topics', run: () => { s.topics.forEach((t) => collapsed.delete('t:' + t.id)); collapsed.delete('s:' + s.id); render(); } },
+  ]); }
+});
+document.getElementById('main').addEventListener('change', (e) => {
+  const el = e.target; const a = el.dataset.act; if (!a) return;
+  const { p } = findPdf(el.dataset.p);
+  if (a === 'sel') { el.checked ? selected.add(p.id) : selected.delete(p.id); render(); }
+  else if (a === 'free') setFree([p], el.checked);
+  else if (a === 'dl') setDl([p], el.checked);
+});
+document.getElementById('main').addEventListener('input', (e) => { if (e.target.id === 'q') { search = e.target.value.trim().toLowerCase(); render(); } });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeMenu(); closeDialog(); } });
+document.getElementById('clearLog').onclick = () => { logItems = []; renderLog(); };
+
+document.getElementById('courseTitle').textContent = RAW.course;
+document.getElementById('dataNote').textContent = `${RAW.rows.length} PDFs read from production on ${RAW.readOn}, with the names and order students see.`;
+render();
+</script>

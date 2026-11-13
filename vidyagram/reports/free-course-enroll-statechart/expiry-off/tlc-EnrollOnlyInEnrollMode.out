@@ -1,0 +1,49 @@
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+Warning: Please run the Java VM which executes TLC with a throughput optimized garbage collector by passing the "-XX:+UseParallelGC" property.
+(Use the -nowarning option to disable this warning.)
+Running breadth-first search Model-Checking with fp 0 and seed -8978565942888089370 with 1 worker on 10 cores with 6144MB heap and 64MB offheap memory [pid: 4825] (Mac OS X 15.3 aarch64, Eclipse Adoptium 25.0.5 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file /Users/raghav/Projects/system-brain/vidyagram/reports/free-course-enroll-statechart/FreeCourseEnroll.tla
+Parsing file /private/var/folders/wl/2cp533110q7cmbyc5sn_09200000gn/T/statechart-ZYWSrk/statechart-01UlFm/tmp-verdict-1/TLC.tla
+Parsing file /private/var/folders/wl/2cp533110q7cmbyc5sn_09200000gn/T/statechart-ZYWSrk/statechart-01UlFm/tmp-verdict-1/Naturals.tla
+Parsing file /private/var/folders/wl/2cp533110q7cmbyc5sn_09200000gn/T/statechart-ZYWSrk/statechart-01UlFm/tmp-verdict-1/Sequences.tla
+Parsing file /private/var/folders/wl/2cp533110q7cmbyc5sn_09200000gn/T/statechart-ZYWSrk/statechart-01UlFm/tmp-verdict-1/FiniteSets.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module FreeCourseEnroll
+Starting... (2026-11-07 14:01:09)
+Computing initial states...
+Computed 2 initial states...
+Finished computing initial states: 3 distinct states generated at 2026-11-07 14:01:09.
+Error: Action property EnrollOnlyInEnrollMode is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ enrolled = FALSE
+/\ order = "none"
+/\ mode = "enroll"
+/\ enrollInFlight = FALSE
+
+State 2: <StudentTapsEnroll line 67, col 5 to line 71, col 42 of module FreeCourseEnroll>
+/\ enrolled = FALSE
+/\ order = "none"
+/\ mode = "enroll"
+/\ enrollInFlight = TRUE
+
+State 3: <AdminSetsMode line 61, col 5 to line 63, col 56 of module FreeCourseEnroll>
+/\ enrolled = FALSE
+/\ order = "none"
+/\ mode = "paid"
+/\ enrollInFlight = TRUE
+
+State 4: <EnrollmentSaved line 75, col 5 to line 78, col 32 of module FreeCourseEnroll>
+/\ enrolled = TRUE
+/\ order = "none"
+/\ mode = "paid"
+/\ enrollInFlight = FALSE
+
+42 states generated, 15 distinct states found, 4 states left on queue.
+The depth of the complete state graph search is 4.
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 4 and the 95th percentile is 4).
+Finished in 00s at (2026-11-07 14:01:09)
+

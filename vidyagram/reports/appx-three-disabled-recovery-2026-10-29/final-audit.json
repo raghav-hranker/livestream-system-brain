@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-29T12:34:22.500Z",
+  "selected": 3,
+  "done": 3,
+  "active": 0,
+  "classStatusesPreserved": true,
+  "allClassesHaveMedia": true,
+  "placementsByteUnchanged": true,
+  "ledgersByteUnchanged": true,
+  "otherJobsByteUnchanged": true,
+  "otherJobsChecked": 168,
+  "sourceJobIdentitiesPreserved": true,
+  "changedClassFields": [
+    {
+      "classId": "6ace99558752d955968b6629",
+      "status": 0,
+      "fields": [
+        "updatedAt",
+        "hlsAsset",
+        "streamStatus"
+      ]
+    },
+    {
+      "classId": "6ace996c8752d955968b678e",
+      "status": 0,
+      "fields": [
+        "updatedAt",
+        "hlsAsset",
+        "streamStatus"
+      ]
+    },
+    {
+      "classId": "6ace99fd8752d955968b70be",
+      "status": 0,
+      "fields": [
+        "updatedAt",
+        "hlsAsset",
+        "streamStatus"
+      ]
+    }
+  ],
+  "ok": true
+}

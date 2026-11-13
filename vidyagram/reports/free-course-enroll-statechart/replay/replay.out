@@ -1,0 +1,61 @@
+## 1. Conformance: code vs model, every state
+
+expiry | mode   | enrol | order   | code says
+off | paid   | false | none    | play no  (class no ) | tab none | matches model
+off | paid   | false | active  | play yes (class yes) | tab Paid | matches model
+off | paid   | false | expired | play yes (class yes) | tab Paid | matches model
+off | paid   | true  | none    | play no  (class no ) | tab none | matches model
+off | paid   | true  | active  | play yes (class yes) | tab Paid | matches model
+off | paid   | true  | expired | play yes (class yes) | tab Paid | matches model
+off | open   | false | none    | play yes (class yes) | tab none | matches model
+off | open   | false | active  | play yes (class yes) | tab none | matches model
+off | open   | false | expired | play yes (class yes) | tab none | matches model
+off | open   | true  | none    | play yes (class yes) | tab none | matches model
+off | open   | true  | active  | play yes (class yes) | tab none | matches model
+off | open   | true  | expired | play yes (class yes) | tab none | matches model
+off | enroll | false | none    | play no  (class no ) | tab none | matches model
+off | enroll | false | active  | play yes (class yes) | tab Free | matches model
+off | enroll | false | expired | play yes (class yes) | tab Free | matches model
+off | enroll | true  | none    | play yes (class yes) | tab Free | matches model
+off | enroll | true  | active  | play yes (class yes) | tab Free | matches model
+off | enroll | true  | expired | play yes (class yes) | tab Free | matches model
+on  | paid   | false | none    | play no  (class no ) | tab none | matches model
+on  | paid   | false | active  | play yes (class yes) | tab Paid | matches model
+on  | paid   | false | expired | play no  (class no ) | tab Paid | matches model
+on  | paid   | true  | none    | play no  (class no ) | tab none | matches model
+on  | paid   | true  | active  | play yes (class yes) | tab Paid | matches model
+on  | paid   | true  | expired | play no  (class no ) | tab Paid | matches model
+on  | open   | false | none    | play yes (class yes) | tab none | matches model
+on  | open   | false | active  | play yes (class yes) | tab none | matches model
+on  | open   | false | expired | play yes (class yes) | tab none | matches model
+on  | open   | true  | none    | play yes (class yes) | tab none | matches model
+on  | open   | true  | active  | play yes (class yes) | tab none | matches model
+on  | open   | true  | expired | play yes (class yes) | tab none | matches model
+on  | enroll | false | none    | play no  (class no ) | tab none | matches model
+on  | enroll | false | active  | play yes (class yes) | tab Free | matches model
+on  | enroll | false | expired | play no  (class no ) | tab Free | matches model
+on  | enroll | true  | none    | play yes (class yes) | tab Free | matches model
+on  | enroll | true  | active  | play yes (class yes) | tab Free | matches model
+on  | enroll | true  | expired | play yes (class yes) | tab Free | matches model
+
+36 combinations, 0 mismatches
+
+## 2. EnrollOnlyInEnrollMode path, replayed on enrollInCourse (courseEnrollment.ts:28-38)
+
+step 1: student taps Enroll; the call reads the course in enroll mode
+step 2: admin sets Paid course (course saved isFree=false)
+step 3: the enrollment is saved while the course mode is now "paid"
+enrollInCourse returned kind=enrolled; CourseEnrollment rows: 1
+then, still Paid: play false, tab none (the stray row grants and lists nothing)
+admin sets Free, enroll to unlock again: play true, tab Free
+
+## 3. EnrollTab / PaidTab paths with ENFORCE_ORDER_EXPIRY on
+
+enroll, not enrolled, order none   : play no , tab none
+enroll, not enrolled, order active : play yes, tab Free
+enroll, not enrolled, order expired: play no , tab Free
+
+paid, not enrolled, order none   : play no , tab none
+paid, not enrolled, order active : play yes, tab Paid
+paid, not enrolled, order expired: play no , tab Paid
+

@@ -1,0 +1,17 @@
+// WRITES. Imports the 33 AppX segment-gap videos (Vidyagram 781) from their complete qualities, per plan.json.
+// Prerequisite: before.ejson (MODE=snapshot of vidyagram-gap-recovery-write.cjs) in the report folder.
+// ONLY=<classId>[,<classId>] limits the run. Output: execution-<stamp>.json in vidyagram/reports/appx-gap-recovery-2026-11-11/.
+const fs=require('fs'),path=require('path'),{execFileSync}=require('child_process'),{createRequire}=require('module');
+const base=path.resolve(__dirname,'../..'),out=base+'/vidyagram/reports/appx-gap-recovery-2026-11-11';
+if(!fs.existsSync(out+'/before.ejson')||!fs.existsSync(out+'/plan.json'))throw Error('SnapshotAndPlanRequired');
+let runtime=fs.readFileSync(__dirname+'/vidyagram-candidate-fullcheck-runtime.js','utf8');const split=runtime.indexOf('(async()=>{const list=');if(split<0)throw Error('RuntimeMarker');
+runtime=runtime.slice(0,split)+fs.readFileSync(__dirname+'/vidyagram-gap-recovery-apply-runtime.js','utf8');
+runtime=runtime.replace('SAMPLE_DATA','[]').replace('EXPECTED_SCOPE','33').replace('requestBudget:120000','requestBudget:20000');
+const remote=String.raw`const root='/var/www/backend.vidyagramar.com/vidyagram-backend';const req=require('module').createRequire(root+'/package.json');const fs=require('fs');const env=req('dotenv').parse(fs.readFileSync(root+'/.env.development'));const {MongoClient}=req('mongoose').mongo;(async()=>{const c=new MongoClient(env.MONGO_URI,{serverSelectionTimeoutMS:12000});try{await c.connect();const docs=await c.db('vidyagramdb').collection('apxsessions').find({orgId:'2177599',customerId:'781',isActive:true},{projection:{session_id:1}}).toArray();if(docs.length!==1||!docs[0].session_id)throw Error('SessionGuard');process.stdout.write(docs[0].session_id);}finally{await c.close();}})().catch(()=>process.exitCode=1);`;
+function loadSession(){return execFileSync('ssh',['-o','BatchMode=yes','-o','ConnectTimeout=10','-i',process.env.HOME+'/.ssh/hranker-webserver2-2','hranker@148.113.49.18','/home/hranker/.nvm/versions/node/v22.22.2/bin/node -'],{input:remote,maxBuffer:16384});}
+runtime=runtime.replace("const axios=require('axios'),crypto=require('crypto');","const axios=require('axios'),crypto=require('crypto');axios.interceptors.request.use(cfg=>{if(new URL(cfg.url).hostname==='cms.appx.co.in'){secret=readCurrentSession();if(cfg.headers?.set)cfg.headers.set('Cookie','apx-aside-collapse=1; ci_session='+secret);else cfg.headers.Cookie='apx-aside-collapse=1; ci_session='+secret;}return cfg;});");
+const repo=base+'/.worktrees/vg-media-video-repair',req=createRequire(repo+'/survey-runtime.cjs');
+const read=()=>{const b=loadSession();const v=b.toString().trim();b.fill(0);return v;};
+const file=out+'/execution-'+new Date().toISOString().replace(/[:.]/g,'')+'.json';
+const safeConsole={log:line=>{if(line.startsWith('RESULT ')){const r=JSON.parse(line.slice(7));const strip=JSON.stringify(r,null,2).replace(/https?:\/\/[^"\s]+/g,'[url]');fs.writeFileSync(file,strip);if(r.completedAt)console.log(JSON.stringify({done:r.recoveries.filter(x=>x.ok).length,attempted:r.recoveries.length,writes:r.productionWrites,error:r.error,reason:r.reason,file:path.basename(file)}));}else if(line.startsWith('{"progress"'))console.log(line);}};
+new Function('require','readEphemeralSession','readCurrentSession','LOCAL_TS_PROJECT','process','console',runtime)(req,read,read,repo+'/tsconfig.json',process,safeConsole);

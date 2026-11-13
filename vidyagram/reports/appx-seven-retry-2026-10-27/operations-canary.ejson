@@ -1,0 +1,138 @@
+[
+  {
+    "target": "6acea4e3c9735682f04f1967",
+    "filter": {
+      "_id": {
+        "$oid": "6acea4e3c9735682f04f1967"
+      },
+      "classId": {
+        "$oid": "6acea4e38752d955968b933c"
+      },
+      "status": "dead",
+      "attempts": {
+        "$numberInt": "1"
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1791966639311"
+        }
+      }
+    },
+    "set": {
+      "status": "pending",
+      "attempts": {
+        "$numberInt": "0"
+      },
+      "error": null,
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1793102192551"
+        }
+      },
+      "course_id": "71",
+      "video_id": "189848",
+      "video_url": "https://transcoded-videos-v2.classx.co.in/videos/armaths-data/3802821-1780151643/hls-2d5ad0/480p/master-8838246.424408382.m3u8"
+    },
+    "before": {
+      "_id": {
+        "$oid": "6acea4e3c9735682f04f1967"
+      },
+      "classId": {
+        "$oid": "6acea4e38752d955968b933c"
+      },
+      "__v": {
+        "$numberInt": "0"
+      },
+      "apxClassId": "177031",
+      "apxCourseId": {
+        "$oid": "6ace3308c9735682f04810aa"
+      },
+      "attempts": {
+        "$numberInt": "1"
+      },
+      "course_id": "71",
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1791927523689"
+        }
+      },
+      "error": "AppX returned no playable URL for this video",
+      "status": "dead",
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1791966639311"
+        }
+      },
+      "video_id": "177031",
+      "video_url": "https://transcoded-videos-v2.classx.co.in/videos/armaths-data/3802821-1780151643/hls-2d5ad0/480p/master-8838246.424408382.m3u8"
+    }
+  },
+  {
+    "target": "6ad5df30c9735682f0a0c5d4",
+    "filter": {
+      "_id": {
+        "$oid": "6ad5df30c9735682f0a0c5d4"
+      },
+      "classId": {
+        "$oid": "6ad5df3064b695f53d872c12"
+      },
+      "status": "dead",
+      "attempts": {
+        "$numberInt": "1"
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1792975901962"
+        }
+      }
+    },
+    "set": {
+      "status": "pending",
+      "attempts": {
+        "$numberInt": "0"
+      },
+      "error": null,
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1793102192551"
+        }
+      },
+      "course_id": "131",
+      "video_id": "193431",
+      "video_url": "https://transcoded-videos-v2.classx.co.in/videos/armaths-data/4603716-1791963341/hls-8387c9/1080p/master-2805444.6162948944.m3u8"
+    },
+    "before": {
+      "_id": {
+        "$oid": "6ad5df30c9735682f0a0c5d4"
+      },
+      "classId": {
+        "$oid": "6ad5df3064b695f53d872c12"
+      },
+      "__v": {
+        "$numberInt": "0"
+      },
+      "apxClassId": "189895",
+      "apxCourseId": {
+        "$oid": "6ace38dcc9735682f0489e68"
+      },
+      "attempts": {
+        "$numberInt": "1"
+      },
+      "course_id": "131",
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1792401200720"
+        }
+      },
+      "error": "AppX returned no playable URL for this video",
+      "status": "dead",
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1792975901962"
+        }
+      },
+      "video_id": "189895",
+      "video_url": "https://transcoded-videos-v2.classx.co.in/videos/armaths-data/4603716-1791963341/hls-8387c9/1080p/master-2805444.6162948944.m3u8"
+    }
+  }
+]

@@ -1,0 +1,61 @@
+---
+title: "Free-course enroll, one student and one course (ENFORCE_ORDER_EXPIRY on)"
+---
+stateDiagram-v2
+  direction LR
+  state "Legend" as legend {
+    lg0: Breaks EnrollTab or PaidTab in some cases
+    lg1: Path to the EnrollOnlyInEnrollMode or EnrollTab or PaidTab bug
+  }
+  class lg0 mayBreak
+  class lg1 bugPath
+  state "At the same time" as all {
+    state "Admin set" as r0 {
+      s0: Free, enroll to unlock
+      s1: Free, open to all
+      s2: Paid course
+      [*] --> s0
+      [*] --> s1
+      [*] --> s2
+      s0 --> s1: admin sets Free, open to all
+      s0 --> s2: admin sets Paid course
+      s1 --> s0: admin sets Free, enroll to unlock
+      s1 --> s2: admin sets Paid course
+      s2 --> s0: admin sets Free, enroll to unlock
+      s2 --> s1: admin sets Free, open to all
+    }
+    --
+    state "Enrollment" as r1 {
+      s3: Not enrolled
+      s4: Enroll saving
+      s5: Enrolled
+      [*] --> s3
+      s3 --> s4: student taps Enroll [when Admin set is Free, enroll to unlock]
+      s4 --> s5: the enrollment is saved
+    }
+    --
+    state "Order" as r2 {
+      s6: No order
+      s7: Order active
+      s8: Order expired
+      [*] --> s6
+      s6 --> s7: student buys or is granted an order
+      s7 --> s8: the order expires
+      s8 --> s7: student buys or is granted an order
+    }
+  }
+  classDef mayBreak fill:#fff3e6,stroke:#e8730c,stroke-width:2.5px,color:#b85a06
+  class s0 mayBreak
+  class s0 bugPath
+  class s2 mayBreak
+  class s2 bugPath
+  class s3 mayBreak
+  class s3 bugPath
+  class s4 mayBreak
+  class s4 bugPath
+  class s5 mayBreak
+  class s5 bugPath
+  class s6 bugPath
+  class s7 bugPath
+  class s8 mayBreak
+  class s8 bugPath

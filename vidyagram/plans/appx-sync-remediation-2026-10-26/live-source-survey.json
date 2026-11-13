@@ -1,0 +1,1385 @@
+{
+  "observedAt": "2026-10-26T14:08:39.506Z",
+  "readOnly": true,
+  "budget": 45,
+  "steps": [
+    {
+      "name": "full CMS course list",
+      "ok": true,
+      "at": "2026-10-26T14:08:39.507Z",
+      "milliseconds": 437
+    },
+    {
+      "name": "course96 detail",
+      "ok": true,
+      "at": "2026-10-26T14:08:39.945Z",
+      "milliseconds": 1206
+    },
+    {
+      "name": "course96 full pc4 page",
+      "ok": false,
+      "at": "2026-10-26T14:08:41.151Z",
+      "milliseconds": 29270,
+      "error": "CmsHttpError",
+      "http": 502
+    },
+    {
+      "name": "course96 folder paths",
+      "ok": true,
+      "at": "2026-10-26T14:09:10.421Z",
+      "milliseconds": 1498
+    },
+    {
+      "name": "course160 current source listing",
+      "ok": true,
+      "at": "2026-10-26T14:09:11.920Z",
+      "milliseconds": 3675
+    },
+    {
+      "name": "course161 current source listing",
+      "ok": true,
+      "at": "2026-10-26T14:09:15.596Z",
+      "milliseconds": 3205
+    },
+    {
+      "name": "PDF43 row32909",
+      "ok": true,
+      "at": "2026-10-26T14:09:18.801Z",
+      "milliseconds": 1244
+    },
+    {
+      "name": "PDF43 row32910",
+      "ok": true,
+      "at": "2026-10-26T14:09:20.045Z",
+      "milliseconds": 1253
+    },
+    {
+      "name": "student course85 root",
+      "ok": false,
+      "at": "2026-10-26T14:09:21.298Z",
+      "milliseconds": 1297,
+      "error": "Error",
+      "http": null
+    },
+    {
+      "name": "dead sample 774",
+      "ok": true,
+      "at": "2026-10-26T14:09:22.596Z",
+      "milliseconds": 837
+    },
+    {
+      "name": "dead token 774",
+      "ok": true,
+      "at": "2026-10-26T14:09:23.433Z",
+      "milliseconds": 3577
+    },
+    {
+      "name": "dead sample 907",
+      "ok": true,
+      "at": "2026-10-26T14:09:27.010Z",
+      "milliseconds": 81
+    },
+    {
+      "name": "dead token 907",
+      "ok": true,
+      "at": "2026-10-26T14:09:27.092Z",
+      "milliseconds": 2445
+    },
+    {
+      "name": "dead sample 407",
+      "ok": true,
+      "at": "2026-10-26T14:09:29.538Z",
+      "milliseconds": 869
+    },
+    {
+      "name": "dead token 407",
+      "ok": true,
+      "at": "2026-10-26T14:09:30.407Z",
+      "milliseconds": 2531
+    },
+    {
+      "name": "dead sample 4222",
+      "ok": true,
+      "at": "2026-10-26T14:09:32.938Z",
+      "milliseconds": 771
+    },
+    {
+      "name": "dead token 4222",
+      "ok": true,
+      "at": "2026-10-26T14:09:33.709Z",
+      "milliseconds": 2666
+    },
+    {
+      "name": "dead sample 14219",
+      "ok": true,
+      "at": "2026-10-26T14:09:36.375Z",
+      "milliseconds": 641
+    },
+    {
+      "name": "dead token 14219",
+      "ok": true,
+      "at": "2026-10-26T14:09:37.016Z",
+      "milliseconds": 1629
+    },
+    {
+      "name": "dead sample 14220",
+      "ok": true,
+      "at": "2026-10-26T14:09:38.645Z",
+      "milliseconds": 564
+    },
+    {
+      "name": "dead token 14220",
+      "ok": true,
+      "at": "2026-10-26T14:09:39.209Z",
+      "milliseconds": 1608
+    },
+    {
+      "name": "dead sample 14232",
+      "ok": true,
+      "at": "2026-10-26T14:09:40.817Z",
+      "milliseconds": 582
+    },
+    {
+      "name": "dead token 14232",
+      "ok": true,
+      "at": "2026-10-26T14:09:41.399Z",
+      "milliseconds": 1832
+    },
+    {
+      "name": "dead sample 16852",
+      "ok": true,
+      "at": "2026-10-26T14:09:43.231Z",
+      "milliseconds": 397
+    },
+    {
+      "name": "dead token 16852",
+      "ok": true,
+      "at": "2026-10-26T14:09:43.628Z",
+      "milliseconds": 1696
+    }
+  ],
+  "deadSourceSamples": [
+    {
+      "job": "6ace8ef7c9735682f04ed753",
+      "classId": "6ace8ef78752d955968adeec",
+      "oldAssetKey": "drm:707d65f4-19e2-463d-b059-9ced0e84b65f",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "3",
+      "rowId": "774",
+      "source": {
+        "id": "774",
+        "title": "Surds & Indices 08",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "drm:707d65f4-19e2-463d-b059-9ced0e84b65f",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "bodyStatus": 200,
+        "playableVariants": 5,
+        "hasUsableUrl": true,
+        "sourceHttp": 200,
+        "manifest": true,
+        "bodyBytes": 59048
+      }
+    },
+    {
+      "job": "6ace8f53c9735682f04ed914",
+      "classId": "6ace8f538752d955968ae359",
+      "oldAssetKey": "vid:rgvikramjeet-data:411823-1702027232",
+      "category": "source404",
+      "currentlyPlanned": true,
+      "course": "3",
+      "rowId": "907",
+      "source": {
+        "id": "907",
+        "title": "Mensuration 3D Class 12",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:411823-1702027232",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "bodyStatus": 200,
+        "playableVariants": 5,
+        "hasUsableUrl": true,
+        "sourceHttp": 200,
+        "manifest": true,
+        "bodyBytes": 124586
+      }
+    },
+    {
+      "job": "6ace8f99c9735682f04ed9ed",
+      "classId": "6ace8f998752d955968ae61a",
+      "oldAssetKey": "drm:a1622ea1-1924-4ef3-8fa6-a7316b5034f3",
+      "category": "source404",
+      "currentlyPlanned": false,
+      "course": "3",
+      "rowId": "407",
+      "source": {
+        "id": "407",
+        "title": "PERCENTAGE(प्रतिशतता) CLASS 11",
+        "type": "VIDEO",
+        "enabled": "0",
+        "deleted": "0",
+        "assetKey": "drm:a1622ea1-1924-4ef3-8fa6-a7316b5034f3",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "bodyStatus": 200,
+        "playableVariants": 5,
+        "hasUsableUrl": true,
+        "sourceHttp": 404,
+        "manifest": false,
+        "bodyBytes": 511
+      }
+    },
+    {
+      "job": "6ace91c6c9735682f04ee00b",
+      "classId": "6ace91c68752d955968af6fe",
+      "oldAssetKey": "drm:00c27ef3-7931-4113-995b-0995dfab8ef8",
+      "category": "source404",
+      "currentlyPlanned": false,
+      "course": "7",
+      "rowId": "4222",
+      "source": {
+        "id": "4222",
+        "title": " COMPOUND INTEREST & SIMPLE INTEREST CLASS 02",
+        "type": "VIDEO",
+        "enabled": "0",
+        "deleted": "0",
+        "assetKey": "drm:00c27ef3-7931-4113-995b-0995dfab8ef8",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "bodyStatus": 200,
+        "playableVariants": 5,
+        "hasUsableUrl": true,
+        "sourceHttp": 404,
+        "manifest": false,
+        "bodyBytes": 503
+      }
+    },
+    {
+      "job": "6ace936cc9735682f04ee8bf",
+      "classId": "6ace936c8752d955968b10ac",
+      "oldAssetKey": "vid:rgvikramjeet-data:108184-1726065820",
+      "category": "noPlayableURL",
+      "currentlyPlanned": true,
+      "course": "21",
+      "rowId": "14219",
+      "source": {
+        "id": "14219",
+        "title": "Polygon 01",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:108184-1726065820",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "bodyStatus": 200,
+        "playableVariants": 0,
+        "hasUsableUrl": false
+      }
+    },
+    {
+      "job": "6ace936dc9735682f04ee8c2",
+      "classId": "6ace936c8752d955968b10b3",
+      "oldAssetKey": "vid:rgvikramjeet-data:108965-1726151860",
+      "category": "noPlayableURL",
+      "currentlyPlanned": true,
+      "course": "21",
+      "rowId": "14220",
+      "source": {
+        "id": "14220",
+        "title": "Polygon 02",
+        "type": "VIDEO",
+        "enabled": "1",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:108965-1726151860",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "bodyStatus": 200,
+        "playableVariants": 0,
+        "hasUsableUrl": false
+      }
+    },
+    {
+      "job": "6ace937dc9735682f04ee93f",
+      "classId": "6ace937d8752d955968b11c4",
+      "oldAssetKey": "vid:rgvikramjeet-data:120511-1727359300",
+      "category": "noPlayableURL",
+      "currentlyPlanned": false,
+      "course": "21",
+      "rowId": "14232",
+      "source": {
+        "id": "14232",
+        "title": "Circle 10",
+        "type": "VIDEO",
+        "enabled": "0",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:120511-1727359300",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "bodyStatus": 200,
+        "playableVariants": 0,
+        "hasUsableUrl": false
+      }
+    },
+    {
+      "job": "6ace9543c9735682f04ef1fa",
+      "classId": "6ace95438752d955968b2aec",
+      "oldAssetKey": "vid:rgvikramjeet-data:112187-1726573059",
+      "category": "noPlayableURL",
+      "currentlyPlanned": false,
+      "course": "23",
+      "rowId": "16852",
+      "source": {
+        "id": "16852",
+        "title": "Pipe & Cistern 03",
+        "type": "VIDEO",
+        "enabled": "0",
+        "deleted": "0",
+        "assetKey": "vid:rgvikramjeet-data:112187-1726573059",
+        "hasUsableLink": true
+      },
+      "sameAsset": true,
+      "tokenProbe": {
+        "http": 200,
+        "bodyStatus": 200,
+        "playableVariants": 0,
+        "hasUsableUrl": false
+      }
+    }
+  ],
+  "geometry": [
+    {
+      "course": "160",
+      "rowId": "193547",
+      "found": true,
+      "id": "193547",
+      "title": "Geometry 03",
+      "type": "LIVE_STREAM",
+      "enabled": "1",
+      "deleted": "0",
+      "assetKey": "vid:armaths-data:4656486-1792746126",
+      "hasUsableLink": true
+    },
+    {
+      "course": "160",
+      "rowId": "193550",
+      "found": true,
+      "id": "193550",
+      "title": "Geometry 04",
+      "type": "LIVE_STREAM",
+      "enabled": "1",
+      "deleted": "0",
+      "assetKey": "vid:armaths-data:4657426-1792753322",
+      "hasUsableLink": true
+    },
+    {
+      "course": "161",
+      "rowId": "193541",
+      "found": true,
+      "id": "193541",
+      "title": "Geometry 03",
+      "type": "LIVE_STREAM",
+      "enabled": "1",
+      "deleted": "0",
+      "assetKey": "vid:armaths-data:4656486-1792746126",
+      "hasUsableLink": true
+    },
+    {
+      "course": "161",
+      "rowId": "193549",
+      "found": true,
+      "id": "193549",
+      "title": "Geometry 04",
+      "type": "LIVE_STREAM",
+      "enabled": "1",
+      "deleted": "0",
+      "assetKey": "vid:armaths-data:4657426-1792753322",
+      "hasUsableLink": true
+    }
+  ],
+  "pdfMetadata": [
+    {
+      "course": "43",
+      "rowId": "32909",
+      "found": true,
+      "title": "Height and Distance (ClassRoom Sheet-Mains)",
+      "type": "PDF",
+      "enabled": "1",
+      "deleted": "0",
+      "isPdfEncrypted": "1",
+      "isPdf2Encrypted": "0",
+      "hasPdfEncryptionKey": true,
+      "hasFileLink": true,
+      "sourceIdentityHash": "ee841a40c0dc903520b7d1fb8e5136e051a5d884892d794334333300db464f96"
+    },
+    {
+      "course": "43",
+      "rowId": "32910",
+      "found": true,
+      "title": "Height & Distance (Pro Level Sheet_Mains) ",
+      "type": "PDF",
+      "enabled": "1",
+      "deleted": "0",
+      "isPdfEncrypted": "1",
+      "isPdf2Encrypted": "0",
+      "hasPdfEncryptionKey": true,
+      "hasFileLink": true,
+      "sourceIdentityHash": "fb86945c6aa26d721a62ad2de7c070c39f4755d553da1533ccb47971ff0ffd44"
+    }
+  ],
+  "requestTelemetry": [
+    {
+      "endpoint": "get_all_courses",
+      "http": 200,
+      "rows": 146,
+      "total": "146"
+    },
+    {
+      "endpoint": "get_course_by_id",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_pc4_contents",
+      "http": 502,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "getFolderPaths",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_pc4_contents",
+      "http": 200,
+      "rows": 380,
+      "total": null
+    },
+    {
+      "endpoint": "get_pc4_contents",
+      "http": 200,
+      "rows": 290,
+      "total": null
+    },
+    {
+      "endpoint": "get_content_by_id",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_content_by_id",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "folder_contentsv3",
+      "http": 403,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_content_by_id",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_content_by_id",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_content_by_id",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 404,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_content_by_id",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "source-manifest",
+      "http": 404,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_content_by_id",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_content_by_id",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_content_by_id",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_content_by_id",
+      "http": 200,
+      "rows": null,
+      "total": null
+    },
+    {
+      "endpoint": "get_video_token",
+      "http": 200,
+      "rows": null,
+      "total": null
+    }
+  ],
+  "courseList": {
+    "count": 146,
+    "total": 146,
+    "complete": true,
+    "courses": [
+      {
+        "id": "3",
+        "title": "CHAMPIONS 3.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 14th Feb 2022",
+        "enabled": "0"
+      },
+      {
+        "id": "4",
+        "title": "CHAMPIONS 2.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 20 Dec",
+        "enabled": "0"
+      },
+      {
+        "id": "5",
+        "title": "SHERSHAAH Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 25 Oct",
+        "enabled": "0"
+      },
+      {
+        "id": "6",
+        "title": "Maths Special VOD (RECORDED BATCH) by ADITYA SIR (Arithmetic + Advance) & ( Pre + Mains )  For all  EXAMS with UPDATED CONTENT.....",
+        "enabled": "0"
+      },
+      {
+        "id": "7",
+        "title": "CGL MAINS 2020 Maths Special RANKERS BATCH Starts From 1st SEPTEMBER 2021",
+        "enabled": "0"
+      },
+      {
+        "id": "8",
+        "title": "SSC CGL MAINS 2021 Maths Special BATCH Starts From 12th May 2022 By ADITYA RANJAN SIR",
+        "enabled": "0"
+      },
+      {
+        "id": "9",
+        "title": "CHAMPIONS 4.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 17th May  2022",
+        "enabled": "0"
+      },
+      {
+        "id": "10",
+        "title": "CHAMPIONS 6.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 06 OCT  2022",
+        "enabled": "0"
+      },
+      {
+        "id": "11",
+        "title": "CHAMPIONS 5.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 19th JULY 2022",
+        "enabled": "0"
+      },
+      {
+        "id": "12",
+        "title": "SSC CGL MAINS 2022 MATH Special BATCH Starts From 15th DEC 2022 By ADITYA RANJAN SIR",
+        "enabled": "0"
+      },
+      {
+        "id": "13",
+        "title": "CHAMPIONS 7.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 16th JAN  2023",
+        "enabled": "0"
+      },
+      {
+        "id": "14",
+        "title": "Maths Special VOD (RECORDED BATCH) by ADITYA SIR (Arithmetic + Advance) & ( Pre + Mains )  For all  EXAMS with UPDATED CONTENT.",
+        "enabled": "0"
+      },
+      {
+        "id": "15",
+        "title": "CHAMPIONS 8.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 15th MARCH 2023",
+        "enabled": "0"
+      },
+      {
+        "id": "16",
+        "title": "SSC CHSL  MAINS 2022 MATH Special BATCH Starts From 1st APRIL 2023 By ADITYA RANJAN SIR",
+        "enabled": "0"
+      },
+      {
+        "id": "17",
+        "title": "CHAMPIONS 9.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 09th MAY 2023",
+        "enabled": "0"
+      },
+      {
+        "id": "18",
+        "title": "CHAMPIONS 10.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 21st JUNE 2023",
+        "enabled": "0"
+      },
+      {
+        "id": "19",
+        "title": "Maths Special VOD + LIVE BATCH by ADITYA SIR (Arithmetic + Advance) & ( Pre + Mains )  For all  EXAMS with UPDATED CONTENT..",
+        "enabled": "0"
+      },
+      {
+        "id": "20",
+        "title": "SSC CGL MAINS 2023 MATH Special BATCH Starts From 02nd AUG 2023 By ADITYA RANJAN SIR",
+        "enabled": "0"
+      },
+      {
+        "id": "21",
+        "title": "CHAMPIONS 11.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 28th AUG 2023",
+        "enabled": "0"
+      },
+      {
+        "id": "22",
+        "title": "UPSI SPECIAL BATCH START FROM 10 OCT 2023 BY VIKRAMJEET SIR , ADITYA RANJAN SIR AND RANKERS GURUKUL TEAM",
+        "enabled": "1"
+      },
+      {
+        "id": "23",
+        "title": "CHAMPIONS 12.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 01st NOV 2023",
+        "enabled": "0"
+      },
+      {
+        "id": "24",
+        "title": "CHAMPIONS 13.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 07th DEC 2023 ",
+        "enabled": "0"
+      },
+      {
+        "id": "25",
+        "title": "CHAMPIONS 14.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 07th FEB 2024",
+        "enabled": "0"
+      },
+      {
+        "id": "26",
+        "title": "CHAMPIONS 15.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 18th MARCH. 2024",
+        "enabled": "0"
+      },
+      {
+        "id": "27",
+        "title": "CHAMPIONS 16.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 21st MAY. 2024",
+        "enabled": "0"
+      },
+      {
+        "id": "28",
+        "title": "MATHS VOD 2.0 BATCH BY ADITYA RANJAN SIR (Arithmetic + Advance ) & (Pre + Mains ) for all exams with updated content.",
+        "enabled": "1"
+      },
+      {
+        "id": "29",
+        "title": "CHAMPIONS 17.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 08th JULY. 2024",
+        "enabled": "0"
+      },
+      {
+        "id": "30",
+        "title": "SSC CGL MAINS 2024 MATH Special BATCH Starts From 10th Aug. 2024 By ADITYA RANJAN SIR",
+        "enabled": "0"
+      },
+      {
+        "id": "31",
+        "title": "SSC CGL MAINS 2024 MATH Special BATCH Starts From 17th Sep. 2024 By ADITYA RANJAN SIR",
+        "enabled": "0"
+      },
+      {
+        "id": "32",
+        "title": "CHAMPIONS 18.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 23th SEP. 2024",
+        "enabled": "0"
+      },
+      {
+        "id": "33",
+        "title": "CHAMPIONS 19.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 23rd OCT. 2024",
+        "enabled": "0"
+      },
+      {
+        "id": "34",
+        "title": "CHAMPIONS 20.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 18th Dec. 2024",
+        "enabled": "0"
+      },
+      {
+        "id": "35",
+        "title": "🚀 SSC CGL | CHSL Mains VOD Batch by Aditya Ranjan Sir ",
+        "enabled": "1"
+      },
+      {
+        "id": "36",
+        "title": "CHAMPIONS 21.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 10th March 2025.",
+        "enabled": "1"
+      },
+      {
+        "id": "37",
+        "title": "Delhi Police Maths Special Batch with Aditya Ranjan Sir",
+        "enabled": "0"
+      },
+      {
+        "id": "38",
+        "title": "🎯 UP POLICE CONSTABLE MATHS VOD BATCH by Aditya Ranjan Sir | For UP POLICE CONSTABLE EXAM 2025-26 🎯",
+        "enabled": "1"
+      },
+      {
+        "id": "39",
+        "title": "UP SI Maths Special Recorded Batch By Aditya Ranjan Sir ",
+        "enabled": "1"
+      },
+      {
+        "id": "40",
+        "title": "CHAMPIONS 22.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 28th May 2025.",
+        "enabled": "1"
+      },
+      {
+        "id": "41",
+        "title": "MATHS VOD 3.0 BATCH BY ADITYA RANJAN SIR (Arithmetic + Advance ) & (Pre + Mains ) for all exams with updated content..",
+        "enabled": "1"
+      },
+      {
+        "id": "42",
+        "title": "UP SI 2025 LIVE+VOD Course BY Aditya Ranjan sir, Vikramjeet Sir and Rankers' gurukul Team Starting From 08 Sep 2025.",
+        "enabled": "0"
+      },
+      {
+        "id": "43",
+        "title": "SSC CGL 2025 MAINS Maths batch By Aditya Ranjan Sir Starting From 06 Oct 2025.",
+        "enabled": "0"
+      },
+      {
+        "id": "44",
+        "title": "SSC GD 2026 Maths Special VOD Batch By Aditya Ranjan Sir .",
+        "enabled": "0"
+      },
+      {
+        "id": "45",
+        "title": "9:30 A.M - 11:00 A.M || MATHS SPECIAL BY ADITYA RANJAN SIR ",
+        "enabled": "0"
+      },
+      {
+        "id": "46",
+        "title": " 11:00 A.M - 12:30 P.M || MATHS SPECIAL BY ADITYA RANJAN SIR ",
+        "enabled": "0"
+      },
+      {
+        "id": "47",
+        "title": " 01:00 P.M - 02:30 P.M || MATHS SPECIAL BY ADITYA RANJAN SIR ",
+        "enabled": "0"
+      },
+      {
+        "id": "48",
+        "title": "CHAMPIONS 23.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 14th July 2025.",
+        "enabled": "1"
+      },
+      {
+        "id": "49",
+        "title": "Maths special batch 24 (11-00 AM TO 12-30 PM) BY ADITYA RANJAN SIR",
+        "enabled": "0"
+      },
+      {
+        "id": "50",
+        "title": "MATHS SPECIAL BATCH 23 ( 11-00 AM TO 12-30 PM ) BY ADITYA RANJAN SIR",
+        "enabled": "0"
+      },
+      {
+        "id": "51",
+        "title": "MATHS SPECIAL BATCH 21 ( 11:00 AM  TO 12:30 PM ) BY ADITYA RANJAN SIR..",
+        "enabled": "0"
+      },
+      {
+        "id": "52",
+        "title": "CHAMPIONS 24.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 09th Sept. 2025.",
+        "enabled": "1"
+      },
+      {
+        "id": "53",
+        "title": "CHAMPIONS 25.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 03 Nov. 2025.",
+        "enabled": "1"
+      },
+      {
+        "id": "54",
+        "title": "Maths Special batch 25 (09-00 AM TO 11-00 AM) BY ADITYA RANJAN SIR",
+        "enabled": "0"
+      },
+      {
+        "id": "55",
+        "title": "CHAMPIONS 26.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 29 Dec. 2025.",
+        "enabled": "1"
+      },
+      {
+        "id": "56",
+        "title": "CHAMPIONS 27.0 Maths Special LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 2 Feb. 2026",
+        "enabled": "1"
+      },
+      {
+        "id": "59",
+        "title": "🎯 CHAMPIONS Maths Special 🔴 LIVE BATCH  by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 27 March 2026.",
+        "enabled": "1"
+      },
+      {
+        "id": "60",
+        "title": "🎯 Maths VOD BATCH by Aditya Ranjan Sir | Arithmetic + Advance (Pre to Mains) | For all Govt Exams",
+        "enabled": "1"
+      },
+      {
+        "id": "63",
+        "title": "दफ्तर SERIES For SSC Exams",
+        "enabled": "1"
+      },
+      {
+        "id": "64",
+        "title": "SSC ",
+        "enabled": "0"
+      },
+      {
+        "id": "66",
+        "title": "testing",
+        "enabled": "1"
+      },
+      {
+        "id": "67",
+        "title": "🎯 CHAMPIONS 2.0 Maths Special 🔴 LIVE BATCH  by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 23 April 2026.",
+        "enabled": "1"
+      },
+      {
+        "id": "68",
+        "title": "📖 ENGLISH SPECIAL BATCH By Jai Sir For All Govt. Exams",
+        "enabled": "1"
+      },
+      {
+        "id": "69",
+        "title": "💻 COMPUTER SPECIAL BATCH by Shubham Grover Ma'am",
+        "enabled": "1"
+      },
+      {
+        "id": "70",
+        "title": "🧠 REASONING SPECIAL BATCH By Akash Chaturvedi Sir 🎯",
+        "enabled": "1"
+      },
+      {
+        "id": "71",
+        "title": "🌍 GS SPECIAL BATCH: By GS Expert Team ",
+        "enabled": "1"
+      },
+      {
+        "id": "72",
+        "title": "🌍 STATIC GK BATCH  By Shubham Grover Ma'am🏆✨",
+        "enabled": "1"
+      },
+      {
+        "id": "73",
+        "title": "🔬 SCIENCE SPECIAL BATCH By Arti Ma'am 🧪🚀",
+        "enabled": "1"
+      },
+      {
+        "id": "74",
+        "title": "🚀 RAILWAY SPECIAL वन्दे भारत COMBO BATCH 🚂 ",
+        "enabled": "1"
+      },
+      {
+        "id": "75",
+        "title": "⚔️ प्रहार COMBO BATCH (By Team Vidyagram) 🏆",
+        "enabled": "1"
+      },
+      {
+        "id": "76",
+        "title": "⚔️ प्रहार COMBO BATCH By Team Vidyagram (Without Maths)🏆",
+        "enabled": "1"
+      },
+      {
+        "id": "77",
+        "title": "🌍 GS SPECIAL BATCH: By GS Expert Team 🎯 ",
+        "enabled": "1"
+      },
+      {
+        "id": "78",
+        "title": "ONE SHOT ",
+        "enabled": "1"
+      },
+      {
+        "id": "79",
+        "title": "राजधानी SERIES For Railway Exam",
+        "enabled": "1"
+      },
+      {
+        "id": "81",
+        "title": "17 दिन 17 मैराथन for UPP constable",
+        "enabled": "1"
+      },
+      {
+        "id": "84",
+        "title": "STATE EXAM ONE SHOT",
+        "enabled": "0"
+      },
+      {
+        "id": "85",
+        "title": "Grammer Pro Batch by Jai Sir (Recorded Batch)",
+        "enabled": "1"
+      },
+      {
+        "id": "86",
+        "title": "Comprehension King Batch by Jai Sir (Recorded Batch)",
+        "enabled": "1"
+      },
+      {
+        "id": "87",
+        "title": "Practice Pro Batch by Jai Sir (Recorded Batch)",
+        "enabled": "1"
+      },
+      {
+        "id": "88",
+        "title": "Vocab Ocean Batch BY Jai Sir (Recorded Batch)",
+        "enabled": "1"
+      },
+      {
+        "id": "89",
+        "title": "📖 English Special VOD Batch By Jai Sir For All Govt. Exams",
+        "enabled": "1"
+      },
+      {
+        "id": "91",
+        "title": "⚔️ प्रहार 2.0 COMBO BATCH (By Team Vidyagram) 🏆",
+        "enabled": "1"
+      },
+      {
+        "id": "92",
+        "title": "🎯 CHAMPIONS 3.0 Maths Special 🔴 LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 28 May 2026.",
+        "enabled": "1"
+      },
+      {
+        "id": "93",
+        "title": "📖 ENGLISH SPECIAL 2.0 BATCH By Jai Sir For All Govt. Exams",
+        "enabled": "1"
+      },
+      {
+        "id": "94",
+        "title": "🧠 REASONING SPECIAL 2.0 BATCH By Akash Chaturvedi Sir 🎯",
+        "enabled": "1"
+      },
+      {
+        "id": "95",
+        "title": "🌍 GS SPECIAL 2.0 BATCH: By GS Expert Team",
+        "enabled": "1"
+      },
+      {
+        "id": "96",
+        "title": "🔬 SCIENCE SPECIAL 2.0 BATCH By Arti Ma'am 🧪🚀",
+        "enabled": "1"
+      },
+      {
+        "id": "97",
+        "title": "SSC EXAMS",
+        "enabled": "1"
+      },
+      {
+        "id": "100",
+        "title": "staff combo",
+        "enabled": "1"
+      },
+      {
+        "id": "101",
+        "title": "SSC GD 2027 (भारत Batch)",
+        "enabled": "1"
+      },
+      {
+        "id": "103",
+        "title": "🎯. Maths VOD Batch by Aditya Ranjan Sir | Arithmetic + Advance (Pre to Mains) | For all Govt Exams.",
+        "enabled": "1"
+      },
+      {
+        "id": "104",
+        "title": "UP Police Constable 2027 (मिशन वर्दी बैच)",
+        "enabled": "1"
+      },
+      {
+        "id": "105",
+        "title": "🚀 Railway Foundation 2026-27 वन्दे भारत 2.0 BATCH 🚂",
+        "enabled": "1"
+      },
+      {
+        "id": "106",
+        "title": "Reasoning Special VOD Batch By Akash Sir",
+        "enabled": "1"
+      },
+      {
+        "id": "107",
+        "title": "UPSI भर्ती | दरोगा जी Batch 2026-27",
+        "enabled": "1"
+      },
+      {
+        "id": "108",
+        "title": "UPSI + UP Constable Combo Batch",
+        "enabled": "1"
+      },
+      {
+        "id": "110",
+        "title": "SCIENCE SPECIAL BATCH By Pushpendra Sir",
+        "enabled": "1"
+      },
+      {
+        "id": "111",
+        "title": "17 दिन 17 मैराथन for Railway Group D",
+        "enabled": "1"
+      },
+      {
+        "id": "112",
+        "title": "SSC GD 2027 FOUNDATION BATCH",
+        "enabled": "1"
+      },
+      {
+        "id": "113",
+        "title": "The Masterpiece Series",
+        "enabled": "1"
+      },
+      {
+        "id": "114",
+        "title": "UPSSSC PET 2026 (प्रारंभ बैच)",
+        "enabled": "1"
+      },
+      {
+        "id": "115",
+        "title": "Hot Topic Series",
+        "enabled": "1"
+      },
+      {
+        "id": "116",
+        "title": "STATE EXAMS",
+        "enabled": "1"
+      },
+      {
+        "id": "117",
+        "title": "RAILWAY EXAMS",
+        "enabled": "1"
+      },
+      {
+        "id": "118",
+        "title": "BASICS OF MATHS",
+        "enabled": "0"
+      },
+      {
+        "id": "119",
+        "title": "🎯 Champions 4.0 Maths Special 🔴 LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 24 Aug 2026.",
+        "enabled": "1"
+      },
+      {
+        "id": "120",
+        "title": "🧠 Reasoning Special 3.0 Batch By Akash Chaturvedi Sir 🎯",
+        "enabled": "1"
+      },
+      {
+        "id": "121",
+        "title": "📖 English Special 3.0 Batch By Jai Sir For All Govt. Exams",
+        "enabled": "1"
+      },
+      {
+        "id": "122",
+        "title": "🌍 GS Special Batch By Himanshu Sir 🎯 ",
+        "enabled": "1"
+      },
+      {
+        "id": "123",
+        "title": "🌍 GS Special Batch By Deepak Sir 🎯",
+        "enabled": "1"
+      },
+      {
+        "id": "124",
+        "title": "🔬 Science Special 3.0 Batch By Arti Ma'am 🧪🚀",
+        "enabled": "1"
+      },
+      {
+        "id": "125",
+        "title": "Science Special 2.0 Batch By Pushpendra Sir",
+        "enabled": "1"
+      },
+      {
+        "id": "126",
+        "title": "🌍 Static GK 2.0 Batch By Shubham Grover Ma'am🏆✨",
+        "enabled": "1"
+      },
+      {
+        "id": "127",
+        "title": "💻 Computer Special 2.0 Batch by Shubham Grover Ma'am",
+        "enabled": "1"
+      },
+      {
+        "id": "128",
+        "title": "⚔️ प्रहार 3.0 Combo Batch (By Team Vidyagram) 🏆",
+        "enabled": "1"
+      },
+      {
+        "id": "129",
+        "title": "🌍 GS Special 3.0 Batch: By GS Expert Team",
+        "enabled": "1"
+      },
+      {
+        "id": "130",
+        "title": "UPGK (सारथी बैच) for UPSSSC EXAMS",
+        "enabled": "1"
+      },
+      {
+        "id": "131",
+        "title": "Computer (संगणना बैच) for UPSSSC EXAMS",
+        "enabled": "1"
+      },
+      {
+        "id": "132",
+        "title": "UPGK (सारथी बैच) + Computer (संगणना बैच) Combo Batch ",
+        "enabled": "1"
+      },
+      {
+        "id": "133",
+        "title": "UPSSSC PET 2026 Crash Course ",
+        "enabled": "1"
+      },
+      {
+        "id": "134",
+        "title": "Mobile Video Editing Mastery Course By Aditya Sir",
+        "enabled": "1"
+      },
+      {
+        "id": "135",
+        "title": "Mobile Graphic Design Mastery Course By Aditya Sir",
+        "enabled": "1"
+      },
+      {
+        "id": "136",
+        "title": "AI Mastery Mobile Edition Batch By Aditya Sir",
+        "enabled": "1"
+      },
+      {
+        "id": "137",
+        "title": "3 in 1 Mastery Course By Aditya Sir",
+        "enabled": "1"
+      },
+      {
+        "id": "140",
+        "title": "UPSSSC PET 2026| D. I. (Data Interpretation) by Aditya Sir ",
+        "enabled": "1"
+      },
+      {
+        "id": "141",
+        "title": "VIDYASAGAR SERIES",
+        "enabled": "1"
+      },
+      {
+        "id": "142",
+        "title": "SCORE BOOSTER SERIES (SSC CGL 2026)",
+        "enabled": "1"
+      },
+      {
+        "id": "144",
+        "title": "SSC EXAMS ",
+        "enabled": "1"
+      },
+      {
+        "id": "145",
+        "title": "STATE EXAMS",
+        "enabled": "1"
+      },
+      {
+        "id": "146",
+        "title": "RAILWAY EXAMS",
+        "enabled": "1"
+      },
+      {
+        "id": "147",
+        "title": "TEJAS SERIES",
+        "enabled": "1"
+      },
+      {
+        "id": "150",
+        "title": "🚀 UPSSSC Junior Assistant 2026 (सहायक बैच) 🚀",
+        "enabled": "1"
+      },
+      {
+        "id": "151",
+        "title": "⚔️ प्रहार 4.0 Combo Batch (By Team Vidyagram) 🏆",
+        "enabled": "1"
+      },
+      {
+        "id": "152",
+        "title": "🎯 Champions 5.0 Maths Special 🔴 LIVE BATCH by ADITYA SIR (Arithmetic + Advance)( Pre + Mains) For all Exams Starts From 01 Oct 2026",
+        "enabled": "1"
+      },
+      {
+        "id": "153",
+        "title": "📖 English Special 4.0 Batch By Jai Sir For All Govt. Exams",
+        "enabled": "1"
+      },
+      {
+        "id": "154",
+        "title": "🧠 Reasoning Special 4.0 Batch By Akash Chaturvedi Sir 🎯",
+        "enabled": "1"
+      },
+      {
+        "id": "155",
+        "title": "🔬 Science Special 4.0 Batch By Arti Ma'am 🧪🚀",
+        "enabled": "1"
+      },
+      {
+        "id": "156",
+        "title": "Science Special 3.0 Batch By Pushpendra Sir",
+        "enabled": "1"
+      },
+      {
+        "id": "157",
+        "title": "🌍 Static GK 3.0 Batch By Shubham Grover Ma'am🏆✨",
+        "enabled": "1"
+      },
+      {
+        "id": "158",
+        "title": "🌍 GS Special 4.0 Batch: By GS Expert Team",
+        "enabled": "1"
+      },
+      {
+        "id": "159",
+        "title": "💻 Computer Special VOD Batch by Shubham Grover Ma'am",
+        "enabled": "1"
+      },
+      {
+        "id": "160",
+        "title": " Combo Special - SSC CGL Mains Batch 2026 🔥",
+        "enabled": "1"
+      },
+      {
+        "id": "161",
+        "title": "Maths Special - SSC CGL Mains Batch 2026 🔥",
+        "enabled": "1"
+      },
+      {
+        "id": "162",
+        "title": "English Special - SSC CGL Mains Batch 2026 🔥",
+        "enabled": "1"
+      },
+      {
+        "id": "163",
+        "title": "Computer Special - SSC CGL Mains Batch 2026 🔥",
+        "enabled": "1"
+      },
+      {
+        "id": "164",
+        "title": "Bihar Foundation Batch 2026-27",
+        "enabled": "1"
+      },
+      {
+        "id": "165",
+        "title": "UPSSSC VPO & VDO 2026 ग्रामोदय बैच ",
+        "enabled": "1"
+      },
+      {
+        "id": "166",
+        "title": "छठी मइंया Series",
+        "enabled": "1"
+      }
+    ],
+    "idHash": "125b1d90cddebd8ba2b5b038c07cc92182a252230807c1de95f6bcf4e868ea05"
+  },
+  "course96": {
+    "detail": {
+      "title": "🔬 SCIENCE SPECIAL 2.0 BATCH By Arti Ma'am 🧪🚀",
+      "enabled": "1"
+    },
+    "folderPaths": {
+      "count": 58,
+      "more": true,
+      "uniqueIds": 58,
+      "idHash": "1be4105c07f1d008534ba43b4a407300384a37944ec60e5e9c3fac2bcf9d6c39"
+    }
+  },
+  "completedAt": "2026-10-26T14:09:45.324Z",
+  "requests": 29,
+  "sessionLost": false,
+  "transport": "direct local HTTPS; session cookie only to cms.appx.co.in"
+}

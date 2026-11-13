@@ -1,0 +1,37 @@
+{
+  "verifiedAt": "2026-10-27T06:12:37.738Z",
+  "mode": "READ ONLY",
+  "productionWrites": 0,
+  "primaryCandidates": 23,
+  "primaryEligible": 23,
+  "primaryAlreadyApplied": 0,
+  "primaryHeld": 0,
+  "primaryChangedBeforeGuard": 0,
+  "eligibleByKind": {
+    "title": 15,
+    "free": 1,
+    "visibility": 7
+  },
+  "sourceRunCounts": {
+    "daily-2026-10-26": 23
+  },
+  "wideCandidateCeiling": 1323,
+  "wideFound": 1323,
+  "wideSourceFieldsUnchanged": 1323,
+  "wideSourceFieldsChanged": 0,
+  "wideStillDiffersFromPriorProposal": 1323,
+  "wideAlreadyMatchesPriorProposal": 0,
+  "wideUpdatedAtChanged": 0,
+  "wideManualTitleOverrides": 0,
+  "limits": [
+    "1323 is a prior combined candidate ceiling, not a requested write count or proof all current discrepancies persist.",
+    "Wide comparison checks existing exact candidate IDs against Oct26 beforeimages; it does not rebuild every current course plan or perform a new AppX crawl.",
+    "No per-field editor audit: changed fields are not automatically attributable to operators versus import/admin processes.",
+    "Capture completeness/freshness and bounded source rows checked for23 narrow candidates only.",
+    "No question/test/taxonomy data modifications; no application retries."
+  ],
+  "primaryEligibleMeaning": "Beforeimage and latest promoted mirror guards only; not production authorization or same-day source proof",
+  "primaryEligibleForApplication": 0,
+  "applicationHold": "Full-plan review remains required; no application authorized",
+  "sourceSameIstDayProof": 0
+}

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free-course enroll states</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: one reading column; the outcome grid and the diagram are the two anchors, the explorer sits between them. */
+:root {
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --ink: #18212b;
+  --muted: #5a6573;
+  --line: #d8dee6;
+  --accent: #2d55c8;      /* Paid tab, links, focus */
+  --free: #0d7468;        /* Free tab */
+  --ok: #1d7445;   --ok-bg: #e2f2e8;
+  --no: #a03232;   --no-bg: #f7e5e5;
+  --warn: #8f5600; --warn-bg: #fdf0d5;
+  --chip: #edf0f4;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11151b; --surface: #181e26; --ink: #e5e9ef; --muted: #98a3b0; --line: #2a333e;
+    --accent: #8aa6ff; --free: #4fcdbf;
+    --ok: #63d39b; --ok-bg: #16301f; --no: #f08c8c; --no-bg: #361d20; --warn: #f2b453; --warn-bg: #352812;
+    --chip: #222a34; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11151b; --surface: #181e26; --ink: #e5e9ef; --muted: #98a3b0; --line: #2a333e;
+  --accent: #8aa6ff; --free: #4fcdbf;
+  --ok: #63d39b; --ok-bg: #16301f; --no: #f08c8c; --no-bg: #361d20; --warn: #f2b453; --warn-bg: #352812;
+  --chip: #222a34; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 16px/1.55 var(--font-body);
+}
+main { max-width: 1040px; margin: 0 auto; padding: 40px 20px 72px; display: grid; gap: 48px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; line-height: 1.2; }
+h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: 1.375rem; font-weight: 600; }
+h3 { font-size: 1.0625rem; font-weight: 600; }
+p { margin: 0; max-width: 68ch; }
+code, .mono { font-family: var(--font-mono); font-size: 0.86em; }
+code { background: var(--chip); padding: 1px 5px; border-radius: 4px; }
+a { color: var(--accent); }
+section { display: grid; gap: 16px; }
+.lede { color: var(--muted); }
+.meta { color: var(--muted); font-size: 0.875rem; }
+
+/* summary */
+header { display: grid; gap: 12px; }
+.summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px;
+  display: grid; gap: 6px; align-content: start;
+}
+.card.stripe-ok { border-left: 4px solid var(--ok); }
+.card.stripe-warn { border-left: 4px solid var(--warn); }
+.card.stripe-muted { border-left: 4px solid var(--muted); }
+.card strong { font-size: 1rem; }
+.card span { color: var(--muted); font-size: 0.9rem; }
+
+/* pills */
+.pill {
+  display: inline-flex; align-items: center; gap: 5px; white-space: nowrap;
+  font-size: 0.8125rem; font-weight: 600; padding: 2px 9px; border-radius: 999px;
+}
+.pill.plays { background: var(--ok-bg); color: var(--ok); }
+.pill.locked { background: var(--no-bg); color: var(--no); }
+.pill.paid { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1.5px var(--accent); }
+.pill.free { background: transparent; color: var(--free); box-shadow: inset 0 0 0 1.5px var(--free); }
+.pill.none { background: var(--chip); color: var(--muted); font-weight: 500; }
+.pill.warn { background: var(--warn-bg); color: var(--warn); }
+.pill.holds { background: var(--ok-bg); color: var(--ok); }
+.pill.breaks { background: var(--no-bg); color: var(--no); }
+
+/* outcome grid */
+.scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 640px; }
+th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+tr:last-child td { border-bottom: 0; }
+thead th { font-size: 0.8125rem; font-weight: 600; color: var(--muted); background: var(--chip); }
+thead th small { display: block; font-weight: 400; }
+tbody th { font-weight: 500; width: 24%; }
+tbody th small { display: block; color: var(--muted); font-weight: 400; font-size: 0.8125rem; }
+.cell { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.cell-note { font-size: 0.8125rem; color: var(--muted); margin-top: 6px; }
+td.alert { background: var(--warn-bg); box-shadow: inset 4px 0 0 var(--warn); }
+td.alert .cell-note { color: var(--warn); }
+.split { display: grid; gap: 4px; }
+.split div { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; font-size: 0.8125rem; }
+.split .k { color: var(--muted); min-width: 52px; }
+
+/* diagram */
+figure { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 12px; }
+figure .scroll-svg { overflow-x: auto; }
+figure svg { display: block; width: 100%; min-width: 640px; height: auto; color: var(--ink); }
+figcaption { color: var(--muted); font-size: 0.9rem; max-width: 72ch; }
+svg .box { fill: var(--surface); stroke: currentColor; stroke-width: 1.4; }
+svg .box.mode { stroke: var(--accent); }
+svg .box.transient { stroke-dasharray: 5 4; }
+svg .box.race { stroke: var(--warn); }
+svg .t { fill: currentColor; font: 500 13px var(--font-body); }
+svg .s { fill: var(--muted); font: 400 11.5px var(--font-body); }
+svg .lane { fill: var(--muted); font: 600 12px var(--font-body); letter-spacing: 0.04em; }
+svg .edge { stroke: currentColor; stroke-width: 1.3; fill: none; }
+svg .sep { stroke: var(--line); stroke-width: 1; }
+svg .warn { fill: var(--warn); }
+svg .warnline { stroke: var(--warn); }
+
+/* explorer */
+.explorer { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 16px; }
+@media (max-width: 760px) { .explorer { grid-template-columns: 1fr; } }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 14px; align-content: start; }
+.ctl { display: grid; gap: 6px; }
+.ctl-label { font-size: 0.8125rem; font-weight: 600; color: var(--muted); }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+button {
+  font: 500 0.875rem var(--font-body); color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line); border-radius: 8px; padding: 7px 12px; cursor: pointer;
+}
+button:hover:not(:disabled) { border-color: var(--accent); }
+button:disabled { opacity: 0.45; cursor: not-allowed; }
+button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.toggle { display: inline-flex; gap: 8px; align-items: center; font-size: 0.875rem; }
+.toggle input { width: 18px; height: 18px; accent-color: var(--accent); }
+.state-line { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { background: var(--chip); border-radius: 6px; padding: 2px 8px; font-size: 0.8125rem; }
+
+.verdict { display: grid; gap: 10px; }
+.verdict-row { display: grid; grid-template-columns: 120px 1fr; gap: 10px; align-items: start; }
+.verdict-row .k { color: var(--muted); font-size: 0.875rem; padding-top: 2px; }
+.why { font-size: 0.8125rem; color: var(--muted); margin-top: 4px; }
+.tabs { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.tab { padding: 10px 12px; display: grid; gap: 6px; min-height: 76px; align-content: start; }
+.tab + .tab { border-left: 1px solid var(--line); }
+.tab-name { font-size: 0.8125rem; font-weight: 600; color: var(--muted); }
+.course-card { border-radius: 6px; padding: 6px 8px; font-size: 0.8125rem; font-weight: 600; }
+.tab.paid .course-card { box-shadow: inset 0 0 0 1.5px var(--accent); color: var(--accent); }
+.tab.free .course-card { box-shadow: inset 0 0 0 1.5px var(--free); color: var(--free); }
+.empty { font-size: 0.8125rem; color: var(--muted); }
+.banner { border-radius: 8px; padding: 10px 12px; font-size: 0.875rem; background: var(--warn-bg); color: var(--warn); }
+.banner[hidden] { display: none; }
+ol.log { margin: 0; padding: 0 0 0 1.4em; display: grid; gap: 6px; font-size: 0.875rem; max-height: 260px; overflow-y: auto; }
+ol.log li.bad { color: var(--warn); }
+ol.log .out { color: var(--muted); }
+
+/* paths */
+.paths { display: grid; gap: 16px; }
+.path { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 14px; }
+.path-head { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; justify-content: space-between; }
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; counter-reset: step; }
+.step { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; display: grid; gap: 6px; align-content: start; position: relative; }
+.step.bad { border-color: var(--warn); background: var(--warn-bg); }
+.step-n { font: 500 0.75rem var(--font-mono); color: var(--muted); }
+.step-ev { font-weight: 600; font-size: 0.9rem; }
+.step-st { font-size: 0.8125rem; color: var(--muted); }
+.path p { font-size: 0.9375rem; }
+
+/* rules */
+.rules td:nth-child(2), .rules td:nth-child(3), .rules th:nth-child(2), .rules th:nth-child(3) { width: 130px; }
+.rules td { font-size: 0.9375rem; }
+.rules td small { display: block; color: var(--muted); font-family: var(--font-mono); font-size: 0.75rem; }
+
+ul.plain { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; max-width: 72ch; }
+footer { color: var(--muted); font-size: 0.875rem; display: grid; gap: 6px; border-top: 1px solid var(--line); padding-top: 20px; }
+
+@media (max-width: 480px) {
+  main { padding: 28px 16px 56px; gap: 40px; }
+  h1 { font-size: 1.625rem; }
+  .verdict-row { grid-template-columns: 1fr; gap: 4px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <p class="meta">Vidyagram · one student, one course · checked against <code>feat/vg-free-enroll</code> @ <code>10125d5a3</code></p>
+  <h1>Free-course enroll: who can play, and where it shows</h1>
+  <p class="lede">Three things decide the outcome: the course mode the admin sets, whether the student ever tapped Enroll, and whether they hold an order. This page shows every combination, how each can change, and the three paths where the code steps outside the rules.</p>
+  <div class="summary">
+    <div class="card stripe-ok"><strong>Every rule holds</strong><span>with <code>ENFORCE_ORDER_EXPIRY</code> off, the default. TLC checked all 27 states.</span></div>
+    <div class="card stripe-ok"><strong>Code matches the model</strong><span>36 of 36 combinations, replayed on the real access and My Courses functions.</span></div>
+    <div class="card stripe-warn"><strong>Expiry on: listed but locked</strong><span>An expired order keeps the course in Paid or Free, but it won't play.</span></div>
+    <div class="card stripe-muted"><strong>One harmless race</strong><span>An Enroll can save just after the admin switches the course to Paid. It grants nothing.</span></div>
+  </div>
+</header>
+
+<section aria-labelledby="grid-h">
+  <h2 id="grid-h">Every combination at a glance</h2>
+  <p class="lede">Each cell gives what the student sees: can they play the classes, and which My Courses tab holds the course.</p>
+  <div class="scroll">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">The student has</th>
+          <th scope="col">Paid course<small>not free</small></th>
+          <th scope="col">Free, open to all<small>freeAccess absent or open</small></th>
+          <th scope="col">Free, enroll to unlock<small>freeAccess enroll</small></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Nothing</th>
+          <td><div class="cell"><span class="pill locked">Locked</span><span class="pill none">Not listed</span></div></td>
+          <td><div class="cell"><span class="pill plays">Plays</span><span class="pill none">Not listed</span></div></td>
+          <td><div class="cell"><span class="pill locked">Locked</span><span class="pill none">Not listed</span></div><div class="cell-note">Shows the Enroll button.</div></td>
+        </tr>
+        <tr>
+          <th scope="row">Enrolled only<small>tapped Enroll; never removed</small></th>
+          <td><div class="cell"><span class="pill locked">Locked</span><span class="pill none">Not listed</span></div><div class="cell-note">The enrollment is ignored, and kept.</div></td>
+          <td><div class="cell"><span class="pill plays">Plays</span><span class="pill none">Not listed</span></div></td>
+          <td><div class="cell"><span class="pill plays">Plays</span><span class="pill free">Free tab</span></div></td>
+        </tr>
+        <tr>
+          <th scope="row">Active order<small>bought, admin grant, AppX ₹0</small></th>
+          <td><div class="cell"><span class="pill plays">Plays</span><span class="pill paid">Paid tab</span></div></td>
+          <td><div class="cell"><span class="pill plays">Plays</span><span class="pill none">Not listed</span></div></td>
+          <td><div class="cell"><span class="pill plays">Plays</span><span class="pill free">Free tab</span></div></td>
+        </tr>
+        <tr>
+          <th scope="row">Expired order<small>past expireDate</small></th>
+          <td class="alert">
+            <div class="split">
+              <div><span class="k">flag off</span><span class="pill plays">Plays</span><span class="pill paid">Paid tab</span></div>
+              <div><span class="k">flag on</span><span class="pill locked">Locked</span><span class="pill paid">Paid tab</span></div>
+            </div>
+            <div class="cell-note">With the flag on: listed but locked.</div>
+          </td>
+          <td><div class="cell"><span class="pill plays">Plays</span><span class="pill none">Not listed</span></div></td>
+          <td class="alert">
+            <div class="split">
+              <div><span class="k">flag off</span><span class="pill plays">Plays</span><span class="pill free">Free tab</span></div>
+              <div><span class="k">flag on</span><span class="pill locked">Locked</span><span class="pill free">Free tab</span></div>
+            </div>
+            <div class="cell-note">With the flag on: listed but locked.</div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Enrolled and an order</th>
+          <td><div class="cell"><span class="pill none">Same as the order alone</span></div></td>
+          <td><div class="cell"><span class="pill plays">Plays</span><span class="pill none">Not listed</span></div></td>
+          <td><div class="cell"><span class="pill plays">Plays</span><span class="pill free">Free tab</span></div><div class="cell-note">Plays even if the order expires: enrollments don't expire.</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="meta">The flag is <code>ENFORCE_ORDER_EXPIRY</code>. It is off by default and unset on the quicktricks box; the Vidyagram box was not checked. The tab always follows the course mode, never how the student got in.</p>
+</section>
+
+<section aria-labelledby="diagram-h">
+  <h2 id="diagram-h">How each part changes</h2>
+  <figure>
+    <div class="scroll-svg">
+    <svg viewBox="0 0 880 420" role="img" aria-label="Three independent parts. The admin can switch the course between Paid, Open and Enroll at any time. The student's enrollment goes from not enrolled to enrolled only while the course is in Enroll mode, and is never removed. The student's order goes from none to active, active to expired, and expired back to active on renewal.">
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+        </marker>
+      </defs>
+
+      <!-- Lane 1: course mode -->
+      <text class="lane" x="16" y="52">COURSE MODE</text>
+      <text class="s" x="16" y="70">set by the admin</text>
+      <rect class="box mode" x="180" y="34" width="170" height="44" rx="8"/>
+      <text class="t" x="265" y="61" text-anchor="middle">Paid course</text>
+      <rect class="box mode" x="430" y="34" width="170" height="44" rx="8"/>
+      <text class="t" x="515" y="61" text-anchor="middle">Free, open to all</text>
+      <rect class="box mode" x="680" y="34" width="170" height="44" rx="8"/>
+      <text class="t" x="765" y="61" text-anchor="middle">Free, enroll to unlock</text>
+      <line class="edge" x1="354" y1="56" x2="426" y2="56" marker-start="url(#arr)" marker-end="url(#arr)"/>
+      <line class="edge" x1="604" y1="56" x2="676" y2="56" marker-start="url(#arr)" marker-end="url(#arr)"/>
+      <path class="edge" d="M265,82 C265,118 765,118 765,82" marker-start="url(#arr)" marker-end="url(#arr)"/>
+      <text class="s" x="515" y="128" text-anchor="middle">admin switches between any two, any time; nothing is deleted</text>
+
+      <line class="sep" x1="16" y1="150" x2="864" y2="150"/>
+
+      <!-- Lane 2: enrollment -->
+      <text class="lane" x="16" y="196">ENROLLMENT</text>
+      <text class="s" x="16" y="214">the student's taps</text>
+      <rect class="box" x="180" y="178" width="170" height="44" rx="8"/>
+      <text class="t" x="265" y="205" text-anchor="middle">Not enrolled</text>
+      <rect class="box transient race" x="430" y="178" width="170" height="44" rx="8"/>
+      <text class="t" x="515" y="205" text-anchor="middle">Saving</text>
+      <rect class="box" x="680" y="178" width="170" height="44" rx="8"/>
+      <text class="t" x="765" y="205" text-anchor="middle">Enrolled</text>
+      <line class="edge" x1="354" y1="200" x2="426" y2="200" marker-end="url(#arr)"/>
+      <text class="s" x="390" y="170" text-anchor="middle">taps Enroll (Enroll mode only)</text>
+      <line class="edge" x1="604" y1="200" x2="676" y2="200" marker-end="url(#arr)"/>
+      <text class="s" x="640" y="170" text-anchor="middle">row saved</text>
+      <!-- self loop on Not enrolled: 409 -->
+      <path class="edge" d="M220,222 C200,262 330,262 310,222" marker-end="url(#arr)"/>
+      <text class="s" x="265" y="276" text-anchor="middle">taps Enroll in Paid or Open: 409, nothing saved</text>
+      <!-- self loop on Enrolled: repeat -->
+      <path class="edge" d="M720,222 C700,262 830,262 810,222" marker-end="url(#arr)"/>
+      <text class="s" x="765" y="276" text-anchor="middle">taps again: same row; never removed</text>
+      <!-- race marker -->
+      <circle class="warn" cx="600" cy="178" r="5"/>
+      <text class="s" x="515" y="240" text-anchor="middle">the mode can change here</text>
+
+      <line class="sep" x1="16" y1="296" x2="864" y2="296"/>
+
+      <!-- Lane 3: order -->
+      <text class="lane" x="16" y="342">ORDER</text>
+      <text class="s" x="16" y="360">bought or granted</text>
+      <rect class="box" x="180" y="324" width="170" height="44" rx="8"/>
+      <text class="t" x="265" y="351" text-anchor="middle">No order</text>
+      <rect class="box" x="430" y="324" width="170" height="44" rx="8"/>
+      <text class="t" x="515" y="351" text-anchor="middle">Order active</text>
+      <rect class="box" x="680" y="324" width="170" height="44" rx="8"/>
+      <text class="t" x="765" y="351" text-anchor="middle">Order expired</text>
+      <line class="edge" x1="354" y1="346" x2="426" y2="346" marker-end="url(#arr)"/>
+      <text class="s" x="390" y="318" text-anchor="middle">buys / granted</text>
+      <line class="edge" x1="604" y1="338" x2="676" y2="338" marker-end="url(#arr)"/>
+      <text class="s" x="640" y="318" text-anchor="middle">expires</text>
+      <line class="edge" x1="676" y1="356" x2="604" y2="356" marker-end="url(#arr)"/>
+      <text class="s" x="640" y="390" text-anchor="middle">renews</text>
+    </svg>
+    </div>
+    <figcaption>The three parts move on their own. Only one move depends on another part: Enroll saves only while the course is in Enroll mode, and the amber dot marks the moment that check can go stale. The outcome table above is these three parts combined.</figcaption>
+  </figure>
+</section>
+
+<section aria-labelledby="try-h">
+  <h2 id="try-h">Try it</h2>
+  <p class="lede">Drive the same events the model checks. Try tapping Enroll, switching the course to Paid, then back to Enroll.</p>
+  <div class="explorer">
+    <div class="panel">
+      <div class="ctl">
+        <span class="ctl-label" id="mode-l">Admin sets the course to</span>
+        <div class="row" role="group" aria-labelledby="mode-l">
+          <button type="button" id="m-paid" data-mode="paid">Paid course</button>
+          <button type="button" id="m-open" data-mode="open">Free, open to all</button>
+          <button type="button" id="m-enroll" data-mode="enroll">Free, enroll to unlock</button>
+        </div>
+      </div>
+      <div class="ctl">
+        <span class="ctl-label" id="stu-l">Student</span>
+        <div class="row" role="group" aria-labelledby="stu-l">
+          <button type="button" id="b-enroll">Tap Enroll</button>
+          <button type="button" id="b-buy">Buy or get granted an order</button>
+          <button type="button" id="b-expire">Order expires</button>
+        </div>
+      </div>
+      <div class="ctl">
+        <span class="ctl-label">Server setting</span>
+        <label class="toggle" for="f-enforce"><input type="checkbox" id="f-enforce"> <code>ENFORCE_ORDER_EXPIRY</code> on</label>
+      </div>
+      <div class="ctl">
+        <span class="ctl-label">What happened</span>
+        <ol class="log" id="log" aria-live="polite"></ol>
+      </div>
+      <div class="row"><button type="button" id="b-reset">Start over</button></div>
+    </div>
+
+    <div class="panel" aria-live="polite">
+      <div class="state-line" id="state-line"></div>
+      <div class="verdict">
+        <div class="verdict-row">
+          <span class="k">Classes</span>
+          <div><span id="play-pill"></span><div class="why" id="play-why"></div></div>
+        </div>
+        <div class="verdict-row">
+          <span class="k">My Courses</span>
+          <div>
+            <div class="tabs">
+              <div class="tab paid" id="tab-paid"><span class="tab-name">Paid</span><span id="tab-paid-body"></span></div>
+              <div class="tab free" id="tab-free"><span class="tab-name">Free</span><span id="tab-free-body"></span></div>
+            </div>
+            <div class="why" id="tab-why"></div>
+          </div>
+        </div>
+      </div>
+      <div class="banner" id="banner" hidden>Listed but locked. The course sits in a tab, but its classes won't play. This happens only with <code>ENFORCE_ORDER_EXPIRY</code> on.</div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="paths-h">
+  <h2 id="paths-h">Where the code leaves the rules</h2>
+  <p class="lede">TLC's shortest path to each broken rule, replayed on the real backend functions. None is urgent.</p>
+  <div class="paths">
+
+    <article class="path">
+      <div class="path-head">
+        <h3>Enroll saves into a course that just became Paid</h3>
+        <span class="pill none">Harmless · any setting</span>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="step-n">0 · start</span><span class="step-ev">Free, enroll to unlock</span><span class="step-st">Not enrolled, no order</span><div class="cell"><span class="pill locked">Locked</span><span class="pill none">Not listed</span></div></div>
+        <div class="step"><span class="step-n">1</span><span class="step-ev">Student taps Enroll</span><span class="step-st">The server reads the course: Enroll mode, OK</span><div class="cell"><span class="pill locked">Locked</span><span class="pill none">Not listed</span></div></div>
+        <div class="step"><span class="step-n">2</span><span class="step-ev">Admin saves it as Paid</span><span class="step-st">Before the enrollment row is written</span><div class="cell"><span class="pill locked">Locked</span><span class="pill none">Not listed</span></div></div>
+        <div class="step bad"><span class="step-n">3</span><span class="step-ev">Enrollment saved</span><span class="step-st">Row on a Paid course; the app is told "enrolled"</span><div class="cell"><span class="pill locked">Locked</span><span class="pill none">Not listed</span></div></div>
+      </div>
+      <p>The check reads the mode at <code>courseEnrollment.ts:30-32</code>, and the save at <code>:33-37</code> doesn't read it again. The stray row grants and lists nothing while the course is Paid or Open. If the admin switches back to Enroll, the student plays, exactly as if the tap had landed a second earlier. No fix needed.</p>
+    </article>
+
+    <article class="path">
+      <div class="path-head">
+        <h3>An expired order keeps a Paid course listed, but locked</h3>
+        <span class="pill warn">Only with ENFORCE_ORDER_EXPIRY on</span>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="step-n">0 · start</span><span class="step-ev">Paid course</span><span class="step-st">Not enrolled, no order</span><div class="cell"><span class="pill locked">Locked</span><span class="pill none">Not listed</span></div></div>
+        <div class="step"><span class="step-n">1</span><span class="step-ev">Student buys</span><span class="step-st">Order active</span><div class="cell"><span class="pill plays">Plays</span><span class="pill paid">Paid tab</span></div></div>
+        <div class="step bad"><span class="step-n">2</span><span class="step-ev">Order expires</span><span class="step-st">Order expired</span><div class="cell"><span class="pill locked">Locked</span><span class="pill paid">Paid tab</span></div></div>
+      </div>
+      <p>This was already how the Paid tab worked. My Courses lists any course the student ever bought (<code>myCourses.ts:13-14</code>), while playback drops an expired order when the flag is on (<code>courseScope.ts:95-96</code>).</p>
+    </article>
+
+    <article class="path">
+      <div class="path-head">
+        <h3>An expired order keeps an Enroll course in Free, but locked</h3>
+        <span class="pill warn">Only with ENFORCE_ORDER_EXPIRY on</span>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="step-n">0 · start</span><span class="step-ev">Free, enroll to unlock</span><span class="step-st">Not enrolled, no order</span><div class="cell"><span class="pill locked">Locked</span><span class="pill none">Not listed</span></div></div>
+        <div class="step"><span class="step-n">1</span><span class="step-ev">Student gets an order</span><span class="step-st">For example an AppX ₹0 free-course order</span><div class="cell"><span class="pill plays">Plays</span><span class="pill free">Free tab</span></div></div>
+        <div class="step bad"><span class="step-n">2</span><span class="step-ev">Order expires</span><span class="step-st">Order expired</span><div class="cell"><span class="pill locked">Locked</span><span class="pill free">Free tab</span></div></div>
+      </div>
+      <p>Same cause, carried into the new Free tab. A student who tapped Enroll is never caught by this: enrollments don't expire. If the Vidyagram box runs with the flag off, this path can't happen.</p>
+    </article>
+
+  </div>
+</section>
+
+<section aria-labelledby="rules-h">
+  <h2 id="rules-h">Rules checked</h2>
+  <div class="scroll">
+    <table class="rules">
+      <thead><tr><th scope="col">Rule</th><th scope="col">Flag off</th><th scope="col">Flag on</th></tr></thead>
+      <tbody>
+        <tr><td>Open: everyone plays<small>OpenPlays</small></td><td><span class="pill holds">Holds</span></td><td><span class="pill holds">Holds</span></td></tr>
+        <tr><td>Open: never in My Courses<small>OpenNotListed</small></td><td><span class="pill holds">Holds</span></td><td><span class="pill holds">Holds</span></td></tr>
+        <tr><td>Enroll: plays only with an enrollment or an order<small>EnrollPlays</small></td><td><span class="pill holds">Holds</span></td><td><span class="pill holds">Holds</span></td></tr>
+        <tr><td>Enroll: in Free exactly when an enrollment or an order is held<small>EnrollTab</small></td><td><span class="pill holds">Holds</span></td><td><span class="pill breaks">Breaks</span></td></tr>
+        <tr><td>Paid: plays only with an order; an enrollment never grants it<small>PaidPlays</small></td><td><span class="pill holds">Holds</span></td><td><span class="pill holds">Holds</span></td></tr>
+        <tr><td>Paid: in Paid exactly when an order is held; an enrollment never lists it<small>PaidTab</small></td><td><span class="pill holds">Holds</span></td><td><span class="pill breaks">Breaks</span></td></tr>
+        <tr><td>The tab follows the course mode<small>TabFollowsMode</small></td><td><span class="pill holds">Holds</span></td><td><span class="pill holds">Holds</span></td></tr>
+        <tr><td>Nothing deletes an enrollment<small>EnrollmentKept</small></td><td><span class="pill holds">Holds</span></td><td><span class="pill holds">Holds</span></td></tr>
+        <tr><td>Switching back to Enroll restores old enrollments<small>FlipBackRestores</small></td><td><span class="pill holds">Holds</span></td><td><span class="pill holds">Holds</span></td></tr>
+        <tr><td>An enrollment is saved only in Enroll mode<small>EnrollOnlyInEnrollMode</small></td><td><span class="pill breaks">Breaks</span></td><td><span class="pill breaks">Breaks</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section aria-labelledby="out-h">
+  <h2 id="out-h">Not in the model</h2>
+  <ul class="plain">
+    <li>A class marked free on its own, or free in its course placement. Either opens it to everyone in any mode, as before (<code>classAccessAuthz.ts:110, 122</code>).</li>
+    <li>A class placed in several courses: any course that opens it wins.</li>
+    <li>Course Builder chapter purchases, plan grants, retired plans, admin-deleted orders, admins, and inactive courses (Enroll answers 404).</li>
+    <li>Other screens that read the mode: timetable, the <code>isEnrolled</code> flag on cards, search hints, certificates.</li>
+    <li>Refunds and revoked orders.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>Checked with TLC (27 states, 108 steps) and replayed on <code>authorizeClassAccess</code>, <code>authorizeCourseAccess</code>, <code>enrollInCourse</code> and the My Courses listing, with Mongo stubbed. Nothing touched a database or a box.</p>
+  <p>Model, configs, replay and raw TLC output: <code>system-brain/vidyagram/reports/free-course-enroll-statechart/</code>.</p>
+</footer>
+
+</main>
+
+<script>
+(() => {
+  const MODE = { paid: "Paid course", open: "Free, open to all", enroll: "Free, enroll to unlock" };
+  const ORDER = { none: "No order", active: "Order active", expired: "Order expired" };
+  const START = { mode: "enroll", enrolled: false, order: "none" };
+  let s = { ...START };
+  let enforce = false;
+
+  const $ = (id) => document.getElementById(id);
+  const pill = (cls, text) => `<span class="pill ${cls}">${text}</span>`;
+
+  // Same rules as FreeCourseEnroll.tla (CanPlay, Listed, Tab), which the replay matched 36/36 against the code.
+  const outcome = (st) => {
+    const orderOpens = st.order === "active" || (st.order === "expired" && !enforce);
+    const plays = st.mode === "open" || (st.mode === "enroll" && st.enrolled) || orderOpens;
+    const listed = (st.order !== "none" && st.mode === "paid") ||
+      ((st.order !== "none" || st.enrolled) && st.mode === "enroll");
+    const tab = !listed ? "none" : st.mode === "enroll" ? "free" : "paid";
+    return { plays, tab };
+  };
+
+  const playWhy = (st, o) => {
+    if (st.mode === "open") return "Open free course: everyone plays.";
+    if (st.mode === "enroll" && st.enrolled) return "Enrolled in an Enroll-mode course.";
+    if (st.order === "active") return "The order covers the course.";
+    if (st.order === "expired" && !enforce) return "The expired order still counts while the flag is off.";
+    if (st.order === "expired") return "The order expired and expiry is enforced.";
+    if (st.mode === "paid" && st.enrolled) return "Paid course: the enrollment doesn't count.";
+    if (st.mode === "enroll") return "Tap Enroll to unlock.";
+    return "Needs an order.";
+  };
+
+  const tabWhy = (st, o) => {
+    if (st.mode === "open") return "Open free courses never appear in My Courses.";
+    if (o.tab === "paid") return st.order === "expired" ? "A Paid course stays listed after its order expires." : "The order lists the Paid course.";
+    if (o.tab === "free") return st.enrolled ? "Enroll-mode course with an enrollment goes in Free." : "Enroll-mode course with an order goes in Free.";
+    if (st.mode === "paid" && st.enrolled) return "An enrollment never lists a Paid course.";
+    return "Nothing lists it yet.";
+  };
+
+  const summary = (st) => {
+    const o = outcome(st);
+    const tab = o.tab === "paid" ? "Paid tab" : o.tab === "free" ? "Free tab" : "not listed";
+    return `${o.plays ? "plays" : "locked"}, ${tab}`;
+  };
+  const listedButLocked = (st) => { const o = outcome(st); return o.tab !== "none" && !o.plays; };
+
+  const log = (event) => {
+    const li = document.createElement("li");
+    if (listedButLocked(s)) li.className = "bad";
+    li.innerHTML = `${event} <span class="out">→ ${summary(s)}</span>`;
+    $("log").appendChild(li);
+    $("log").scrollTop = $("log").scrollHeight;
+  };
+
+  const render = () => {
+    const o = outcome(s);
+    ["paid", "open", "enroll"].forEach((m) => $("m-" + m).setAttribute("aria-pressed", String(s.mode === m)));
+    $("b-buy").disabled = s.order === "active";
+    $("b-buy").textContent = s.order === "expired" ? "Renew the order" : "Buy or get granted an order";
+    $("b-expire").disabled = s.order !== "active";
+    $("state-line").innerHTML = [
+      MODE[s.mode], s.enrolled ? "Enrolled" : "Not enrolled", ORDER[s.order],
+      enforce ? "Expiry enforced" : "Expiry not enforced",
+    ].map((t) => `<span class="chip">${t}</span>`).join("");
+    $("play-pill").innerHTML = o.plays ? pill("plays", "Plays") : pill("locked", "Locked");
+    $("play-why").textContent = playWhy(s, o);
+    const card = `<span class="course-card">This course${o.plays ? "" : " · locked"}</span>`;
+    const empty = `<span class="empty">Not here</span>`;
+    $("tab-paid-body").innerHTML = o.tab === "paid" ? card : empty;
+    $("tab-free-body").innerHTML = o.tab === "free" ? card : empty;
+    $("tab-why").textContent = tabWhy(s, o);
+    $("banner").hidden = !listedButLocked(s);
+  };
+
+  const reset = () => {
+    s = { ...START };
+    $("log").innerHTML = "";
+    log(`Start: ${MODE[s.mode]}, student has nothing`);
+    render();
+  };
+
+  document.querySelectorAll("[data-mode]").forEach((b) => b.addEventListener("click", () => {
+    const m = b.dataset.mode;
+    if (m === s.mode) return;
+    s.mode = m; log(`Admin sets ${MODE[m]}`); render();
+  }));
+  $("b-enroll").addEventListener("click", () => {
+    if (s.mode !== "enroll") log("Student taps Enroll: 409, not enrollable, nothing saved");
+    else if (s.enrolled) log("Student taps Enroll again: same enrollment");
+    else { s.enrolled = true; log("Student taps Enroll: enrolled"); }
+    render();
+  });
+  $("b-buy").addEventListener("click", () => {
+    const renew = s.order === "expired";
+    s.order = "active"; log(renew ? "Student renews the order" : "Student buys or is granted an order"); render();
+  });
+  $("b-expire").addEventListener("click", () => { s.order = "expired"; log("The order expires"); render(); });
+  $("f-enforce").addEventListener("change", (e) => {
+    enforce = e.target.checked; log(`Server: expiry ${enforce ? "enforced" : "not enforced"}`); render();
+  });
+  $("b-reset").addEventListener("click", reset);
+
+  reset();
+})();
+</script>
+</body>
+</html>

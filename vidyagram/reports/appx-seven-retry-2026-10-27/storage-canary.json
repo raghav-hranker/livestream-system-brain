@@ -1,0 +1,188 @@
+{
+  "at": "2026-10-27T11:59:11.378Z",
+  "phase": "canary",
+  "readOnly": true,
+  "bucket": "recordedvideos-vidyagram",
+  "assets": [
+    {
+      "classId": "6acea4e38752d955968b933c",
+      "title": "Glands 02 · Biology",
+      "masterKey": "781/6acea4e38752d955968b933c/hls/master.m3u8",
+      "renditions": [
+        {
+          "key": "781/6acea4e38752d955968b933c/hls/240p.m3u8",
+          "segments": 320,
+          "endList": true,
+          "samples": [
+            {
+              "index": 0,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 160,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 319,
+              "bytes": 1024,
+              "tsSync": true
+            }
+          ],
+          "ok": true
+        },
+        {
+          "key": "781/6acea4e38752d955968b933c/hls/360p.m3u8",
+          "segments": 316,
+          "endList": true,
+          "samples": [
+            {
+              "index": 0,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 158,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 315,
+              "bytes": 1024,
+              "tsSync": true
+            }
+          ],
+          "ok": true
+        },
+        {
+          "key": "781/6acea4e38752d955968b933c/hls/480p.m3u8",
+          "segments": 317,
+          "endList": true,
+          "samples": [
+            {
+              "index": 0,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 158,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 316,
+              "bytes": 1024,
+              "tsSync": true
+            }
+          ],
+          "ok": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "classId": "6ad5df3064b695f53d872c12",
+      "title": "Internet",
+      "masterKey": "781/6ad5df3064b695f53d872c12/hls/master.m3u8",
+      "renditions": [
+        {
+          "key": "781/6ad5df3064b695f53d872c12/hls/240p.m3u8",
+          "segments": 259,
+          "endList": true,
+          "samples": [
+            {
+              "index": 0,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 129,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 258,
+              "bytes": 1024,
+              "tsSync": true
+            }
+          ],
+          "ok": true
+        },
+        {
+          "key": "781/6ad5df3064b695f53d872c12/hls/360p.m3u8",
+          "segments": 257,
+          "endList": true,
+          "samples": [
+            {
+              "index": 0,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 128,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 256,
+              "bytes": 1024,
+              "tsSync": true
+            }
+          ],
+          "ok": true
+        },
+        {
+          "key": "781/6ad5df3064b695f53d872c12/hls/480p.m3u8",
+          "segments": 257,
+          "endList": true,
+          "samples": [
+            {
+              "index": 0,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 128,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 256,
+              "bytes": 1024,
+              "tsSync": true
+            }
+          ],
+          "ok": true
+        },
+        {
+          "key": "781/6ad5df3064b695f53d872c12/hls/1080p.m3u8",
+          "segments": 257,
+          "endList": true,
+          "samples": [
+            {
+              "index": 0,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 128,
+              "bytes": 1024,
+              "tsSync": true
+            },
+            {
+              "index": 256,
+              "bytes": 1024,
+              "tsSync": true
+            }
+          ],
+          "ok": true
+        }
+      ],
+      "ok": true
+    }
+  ],
+  "allDone": true,
+  "expectedJobs": 2,
+  "ok": true
+}

@@ -1,0 +1,472 @@
+<title>Vidyagram Classes List</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<!--
+  PROTOTYPE — throwaway. tenant: vidyagram. Question: what should the admin Classes list row look like?
+  Today (components/ClassesDashboard.tsx on vidyagram-admin) every row carries 7 buttons, 3 status columns
+  and ~130px of height, so 3 classes fit on a laptop screen. Three structurally different fixes, switch with
+  the bottom bar, ← →, or #a / #b / #c. Sample data only; no button calls the API.
+-->
+<style>
+  /* Layout: the admin's own shadcn look (slate neutrals, blue-600 primary, red for live) — one page, three bodies. */
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --fg: #0f172a; --muted: #64748b; --faint: #94a3b8;
+    --border: #e2e8f0; --hover: #f1f5f9; --sel: #eff6ff;
+    --primary: #2563eb; --primary-fg: #ffffff; --primary-soft: #dbeafe; --primary-ink: #1d4ed8;
+    --live: #dc2626; --live-soft: #fee2e2; --live-ink: #b91c1c;
+    --warn-soft: #fef3c7; --warn-ink: #92400e;
+    --ok-soft: #dcfce7; --ok-ink: #166534;
+    --idle-soft: #f1f5f9; --idle-ink: #475569;
+    --bar: #0f172a; --bar-fg: #f8fafc;
+    --shadow: 0 1px 2px rgb(15 23 42 / .06), 0 4px 16px rgb(15 23 42 / .06);
+    --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #0b1120; --card: #111827; --fg: #e5e7eb; --muted: #94a3b8; --faint: #64748b;
+    --border: #1f2937; --hover: #1a2333; --sel: #172554;
+    --primary: #3b82f6; --primary-fg: #ffffff; --primary-soft: #1e3a8a; --primary-ink: #bfdbfe;
+    --live: #ef4444; --live-soft: #450a0a; --live-ink: #fca5a5;
+    --warn-soft: #422006; --warn-ink: #fcd34d;
+    --ok-soft: #052e16; --ok-ink: #86efac;
+    --idle-soft: #1f2937; --idle-ink: #cbd5e1;
+    --bar: #f8fafc; --bar-fg: #0f172a;
+    --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 4px 16px rgb(0 0 0 / .3);
+    color-scheme: dark;
+  } }
+  :root[data-theme="dark"] {
+    --bg: #0b1120; --card: #111827; --fg: #e5e7eb; --muted: #94a3b8; --faint: #64748b;
+    --border: #1f2937; --hover: #1a2333; --sel: #172554;
+    --primary: #3b82f6; --primary-fg: #ffffff; --primary-soft: #1e3a8a; --primary-ink: #bfdbfe;
+    --live: #ef4444; --live-soft: #450a0a; --live-ink: #fca5a5;
+    --warn-soft: #422006; --warn-ink: #fcd34d;
+    --ok-soft: #052e16; --ok-ink: #86efac;
+    --idle-soft: #1f2937; --idle-ink: #cbd5e1;
+    --bar: #f8fafc; --bar-fg: #0f172a;
+    --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 4px 16px rgb(0 0 0 / .3);
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box }
+  body { background: var(--bg); color: var(--fg); font: 14px/1.45 var(--font); }
+  .page { max-width: 1240px; margin: 0 auto; padding-block: 20px 110px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .head { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline; justify-content: space-between; margin-bottom: 14px }
+  h1 { font-size: 22px; margin: 0; letter-spacing: -.01em }
+  .sub { color: var(--muted); margin: 2px 0 0 }
+  .proto { font-size: 12px; color: var(--muted); border: 1px dashed var(--border); border-radius: 6px; padding: 4px 8px }
+  .proto b { color: var(--fg) }
+  .why { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; color: var(--muted); font-size: 13px }
+  .why b { color: var(--fg) }
+
+  .toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 12px }
+  .grow { flex: 1 }
+  .search { position: relative; flex: 1 1 260px; max-width: 360px }
+  .search svg { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--faint) }
+  input[type=search], select { font: inherit; color: var(--fg); background: var(--card); border: 1px solid var(--border); border-radius: 8px; height: 36px; padding: 0 10px }
+  input[type=search] { width: 100%; padding-left: 32px }
+  input[type=checkbox] { width: 16px; height: 16px; accent-color: var(--primary); margin: 0 }
+  :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px }
+
+  .btn { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--card); color: var(--fg); font: 500 13px var(--font); cursor: pointer; white-space: nowrap }
+  .btn:hover { background: var(--hover) }
+  .btn.sm { height: 30px; padding: 0 10px; font-size: 12.5px }
+  .btn.primary { background: var(--primary); border-color: var(--primary); color: var(--primary-fg) }
+  .btn.primary:hover { filter: brightness(1.08) }
+  .btn.live { background: var(--live); border-color: var(--live); color: #fff }
+  .btn.live-o { color: var(--live-ink); border-color: var(--live); background: var(--card) }
+  .btn.ghost { border-color: transparent; background: transparent; color: var(--muted) }
+  .btn.ghost:hover { color: var(--fg); background: var(--hover) }
+  .icon-btn { width: 32px; height: 32px; display: inline-grid; place-items: center; border-radius: 8px; border: 1px solid transparent; background: transparent; color: var(--muted); cursor: pointer }
+  .icon-btn:hover { background: var(--hover); color: var(--fg); border-color: var(--border) }
+
+  .pill { display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 2px 9px; font-size: 12px; font-weight: 500; white-space: nowrap }
+  .pill.live { background: var(--live-soft); color: var(--live-ink) }
+  .pill.sched { background: var(--warn-soft); color: var(--warn-ink) }
+  .pill.ready { background: var(--ok-soft); color: var(--ok-ink) }
+  .pill.novideo { background: var(--idle-soft); color: var(--idle-ink); border: 1px dashed var(--faint) }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor }
+  .pill.live .dot { animation: pulse 1.2s ease-in-out infinite }
+  @keyframes pulse { 50% { opacity: .25 } }
+  @media (prefers-reduced-motion: reduce) { .pill.live .dot { animation: none } }
+  .tag { font-size: 11.5px; font-weight: 600; border-radius: 4px; padding: 1px 6px; background: var(--ok-soft); color: var(--ok-ink) }
+  .muted { color: var(--muted) } .faint { color: var(--faint) } .small { font-size: 12px }
+
+  .switch { position: relative; width: 34px; height: 20px; border-radius: 999px; border: 0; background: var(--faint); cursor: pointer; padding: 0; flex: none }
+  .switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: #fff; transition: transform .15s }
+  .switch[aria-checked=true] { background: var(--primary) }
+  .switch[aria-checked=true]::after { transform: translateX(14px) }
+
+  .thumb { flex: none; width: 56px; height: 36px; border-radius: 6px; display: grid; place-items: center; color: #fff; font: 700 11px var(--font); letter-spacing: .04em; overflow: hidden }
+  .cls { display: flex; gap: 12px; align-items: center; min-width: 0 }
+  .min0 { min-width: 0 }
+  .t { font-weight: 600; line-height: 1.3 }
+  .meta { color: var(--muted); font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+  .off .t, .off .thumb { opacity: .5 }
+
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px }
+  .tablewrap { overflow-x: auto; background: var(--card); border: 1px solid var(--border); border-radius: 10px }
+  table.tbl { width: 100%; border-collapse: collapse; min-width: 900px }
+  .tbl th { text-align: left; font-size: 12px; font-weight: 600; color: var(--muted); padding: 10px 12px; border-bottom: 1px solid var(--border); white-space: nowrap }
+  .tbl td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: middle }
+  .tbl tr:last-child td { border-bottom: 0 }
+  .tbl tbody tr:hover td { background: var(--hover) }
+  .tbl tr.picked td { background: var(--sel) }
+  .tbl .w-cb { width: 36px } .tbl .w-cls { width: 44% } .tbl .act { text-align: right; white-space: nowrap }
+  .att { display: flex; gap: 4px }
+  .att button { display: inline-flex; align-items: center; gap: 4px; border: 1px solid var(--border); background: var(--card); color: var(--fg); border-radius: 6px; padding: 3px 7px; font: 500 12px var(--font); cursor: pointer; font-variant-numeric: tabular-nums }
+  .att button:hover { border-color: var(--primary); color: var(--primary-ink); background: var(--primary-soft) }
+  .att button.zero { color: var(--faint) }
+  .act .btn { margin-right: 4px }
+
+  .bulk { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; background: var(--primary-soft); color: var(--primary-ink); border-radius: 10px; padding: 8px 12px; margin-bottom: 10px; font-weight: 500 }
+  .bulk .btn { height: 30px }
+
+  /* B */
+  .split { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 14px; align-items: start }
+  .list { overflow: hidden }
+  .li { display: flex; gap: 12px; align-items: center; width: 100%; text-align: left; border: 0; border-bottom: 1px solid var(--border); background: transparent; color: inherit; font: inherit; padding: 10px 14px; cursor: pointer }
+  .li:last-child { border-bottom: 0 }
+  .li:hover { background: var(--hover) }
+  .li[aria-current=true] { background: var(--sel); box-shadow: inset 3px 0 0 var(--primary) }
+  .li .min0 { flex: 1 }
+  .panel { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); padding: 16px; display: grid; gap: 16px }
+  .hero { aspect-ratio: 16 / 9; max-width: 100%; border-radius: 8px; display: grid; place-items: center; color: #fff; font: 800 28px var(--font); letter-spacing: .04em }
+  .panel h2 { font-size: 17px; margin: 0; line-height: 1.3; text-wrap: balance }
+  .sec h3 { font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 8px }
+  .kv { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 8px 0; border-top: 1px solid var(--border) }
+  .kv:first-of-type { border-top: 0 }
+  .kv .k { display: flex; gap: 8px; align-items: center }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center }
+  .videobox { border: 1px solid var(--border); border-radius: 8px; padding: 12px; display: grid; gap: 10px }
+
+  /* C */
+  .tabs { display: flex; gap: 4px; overflow-x: auto; border-bottom: 1px solid var(--border); margin-bottom: 12px }
+  .tab { border: 0; background: transparent; color: var(--muted); font: 500 13.5px var(--font); padding: 10px 12px; cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap; display: inline-flex; gap: 6px; align-items: center }
+  .tab:hover { color: var(--fg) }
+  .tab[aria-selected=true] { color: var(--fg); border-bottom-color: var(--fg) }
+  .count { font-size: 11.5px; border-radius: 999px; padding: 0 7px; background: var(--hover); color: var(--muted); font-variant-numeric: tabular-nums }
+  .tab.hot .count { background: var(--live-soft); color: var(--live-ink) }
+  .day { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin: 16px 0 6px }
+  .day:first-child { margin-top: 0 }
+  .q { display: grid; grid-template-columns: 24px 78px minmax(0, 1fr) auto auto; gap: 12px; align-items: center; padding: 10px 14px; border-bottom: 1px solid var(--border) }
+  .q:last-child { border-bottom: 0 }
+  .q:hover { background: var(--hover) }
+  .q.picked { background: var(--sel) }
+  .time { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 13px }
+  .time small { display: block; font-weight: 400; color: var(--muted); font-size: 11.5px }
+  .empty { padding: 36px; text-align: center; color: var(--muted) }
+
+  /* shared overlays */
+  .menu { position: fixed; z-index: 40; min-width: 210px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; box-shadow: var(--shadow); padding: 4px }
+  .menu button { display: flex; width: 100%; gap: 10px; align-items: center; border: 0; background: transparent; color: var(--fg); font: 13px var(--font); padding: 8px 10px; border-radius: 6px; cursor: pointer; text-align: left }
+  .menu button:hover { background: var(--hover) }
+  .menu hr { border: 0; border-top: 1px solid var(--border); margin: 4px 0 }
+  .menu .danger { color: var(--live-ink) }
+  .switcher { position: fixed; z-index: 50; left: 50%; transform: translateX(-50%); bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    display: flex; align-items: center; gap: 4px; background: var(--bar); color: var(--bar-fg); border-radius: 999px; padding: 6px; box-shadow: 0 6px 24px rgb(0 0 0 / .25); max-width: calc(100vw - 32px) }
+  .switcher button { width: 34px; height: 34px; border-radius: 50%; border: 0; background: transparent; color: inherit; cursor: pointer; display: grid; place-items: center }
+  .switcher button:hover { background: rgb(127 127 127 / .25) }
+  .switcher span { font: 600 13px var(--font); padding: 0 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+  .toast { position: fixed; z-index: 60; left: 50%; transform: translateX(-50%); bottom: calc(70px + env(safe-area-inset-bottom, 0px)); background: var(--card); color: var(--fg);
+    border: 1px solid var(--border); box-shadow: var(--shadow); border-radius: 8px; padding: 8px 14px; font-size: 13px; max-width: calc(100vw - 32px) }
+
+  @media (max-width: 900px) {
+    .split { grid-template-columns: 1fr }
+    .panel { position: static }
+    .q { grid-template-columns: 24px minmax(0, 1fr) auto; }
+    .q .time, .q .qatt { display: none }
+  }
+</style>
+
+<div class="page">
+  <div class="head">
+    <div>
+      <h1>Classes</h1>
+      <p class="sub">Manage your class catalog</p>
+    </div>
+    <div class="proto"><b>Prototype</b> · sample data · nothing is saved</div>
+  </div>
+  <div class="why" id="why"></div>
+  <div id="app"></div>
+</div>
+
+<div class="switcher" role="group" aria-label="Prototype variant">
+  <button id="prev" aria-label="Previous variant"></button>
+  <span id="vlabel"></span>
+  <button id="next" aria-label="Next variant"></button>
+</div>
+<div class="menu" id="menu" hidden></div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+const P = {
+  search: '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+  plus: '<path d="M5 12h14"/><path d="M12 5v14"/>',
+  upload: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/>',
+  radio: '<path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/>',
+  video: '<path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/>',
+  more: '<circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/>',
+  file: '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/>',
+  test: '<rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/>',
+  book: '<path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/>',
+  edit: '<path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/>',
+  copy: '<rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>',
+  chevL: '<path d="m15 18-6-6 6-6"/>', chevR: '<path d="m9 18 6-6-6-6"/>',
+  play: '<polygon points="6 3 20 12 6 21 6 3"/>',
+};
+const I = (n, s = 16) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[n]}</svg>`;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+// Sample rows. stream: live | scheduled | ended | idle (the admin's streamStatus); video = the class has an hlsAsset.
+const CLASSES = [
+  { id: 1, title: 'Percentage 07 · Arithmetic', section: 'Maths', topic: 'Arithmetic', faculty: 'Aditya Ranjan', at: '2026-10-28T11:30', stream: 'live', video: false, free: false, active: true, pdfs: 1, tests: 0, courses: 4, hue: 222 },
+  { id: 2, title: 'Current Affairs · 28 October', section: 'GK', topic: 'Current Affairs', faculty: 'Neha Sharma', at: '2026-10-28T16:30', stream: 'scheduled', video: false, free: true, active: true, pdfs: 0, tests: 0, courses: 6, hue: 160 },
+  { id: 3, title: 'Doubt Session 06 · Doubt Classes', section: 'Computer', topic: 'Doubt Classes', faculty: 'Rohit Verma', at: '2026-10-28T10:00', stream: 'ended', video: true, free: false, active: true, pdfs: 1, tests: 0, courses: 3, hue: 18 },
+  { id: 4, title: 'Software 02 · Software (4)', section: 'Computer', topic: 'Software', faculty: 'Rohit Verma', at: '2026-10-27T18:00', stream: 'ended', video: true, free: false, active: true, pdfs: 2, tests: 1, courses: 4, hue: 0 },
+  { id: 5, title: 'Organic Chemistry', section: 'Science', topic: 'Chemistry', faculty: 'Pooja Mishra', at: '2026-10-27T15:00', stream: 'ended', video: false, free: false, active: true, pdfs: 0, tests: 0, courses: 2, hue: 265 },
+  { id: 6, title: 'Reasoning 12 · Blood Relations', section: 'Reasoning', topic: 'Blood Relations', faculty: 'Aditya Ranjan', at: '2026-10-29T09:00', stream: 'scheduled', video: false, free: false, active: true, pdfs: 1, tests: 1, courses: 5, hue: 32 },
+  { id: 7, title: 'Hindi Vyakaran 04 · Sandhi', section: 'Hindi', topic: 'Vyakaran', faculty: 'Sunita Yadav', at: '2026-10-27T12:00', stream: 'idle', video: false, free: false, active: true, pdfs: 0, tests: 0, courses: 0, hue: 340 },
+  { id: 8, title: 'MS Excel 03 · Formulas and Functions', section: 'Computer', topic: 'MS Office', faculty: 'Rohit Verma', at: '2026-10-26T11:00', stream: 'idle', video: true, free: true, active: true, pdfs: 3, tests: 1, courses: 3, hue: 140 },
+  { id: 9, title: 'Polity 09 · Fundamental Rights', section: 'GK', topic: 'Polity', faculty: 'Neha Sharma', at: '2026-10-26T17:00', stream: 'ended', video: true, free: false, active: false, pdfs: 1, tests: 1, courses: 2, hue: 200 },
+  { id: 10, title: 'Algebra 05 · Linear Equations', section: 'Maths', topic: 'Algebra', faculty: 'Aditya Ranjan', at: '2026-10-26T10:00', stream: 'ended', video: true, free: true, active: true, pdfs: 2, tests: 2, courses: 5, hue: 240 },
+  { id: 11, title: 'Static GK 11 · Rivers of India', section: 'GK', topic: 'Static GK', faculty: 'Neha Sharma', at: '2026-10-25T16:00', stream: 'ended', video: false, free: false, active: true, pdfs: 1, tests: 0, courses: 3, hue: 190 },
+  { id: 12, title: 'English 06 · Tenses', section: 'English', topic: 'Grammar', faculty: 'Kavita Singh', at: '2026-10-25T09:30', stream: 'ended', video: true, free: false, active: true, pdfs: 0, tests: 1, courses: 4, hue: 300 },
+  { id: 13, title: 'Computer Networks 02 · OSI Model', section: 'Computer', topic: 'Networking', faculty: 'Rohit Verma', at: '2026-10-30T18:00', stream: 'scheduled', video: false, free: false, active: true, pdfs: 0, tests: 0, courses: 3, hue: 210 },
+  { id: 14, title: 'Geography 03 · Indian Monsoon', section: 'GK', topic: 'Geography', faculty: 'Neha Sharma', at: '2026-10-24T15:00', stream: 'ended', video: true, free: false, active: false, pdfs: 1, tests: 0, courses: 1, hue: 110 },
+];
+
+const TODAY = '2026-10-28';
+const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const dayKey = c => c.at.slice(0, 10);
+function dayLabel(k) {
+  const diff = Math.round((new Date(k) - new Date(TODAY)) / 864e5);
+  if (diff === 0) return 'Today'; if (diff === 1) return 'Tomorrow'; if (diff === -1) return 'Yesterday';
+  const d = new Date(k); return `${d.getUTCDate()} ${MON[d.getUTCMonth()]}`;
+}
+function clock(c) { let [h, m] = c.at.slice(11).split(':').map(Number); const ap = h >= 12 ? 'PM' : 'AM'; h = h % 12 || 12; return `${h}:${String(m).padStart(2, '0')} ${ap}`; }
+const when = c => `${dayLabel(dayKey(c))}, ${clock(c)}`;
+
+// One state per class instead of separate Free / Live / Status columns.
+function state(c) {
+  if (c.stream === 'live') return { k: 'live', label: 'Live now' };
+  if (c.stream === 'scheduled') return { k: 'sched', label: `Starts ${dayLabel(dayKey(c)) === 'Today' ? clock(c) : dayLabel(dayKey(c))}` };
+  if (c.video) return { k: 'ready', label: c.stream === 'ended' ? 'Recorded' : 'Video uploaded' };
+  return { k: 'novideo', label: c.stream === 'ended' ? 'Ended · no recording' : 'No video yet' };
+}
+const pill = c => { const s = state(c); return `<span class="pill ${s.k}"><span class="dot"></span>${esc(s.label)}</span>`; };
+const thumb = (c, cls = 'thumb') => `<span class="${cls}" style="background:linear-gradient(135deg,hsl(${c.hue} 60% 38%),hsl(${(c.hue + 40) % 360} 55% 28%))">${esc(c.section.slice(0, 3).toUpperCase())}</span>`;
+const sw = c => `<button class="switch" role="switch" aria-checked="${c.active}" aria-label="Active" data-toggle="${c.id}"></button>`;
+const metaLine = c => `${esc(c.section)} › ${esc(c.topic)} · ${esc(c.faculty)} · ${when(c)}`;
+
+// The one action a row needs right now; everything else lives in the ⋯ menu.
+function primary(c, size = 'sm') {
+  const s = state(c).k;
+  if (s === 'live') return `<button class="btn ${size} live-o" data-act="open-live" data-id="${c.id}">${I('radio', 14)} Open live</button>`;
+  if (s === 'sched') return `<button class="btn ${size} live" data-act="go-live" data-id="${c.id}">${I('radio', 14)} Go Live</button>`;
+  if (s === 'novideo') return `<button class="btn ${size} primary" data-act="upload" data-id="${c.id}">${I('upload', 14)} Upload video</button>`;
+  return `<button class="btn ${size}" data-act="edit" data-id="${c.id}">${I('edit', 14)} Edit</button>`;
+}
+
+const S = { v: 'a', q: '', fState: '', fAccess: '', fSection: '', sel: new Set(), focus: 3, tab: 'needs' };
+const VARIANTS = {
+  a: { name: 'Compact table', why: '<b>A · Compact table.</b> Same table, one line per class. Free / Live / Status fold into one state pill; the 3 Assign buttons become clickable counts (PDF · Test · Course); the 4 action buttons become the one action that row needs plus a ⋯ menu. About 12 rows fit where 3 fit today.' },
+  b: { name: 'List + detail panel', why: '<b>B · List + detail panel.</b> The list carries no buttons at all, only what you scan by. Click a class and everything you can do to it opens on the right: video, attached PDFs / tests / courses, active switch, edit and duplicate.' },
+  c: { name: 'Work queues', why: '<b>C · Work queues.</b> Tabs sort classes by what they need: a video, going live, or nothing. Rows sit under their day with the time on the left, and each tab shows only the button that clears the queue.' },
+};
+const ORDER = ['a', 'b', 'c'];
+
+function filtered() {
+  const q = S.q.trim().toLowerCase();
+  return CLASSES.filter(c =>
+    (!q || c.title.toLowerCase().includes(q) || c.faculty.toLowerCase().includes(q)) &&
+    (!S.fState || state(c).k === S.fState) &&
+    (!S.fAccess || (S.fAccess === 'free') === c.free) &&
+    (!S.fSection || c.section === S.fSection));
+}
+const sections = [...new Set(CLASSES.map(c => c.section))].sort();
+const opt = (v, l, cur) => `<option value="${v}" ${v === cur ? 'selected' : ''}>${l}</option>`;
+const searchBox = () => `<label class="search">${I('search')}<input type="search" id="q" placeholder="Search by title or faculty…" value="${esc(S.q)}" aria-label="Search classes"></label>`;
+const addBtns = () => `<span class="grow"></span><button class="btn" data-act="bulk-upload">${I('upload', 14)} Bulk upload videos</button><button class="btn primary" data-act="add">${I('plus', 14)} Add class</button>`;
+const sectionSel = () => `<select id="fSection" aria-label="Section">${opt('', 'All sections', S.fSection)}${sections.map(s => opt(s, s, S.fSection)).join('')}</select>`;
+const accessSel = () => `<select id="fAccess" aria-label="Access">${opt('', 'Free + paid', S.fAccess)}${opt('free', 'Free', S.fAccess)}${opt('paid', 'Paid', S.fAccess)}</select>`;
+function bulkBar() {
+  if (!S.sel.size) return '';
+  return `<div class="bulk">${S.sel.size} selected<span class="grow"></span>
+    <button class="btn sm" data-act="bulk-section">Change section / topic</button>
+    <button class="btn sm" data-act="bulk-courses">${I('book', 14)} Add to courses</button>
+    <button class="btn sm" data-act="bulk-inactive">Set inactive</button>
+    <button class="btn sm ghost" data-act="clear-sel">Clear</button></div>`;
+}
+const attCounts = c => `<div class="att">
+  <button class="${c.pdfs ? '' : 'zero'}" data-act="pdfs" data-id="${c.id}" title="Assign PDFs">${I('file', 13)} ${c.pdfs}</button>
+  <button class="${c.tests ? '' : 'zero'}" data-act="tests" data-id="${c.id}" title="Assign tests">${I('test', 13)} ${c.tests}</button>
+  <button class="${c.courses ? '' : 'zero'}" data-act="courses" data-id="${c.id}" title="Assign to courses">${I('book', 13)} ${c.courses}</button></div>`;
+
+/* ---------- A: compact table ---------- */
+function shellA() {
+  return `<div class="toolbar">${searchBox()}
+    <select id="fState" aria-label="State">${opt('', 'All states', S.fState)}${opt('live', 'Live now', S.fState)}${opt('sched', 'Scheduled', S.fState)}${opt('novideo', 'Needs video', S.fState)}${opt('ready', 'Has video', S.fState)}</select>
+    ${accessSel()}${sectionSel()}${addBtns()}</div><div id="bulk"></div>
+    <div class="tablewrap"><table class="tbl"><thead><tr>
+      <th class="w-cb"><input type="checkbox" id="all" aria-label="Select all"></th><th class="w-cls">Class</th><th>State</th><th>Access</th><th>PDFs · Tests · Courses</th><th>Active</th><th></th>
+    </tr></thead><tbody id="body"></tbody></table></div>`;
+}
+function bodyA() {
+  const rows = filtered();
+  document.getElementById('bulk').innerHTML = bulkBar();
+  document.getElementById('body').innerHTML = rows.length ? rows.map(c => `
+    <tr class="${c.active ? '' : 'off'} ${S.sel.has(c.id) ? 'picked' : ''}">
+      <td><input type="checkbox" data-sel="${c.id}" ${S.sel.has(c.id) ? 'checked' : ''} aria-label="Select ${esc(c.title)}"></td>
+      <td><div class="cls">${thumb(c)}<div class="min0"><div class="t">${esc(c.title)}</div><div class="meta">${metaLine(c)}</div></div></div></td>
+      <td>${pill(c)}</td>
+      <td>${c.free ? '<span class="tag">Free</span>' : '<span class="muted small">Paid</span>'}</td>
+      <td>${attCounts(c)}</td>
+      <td>${sw(c)}</td>
+      <td class="act">${primary(c)}<button class="icon-btn" data-menu="${c.id}" aria-label="More actions">${I('more')}</button></td>
+    </tr>`).join('') : `<tr><td colspan="7" class="empty">No classes match.</td></tr>`;
+}
+
+/* ---------- B: list + detail panel ---------- */
+function shellB() {
+  return `<div class="toolbar">${searchBox()}${accessSel()}${sectionSel()}${addBtns()}</div>
+    <div class="split"><div class="card list" id="body"></div><aside class="card panel" id="panel" aria-live="polite"></aside></div>`;
+}
+function bodyB() {
+  const rows = filtered();
+  if (rows.length && !rows.some(c => c.id === S.focus)) S.focus = rows[0].id;
+  document.getElementById('body').innerHTML = rows.length ? rows.map(c => `
+    <button class="li ${c.active ? '' : 'off'}" data-focus="${c.id}" aria-current="${c.id === S.focus}">
+      ${thumb(c)}<div class="min0"><div class="t">${esc(c.title)}</div><div class="meta">${esc(c.section)} › ${esc(c.topic)} · ${when(c)}</div></div>
+      ${c.active ? '' : '<span class="muted small">Inactive</span>'}${pill(c)}
+    </button>`).join('') : `<div class="empty">No classes match.</div>`;
+  const c = CLASSES.find(x => x.id === S.focus);
+  const panel = document.getElementById('panel');
+  if (!c || !rows.length) { panel.innerHTML = '<div class="empty">Pick a class.</div>'; return; }
+  const s = state(c).k;
+  const videoText = { live: 'Streaming now. Students see it in their live schedule.', sched: `Goes live ${when(c)}.`, ready: c.stream === 'ended' ? 'The live recording is published.' : 'Uploaded video is published.', novideo: c.stream === 'ended' ? 'The class ended without a recording. Upload the video so students can watch it.' : 'No video yet. Upload one or go live.' }[s];
+  const videoBtns = {
+    live: `<button class="btn live-o" data-act="open-live" data-id="${c.id}">${I('radio', 14)} Open live</button>`,
+    sched: `<button class="btn live" data-act="go-live" data-id="${c.id}">${I('radio', 14)} Go Live</button><button class="btn" data-act="upload" data-id="${c.id}">${I('upload', 14)} Upload instead</button>`,
+    ready: `<button class="btn" data-act="watch" data-id="${c.id}">${I('play', 14)} Preview</button><button class="btn" data-act="upload" data-id="${c.id}">${I('upload', 14)} Replace video</button><button class="btn ghost" data-act="go-live" data-id="${c.id}">Go live again</button>`,
+    novideo: `<button class="btn primary" data-act="upload" data-id="${c.id}">${I('upload', 14)} Upload video</button><button class="btn live-o" data-act="go-live" data-id="${c.id}">${I('radio', 14)} Go Live</button>`,
+  }[s];
+  const att = (icon, label, n, act, unit) => `<div class="kv"><span class="k">${I(icon, 15)} ${label}</span>
+    <span class="row"><span class="${n ? '' : 'faint'} small">${n ? `${n} ${unit}${n > 1 ? 's' : ''}` : 'None'}</span><button class="btn sm" data-act="${act}" data-id="${c.id}">${n ? 'Manage' : 'Add'}</button></span></div>`;
+  panel.innerHTML = `
+    <div style="background:linear-gradient(135deg,hsl(${c.hue} 60% 38%),hsl(${(c.hue + 40) % 360} 55% 28%))" class="hero">${esc(c.section.toUpperCase())}</div>
+    <div><h2>${esc(c.title)}</h2><div class="muted small" style="margin-top:4px">${metaLine(c)}</div>
+      <div class="row" style="margin-top:8px">${pill(c)}${c.free ? '<span class="tag">Free</span>' : '<span class="muted small">Paid</span>'}</div></div>
+    <div class="kv" style="border:0;padding:0"><span class="k">${sw(c)} <span>${c.active ? 'Active — visible to students' : 'Inactive — hidden from students'}</span></span></div>
+    <div class="sec"><h3>Video</h3><div class="videobox"><div class="small">${videoText}</div><div class="row">${videoBtns}</div></div></div>
+    <div class="sec"><h3>Attached</h3>${att('file', 'PDFs', c.pdfs, 'pdfs', 'PDF')}${att('test', 'Tests', c.tests, 'tests', 'test')}${att('book', 'Courses', c.courses, 'courses', 'course')}</div>
+    <div class="row"><button class="btn" data-act="edit" data-id="${c.id}">${I('edit', 14)} Edit details</button><button class="btn" data-act="duplicate" data-id="${c.id}">${I('copy', 14)} Duplicate</button></div>`;
+}
+
+/* ---------- C: work queues ---------- */
+const QUEUES = [
+  { k: 'needs', label: 'Needs video', test: c => c.active && state(c).k === 'novideo' },
+  { k: 'upcoming', label: 'Live & upcoming', test: c => c.active && ['live', 'sched'].includes(state(c).k), hot: true },
+  { k: 'ready', label: 'Published', test: c => c.active && state(c).k === 'ready' },
+  { k: 'inactive', label: 'Inactive', test: c => !c.active },
+  { k: 'all', label: 'All', test: () => true },
+];
+function shellC() {
+  return `<div class="toolbar">${searchBox()}${sectionSel()}${addBtns()}</div>
+    <div class="tabs" role="tablist" id="tabs"></div><div id="bulk"></div><div id="body"></div>`;
+}
+function bodyC() {
+  const base = filtered();
+  document.getElementById('tabs').innerHTML = QUEUES.map(q => {
+    const n = base.filter(q.test).length;
+    return `<button class="tab ${q.hot && n ? 'hot' : ''}" role="tab" aria-selected="${S.tab === q.k}" data-tab="${q.k}">${q.label}<span class="count">${n}</span></button>`;
+  }).join('');
+  document.getElementById('bulk').innerHTML = bulkBar();
+  const qd = QUEUES.find(q => q.k === S.tab);
+  const rows = base.filter(qd.test).sort((a, b) => S.tab === 'upcoming' ? a.at.localeCompare(b.at) : b.at.localeCompare(a.at));
+  if (!rows.length) { document.getElementById('body').innerHTML = `<div class="card empty">Nothing here. ${S.tab === 'needs' ? 'Every active class has a video.' : ''}</div>`; return; }
+  const groups = [];
+  rows.forEach(c => { const k = dayKey(c); const g = groups.at(-1); g && g.k === k ? g.rows.push(c) : groups.push({ k, rows: [c] }); });
+  document.getElementById('body').innerHTML = groups.map(g => `
+    <div class="day">${dayLabel(g.k)} · ${g.rows.length} ${g.rows.length > 1 ? 'classes' : 'class'}</div>
+    <div class="card">${g.rows.map(c => {
+      const att = [c.pdfs && `${c.pdfs} PDF${c.pdfs > 1 ? 's' : ''}`, c.tests && `${c.tests} test${c.tests > 1 ? 's' : ''}`, c.courses && `${c.courses} course${c.courses > 1 ? 's' : ''}`].filter(Boolean).join(' · ') || 'Not in any course';
+      return `<div class="q ${c.active ? '' : 'off'} ${S.sel.has(c.id) ? 'picked' : ''}">
+        <input type="checkbox" data-sel="${c.id}" ${S.sel.has(c.id) ? 'checked' : ''} aria-label="Select ${esc(c.title)}">
+        <div class="time">${clock(c)}<small>${S.tab === 'all' || S.tab === 'inactive' ? state(c).label : (c.free ? 'Free' : 'Paid')}</small></div>
+        <div class="cls">${thumb(c)}<div class="min0"><div class="t">${esc(c.title)}</div><div class="meta">${esc(c.section)} › ${esc(c.topic)} · ${esc(c.faculty)}</div></div></div>
+        <div class="qatt small ${c.courses ? 'muted' : ''}" style="${c.courses ? '' : 'color:var(--warn-ink)'}">${att}</div>
+        <div class="act" style="white-space:nowrap">${S.tab === 'inactive' ? `<button class="btn sm" data-toggle="${c.id}">Set active</button>` : primary(c)}<button class="icon-btn" data-menu="${c.id}" aria-label="More actions">${I('more')}</button></div>
+      </div>`; }).join('')}</div>`).join('');
+}
+
+/* ---------- wiring ---------- */
+const SHELL = { a: shellA, b: shellB, c: shellC }, BODY = { a: bodyA, b: bodyB, c: bodyC };
+function mount() {
+  document.getElementById('why').innerHTML = VARIANTS[S.v].why;
+  document.getElementById('vlabel').textContent = `${S.v.toUpperCase()} · ${VARIANTS[S.v].name}`;
+  document.getElementById('app').innerHTML = SHELL[S.v]();
+  BODY[S.v]();
+}
+const refresh = () => BODY[S.v]();
+function go(v) { S.v = v; closeMenu(); try { history.replaceState(null, '', '#' + v); } catch (e) {} mount(); }
+function step(d) { go(ORDER[(ORDER.indexOf(S.v) + d + ORDER.length) % ORDER.length]); }
+
+const ACT_LABEL = { 'open-live': 'Open the live control room', 'go-live': 'Open Go Live (stream key + OBS link)', upload: 'Open the Upload Video dialog', edit: 'Open the Edit class dialog', duplicate: 'Open Duplicate class', pdfs: 'Open Assign PDFs', tests: 'Open Assign Tests', courses: 'Open Assign to Courses', watch: 'Play the class video', add: 'Open Add class', 'bulk-upload': 'Open Bulk upload videos', 'bulk-section': 'Open Change section / topic / subtopic', 'bulk-courses': 'Open Add to courses for the selection' };
+let tt;
+function toast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.hidden = false; clearTimeout(tt); tt = setTimeout(() => (t.hidden = true), 2200); }
+
+const menu = document.getElementById('menu');
+function closeMenu() { menu.hidden = true; }
+function openMenu(btn, id) {
+  const c = CLASSES.find(x => x.id === id);
+  menu.innerHTML = `
+    <button data-act="edit" data-id="${id}">${I('edit', 15)} Edit</button>
+    <button data-act="duplicate" data-id="${id}">${I('copy', 15)} Duplicate</button><hr>
+    <button data-act="upload" data-id="${id}">${I('video', 15)} ${c.video ? 'Replace video' : 'Upload video'}</button>
+    <button data-act="go-live" data-id="${id}">${I('radio', 15)} Go Live</button><hr>
+    <button data-act="pdfs" data-id="${id}">${I('file', 15)} Assign PDFs</button>
+    <button data-act="tests" data-id="${id}">${I('test', 15)} Assign tests</button>
+    <button data-act="courses" data-id="${id}">${I('book', 15)} Assign to courses</button>`;
+  menu.hidden = false;
+  const r = btn.getBoundingClientRect(), mh = menu.offsetHeight, mw = menu.offsetWidth;
+  menu.style.left = Math.max(8, Math.min(r.right - mw, innerWidth - mw - 8)) + 'px';
+  menu.style.top = (r.bottom + mh + 8 > innerHeight ? r.top - mh - 4 : r.bottom + 4) + 'px';
+}
+
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-menu],[data-act],[data-toggle],[data-focus],[data-tab],[data-sel],#all');
+  if (!t || !t.matches('[data-menu]')) closeMenu();
+  if (!t) return;
+  if (t.matches('[data-menu]')) { e.stopPropagation(); const id = +t.dataset.menu; menu.hidden ? openMenu(t, id) : closeMenu(); return; }
+  if (t.matches('[data-toggle]')) { const c = CLASSES.find(x => x.id === +t.dataset.toggle); c.active = !c.active; toast(`${c.title}: ${c.active ? 'active' : 'inactive'}`); return refresh(); }
+  if (t.matches('[data-focus]')) { S.focus = +t.dataset.focus; return refresh(); }
+  if (t.matches('[data-tab]')) { S.tab = t.dataset.tab; S.sel.clear(); return refresh(); }
+  if (t.matches('[data-sel]')) { const id = +t.dataset.sel; S.sel.has(id) ? S.sel.delete(id) : S.sel.add(id); return refresh(); }
+  if (t.id === 'all') { const ids = filtered().map(c => c.id); t.checked ? ids.forEach(i => S.sel.add(i)) : S.sel.clear(); return refresh(); }
+  const a = t.dataset.act;
+  if (a === 'clear-sel') { S.sel.clear(); const all = document.getElementById('all'); if (all) all.checked = false; return refresh(); }
+  if (a === 'bulk-inactive') { CLASSES.forEach(c => S.sel.has(c.id) && (c.active = false)); toast(`${S.sel.size} classes set inactive`); S.sel.clear(); return refresh(); }
+  const c = CLASSES.find(x => x.id === +t.dataset.id);
+  toast(`Prototype: would ${(ACT_LABEL[a] || a).replace(/^Open/, 'open').replace(/^Play/, 'play')}${c ? ` for “${c.title}”` : ''}`);
+});
+document.addEventListener('input', e => {
+  if (e.target.id === 'q') { S.q = e.target.value; refresh(); }
+});
+document.addEventListener('change', e => {
+  if (['fState', 'fAccess', 'fSection'].includes(e.target.id)) { S[e.target.id] = e.target.value; refresh(); }
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeMenu();
+  if (e.target.closest('input, textarea, select, [contenteditable]')) return;
+  if (e.key === 'ArrowLeft') step(-1);
+  if (e.key === 'ArrowRight') step(1);
+});
+addEventListener('scroll', closeMenu, true);
+document.getElementById('prev').innerHTML = I('chevL', 18);
+document.getElementById('next').innerHTML = I('chevR', 18);
+document.getElementById('prev').onclick = () => step(-1);
+document.getElementById('next').onclick = () => step(1);
+
+const h = (location.hash || '').slice(1).toLowerCase();
+S.v = ORDER.includes(h) ? h : 'a';
+mount();
+</script>

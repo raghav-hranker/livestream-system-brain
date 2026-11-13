@@ -1,0 +1,1633 @@
+{
+  "at": {
+    "$date": {
+      "$numberLong": "1793277240375"
+    }
+  },
+  "runId": "daily-2026-10-29",
+  "swaps": [
+    {
+      "assetKey": "vid:armaths-data:4656486-1792746126",
+      "oldAssetKey": "vid:armaths-data:4636285-1792429697",
+      "classId": "6ad6995fe36abd47ea38d533",
+      "retiredClassId": "6adc01b520e78c9f77dbc7b6",
+      "placementsDropped": {
+        "$numberInt": "2"
+      },
+      "placementsMoved": {
+        "$numberInt": "0"
+      }
+    },
+    {
+      "assetKey": "vid:armaths-data:4657426-1792753322",
+      "oldAssetKey": "vid:armaths-data:4653024-1792687692",
+      "classId": "6adaafe4d8a68cd04b9b6618",
+      "retiredClassId": "6adc01b820e78c9f77dbc7bd",
+      "placementsDropped": {
+        "$numberInt": "2"
+      },
+      "placementsMoved": {
+        "$numberInt": "0"
+      }
+    },
+    {
+      "assetKey": "vid:armaths-data:4681649-1793093319",
+      "oldAssetKey": "vid:armaths-data:4645340-1792593915",
+      "classId": "6ad93ddb38fae4f95ec4aa8c",
+      "retiredClassId": "6ae1d2b1a8d11952ecd2ef70",
+      "placementsDropped": {
+        "$numberInt": "2"
+      },
+      "placementsMoved": {
+        "$numberInt": "0"
+      }
+    }
+  ],
+  "classes": [
+    {
+      "_id": {
+        "$oid": "6ad6995fe36abd47ea38d533"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "isChat": false,
+      "isFree": false,
+      "teacherName": "Vidyagram Team",
+      "priority": {
+        "$numberInt": "0"
+      },
+      "isLive": false,
+      "isYoutubeRedirect": false,
+      "isShort": false,
+      "isTopper": false,
+      "isPrivate": false,
+      "image": "https://hranker-server-v2.b-cdn.net/781/classes/thumbnails/vid_armaths-data_4636285-1792429697.png",
+      "title": "Geometry 03 (2) · GEOMETRY",
+      "mainCategory": {
+        "$oid": "6ace4d459e33840b2256c218"
+      },
+      "category": {
+        "$oid": "6ace4d469e33840b2256c21b"
+      },
+      "section": {
+        "$oid": "6ace4d469e33840b2256c21f"
+      },
+      "topic": null,
+      "subTopic": null,
+      "seriesIds": [],
+      "pdfIds": [
+        {
+          "$oid": "6ad699bae36abd47ea38d5a5"
+        }
+      ],
+      "viewCount": {
+        "$numberInt": "0"
+      },
+      "uniqueViewCount": {
+        "$numberInt": "0"
+      },
+      "apxAssetKey": "vid:armaths-data:4636285-1792429697",
+      "seriesAssignments": [],
+      "pdfAssignments": [
+        {
+          "_id": {
+            "$oid": "6ad69f46e36abd47ea3906d3"
+          },
+          "pdfId": {
+            "$oid": "6ad699bae36abd47ea38d5a5"
+          },
+          "priority": {
+            "$numberInt": "1"
+          },
+          "isFree": false
+        }
+      ],
+      "mp4Recordings": [],
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1792448863132"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1792449562384"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      },
+      "hlsAsset": {
+        "bucket": "recorded",
+        "key": "781/6ad6995fe36abd47ea38d533/hls/master.m3u8"
+      },
+      "streamStatus": "ended",
+      "duration": {
+        "$numberInt": "6781"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6ad93ddb38fae4f95ec4aa8c"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "isChat": false,
+      "isFree": false,
+      "teacherName": "Vidyagram Team",
+      "priority": {
+        "$numberInt": "0"
+      },
+      "isLive": false,
+      "isYoutubeRedirect": false,
+      "isShort": false,
+      "isTopper": false,
+      "isPrivate": false,
+      "image": "https://hranker-server-v2.b-cdn.net/781/classes/thumbnails/vid_armaths-data_4645340-1792593915.png",
+      "title": "Ratio 07 · Ratio (2)",
+      "mainCategory": {
+        "$oid": "6ace4d459e33840b2256c218"
+      },
+      "category": {
+        "$oid": "6ace4d469e33840b2256c21b"
+      },
+      "section": {
+        "$oid": "6ace4d469e33840b2256c21f"
+      },
+      "topic": null,
+      "subTopic": null,
+      "seriesIds": [],
+      "pdfIds": [
+        {
+          "$oid": "6ad93ece38fae4f95ec4bc73"
+        }
+      ],
+      "viewCount": {
+        "$numberInt": "0"
+      },
+      "uniqueViewCount": {
+        "$numberInt": "0"
+      },
+      "apxAssetKey": "vid:armaths-data:4645340-1792593915",
+      "seriesAssignments": [],
+      "pdfAssignments": [
+        {
+          "_id": {
+            "$oid": "6ad9408b38fae4f95ec4d7bb"
+          },
+          "pdfId": {
+            "$oid": "6ad93ece38fae4f95ec4bc73"
+          },
+          "priority": {
+            "$numberInt": "1"
+          },
+          "isFree": false
+        }
+      ],
+      "mp4Recordings": [],
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1792622043997"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1792622483547"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      },
+      "hlsAsset": {
+        "bucket": "recorded",
+        "key": "781/6ad93ddb38fae4f95ec4aa8c/hls/master.m3u8"
+      },
+      "streamStatus": "ended",
+      "duration": {
+        "$numberInt": "3526"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6adaafe4d8a68cd04b9b6618"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "isChat": false,
+      "isFree": false,
+      "teacherName": "Vidyagram Team",
+      "priority": {
+        "$numberInt": "0"
+      },
+      "isLive": false,
+      "isYoutubeRedirect": false,
+      "isShort": false,
+      "isTopper": false,
+      "isPrivate": false,
+      "image": "https://hranker-server-v2.b-cdn.net/781/classes/thumbnails/vid_armaths-data_4653024-1792687692.png",
+      "title": "Geometry 04 (2) · GEOMETRY",
+      "mainCategory": {
+        "$oid": "6ace4d459e33840b2256c218"
+      },
+      "category": {
+        "$oid": "6ace4d469e33840b2256c21b"
+      },
+      "section": {
+        "$oid": "6ace4d469e33840b2256c21f"
+      },
+      "topic": null,
+      "subTopic": null,
+      "seriesIds": [],
+      "pdfIds": [],
+      "viewCount": {
+        "$numberInt": "0"
+      },
+      "uniqueViewCount": {
+        "$numberInt": "0"
+      },
+      "apxAssetKey": "vid:armaths-data:4653024-1792687692",
+      "seriesAssignments": [],
+      "pdfAssignments": [],
+      "mp4Recordings": [],
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1792716772988"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1792717744637"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      },
+      "duration": {
+        "$numberInt": "5550"
+      },
+      "hlsAsset": {
+        "bucket": "recorded",
+        "key": "781/6adaafe4d8a68cd04b9b6618/hls/master.m3u8"
+      },
+      "streamStatus": "ended"
+    },
+    {
+      "_id": {
+        "$oid": "6adc01b520e78c9f77dbc7b6"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "isChat": false,
+      "isFree": false,
+      "teacherName": "Vidyagram Team",
+      "priority": {
+        "$numberInt": "0"
+      },
+      "isLive": false,
+      "isYoutubeRedirect": false,
+      "isShort": false,
+      "isTopper": false,
+      "isPrivate": false,
+      "image": "https://hranker-server-v2.b-cdn.net/781/classes/thumbnails/vid_armaths-data_4656486-1792746126.png",
+      "title": "Geometry 03 (2) · GEOMETRY (2)",
+      "mainCategory": {
+        "$oid": "6ace4d459e33840b2256c218"
+      },
+      "category": {
+        "$oid": "6ace4d469e33840b2256c21b"
+      },
+      "section": {
+        "$oid": "6ace4d469e33840b2256c21f"
+      },
+      "topic": null,
+      "subTopic": null,
+      "seriesIds": [],
+      "pdfIds": [
+        {
+          "$oid": "6ad699bae36abd47ea38d5a5"
+        }
+      ],
+      "viewCount": {
+        "$numberInt": "0"
+      },
+      "uniqueViewCount": {
+        "$numberInt": "0"
+      },
+      "apxAssetKey": "vid:armaths-data:4656486-1792746126",
+      "seriesAssignments": [],
+      "pdfAssignments": [
+        {
+          "_id": {
+            "$oid": "6adc038c20e78c9f77dbfc1b"
+          },
+          "pdfId": {
+            "$oid": "6ad699bae36abd47ea38d5a5"
+          },
+          "priority": {
+            "$numberInt": "1"
+          },
+          "isFree": false
+        }
+      ],
+      "mp4Recordings": [],
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1792803253788"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1793236148263"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      },
+      "duration": {
+        "$numberInt": "6592"
+      },
+      "hlsAsset": {
+        "bucket": "recorded",
+        "key": "781/6adc01b520e78c9f77dbc7b6/hls/master.m3u8"
+      },
+      "streamStatus": "ended"
+    },
+    {
+      "_id": {
+        "$oid": "6adc01b820e78c9f77dbc7bd"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "isChat": false,
+      "isFree": false,
+      "teacherName": "Vidyagram Team",
+      "priority": {
+        "$numberInt": "0"
+      },
+      "isLive": false,
+      "isYoutubeRedirect": false,
+      "isShort": false,
+      "isTopper": false,
+      "isPrivate": false,
+      "image": "https://hranker-server-v2.b-cdn.net/781/classes/thumbnails/vid_armaths-data_4657426-1792753322.png",
+      "title": "Geometry 04 (2) · GEOMETRY (2)",
+      "mainCategory": {
+        "$oid": "6ace4d459e33840b2256c218"
+      },
+      "category": {
+        "$oid": "6ace4d469e33840b2256c21b"
+      },
+      "section": {
+        "$oid": "6ace4d469e33840b2256c21f"
+      },
+      "topic": null,
+      "subTopic": null,
+      "seriesIds": [],
+      "pdfIds": [
+        {
+          "$oid": "6adc030020e78c9f77dbcedc"
+        }
+      ],
+      "viewCount": {
+        "$numberInt": "0"
+      },
+      "uniqueViewCount": {
+        "$numberInt": "0"
+      },
+      "apxAssetKey": "vid:armaths-data:4657426-1792753322",
+      "seriesAssignments": [],
+      "pdfAssignments": [
+        {
+          "_id": {
+            "$oid": "6adc038c20e78c9f77dbfc1d"
+          },
+          "pdfId": {
+            "$oid": "6adc030020e78c9f77dbcedc"
+          },
+          "priority": {
+            "$numberInt": "1"
+          },
+          "isFree": false
+        }
+      ],
+      "mp4Recordings": [],
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1792803256966"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1793236241026"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      },
+      "duration": {
+        "$numberInt": "4486"
+      },
+      "hlsAsset": {
+        "bucket": "recorded",
+        "key": "781/6adc01b820e78c9f77dbc7bd/hls/master.m3u8"
+      },
+      "streamStatus": "ended"
+    },
+    {
+      "_id": {
+        "$oid": "6ae1d2b1a8d11952ecd2ef70"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "isChat": false,
+      "isFree": false,
+      "teacherName": "Vidyagram Team",
+      "priority": {
+        "$numberInt": "0"
+      },
+      "isLive": false,
+      "isYoutubeRedirect": false,
+      "isShort": false,
+      "isTopper": false,
+      "isPrivate": false,
+      "image": "https://hranker-server-v2.b-cdn.net/781/classes/thumbnails/vid_armaths-data_4681649-1793093319.png",
+      "title": "Ratio 07 · Ratio (3)",
+      "mainCategory": {
+        "$oid": "6ace4d459e33840b2256c218"
+      },
+      "category": {
+        "$oid": "6ace4d469e33840b2256c21b"
+      },
+      "section": {
+        "$oid": "6ace4d469e33840b2256c21f"
+      },
+      "topic": null,
+      "subTopic": null,
+      "seriesIds": [],
+      "pdfIds": [
+        {
+          "$oid": "6ad93ece38fae4f95ec4bc73"
+        }
+      ],
+      "viewCount": {
+        "$numberInt": "0"
+      },
+      "uniqueViewCount": {
+        "$numberInt": "0"
+      },
+      "apxAssetKey": "vid:armaths-data:4681649-1793093319",
+      "seriesAssignments": [],
+      "pdfAssignments": [
+        {
+          "_id": {
+            "$oid": "6ae1d51da8d11952ecd32662"
+          },
+          "pdfId": {
+            "$oid": "6ad93ece38fae4f95ec4bc73"
+          },
+          "priority": {
+            "$numberInt": "1"
+          },
+          "isFree": false
+        }
+      ],
+      "mp4Recordings": [],
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1793184433277"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1793235761435"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      },
+      "hlsAsset": {
+        "bucket": "recorded",
+        "key": "781/6ae1d2b1a8d11952ecd2ef70/hls/master.m3u8"
+      },
+      "streamStatus": "ended",
+      "duration": {
+        "$numberInt": "2894"
+      }
+    }
+  ],
+  "courseclasses": [
+    {
+      "_id": {
+        "$oid": "6ad9ca50ff6d0620417685ae"
+      },
+      "course": {
+        "$oid": "6ad5faae308a95d039c38fb7"
+      },
+      "class": {
+        "$oid": "6ad6995fe36abd47ea38d533"
+      },
+      "priority": {
+        "$numberInt": "246"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "startDate": {
+        "$date": {
+          "$numberLong": "1792657819270"
+        }
+      },
+      "endDate": {
+        "$date": {
+          "$numberLong": "1792693799999"
+        }
+      },
+      "isFree": false,
+      "apxTitle": "Geometry 03",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": {
+        "$oid": "6ad5f9c2308a95d039c32766"
+      },
+      "topic": {
+        "$oid": "6ad5faac308a95d039c38f64"
+      },
+      "subTopic": null,
+      "sectionName": "Maths",
+      "topicName": "GEOMETRY",
+      "addedAt": {
+        "$date": {
+          "$numberLong": "1792658000600"
+        }
+      },
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1792658000600"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1792658000600"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6ad9ca51ff6d0620417685cf"
+      },
+      "course": {
+        "$oid": "6ad5fab3308a95d039c391c1"
+      },
+      "class": {
+        "$oid": "6ad6995fe36abd47ea38d533"
+      },
+      "priority": {
+        "$numberInt": "246"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "startDate": {
+        "$date": {
+          "$numberLong": "1792657819270"
+        }
+      },
+      "endDate": {
+        "$date": {
+          "$numberLong": "1792693799999"
+        }
+      },
+      "isFree": false,
+      "apxTitle": "Geometry 03",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": {
+        "$oid": "6ad5f9c2308a95d039c32766"
+      },
+      "topic": {
+        "$oid": "6ad5faac308a95d039c38f64"
+      },
+      "subTopic": null,
+      "sectionName": "Maths",
+      "topicName": "GEOMETRY",
+      "addedAt": {
+        "$date": {
+          "$numberLong": "1792658001890"
+        }
+      },
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1792658001890"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1792658001890"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6ad9c9e2ff6d062041767fda"
+      },
+      "course": {
+        "$oid": "6ad5fa48308a95d039c35b82"
+      },
+      "class": {
+        "$oid": "6ad93ddb38fae4f95ec4aa8c"
+      },
+      "priority": {
+        "$numberInt": "117"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "startDate": {
+        "$date": {
+          "$numberLong": "1792657819270"
+        }
+      },
+      "endDate": {
+        "$date": {
+          "$numberLong": "1792693799999"
+        }
+      },
+      "isFree": false,
+      "apxTitle": "Ratio 07",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": {
+        "$oid": "6ad5f9c2308a95d039c32766"
+      },
+      "topic": {
+        "$oid": "6ad5f9c4308a95d039c327a1"
+      },
+      "subTopic": null,
+      "sectionName": "Maths",
+      "topicName": "Ratio",
+      "addedAt": {
+        "$date": {
+          "$numberLong": "1792657890014"
+        }
+      },
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1792657890014"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1792657890014"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6ad9c9f8ff6d062041768106"
+      },
+      "course": {
+        "$oid": "6ad5fa79308a95d039c37569"
+      },
+      "class": {
+        "$oid": "6ad93ddb38fae4f95ec4aa8c"
+      },
+      "priority": {
+        "$numberInt": "63"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "startDate": {
+        "$date": {
+          "$numberLong": "1792657819270"
+        }
+      },
+      "endDate": {
+        "$date": {
+          "$numberLong": "1792693799999"
+        }
+      },
+      "isFree": false,
+      "apxTitle": "Ratio 07",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": {
+        "$oid": "6ad5f9c2308a95d039c32766"
+      },
+      "topic": {
+        "$oid": "6ad5f9c4308a95d039c327a1"
+      },
+      "subTopic": null,
+      "sectionName": "Maths",
+      "topicName": "Ratio",
+      "addedAt": {
+        "$date": {
+          "$numberLong": "1792657912998"
+        }
+      },
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1792657912998"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1792657912998"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6adab02ed8a68cd04b9b6ffc"
+      },
+      "course": {
+        "$oid": "6ad5faae308a95d039c38fb7"
+      },
+      "class": {
+        "$oid": "6adaafe4d8a68cd04b9b6618"
+      },
+      "priority": {
+        "$numberInt": "247"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "startDate": {
+        "$date": {
+          "$numberLong": "1792716832498"
+        }
+      },
+      "endDate": {
+        "$date": {
+          "$numberLong": "1792780199999"
+        }
+      },
+      "isFree": false,
+      "apxTitle": "Geometry 04",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": {
+        "$oid": "6ad5f9c2308a95d039c32766"
+      },
+      "topic": {
+        "$oid": "6ad5faac308a95d039c38f64"
+      },
+      "subTopic": null,
+      "sectionName": "Maths",
+      "topicName": "GEOMETRY",
+      "addedAt": {
+        "$date": {
+          "$numberLong": "1792716846984"
+        }
+      },
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1792716846984"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1792716846984"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6adab02fd8a68cd04b9b700f"
+      },
+      "course": {
+        "$oid": "6ad5fab3308a95d039c391c1"
+      },
+      "class": {
+        "$oid": "6adaafe4d8a68cd04b9b6618"
+      },
+      "priority": {
+        "$numberInt": "247"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "startDate": {
+        "$date": {
+          "$numberLong": "1792716832498"
+        }
+      },
+      "endDate": {
+        "$date": {
+          "$numberLong": "1792780199999"
+        }
+      },
+      "isFree": false,
+      "apxTitle": "Geometry 04",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": {
+        "$oid": "6ad5f9c2308a95d039c32766"
+      },
+      "topic": {
+        "$oid": "6ad5faac308a95d039c38f64"
+      },
+      "subTopic": null,
+      "sectionName": "Maths",
+      "topicName": "GEOMETRY",
+      "addedAt": {
+        "$date": {
+          "$numberLong": "1792716847065"
+        }
+      },
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1792716847065"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1792716847065"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6ae29adaeb5fc0cf202ba6fd"
+      },
+      "course": {
+        "$oid": "6ad5faae308a95d039c38fb7"
+      },
+      "class": {
+        "$oid": "6adc01b520e78c9f77dbc7b6"
+      },
+      "priority": {
+        "$numberInt": "246"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "startDate": {
+        "$date": {
+          "$numberLong": "1793235665165"
+        }
+      },
+      "endDate": {
+        "$date": {
+          "$numberLong": "1793298599999"
+        }
+      },
+      "isFree": false,
+      "apxTitle": "Geometry 03",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": {
+        "$oid": "6ad5f9c2308a95d039c32766"
+      },
+      "topic": {
+        "$oid": "6ad5faac308a95d039c38f64"
+      },
+      "subTopic": null,
+      "sectionName": "Maths",
+      "topicName": "GEOMETRY",
+      "addedAt": {
+        "$date": {
+          "$numberLong": "1793235674162"
+        }
+      },
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1793235674162"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1793235674162"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6ae29adaeb5fc0cf202ba714"
+      },
+      "course": {
+        "$oid": "6ad5fab3308a95d039c391c1"
+      },
+      "class": {
+        "$oid": "6adc01b520e78c9f77dbc7b6"
+      },
+      "priority": {
+        "$numberInt": "246"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "startDate": {
+        "$date": {
+          "$numberLong": "1793235665165"
+        }
+      },
+      "endDate": {
+        "$date": {
+          "$numberLong": "1793298599999"
+        }
+      },
+      "isFree": false,
+      "apxTitle": "Geometry 03",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": {
+        "$oid": "6ad5f9c2308a95d039c32766"
+      },
+      "topic": {
+        "$oid": "6ad5faac308a95d039c38f64"
+      },
+      "subTopic": null,
+      "sectionName": "Maths",
+      "topicName": "GEOMETRY",
+      "addedAt": {
+        "$date": {
+          "$numberLong": "1793235674314"
+        }
+      },
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1793235674314"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1793235674314"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6ae29adaeb5fc0cf202ba6fe"
+      },
+      "course": {
+        "$oid": "6ad5faae308a95d039c38fb7"
+      },
+      "class": {
+        "$oid": "6adc01b820e78c9f77dbc7bd"
+      },
+      "priority": {
+        "$numberInt": "247"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "startDate": {
+        "$date": {
+          "$numberLong": "1793235665165"
+        }
+      },
+      "endDate": {
+        "$date": {
+          "$numberLong": "1793298599999"
+        }
+      },
+      "isFree": false,
+      "apxTitle": "Geometry 04",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": {
+        "$oid": "6ad5f9c2308a95d039c32766"
+      },
+      "topic": {
+        "$oid": "6ad5faac308a95d039c38f64"
+      },
+      "subTopic": null,
+      "sectionName": "Maths",
+      "topicName": "GEOMETRY",
+      "addedAt": {
+        "$date": {
+          "$numberLong": "1793235674162"
+        }
+      },
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1793235674162"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1793235674162"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6ae29adaeb5fc0cf202ba715"
+      },
+      "course": {
+        "$oid": "6ad5fab3308a95d039c391c1"
+      },
+      "class": {
+        "$oid": "6adc01b820e78c9f77dbc7bd"
+      },
+      "priority": {
+        "$numberInt": "247"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "startDate": {
+        "$date": {
+          "$numberLong": "1793235665165"
+        }
+      },
+      "endDate": {
+        "$date": {
+          "$numberLong": "1793298599999"
+        }
+      },
+      "isFree": false,
+      "apxTitle": "Geometry 04",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": {
+        "$oid": "6ad5f9c2308a95d039c32766"
+      },
+      "topic": {
+        "$oid": "6ad5faac308a95d039c38f64"
+      },
+      "subTopic": null,
+      "sectionName": "Maths",
+      "topicName": "GEOMETRY",
+      "addedAt": {
+        "$date": {
+          "$numberLong": "1793235674315"
+        }
+      },
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1793235674315"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1793235674315"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6ae29ad7eb5fc0cf202ba5ab"
+      },
+      "course": {
+        "$oid": "6ad5fa48308a95d039c35b82"
+      },
+      "class": {
+        "$oid": "6ae1d2b1a8d11952ecd2ef70"
+      },
+      "priority": {
+        "$numberInt": "118"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "startDate": {
+        "$date": {
+          "$numberLong": "1793235665165"
+        }
+      },
+      "endDate": {
+        "$date": {
+          "$numberLong": "1793298599999"
+        }
+      },
+      "isFree": false,
+      "apxTitle": "Ratio 07",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": {
+        "$oid": "6ad5f9c2308a95d039c32766"
+      },
+      "topic": {
+        "$oid": "6ad5f9c4308a95d039c327a1"
+      },
+      "subTopic": null,
+      "sectionName": "Maths",
+      "topicName": "Ratio",
+      "addedAt": {
+        "$date": {
+          "$numberLong": "1793235671330"
+        }
+      },
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1793235671330"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1793235671330"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6ae29ad8eb5fc0cf202ba60d"
+      },
+      "course": {
+        "$oid": "6ad5fa79308a95d039c37569"
+      },
+      "class": {
+        "$oid": "6ae1d2b1a8d11952ecd2ef70"
+      },
+      "priority": {
+        "$numberInt": "434"
+      },
+      "status": {
+        "$numberInt": "1"
+      },
+      "startDate": {
+        "$date": {
+          "$numberLong": "1793235665165"
+        }
+      },
+      "endDate": {
+        "$date": {
+          "$numberLong": "1793298599999"
+        }
+      },
+      "isFree": false,
+      "apxTitle": "Ratio 07",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": {
+        "$oid": "6ad5f9c2308a95d039c32766"
+      },
+      "topic": {
+        "$oid": "6ad5f9c4308a95d039c327a1"
+      },
+      "subTopic": null,
+      "sectionName": "Maths",
+      "topicName": "Ratio",
+      "addedAt": {
+        "$date": {
+          "$numberLong": "1793235672165"
+        }
+      },
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1793235672165"
+        }
+      },
+      "updatedAt": {
+        "$date": {
+          "$numberLong": "1793235672165"
+        }
+      },
+      "__v": {
+        "$numberInt": "0"
+      }
+    }
+  ],
+  "ledger": [
+    {
+      "_id": {
+        "$oid": "6ad6995fc9735682f0bf9866"
+      },
+      "assetKey": "vid:armaths-data:4636285-1792429697",
+      "customerId": "781",
+      "classId": {
+        "$oid": "6ad6995fe36abd47ea38d533"
+      },
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1792448863171"
+        }
+      },
+      "ingestJobId": {
+        "$oid": "6ad6995fc9735682f0bf9865"
+      },
+      "kind": "ingest",
+      "placements": [
+        {
+          "apxCourseId": "160",
+          "rowId": "193547",
+          "title": "Geometry 03 (2)",
+          "topic": "GEOMETRY",
+          "section": "Maths",
+          "subTopic": null,
+          "apxTitle": "Geometry 03",
+          "path": [
+            "Home",
+            "Maths",
+            "GEOMETRY",
+            "Video"
+          ],
+          "free": false,
+          "priority": {
+            "$numberInt": "246"
+          },
+          "active": true,
+          "crossListed": false
+        },
+        {
+          "apxCourseId": "161",
+          "rowId": "193541",
+          "title": "Geometry 03 (2)",
+          "topic": "GEOMETRY",
+          "section": "Maths",
+          "subTopic": null,
+          "apxTitle": "Geometry 03",
+          "path": [
+            "Home",
+            "GEOMETRY",
+            "Video"
+          ],
+          "free": false,
+          "priority": {
+            "$numberInt": "246"
+          },
+          "active": true,
+          "crossListed": false
+        }
+      ],
+      "runId": "daily-2026-10-20",
+      "sourceCourseId": "160",
+      "sourceRowId": "193547",
+      "titleRule": "topic"
+    },
+    {
+      "_id": {
+        "$oid": "6ad93ddcc9735682f012fb3f"
+      },
+      "assetKey": "vid:armaths-data:4645340-1792593915",
+      "customerId": "781",
+      "classId": {
+        "$oid": "6ad93ddb38fae4f95ec4aa8c"
+      },
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1792622044025"
+        }
+      },
+      "ingestJobId": {
+        "$oid": "6ad93ddbc9735682f012fb3e"
+      },
+      "kind": "ingest",
+      "placements": [
+        {
+          "apxCourseId": "101",
+          "rowId": "193600",
+          "title": "Ratio 07",
+          "topic": "Ratio",
+          "section": "Maths",
+          "subTopic": null,
+          "apxTitle": "Ratio 07",
+          "path": [
+            "Home",
+            "Maths",
+            "Ratio",
+            "Video"
+          ],
+          "free": false,
+          "priority": {
+            "$numberInt": "117"
+          },
+          "active": true,
+          "crossListed": false
+        },
+        {
+          "apxCourseId": "107",
+          "rowId": "193599",
+          "title": "Ratio 07",
+          "topic": "Ratio",
+          "section": "Maths",
+          "subTopic": null,
+          "apxTitle": "Ratio 07",
+          "path": [
+            "Home",
+            "Maths",
+            "Ratio",
+            "Video"
+          ],
+          "free": false,
+          "priority": {
+            "$numberInt": "63"
+          },
+          "active": true,
+          "crossListed": false
+        }
+      ],
+      "runId": "daily-2026-10-22",
+      "sourceCourseId": "101",
+      "sourceRowId": "193600",
+      "titleRule": "counter"
+    },
+    {
+      "_id": {
+        "$oid": "6adaafe4c9735682f031a916"
+      },
+      "assetKey": "vid:armaths-data:4653024-1792687692",
+      "customerId": "781",
+      "classId": {
+        "$oid": "6adaafe4d8a68cd04b9b6618"
+      },
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1792716773021"
+        }
+      },
+      "ingestJobId": {
+        "$oid": "6adaafe4c9735682f031a915"
+      },
+      "kind": "ingest",
+      "placements": [
+        {
+          "apxCourseId": "160",
+          "rowId": "193550",
+          "title": "Geometry 04 (2)",
+          "topic": "GEOMETRY",
+          "section": "Maths",
+          "subTopic": null,
+          "apxTitle": "Geometry 04",
+          "path": [
+            "Home",
+            "Maths",
+            "GEOMETRY",
+            "Video"
+          ],
+          "free": false,
+          "priority": {
+            "$numberInt": "247"
+          },
+          "active": true,
+          "crossListed": false
+        },
+        {
+          "apxCourseId": "161",
+          "rowId": "193549",
+          "title": "Geometry 04 (2)",
+          "topic": "GEOMETRY",
+          "section": "Maths",
+          "subTopic": null,
+          "apxTitle": "Geometry 04",
+          "path": [
+            "Home",
+            "GEOMETRY",
+            "Video"
+          ],
+          "free": false,
+          "priority": {
+            "$numberInt": "247"
+          },
+          "active": true,
+          "crossListed": false
+        }
+      ],
+      "runId": "daily-2026-10-23",
+      "sourceCourseId": "160",
+      "sourceRowId": "193550",
+      "titleRule": "topic"
+    },
+    {
+      "_id": {
+        "$oid": "6ae29a93c9735682f0e4a7a5"
+      },
+      "assetKey": "vid:armaths-data:4656486-1792746126",
+      "customerId": "781",
+      "classId": {
+        "$oid": "6adc01b520e78c9f77dbc7b6"
+      },
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1793235603159"
+        }
+      },
+      "ingestJobId": {
+        "$oid": "6ae29a93c9735682f0e4a7a4"
+      },
+      "kind": "ingest",
+      "placements": [
+        {
+          "apxCourseId": "160",
+          "rowId": "193547",
+          "title": "Geometry 03 (2)",
+          "topic": "GEOMETRY",
+          "section": "Maths",
+          "subTopic": null,
+          "apxTitle": "Geometry 03",
+          "path": [
+            "Home",
+            "Maths",
+            "GEOMETRY",
+            "Video"
+          ],
+          "free": false,
+          "priority": {
+            "$numberInt": "246"
+          },
+          "active": true,
+          "crossListed": false
+        },
+        {
+          "apxCourseId": "161",
+          "rowId": "193541",
+          "title": "Geometry 03 (2)",
+          "topic": "GEOMETRY",
+          "section": "Maths",
+          "subTopic": null,
+          "apxTitle": "Geometry 03",
+          "path": [
+            "Home",
+            "GEOMETRY",
+            "Video"
+          ],
+          "free": false,
+          "priority": {
+            "$numberInt": "246"
+          },
+          "active": true,
+          "crossListed": false
+        }
+      ],
+      "runId": "daily-2026-10-29",
+      "sourceCourseId": "161",
+      "sourceRowId": "193541",
+      "titleRule": "counter"
+    },
+    {
+      "_id": {
+        "$oid": "6ae29a93c9735682f0e4a7a7"
+      },
+      "customerId": "781",
+      "assetKey": "vid:armaths-data:4657426-1792753322",
+      "classId": {
+        "$oid": "6adc01b820e78c9f77dbc7bd"
+      },
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1793235603245"
+        }
+      },
+      "ingestJobId": {
+        "$oid": "6ae29a93c9735682f0e4a7a6"
+      },
+      "kind": "ingest",
+      "placements": [
+        {
+          "apxCourseId": "160",
+          "rowId": "193550",
+          "title": "Geometry 04 (2)",
+          "topic": "GEOMETRY",
+          "section": "Maths",
+          "subTopic": null,
+          "apxTitle": "Geometry 04",
+          "path": [
+            "Home",
+            "Maths",
+            "GEOMETRY",
+            "Video"
+          ],
+          "free": false,
+          "priority": {
+            "$numberInt": "247"
+          },
+          "active": true,
+          "crossListed": false
+        },
+        {
+          "apxCourseId": "161",
+          "rowId": "193549",
+          "title": "Geometry 04 (2)",
+          "topic": "GEOMETRY",
+          "section": "Maths",
+          "subTopic": null,
+          "apxTitle": "Geometry 04",
+          "path": [
+            "Home",
+            "GEOMETRY",
+            "Video"
+          ],
+          "free": false,
+          "priority": {
+            "$numberInt": "247"
+          },
+          "active": true,
+          "crossListed": false
+        }
+      ],
+      "runId": "daily-2026-10-29",
+      "sourceCourseId": "161",
+      "sourceRowId": "193549",
+      "titleRule": "counter"
+    },
+    {
+      "_id": {
+        "$oid": "6ae29a3bc9735682f0e4a354"
+      },
+      "customerId": "781",
+      "assetKey": "vid:armaths-data:4681649-1793093319",
+      "classId": {
+        "$oid": "6ae1d2b1a8d11952ecd2ef70"
+      },
+      "createdAt": {
+        "$date": {
+          "$numberLong": "1793235515783"
+        }
+      },
+      "ingestJobId": {
+        "$oid": "6ae29a3bc9735682f0e4a353"
+      },
+      "kind": "ingest",
+      "placements": [
+        {
+          "apxCourseId": "101",
+          "rowId": "193600",
+          "title": "Ratio 07",
+          "topic": "Ratio",
+          "section": "Maths",
+          "subTopic": null,
+          "apxTitle": "Ratio 07",
+          "path": [
+            "Home",
+            "Maths",
+            "Ratio",
+            "Video"
+          ],
+          "free": false,
+          "priority": {
+            "$numberInt": "118"
+          },
+          "active": true,
+          "crossListed": false
+        },
+        {
+          "apxCourseId": "107",
+          "rowId": "193599",
+          "title": "Ratio 07 (2)",
+          "topic": "Ratio",
+          "section": "Maths",
+          "subTopic": null,
+          "apxTitle": "Ratio 07",
+          "path": [
+            "Home",
+            "Maths",
+            "Ratio",
+            "Video"
+          ],
+          "free": false,
+          "priority": {
+            "$numberInt": "434"
+          },
+          "active": true,
+          "crossListed": false
+        }
+      ],
+      "runId": "daily-2026-10-29",
+      "sourceCourseId": "107",
+      "sourceRowId": "193599",
+      "titleRule": "counter"
+    }
+  ]
+}

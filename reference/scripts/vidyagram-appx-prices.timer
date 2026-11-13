@@ -1,0 +1,11 @@
+[Unit]
+Description=Vidyagram AppX price step: after the 02:30 nightly, with a 14:00 catch-up for a late or hand-started nightly
+
+[Timer]
+OnCalendar=*-*-* 02:45:00 Asia/Kolkata
+OnCalendar=*-*-* 14:00:00 Asia/Kolkata
+Persistent=true
+Unit=vidyagram-appx-prices.service
+
+[Install]
+WantedBy=timers.target

@@ -67,6 +67,27 @@ whoever has the Hranker Cloudflare account.
   - Checked locally in the browser: no push was sent, and `notifiedAt` stayed empty.
   - **Date-dependent test:** `currentAffairs` "weekly list never shows the running week" fails on Sundays at the
     base too. Ignore it in Sunday suite runs.
+- **06, Cloudflare part** (2026-10-26): done. The bucket and custom domain were made with wrangler. The noindex
+  rule and the bucket-only token were made in the dashboard. 8 env lines are on the box, with all switches false and
+  no restart. A key test from the box passed. See `vidyagram/reports/vidyagram-certificates-r2-setup-2026-10-26.md`.
+- **05m, my-courses** (2026-10-26): backend b6d355a77. Every my-courses card gets the `certificate` field. It is read in
+  one batch and taken only from the student's token, so it is null without one. Upstream had already switched
+  my-courses to the token in 5dd85b900, and that was kept as is.
+- **Upstream merged** 2026-10-26: backend e6f0df401, admin 3d58210. The suites gave `NO NEW FAILURES`. The admin's
+  `.next/types` tsc line comes from the local dev server and is not source.
+- **DEPLOYED 2026-10-26:**
+  - **Indexes.** `code_1` and `userId_1_courseId_1` were built on `vidyagramdb`.
+  - **Backend.** The dist commit is 8a5137351, pushed to `origin/vidyagram-admin` as a87e74506..8a5137351.
+    - On the box: `git pull`, then `pm2 restart 92 --update-env`.
+    - The dist backup is `~/vidyagram-dist-before-certificates-20261026-1445.tgz`, and the env backup is
+      `.env.development.bak-flags-*`.
+    - The flags are `CERTIFICATES_ENABLED=true` and `CERTIFICATE_CLAIMS_OPEN=true`, as the user decided because the
+      app isn't live yet. `CERTIFICATE_PUSH_ENABLED=false`.
+    - A print render on the Linux box takes 458 ms, with Hindi correct.
+    - Rollback: `git reset --hard a87e74506 && pm2 restart 92 --update-env`, and set the flags back to false.
+  - **Admin.** Pushed as 2ba76f9..3d58210, which starts the Vercel production build.
+- **shareUrl dropped** (2026-10-26, the user's decision; it duplicated `pdfUrl`): source a7f0e031d, then merged with another session's invoice work (9716d1d5b) as a480017a7, then dist 7f822df58. Pushed and deployed with pm2 92 restarted. The suites gave `NO NEW FAILURES`.
+- **progress_percentage on my-courses** (2026-10-26, asked for by the app team): source feba52f54, dist ad06377b2. It was pushed and deployed with pm2 92 restarted. One batched progress aggregation feeds both `progress_percentage` and the certificate statuses. It is token-only and null without a token. Live check: Mobile Video Editing shows 100 and the other cards 0, the request takes about 0.35 s, and no token gives null. The 2 new `dashboardAccounting` failures come from upstream and fail at 57812d2e8 too.
 - **Integration heads now:** backend 80cd85177, admin 2d2c4bc.
 - **Earlier heads, after 01–05:** backend 50a7d23db, admin 92e6d35. The backend suites give `NO NEW FAILURES`.
   Nothing has been pushed. Only task 06 is left, and it needs the user.

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cookie-auth debugging card</title>
+  <style>
+    :root { --ink:#17231c; --muted:#5e6c63; --line:#d9e3dc; --green:#126c49; --soft:#edf6f0; --red:#9f3939; }
+    * { box-sizing: border-box; }
+    body { margin:0; color:var(--ink); background:#f8faf7; font:15px/1.45 Inter,system-ui,sans-serif; }
+    main { width:min(980px,calc(100% - 32px)); margin:36px auto; padding:34px; border:1px solid var(--line); border-radius:16px; background:white; box-shadow:0 14px 42px #17332110; }
+    h1 { margin:0 0 5px; font:700 38px/1.05 Georgia,serif; letter-spacing:-.025em; }
+    .sub { margin:0 0 24px; color:var(--muted); }
+    h2 { margin:22px 0 8px; color:var(--green); font-size:14px; letter-spacing:.08em; text-transform:uppercase; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+    table { width:100%; border-collapse:collapse; }
+    th,td { padding:9px 8px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+    th { color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.08em; }
+    code { padding:.08em .3em; border-radius:4px; background:#f2f5f2; font-family:ui-monospace,monospace; font-size:.9em; }
+    ol,ul { margin:8px 0; padding-left:22px; }
+    li { margin:5px 0; }
+    .rule { padding:13px 15px; border-left:4px solid var(--green); background:var(--soft); font-size:17px; }
+    .bad { color:var(--red); }
+    footer { margin-top:22px; padding-top:14px; border-top:1px solid var(--line); color:var(--muted); font-size:12px; }
+    a { color:var(--green); }
+    @media(max-width:700px){.grid{grid-template-columns:1fr}main{padding:22px}}
+    @media print { body{background:white;font-size:11px} main{width:100%;margin:0;padding:0;border:0;box-shadow:none}.grid{gap:16px}h1{font-size:30px} }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Cookie-auth debugging card</h1>
+  <p class="sub">APX / proxy systems · Treat raw session IDs as passwords.</p>
+  <div class="rule"><strong>Cookie present ≠ session valid ≠ user authorized.</strong> Only the server that owns the session store can confirm authentication.</div>
+
+  <div class="grid">
+    <section>
+      <h2>The three truths</h2>
+      <table>
+        <tr><th>Layer</th><th>Question</th></tr>
+        <tr><td>Browser</td><td>Did it store/send the cookie?</td></tr>
+        <tr><td>Proxy / Mongo</td><td>Did we forward/save the same ID?</td></tr>
+        <tr><td>Upstream APX</td><td>Does this ID still map to an authenticated user?</td></tr>
+      </table>
+
+      <h2>Headers to inspect</h2>
+      <ul>
+        <li>Request: <code>Cookie</code></li>
+        <li>Response: <code>Set-Cookie</code></li>
+        <li>Redirect: status + <code>Location</code></li>
+        <li>Content: expected JSON vs login HTML</li>
+      </ul>
+
+      <h2>Secret-safe comparison</h2>
+      <p>Log length plus a short SHA-256 prefix, e.g. <code>len=32 hash=c2c990a9503b</code>. Never log the raw cookie.</p>
+    </section>
+
+    <section>
+      <h2>Five-step triage</h2>
+      <ol>
+        <li>Name the exact request hop.</li>
+        <li>Probe an auth-required endpoint.</li>
+        <li>Check status, redirect, content, and cookie rotation together.</li>
+        <li>Compare browser/DB IDs by hash.</li>
+        <li>Ask APX—not a local boolean—whether the session is valid.</li>
+      </ol>
+
+      <h2>Interpretation</h2>
+      <table>
+        <tr><td><code>200</code> expected content</td><td>Authenticated</td></tr>
+        <tr><td><code>307 → /login</code></td><td class="bad">Expired/revoked</td></tr>
+        <tr><td>HTML where JSON expected</td><td class="bad">Often login page</td></tr>
+        <tr><td>Network timeout</td><td>Unknown; do not mutate ID</td></tr>
+        <tr><td>New cookie on authenticated 200</td><td>Legitimate rotation candidate</td></tr>
+      </table>
+
+      <h2>Safe state rule</h2>
+      <p>Persist a rotated session ID only after proving the response is authenticated. On login redirect or ambiguous failure, preserve the previous ID and require re-authentication.</p>
+    </section>
+  </div>
+
+  <footer><a href="../lessons/0001-cookie-auth-through-the-apx-472-incident.html">Full APX 472 lesson</a> · References: <a href="https://datatracker.ietf.org/doc/html/rfc6265.html">RFC 6265</a> · <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies">MDN Cookies</a> · <a href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html">OWASP Session Management</a></footer>
+</main>
+</body>
+</html>

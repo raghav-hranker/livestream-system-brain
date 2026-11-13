@@ -1,0 +1,137 @@
+{
+  "observedAt": "2026-10-27T11:29:52.400Z",
+  "readOnly": true,
+  "scope": 1,
+  "steps": [
+    {
+      "name": "authenticated course list",
+      "ok": true,
+      "at": "2026-10-27T11:29:52.938Z"
+    },
+    {
+      "name": "known-good control course71",
+      "ok": true,
+      "at": "2026-10-27T11:29:59.123Z"
+    },
+    {
+      "name": "known-good video token control",
+      "ok": true,
+      "at": "2026-10-27T11:29:59.598Z"
+    },
+    {
+      "name": "course listing 131",
+      "ok": true,
+      "at": "2026-10-27T11:30:04.367Z"
+    }
+  ],
+  "controls": [
+    {
+      "name": "Glands01",
+      "at": "2026-10-27T11:29:59.598Z",
+      "http": 200,
+      "json": true,
+      "html": false,
+      "bodyStatus": 200,
+      "urlVariants": 5,
+      "hasClearHls": false,
+      "hasIosHls": false,
+      "hasDrmMp4": false,
+      "hasUsableUrl": true
+    }
+  ],
+  "candidates": [
+    {
+      "job": "6ad5df31c9735682f0a0c5da",
+      "classId": "6ad5df3164b695f53d872c20",
+      "oldAssetKey": "vid:armaths-data:4619107-1792135845",
+      "category": "noPlayableURL",
+      "course": "131",
+      "rowId": "193434",
+      "originalFailure": null,
+      "checkedAt": "2026-10-27T11:30:04.367Z",
+      "renditions": [
+        {
+          "rung": "240p",
+          "http": 200,
+          "endList": true,
+          "segments": 246,
+          "validMediaPlaylist": true,
+          "inventoryHash": "578739a55a8ba66b1d079388e8ebcdd47df207b1b888624278aa317cd07ad590"
+        },
+        {
+          "rung": "360p",
+          "http": 200,
+          "endList": true,
+          "segments": 238,
+          "validMediaPlaylist": true,
+          "inventoryHash": "a416073da040861b5de3b60154ab640d532f77e950ce9f0b0730fd7023fac58b"
+        },
+        {
+          "rung": "480p",
+          "http": 200,
+          "endList": true,
+          "segments": 238,
+          "validMediaPlaylist": true,
+          "inventoryHash": "cc696e87bf1bc4013ab55279e3012c39958e7723f47a759c627f4df8ba6106f4"
+        },
+        {
+          "rung": "1080p",
+          "http": 200,
+          "endList": true,
+          "segments": 239,
+          "validMediaPlaylist": true,
+          "inventoryHash": "17d9df41c683b1f68a064dc15da7ce6da3b2242bb98ee84c3f43f9865a0b1a21"
+        }
+      ],
+      "source": {
+        "title": "Internet 03",
+        "enabled": "1",
+        "deleted": "0",
+        "sameAsset": true
+      },
+      "token": {
+        "http": 200,
+        "json": true,
+        "html": false,
+        "bodyStatus": 200,
+        "urlVariants": 5,
+        "hasClearHls": false,
+        "hasIosHls": false,
+        "hasDrmMp4": false
+      },
+      "inventoryComplete": true,
+      "listedSegmentReferences": 961,
+      "segmentChecks": {
+        "uniqueSegments": 961,
+        "checked": 961,
+        "passed": 961,
+        "failures": [],
+        "originalFailureReferences": 0,
+        "originalFailureChecked": 0,
+        "complete": true
+      },
+      "outcome": "all required segment references readable"
+    }
+  ],
+  "requests": 970,
+  "cmsRequests": 5,
+  "mediaRequests": 965,
+  "requestBudget": 120000,
+  "segmentBytes": 984064,
+  "productionWrites": 0,
+  "policy": {
+    "mediaConcurrency": 4,
+    "mediaRequestsPerSecond": 8,
+    "cmsGapMs": 1100,
+    "range": "0-1023",
+    "stopAfterConfirmedGap": true
+  },
+  "courseList": {
+    "count": 147,
+    "total": 147
+  },
+  "completedAt": "2026-10-27T11:33:10.774Z",
+  "all43Considered": true,
+  "checkpoint": true,
+  "transport": "direct local HTTPS; session cookie only to cms.appx.co.in"
+}

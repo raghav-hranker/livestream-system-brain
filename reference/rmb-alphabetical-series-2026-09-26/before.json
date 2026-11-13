@@ -1,0 +1,60 @@
+{
+  "class": {
+    "_id": "6a45599bebb42f585d9b134a",
+    "title": "Class- 15 || Pair Formation, Word Formation, Dictionary",
+    "apxAssetKey": "vid:quicktrickssahilsir-data:2852340-1763725114",
+    "hlsAsset": {
+      "bucket": "recorded",
+      "key": "472/6a45599bebb42f585d9b134a/hls/master.m3u8"
+    },
+    "pdfIds": [
+      "6a539fb30be1e8deae7261df"
+    ]
+  },
+  "links": [
+    {
+      "_id": "6a45599bebb42f585d9b134d",
+      "course": "6a455975ebb42f585d9afd2b",
+      "class": "6a45599bebb42f585d9b134a",
+      "apxTitle": "Class- 15 || Pair Formation, Word Formation, Dictionary",
+      "isActive": true,
+      "priority": 722
+    },
+    {
+      "_id": "6a455a15ebb42f585d9b5cac",
+      "course": "6a4559f2ebb42f585d9b4602",
+      "class": "6a45599bebb42f585d9b134a",
+      "apxTitle": "Class- 15 || Pair Formation, Word Formation, Dictionary",
+      "isActive": true,
+      "priority": 527
+    },
+    {
+      "_id": "6a455ac4ebb42f585d9bba16",
+      "course": "6a455abbebb42f585d9bb5c0",
+      "class": "6a45599bebb42f585d9b134a",
+      "apxTitle": "Class- 15 || Pair Formation, Word Formation, Dictionary",
+      "isActive": true,
+      "priority": 158
+    },
+    {
+      "_id": "6a455b4eebb42f585d9bfe08",
+      "course": "6a455af5ebb42f585d9bd15c",
+      "class": "6a45599bebb42f585d9b134a",
+      "apxTitle": "Class- 15 || Pair Formation, Word Formation, Dictionary",
+      "isActive": true,
+      "priority": 1417
+    }
+  ],
+  "pdfs": [
+    {
+      "_id": "6a539fb30be1e8deae7261df",
+      "title": "Class- 15 || Pair Formation, Word Formation, Dictionary",
+      "pdfAsset": {
+        "bucket": "documents",
+        "key": "pdfs/3733cb5ce7de92c815f4842d00f40d70d74143de248a8d52b9d6e9a4cf815e01.pdf",
+        "mimeType": "application/pdf",
+        "sizeBytes": 4829895
+      }
+    }
+  ]
+}

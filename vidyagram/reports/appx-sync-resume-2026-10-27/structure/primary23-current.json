@@ -1,0 +1,1535 @@
+[
+  {
+    "id": "6ad5fa61308a95d039c369d5",
+    "course": "104",
+    "rowId": "192480",
+    "kind": "title",
+    "current": {
+      "_id": "6ad5fa61308a95d039c369d5",
+      "course": "6ad5fa61308a95d039c36703",
+      "class": "6ad5ded164b695f53d872219",
+      "priority": 872,
+      "status": 1,
+      "startDate": "2026-10-19T11:02:49.477Z",
+      "endDate": "2026-10-19T18:29:59.999Z",
+      "isFree": false,
+      "apxTitle": "इतिहास का वर्णन",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5f9cb308a95d039c32d4d",
+      "topic": "6ad5f9cc308a95d039c32d5b",
+      "subTopic": null,
+      "sectionName": "GK/GS",
+      "topicName": "History",
+      "addedAt": "2026-10-19T11:09:21.448Z",
+      "createdAt": "2026-10-19T11:09:21.448Z",
+      "updatedAt": "2026-10-19T11:09:21.448Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "apxTitle": "इतिहास का वर्णन (Class 01)"
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-26T00:08:35.714Z",
+      "captureAgeHours": 30.067228888888888,
+      "completeness": true,
+      "tree": {
+        "id": "192480",
+        "Title": "इतिहास का वर्णन (Class 01)",
+        "material_type": "VIDEO",
+        "free_flag": 0,
+        "treeRunId": "daily-2026-10-26"
+      },
+      "raw": null
+    },
+    "studentImpact": {
+      "currentlyVisible": true,
+      "sharedClassStatus": 1,
+      "storedTitle": "इतिहास का वर्णन",
+      "proposedDisplayTitle": "इतिहास का वर्णन (Class 01)",
+      "visibilityWouldChange": false,
+      "freeAccessWouldChange": false
+    }
+  },
+  {
+    "id": "6ad5fa96308a95d039c38844",
+    "course": "135",
+    "rowId": "189020",
+    "kind": "title",
+    "current": {
+      "_id": "6ad5fa96308a95d039c38844",
+      "course": "6ad5fa96308a95d039c38833",
+      "class": "6acec4898752d955968be3ff",
+      "priority": 16,
+      "status": 1,
+      "startDate": "2026-10-19T11:02:49.477Z",
+      "endDate": "2026-10-19T18:29:59.999Z",
+      "isFree": false,
+      "apxTitle": "Doubt Session 04",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5fa96308a95d039c38823",
+      "topic": "6ad5fa96308a95d039c38831",
+      "subTopic": null,
+      "sectionName": "Mobile Graphic Design Mastery",
+      "topicName": "Doubt Classes",
+      "addedAt": "2026-10-19T11:10:14.831Z",
+      "createdAt": "2026-10-19T11:10:14.831Z",
+      "updatedAt": "2026-10-19T11:10:14.831Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "apxTitle": "Doubt Class 04"
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-26T00:28:39.730Z",
+      "captureAgeHours": 29.73278,
+      "completeness": true,
+      "tree": {
+        "id": "189020",
+        "Title": "Doubt Class 04",
+        "material_type": "VIDEO",
+        "free_flag": 0,
+        "treeRunId": "daily-2026-10-26"
+      },
+      "raw": {
+        "raw": {
+          "id": "189020",
+          "title": "Doubt Class 04",
+          "enable": "1",
+          "parent_id": "184863",
+          "deleted": "0"
+        },
+        "hiddenReason": null,
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": true,
+      "sharedClassStatus": 1,
+      "storedTitle": "Doubt Session 04",
+      "proposedDisplayTitle": "Doubt Class 04",
+      "visibilityWouldChange": false,
+      "freeAccessWouldChange": false
+    }
+  },
+  {
+    "id": "6ad5fa97308a95d039c3887f",
+    "course": "136",
+    "rowId": "189019",
+    "kind": "title",
+    "current": {
+      "_id": "6ad5fa97308a95d039c3887f",
+      "course": "6ad5fa97308a95d039c3886e",
+      "class": "6acec4898752d955968be3ff",
+      "priority": 16,
+      "status": 1,
+      "startDate": "2026-10-19T11:02:49.477Z",
+      "endDate": "2026-10-19T18:29:59.999Z",
+      "isFree": false,
+      "apxTitle": "Doubt Session 04",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5fa97308a95d039c3885e",
+      "topic": "6ad5fa97308a95d039c3886c",
+      "subTopic": null,
+      "sectionName": "AI Mastery Mobile Edition",
+      "topicName": "Doubt Session",
+      "addedAt": "2026-10-19T11:10:15.571Z",
+      "createdAt": "2026-10-19T11:10:15.571Z",
+      "updatedAt": "2026-10-19T11:10:15.571Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "apxTitle": "Doubt Class 04"
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-26T00:28:44.962Z",
+      "captureAgeHours": 29.731326666666668,
+      "completeness": true,
+      "tree": {
+        "id": "189019",
+        "Title": "Doubt Class 04",
+        "material_type": "VIDEO",
+        "free_flag": 0,
+        "treeRunId": "daily-2026-10-26"
+      },
+      "raw": {
+        "raw": {
+          "id": "189019",
+          "title": "Doubt Class 04",
+          "enable": "1",
+          "parent_id": "184868",
+          "deleted": "0"
+        },
+        "hiddenReason": null,
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": true,
+      "sharedClassStatus": 1,
+      "storedTitle": "Doubt Session 04",
+      "proposedDisplayTitle": "Doubt Class 04",
+      "visibilityWouldChange": false,
+      "freeAccessWouldChange": false
+    }
+  },
+  {
+    "id": "6ad5fa99308a95d039c38915",
+    "course": "142",
+    "rowId": "184332",
+    "kind": "title",
+    "current": {
+      "_id": "6ad5fa99308a95d039c38915",
+      "course": "6ad5fa99308a95d039c38913",
+      "class": "6aceb4258752d955968bb51f",
+      "priority": 1,
+      "status": 1,
+      "startDate": "2026-10-19T11:02:49.477Z",
+      "endDate": "2026-10-19T18:29:59.999Z",
+      "isFree": true,
+      "apxTitle": "SSC CGL 2026 Maths Super Mock Test 01 | SSC CGL 2026 | Score Booster Series | By Aditya Ranjan Sir",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5fa98308a95d039c388fe",
+      "topic": "6ad5fa98308a95d039c38902",
+      "subTopic": null,
+      "sectionName": "Score Booster",
+      "topicName": "Maths",
+      "addedAt": "2026-10-19T11:10:17.413Z",
+      "createdAt": "2026-10-19T11:10:17.413Z",
+      "updatedAt": "2026-10-19T11:10:17.413Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "apxTitle": "SSC CGL 2026 Maths Score Booster Test 01"
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-26T00:28:59.934Z",
+      "captureAgeHours": 29.727167777777776,
+      "completeness": true,
+      "tree": {
+        "id": "184332",
+        "Title": "SSC CGL 2026 Maths Score Booster Test 01",
+        "material_type": "VIDEO",
+        "free_flag": 1,
+        "treeRunId": "daily-2026-10-26"
+      },
+      "raw": {
+        "raw": {
+          "id": "184332",
+          "title": "SSC CGL 2026 Maths Score Booster Test 01",
+          "enable": "1",
+          "parent_id": "184331",
+          "deleted": "0"
+        },
+        "hiddenReason": null,
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": true,
+      "sharedClassStatus": 1,
+      "storedTitle": "SSC CGL 2026 Maths Super Mock Test 01 | SSC CGL 2026 | Score Booster Series | By Aditya Ranjan Sir",
+      "proposedDisplayTitle": "SSC CGL 2026 Maths Score Booster Test 01",
+      "visibilityWouldChange": false,
+      "freeAccessWouldChange": false
+    }
+  },
+  {
+    "id": "6ad5fa99308a95d039c38916",
+    "course": "142",
+    "rowId": "184521",
+    "kind": "title",
+    "current": {
+      "_id": "6ad5fa99308a95d039c38916",
+      "course": "6ad5fa99308a95d039c38913",
+      "class": "6aceb4268752d955968bb524",
+      "priority": 2,
+      "status": 1,
+      "startDate": "2026-10-19T11:02:49.477Z",
+      "endDate": "2026-10-19T18:29:59.999Z",
+      "isFree": true,
+      "apxTitle": "SSC CGL 2026 Maths Super Mock Test 02 | SSC CGL 2026 | Score Booster Series | By Aditya Ranjan Sir",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5fa98308a95d039c388fe",
+      "topic": "6ad5fa98308a95d039c38902",
+      "subTopic": null,
+      "sectionName": "Score Booster",
+      "topicName": "Maths",
+      "addedAt": "2026-10-19T11:10:17.413Z",
+      "createdAt": "2026-10-19T11:10:17.413Z",
+      "updatedAt": "2026-10-19T11:10:17.413Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "apxTitle": "SSC CGL 2026 Maths Score Booster Test 02"
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-26T00:28:59.934Z",
+      "captureAgeHours": 29.727167777777776,
+      "completeness": true,
+      "tree": {
+        "id": "184521",
+        "Title": "SSC CGL 2026 Maths Score Booster Test 02",
+        "material_type": "VIDEO",
+        "free_flag": 1,
+        "treeRunId": "daily-2026-10-26"
+      },
+      "raw": {
+        "raw": {
+          "id": "184521",
+          "title": "SSC CGL 2026 Maths Score Booster Test 02",
+          "enable": "1",
+          "parent_id": "184331",
+          "deleted": "0"
+        },
+        "hiddenReason": null,
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": true,
+      "sharedClassStatus": 1,
+      "storedTitle": "SSC CGL 2026 Maths Super Mock Test 02 | SSC CGL 2026 | Score Booster Series | By Aditya Ranjan Sir",
+      "proposedDisplayTitle": "SSC CGL 2026 Maths Score Booster Test 02",
+      "visibilityWouldChange": false,
+      "freeAccessWouldChange": false
+    }
+  },
+  {
+    "id": "6ad5fa99308a95d039c38917",
+    "course": "142",
+    "rowId": "184803",
+    "kind": "title",
+    "current": {
+      "_id": "6ad5fa99308a95d039c38917",
+      "course": "6ad5fa99308a95d039c38913",
+      "class": "6aceb4288752d955968bb529",
+      "priority": 3,
+      "status": 1,
+      "startDate": "2026-10-19T11:02:49.477Z",
+      "endDate": "2026-10-19T18:29:59.999Z",
+      "isFree": true,
+      "apxTitle": "SSC CGL 2026 Maths Super Mock Test 03 | SSC CGL 2026 | Score Booster Series | By Aditya Ranjan Sir",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5fa98308a95d039c388fe",
+      "topic": "6ad5fa98308a95d039c38902",
+      "subTopic": null,
+      "sectionName": "Score Booster",
+      "topicName": "Maths",
+      "addedAt": "2026-10-19T11:10:17.413Z",
+      "createdAt": "2026-10-19T11:10:17.413Z",
+      "updatedAt": "2026-10-19T11:10:17.413Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "apxTitle": "SSC CGL 2026 Maths Score Booster Test 03"
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-26T00:28:59.934Z",
+      "captureAgeHours": 29.727167777777776,
+      "completeness": true,
+      "tree": {
+        "id": "184803",
+        "Title": "SSC CGL 2026 Maths Score Booster Test 03",
+        "material_type": "VIDEO",
+        "free_flag": 1,
+        "treeRunId": "daily-2026-10-26"
+      },
+      "raw": {
+        "raw": {
+          "id": "184803",
+          "title": "SSC CGL 2026 Maths Score Booster Test 03",
+          "enable": "1",
+          "parent_id": "184331",
+          "deleted": "0"
+        },
+        "hiddenReason": null,
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": true,
+      "sharedClassStatus": 1,
+      "storedTitle": "SSC CGL 2026 Maths Super Mock Test 03 | SSC CGL 2026 | Score Booster Series | By Aditya Ranjan Sir",
+      "proposedDisplayTitle": "SSC CGL 2026 Maths Score Booster Test 03",
+      "visibilityWouldChange": false,
+      "freeAccessWouldChange": false
+    }
+  },
+  {
+    "id": "6ad5fa99308a95d039c38918",
+    "course": "142",
+    "rowId": "184908",
+    "kind": "title",
+    "current": {
+      "_id": "6ad5fa99308a95d039c38918",
+      "course": "6ad5fa99308a95d039c38913",
+      "class": "6aceb4298752d955968bb52e",
+      "priority": 4,
+      "status": 1,
+      "startDate": "2026-10-19T11:02:49.477Z",
+      "endDate": "2026-10-19T18:29:59.999Z",
+      "isFree": true,
+      "apxTitle": "SSC CGL 2026 Maths Super Mock Test 04 | SSC CGL 2026 | Score Booster Series | By Aditya Ranjan Sir",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5fa98308a95d039c388fe",
+      "topic": "6ad5fa98308a95d039c38902",
+      "subTopic": null,
+      "sectionName": "Score Booster",
+      "topicName": "Maths",
+      "addedAt": "2026-10-19T11:10:17.413Z",
+      "createdAt": "2026-10-19T11:10:17.413Z",
+      "updatedAt": "2026-10-19T11:10:17.413Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "apxTitle": "SSC CGL 2026 Maths Score Booster Test 04"
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-26T00:28:59.934Z",
+      "captureAgeHours": 29.727167777777776,
+      "completeness": true,
+      "tree": {
+        "id": "184908",
+        "Title": "SSC CGL 2026 Maths Score Booster Test 04",
+        "material_type": "VIDEO",
+        "free_flag": 1,
+        "treeRunId": "daily-2026-10-26"
+      },
+      "raw": {
+        "raw": {
+          "id": "184908",
+          "title": "SSC CGL 2026 Maths Score Booster Test 04",
+          "enable": "1",
+          "parent_id": "184331",
+          "deleted": "0"
+        },
+        "hiddenReason": null,
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": true,
+      "sharedClassStatus": 1,
+      "storedTitle": "SSC CGL 2026 Maths Super Mock Test 04 | SSC CGL 2026 | Score Booster Series | By Aditya Ranjan Sir",
+      "proposedDisplayTitle": "SSC CGL 2026 Maths Score Booster Test 04",
+      "visibilityWouldChange": false,
+      "freeAccessWouldChange": false
+    }
+  },
+  {
+    "id": "6ad5fa99308a95d039c38919",
+    "course": "142",
+    "rowId": "185167",
+    "kind": "title",
+    "current": {
+      "_id": "6ad5fa99308a95d039c38919",
+      "course": "6ad5fa99308a95d039c38913",
+      "class": "6aceb42a8752d955968bb533",
+      "priority": 5,
+      "status": 1,
+      "startDate": "2026-10-19T11:02:49.477Z",
+      "endDate": "2026-10-19T18:29:59.999Z",
+      "isFree": true,
+      "apxTitle": "SSC CGL 2026 Maths Super Mock Test 05 | SSC CGL 2026 | Score Booster Series | By Aditya Ranjan Sir",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5fa98308a95d039c388fe",
+      "topic": "6ad5fa98308a95d039c38902",
+      "subTopic": null,
+      "sectionName": "Score Booster",
+      "topicName": "Maths",
+      "addedAt": "2026-10-19T11:10:17.413Z",
+      "createdAt": "2026-10-19T11:10:17.413Z",
+      "updatedAt": "2026-10-19T11:10:17.413Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "apxTitle": "SSC CGL 2026 Maths Score Booster Test 05"
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-26T00:28:59.934Z",
+      "captureAgeHours": 29.727167777777776,
+      "completeness": true,
+      "tree": {
+        "id": "185167",
+        "Title": "SSC CGL 2026 Maths Score Booster Test 05",
+        "material_type": "VIDEO",
+        "free_flag": 1,
+        "treeRunId": "daily-2026-10-26"
+      },
+      "raw": {
+        "raw": {
+          "id": "185167",
+          "title": "SSC CGL 2026 Maths Score Booster Test 05",
+          "enable": "1",
+          "parent_id": "184331",
+          "deleted": "0"
+        },
+        "hiddenReason": null,
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": true,
+      "sharedClassStatus": 1,
+      "storedTitle": "SSC CGL 2026 Maths Super Mock Test 05 | SSC CGL 2026 | Score Booster Series | By Aditya Ranjan Sir",
+      "proposedDisplayTitle": "SSC CGL 2026 Maths Score Booster Test 05",
+      "visibilityWouldChange": false,
+      "freeAccessWouldChange": false
+    }
+  },
+  {
+    "id": "6ad5fa99308a95d039c3891a",
+    "course": "142",
+    "rowId": "185265",
+    "kind": "title",
+    "current": {
+      "_id": "6ad5fa99308a95d039c3891a",
+      "course": "6ad5fa99308a95d039c38913",
+      "class": "6aceb42b8752d955968bb538",
+      "priority": 6,
+      "status": 1,
+      "startDate": "2026-10-19T11:02:49.477Z",
+      "endDate": "2026-10-19T18:29:59.999Z",
+      "isFree": true,
+      "apxTitle": "SSC CGL 2026 Maths Super Mock Test 06 | SSC CGL 2026 | Score Booster Series | By Aditya Ranjan Sir",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5fa98308a95d039c388fe",
+      "topic": "6ad5fa98308a95d039c38902",
+      "subTopic": null,
+      "sectionName": "Score Booster",
+      "topicName": "Maths",
+      "addedAt": "2026-10-19T11:10:17.413Z",
+      "createdAt": "2026-10-19T11:10:17.413Z",
+      "updatedAt": "2026-10-19T11:10:17.413Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "apxTitle": "SSC CGL 2026 Maths Score Booster Test 06"
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-26T00:28:59.934Z",
+      "captureAgeHours": 29.727167777777776,
+      "completeness": true,
+      "tree": {
+        "id": "185265",
+        "Title": "SSC CGL 2026 Maths Score Booster Test 06",
+        "material_type": "VIDEO",
+        "free_flag": 1,
+        "treeRunId": "daily-2026-10-26"
+      },
+      "raw": {
+        "raw": {
+          "id": "185265",
+          "title": "SSC CGL 2026 Maths Score Booster Test 06",
+          "enable": "1",
+          "parent_id": "184331",
+          "deleted": "0"
+        },
+        "hiddenReason": null,
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": true,
+      "sharedClassStatus": 1,
+      "storedTitle": "SSC CGL 2026 Maths Super Mock Test 06 | SSC CGL 2026 | Score Booster Series | By Aditya Ranjan Sir",
+      "proposedDisplayTitle": "SSC CGL 2026 Maths Score Booster Test 06",
+      "visibilityWouldChange": false,
+      "freeAccessWouldChange": false
+    }
+  },
+  {
+    "id": "6ad5fa99308a95d039c3891b",
+    "course": "142",
+    "rowId": "185592",
+    "kind": "title",
+    "current": {
+      "_id": "6ad5fa99308a95d039c3891b",
+      "course": "6ad5fa99308a95d039c38913",
+      "class": "6aceb42c8752d955968bb53d",
+      "priority": 7,
+      "status": 1,
+      "startDate": "2026-10-19T11:02:49.477Z",
+      "endDate": "2026-10-19T18:29:59.999Z",
+      "isFree": true,
+      "apxTitle": "SSC CGL 2026 Maths Super Mock Test 07 | SSC CGL 2026 | Score Booster Series | By Aditya Ranjan Sir",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5fa98308a95d039c388fe",
+      "topic": "6ad5fa98308a95d039c38902",
+      "subTopic": null,
+      "sectionName": "Score Booster",
+      "topicName": "Maths",
+      "addedAt": "2026-10-19T11:10:17.413Z",
+      "createdAt": "2026-10-19T11:10:17.413Z",
+      "updatedAt": "2026-10-19T11:10:17.413Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "apxTitle": "SSC CGL 2026 Maths Score Booster Test 07"
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-26T00:28:59.934Z",
+      "captureAgeHours": 29.727167777777776,
+      "completeness": true,
+      "tree": {
+        "id": "185592",
+        "Title": "SSC CGL 2026 Maths Score Booster Test 07",
+        "material_type": "VIDEO",
+        "free_flag": 1,
+        "treeRunId": "daily-2026-10-26"
+      },
+      "raw": {
+        "raw": {
+          "id": "185592",
+          "title": "SSC CGL 2026 Maths Score Booster Test 07",
+          "enable": "1",
+          "parent_id": "184331",
+          "deleted": "0"
+        },
+        "hiddenReason": null,
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": true,
+      "sharedClassStatus": 1,
+      "storedTitle": "SSC CGL 2026 Maths Super Mock Test 07 | SSC CGL 2026 | Score Booster Series | By Aditya Ranjan Sir",
+      "proposedDisplayTitle": "SSC CGL 2026 Maths Score Booster Test 07",
+      "visibilityWouldChange": false,
+      "freeAccessWouldChange": false
+    }
+  },
+  {
+    "id": "6ad5fa99308a95d039c3891c",
+    "course": "142",
+    "rowId": "185805",
+    "kind": "title",
+    "current": {
+      "_id": "6ad5fa99308a95d039c3891c",
+      "course": "6ad5fa99308a95d039c38913",
+      "class": "6aceb42e8752d955968bb542",
+      "priority": 8,
+      "status": 1,
+      "startDate": "2026-10-19T11:02:49.477Z",
+      "endDate": "2026-10-19T18:29:59.999Z",
+      "isFree": true,
+      "apxTitle": "SSC CGL 2026 Maths | Super Mock Test 08 | SSC CGL 2026 | Score Booster Series | By Aditya Ranjan Sir",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5fa98308a95d039c388fe",
+      "topic": "6ad5fa98308a95d039c38902",
+      "subTopic": null,
+      "sectionName": "Score Booster",
+      "topicName": "Maths",
+      "addedAt": "2026-10-19T11:10:17.413Z",
+      "createdAt": "2026-10-19T11:10:17.413Z",
+      "updatedAt": "2026-10-19T11:10:17.413Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "apxTitle": "SSC CGL 2026 Maths Score Booster Test 08"
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-26T00:28:59.934Z",
+      "captureAgeHours": 29.727167777777776,
+      "completeness": true,
+      "tree": {
+        "id": "185805",
+        "Title": "SSC CGL 2026 Maths Score Booster Test 08",
+        "material_type": "VIDEO",
+        "free_flag": 1,
+        "treeRunId": "daily-2026-10-26"
+      },
+      "raw": {
+        "raw": {
+          "id": "185805",
+          "title": "SSC CGL 2026 Maths Score Booster Test 08",
+          "enable": "1",
+          "parent_id": "184331",
+          "deleted": "0"
+        },
+        "hiddenReason": null,
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": true,
+      "sharedClassStatus": 1,
+      "storedTitle": "SSC CGL 2026 Maths | Super Mock Test 08 | SSC CGL 2026 | Score Booster Series | By Aditya Ranjan Sir",
+      "proposedDisplayTitle": "SSC CGL 2026 Maths Score Booster Test 08",
+      "visibilityWouldChange": false,
+      "freeAccessWouldChange": false
+    }
+  },
+  {
+    "id": "6ad5fa99308a95d039c3891d",
+    "course": "142",
+    "rowId": "186189",
+    "kind": "title",
+    "current": {
+      "_id": "6ad5fa99308a95d039c3891d",
+      "course": "6ad5fa99308a95d039c38913",
+      "class": "6aceb42f8752d955968bb547",
+      "priority": 9,
+      "status": 1,
+      "startDate": "2026-10-19T11:02:49.477Z",
+      "endDate": "2026-10-19T18:29:59.999Z",
+      "isFree": true,
+      "apxTitle": "SSC CGL 2026 Maths | Super Mock Test 09 | SSC CGL 2026 | Score Booster Series | By Aditya Ranjan Sir",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5fa98308a95d039c388fe",
+      "topic": "6ad5fa98308a95d039c38902",
+      "subTopic": null,
+      "sectionName": "Score Booster",
+      "topicName": "Maths",
+      "addedAt": "2026-10-19T11:10:17.413Z",
+      "createdAt": "2026-10-19T11:10:17.413Z",
+      "updatedAt": "2026-10-19T11:10:17.413Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "apxTitle": "SSC CGL 2026 Maths Score Booster Test 09"
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-26T00:28:59.934Z",
+      "captureAgeHours": 29.727167777777776,
+      "completeness": true,
+      "tree": {
+        "id": "186189",
+        "Title": "SSC CGL 2026 Maths Score Booster Test 09",
+        "material_type": "VIDEO",
+        "free_flag": 1,
+        "treeRunId": "daily-2026-10-26"
+      },
+      "raw": {
+        "raw": {
+          "id": "186189",
+          "title": "SSC CGL 2026 Maths Score Booster Test 09",
+          "enable": "1",
+          "parent_id": "184331",
+          "deleted": "0"
+        },
+        "hiddenReason": null,
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": true,
+      "sharedClassStatus": 1,
+      "storedTitle": "SSC CGL 2026 Maths | Super Mock Test 09 | SSC CGL 2026 | Score Booster Series | By Aditya Ranjan Sir",
+      "proposedDisplayTitle": "SSC CGL 2026 Maths Score Booster Test 09",
+      "visibilityWouldChange": false,
+      "freeAccessWouldChange": false
+    }
+  },
+  {
+    "id": "6ad5fab4308a95d039c392e4",
+    "course": "162",
+    "rowId": "189205",
+    "kind": "title",
+    "current": {
+      "_id": "6ad5fab4308a95d039c392e4",
+      "course": "6ad5fab4308a95d039c392e1",
+      "class": "6acec5708752d955968be7ba",
+      "priority": 3,
+      "status": 1,
+      "startDate": "2026-10-19T11:02:49.477Z",
+      "endDate": "2026-10-19T18:29:59.999Z",
+      "isFree": true,
+      "apxTitle": "Comprehension",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5f9cb308a95d039c32d40",
+      "topic": "6ad5faac308a95d039c38f6d",
+      "subTopic": null,
+      "sectionName": "English",
+      "topicName": "Reading Comprehension (Tone & Theme)",
+      "addedAt": "2026-10-19T11:10:44.221Z",
+      "createdAt": "2026-10-19T11:10:44.221Z",
+      "updatedAt": "2026-10-19T11:10:44.221Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "apxTitle": "Tone & Theme 01"
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-26T00:38:46.813Z",
+      "captureAgeHours": 29.564145833333335,
+      "completeness": true,
+      "tree": {
+        "id": "189205",
+        "Title": "Tone & Theme 01",
+        "material_type": "VIDEO",
+        "free_flag": 1,
+        "treeRunId": "daily-2026-10-26"
+      },
+      "raw": {
+        "raw": {
+          "id": "189205",
+          "title": "Tone & Theme 01",
+          "enable": "1",
+          "parent_id": "189203",
+          "deleted": "0"
+        },
+        "hiddenReason": null,
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": true,
+      "sharedClassStatus": 1,
+      "storedTitle": "Comprehension",
+      "proposedDisplayTitle": "Tone & Theme 01",
+      "visibilityWouldChange": false,
+      "freeAccessWouldChange": false
+    }
+  },
+  {
+    "id": "6ad5fab4308a95d039c392e5",
+    "course": "162",
+    "rowId": "189206",
+    "kind": "title",
+    "current": {
+      "_id": "6ad5fab4308a95d039c392e5",
+      "course": "6ad5fab4308a95d039c392e1",
+      "class": "6acec5718752d955968be7bf",
+      "priority": 4,
+      "status": 1,
+      "startDate": "2026-10-19T11:02:49.477Z",
+      "endDate": "2026-10-19T18:29:59.999Z",
+      "isFree": true,
+      "apxTitle": "Comprehension 02",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5f9cb308a95d039c32d40",
+      "topic": "6ad5faac308a95d039c38f6d",
+      "subTopic": null,
+      "sectionName": "English",
+      "topicName": "Reading Comprehension (Tone & Theme)",
+      "addedAt": "2026-10-19T11:10:44.221Z",
+      "createdAt": "2026-10-19T11:10:44.221Z",
+      "updatedAt": "2026-10-19T11:10:44.221Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "apxTitle": "Tone & Theme 02"
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-26T00:38:46.813Z",
+      "captureAgeHours": 29.564145833333335,
+      "completeness": true,
+      "tree": {
+        "id": "189206",
+        "Title": "Tone & Theme 02",
+        "material_type": "VIDEO",
+        "free_flag": 1,
+        "treeRunId": "daily-2026-10-26"
+      },
+      "raw": {
+        "raw": {
+          "id": "189206",
+          "title": " Tone & Theme 02",
+          "enable": "1",
+          "parent_id": "189203",
+          "deleted": "0"
+        },
+        "hiddenReason": null,
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": true,
+      "sharedClassStatus": 1,
+      "storedTitle": "Comprehension 02",
+      "proposedDisplayTitle": "Tone & Theme 02",
+      "visibilityWouldChange": false,
+      "freeAccessWouldChange": false
+    }
+  },
+  {
+    "id": "6ad5fab4308a95d039c392e6",
+    "course": "162",
+    "rowId": "189267",
+    "kind": "title",
+    "current": {
+      "_id": "6ad5fab4308a95d039c392e6",
+      "course": "6ad5fab4308a95d039c392e1",
+      "class": "6acec5738752d955968be7c6",
+      "priority": 5,
+      "status": 1,
+      "startDate": "2026-10-19T11:02:49.477Z",
+      "endDate": "2026-10-19T18:29:59.999Z",
+      "isFree": true,
+      "apxTitle": "Comprehension 03",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5f9cb308a95d039c32d40",
+      "topic": "6ad5faac308a95d039c38f6d",
+      "subTopic": null,
+      "sectionName": "English",
+      "topicName": "Reading Comprehension (Tone & Theme)",
+      "addedAt": "2026-10-19T11:10:44.221Z",
+      "createdAt": "2026-10-19T11:10:44.221Z",
+      "updatedAt": "2026-10-19T11:10:44.221Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "apxTitle": "Tone & Theme 03"
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-26T00:38:46.813Z",
+      "captureAgeHours": 29.564145833333335,
+      "completeness": true,
+      "tree": {
+        "id": "189267",
+        "Title": "Tone & Theme 03",
+        "material_type": "VIDEO",
+        "free_flag": 1,
+        "treeRunId": "daily-2026-10-26"
+      },
+      "raw": {
+        "raw": {
+          "id": "189267",
+          "title": " Tone & Theme 03",
+          "enable": "1",
+          "parent_id": "189203",
+          "deleted": "0"
+        },
+        "hiddenReason": null,
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": true,
+      "sharedClassStatus": 1,
+      "storedTitle": "Comprehension 03",
+      "proposedDisplayTitle": "Tone & Theme 03",
+      "visibilityWouldChange": false,
+      "freeAccessWouldChange": false
+    }
+  },
+  {
+    "id": "6ad5fa85308a95d039c37e41",
+    "course": "114",
+    "rowId": "184309",
+    "kind": "free",
+    "current": {
+      "_id": "6ad5fa85308a95d039c37e41",
+      "course": "6ad5fa85308a95d039c37e3c",
+      "class": "6acebfa18752d955968bd5c8",
+      "priority": 4,
+      "status": 1,
+      "startDate": "2026-10-19T11:02:49.477Z",
+      "endDate": "2026-10-19T18:29:59.999Z",
+      "isFree": false,
+      "apxTitle": "Line Graph | By Aditya Ranjan Sir",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5fa7f308a95d039c37d7e",
+      "topic": "6ad5fa7f308a95d039c37d82",
+      "subTopic": null,
+      "sectionName": "Upsssc PET",
+      "topicName": "Maths",
+      "addedAt": "2026-10-19T11:09:57.986Z",
+      "createdAt": "2026-10-19T11:09:57.986Z",
+      "updatedAt": "2026-10-19T11:09:57.986Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "isFree": true
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-26T00:21:17.624Z",
+      "captureAgeHours": 29.855587222222223,
+      "completeness": true,
+      "tree": {
+        "id": "184309",
+        "Title": "Line Graph | By Aditya Ranjan Sir",
+        "material_type": "VIDEO",
+        "free_flag": 1,
+        "treeRunId": "daily-2026-10-26"
+      },
+      "raw": {
+        "raw": {
+          "id": "184309",
+          "title": "Line Graph | By Aditya Ranjan Sir",
+          "enable": "1",
+          "parent_id": "184304",
+          "deleted": "0"
+        },
+        "hiddenReason": null,
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": true,
+      "sharedClassStatus": 1,
+      "storedTitle": "Line Graph | By Aditya Ranjan Sir",
+      "proposedDisplayTitle": "Line Graph | By Aditya Ranjan Sir",
+      "visibilityWouldChange": false,
+      "freeAccessWouldChange": true
+    }
+  },
+  {
+    "id": "6ad5f9e5308a95d039c337be",
+    "course": "71",
+    "rowId": "187075",
+    "kind": "visibility",
+    "current": {
+      "_id": "6ad5f9e5308a95d039c337be",
+      "course": "6ad5f9e5308a95d039c336ad",
+      "class": "6acea4748752d955968b925c",
+      "priority": 334,
+      "status": 1,
+      "startDate": "2026-10-19T11:02:49.477Z",
+      "endDate": "2026-10-19T18:29:59.999Z",
+      "isFree": false,
+      "apxTitle": "Announcement",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5f9d8308a95d039c334eb",
+      "topic": "6ad5f9e0308a95d039c33606",
+      "subTopic": null,
+      "sectionName": "GS",
+      "topicName": "Announcement",
+      "addedAt": "2026-10-19T11:07:17.252Z",
+      "createdAt": "2026-10-19T11:07:17.252Z",
+      "updatedAt": "2026-10-19T11:07:17.252Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "isActive": false,
+      "status": 0
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-25T23:25:48.018Z",
+      "captureAgeHours": 30.78047777777778,
+      "completeness": true,
+      "tree": {
+        "id": "187075",
+        "Title": "Announcement",
+        "material_type": "VIDEO",
+        "free_flag": 0,
+        "treeRunId": "daily-2026-10-24"
+      },
+      "raw": {
+        "raw": {
+          "id": "187075",
+          "title": "Announcement",
+          "enable": "1",
+          "parent_id": "187069",
+          "deleted": "0"
+        },
+        "hiddenReason": "folder disabled",
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": true,
+      "sharedClassStatus": 1,
+      "storedTitle": "Announcement",
+      "proposedDisplayTitle": "Announcement",
+      "visibilityWouldChange": true,
+      "freeAccessWouldChange": false
+    }
+  },
+  {
+    "id": "6ad5fa0d308a95d039c348f5",
+    "course": "77",
+    "rowId": "187074",
+    "kind": "visibility",
+    "current": {
+      "_id": "6ad5fa0d308a95d039c348f5",
+      "course": "6ad5fa0d308a95d039c347e3",
+      "class": "6acea4748752d955968b925c",
+      "priority": 335,
+      "status": 1,
+      "startDate": "2026-10-19T11:02:49.477Z",
+      "endDate": "2026-10-19T18:29:59.999Z",
+      "isFree": false,
+      "apxTitle": "Announcement",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5f9d8308a95d039c334eb",
+      "topic": "6ad5f9e0308a95d039c33606",
+      "subTopic": null,
+      "sectionName": "GS",
+      "topicName": "Announcement",
+      "addedAt": "2026-10-19T11:07:57.907Z",
+      "createdAt": "2026-10-19T11:07:57.907Z",
+      "updatedAt": "2026-10-19T11:07:57.907Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "isActive": false,
+      "status": 0
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-25T23:41:55.650Z",
+      "captureAgeHours": 30.511691111111112,
+      "completeness": true,
+      "tree": {
+        "id": "187074",
+        "Title": "Announcement",
+        "material_type": "VIDEO",
+        "free_flag": 0,
+        "treeRunId": "daily-2026-10-24"
+      },
+      "raw": {
+        "raw": {
+          "id": "187074",
+          "title": "Announcement",
+          "enable": "1",
+          "parent_id": "187068",
+          "deleted": "0"
+        },
+        "hiddenReason": "folder disabled",
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": true,
+      "sharedClassStatus": 1,
+      "storedTitle": "Announcement",
+      "proposedDisplayTitle": "Announcement",
+      "visibilityWouldChange": true,
+      "freeAccessWouldChange": false
+    }
+  },
+  {
+    "id": "6ad5fa26308a95d039c35506",
+    "course": "95",
+    "rowId": "187073",
+    "kind": "visibility",
+    "current": {
+      "_id": "6ad5fa26308a95d039c35506",
+      "course": "6ad5fa25308a95d039c35407",
+      "class": "6acea4748752d955968b925c",
+      "priority": 316,
+      "status": 1,
+      "startDate": "2026-10-19T11:02:49.477Z",
+      "endDate": "2026-10-19T18:29:59.999Z",
+      "isFree": false,
+      "apxTitle": "Announcement",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5f9d8308a95d039c334eb",
+      "topic": "6ad5f9e0308a95d039c33606",
+      "subTopic": null,
+      "sectionName": "GS",
+      "topicName": "Announcement",
+      "addedAt": "2026-10-19T11:08:22.049Z",
+      "createdAt": "2026-10-19T11:08:22.049Z",
+      "updatedAt": "2026-10-19T11:08:22.049Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "isActive": false,
+      "status": 0
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-25T23:53:30.669Z",
+      "captureAgeHours": 30.31863027777778,
+      "completeness": true,
+      "tree": {
+        "id": "187073",
+        "Title": "Announcement",
+        "material_type": "VIDEO",
+        "free_flag": 0,
+        "treeRunId": "daily-2026-10-24"
+      },
+      "raw": {
+        "raw": {
+          "id": "187073",
+          "title": "Announcement",
+          "enable": "1",
+          "parent_id": "187067",
+          "deleted": "0"
+        },
+        "hiddenReason": "folder disabled",
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": true,
+      "sharedClassStatus": 1,
+      "storedTitle": "Announcement",
+      "proposedDisplayTitle": "Announcement",
+      "visibilityWouldChange": true,
+      "freeAccessWouldChange": false
+    }
+  },
+  {
+    "id": "6adc021b20e78c9f77dbcb33",
+    "course": "105",
+    "rowId": "194534",
+    "kind": "visibility",
+    "current": {
+      "_id": "6adc021b20e78c9f77dbcb33",
+      "course": "6ad5fa6d308a95d039c36eb0",
+      "class": "6adc016c20e78c9f77dbbd21",
+      "priority": 174,
+      "status": 1,
+      "startDate": "2026-10-24T00:55:48.294Z",
+      "endDate": "2026-10-24T18:29:59.999Z",
+      "isFree": false,
+      "apxTitle": "Figure Counting 05",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5f937308a95d039c2a8ff",
+      "topic": "6ad5f9d5308a95d039c333c7",
+      "subTopic": null,
+      "sectionName": "Reasoning",
+      "topicName": "Figure Counting",
+      "addedAt": "2026-10-24T00:55:55.629Z",
+      "createdAt": "2026-10-24T00:55:55.629Z",
+      "updatedAt": "2026-10-24T00:55:55.629Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "isActive": false,
+      "status": 0
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-26T00:12:30.112Z",
+      "captureAgeHours": 30.002118333333332,
+      "completeness": true,
+      "raw": {
+        "raw": {
+          "id": "194534",
+          "title": "Figure Counting 05",
+          "enable": "0",
+          "parent_id": "192403",
+          "deleted": "0"
+        },
+        "hiddenReason": "item disabled",
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": false,
+      "sharedClassStatus": 0,
+      "storedTitle": "Figure Counting 05",
+      "proposedDisplayTitle": "Figure Counting 05",
+      "visibilityWouldChange": true,
+      "freeAccessWouldChange": false
+    }
+  },
+  {
+    "id": "6adc021c20e78c9f77dbcbbb",
+    "course": "120",
+    "rowId": "194533",
+    "kind": "visibility",
+    "current": {
+      "_id": "6adc021c20e78c9f77dbcbbb",
+      "course": "6ad5fa88308a95d039c3816f",
+      "class": "6adc016c20e78c9f77dbbd21",
+      "priority": 45,
+      "status": 1,
+      "startDate": "2026-10-24T00:55:48.294Z",
+      "endDate": "2026-10-24T18:29:59.999Z",
+      "isFree": false,
+      "apxTitle": "Figure Counting 05",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5f937308a95d039c2a8ff",
+      "topic": "6ad5f9d5308a95d039c333c7",
+      "subTopic": null,
+      "sectionName": "Reasoning",
+      "topicName": "Figure Counting",
+      "addedAt": "2026-10-24T00:55:56.518Z",
+      "createdAt": "2026-10-24T00:55:56.519Z",
+      "updatedAt": "2026-10-24T00:55:56.519Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "isActive": false,
+      "status": 0
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-26T00:22:09.868Z",
+      "captureAgeHours": 29.841075,
+      "completeness": true,
+      "raw": {
+        "raw": {
+          "id": "194533",
+          "title": "Figure Counting 05",
+          "enable": "0",
+          "parent_id": "192401",
+          "deleted": "0"
+        },
+        "hiddenReason": "item disabled",
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": false,
+      "sharedClassStatus": 0,
+      "storedTitle": "Figure Counting 05",
+      "proposedDisplayTitle": "Figure Counting 05",
+      "visibilityWouldChange": true,
+      "freeAccessWouldChange": false
+    }
+  },
+  {
+    "id": "6adc021e20e78c9f77dbccf1",
+    "course": "151",
+    "rowId": "194532",
+    "kind": "visibility",
+    "current": {
+      "_id": "6adc021e20e78c9f77dbccf1",
+      "course": "6ad5faa0308a95d039c38b1f",
+      "class": "6adc016c20e78c9f77dbbd21",
+      "priority": 47,
+      "status": 1,
+      "startDate": "2026-10-24T00:55:48.294Z",
+      "endDate": "2026-10-24T18:29:59.999Z",
+      "isFree": false,
+      "apxTitle": "Figure Counting 05",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5fa04308a95d039c346d1",
+      "topic": "6ad5fa9e308a95d039c38ae7",
+      "subTopic": null,
+      "sectionName": "प्रहार",
+      "topicName": "Figure Counting",
+      "addedAt": "2026-10-24T00:55:58.496Z",
+      "createdAt": "2026-10-24T00:55:58.496Z",
+      "updatedAt": "2026-10-24T00:55:58.496Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "isActive": false,
+      "status": 0
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-26T00:31:08.160Z",
+      "captureAgeHours": 29.691549444444444,
+      "completeness": true,
+      "raw": {
+        "raw": {
+          "id": "194532",
+          "title": "Figure Counting 05",
+          "enable": "0",
+          "parent_id": "192399",
+          "deleted": "0"
+        },
+        "hiddenReason": "item disabled",
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": false,
+      "sharedClassStatus": 0,
+      "storedTitle": "Figure Counting 05",
+      "proposedDisplayTitle": "Figure Counting 05",
+      "visibilityWouldChange": true,
+      "freeAccessWouldChange": false
+    }
+  },
+  {
+    "id": "6adc021e20e78c9f77dbcd1f",
+    "course": "154",
+    "rowId": "194531",
+    "kind": "visibility",
+    "current": {
+      "_id": "6adc021e20e78c9f77dbcd1f",
+      "course": "6ad5faa1308a95d039c38c4a",
+      "class": "6adc016c20e78c9f77dbbd21",
+      "priority": 19,
+      "status": 1,
+      "startDate": "2026-10-24T00:55:48.294Z",
+      "endDate": "2026-10-24T18:29:59.999Z",
+      "isFree": false,
+      "apxTitle": "Figure Counting 05",
+      "notificationSent": false,
+      "scheduledNotificationJobId": null,
+      "isActive": true,
+      "section": "6ad5f937308a95d039c2a8ff",
+      "topic": "6ad5f9d5308a95d039c333c7",
+      "subTopic": null,
+      "sectionName": "Reasoning",
+      "topicName": "Figure Counting",
+      "addedAt": "2026-10-24T00:55:58.721Z",
+      "createdAt": "2026-10-24T00:55:58.721Z",
+      "updatedAt": "2026-10-24T00:55:58.721Z",
+      "__v": 0
+    },
+    "proposedAfter": {
+      "isActive": false,
+      "status": 0
+    },
+    "eligible": true,
+    "alreadyApplied": false,
+    "heldReasons": [],
+    "changedFields": [],
+    "source": {
+      "runId": "daily-2026-10-26",
+      "completedAt": "2026-10-26T00:31:33.531Z",
+      "captureAgeHours": 29.684501944444445,
+      "completeness": true,
+      "raw": {
+        "raw": {
+          "id": "194531",
+          "title": "Figure Counting 05",
+          "enable": "0",
+          "parent_id": "192397",
+          "deleted": "0"
+        },
+        "hiddenReason": "item disabled",
+        "lastSeenRunId": "daily-2026-10-26"
+      }
+    },
+    "studentImpact": {
+      "currentlyVisible": false,
+      "sharedClassStatus": 0,
+      "storedTitle": "Figure Counting 05",
+      "proposedDisplayTitle": "Figure Counting 05",
+      "visibilityWouldChange": true,
+      "freeAccessWouldChange": false
+    }
+  }
+]

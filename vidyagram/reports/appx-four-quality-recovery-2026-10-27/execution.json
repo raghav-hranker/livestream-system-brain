@@ -1,0 +1,110 @@
+{
+  "observedAt": "2026-10-27T12:36:01.106Z",
+  "readOnly": true,
+  "scope": 4,
+  "steps": [],
+  "controls": [],
+  "candidates": [],
+  "requests": 19,
+  "cmsRequests": 8,
+  "mediaRequests": 11,
+  "requestBudget": 120000,
+  "segmentBytes": 0,
+  "productionWrites": 0,
+  "policy": {
+    "mediaConcurrency": 4,
+    "mediaRequestsPerSecond": 8,
+    "cmsGapMs": 1100,
+    "range": "0-1023",
+    "stopAfterConfirmedGap": true
+  },
+  "recoveries": [
+    {
+      "job": "6ace9397c9735682f04ee9c4",
+      "classId": "6ace93978752d955968b1376",
+      "ok": true,
+      "renditions": [
+        {
+          "rung": "240p",
+          "segmentCount": 398,
+          "peakBandwidth": 295446,
+          "bytes": 104701336,
+          "refreshes": 0,
+          "width": 256,
+          "height": 144
+        },
+        {
+          "rung": "480p",
+          "segmentCount": 398,
+          "peakBandwidth": 881825,
+          "bytes": 321030492,
+          "refreshes": 0,
+          "width": 854,
+          "height": 480
+        }
+      ]
+    },
+    {
+      "job": "6ace93c4c9735682f04eeb1c",
+      "classId": "6ace93c48752d955968b1671",
+      "ok": true,
+      "renditions": [
+        {
+          "rung": "360p",
+          "segmentCount": 312,
+          "peakBandwidth": 573024,
+          "bytes": 164305984,
+          "refreshes": 0,
+          "width": 638,
+          "height": 360
+        },
+        {
+          "rung": "480p",
+          "segmentCount": 312,
+          "peakBandwidth": 797722,
+          "bytes": 220885900,
+          "refreshes": 0,
+          "width": 854,
+          "height": 480
+        }
+      ]
+    },
+    {
+      "job": "6ace93c5c9735682f04eeb20",
+      "classId": "6ace93c58752d955968b167f",
+      "ok": true,
+      "renditions": [
+        {
+          "rung": "240p",
+          "segmentCount": 338,
+          "peakBandwidth": 655744,
+          "bytes": 94103212,
+          "refreshes": 0,
+          "width": 256,
+          "height": 144
+        }
+      ]
+    },
+    {
+      "job": "6ace9550c9735682f04ef228",
+      "classId": "6ace95508752d955968b2b78",
+      "ok": true,
+      "renditions": [
+        {
+          "rung": "480p",
+          "segmentCount": 504,
+          "peakBandwidth": 1360199,
+          "bytes": 403363964,
+          "refreshes": 0,
+          "width": 854,
+          "height": 480
+        }
+      ]
+    }
+  ],
+  "canaryPlaybackVerified": true,
+  "completedAt": "2026-10-27T12:48:18.093Z",
+  "approved": 4,
+  "checkpoint": true,
+  "transport": "direct local HTTPS; session cookie only to cms.appx.co.in"
+}

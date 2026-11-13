@@ -1,0 +1,1628 @@
+{
+  "info": {
+    "name": "Course search (POST /api/courses/:courseId/search)",
+    "description": "Course search: one course's classes, course PDFs (\"Ebooks\") and tests, ranked by title.\nLocal server on feat/course-search, prod data read-only (see reference/postman/course-search.README.md).\nSigned-in requests mint their own JWT with the LOCAL jwt_secret — point {{base}} only at the local\nserver, never at prod.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base",
+      "value": "http://localhost:3110"
+    },
+    {
+      "key": "jwt_secret",
+      "value": "local-gsearch-jwt-secret-not-used-anywhere-else"
+    },
+    {
+      "key": "course_id",
+      "value": "6a4558e8ebb42f585d9a9f29"
+    },
+    {
+      "key": "inactive_course_id",
+      "value": "6a4558c2ebb42f585d9a8326"
+    },
+    {
+      "key": "user_id",
+      "value": "6a7eb7ce543dd0b9881e0a27"
+    },
+    {
+      "key": "query",
+      "value": "percentage"
+    },
+    {
+      "key": "query_typo",
+      "value": "alligation"
+    },
+    {
+      "key": "query_words",
+      "value": "mixture part 2"
+    },
+    {
+      "key": "query_broad",
+      "value": "ra"
+    },
+    {
+      "key": "query_ebook",
+      "value": "ebook"
+    },
+    {
+      "key": "query_test",
+      "value": "test"
+    },
+    {
+      "key": "query_progress",
+      "value": "lcm hcf part 1"
+    },
+    {
+      "key": "limit",
+      "value": "10"
+    }
+  ],
+  "item": [
+    {
+      "name": "1 Guest",
+      "description": "No token. Guest defaults on every class; no test attempts.",
+      "item": [
+        {
+          "name": "guest: {{query}}",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('{{course_id}}'));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('guest query: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('guest query: exactly the three sections, all arrays', () => { pm.expect(Object.keys(d).sort()).to.eql(['classes', 'ebooks', 'tests']); ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k]).to.be.an('array')); });",
+                  "const max = Number(pm.variables.get('limit'));",
+                  "pm.test('guest query: every section within the limit (' + max + ')', () => ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k].length, k).to.be.at.most(max)));",
+                  "pm.test('guest query: classes not empty', () => pm.expect(d.classes.length).to.be.above(0));",
+                  "const cl = d.classes || [], pd = d.ebooks || [], ts = d.tests || [];",
+                  "const bad = (rule, arr, pred, id) => { const v = arr.filter((x) => !pred(x)).map(id || ((x) => x._id + ' ' + (x.title || x.series_name))); pm.test('guest query: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "bad('classes: tab is today/upcoming/previous/null', cl, (c) => [\"today\",\"upcoming\",\"previous\",null].includes(c.tab));",
+                  "bad('classes: every item belongs to this course', cl, (c) => String(c.course) === pm.variables.get('cid'));",
+                  "bad('classes: no duplicates', cl, (c) => cl.filter((o) => o._id === c._id).length === 1);",
+                  "bad('classes: card fields present (title, classId, classPdf[], watch fields)', cl, (c) => typeof c.title === 'string' && c.classId && Array.isArray(c.classPdf) && [\"not_watched\",\"partial\",\"watched\"].includes(c.watchStatus) && typeof c.watchTime === 'number' && typeof c.manualCompleted === 'boolean');",
+                  "bad('classes: upcoming keeps the pinned defaults', cl, (c) => c.tab !== 'upcoming' || (c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition));",
+                  "bad('guest: every class is Not watched, no resume point', cl, (c) => c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition);",
+                  "bad('ebooks: no uploadPdf / storage key / signed URL', pd, (p) => !('uploadPdf' in p) && !('pdfAsset' in p) && !(p.asset && 'key' in p.asset) && !/[?&](token|expires)=/.test(JSON.stringify(p)));",
+                  "bad('ebooks: title + booleans isFree/isDownloadable', pd, (p) => typeof p.title === 'string' && typeof p.isFree === 'boolean');",
+                  "bad('tests: series_name present', ts, (t) => typeof t.series_name === 'string');",
+                  "bad('guest: tests carry no attempts', ts, (t) => !t.is_attempted && !t.attempted_count);",
+                  "pm.collectionVariables.set('guest_query', JSON.stringify(d));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/{{course_id}}/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{course_id}}",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "guest: typo {{query_typo}}",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('{{course_id}}'));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('typo: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('typo: exactly the three sections, all arrays', () => { pm.expect(Object.keys(d).sort()).to.eql(['classes', 'ebooks', 'tests']); ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k]).to.be.an('array')); });",
+                  "const max = Number(pm.variables.get('limit'));",
+                  "pm.test('typo: every section within the limit (' + max + ')', () => ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k].length, k).to.be.at.most(max)));",
+                  "pm.test('typo: classes not empty', () => pm.expect(d.classes.length).to.be.above(0));",
+                  "const cl = d.classes || [], pd = d.ebooks || [], ts = d.tests || [];",
+                  "const bad = (rule, arr, pred, id) => { const v = arr.filter((x) => !pred(x)).map(id || ((x) => x._id + ' ' + (x.title || x.series_name))); pm.test('typo: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "bad('classes: tab is today/upcoming/previous/null', cl, (c) => [\"today\",\"upcoming\",\"previous\",null].includes(c.tab));",
+                  "bad('classes: every item belongs to this course', cl, (c) => String(c.course) === pm.variables.get('cid'));",
+                  "bad('classes: no duplicates', cl, (c) => cl.filter((o) => o._id === c._id).length === 1);",
+                  "bad('classes: card fields present (title, classId, classPdf[], watch fields)', cl, (c) => typeof c.title === 'string' && c.classId && Array.isArray(c.classPdf) && [\"not_watched\",\"partial\",\"watched\"].includes(c.watchStatus) && typeof c.watchTime === 'number' && typeof c.manualCompleted === 'boolean');",
+                  "bad('classes: upcoming keeps the pinned defaults', cl, (c) => c.tab !== 'upcoming' || (c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition));",
+                  "bad('guest: every class is Not watched, no resume point', cl, (c) => c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition);",
+                  "bad('ebooks: no uploadPdf / storage key / signed URL', pd, (p) => !('uploadPdf' in p) && !('pdfAsset' in p) && !(p.asset && 'key' in p.asset) && !/[?&](token|expires)=/.test(JSON.stringify(p)));",
+                  "bad('ebooks: title + booleans isFree/isDownloadable', pd, (p) => typeof p.title === 'string' && typeof p.isFree === 'boolean');",
+                  "bad('tests: series_name present', ts, (t) => typeof t.series_name === 'string');",
+                  "bad('guest: tests carry no attempts', ts, (t) => !t.is_attempted && !t.attempted_count);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/{{course_id}}/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{course_id}}",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query_typo}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "guest: words in any order {{query_words}}",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('{{course_id}}'));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('word order: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('word order: exactly the three sections, all arrays', () => { pm.expect(Object.keys(d).sort()).to.eql(['classes', 'ebooks', 'tests']); ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k]).to.be.an('array')); });",
+                  "const max = Number(pm.variables.get('limit'));",
+                  "pm.test('word order: every section within the limit (' + max + ')', () => ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k].length, k).to.be.at.most(max)));",
+                  "pm.test('word order: classes not empty', () => pm.expect(d.classes.length).to.be.above(0));",
+                  "const cl = d.classes || [], pd = d.ebooks || [], ts = d.tests || [];",
+                  "const bad = (rule, arr, pred, id) => { const v = arr.filter((x) => !pred(x)).map(id || ((x) => x._id + ' ' + (x.title || x.series_name))); pm.test('word order: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "bad('classes: tab is today/upcoming/previous/null', cl, (c) => [\"today\",\"upcoming\",\"previous\",null].includes(c.tab));",
+                  "bad('classes: every item belongs to this course', cl, (c) => String(c.course) === pm.variables.get('cid'));",
+                  "bad('classes: no duplicates', cl, (c) => cl.filter((o) => o._id === c._id).length === 1);",
+                  "bad('classes: card fields present (title, classId, classPdf[], watch fields)', cl, (c) => typeof c.title === 'string' && c.classId && Array.isArray(c.classPdf) && [\"not_watched\",\"partial\",\"watched\"].includes(c.watchStatus) && typeof c.watchTime === 'number' && typeof c.manualCompleted === 'boolean');",
+                  "bad('classes: upcoming keeps the pinned defaults', cl, (c) => c.tab !== 'upcoming' || (c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition));",
+                  "bad('guest: every class is Not watched, no resume point', cl, (c) => c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition);",
+                  "bad('ebooks: no uploadPdf / storage key / signed URL', pd, (p) => !('uploadPdf' in p) && !('pdfAsset' in p) && !(p.asset && 'key' in p.asset) && !/[?&](token|expires)=/.test(JSON.stringify(p)));",
+                  "bad('ebooks: title + booleans isFree/isDownloadable', pd, (p) => typeof p.title === 'string' && typeof p.isFree === 'boolean');",
+                  "bad('tests: series_name present', ts, (t) => typeof t.series_name === 'string');",
+                  "bad('guest: tests carry no attempts', ts, (t) => !t.is_attempted && !t.attempted_count);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/{{course_id}}/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{course_id}}",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query_words}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "guest: broad two letters {{query_broad}}",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('{{course_id}}'));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('broad: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('broad: exactly the three sections, all arrays', () => { pm.expect(Object.keys(d).sort()).to.eql(['classes', 'ebooks', 'tests']); ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k]).to.be.an('array')); });",
+                  "const max = Number(pm.variables.get('limit'));",
+                  "pm.test('broad: every section within the limit (' + max + ')', () => ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k].length, k).to.be.at.most(max)));",
+                  "pm.test('broad: classes not empty', () => pm.expect(d.classes.length).to.be.above(0));",
+                  "const cl = d.classes || [], pd = d.ebooks || [], ts = d.tests || [];",
+                  "const bad = (rule, arr, pred, id) => { const v = arr.filter((x) => !pred(x)).map(id || ((x) => x._id + ' ' + (x.title || x.series_name))); pm.test('broad: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "bad('classes: tab is today/upcoming/previous/null', cl, (c) => [\"today\",\"upcoming\",\"previous\",null].includes(c.tab));",
+                  "bad('classes: every item belongs to this course', cl, (c) => String(c.course) === pm.variables.get('cid'));",
+                  "bad('classes: no duplicates', cl, (c) => cl.filter((o) => o._id === c._id).length === 1);",
+                  "bad('classes: card fields present (title, classId, classPdf[], watch fields)', cl, (c) => typeof c.title === 'string' && c.classId && Array.isArray(c.classPdf) && [\"not_watched\",\"partial\",\"watched\"].includes(c.watchStatus) && typeof c.watchTime === 'number' && typeof c.manualCompleted === 'boolean');",
+                  "bad('classes: upcoming keeps the pinned defaults', cl, (c) => c.tab !== 'upcoming' || (c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition));",
+                  "bad('guest: every class is Not watched, no resume point', cl, (c) => c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition);",
+                  "bad('ebooks: no uploadPdf / storage key / signed URL', pd, (p) => !('uploadPdf' in p) && !('pdfAsset' in p) && !(p.asset && 'key' in p.asset) && !/[?&](token|expires)=/.test(JSON.stringify(p)));",
+                  "bad('ebooks: title + booleans isFree/isDownloadable', pd, (p) => typeof p.title === 'string' && typeof p.isFree === 'boolean');",
+                  "bad('tests: series_name present', ts, (t) => typeof t.series_name === 'string');",
+                  "bad('guest: tests carry no attempts', ts, (t) => !t.is_attempted && !t.attempted_count);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/{{course_id}}/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{course_id}}",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query_broad}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "guest: body userId is ignored (spoof)",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('{{course_id}}'));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('spoof: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('spoof: exactly the three sections, all arrays', () => { pm.expect(Object.keys(d).sort()).to.eql(['classes', 'ebooks', 'tests']); ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k]).to.be.an('array')); });",
+                  "const max = Number(pm.variables.get('limit'));",
+                  "pm.test('spoof: every section within the limit (' + max + ')', () => ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k].length, k).to.be.at.most(max)));",
+                  "const cl = d.classes || [], pd = d.ebooks || [], ts = d.tests || [];",
+                  "const bad = (rule, arr, pred, id) => { const v = arr.filter((x) => !pred(x)).map(id || ((x) => x._id + ' ' + (x.title || x.series_name))); pm.test('spoof: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "bad('classes: tab is today/upcoming/previous/null', cl, (c) => [\"today\",\"upcoming\",\"previous\",null].includes(c.tab));",
+                  "bad('classes: every item belongs to this course', cl, (c) => String(c.course) === pm.variables.get('cid'));",
+                  "bad('classes: no duplicates', cl, (c) => cl.filter((o) => o._id === c._id).length === 1);",
+                  "bad('classes: card fields present (title, classId, classPdf[], watch fields)', cl, (c) => typeof c.title === 'string' && c.classId && Array.isArray(c.classPdf) && [\"not_watched\",\"partial\",\"watched\"].includes(c.watchStatus) && typeof c.watchTime === 'number' && typeof c.manualCompleted === 'boolean');",
+                  "bad('classes: upcoming keeps the pinned defaults', cl, (c) => c.tab !== 'upcoming' || (c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition));",
+                  "bad('guest: every class is Not watched, no resume point', cl, (c) => c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition);",
+                  "bad('ebooks: no uploadPdf / storage key / signed URL', pd, (p) => !('uploadPdf' in p) && !('pdfAsset' in p) && !(p.asset && 'key' in p.asset) && !/[?&](token|expires)=/.test(JSON.stringify(p)));",
+                  "bad('ebooks: title + booleans isFree/isDownloadable', pd, (p) => typeof p.title === 'string' && typeof p.isFree === 'boolean');",
+                  "bad('tests: series_name present', ts, (t) => typeof t.series_name === 'string');",
+                  "bad('guest: tests carry no attempts', ts, (t) => !t.is_attempted && !t.attempted_count);",
+                  "pm.test('spoof: byte-identical to the guest response', () => pm.expect(JSON.stringify(d)).to.eql(pm.collectionVariables.get('guest_query')));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "description": "The buyer's id in the body without a token must not reveal their progress.",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/{{course_id}}/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{course_id}}",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query}}\",\n  \"userId\": \"{{user_id}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2 Signed in",
+      "description": "Valid token for {{user_id}}: same matches, per-student watch state from the token.",
+      "item": [
+        {
+          "name": "signed in: {{query}}",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('{{course_id}}'));",
+                  "const b64u = (w) => CryptoJS.enc.Base64.stringify(w).replace(/=+$/, '').replace(/\\+/g, '-').replace(/\\//g, '_');",
+                  "const enc = (o) => b64u(CryptoJS.enc.Utf8.parse(JSON.stringify(o)));",
+                  "const now = Math.floor(Date.now() / 1000);",
+                  "const sign = (payload, secret) => { const h = enc({ alg: 'HS256', typ: 'JWT' }); const p = enc(payload);",
+                  "  return h + '.' + p + '.' + b64u(CryptoJS.HmacSHA256(h + '.' + p, secret)); };",
+                  "const payload = { user_id: pm.variables.get('user_id'), email: 'postman@local', mobile: '0', iat: now - 120,",
+                  "  exp: now + 3600 };",
+                  "pm.variables.set('token', sign(payload, pm.variables.get('jwt_secret')));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('signed in: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('signed in: exactly the three sections, all arrays', () => { pm.expect(Object.keys(d).sort()).to.eql(['classes', 'ebooks', 'tests']); ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k]).to.be.an('array')); });",
+                  "const max = Number(pm.variables.get('limit'));",
+                  "pm.test('signed in: every section within the limit (' + max + ')', () => ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k].length, k).to.be.at.most(max)));",
+                  "pm.test('signed in: classes not empty', () => pm.expect(d.classes.length).to.be.above(0));",
+                  "const cl = d.classes || [], pd = d.ebooks || [], ts = d.tests || [];",
+                  "const bad = (rule, arr, pred, id) => { const v = arr.filter((x) => !pred(x)).map(id || ((x) => x._id + ' ' + (x.title || x.series_name))); pm.test('signed in: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "bad('classes: tab is today/upcoming/previous/null', cl, (c) => [\"today\",\"upcoming\",\"previous\",null].includes(c.tab));",
+                  "bad('classes: every item belongs to this course', cl, (c) => String(c.course) === pm.variables.get('cid'));",
+                  "bad('classes: no duplicates', cl, (c) => cl.filter((o) => o._id === c._id).length === 1);",
+                  "bad('classes: card fields present (title, classId, classPdf[], watch fields)', cl, (c) => typeof c.title === 'string' && c.classId && Array.isArray(c.classPdf) && [\"not_watched\",\"partial\",\"watched\"].includes(c.watchStatus) && typeof c.watchTime === 'number' && typeof c.manualCompleted === 'boolean');",
+                  "bad('classes: upcoming keeps the pinned defaults', cl, (c) => c.tab !== 'upcoming' || (c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition));",
+                  "bad('ebooks: no uploadPdf / storage key / signed URL', pd, (p) => !('uploadPdf' in p) && !('pdfAsset' in p) && !(p.asset && 'key' in p.asset) && !/[?&](token|expires)=/.test(JSON.stringify(p)));",
+                  "bad('ebooks: title + booleans isFree/isDownloadable', pd, (p) => typeof p.title === 'string' && typeof p.isFree === 'boolean');",
+                  "bad('tests: series_name present', ts, (t) => typeof t.series_name === 'string');",
+                  "const g = JSON.parse(pm.collectionVariables.get('guest_query') || '{}');",
+                  "pm.test('signed in: same results as the guest (identity changes state, not matching)', () => pm.expect(cl.map((c) => c._id)).to.eql((g.classes || []).map((c) => c._id)));",
+                  "console.log('signed in: signed-in watch states', cl.map((c) => c.title + ' → ' + c.watchStatus + ' ' + c.watchTime + 's pos ' + (c.videoPosition || 0)));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/{{course_id}}/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{course_id}}",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "signed in: progress {{query_progress}}",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('{{course_id}}'));",
+                  "const b64u = (w) => CryptoJS.enc.Base64.stringify(w).replace(/=+$/, '').replace(/\\+/g, '-').replace(/\\//g, '_');",
+                  "const enc = (o) => b64u(CryptoJS.enc.Utf8.parse(JSON.stringify(o)));",
+                  "const now = Math.floor(Date.now() / 1000);",
+                  "const sign = (payload, secret) => { const h = enc({ alg: 'HS256', typ: 'JWT' }); const p = enc(payload);",
+                  "  return h + '.' + p + '.' + b64u(CryptoJS.HmacSHA256(h + '.' + p, secret)); };",
+                  "const payload = { user_id: pm.variables.get('user_id'), email: 'postman@local', mobile: '0', iat: now - 120,",
+                  "  exp: now + 3600 };",
+                  "pm.variables.set('token', sign(payload, pm.variables.get('jwt_secret')));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('signed in progress: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('signed in progress: exactly the three sections, all arrays', () => { pm.expect(Object.keys(d).sort()).to.eql(['classes', 'ebooks', 'tests']); ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k]).to.be.an('array')); });",
+                  "const max = Number(pm.variables.get('limit'));",
+                  "pm.test('signed in progress: every section within the limit (' + max + ')', () => ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k].length, k).to.be.at.most(max)));",
+                  "pm.test('signed in progress: classes not empty', () => pm.expect(d.classes.length).to.be.above(0));",
+                  "const cl = d.classes || [], pd = d.ebooks || [], ts = d.tests || [];",
+                  "const bad = (rule, arr, pred, id) => { const v = arr.filter((x) => !pred(x)).map(id || ((x) => x._id + ' ' + (x.title || x.series_name))); pm.test('signed in progress: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "bad('classes: tab is today/upcoming/previous/null', cl, (c) => [\"today\",\"upcoming\",\"previous\",null].includes(c.tab));",
+                  "bad('classes: every item belongs to this course', cl, (c) => String(c.course) === pm.variables.get('cid'));",
+                  "bad('classes: no duplicates', cl, (c) => cl.filter((o) => o._id === c._id).length === 1);",
+                  "bad('classes: card fields present (title, classId, classPdf[], watch fields)', cl, (c) => typeof c.title === 'string' && c.classId && Array.isArray(c.classPdf) && [\"not_watched\",\"partial\",\"watched\"].includes(c.watchStatus) && typeof c.watchTime === 'number' && typeof c.manualCompleted === 'boolean');",
+                  "bad('classes: upcoming keeps the pinned defaults', cl, (c) => c.tab !== 'upcoming' || (c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition));",
+                  "bad('ebooks: no uploadPdf / storage key / signed URL', pd, (p) => !('uploadPdf' in p) && !('pdfAsset' in p) && !(p.asset && 'key' in p.asset) && !/[?&](token|expires)=/.test(JSON.stringify(p)));",
+                  "bad('ebooks: title + booleans isFree/isDownloadable', pd, (p) => typeof p.title === 'string' && typeof p.isFree === 'boolean');",
+                  "bad('tests: series_name present', ts, (t) => typeof t.series_name === 'string');",
+                  "pm.test('signed in progress: some class carries this student's state', () => pm.expect(cl.some((c) => c.watchStatus !== 'not_watched' || c.videoPosition > 0 || c.manualCompleted)).to.be.true);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "description": "A class the test account watched: its result must carry that student's state (compare with its class-tabs card).",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/{{course_id}}/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{course_id}}",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query_progress}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "guest: progress {{query_progress}} shows none",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('{{course_id}}'));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('guest progress: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('guest progress: exactly the three sections, all arrays', () => { pm.expect(Object.keys(d).sort()).to.eql(['classes', 'ebooks', 'tests']); ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k]).to.be.an('array')); });",
+                  "const max = Number(pm.variables.get('limit'));",
+                  "pm.test('guest progress: every section within the limit (' + max + ')', () => ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k].length, k).to.be.at.most(max)));",
+                  "const cl = d.classes || [], pd = d.ebooks || [], ts = d.tests || [];",
+                  "const bad = (rule, arr, pred, id) => { const v = arr.filter((x) => !pred(x)).map(id || ((x) => x._id + ' ' + (x.title || x.series_name))); pm.test('guest progress: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "bad('classes: tab is today/upcoming/previous/null', cl, (c) => [\"today\",\"upcoming\",\"previous\",null].includes(c.tab));",
+                  "bad('classes: every item belongs to this course', cl, (c) => String(c.course) === pm.variables.get('cid'));",
+                  "bad('classes: no duplicates', cl, (c) => cl.filter((o) => o._id === c._id).length === 1);",
+                  "bad('classes: card fields present (title, classId, classPdf[], watch fields)', cl, (c) => typeof c.title === 'string' && c.classId && Array.isArray(c.classPdf) && [\"not_watched\",\"partial\",\"watched\"].includes(c.watchStatus) && typeof c.watchTime === 'number' && typeof c.manualCompleted === 'boolean');",
+                  "bad('classes: upcoming keeps the pinned defaults', cl, (c) => c.tab !== 'upcoming' || (c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition));",
+                  "bad('guest: every class is Not watched, no resume point', cl, (c) => c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition);",
+                  "bad('ebooks: no uploadPdf / storage key / signed URL', pd, (p) => !('uploadPdf' in p) && !('pdfAsset' in p) && !(p.asset && 'key' in p.asset) && !/[?&](token|expires)=/.test(JSON.stringify(p)));",
+                  "bad('ebooks: title + booleans isFree/isDownloadable', pd, (p) => typeof p.title === 'string' && typeof p.isFree === 'boolean');",
+                  "bad('tests: series_name present', ts, (t) => typeof t.series_name === 'string');",
+                  "bad('guest: tests carry no attempts', ts, (t) => !t.is_attempted && !t.attempted_count);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/{{course_id}}/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{course_id}}",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query_progress}}\",\n  \"userId\": \"{{user_id}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "signed in: broad {{query_broad}}",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('{{course_id}}'));",
+                  "const b64u = (w) => CryptoJS.enc.Base64.stringify(w).replace(/=+$/, '').replace(/\\+/g, '-').replace(/\\//g, '_');",
+                  "const enc = (o) => b64u(CryptoJS.enc.Utf8.parse(JSON.stringify(o)));",
+                  "const now = Math.floor(Date.now() / 1000);",
+                  "const sign = (payload, secret) => { const h = enc({ alg: 'HS256', typ: 'JWT' }); const p = enc(payload);",
+                  "  return h + '.' + p + '.' + b64u(CryptoJS.HmacSHA256(h + '.' + p, secret)); };",
+                  "const payload = { user_id: pm.variables.get('user_id'), email: 'postman@local', mobile: '0', iat: now - 120,",
+                  "  exp: now + 3600 };",
+                  "pm.variables.set('token', sign(payload, pm.variables.get('jwt_secret')));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('signed in broad: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('signed in broad: exactly the three sections, all arrays', () => { pm.expect(Object.keys(d).sort()).to.eql(['classes', 'ebooks', 'tests']); ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k]).to.be.an('array')); });",
+                  "const max = 50;",
+                  "pm.test('signed in broad: every section within the limit (' + max + ')', () => ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k].length, k).to.be.at.most(max)));",
+                  "const cl = d.classes || [], pd = d.ebooks || [], ts = d.tests || [];",
+                  "const bad = (rule, arr, pred, id) => { const v = arr.filter((x) => !pred(x)).map(id || ((x) => x._id + ' ' + (x.title || x.series_name))); pm.test('signed in broad: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "bad('classes: tab is today/upcoming/previous/null', cl, (c) => [\"today\",\"upcoming\",\"previous\",null].includes(c.tab));",
+                  "bad('classes: every item belongs to this course', cl, (c) => String(c.course) === pm.variables.get('cid'));",
+                  "bad('classes: no duplicates', cl, (c) => cl.filter((o) => o._id === c._id).length === 1);",
+                  "bad('classes: card fields present (title, classId, classPdf[], watch fields)', cl, (c) => typeof c.title === 'string' && c.classId && Array.isArray(c.classPdf) && [\"not_watched\",\"partial\",\"watched\"].includes(c.watchStatus) && typeof c.watchTime === 'number' && typeof c.manualCompleted === 'boolean');",
+                  "bad('classes: upcoming keeps the pinned defaults', cl, (c) => c.tab !== 'upcoming' || (c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition));",
+                  "bad('ebooks: no uploadPdf / storage key / signed URL', pd, (p) => !('uploadPdf' in p) && !('pdfAsset' in p) && !(p.asset && 'key' in p.asset) && !/[?&](token|expires)=/.test(JSON.stringify(p)));",
+                  "bad('ebooks: title + booleans isFree/isDownloadable', pd, (p) => typeof p.title === 'string' && typeof p.isFree === 'boolean');",
+                  "bad('tests: series_name present', ts, (t) => typeof t.series_name === 'string');"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/{{course_id}}/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{course_id}}",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query_broad}}\",\n  \"limit\": 50\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "3 Bad tokens",
+      "description": "Expired / forged / garbage ⇒ 200 and byte-identical to the guest response, never 401.",
+      "item": [
+        {
+          "name": "expired token",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('{{course_id}}'));",
+                  "const b64u = (w) => CryptoJS.enc.Base64.stringify(w).replace(/=+$/, '').replace(/\\+/g, '-').replace(/\\//g, '_');",
+                  "const enc = (o) => b64u(CryptoJS.enc.Utf8.parse(JSON.stringify(o)));",
+                  "const now = Math.floor(Date.now() / 1000);",
+                  "const sign = (payload, secret) => { const h = enc({ alg: 'HS256', typ: 'JWT' }); const p = enc(payload);",
+                  "  return h + '.' + p + '.' + b64u(CryptoJS.HmacSHA256(h + '.' + p, secret)); };",
+                  "const payload = { user_id: pm.variables.get('user_id'), email: 'postman@local', mobile: '0', iat: now - 120,",
+                  "  exp: now - 60 };",
+                  "pm.variables.set('token', sign(payload, pm.variables.get('jwt_secret')));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('expired: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('expired: exactly the three sections, all arrays', () => { pm.expect(Object.keys(d).sort()).to.eql(['classes', 'ebooks', 'tests']); ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k]).to.be.an('array')); });",
+                  "const max = Number(pm.variables.get('limit'));",
+                  "pm.test('expired: every section within the limit (' + max + ')', () => ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k].length, k).to.be.at.most(max)));",
+                  "const cl = d.classes || [], pd = d.ebooks || [], ts = d.tests || [];",
+                  "const bad = (rule, arr, pred, id) => { const v = arr.filter((x) => !pred(x)).map(id || ((x) => x._id + ' ' + (x.title || x.series_name))); pm.test('expired: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "bad('classes: tab is today/upcoming/previous/null', cl, (c) => [\"today\",\"upcoming\",\"previous\",null].includes(c.tab));",
+                  "bad('classes: every item belongs to this course', cl, (c) => String(c.course) === pm.variables.get('cid'));",
+                  "bad('classes: no duplicates', cl, (c) => cl.filter((o) => o._id === c._id).length === 1);",
+                  "bad('classes: card fields present (title, classId, classPdf[], watch fields)', cl, (c) => typeof c.title === 'string' && c.classId && Array.isArray(c.classPdf) && [\"not_watched\",\"partial\",\"watched\"].includes(c.watchStatus) && typeof c.watchTime === 'number' && typeof c.manualCompleted === 'boolean');",
+                  "bad('classes: upcoming keeps the pinned defaults', cl, (c) => c.tab !== 'upcoming' || (c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition));",
+                  "bad('guest: every class is Not watched, no resume point', cl, (c) => c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition);",
+                  "bad('ebooks: no uploadPdf / storage key / signed URL', pd, (p) => !('uploadPdf' in p) && !('pdfAsset' in p) && !(p.asset && 'key' in p.asset) && !/[?&](token|expires)=/.test(JSON.stringify(p)));",
+                  "bad('ebooks: title + booleans isFree/isDownloadable', pd, (p) => typeof p.title === 'string' && typeof p.isFree === 'boolean');",
+                  "bad('tests: series_name present', ts, (t) => typeof t.series_name === 'string');",
+                  "bad('guest: tests carry no attempts', ts, (t) => !t.is_attempted && !t.attempted_count);",
+                  "pm.test('expired: byte-identical to the guest response', () => pm.expect(JSON.stringify(d)).to.eql(pm.collectionVariables.get('guest_query')));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/{{course_id}}/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{course_id}}",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "forged token",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('{{course_id}}'));",
+                  "const b64u = (w) => CryptoJS.enc.Base64.stringify(w).replace(/=+$/, '').replace(/\\+/g, '-').replace(/\\//g, '_');",
+                  "const enc = (o) => b64u(CryptoJS.enc.Utf8.parse(JSON.stringify(o)));",
+                  "const now = Math.floor(Date.now() / 1000);",
+                  "const sign = (payload, secret) => { const h = enc({ alg: 'HS256', typ: 'JWT' }); const p = enc(payload);",
+                  "  return h + '.' + p + '.' + b64u(CryptoJS.HmacSHA256(h + '.' + p, secret)); };",
+                  "const payload = { user_id: pm.variables.get('user_id'), email: 'postman@local', mobile: '0', iat: now - 120,",
+                  "  exp: now + 3600 };",
+                  "pm.variables.set('token', sign(payload, 'not-the-local-secret'));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('forged: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('forged: exactly the three sections, all arrays', () => { pm.expect(Object.keys(d).sort()).to.eql(['classes', 'ebooks', 'tests']); ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k]).to.be.an('array')); });",
+                  "const max = Number(pm.variables.get('limit'));",
+                  "pm.test('forged: every section within the limit (' + max + ')', () => ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k].length, k).to.be.at.most(max)));",
+                  "const cl = d.classes || [], pd = d.ebooks || [], ts = d.tests || [];",
+                  "const bad = (rule, arr, pred, id) => { const v = arr.filter((x) => !pred(x)).map(id || ((x) => x._id + ' ' + (x.title || x.series_name))); pm.test('forged: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "bad('classes: tab is today/upcoming/previous/null', cl, (c) => [\"today\",\"upcoming\",\"previous\",null].includes(c.tab));",
+                  "bad('classes: every item belongs to this course', cl, (c) => String(c.course) === pm.variables.get('cid'));",
+                  "bad('classes: no duplicates', cl, (c) => cl.filter((o) => o._id === c._id).length === 1);",
+                  "bad('classes: card fields present (title, classId, classPdf[], watch fields)', cl, (c) => typeof c.title === 'string' && c.classId && Array.isArray(c.classPdf) && [\"not_watched\",\"partial\",\"watched\"].includes(c.watchStatus) && typeof c.watchTime === 'number' && typeof c.manualCompleted === 'boolean');",
+                  "bad('classes: upcoming keeps the pinned defaults', cl, (c) => c.tab !== 'upcoming' || (c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition));",
+                  "bad('guest: every class is Not watched, no resume point', cl, (c) => c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition);",
+                  "bad('ebooks: no uploadPdf / storage key / signed URL', pd, (p) => !('uploadPdf' in p) && !('pdfAsset' in p) && !(p.asset && 'key' in p.asset) && !/[?&](token|expires)=/.test(JSON.stringify(p)));",
+                  "bad('ebooks: title + booleans isFree/isDownloadable', pd, (p) => typeof p.title === 'string' && typeof p.isFree === 'boolean');",
+                  "bad('tests: series_name present', ts, (t) => typeof t.series_name === 'string');",
+                  "bad('guest: tests carry no attempts', ts, (t) => !t.is_attempted && !t.attempted_count);",
+                  "pm.test('forged: byte-identical to the guest response', () => pm.expect(JSON.stringify(d)).to.eql(pm.collectionVariables.get('guest_query')));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/{{course_id}}/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{course_id}}",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "garbage token",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('{{course_id}}'));",
+                  "const b64u = (w) => CryptoJS.enc.Base64.stringify(w).replace(/=+$/, '').replace(/\\+/g, '-').replace(/\\//g, '_');",
+                  "const enc = (o) => b64u(CryptoJS.enc.Utf8.parse(JSON.stringify(o)));",
+                  "const now = Math.floor(Date.now() / 1000);",
+                  "const sign = (payload, secret) => { const h = enc({ alg: 'HS256', typ: 'JWT' }); const p = enc(payload);",
+                  "  return h + '.' + p + '.' + b64u(CryptoJS.HmacSHA256(h + '.' + p, secret)); };",
+                  "const payload = { user_id: pm.variables.get('user_id'), email: 'postman@local', mobile: '0', iat: now - 120,",
+                  "  exp: now + 3600 };",
+                  "pm.variables.set('token', 'garbage');"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('garbage: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('garbage: exactly the three sections, all arrays', () => { pm.expect(Object.keys(d).sort()).to.eql(['classes', 'ebooks', 'tests']); ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k]).to.be.an('array')); });",
+                  "const max = Number(pm.variables.get('limit'));",
+                  "pm.test('garbage: every section within the limit (' + max + ')', () => ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k].length, k).to.be.at.most(max)));",
+                  "const cl = d.classes || [], pd = d.ebooks || [], ts = d.tests || [];",
+                  "const bad = (rule, arr, pred, id) => { const v = arr.filter((x) => !pred(x)).map(id || ((x) => x._id + ' ' + (x.title || x.series_name))); pm.test('garbage: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "bad('classes: tab is today/upcoming/previous/null', cl, (c) => [\"today\",\"upcoming\",\"previous\",null].includes(c.tab));",
+                  "bad('classes: every item belongs to this course', cl, (c) => String(c.course) === pm.variables.get('cid'));",
+                  "bad('classes: no duplicates', cl, (c) => cl.filter((o) => o._id === c._id).length === 1);",
+                  "bad('classes: card fields present (title, classId, classPdf[], watch fields)', cl, (c) => typeof c.title === 'string' && c.classId && Array.isArray(c.classPdf) && [\"not_watched\",\"partial\",\"watched\"].includes(c.watchStatus) && typeof c.watchTime === 'number' && typeof c.manualCompleted === 'boolean');",
+                  "bad('classes: upcoming keeps the pinned defaults', cl, (c) => c.tab !== 'upcoming' || (c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition));",
+                  "bad('guest: every class is Not watched, no resume point', cl, (c) => c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition);",
+                  "bad('ebooks: no uploadPdf / storage key / signed URL', pd, (p) => !('uploadPdf' in p) && !('pdfAsset' in p) && !(p.asset && 'key' in p.asset) && !/[?&](token|expires)=/.test(JSON.stringify(p)));",
+                  "bad('ebooks: title + booleans isFree/isDownloadable', pd, (p) => typeof p.title === 'string' && typeof p.isFree === 'boolean');",
+                  "bad('tests: series_name present', ts, (t) => typeof t.series_name === 'string');",
+                  "bad('guest: tests carry no attempts', ts, (t) => !t.is_attempted && !t.attempted_count);",
+                  "pm.test('garbage: byte-identical to the guest response', () => pm.expect(JSON.stringify(d)).to.eql(pm.collectionVariables.get('guest_query')));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/{{course_id}}/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{course_id}}",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "4 Each section",
+      "description": "A query aimed at one section. Tests: prod has no active course test placement today, so expect [] (the live Tests tab is empty too).",
+      "item": [
+        {
+          "name": "ebooks: {{query_ebook}}",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('{{course_id}}'));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('ebooks: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('ebooks: exactly the three sections, all arrays', () => { pm.expect(Object.keys(d).sort()).to.eql(['classes', 'ebooks', 'tests']); ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k]).to.be.an('array')); });",
+                  "const max = Number(pm.variables.get('limit'));",
+                  "pm.test('ebooks: every section within the limit (' + max + ')', () => ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k].length, k).to.be.at.most(max)));",
+                  "pm.test('ebooks: ebooks not empty', () => pm.expect(d.ebooks.length).to.be.above(0));",
+                  "const cl = d.classes || [], pd = d.ebooks || [], ts = d.tests || [];",
+                  "const bad = (rule, arr, pred, id) => { const v = arr.filter((x) => !pred(x)).map(id || ((x) => x._id + ' ' + (x.title || x.series_name))); pm.test('ebooks: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "bad('classes: tab is today/upcoming/previous/null', cl, (c) => [\"today\",\"upcoming\",\"previous\",null].includes(c.tab));",
+                  "bad('classes: every item belongs to this course', cl, (c) => String(c.course) === pm.variables.get('cid'));",
+                  "bad('classes: no duplicates', cl, (c) => cl.filter((o) => o._id === c._id).length === 1);",
+                  "bad('classes: card fields present (title, classId, classPdf[], watch fields)', cl, (c) => typeof c.title === 'string' && c.classId && Array.isArray(c.classPdf) && [\"not_watched\",\"partial\",\"watched\"].includes(c.watchStatus) && typeof c.watchTime === 'number' && typeof c.manualCompleted === 'boolean');",
+                  "bad('classes: upcoming keeps the pinned defaults', cl, (c) => c.tab !== 'upcoming' || (c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition));",
+                  "bad('guest: every class is Not watched, no resume point', cl, (c) => c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition);",
+                  "bad('ebooks: no uploadPdf / storage key / signed URL', pd, (p) => !('uploadPdf' in p) && !('pdfAsset' in p) && !(p.asset && 'key' in p.asset) && !/[?&](token|expires)=/.test(JSON.stringify(p)));",
+                  "bad('ebooks: title + booleans isFree/isDownloadable', pd, (p) => typeof p.title === 'string' && typeof p.isFree === 'boolean');",
+                  "bad('tests: series_name present', ts, (t) => typeof t.series_name === 'string');",
+                  "bad('guest: tests carry no attempts', ts, (t) => !t.is_attempted && !t.attempted_count);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/{{course_id}}/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{course_id}}",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query_ebook}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "tests: {{query_test}}",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('{{course_id}}'));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('tests: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('tests: exactly the three sections, all arrays', () => { pm.expect(Object.keys(d).sort()).to.eql(['classes', 'ebooks', 'tests']); ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k]).to.be.an('array')); });",
+                  "const max = Number(pm.variables.get('limit'));",
+                  "pm.test('tests: every section within the limit (' + max + ')', () => ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k].length, k).to.be.at.most(max)));",
+                  "const cl = d.classes || [], pd = d.ebooks || [], ts = d.tests || [];",
+                  "const bad = (rule, arr, pred, id) => { const v = arr.filter((x) => !pred(x)).map(id || ((x) => x._id + ' ' + (x.title || x.series_name))); pm.test('tests: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "bad('classes: tab is today/upcoming/previous/null', cl, (c) => [\"today\",\"upcoming\",\"previous\",null].includes(c.tab));",
+                  "bad('classes: every item belongs to this course', cl, (c) => String(c.course) === pm.variables.get('cid'));",
+                  "bad('classes: no duplicates', cl, (c) => cl.filter((o) => o._id === c._id).length === 1);",
+                  "bad('classes: card fields present (title, classId, classPdf[], watch fields)', cl, (c) => typeof c.title === 'string' && c.classId && Array.isArray(c.classPdf) && [\"not_watched\",\"partial\",\"watched\"].includes(c.watchStatus) && typeof c.watchTime === 'number' && typeof c.manualCompleted === 'boolean');",
+                  "bad('classes: upcoming keeps the pinned defaults', cl, (c) => c.tab !== 'upcoming' || (c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition));",
+                  "bad('guest: every class is Not watched, no resume point', cl, (c) => c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition);",
+                  "bad('ebooks: no uploadPdf / storage key / signed URL', pd, (p) => !('uploadPdf' in p) && !('pdfAsset' in p) && !(p.asset && 'key' in p.asset) && !/[?&](token|expires)=/.test(JSON.stringify(p)));",
+                  "bad('ebooks: title + booleans isFree/isDownloadable', pd, (p) => typeof p.title === 'string' && typeof p.isFree === 'boolean');",
+                  "bad('tests: series_name present', ts, (t) => typeof t.series_name === 'string');",
+                  "bad('guest: tests carry no attempts', ts, (t) => !t.is_attempted && !t.attempted_count);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/{{course_id}}/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{course_id}}",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query_test}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "5 Limits and errors",
+      "description": "",
+      "item": [
+        {
+          "name": "no limit ⇒ at most 10",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('{{course_id}}'));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('default limit: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('default limit: exactly the three sections, all arrays', () => { pm.expect(Object.keys(d).sort()).to.eql(['classes', 'ebooks', 'tests']); ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k]).to.be.an('array')); });",
+                  "const max = 10;",
+                  "pm.test('default limit: every section within the limit (' + max + ')', () => ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k].length, k).to.be.at.most(max)));",
+                  "const cl = d.classes || [], pd = d.ebooks || [], ts = d.tests || [];",
+                  "const bad = (rule, arr, pred, id) => { const v = arr.filter((x) => !pred(x)).map(id || ((x) => x._id + ' ' + (x.title || x.series_name))); pm.test('default limit: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "bad('classes: tab is today/upcoming/previous/null', cl, (c) => [\"today\",\"upcoming\",\"previous\",null].includes(c.tab));",
+                  "bad('classes: every item belongs to this course', cl, (c) => String(c.course) === pm.variables.get('cid'));",
+                  "bad('classes: no duplicates', cl, (c) => cl.filter((o) => o._id === c._id).length === 1);",
+                  "bad('classes: card fields present (title, classId, classPdf[], watch fields)', cl, (c) => typeof c.title === 'string' && c.classId && Array.isArray(c.classPdf) && [\"not_watched\",\"partial\",\"watched\"].includes(c.watchStatus) && typeof c.watchTime === 'number' && typeof c.manualCompleted === 'boolean');",
+                  "bad('classes: upcoming keeps the pinned defaults', cl, (c) => c.tab !== 'upcoming' || (c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition));",
+                  "bad('ebooks: no uploadPdf / storage key / signed URL', pd, (p) => !('uploadPdf' in p) && !('pdfAsset' in p) && !(p.asset && 'key' in p.asset) && !/[?&](token|expires)=/.test(JSON.stringify(p)));",
+                  "bad('ebooks: title + booleans isFree/isDownloadable', pd, (p) => typeof p.title === 'string' && typeof p.isFree === 'boolean');",
+                  "bad('tests: series_name present', ts, (t) => typeof t.series_name === 'string');"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/{{course_id}}/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{course_id}}",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query_broad}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "limit 500 ⇒ at most 50",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('{{course_id}}'));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('clamped limit: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('clamped limit: exactly the three sections, all arrays', () => { pm.expect(Object.keys(d).sort()).to.eql(['classes', 'ebooks', 'tests']); ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k]).to.be.an('array')); });",
+                  "const max = 50;",
+                  "pm.test('clamped limit: every section within the limit (' + max + ')', () => ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k].length, k).to.be.at.most(max)));",
+                  "const cl = d.classes || [], pd = d.ebooks || [], ts = d.tests || [];",
+                  "const bad = (rule, arr, pred, id) => { const v = arr.filter((x) => !pred(x)).map(id || ((x) => x._id + ' ' + (x.title || x.series_name))); pm.test('clamped limit: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "bad('classes: tab is today/upcoming/previous/null', cl, (c) => [\"today\",\"upcoming\",\"previous\",null].includes(c.tab));",
+                  "bad('classes: every item belongs to this course', cl, (c) => String(c.course) === pm.variables.get('cid'));",
+                  "bad('classes: no duplicates', cl, (c) => cl.filter((o) => o._id === c._id).length === 1);",
+                  "bad('classes: card fields present (title, classId, classPdf[], watch fields)', cl, (c) => typeof c.title === 'string' && c.classId && Array.isArray(c.classPdf) && [\"not_watched\",\"partial\",\"watched\"].includes(c.watchStatus) && typeof c.watchTime === 'number' && typeof c.manualCompleted === 'boolean');",
+                  "bad('classes: upcoming keeps the pinned defaults', cl, (c) => c.tab !== 'upcoming' || (c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition));",
+                  "bad('ebooks: no uploadPdf / storage key / signed URL', pd, (p) => !('uploadPdf' in p) && !('pdfAsset' in p) && !(p.asset && 'key' in p.asset) && !/[?&](token|expires)=/.test(JSON.stringify(p)));",
+                  "bad('ebooks: title + booleans isFree/isDownloadable', pd, (p) => typeof p.title === 'string' && typeof p.isFree === 'boolean');",
+                  "bad('tests: series_name present', ts, (t) => typeof t.series_name === 'string');"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/{{course_id}}/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{course_id}}",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query_broad}}\",\n  \"limit\": 500\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "inactive course ⇒ 200",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('{{inactive_course_id}}'));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const res = pm.response.json();",
+                  "pm.test('inactive course: 200', () => pm.response.to.have.status(200));",
+                  "const d = res.data || {};",
+                  "pm.test('inactive course: exactly the three sections, all arrays', () => { pm.expect(Object.keys(d).sort()).to.eql(['classes', 'ebooks', 'tests']); ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k]).to.be.an('array')); });",
+                  "const max = Number(pm.variables.get('limit'));",
+                  "pm.test('inactive course: every section within the limit (' + max + ')', () => ['classes', 'ebooks', 'tests'].forEach((k) => pm.expect(d[k].length, k).to.be.at.most(max)));",
+                  "const cl = d.classes || [], pd = d.ebooks || [], ts = d.tests || [];",
+                  "const bad = (rule, arr, pred, id) => { const v = arr.filter((x) => !pred(x)).map(id || ((x) => x._id + ' ' + (x.title || x.series_name))); pm.test('inactive course: ' + rule, () => pm.expect(v, v.join(' | ')).to.eql([])); };",
+                  "bad('classes: tab is today/upcoming/previous/null', cl, (c) => [\"today\",\"upcoming\",\"previous\",null].includes(c.tab));",
+                  "bad('classes: every item belongs to this course', cl, (c) => String(c.course) === pm.variables.get('cid'));",
+                  "bad('classes: no duplicates', cl, (c) => cl.filter((o) => o._id === c._id).length === 1);",
+                  "bad('classes: card fields present (title, classId, classPdf[], watch fields)', cl, (c) => typeof c.title === 'string' && c.classId && Array.isArray(c.classPdf) && [\"not_watched\",\"partial\",\"watched\"].includes(c.watchStatus) && typeof c.watchTime === 'number' && typeof c.manualCompleted === 'boolean');",
+                  "bad('classes: upcoming keeps the pinned defaults', cl, (c) => c.tab !== 'upcoming' || (c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition));",
+                  "bad('guest: every class is Not watched, no resume point', cl, (c) => c.watchStatus === 'not_watched' && c.watchTime === 0 && c.manualCompleted === false && !c.videoPosition);",
+                  "bad('ebooks: no uploadPdf / storage key / signed URL', pd, (p) => !('uploadPdf' in p) && !('pdfAsset' in p) && !(p.asset && 'key' in p.asset) && !/[?&](token|expires)=/.test(JSON.stringify(p)));",
+                  "bad('ebooks: title + booleans isFree/isDownloadable', pd, (p) => typeof p.title === 'string' && typeof p.isFree === 'boolean');",
+                  "bad('tests: series_name present', ts, (t) => typeof t.series_name === 'string');",
+                  "bad('guest: tests carry no attempts', ts, (t) => !t.is_attempted && !t.attempted_count);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/{{inactive_course_id}}/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{inactive_course_id}}",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query_broad}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "one character ⇒ 400",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('{{course_id}}'));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('short query: 400', () => pm.response.to.have.status(400));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/{{course_id}}/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{course_id}}",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"a\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "blank after trim ⇒ 400",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('{{course_id}}'));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('blank query: 400', () => pm.response.to.have.status(400));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/{{course_id}}/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{course_id}}",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"   \"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "missing query ⇒ 400",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('{{course_id}}'));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('missing query: 400', () => pm.response.to.have.status(400));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/{{course_id}}/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "{{course_id}}",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "bad course id ⇒ 400",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('not-an-id'));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('bad id: 400', () => pm.response.to.have.status(400));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/not-an-id/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "not-an-id",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "unknown course ⇒ 404",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.variables.set('cid', pm.variables.replaceIn('000000000000000000000000'));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('unknown course: 404', () => pm.response.to.have.status(404));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/api/courses/000000000000000000000000/search",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "api",
+                "courses",
+                "000000000000000000000000",
+                "search"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"{{query}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+'use strict';const fs=require('node:fs');const dep=n=>require(require.resolve(n,{paths:[process.cwd()+'/runtime']}));
+const uri=dep('dotenv').parse(fs.readFileSync('.env.development')).MONGO_URI;const {MongoClient}=dep('mongodb');const RUN='vg-completion-20261109-next10000';
+(async()=>{const c=new MongoClient(uri,{minPoolSize:0,maxPoolSize:2,serverSelectionTimeoutMS:15000,readPreference:'primary'});await c.connect();try{const db=c.db('vidyagramdb');
+const r=await db.collection('apx_vg_completion_pilots').findOne({_id:RUN},{projection:{stopped:1,status:1,otpRecovery:1}});
+const since=r.otpRecovery?.since;const attempted=since?await db.collection('apx_vg_completion_jobs').countDocuments({runId:RUN,otpAttemptedAt:{$gte:new Date(since)}}):null;
+const bad=since?await db.collection('apx_vg_request_metrics').countDocuments({runId:RUN,at:{$gte:new Date(since)},endpoint:{$in:['otp_send','otp_verify']},$or:[{httpStatus:{$ne:200}},{apiStatus:{$ne:200}}]}):null;
+const workers=await db.collection('apx_vg_completion_workers').countDocuments({runId:RUN,state:'running',heartbeatAt:{$gte:new Date(Date.now()-120000)}});
+console.log(JSON.stringify({stopped:r.stopped,status:r.status,otpRecovery:r.otpRecovery,otpAttemptsSinceCanary:attempted,badOtpRequests:bad,workers}));
+if(process.argv[2]!=='--commit')return;
+if(bad)throw Error('otp_failures_in_canary');
+const now=new Date();
+const u=await db.collection('apx_vg_completion_pilots').updateOne({_id:RUN,stopped:false,'otpRecovery.phase':'review','otpRecovery.reason':'canary_deadline'},{$set:{otpRecovery:{phase:'cooling',since:now,retryAt:now}}});
+if(u.modifiedCount!==1)throw Error('run_not_in_canary_deadline_review');console.log(JSON.stringify({event:'rearmed',at:now}));
+}finally{await c.close();}})().catch(e=>{console.log(JSON.stringify({event:'failed',reason:e.message}));process.exitCode=1;});

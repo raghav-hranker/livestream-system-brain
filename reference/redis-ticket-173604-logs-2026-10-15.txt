@@ -1,0 +1,64 @@
+Redis Cloud ticket #173604 — application log excerpt
+Host 148.113.49.18 (OVH), process quicktricks-socket (Node v22.22.2 under pm2)
+Client: node-redis 4.7.1 / @redis/client 1.6.1 / @socket.io/redis-adapter 7.2.0
+Target: redis-15232.c72606.ap-south-1-mz.ec2.cloud.rlrcp.com:15232 (database 14690512), public endpoint, no TLS
+Timestamps are IST (UTC+05:30): 11:30:12 IST = 06:00:12 UTC. Each distinct line is shown once, in order of first occurrence; [xN] = times it appeared in the window.
+
+### quicktricks-socket error log (stderr), 2026-10-15 11:29:50-11:31:10 IST
+2026-10-15T11:30:12: [Redis Watchdog] pubClient: probe failed (1/3): pubClient PING timed out after 5000ms
+2026-10-15T11:30:22: [Redis Watchdog] pubClient: probe failed (2/3): pubClient PING timed out after 5000ms
+2026-10-15T11:30:32: [Redis Watchdog] pubClient: probe failed (3/3): pubClient PING timed out after 5000ms
+2026-10-15T11:30:32: [Redis Watchdog] pubClient: 3 consecutive probe failures, forcing reconnect (heal #1)
+2026-10-15T11:30:32: Error fetching recent messages from Redis:  DisconnectsClientError: Disconnects client [x62]
+2026-10-15T11:30:32:     at Commander.disconnect (/var/www/socket.quicktricksbysahilsir.com/livestream/backend/node_modules/@redis/client/dist/lib/client/index.js:352:72) [x621]
+2026-10-15T11:30:32:     at heal (/var/www/socket.quicktricksbysahilsir.com/livestream/backend/lib/redisWatchdog.js:71:38) [x621]
+2026-10-15T11:30:32:     at Timeout.tick [as _onTimeout] (/var/www/socket.quicktricksbysahilsir.com/livestream/backend/lib/redisWatchdog.js:105:23) [x621]
+2026-10-15T11:30:32:     at runNextTicks (node:internal/process/task_queues:64:5) [x629]
+2026-10-15T11:30:32:     at process.processTimers (node:internal/timers:518:9) [x629]
+2026-10-15T11:30:32: Error fetching private message history: DisconnectsClientError: Disconnects client [x94]
+2026-10-15T11:30:32: Error getting pinned message:  DisconnectsClientError: Disconnects client [x46]
+2026-10-15T11:30:32: Error saving message to Redis: DisconnectsClientError: Disconnects client [x4]
+2026-10-15T11:30:32: Error fetching message history: DisconnectsClientError: Disconnects client [x86]
+2026-10-15T11:30:32: Error fetching media messages: DisconnectsClientError: Disconnects client [x46]
+2026-10-15T11:30:32: Error in handleUserLeave: DisconnectsClientError: Disconnects client [x64]
+2026-10-15T11:30:32: [privateMode] enforcement cache read failed, allowing message: Disconnects client [x2]
+2026-10-15T11:30:32: Error in saveMessage: DisconnectsClientError: Disconnects client [x4]
+2026-10-15T11:30:32: [streamStatus] write-through cache read failed, falling back to LMS: Disconnects client [x4]
+2026-10-15T11:30:32: [privateMode] write-through cache read failed, falling back to LMS: Disconnects client [x4]
+2026-10-15T11:30:32: [chatmod] join overlay skipped (cache read failed), keeping ticket policy: Disconnects client [x4]
+2026-10-15T11:30:32: [socket] handler for 'joinRoom' failed: DisconnectsClientError: Disconnects client [x105]
+2026-10-15T11:30:32: Error saving message to Redis: ClientClosedError: The client is closed [x2]
+2026-10-15T11:30:32:     at Commander._RedisClient_sendCommand (/var/www/socket.quicktricksbysahilsir.com/livestream/backend/node_modules/@redis/client/dist/lib/client/index.js:520:31) [x8]
+2026-10-15T11:30:32:     at Commander.commandsExecutor (/var/www/socket.quicktricksbysahilsir.com/livestream/backend/node_modules/@redis/client/dist/lib/client/index.js:190:154) [x8]
+2026-10-15T11:30:32:     at BaseClass.<computed> [as hSet] (/var/www/socket.quicktricksbysahilsir.com/livestream/backend/node_modules/@redis/client/dist/lib/commander.js:8:29) [x4]
+2026-10-15T11:30:32:     at MessageHandler.saveMessageRedis (/var/www/socket.quicktricksbysahilsir.com/livestream/backend/src/utils/MessageHandler.js:41:36) [x4]
+2026-10-15T11:30:32:     at saveMessage (/var/www/socket.quicktricksbysahilsir.com/livestream/backend/db/utils.js:108:26) [x4]
+2026-10-15T11:30:32:     at processAndSaveMessage (/var/www/socket.quicktricksbysahilsir.com/livestream/backend/db/utils.js:366:30) [x4]
+2026-10-15T11:30:32:     at /var/www/socket.quicktricksbysahilsir.com/livestream/backend/rtmpserver-2.js:859:13 [x4]
+2026-10-15T11:30:32: Error in saveMessage: ClientClosedError: The client is closed [x2]
+2026-10-15T11:30:32: DisconnectsClientError: Disconnects client [x55]
+2026-10-15T11:30:32: [process] unhandledRejection (kept alive): DisconnectsClientError: Disconnects client [x55]
+2026-10-15T11:30:32: ClientClosedError: The client is closed [x2]
+2026-10-15T11:30:32:     at BaseClass.<computed> [as exists] (/var/www/socket.quicktricksbysahilsir.com/livestream/backend/node_modules/@redis/client/dist/lib/commander.js:8:29) [x4]
+2026-10-15T11:30:32:     at UserSessions.hasReporters (/var/www/socket.quicktricksbysahilsir.com/livestream/backend/src/utils/UserSession.js:80:33) [x4]
+2026-10-15T11:30:32:     at MessageBroadcaster.broadcastToRoom (/var/www/socket.quicktricksbysahilsir.com/livestream/backend/src/utils/MessageBroadcaster.js:9:37) [x4]
+2026-10-15T11:30:32:     at /var/www/socket.quicktricksbysahilsir.com/livestream/backend/rtmpserver-2.js:857:25 [x4]
+2026-10-15T11:30:32: [process] unhandledRejection (kept alive): ClientClosedError: The client is closed [x2]
+2026-10-15T11:30:32: PubClient not ready, attempting reconnection [x4]
+2026-10-15T11:30:32: PubClient reconnection failed: Error: Socket already opened [x3]
+2026-10-15T11:30:32:     at RedisSocket.connect (/var/www/socket.quicktricksbysahilsir.com/livestream/backend/node_modules/@redis/client/dist/lib/client/socket.js:48:19) [x3]
+2026-10-15T11:30:32:     at Commander.connect (/var/www/socket.quicktricksbysahilsir.com/livestream/backend/node_modules/@redis/client/dist/lib/client/index.js:185:70) [x3]
+2026-10-15T11:30:32:     at PubSubManager.getPubClient (/var/www/socket.quicktricksbysahilsir.com/livestream/backend/PubSubManager.js:102:28) [x3]
+2026-10-15T11:30:32:     at getRedis (/var/www/socket.quicktricksbysahilsir.com/livestream/backend/lib/privateMode.js:22:26) [x3]
+2026-10-15T11:30:32:     at cachePrivateMode (/var/www/socket.quicktricksbysahilsir.com/livestream/backend/lib/privateMode.js:28:11) [x3]
+2026-10-15T11:30:32:     at resolvePrivateMode (/var/www/socket.quicktricksbysahilsir.com/livestream/backend/lib/privateMode.js:69:15) [x3]
+2026-10-15T11:30:32:     at process.processTicksAndRejections (node:internal/process/task_queues:103:5) [x3]
+2026-10-15T11:30:33: [Redis Watchdog] pubClient: reconnect failed, will retry: Socket already opened
+2026-10-15T11:30:42: [Redis Watchdog] pubClient: probe failed (1/3): pubClient PING timed out after 5000ms
+2026-10-15T11:30:52: [Redis Watchdog] pubClient: probe failed (2/3): pubClient PING timed out after 5000ms
+
+### quicktricks-socket out log (stdout), watchdog lines 11:29-11:32 IST
+2026-10-15T11:30:57: [Redis Watchdog] pubClient: probe recovered after 2 failure(s)
+
+### pm2 process events 2026-10-15 (none = no restart)
+0

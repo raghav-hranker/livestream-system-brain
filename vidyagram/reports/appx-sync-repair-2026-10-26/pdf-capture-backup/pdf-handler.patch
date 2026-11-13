@@ -1,0 +1,8 @@
+--- apxCatalogPdfImportRun.ts
++++ apxCatalogPdfImportRun.ts
+@@
+-  const plain = decryptApxPdf(bytes, src.key, src.version);
++  // AppX can retain the encrypted flag after publishing clear PDF bytes.
++  // Accept only a complete structurally valid document, never header-only bytes.
++  if (isValidApxPdf(bytes)) return bytes;
++  const plain = decryptApxPdf(bytes, src.key, src.version);

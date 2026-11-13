@@ -1,0 +1,1315 @@
+<title>Course Builder Playground</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: two working panes. The library (left) feeds the new course outline (right); a sticky tray carries the ticked content across. */
+:root{
+  --bg:#f2f4f6; --surface:#ffffff; --sunk:#eceff3; --hover:#f5f7f9;
+  --ink:#15202b; --muted:#566373; --faint:#8794a2;
+  --line:#dde2e8; --line-strong:#c4ccd5;
+  --accent:#0d7a69; --accent-ink:#ffffff; --accent-soft:#e2f2ee; --accent-line:#93d1c4;
+  --danger:#b42318; --danger-soft:#fdecea;
+  --k-class:#15202b; --k-pdf:#c2410c; --k-test:#6d28d9;
+  --s0:#2563eb; --s1:#c77700; --s2:#d02670; --s3:#0e8aa8; --s4:#5b8f00; --s5:#8a3ffc;
+  --shadow:0 1px 2px rgba(15,25,40,.06),0 6px 20px rgba(15,25,40,.07);
+  --f-ui:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1318; --surface:#151c23; --sunk:#10161c; --hover:#1b242d;
+  --ink:#e4ebf2; --muted:#9aa8b6; --faint:#6f7d8b;
+  --line:#25303a; --line-strong:#364350;
+  --accent:#34c4ab; --accent-ink:#06201b; --accent-soft:#11302b; --accent-line:#1f6a5d;
+  --danger:#ff8a7a; --danger-soft:#3a1915;
+  --k-class:#e4ebf2; --k-pdf:#fb923c; --k-test:#b794f6;
+  --s0:#6b9bff; --s1:#f0a630; --s2:#ff6fa8; --s3:#3cc7e6; --s4:#9bd23c; --s5:#b38bff;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.35);
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1318; --surface:#151c23; --sunk:#10161c; --hover:#1b242d;
+  --ink:#e4ebf2; --muted:#9aa8b6; --faint:#6f7d8b;
+  --line:#25303a; --line-strong:#364350;
+  --accent:#34c4ab; --accent-ink:#06201b; --accent-soft:#11302b; --accent-line:#1f6a5d;
+  --danger:#ff8a7a; --danger-soft:#3a1915;
+  --k-class:#e4ebf2; --k-pdf:#fb923c; --k-test:#b794f6;
+  --s0:#6b9bff; --s1:#f0a630; --s2:#ff6fa8; --s3:#3cc7e6; --s4:#9bd23c; --s5:#b38bff;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.35);
+  color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-ui);font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+svg{display:block}
+.mono{font-family:var(--f-mono);font-size:12px;font-variant-numeric:tabular-nums}
+
+.app{height:100%;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;gap:16px;background:var(--surface);border-bottom:1px solid var(--line);padding-block:12px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));flex-wrap:wrap}
+.top-name{flex:1 1 280px;min-width:0;display:flex;flex-direction:column;gap:2px}
+.crumb{font-size:12px;color:var(--faint);letter-spacing:.02em}
+.crumb b{color:var(--muted);font-weight:600}
+#cname{border:1px solid transparent;background:transparent;border-radius:8px;padding:4px 8px;margin-left:-8px;font-size:20px;font-weight:700;letter-spacing:-.01em;width:100%;max-width:520px}
+#cname:hover{border-color:var(--line)}
+#cname:focus{border-color:var(--accent);outline:none;background:var(--surface)}
+#cname::placeholder{color:var(--faint);font-weight:600}
+.top-actions{display:flex;gap:8px;align-items:center}
+
+.btn{border:1px solid var(--line-strong);background:var(--surface);border-radius:9px;padding:8px 14px;font-weight:600;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.btn:hover{background:var(--hover)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.06)}
+.btn.ghost{border-color:transparent;background:transparent;color:var(--muted)}
+.btn.ghost:hover{background:var(--sunk);color:var(--ink)}
+.btn.danger{background:var(--danger);border-color:var(--danger);color:#fff}
+.btn:disabled{opacity:.45;cursor:not-allowed;filter:none}
+.btn.sm{padding:5px 10px;font-size:13px;border-radius:7px}
+.link{border:0;background:none;color:var(--accent);font-weight:600;padding:2px 4px;border-radius:5px}
+.link:hover{text-decoration:underline}
+.icon{border:0;background:none;color:var(--faint);width:28px;height:28px;border-radius:7px;display:grid;place-items:center;flex:none}
+.icon:hover{background:var(--sunk);color:var(--ink)}
+.icon.del:hover{background:var(--danger-soft);color:var(--danger)}
+
+.tabs{display:none}
+.panes{flex:1;min-height:0;display:grid;grid-template-columns:minmax(360px,42%) 1fr}
+.pane{min-height:0;min-width:0;display:flex;flex-direction:column}
+.lib{background:var(--surface);border-right:1px solid var(--line)}
+.pad{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:861px){.lib .pad{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:20px}.cv .pad{padding-left:24px;padding-right:max(24px,env(safe-area-inset-right,0px))}}
+
+.pane-head{padding-block:16px 12px;display:flex;flex-direction:column;gap:10px;border-bottom:1px solid var(--line)}
+.pane-head h2{margin:0;font-size:15px;font-weight:700;letter-spacing:-.005em}
+.pane-head p{margin:0;color:var(--muted);font-size:13px}
+.search{display:flex;align-items:center;gap:8px;border:1px solid var(--line-strong);border-radius:9px;padding:0 10px;background:var(--surface);color:var(--faint)}
+.search:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.search input{border:0;outline:0;background:transparent;padding:9px 0;flex:1;min-width:0;color:var(--ink)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 11px;font-size:13px;font-weight:500;color:var(--muted)}
+.chip:hover{border-color:var(--line-strong);color:var(--ink)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.pane-body{flex:1;min-height:0;overflow:auto;padding-block:8px 16px}
+
+/* course list */
+.ccard{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:12px 14px;margin-top:8px}
+.ccard:hover{border-color:var(--line-strong);background:var(--hover)}
+.ccard:hover .cgo{color:var(--accent);transform:translateX(2px)}
+.cdot{width:10px;height:10px;border-radius:3px;background:var(--c);margin-top:5px;flex:none}
+.cmain{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.cname{font-weight:600;font-size:14.5px}
+.cmeta{color:var(--muted);font-size:13px}
+.ccount{color:var(--faint);font-size:12.5px;margin-top:2px}
+.cside{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex:none}
+.pill{font-size:11.5px;font-weight:600;letter-spacing:.02em;border-radius:999px;padding:2px 8px;background:var(--sunk);color:var(--muted)}
+.pill.live{background:var(--danger-soft);color:var(--danger)}
+.in-course{font-size:12px;color:var(--accent);font-weight:600}
+.cgo{color:var(--faint);transition:transform .15s}
+
+/* course header in tree view */
+.back{align-self:flex-start;border:0;background:none;color:var(--muted);font-weight:600;font-size:13px;display:flex;align-items:center;gap:4px;padding:2px 6px 2px 2px;margin-left:-2px;border-radius:6px}
+.back:hover{color:var(--ink);background:var(--sunk)}
+.src-title{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700}
+.src-sub{color:var(--muted);font-size:13px;margin-top:-6px}
+.tree-tools{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.legend{font-size:12px;color:var(--faint);margin-right:auto;display:flex;gap:6px;align-items:center}
+.legend b{font-weight:600;color:var(--muted)}
+
+/* tree rows */
+.row{display:flex;align-items:center;gap:8px;min-height:36px;padding:4px 8px 4px calc(4px + var(--lv,0) * 22px);border-radius:8px;user-select:none}
+.row:hover{background:var(--hover)}
+.row[draggable="true"]{cursor:grab}
+.lv-sec{font-weight:700;font-size:14px;margin-top:6px}
+.lv-top{font-weight:600}
+.lv-sub{color:var(--muted);font-weight:500;font-size:13.5px}
+.lv-item{font-size:13.5px;cursor:pointer}
+.lv-item.is-on{background:var(--accent-soft)}
+.lv-item.is-added{cursor:default;color:var(--faint)}
+.row:has(> .cb.done) > .rname{color:var(--muted)}
+.chev{border:0;background:none;width:22px;height:22px;border-radius:6px;display:grid;place-items:center;color:var(--faint);flex:none;padding:0}
+.chev:hover{background:var(--sunk);color:var(--ink)}
+.chev svg{transition:transform .15s}
+.chev.open svg{transform:rotate(90deg)}
+.chev-space{width:22px;flex:none}
+.rname{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:pointer}
+.lv-item .rname{cursor:inherit}
+.rmeta{color:var(--faint);font-weight:500;display:flex;gap:10px;flex:none;font-size:12.5px}
+.tag-added{font-size:11.5px;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:1px 8px;flex:none}
+
+.cb{width:18px;height:18px;border-radius:5px;border:1.5px solid var(--line-strong);background:var(--surface);display:grid;place-items:center;flex:none;padding:0}
+.cb:hover{border-color:var(--accent)}
+.cb::after{content:"";display:block}
+.cb.on,.cb.mixed{background:var(--accent);border-color:var(--accent)}
+.cb.on::after,.cb.done::after{width:9px;height:5px;border-left:2px solid var(--accent-ink);border-bottom:2px solid var(--accent-ink);transform:translateY(-1px) rotate(-45deg)}
+.cb.mixed::after{width:8px;height:2px;background:var(--accent-ink);border-radius:1px}
+.cb.done{background:transparent;border-color:transparent;cursor:default}
+.cb.done::after{border-color:var(--faint)}
+
+.cnt{display:inline-flex;align-items:center;gap:3px;font-family:var(--f-mono);font-size:12px;font-variant-numeric:tabular-nums}
+.kicon{width:22px;height:22px;border-radius:6px;display:grid;place-items:center;flex:none;background:var(--sunk)}
+.k-class{color:var(--k-class)} .k-pdf{color:var(--k-pdf)} .k-test{color:var(--k-test)}
+.is-added .kicon{opacity:.5}
+.none{color:var(--muted);padding:24px 8px;text-align:center}
+
+/* tray */
+.tray{border-top:1px solid var(--line);background:var(--surface);padding-block:12px calc(12px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:10px;box-shadow:0 -6px 18px rgba(15,25,40,.05)}
+.tray-empty{color:var(--muted);font-size:13px;display:flex;align-items:center;gap:8px}
+.tray-sum{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.tray-sum b{font-size:14px}
+.tray-sum .rmeta{margin-right:auto}
+.tray-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tray-row label{font-size:13px;color:var(--muted);font-weight:600}
+.tray-row select{flex:1 1 180px;min-width:0;border:1px solid var(--line-strong);border-radius:9px;padding:8px 10px;background:var(--surface)}
+.dest{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:3px;font-size:12.5px;color:var(--muted)}
+.dest li{display:flex;gap:8px;align-items:center;min-width:0}
+.dest li span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.dest em{font-style:normal;font-size:11px;font-weight:600;border-radius:999px;padding:0 7px;flex:none}
+.dest em.new{background:var(--sunk);color:var(--muted)}
+.dest em.join{background:var(--accent-soft);color:var(--accent)}
+
+/* canvas */
+.cv{background:var(--bg)}
+.cv .pane-head{background:var(--bg);flex-direction:row;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:10px 16px}
+.cv-sum{color:var(--muted);font-size:13px;margin-top:2px}
+.sources{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.sources .lbl{font-size:12px;color:var(--faint);margin-right:2px}
+.srcchip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:3px 10px 3px 8px;font-size:12.5px;font-weight:500;color:var(--muted)}
+.srcchip:hover{border-color:var(--line-strong);color:var(--ink)}
+.srcchip.on{border-color:var(--c);color:var(--ink);box-shadow:0 0 0 1px var(--c)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--c);flex:none}
+.cv-body{flex:1;min-height:0;overflow:auto;padding-block:16px 40px;display:flex;flex-direction:column;gap:12px}
+.cv-body.drop-on{background:color-mix(in srgb,var(--accent-soft) 55%,transparent)}
+
+.empty{flex:1;border:2px dashed var(--line-strong);border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px 20px;gap:14px;min-height:320px;transition:border-color .15s,background .15s}
+.drop-on .empty{border-color:var(--accent);background:var(--accent-soft)}
+.empty h3{margin:0;font-size:19px;letter-spacing:-.01em}
+.empty p{margin:0;color:var(--muted);max-width:44ch}
+.skeleton{display:flex;flex-direction:column;gap:6px;width:min(260px,100%);margin-bottom:4px}
+.skeleton i{display:block;height:10px;border-radius:5px;background:var(--line)}
+.skeleton i:nth-child(1){width:48%;height:12px;background:var(--line-strong)}
+.skeleton i:nth-child(2){width:70%;margin-left:16px}
+.skeleton i:nth-child(3){width:60%;margin-left:16px}
+.skeleton i:nth-child(4){width:42%;height:12px;background:var(--line-strong);margin-top:6px}
+.skeleton i:nth-child(5){width:66%;margin-left:16px}
+.steps{list-style:none;margin:4px 0 0;padding:0;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.steps li{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px 6px 6px;font-size:13px;font-weight:500}
+.steps b{width:22px;height:22px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-size:12px}
+
+.sec{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);position:relative;transition:border-color .15s,box-shadow .15s}
+.sec-h{display:flex;align-items:center;gap:6px;padding:10px 10px 10px 8px;border-bottom:1px solid transparent}
+.sec.open .sec-h{border-bottom-color:var(--line)}
+.sec-h h3{margin:0;font-size:15.5px;font-weight:700;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:text;letter-spacing:-.005em}
+.grip{color:var(--faint);cursor:grab;width:18px;height:28px;display:grid;place-items:center;flex:none;opacity:.6}
+.grip:hover{opacity:1}
+.rename{flex:1;min-width:0;border:1px solid var(--accent);border-radius:7px;padding:4px 8px;font-weight:700;background:var(--surface);outline:none;box-shadow:0 0 0 3px var(--accent-soft)}
+.sec-body{padding:6px 8px 10px}
+.sec-empty{color:var(--faint);font-size:13px;padding:14px 12px;border:1.5px dashed var(--line);border-radius:10px;margin:4px 4px 0;text-align:center}
+.drop-hint{display:none}
+.lib-dragging .sec{border-style:dashed;border-color:var(--line-strong)}
+.sec.drop-on{border-color:var(--accent);border-style:solid;box-shadow:0 0 0 3px var(--accent-soft)}
+.sec.drop-on .drop-hint{display:flex;position:absolute;inset:auto 12px -14px auto;background:var(--accent);color:var(--accent-ink);font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;z-index:2}
+
+.top-h{display:flex;align-items:center;gap:6px;padding:4px 6px 4px 2px;border-radius:9px;min-height:38px}
+.top-h:hover{background:var(--hover)}
+.top-h .tname{flex:1;min-width:0;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:pointer}
+.top-h .acts,.sec-h .acts,.it .acts{display:flex;gap:2px;opacity:0;transition:opacity .12s}
+.top-h:hover .acts,.top-h:focus-within .acts,.sec-h:hover .acts,.sec-h:focus-within .acts,.it:hover .acts,.it:focus-within .acts{opacity:1}
+@media (hover:none){.top-h .acts,.sec-h .acts,.it .acts{opacity:1}}
+.subs{padding:2px 0 8px 46px;display:flex;flex-direction:column;gap:6px}
+.sub-h{font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);padding:6px 0 2px}
+.it{display:flex;align-items:center;gap:8px;padding:5px 6px;border-radius:8px;min-height:36px;font-size:13.5px}
+.it:hover{background:var(--hover)}
+.it .ttl{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.it .from{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:var(--faint);flex:none;max-width:140px}
+.it .from span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.it .mono{color:var(--faint);flex:none;width:64px;text-align:right}
+.dim{opacity:.28}
+.flash{animation:flash 1.6s ease-out}
+@keyframes flash{0%,30%{background:var(--accent-soft)}100%{background:transparent}}
+.drop-before{box-shadow:inset 0 2px 0 var(--accent)}
+.drop-after{box-shadow:inset 0 -2px 0 var(--accent)}
+.sec.drop-before{box-shadow:0 -3px 0 var(--accent),var(--shadow)}
+.sec.drop-after{box-shadow:0 3px 0 var(--accent),var(--shadow)}
+
+.confirm{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--danger-soft);border-radius:9px;padding:8px 10px;margin:6px 8px;font-size:13px}
+.confirm span{flex:1 1 220px}
+.add-sec{align-self:flex-start;border:1.5px dashed var(--line-strong);background:transparent;border-radius:10px;padding:9px 14px;color:var(--muted);font-weight:600;display:flex;align-items:center;gap:6px}
+.add-sec:hover{border-color:var(--accent);color:var(--accent)}
+.focus-note{font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:6px}
+
+/* toast + dialog */
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--ink);color:var(--surface);border-radius:12px;padding:10px 10px 10px 16px;display:flex;align-items:center;gap:12px;box-shadow:var(--shadow);transition:opacity .2s,transform .2s;z-index:30;width:max-content;max-width:calc(100% - 32px);font-weight:500}
+#toast.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+#toast button{border:0;background:color-mix(in srgb,var(--surface) 18%,transparent);color:var(--surface);font-weight:700;border-radius:8px;padding:6px 12px}
+.scrim{position:fixed;inset:0;background:rgba(10,16,22,.45);z-index:40}
+.dlg{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(480px,calc(100% - 32px));max-height:calc(100% - 48px);overflow:auto;background:var(--surface);border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.3);z-index:41;padding:22px;display:flex;flex-direction:column;gap:14px}
+.dlg h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.dlg p{margin:0;color:var(--muted)}
+.dlg label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:13px}
+.dlg input{border:1px solid var(--line-strong);border-radius:9px;padding:9px 11px;font-weight:500;background:var(--surface)}
+.dlg input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.facts div{background:var(--sunk);border-radius:10px;padding:10px 12px}
+.facts b{display:block;font-size:20px;font-variant-numeric:tabular-nums}
+.facts span{font-size:12px;color:var(--muted)}
+.note{font-size:13px;background:var(--accent-soft);color:var(--ink)!important;border-radius:10px;padding:10px 12px}
+.dlg .actions{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+.ok-mark{width:44px;height:44px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
+
+[hidden]{display:none!important}
+
+/* stepper: the four stages of making the course, in order */
+.stepper{display:flex;gap:2px;align-items:center;margin:0;padding:0;overflow-x:auto;flex:none;max-width:100%}
+.stepper button{border:0;background:none;display:flex;align-items:center;gap:7px;padding:5px 11px 5px 5px;border-radius:999px;color:var(--muted);font-weight:600;white-space:nowrap}
+.stepper button:hover:not(:disabled){background:var(--sunk);color:var(--ink)}
+.stepper button:disabled{cursor:not-allowed;opacity:.45}
+.stepper .n{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;border:1.5px solid var(--line-strong);color:var(--muted);flex:none}
+.stepper .on{color:var(--ink);background:var(--sunk)}
+.stepper .on .n{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.stepper .ok .n{background:var(--accent-soft);border-color:var(--accent-line);color:var(--accent)}
+.stepper .sep{width:14px;height:1.5px;background:var(--line-strong);flex:none}
+@media (max-width:1040px){.stepper{order:3;width:100%}}
+
+/* form steps: a working column and a sticky preview */
+.form{flex:1;min-height:0;overflow:auto;background:var(--bg)}
+.form-wrap{max-width:1160px;margin:0 auto;padding-block:24px 56px;display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start}
+.form-main{display:flex;flex-direction:column;gap:16px;min-width:0}
+.form-side{position:sticky;top:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.fcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.fcard h3{margin:0;font-size:15px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.fcard .lead{margin:-8px 0 0;color:var(--muted);font-size:13px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field>label,.flabel{font-weight:600;font-size:13px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.hint{font-size:12.5px;color:var(--faint);font-weight:400}
+.inp{border:1px solid var(--line-strong);border-radius:9px;padding:9px 11px;background:var(--surface);width:100%;min-width:0}
+.inp:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+textarea.inp{resize:vertical;min-height:72px}
+.money{position:relative;min-width:0}
+.money::before{content:"₹";position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--faint);pointer-events:none}
+.money .inp{padding-left:24px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.row-g{display:flex;gap:10px 22px;flex-wrap:wrap;align-items:center}
+.seg{display:inline-flex;align-self:flex-start;background:var(--sunk);border-radius:10px;padding:3px;gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:none;padding:6px 12px;border-radius:8px;font-weight:600;color:var(--muted)}
+.seg button.on{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.1)}
+.toggle{display:inline-flex;align-items:center;gap:10px;cursor:pointer;font-weight:500}
+.toggle input{appearance:none;-webkit-appearance:none;width:34px;height:20px;border-radius:999px;background:var(--line-strong);position:relative;flex:none;cursor:pointer;transition:background .15s;margin:0}
+.toggle input::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .15s;box-shadow:0 1px 2px rgba(0,0,0,.25)}
+.toggle input:checked{background:var(--accent)}
+.toggle input:checked::after{transform:translateX(14px)}
+.suggest{font-size:11.5px;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:1px 8px;font-weight:600}
+.fac-list{display:flex;flex-direction:column;gap:6px}
+.fac{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:10px;padding:4px 6px 4px 12px}
+.fac .ord{font-family:var(--f-mono);font-size:12px;color:var(--faint);width:14px}
+.fac .nm{flex:1;font-weight:600;min-width:0}
+.lead-tag{font-size:11px;font-weight:600;color:var(--muted);background:var(--sunk);border-radius:999px;padding:1px 8px}
+.drop{border:1.5px dashed var(--line-strong);border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:14px;cursor:pointer;color:var(--muted)}
+.drop:hover{border-color:var(--accent);color:var(--ink)}
+.drop b{color:var(--ink)}
+.drop img{width:128px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;flex:none}
+details.fcard summary{cursor:pointer;font-weight:700;font-size:15px}
+details.fcard[open] summary{margin-bottom:2px}
+.meter{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.bar{flex:1 1 160px;height:8px;border-radius:999px;background:var(--sunk);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:999px;transition:width .2s}
+.bar.over i{background:var(--danger)}
+.meter b{font-variant-numeric:tabular-nums;font-size:15px}
+.meter .bad{color:var(--danger)}
+.ch-wrap{overflow-x:auto;margin:0 -6px}
+.ch-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:480px}
+.ch-table th{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--faint);text-align:left;font-weight:600;padding:6px;border-bottom:1px solid var(--line)}
+.ch-table td{padding:5px 6px;border-bottom:1px solid var(--line)}
+.ch-table tr.secrow td{font-weight:700;padding-top:14px;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.ch-table .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ch-table .inp{width:86px;text-align:right;padding:6px 8px}
+.unsold{color:var(--faint);font-size:12px}
+.custom-tag{font-size:11px;color:var(--accent);font-weight:600;margin-right:4px}
+.ex-amt{display:flex;align-items:center;gap:8px}
+.ex-amt .money{width:110px}
+.side-h{font-size:11.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--faint)}
+.phone{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
+.appcard{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow)}
+.banner{aspect-ratio:16/9;max-width:100%;background:linear-gradient(135deg,var(--accent),#173a4a);display:flex;align-items:flex-end;padding:14px;color:#fff;font-weight:700;font-size:17px;line-height:1.2;text-wrap:balance}
+.banner.has-img{padding:0}
+.banner img{width:100%;height:100%;object-fit:cover;display:block}
+.ac-body{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px}
+.ac-title{font-weight:700;font-size:15px}
+.ac-fac{color:var(--muted);font-size:12.5px}
+.ac-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:2px}
+.ac-price{display:flex;align-items:baseline;gap:8px;margin-top:4px;font-weight:700;font-size:17px;flex-wrap:wrap}
+.ac-price s,.pv-final s{color:var(--faint);font-weight:500;font-size:13px}
+.ac-price .off{color:var(--accent);font-size:12px;font-weight:600}
+.ac-price.unset{color:var(--faint);font-weight:500;font-size:13px}
+.pv-list{display:flex;flex-direction:column;max-height:280px;overflow:auto;margin:0 -4px}
+.pv-ch{display:flex;align-items:center;gap:8px;padding:6px 4px;border-radius:7px;font-size:13px;cursor:pointer;min-width:0}
+.pv-ch:hover{background:var(--hover)}
+.pv-ch .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pv-ch .p{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.pv-x{accent-color:var(--accent);width:16px;height:16px;margin:0 1px;flex:none}
+.extra-row{display:flex;flex-direction:column;gap:10px;padding-top:12px;border-top:1px solid var(--line)}
+.extra-row.off .ex-name b{color:var(--muted)}
+.ex-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px 16px;flex-wrap:wrap}
+.ex-name{display:flex;flex-direction:column;gap:2px;flex:1 1 240px;min-width:0}
+.ex-body{display:flex;align-items:center;gap:10px 20px;flex-wrap:wrap}
+.check{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);cursor:pointer}
+.check input{accent-color:var(--accent);width:16px;height:16px;margin:0}
+.pv-sec{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--faint);font-weight:600;padding:8px 4px 2px}
+.pv-total{border-top:1px solid var(--line);padding-top:10px;display:flex;flex-direction:column;gap:4px}
+.pv-line{display:flex;justify-content:space-between;gap:10px;font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.pv-final{display:flex;align-items:baseline;gap:8px;font-size:24px;font-weight:700;font-variant-numeric:tabular-nums}
+.pv-min{font-size:12px;color:var(--k-pdf);font-weight:600}
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.checks li{display:flex;gap:10px;align-items:center;font-size:13.5px}
+.checks .ic{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;flex:none;font-size:12px;font-weight:700}
+.checks .ok .ic{background:var(--accent-soft);color:var(--accent)}
+.checks .warn .ic{background:color-mix(in srgb,var(--k-pdf) 16%,transparent);color:var(--k-pdf)}
+.checks .block .ic{background:var(--danger-soft);color:var(--danger)}
+.rv-h{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.kv{display:grid;grid-template-columns:130px minmax(0,1fr);gap:7px 12px;font-size:13.5px;margin:0}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0;min-width:0}
+.radio-opt{display:flex;gap:10px;align-items:flex-start;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer}
+.radio-opt.on{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.radio-opt input{margin-top:3px;accent-color:var(--accent)}
+.radio-opt b{display:block}
+.radio-opt span span{color:var(--muted);font-size:13px}
+.step-foot{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;padding-top:4px}
+@media (max-width:980px){.form-wrap{grid-template-columns:1fr}.form-side{position:static}}
+@media (max-width:480px){.kv{grid-template-columns:1fr;gap:2px}.kv dd{margin-bottom:8px}.fcard{padding:16px}.stepper .sep{display:none}.stepper button{padding-right:8px}.stepper button:not(.on) .lb{display:none}.stepper button:not(.on){padding-right:5px}}
+
+@media (max-width:860px){
+  .tabs{display:flex;gap:4px;background:var(--surface);border-bottom:1px solid var(--line);padding-block:6px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .tabs button{flex:1;border:0;background:none;border-radius:8px;padding:8px;font-weight:600;color:var(--muted)}
+  .tabs button.on{background:var(--sunk);color:var(--ink)}
+  .tabs .n{font-family:var(--f-mono);font-size:12px;background:var(--accent);color:var(--accent-ink);border-radius:999px;padding:0 7px;margin-left:4px}
+  .panes{grid-template-columns:1fr}
+  .lib{border-right:0}
+  .panes[data-tab="lib"] .cv,.panes[data-tab="cv"] .lib{display:none}
+  .subs{padding-left:20px}
+  .it .from{display:none}
+  .it .mono{width:auto}
+  #cname{font-size:18px}
+}
+@media (max-width:480px){.top-actions .ghost{display:none}.facts b{font-size:17px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="app">
+  <header class="top">
+    <div class="top-name">
+      <span class="crumb">Courses – New / <b>Course Builder</b> · draft</span>
+      <input id="cname" placeholder="Name your new course" aria-label="Course name" autocomplete="off">
+    </div>
+    <nav class="stepper" id="stepper" aria-label="Steps"></nav>
+    <div class="top-actions">
+      <button class="btn ghost" data-a="reset">Start over</button>
+      <button class="btn primary" id="nextBtn"></button>
+    </div>
+  </header>
+  <nav class="tabs" id="tabs"></nav>
+  <main class="panes" id="panes" data-tab="lib">
+    <section class="pane lib" id="lib" aria-label="Bring in content"></section>
+    <section class="pane cv" id="cv" aria-label="Your course"></section>
+  </main>
+  <main class="form" id="form" hidden></main>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+<div id="modal"></div>
+
+<script>
+/* ---------- sample catalogue (invented) ---------- */
+// [subtopic, classes, pdfs, tests, sharedFromCourse?] — a shared subtopic reuses the other course's class ids,
+// the way one class can sit in two courses today.
+const SPEC = [
+ {id:'c1',name:'SSC Maths Foundation',short:'SSC Maths',faculty:'Rakesh Sir',exam:'SSC',mode:'Recorded',sections:[
+  ['Arithmetic',[
+   ['Percentage',[['Basics',4,1,1],['Successive change',3,1,1]]],
+   ['Profit & Loss',[['Cost and selling price',4,1,0],['Discount',3,1,1]]],
+   ['Ratio & Proportion',[['Ratio basics',3,1,0],['Partnership',2,0,1]]],
+   ['Time & Work',[['Efficiency method',4,1,1],['Pipes & cisterns',3,1,0]]]]],
+  ['Advanced Maths',[
+   ['Algebra',[['Identities',4,1,1],['Maximum & minimum',2,0,1]]],
+   ['Geometry',[['Triangles',5,1,1],['Circles',4,1,0]]],
+   ['Trigonometry',[['Ratios & identities',4,1,1],['Heights & distances',2,1,0]]]]]]},
+ {id:'c2',name:'SSC Reasoning Complete',short:'SSC Reasoning',faculty:'Vikram Sir',exam:'SSC',mode:'Recorded',sections:[
+  ['Verbal Reasoning',[
+   ['Coding-Decoding',[['Letter coding',3,1,1],['Number coding',2,0,1]]],
+   ['Blood Relations',[['Family tree method',3,1,1]]],
+   ['Direction Sense',[['Distance & turns',2,1,0]]],
+   ['Syllogism',[['Venn method',3,1,1]]]]],
+  ['Non-verbal Reasoning',[
+   ['Mirror & Water Images',[['Mirror images',2,0,1]]],
+   ['Paper Folding',[['Fold and cut',2,1,0]]],
+   ['Figure Counting',[['Triangles & squares',3,0,1]]]]]]},
+ {id:'c3',name:'SSC English Mastery',short:'SSC English',faculty:"Pooja Ma'am",exam:'SSC',mode:'Live',sections:[
+  ['Grammar',[
+   ['Tenses',[['Present & past',3,1,1],['Future forms',2,0,0]]],
+   ['Error Spotting',[['Subject–verb agreement',3,1,1],['Articles',2,1,0]]],
+   ['Active & Passive Voice',[['Conversion rules',2,1,1]]]]],
+  ['Vocabulary',[
+   ['Synonyms & Antonyms',[['High-frequency words',4,2,1]]],
+   ['Idioms & Phrases',[['Previous year idioms',3,1,1]]],
+   ['One Word Substitution',[['Lists 1–300',2,1,0]]]]],
+  ['Comprehension',[
+   ['Reading Comprehension',[['Passage strategy',3,0,1]]],
+   ['Cloze Test',[['Context clues',2,0,1]]]]]]},
+ {id:'c4',name:'General Awareness 360',short:'GA 360',faculty:'Anil Sir',exam:'SSC',mode:'Recorded',sections:[
+  ['History',[['Ancient India',[['Indus Valley',2,1,0],['Vedic period',2,1,1]]],['Modern India',[['Freedom struggle',4,1,1]]]]],
+  ['Polity',[['Constitution',[['Preamble & features',2,1,1],['Fundamental rights',3,1,0]]],['Parliament',[['Lok Sabha & Rajya Sabha',2,1,1]]]]],
+  ['Geography',[['Physical Geography',[['Rivers of India',3,1,1]]],['Economic Geography',[['Crops & soils',2,1,0]]]]]]},
+ {id:'c5',name:'Bank PO Quant Mains',short:'Bank PO Quant',faculty:'Rakesh Sir',exam:'Banking',mode:'Live',sections:[
+  ['Arithmetic',[
+   ['Percentage',[['Basics',4,1,1,'c1'],['Successive change',3,1,1,'c1']]],
+   ['Simple & Compound Interest',[['CI shortcuts',3,1,1]]]]],
+  ['Data Interpretation',[['Tables',[['Missing data',3,1,1]]],['Bar & Line Graphs',[['Mixed graphs',3,1,1]]],['Caselets',[['Arithmetic caselets',2,0,1]]]]]]},
+ {id:'c6',name:'RRB NTPC Maths Crash',short:'NTPC Maths',faculty:'Sunil Sir',exam:'Railway',mode:'Recorded',sections:[
+  ['Arithmetic',[['Time & Work',[['Efficiency method',4,1,1,'c1']]],['Speed & Distance',[['Trains',3,1,1],['Boats & streams',2,1,0]]]]],
+  ['Number System',[['Divisibility',[['Rules 2–19',3,1,1]]],['HCF & LCM',[['Word problems',2,1,0]]]]]]},
+];
+const EXAMS = ['All','SSC','Banking','Railway'];
+const KLABEL = {class:'Class',pdf:'PDF',test:'Test'};
+const LV = {sec:0,top:1,sub:2};
+
+function hash(s){let h=7;for(const c of s)h=(h*31+c.charCodeAt(0))|0;return Math.abs(h)}
+const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const norm = s => s.trim().toLowerCase();
+
+const KIND = {}, LOOK = {};
+const COURSES = SPEC.map((c,ci)=>{
+  const course = {...c,color:ci,sections:[]}; LOOK[c.id] = {};
+  for(const [sn,topics] of c.sections){
+    const sec = {name:sn,key:`${c.id}/${sn}`,topics:[]};
+    for(const [tn,subs] of topics){
+      const top = {name:tn,key:`${sec.key}/${tn}`,subs:[]};
+      for(const [bn,nc,np,nt,from] of subs){
+        const base = `${from||c.id}|${sn}|${tn}|${bn}`;
+        const sub = {name:bn,key:`${top.key}/${bn}`,items:[]};
+        for(let i=1;i<=nc;i++){const id=`${base}|v${i}`;sub.items.push({id,kind:'class',title:`${bn} · Class ${i}`,meta:`${38+hash(id)%40} min`})}
+        for(let i=1;i<=np;i++){const id=`${base}|p${i}`;sub.items.push({id,kind:'pdf',title:`${bn} · ${i===1?'Notes':'Practice sheet'}`,meta:`${8+hash(id)%30} pages`})}
+        for(let i=1;i<=nt;i++){const id=`${base}|t${i}`;sub.items.push({id,kind:'test',title:`${bn} · Practice test`,meta:`${15+5*(hash(id)%4)} Qs`})}
+        for(const it of sub.items){KIND[it.id]=it.kind;LOOK[c.id][it.id]={item:it,section:sn,topic:tn,sub:bn}}
+        top.subs.push(sub);
+      }
+      sec.topics.push(top);
+    }
+    course.sections.push(sec);
+  }
+  return course;
+});
+const COURSE = Object.fromEntries(COURSES.map(c=>[c.id,c]));
+const leaves = n => n.items ? n.items.map(i=>i.id) : n.subs ? n.subs.flatMap(leaves) : n.topics ? n.topics.flatMap(leaves) : n.sections ? n.sections.flatMap(leaves) : [n.id];
+const kinds = ids => { const k={class:0,pdf:0,test:0}; for(const id of ids) k[KIND[id]]++; return k; };
+
+/* ---------- icons ---------- */
+const I = {
+  class:'<svg width="12" height="12" viewBox="0 0 16 16"><path d="M5 3.2v9.6l7.6-4.8z" fill="currentColor"/></svg>',
+  pdf:'<svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 1.8h5.5L13 5.3v8.9H4z"/><path d="M9.3 1.8v3.7H13"/></svg>',
+  test:'<svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.2l1.3 1.3 2.2-2.4M2.5 10.2l1.3 1.3 2.2-2.4M8.5 4.5h5M8.5 10.5h5"/></svg>',
+  chev:'<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5L10.5 8 6 12.5"/></svg>',
+  grip:'<svg width="10" height="14" viewBox="0 0 10 14" fill="currentColor"><circle cx="3" cy="3" r="1.3"/><circle cx="7" cy="3" r="1.3"/><circle cx="3" cy="7" r="1.3"/><circle cx="7" cy="7" r="1.3"/><circle cx="3" cy="11" r="1.3"/><circle cx="7" cy="11" r="1.3"/></svg>',
+  x:'<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 4l8 8M12 4l-8 8"/></svg>',
+  pen:'<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M10.5 2.5l3 3L6 13H3v-3z"/></svg>',
+  trash:'<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5h11M6 4.5V2.8h4v1.7M4 4.5l.7 9h6.6l.7-9"/></svg>',
+  search:'<svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="7" cy="7" r="4.6"/><path d="M10.5 10.5L14 14"/></svg>',
+  back:'<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5L5.5 8l4.5 4.5"/></svg>',
+  plus:'<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg>',
+  arrow:'<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>',
+  check:'<svg width="22" height="22" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg>',
+};
+const countsHTML = k => ['class','pdf','test'].filter(x=>k[x]).map(x=>`<span class="cnt k-${x}" title="${k[x]} ${KLABEL[x]}${k[x]>1?'s':''}">${I[x]}${k[x]}</span>`).join('');
+const countsText = k => [k.class&&`${k.class} class${k.class>1?'es':''}`,k.pdf&&`${k.pdf} PDF${k.pdf>1?'s':''}`,k.test&&`${k.test} test${k.test>1?'s':''}`].filter(Boolean).join(' · ');
+
+/* ---------- state ---------- */
+const STORE = 'course-builder-playground-v1';
+function load(){ try{ const v = JSON.parse(localStorage.getItem(STORE)); if(v && Array.isArray(v.sections)) return v; }catch(e){} return null; }
+function save(){ try{ localStorage.setItem(STORE, JSON.stringify(pg)); }catch(e){} }
+let pg = load() || {name:'',sections:[]};
+let seq = 1; const nid = p => p + Date.now().toString(36) + (seq++);
+const ui = {view:'list',courseId:null,sel:new Set(),open:new Set(),q:'',cq:'',exam:'All',place:'keep',
+  closedSec:new Set(),openTopic:new Set(),renaming:null,confirm:null,focus:null,flash:new Set(),tab:'lib',undo:null,modal:null,
+  pv:{picked:null,on:{}}};
+let VIS = {};
+
+const pgItems = () => pg.sections.flatMap(s=>s.topics.flatMap(t=>t.subs.flatMap(b=>b.items)));
+const addedSet = () => new Set(pgItems().map(i=>i.id));
+const nodeItems = n => n.items ? n.items : n.subs ? n.subs.flatMap(nodeItems) : n.topics.flatMap(nodeItems);
+const kindsOf = items => kinds(items.map(i=>i.id));
+const findSec = id => pg.sections.find(s=>s.id===id);
+// A renamed section still catches content from its source section name (rename "Arithmetic" to "Quant", later imports of Arithmetic land in Quant).
+const secByName = n => pg.sections.find(s=>norm(s.name)===norm(n) || (s.aliases||[]).includes(norm(n)));
+function findTop(id){ for(const s of pg.sections){ const t=s.topics.find(t=>t.id===id); if(t) return {s,t}; } return null; }
+function findSub(id){ for(const s of pg.sections) for(const t of s.topics){ const b=t.subs.find(b=>b.id===id); if(b) return {s,t,b}; } return null; }
+
+/* ---------- library pane ---------- */
+function renderLib(){
+  const el = document.getElementById('lib');
+  if(ui.view==='list'){
+    el.innerHTML = `
+      <div class="pane-head pad">
+        <div><h2>Bring in content</h2><p>Open a course, tick what you want, and add it to your new course.</p></div>
+        <label class="search">${I.search}<input id="cq" type="search" placeholder="Search courses or faculty" value="${esc(ui.cq)}" autocomplete="off"></label>
+        <div class="chips" role="group" aria-label="Exam">${EXAMS.map(x=>`<button class="chip${ui.exam===x?' on':''}" data-a="exam" data-v="${x}" aria-pressed="${ui.exam===x}">${x}</button>`).join('')}</div>
+      </div>
+      <div class="pane-body pad" id="libBody"></div>`;
+  } else {
+    const c = COURSE[ui.courseId];
+    el.innerHTML = `
+      <div class="pane-head pad">
+        <button class="back" data-a="back">${I.back} All courses</button>
+        <div class="src-title"><span class="cdot" style="--c:var(--s${c.color});margin:0"></span>${esc(c.name)}</div>
+        <div class="src-sub">${esc(c.faculty)} · ${c.exam} · ${c.mode}</div>
+        <label class="search">${I.search}<input id="q" type="search" placeholder="Search in this course" value="${esc(ui.q)}" autocomplete="off"></label>
+        <div class="tree-tools" id="treeTools"></div>
+      </div>
+      <div class="pane-body pad" id="libBody"></div>
+      <div class="tray pad" id="tray"></div>`;
+  }
+  renderLibBody();
+}
+function renderLibBody(){
+  const body = document.getElementById('libBody');
+  if(ui.view==='list'){ body.innerHTML = courseListHTML(); return; }
+  const tools = document.getElementById('treeTools');
+  const c = COURSE[ui.courseId], added = addedSet();
+  const allKeys = c.sections.flatMap(s=>[s.key,...s.topics.flatMap(t=>[t.key,...t.subs.map(b=>b.key)])]);
+  const allOpen = allKeys.every(k=>ui.open.has(k));
+  const free = leaves(c).filter(i=>!added.has(i));
+  const allOn = free.length>0 && free.every(i=>ui.sel.has(i));
+  tools.innerHTML = `<span class="legend"><b>Section</b> › <b>Topic</b> › <b>Subtopic</b> › class</span>
+    <button class="btn sm ghost" data-a="expandAll">${allOpen?'Collapse all':'Expand all'}</button>
+    <button class="btn sm" data-a="tickAll" ${free.length?'':'disabled'}>${allOn?'Untick all':'Tick whole course'}</button>`;
+  body.innerHTML = treeHTML(c, added);
+  renderTray();
+}
+function courseListHTML(){
+  const q = norm(ui.cq), added = addedSet();
+  const list = COURSES.filter(c=>(ui.exam==='All'||c.exam===ui.exam) && (!q || norm(c.name+' '+c.faculty+' '+c.exam).includes(q)));
+  if(!list.length) return `<div class="none">No course matches “${esc(ui.cq)}”.</div>`;
+  return list.map(c=>{
+    const ids = leaves(c), k = kinds(ids), inN = ids.filter(i=>added.has(i)).length;
+    return `<button class="ccard" data-a="open" data-id="${c.id}">
+      <span class="cdot" style="--c:var(--s${c.color})"></span>
+      <span class="cmain"><span class="cname">${esc(c.name)}</span><span class="cmeta">${esc(c.faculty)} · ${c.exam}</span>
+        <span class="ccount">${c.sections.length} sections · ${countsText(k)}</span></span>
+      <span class="cside"><span class="pill${c.mode==='Live'?' live':''}">${c.mode}</span>${inN?`<span class="in-course">${inN} in your course</span>`:''}<span class="cgo">${I.arrow}</span></span>
+    </button>`;
+  }).join('');
+}
+function filterCourse(c,q){
+  const m = s => s.toLowerCase().includes(q), out = [];
+  for(const s of c.sections){
+    if(m(s.name)){out.push(s);continue}
+    const ts = [];
+    for(const t of s.topics){
+      if(m(t.name)){ts.push(t);continue}
+      const bs = [];
+      for(const b of t.subs){ if(m(b.name)){bs.push(b);continue} const its=b.items.filter(i=>m(i.title)); if(its.length) bs.push({...b,items:its}); }
+      if(bs.length) ts.push({...t,subs:bs});
+    }
+    if(ts.length) out.push({...s,topics:ts});
+  }
+  return out;
+}
+function treeHTML(c, added){
+  VIS = {};
+  const q = norm(ui.q);
+  const secs = q ? filterCourse(c,q) : c.sections;
+  if(!secs.length) return `<div class="none">Nothing in this course matches “${esc(ui.q)}”.</div>`;
+  return secs.map(s=>nodeHTML(s,'sec',added,!!q)).join('');
+}
+function nodeHTML(node, lvl, added, forceOpen){
+  VIS[node.key] = node;
+  const ids = leaves(node), free = ids.filter(i=>!added.has(i)), on = free.filter(i=>ui.sel.has(i)).length;
+  const st = !free.length ? 'done' : !on ? 'off' : on===free.length ? 'on' : 'mixed';
+  const open = forceOpen || ui.open.has(node.key);
+  const addedN = ids.length - free.length, k = esc(node.key);
+  let h = `<div class="row lv-${lvl}" style="--lv:${LV[lvl]}" ${free.length?'draggable="true"':''} data-drag-key="${k}">
+    <button class="chev${open?' open':''}" data-a="toggle" data-key="${k}" aria-expanded="${open}" aria-label="${open?'Collapse':'Expand'} ${esc(node.name)}">${I.chev}</button>
+    <button class="cb ${st}" role="checkbox" aria-checked="${st==='mixed'?'mixed':st!=='off'}" aria-label="Tick ${esc(node.name)}" data-a="tick" data-key="${k}" ${st==='done'?'disabled':''}></button>
+    <span class="rname" data-a="toggle" data-key="${k}">${esc(node.name)}</span>
+    ${addedN?`<span class="tag-added">${st==='done'?'Added':addedN+' added'}</span>`:''}
+    <span class="rmeta">${countsHTML(kinds(ids))}</span>
+  </div>`;
+  if(open){
+    if(lvl==='sub') h += node.items.map(it=>itemHTML(it,added)).join('');
+    else h += (lvl==='sec'?node.topics:node.subs).map(n=>nodeHTML(n,lvl==='sec'?'top':'sub',added,forceOpen)).join('');
+  }
+  return h;
+}
+function itemHTML(it, added){
+  const done = added.has(it.id), on = ui.sel.has(it.id), id = esc(it.id);
+  const act = done ? '' : `data-a="tickItem" data-id="${id}"`;
+  return `<div class="row lv-item${done?' is-added':''}${on?' is-on':''}" style="--lv:3" ${done?'':'draggable="true"'} data-drag-item="${id}" ${act}>
+    <button class="cb ${done?'done':on?'on':'off'}" role="checkbox" aria-checked="${done||on}" aria-label="Tick ${esc(it.title)}" ${done?'disabled':act}></button>
+    <span class="kicon k-${it.kind}" title="${KLABEL[it.kind]}">${I[it.kind]}</span>
+    <span class="rname">${esc(it.title)}</span>
+    ${done?'<span class="tag-added">Added</span>':''}
+    <span class="rmeta mono">${esc(it.meta)}</span>
+  </div>`;
+}
+function destinations(){
+  const L = LOOK[ui.courseId], tgt = ui.place!=='keep' ? findSec(ui.place) : null, m = new Map();
+  for(const id of ui.sel){
+    const p = L[id]; if(!p) continue;
+    const sn = tgt ? tgt.name : (secByName(p.section)?.name || p.section), key = `${sn} › ${p.topic}`;
+    if(m.has(key)) continue;
+    const s = tgt || secByName(sn);
+    m.set(key, !!(s && s.topics.some(t=>norm(t.name)===norm(p.topic))));
+  }
+  return m;
+}
+function renderTray(){
+  const tray = document.getElementById('tray'); if(!tray) return;
+  if(ui.place!=='keep' && !findSec(ui.place)) ui.place = 'keep';
+  if(!ui.sel.size){
+    tray.innerHTML = `<div class="tray-empty">${I.arrow} Tick sections, topics or single classes, then add them. You can also drag them across.</div>`;
+    return;
+  }
+  const k = kinds([...ui.sel]), d = [...destinations()];
+  tray.innerHTML = `
+    <div class="tray-sum"><b>${ui.sel.size} ticked</b><span class="rmeta">${countsText(k)}</span><button class="link" data-a="clear">Clear</button></div>
+    <div class="tray-row">
+      <label for="place">Goes into</label>
+      <select id="place">
+        <option value="keep"${ui.place==='keep'?' selected':''}>Same section as in ${esc(COURSE[ui.courseId].short)}</option>
+        ${pg.sections.length?`<optgroup label="A section of your course">${pg.sections.map(s=>`<option value="${s.id}"${ui.place===s.id?' selected':''}>${esc(s.name)}</option>`).join('')}</optgroup>`:''}
+        <option value="__new">A new section…</option>
+      </select>
+      <button class="btn primary" data-a="add">Add to course ${I.arrow}</button>
+    </div>
+    <ul class="dest" aria-label="Where it lands">${d.slice(0,2).map(([p,j])=>`<li><span>${esc(p)}</span><em class="${j?'join':'new'}">${j?'joins existing':'new'}</em></li>`).join('')}${d.length>2?`<li>and ${d.length-2} more topic${d.length-2>1?'s':''}</li>`:''}</ul>`;
+}
+
+/* ---------- canvas pane ---------- */
+function renderCanvas(){
+  const el = document.getElementById('cv'), items = pgItems(), k = kindsOf(items);
+  const topics = pg.sections.reduce((n,s)=>n+s.topics.length,0);
+  const srcCount = {}; for(const i of items) srcCount[i.src]=(srcCount[i.src]||0)+1;
+  const srcs = Object.keys(srcCount);
+  if(ui.focus && !srcCount[ui.focus]) ui.focus = null;
+  el.innerHTML = `
+    <div class="pane-head pad">
+      <div><h2>Your course</h2><div class="cv-sum">${items.length ? `${pg.sections.length} section${pg.sections.length>1?'s':''} · ${topics} topic${topics>1?'s':''} · ${countsText(k)}` : pg.sections.length ? `${pg.sections.length} empty section${pg.sections.length>1?'s':''}` : 'Nothing added yet'}</div></div>
+      ${srcs.length?`<div class="sources"><span class="lbl">From</span>${srcs.map(id=>{const c=COURSE[id];return `<button class="srcchip${ui.focus===id?' on':''}" style="--c:var(--s${c.color})" data-a="focus" data-id="${id}" aria-pressed="${ui.focus===id}" title="Highlight what came from ${esc(c.name)}"><span class="dot"></span>${esc(c.short)} · ${srcCount[id]}</button>`}).join('')}</div>`:''}
+    </div>
+    <div class="cv-body pad" id="cvBody" data-drop="keep">
+      ${ui.focus?`<div class="focus-note">Highlighting items from <b>${esc(COURSE[ui.focus].name)}</b> <button class="link" data-a="focus" data-id="${ui.focus}">Show all</button></div>`:''}
+      ${pg.sections.length ? pg.sections.map(secHTML).join('') + `<button class="add-sec" data-a="newSec">${I.plus} Add a blank section</button>` : emptyHTML()}
+    </div>`;
+  const rn = document.getElementById('rn'); if(rn){ rn.focus(); rn.select(); }
+  const f = el.querySelector('.it.flash'); if(f) f.scrollIntoView({block:'nearest',behavior:'smooth'});
+}
+function emptyHTML(){
+  return `<div class="empty">
+    <div class="skeleton" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    <h3>Start your course here</h3>
+    <p>Bring in sections, topics or single classes from any course. Each one keeps its section and topic, so the outline stays in order.</p>
+    <ol class="steps"><li><b>1</b>Open a course</li><li><b>2</b>Tick what you need</li><li><b>3</b>Add it, or drag it here</li></ol>
+    <button class="link" data-a="newSec">or start with a blank section</button>
+  </div>`;
+}
+function confirmHTML(type, node){
+  const n = nodeItems(node).length;
+  return `<div class="confirm"><span>Remove “${esc(node.name)}”${n?` and its ${n} item${n>1?'s':''}`:''} from this course? The classes stay in the courses they came from.</span>
+    <button class="btn sm" data-a="cancelRemove">Keep</button><button class="btn sm danger" data-a="doRemove">Remove</button></div>`;
+}
+function nameHTML(type, node, cls, tag){
+  if(ui.renaming && ui.renaming.id===node.id)
+    return `<input class="rename" id="rn" value="${esc(node.name)}" aria-label="Rename ${type==='sec'?'section':'topic'}" data-type="${type}" data-id="${node.id}">`;
+  return `<${tag} class="${cls}" data-a="${type==='sec'?'rename':'topToggle'}" data-type="${type}" data-id="${node.id}" ${type==='sec'?'title="Click to rename"':''}>${esc(node.name)}</${tag}>`;
+}
+function secHTML(s){
+  const open = !ui.closedSec.has(s.id), items = nodeItems(s);
+  return `<article class="sec${open?' open':''}" data-drop="${s.id}" data-sec="${s.id}">
+    <header class="sec-h" draggable="${ui.renaming?.id===s.id?'false':'true'}" data-dragsec="${s.id}">
+      <span class="grip" title="Drag to reorder">${I.grip}</span>
+      <button class="chev${open?' open':''}" data-a="secToggle" data-id="${s.id}" aria-expanded="${open}" aria-label="${open?'Collapse':'Expand'} ${esc(s.name)}">${I.chev}</button>
+      ${nameHTML('sec',s,'','h3')}
+      <span class="rmeta">${countsHTML(kindsOf(items))}</span>
+      <span class="acts">
+        <button class="icon" data-a="rename" data-type="sec" data-id="${s.id}" aria-label="Rename ${esc(s.name)}" title="Rename">${I.pen}</button>
+        <button class="icon del" data-a="askRemove" data-type="sec" data-id="${s.id}" aria-label="Remove ${esc(s.name)}" title="Remove">${I.trash}</button>
+      </span>
+    </header>
+    ${ui.confirm?.id===s.id?confirmHTML('sec',s):''}
+    ${open?`<div class="sec-body">${s.topics.length?s.topics.map(t=>topHTML(t,s)).join(''):`<div class="sec-empty">Empty section. Drag content onto it, or pick it under “Goes into”.</div>`}</div>`:''}
+    <span class="drop-hint">Add into ${esc(s.name)}</span>
+  </article>`;
+}
+function topHTML(t, s){
+  const open = ui.openTopic.has(t.id) || !!ui.focus;
+  return `<div class="topic" data-top="${t.id}">
+    <div class="top-h" draggable="${ui.renaming?.id===t.id?'false':'true'}" data-dragtop="${t.id}" data-parent="${s.id}">
+      <span class="grip" title="Drag to reorder">${I.grip}</span>
+      <button class="chev${open?' open':''}" data-a="topToggle" data-id="${t.id}" aria-expanded="${open}" aria-label="${open?'Collapse':'Expand'} ${esc(t.name)}">${I.chev}</button>
+      ${nameHTML('top',t,'tname','span')}
+      <span class="rmeta">${countsHTML(kindsOf(nodeItems(t)))}</span>
+      <span class="acts">
+        <button class="icon" data-a="rename" data-type="top" data-id="${t.id}" aria-label="Rename ${esc(t.name)}" title="Rename">${I.pen}</button>
+        <button class="icon del" data-a="askRemove" data-type="top" data-id="${t.id}" aria-label="Remove ${esc(t.name)}" title="Remove">${I.trash}</button>
+      </span>
+    </div>
+    ${ui.confirm?.id===t.id?confirmHTML('top',t):''}
+    ${open?`<div class="subs">${t.subs.map(b=>`<div class="sub"><div class="sub-h">${esc(b.name)}</div>${b.items.map(i=>itHTML(i,b)).join('')}</div>`).join('')}</div>`:''}
+  </div>`;
+}
+function itHTML(i, b){
+  const c = COURSE[i.src], dim = ui.focus && ui.focus!==i.src;
+  return `<div class="it${ui.flash.has(i.id)?' flash':''}${dim?' dim':''}" draggable="true" data-dragit="${esc(i.id)}" data-parent="${b.id}">
+    <span class="grip" title="Drag to reorder">${I.grip}</span>
+    <span class="kicon k-${i.kind}" title="${KLABEL[i.kind]}">${I[i.kind]}</span>
+    <span class="ttl">${esc(i.title)}</span>
+    <span class="from" title="From ${esc(c.name)}" style="--c:var(--s${c.color})"><span class="dot"></span><span>${esc(c.short)}</span></span>
+    <span class="mono">${esc(i.meta)}</span>
+    <span class="acts"><button class="icon del" data-a="removeItem" data-id="${esc(i.id)}" data-sub="${b.id}" aria-label="Remove ${esc(i.title)}" title="Remove">${I.x}</button></span>
+  </div>`;
+}
+
+/* ---------- top, tabs, modal ---------- */
+function renderTop(){
+  const n = pgItems().length;
+  const tabs = document.getElementById('tabs');
+  tabs.innerHTML = `<button class="${ui.tab==='lib'?'on':''}" data-a="tab" data-v="lib">Bring in</button><button class="${ui.tab==='cv'?'on':''}" data-a="tab" data-v="cv">Your course${n?`<span class="n">${n}</span>`:''}</button>`;
+  document.getElementById('panes').dataset.tab = ui.tab;
+}
+function renderModal(){
+  const m = document.getElementById('modal');
+  if(!ui.modal){ m.innerHTML=''; return; }
+  if(ui.modal==='reset'){
+    m.innerHTML = `<div class="scrim" data-a="closeModal"></div><div class="dlg" role="dialog" aria-modal="true" aria-labelledby="dt">
+      <h3 id="dt">Start over?</h3><p>This empties your new course. The courses you brought content from are not touched.</p>
+      <div class="actions"><button class="btn" data-a="closeModal">Keep my course</button><button class="btn danger" data-a="confirmReset">Empty it</button></div></div>`;
+    return;
+  }
+  if(ui.modal==='done'){
+    m.innerHTML = `<div class="scrim" data-a="closeModal"></div><div class="dlg" role="dialog" aria-modal="true" aria-labelledby="dt">
+      <div class="ok-mark">${I.check}</div><h3 id="dt">“${esc(pg.name)}” is created</h3>
+      <p>It is ${pg.status==='active'?'on sale':'off sale (inactive)'}. In the real admin it opens in Courses – New next, where you tag revision classes and assign tests. This prototype saved nothing.</p>
+      <div class="actions"><button class="btn" data-a="closeModal">Back to it</button><button class="btn primary" data-a="confirmReset">Build another</button></div></div>`;
+    return;
+  }
+}
+function renderAll(fullLib){
+  const content = pg.step==='content';
+  document.getElementById('panes').hidden = !content;
+  document.getElementById('tabs').hidden = !content;
+  document.getElementById('form').hidden = content;
+  if(fullLib) renderLib(); else renderLibBody();
+  renderCanvas(); renderTop(); renderStepper();
+  if(!content) renderForm();
+  renderModal(); save();
+}
+
+/* ---------- after the content: details, price, review ---------- */
+const STEPS = [['content','Content'],['price','Price'],['details','Details'],['review','Review']];
+const EXAM_OPTS = ['SSC','Banking','Railway','Teaching','State exams'];
+const ALL_FACULTY = [...new Set(SPEC.map(c=>c.faculty)), "Neha Ma'am", 'Arjun Sir'];
+const blankDetails = () => ({short:'',exam:'',live:false,recorded:true,faculty:[],validity:{kind:'days',days:'365',date:''},
+  banner:null,showInNew:true,closeAdmission:false,tags:'',priority:'',seeded:false});
+const blankPrice = () => ({max:'',min:'',bmrp:'',weights:{},custom:{},
+  notes:{show:true,value:'',defaultOn:true},tests:{show:true,value:'',defaultOn:true},rev:{show:true,value:'',defaultOn:false}});
+// Add-ons a student ticks on top of the chapters. Hidden (show off) = not in the app, and not sold.
+const EXTRAS = [['notes','Notes','PDF notes of the picked chapters.'],['tests','Tests','Practice tests of the picked chapters.'],
+  ['rev','Revision','Revision classes of the picked chapters. Picking a chapter does not include them. Tag them on the course outline after you create it.']];
+function shape(){
+  pg.details = {...blankDetails(),...(pg.details||{})};
+  pg.price = {...blankPrice(),...(pg.price||{})};
+  for(const [k] of EXTRAS){ const x = pg.price[k]||{}; pg.price[k] = {show:x.show??x.offered??true, value:x.value??x.discount??'', defaultOn:x.defaultOn??k!=='rev'}; }
+  pg.step = pg.step || 'content';
+  pg.status = pg.status || 'inactive';
+}
+const num = v => { if(v===undefined||v===null||String(v).trim()==='') return null; const n = Number(v); return Number.isFinite(n) ? n : null; };
+const rs = n => `${n<0?'−':''}₹${Math.abs(Math.round(n)).toLocaleString('en-IN')}`;
+const round1 = n => Math.round(n*10)/10;
+function getPath(path){ return path.split('.').reduce((o,k)=>o==null?o:o[k], pg); }
+function setPath(path, val){
+  const ks = path.split('.'); let o = pg;
+  for(const k of ks.slice(0,-1)) o = (o[k] ??= {});
+  o[ks[ks.length-1]] = val;
+}
+
+// Fills exam, type and faculty from the courses the content came from, once; the admin edits from there.
+function seedDetails(){
+  const D = pg.details; if(D.seeded) return;
+  const by = {}; for(const i of pgItems()) by[i.src] = (by[i.src]||0)+1;
+  const srcs = Object.keys(by).sort((a,b)=>by[b]-by[a]).map(id=>COURSE[id]);
+  const exams = {}; for(const c of srcs) exams[c.exam] = (exams[c.exam]||0)+by[c.id];
+  D.exam = Object.keys(exams).sort((a,b)=>exams[b]-exams[a])[0] || '';
+  D.live = srcs.some(c=>c.mode==='Live'); D.recorded = srcs.some(c=>c.mode==='Recorded');
+  D.faculty = [...new Set(srcs.map(c=>c.faculty))];
+  D.seeded = true;
+}
+
+/* Course Builder: a chapter is a topic of the outline; its price is the custom ₹ if set, else maximum × weight %. */
+const chapters = () => pg.sections.flatMap(s=>s.topics.map(t=>({id:t.id,name:t.name,sec:s.name,classes:nodeItems(t).filter(i=>i.kind==='class').length})));
+function chPrice(id){
+  const P = pg.price, c = num(P.custom[id]); if(c!==null) return c;
+  const w = num(P.weights[id]); return w===null ? null : (num(P.max)||0)*w/100;
+}
+const priced = () => chapters().filter(c=>num(pg.price.weights[c.id])!==null || num(pg.price.custom[c.id])!==null);
+const weightTotal = () => Math.round(chapters().reduce((s,c)=>s+(num(pg.price.weights[c.id])||0),0)*100)/100;
+function splitWeights(by){
+  const ch = chapters(); if(!ch.length) return;
+  const share = c => by==='even' ? 1 : Math.max(c.classes,1);
+  const tot = ch.reduce((s,c)=>s+share(c),0), w = {};
+  for(const c of ch) w[c.id] = Math.floor(share(c)/tot*1000)/10;
+  const big = ch.reduce((a,b)=>w[a.id]>=w[b.id]?a:b);
+  w[big.id] = round1(w[big.id] + 100 - Object.values(w).reduce((s,v)=>s+v,0));
+  pg.price.weights = Object.fromEntries(Object.entries(w).map(([k,v])=>[k,String(v)]));
+}
+function seedWeights(){ if(!priced().length) splitWeights('classes'); }
+
+const extraOn = k => k in ui.pv.on ? ui.pv.on[k] : pg.price[k].defaultOn;
+// The checkout rule: chapters subtotal capped at the maximum selling price (which has every shown extra ticked),
+// less each shown extra left unticked, raised to the minimum selling price.
+function quote(){
+  const P = pg.price, max = num(P.max), min = num(P.min)||0;
+  if(max===null) return null;
+  const ch = priced(), picks = ui.pv.picked ? ch.filter(c=>ui.pv.picked.has(c.id)) : ch;
+  const lines = [], sub = Math.round(picks.reduce((s,c)=>s+(chPrice(c.id)||0),0)*100)/100;
+  lines.push([`${picks.length} of ${ch.length} chapters`, sub]); let v = sub;
+  if(sub>max+0.5){ lines.push(['Capped at the maximum selling price', max-sub]); v = max; }
+  for(const [k,label] of EXTRAS) if(P[k].show && !extraOn(k)){
+    const d = num(P[k].value)||0; if(d){ lines.push([`Without ${label}`, -d]); v -= d; }
+  }
+  const final = Math.round(Math.max(v,min)), mrp = num(P.bmrp);
+  return {lines, final, atMin:v<min, struck: mrp && max ? Math.round(final*mrp/max) : null};
+}
+function priceSummary(){
+  const P = pg.price, max = num(P.max), min = num(P.min);
+  if(max===null) return {main:'Price not set', unset:true};
+  const m = num(P.bmrp);
+  return {main:`From ${rs(min??max)}`, sub:`Build your own · whole course ${rs(max)}${m&&m>max?` <s>${rs(m)}</s>`:''}`};
+}
+function validityText(){
+  const V = pg.details.validity;
+  if(V.kind==='date') return V.date ? `Till ${new Date(V.date+'T00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}` : 'End date not set';
+  return num(V.days) ? `${num(V.days)} days` : 'Validity not set';
+}
+
+/* [state, text, step to fix it]: block stops Create, warn does not. */
+function checks(){
+  const D = pg.details, P = pg.price, out = [], n = pgItems().length;
+  out.push(n ? ['ok',`${n} items in ${pg.sections.length} section${pg.sections.length>1?'s':''}`,'content'] : ['block','Add content first','content']);
+  out.push(pg.name.trim() ? ['ok','The course has a title','details'] : ['block','Give the course a title','details']);
+  out.push(D.faculty.length ? ['ok',`Faculty: ${D.faculty.join(', ')}`,'details'] : ['warn','No faculty listed','details']);
+  if(D.validity.kind==='date' ? !D.validity.date : !num(D.validity.days)) out.push(['block','Set the validity','details']);
+  out.push(D.banner ? ['ok','App banner added','details'] : ['warn','No app banner yet; the app shows a plain placeholder','details']);
+  const max = num(P.max), min = num(P.min), t = weightTotal(), unsold = chapters().length - priced().length;
+  if(!(max>0)) out.push(['block','Set the maximum selling price','price']);
+  if(!(min>0)) out.push(['block','Set the minimum selling price','price']);
+  if(max>0 && min>0 && min>max) out.push(['block','The minimum selling price is above the maximum','price']);
+  if(Math.abs(t-100)>0.01) out.push(['block',`Chapter weights add up to ${t}%, not 100%`,'price']);
+  if(unsold) out.push(['warn',`${unsold} chapter${unsold>1?'s have':' has'} no weight and won't be sold`,'price']);
+  for(const [k,label] of EXTRAS) if(P[k].show && num(P[k].value)===null) out.push(['warn',`${label} is shown in the app with no price`,'price']);
+  if(!out.some(c=>c[0]==='block'&&c[2]==='price')) out.push(['ok',`Selling price ${rs(min)} to ${rs(max)}`,'price']);
+  return out;
+}
+const blockers = () => checks().filter(c=>c[0]==='block');
+const stepOk = step => !checks().some(c=>c[0]==='block'&&c[2]===step);
+
+function go(step){
+  if(step!=='content' && !pgItems().length) return;
+  if(step==='details') seedDetails();
+  if(step==='price') seedWeights();
+  pg.step = step; ui.renaming = null;
+  renderAll(true);
+  document.getElementById('form').scrollTop = 0;
+}
+function renderStepper(){
+  const has = pgItems().length, i = STEPS.findIndex(s=>s[0]===pg.step);
+  document.getElementById('stepper').innerHTML = STEPS.map(([k,l],j)=>{
+    const done = j<i && stepOk(k);
+    return `${j?'<span class="sep"></span>':''}<button class="${k===pg.step?'on':done?'ok':''}" data-a="go" data-v="${k}" ${k!=='content'&&!has?'disabled':''} aria-current="${k===pg.step?'step':'false'}"><span class="n">${done?'✓':j+1}</span><span class="lb">${l}</span></button>`;
+  }).join('');
+  const btn = document.getElementById('nextBtn'), next = STEPS[i+1];
+  btn.dataset.a = next ? 'go' : 'finish'; btn.dataset.v = next ? next[0] : '';
+  btn.innerHTML = next ? `Next: ${next[1]} ${I.arrow}` : 'Create course';
+  btn.disabled = !has || (!next && blockers().length>0);
+}
+function renderForm(){
+  const s = pg.step;
+  document.getElementById('form').innerHTML = `<div class="form-wrap pad">
+    <div class="form-main">${s==='details'?detailsHTML():s==='price'?priceHTML():reviewHTML()}${footHTML()}</div>
+    <aside class="form-side" id="side">${sideHTML()}</aside></div>`;
+}
+function footHTML(){
+  const i = STEPS.findIndex(s=>s[0]===pg.step), prev = STEPS[i-1], next = STEPS[i+1];
+  return `<div class="step-foot"><button class="btn" data-a="go" data-v="${prev[0]}">${I.back} ${prev[1]}</button>
+    ${next ? `<button class="btn primary" data-a="go" data-v="${next[0]}">Next: ${next[1]} ${I.arrow}</button>`
+           : `<button class="btn primary" data-a="finish" ${blockers().length?'disabled':''}>Create course</button>`}</div>`;
+}
+// Updates the computed parts of a form step without touching the field being typed in.
+function refresh(){
+  const side = document.getElementById('side'); if(side) side.innerHTML = sideHTML();
+  const m = document.getElementById('meter'); if(m) m.innerHTML = meterHTML();
+  document.querySelectorAll('[data-cp]').forEach(td=>td.innerHTML = cpHTML(td.dataset.cp));
+  const f = document.querySelector('.step-foot [data-a="finish"]'); if(f) f.disabled = blockers().length>0;
+  renderStepper(); save();
+}
+
+function detailsHTML(){
+  const D = pg.details, sug = '<span class="suggest">Filled from your content</span>';
+  const rest = ALL_FACULTY.filter(f=>!D.faculty.includes(f));
+  return `
+  <section class="fcard"><h3>Basics</h3>
+    <div class="field"><label for="f-name">Course title</label><input class="inp" id="f-name" data-f="name" value="${esc(pg.name)}" placeholder="e.g. SSC CGL Complete Batch 2027" autocomplete="off"></div>
+    <div class="field"><label for="f-short">Short description <span class="hint">optional</span></label><textarea class="inp" id="f-short" data-f="details.short" placeholder="One or two lines shown under the title in the app">${esc(D.short)}</textarea></div>
+    <div class="field"><span class="flabel">Exam ${sug}</span><div class="chips">${EXAM_OPTS.map(x=>`<button class="chip${D.exam===x?' on':''}" data-a="setExam" data-v="${x}" aria-pressed="${D.exam===x}">${x}</button>`).join('')}</div></div>
+    <div class="field"><span class="flabel">Course type ${sug}</span><div class="row-g">
+      <label class="toggle"><input type="checkbox" data-f="details.live" ${D.live?'checked':''}>Live classes</label>
+      <label class="toggle"><input type="checkbox" data-f="details.recorded" ${D.recorded?'checked':''}>Recorded classes</label></div></div>
+  </section>
+  <section class="fcard"><h3>Faculty ${sug}</h3><p class="lead">The order here is the order on the course card.</p>
+    <div class="fac-list">${D.faculty.map((f,i)=>`<div class="fac"><span class="ord">${i+1}</span><span class="nm">${esc(f)}</span>${i===0?'<span class="lead-tag">Shown first</span>':''}
+      <button class="icon" data-a="facUp" data-i="${i}" ${i?'':'disabled'} aria-label="Move ${esc(f)} up" title="Move up"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V3M4 7l4-4 4 4"/></svg></button>
+      <button class="icon del" data-a="facDel" data-i="${i}" aria-label="Remove ${esc(f)}" title="Remove">${I.x}</button></div>`).join('') || '<div class="hint">No faculty yet.</div>'}</div>
+    ${rest.length?`<select class="inp" id="facAdd" aria-label="Add faculty" style="max-width:260px"><option value="">+ Add faculty…</option>${rest.map(f=>`<option>${esc(f)}</option>`).join('')}</select>`:''}
+  </section>
+  <section class="fcard"><h3>Validity</h3>
+    <div class="seg" role="group" aria-label="Validity"><button class="${D.validity.kind==='days'?'on':''}" data-a="setVal" data-v="days">Days after purchase</button><button class="${D.validity.kind==='date'?'on':''}" data-a="setVal" data-v="date">Until a date</button></div>
+    ${D.validity.kind==='days'
+      ? `<div class="field"><label for="f-days">Days of access from the day of purchase</label><input class="inp" id="f-days" type="number" min="1" inputmode="numeric" data-f="details.validity.days" value="${esc(D.validity.days)}" style="max-width:160px"></div>`
+      : `<div class="field"><label for="f-date">Access ends on</label><input class="inp" id="f-date" type="date" data-f="details.validity.date" value="${esc(D.validity.date)}" style="max-width:200px"></div>`}
+  </section>
+  <section class="fcard"><h3>App banner</h3>
+    <label class="drop" for="f-banner">${D.banner?`<img src="${D.banner}" alt="Current banner">`:`<span class="kicon" style="width:40px;height:40px">${I.plus}</span>`}
+      <span><b>${D.banner?'Replace the banner':'Upload the app banner'}</b><br><span class="hint">16:9, at least 1280 × 720. JPG or PNG.</span></span>
+      <input type="file" id="f-banner" accept="image/*" hidden></label>
+    ${D.banner?'<button class="link" data-a="bannerDel" style="align-self:flex-start">Remove the banner</button>':''}
+  </section>
+  <details class="fcard"><summary>More settings</summary>
+    <div class="row-g"><label class="toggle"><input type="checkbox" data-f="details.showInNew" ${D.showInNew?'checked':''}>Show in the New section</label>
+      <label class="toggle"><input type="checkbox" data-f="details.closeAdmission" ${D.closeAdmission?'checked':''}>Close admission</label></div>
+    <div class="grid2"><div class="field"><label for="f-tags">Tags</label><input class="inp" id="f-tags" data-f="details.tags" value="${esc(D.tags)}" placeholder="CGL, Tier 1"></div>
+      <div class="field"><label for="f-prio">Priority</label><input class="inp" id="f-prio" type="number" data-f="details.priority" value="${esc(D.priority)}" placeholder="0"></div></div>
+  </details>`;
+}
+
+function meterHTML(){
+  const t = weightTotal(), ok = Math.abs(t-100)<=0.01;
+  return `<div class="bar${t>100.01?' over':''}"><i style="width:${Math.min(t,100)}%"></i></div>
+    <b class="${ok?'':'bad'}">${t}%</b><span class="hint">${ok?'Weights add up to 100%':t<100?`${round1(100-t)}% still to give out`:`${round1(t-100)}% over 100`}</span>`;
+}
+function cpHTML(id){
+  const p = chPrice(id); if(p===null) return '<span class="unsold">not sold</span>';
+  return `${num(pg.price.custom[id])!==null?'<span class="custom-tag">custom</span>':''}${rs(p)}`;
+}
+function priceHTML(){
+  const P = pg.price;
+  const money = (path,label,ph,hint) => `<div class="field"><label for="f-${path}">${label}${hint?` <span class="hint">${hint}</span>`:''}</label><div class="money"><input class="inp" id="f-${path}" inputmode="numeric" data-f="price.${path}" value="${esc(P[path])}" placeholder="${ph}"></div></div>`;
+  const rows = pg.sections.filter(s=>s.topics.length).map(s=>`<tr class="secrow"><td colspan="5">${esc(s.name)}</td></tr>` + s.topics.map(t=>`<tr>
+      <td>${esc(t.name)}</td><td class="num">${nodeItems(t).filter(i=>i.kind==='class').length}</td>
+      <td class="num"><input class="inp" inputmode="decimal" data-f="price.weights.${t.id}" value="${esc(P.weights[t.id]??'')}" placeholder="—" aria-label="Weight % of ${esc(t.name)}"></td>
+      <td class="num"><input class="inp" inputmode="numeric" data-f="price.custom.${t.id}" value="${esc(P.custom[t.id]??'')}" placeholder="—" aria-label="Custom price of ${esc(t.name)}"></td>
+      <td class="num" data-cp="${t.id}">${cpHTML(t.id)}</td></tr>`).join('')).join('');
+  const extra = ([k,label,about]) => `<div class="extra-row${P[k].show?'':' off'}">
+    <div class="ex-head"><div class="ex-name"><b>${label}</b><span class="hint">${about}</span></div>
+      <label class="toggle"><input type="checkbox" data-f="price.${k}.show" data-rerender ${P[k].show?'checked':''}>Show in the app</label></div>
+    ${P[k].show
+      ? `<div class="ex-body"><div class="ex-amt"><label class="hint" for="f-ex-${k}">Price</label><div class="money"><input class="inp" id="f-ex-${k}" inputmode="numeric" data-f="price.${k}.value" value="${esc(P[k].value)}" placeholder="0"></div></div>
+          <label class="check"><input type="checkbox" data-f="price.${k}.defaultOn" ${P[k].defaultOn?'checked':''}>Ticked when a student opens the builder</label></div>`
+      : `<div class="hint">Hidden in the app: students don't see or get ${label.toLowerCase()}.</div>`}</div>`;
+  return `
+  <section class="fcard"><h3>Course Builder price</h3><p class="lead">Students pick chapters and the price adds up. The maximum selling price is the whole course with every extra ticked; no build sells below the minimum selling price.</p>
+    <div class="grid2">${money('max','Maximum selling price','799')}${money('min','Minimum selling price','199')}${money('bmrp','MRP','1999','optional')}</div></section>
+  <section class="fcard"><div class="rv-h"><h3>Chapters</h3><div class="row-g" style="gap:6px"><button class="btn sm" data-a="split" data-v="classes">Split by class count</button><button class="btn sm ghost" data-a="split" data-v="even">Split evenly</button></div></div>
+    <p class="lead">Each topic of your outline is a chapter. Its price is the maximum selling price × its weight, unless you type a custom price.</p>
+    <div class="meter" id="meter">${meterHTML()}</div>
+    <div class="ch-wrap"><table class="ch-table"><thead><tr><th>Chapter</th><th class="num">Classes</th><th class="num">Weight %</th><th class="num">Custom ₹</th><th class="num">Price</th></tr></thead><tbody>${rows}</tbody></table></div></section>
+  <section class="fcard"><h3>Extras</h3><p class="lead">Add-ons a student can tick on top of the chapters they pick. Unticking one takes its price off.</p>
+    ${EXTRAS.map(extra).join('')}
+  </section>`;
+}
+
+function cardHTML(){
+  const D = pg.details, ps = priceSummary(), title = esc(pg.name.trim()||'Untitled course');
+  const type = [D.live&&'Live',D.recorded&&'Recorded'].filter(Boolean);
+  return `<div class="appcard"><div class="banner${D.banner?' has-img':''}">${D.banner?`<img src="${D.banner}" alt="">`:title}</div>
+    <div class="ac-body"><div class="ac-title">${title}</div>${D.faculty.length?`<div class="ac-fac">${esc(D.faculty.join(', '))}</div>`:''}
+      <div class="ac-row">${type.map(t=>`<span class="pill${t==='Live'?' live':''}">${t}</span>`).join('')}${D.exam?`<span class="pill">${D.exam}</span>`:''}<span class="pill">${validityText()}</span></div>
+      <div class="ac-price${ps.unset?' unset':''}">${ps.main}${ps.struck?`<s>${ps.struck}</s>`:''}${ps.off?`<span class="off">${ps.off}</span>`:''}</div>
+      ${ps.sub?`<div class="hint">${ps.sub}</div>`:''}</div></div>`;
+}
+function pvHTML(){
+  const P = pg.price, q = quote(), ch = priced();
+  if(!q) return `<div class="side-h">Student preview</div><div class="phone"><div class="hint">Set the maximum selling price to see what students pay.</div></div>`;
+  const picked = ui.pv.picked || new Set(ch.map(c=>c.id));
+  let last = '';
+  const list = ch.map(c=>{
+    const head = c.sec!==last ? `<div class="pv-sec">${esc(c.sec)}</div>` : ''; last = c.sec;
+    const on = picked.has(c.id);
+    return `${head}<div class="pv-ch" data-a="pvPick" data-id="${c.id}" role="checkbox" aria-checked="${on}" tabindex="0"><span class="cb ${on?'on':'off'}" aria-hidden="true"></span><span class="nm">${esc(c.name)}</span><span class="p">${rs(chPrice(c.id)||0)}</span></div>`;
+  }).join('');
+  const toggles = EXTRAS.filter(([k])=>P[k].show).map(([k,label])=>`<label class="pv-ch"><input type="checkbox" class="pv-x" data-pv="${k}" ${extraOn(k)?'checked':''}><span class="nm">${label}</span><span class="p">+${rs(num(P[k].value)||0)}</span></label>`).join('');
+  return `<div class="side-h">Student preview</div><div class="phone">
+    <div><div class="ac-title">${esc(pg.name.trim()||'Untitled course')}</div><div class="hint">Build your own: pick chapters</div></div>
+    <div class="pv-list">${list || '<div class="hint">No chapter has a weight yet.</div>'}</div>
+    ${toggles?`<div><div class="pv-sec">Extras</div>${toggles}</div>`:''}
+    <div class="pv-total">${q.lines.map(([l,v])=>`<div class="pv-line"><span>${l}</span><span>${rs(v)}</span></div>`).join('')}
+      <div class="pv-final">${rs(q.final)}${q.struck&&q.struck>q.final?`<s>${rs(q.struck)}</s>`:''}</div>
+      ${q.atMin?`<div class="pv-min">Raised to the minimum selling price, ${rs(num(P.min))}</div>`:''}</div></div>
+    <div class="hint">Tick chapters here to try prices. It changes nothing in the course.</div>`;
+}
+function sideHTML(){
+  if(pg.step==='price') return pvHTML();
+  return `<div class="side-h">On the app</div>${cardHTML()}
+    <div class="side-h" style="margin-top:8px">Content</div>
+    <div class="fcard" style="padding:12px 14px;gap:6px">${pg.sections.map(s=>`<div class="pv-line"><span>${esc(s.name)}</span><span class="rmeta">${countsHTML(kindsOf(nodeItems(s)))}</span></div>`).join('')}
+      <button class="link" data-a="go" data-v="content" style="align-self:flex-start;margin-left:-4px">Change content</button></div>`;
+}
+
+function reviewHTML(){
+  const c = checks(), b = c.filter(x=>x[0]==='block').length, D = pg.details, P = pg.price;
+  const items = pgItems(), srcs = [...new Set(items.map(i=>i.src))], topics = pg.sections.reduce((n,s)=>n+s.topics.length,0);
+  const type = [D.live&&'Live',D.recorded&&'Recorded'].filter(Boolean).join(' + ') || '—';
+  const extras = EXTRAS.map(([k,label])=>P[k].show ? `${label} ${rs(num(P[k].value)||0)}${P[k].defaultOn?', ticked':''}` : `${label} hidden`).join(' · ');
+  const priceRows = `<dt>Selling price</dt><dd>${num(P.min)!==null?rs(num(P.min)):'—'} to ${num(P.max)!==null?rs(num(P.max)):'—'}</dd>
+       <dt>MRP</dt><dd>${num(P.bmrp)?rs(num(P.bmrp)):'Not set'}</dd><dt>Chapters</dt><dd>${priced().length} of ${chapters().length} priced · weights ${weightTotal()}%</dd><dt>Extras</dt><dd>${extras}</dd>
+`;
+  return `
+  <section class="fcard"><h3>${b?`${b} thing${b>1?'s':''} to fix before you create it`:'Ready to create'}</h3>
+    <ul class="checks">${c.map(([s,t,step])=>`<li class="${s}"><span class="ic">${s==='ok'?'✓':'!'}</span><span style="flex:1;min-width:0">${esc(t)}</span>${s!=='ok'?`<button class="link" data-a="go" data-v="${step}">Fix</button>`:''}</li>`).join('')}</ul></section>
+  <section class="fcard"><div class="rv-h"><h3>Content</h3><button class="link" data-a="go" data-v="content">Edit</button></div>
+    <dl class="kv"><dt>Outline</dt><dd>${pg.sections.length} sections · ${topics} topics</dd><dt>Items</dt><dd>${countsText(kindsOf(items))}</dd>
+      <dt>From</dt><dd><div class="sources">${srcs.map(id=>`<span class="srcchip" style="--c:var(--s${COURSE[id].color})"><span class="dot"></span>${esc(COURSE[id].short)}</span>`).join('')}</div></dd></dl></section>
+  <section class="fcard"><div class="rv-h"><h3>Details</h3><button class="link" data-a="go" data-v="details">Edit</button></div>
+    <dl class="kv"><dt>Title</dt><dd>${esc(pg.name.trim())||'—'}</dd><dt>Exam</dt><dd>${D.exam||'—'}</dd><dt>Type</dt><dd>${type}</dd>
+      <dt>Faculty</dt><dd>${esc(D.faculty.join(', '))||'—'}</dd><dt>Validity</dt><dd>${validityText()}</dd><dt>New section</dt><dd>${D.showInNew?'Shown':'Not shown'}</dd></dl></section>
+  <section class="fcard"><div class="rv-h"><h3>Price</h3><button class="link" data-a="go" data-v="price">Edit</button></div><dl class="kv">${priceRows}</dl></section>
+  <section class="fcard"><h3>When it is created</h3>
+    <label class="radio-opt${pg.status==='inactive'?' on':''}"><input type="radio" name="st" value="inactive" data-st ${pg.status==='inactive'?'checked':''}><span><b>Keep it off sale</b><span>Inactive. Check it in the app first, then switch it on from the course list.</span></span></label>
+    <label class="radio-opt${pg.status==='active'?' on':''}"><input type="radio" name="st" value="active" data-st ${pg.status==='active'?'checked':''}><span><b>Put it on sale now</b><span>Active. Students can find and buy it straight away.</span></span></label>
+    <p class="note" style="margin:0">Classes, PDFs and tests are shared with the courses they came from. Nothing is moved, and buyers of those courses keep their access.</p>
+  </section>`;
+}
+// Keeps a picked banner small enough for browser storage.
+function readBanner(file){
+  const r = new FileReader();
+  r.onload = () => { const img = new Image(); img.onload = () => {
+    const w = Math.min(960, img.width), cv = document.createElement('canvas');
+    cv.width = w; cv.height = Math.round(img.height*w/img.width);
+    cv.getContext('2d').drawImage(img,0,0,cv.width,cv.height);
+    pg.details.banner = cv.toDataURL('image/jpeg',0.8); renderForm(); refresh();
+  }; img.src = r.result; };
+  r.readAsDataURL(file);
+}
+
+/* ---------- actions ---------- */
+let toastTimer;
+function toast(msg, undo){
+  const t = document.getElementById('toast');
+  t.innerHTML = `<span>${msg}</span>${undo?'<button data-a="undo">Undo</button>':''}`;
+  t.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(()=>t.classList.remove('show'), 6000);
+}
+function snapshot(){ ui.undo = JSON.stringify(pg); }
+function addItems(ids, place, courseId){
+  const L = LOOK[courseId], added = addedSet(), target = place!=='keep' ? findSec(place) : null;
+  const before = JSON.stringify(pg), touched = new Set(); let n = 0;
+  ui.flash = new Set();
+  for(const id of ids){
+    if(added.has(id) || !L[id]) continue;
+    const p = L[id];
+    let s = target || secByName(p.section);
+    if(!s){ s = {id:nid('s'),name:p.section,aliases:[norm(p.section)],topics:[]}; pg.sections.push(s); }
+    let t = s.topics.find(x=>norm(x.name)===norm(p.topic));
+    if(!t){ t = {id:nid('t'),name:p.topic,subs:[]}; s.topics.push(t); }
+    let b = t.subs.find(x=>norm(x.name)===norm(p.sub));
+    if(!b){ b = {id:nid('b'),name:p.sub,items:[]}; t.subs.push(b); }
+    b.items.push({...p.item,src:courseId});
+    added.add(id); n++; ui.closedSec.delete(s.id); ui.openTopic.add(t.id); ui.flash.add(id); touched.add(s.name);
+  }
+  if(!n) return;
+  ui.undo = before; ids.forEach(i=>ui.sel.delete(i));
+  const names = [...touched];
+  const where = names.slice(0,2).map(x=>`“${esc(x)}”`).join(' and ') + (names.length>2?` +${names.length-2} more`:'');
+  toast(`Added ${n} item${n>1?'s':''} to ${where}`, true);
+  renderAll();
+  setTimeout(()=>ui.flash.clear(), 50);
+}
+function prune(){
+  for(const s of pg.sections){ for(const t of s.topics) t.subs = t.subs.filter(b=>b.items.length); s.topics = s.topics.filter(t=>t.subs.length); }
+}
+// Swaps the input back to a label in place: re-rendering here would replace the button the user is clicking.
+function commitRename(input, keep){
+  if(!input || !input.isConnected || !ui.renaming || ui.renaming.id!==input.dataset.id) return;
+  const v = input.value.trim(), {type,id} = ui.renaming;
+  ui.renaming = null;
+  const node = type==='sec' ? findSec(id) : findTop(id)?.t; if(!node) return;
+  if(keep && v){ if(type==='sec') node.aliases = [...new Set([...(node.aliases||[]), norm(node.name)])]; node.name = v; const o=document.querySelector(`#place option[value="${id}"]`); if(o) o.textContent=v; }
+  input.closest('[draggable]')?.setAttribute('draggable','true');
+  input.outerHTML = nameHTML(type, node, type==='sec'?'':'tname', type==='sec'?'h3':'span');
+  save();
+}
+
+document.addEventListener('click', e=>{
+  const el = e.target.closest('[data-a]'); if(!el || el.disabled) return;
+  const a = el.dataset.a, d = el.dataset;
+  switch(a){
+    case 'open': {
+      ui.view='course'; ui.courseId=d.id; ui.q=''; ui.sel.clear(); ui.place='keep';
+      ui.open = new Set(COURSE[d.id].sections.map(s=>s.key));
+      renderLib(); break; }
+    case 'back': ui.view='list'; ui.sel.clear(); renderLib(); break;
+    case 'exam': ui.exam=d.v; renderLib(); break;
+    case 'toggle': ui.open.has(d.key) ? ui.open.delete(d.key) : ui.open.add(d.key); renderLibBody(); break;
+    case 'tick': {
+      const node = VIS[d.key]; if(!node) break;
+      const added = addedSet(), free = leaves(node).filter(i=>!added.has(i));
+      const all = free.every(i=>ui.sel.has(i));
+      free.forEach(i=> all ? ui.sel.delete(i) : ui.sel.add(i));
+      renderLibBody(); break; }
+    case 'tickItem': ui.sel.has(d.id) ? ui.sel.delete(d.id) : ui.sel.add(d.id); renderLibBody(); break;
+    case 'expandAll': {
+      const c = COURSE[ui.courseId];
+      const keys = c.sections.flatMap(s=>[s.key,...s.topics.flatMap(t=>[t.key,...t.subs.map(b=>b.key)])]);
+      ui.open = keys.every(k=>ui.open.has(k)) ? new Set(c.sections.map(s=>s.key)) : new Set(keys);
+      renderLibBody(); break; }
+    case 'tickAll': {
+      const added = addedSet(), free = leaves(COURSE[ui.courseId]).filter(i=>!added.has(i));
+      const all = free.every(i=>ui.sel.has(i)); free.forEach(i=> all ? ui.sel.delete(i) : ui.sel.add(i));
+      renderLibBody(); break; }
+    case 'clear': ui.sel.clear(); renderLibBody(); break;
+    case 'add': addItems([...ui.sel], ui.place, ui.courseId); break;
+    case 'secToggle': ui.closedSec.has(d.id) ? ui.closedSec.delete(d.id) : ui.closedSec.add(d.id); renderCanvas(); break;
+    case 'topToggle': if(ui.renaming) break; ui.openTopic.has(d.id) ? ui.openTopic.delete(d.id) : ui.openTopic.add(d.id); renderCanvas(); break;
+    case 'rename': ui.renaming={type:d.type,id:d.id}; ui.confirm=null; renderCanvas(); break;
+    case 'askRemove': ui.confirm={type:d.type,id:d.id}; renderCanvas(); break;
+    case 'cancelRemove': ui.confirm=null; renderCanvas(); break;
+    case 'doRemove': {
+      const {type,id} = ui.confirm; snapshot(); let name='';
+      if(type==='sec'){ const s=findSec(id); name=s.name; pg.sections=pg.sections.filter(x=>x.id!==id); }
+      else { const f=findTop(id); name=f.t.name; f.s.topics=f.s.topics.filter(x=>x.id!==id); }
+      ui.confirm=null; toast(`Removed “${esc(name)}”`, true); renderAll(); break; }
+    case 'removeItem': {
+      const f = findSub(d.sub); if(!f) break; snapshot();
+      const it = f.b.items.find(i=>i.id===d.id);
+      f.b.items = f.b.items.filter(i=>i.id!==d.id); prune();
+      toast(`Removed “${esc(it.title)}”`, true); renderAll(); break; }
+    case 'newSec': {
+      const s = {id:nid('s'),name:'New section',topics:[]}; pg.sections.push(s);
+      ui.renaming={type:'sec',id:s.id}; renderAll(); break; }
+    case 'focus': ui.focus = ui.focus===d.id ? null : d.id; renderCanvas(); break;
+    case 'undo':
+      if(ui.undo){ pg = JSON.parse(ui.undo); ui.undo=null; ui.renaming=null; ui.confirm=null; renderAll(); toast('Undone'); }
+      break;
+    case 'tab': ui.tab=d.v; renderTop(); break;
+    case 'reset': ui.modal='reset'; renderModal(); break;
+    case 'closeModal': ui.modal=null; renderModal(); break;
+    case 'go': go(d.v); break;
+    case 'finish': if(blockers().length){ go('review'); break; } ui.modal='done'; renderModal(); break;
+    case 'setExam': pg.details.exam = pg.details.exam===d.v ? '' : d.v; renderForm(); refresh(); break;
+    case 'setVal': pg.details.validity.kind=d.v; renderForm(); refresh(); break;
+    case 'facUp': { const f=pg.details.faculty, i=+d.i; [f[i-1],f[i]]=[f[i],f[i-1]]; renderForm(); refresh(); break; }
+    case 'facDel': pg.details.faculty.splice(+d.i,1); renderForm(); refresh(); break;
+    case 'bannerDel': pg.details.banner=null; renderForm(); refresh(); break;
+    case 'split': splitWeights(d.v); renderForm(); refresh(); break;
+    case 'pvPick': {
+      if(!ui.pv.picked) ui.pv.picked = new Set(priced().map(c=>c.id));
+      ui.pv.picked.has(d.id) ? ui.pv.picked.delete(d.id) : ui.pv.picked.add(d.id);
+      document.getElementById('side').innerHTML = sideHTML(); break; }
+    case 'confirmReset':
+      snapshot(); pg={name:'',sections:[]}; shape(); ui.pv.picked=null; document.getElementById('cname').value='';
+      ui.modal=null; ui.focus=null; ui.closedSec.clear(); ui.openTopic.clear(); renderAll(true); toast('Course emptied', true); break;
+  }
+});
+document.addEventListener('input', e=>{
+  if(e.target.id==='cq'){ ui.cq=e.target.value; renderLibBody(); }
+  else if(e.target.id==='q'){ ui.q=e.target.value; renderLibBody(); }
+  else if(e.target.id==='cname'){ pg.name=e.target.value; const f=document.getElementById('f-name'); if(f) f.value=pg.name; if(pg.step!=='content') refresh(); else save(); }
+  else if(e.target.dataset.f && e.target.type!=='checkbox'){
+    setPath(e.target.dataset.f, e.target.value);
+    if(e.target.dataset.f==='name') document.getElementById('cname').value = pg.name;
+    refresh();
+  }
+});
+document.addEventListener('change', e=>{
+  const t = e.target;
+  if(t.dataset.f && t.type==='checkbox'){ setPath(t.dataset.f, t.checked); if(t.dataset.rerender!==undefined) renderForm(); refresh(); return; }
+  if(t.dataset.pv){ ui.pv.on[t.dataset.pv] = t.checked; document.getElementById('side').innerHTML = sideHTML(); return; }
+  if(t.dataset.st!==undefined){ pg.status = t.value; renderForm(); refresh(); return; }
+  if(t.id==='facAdd' && t.value){ pg.details.faculty.push(t.value); renderForm(); refresh(); return; }
+  if(t.id==='f-banner' && t.files[0]){ readBanner(t.files[0]); return; }
+  if(t.id!=='place') return;
+  if(e.target.value==='__new'){
+    const s = {id:nid('s'),name:'New section',topics:[]}; pg.sections.push(s);
+    ui.place = s.id; ui.renaming = {type:'sec',id:s.id};
+    if(matchMedia('(max-width:860px)').matches){ ui.renaming=null; s.name=`New section ${pg.sections.length}`; }
+    renderAll();
+  } else { ui.place = e.target.value; renderTray(); }
+});
+document.addEventListener('keydown', e=>{
+  if(e.target.id==='rn'){ if(e.key==='Enter') commitRename(e.target,true); if(e.key==='Escape') commitRename(e.target,false); return; }
+  if(e.key==='Escape' && ui.modal){ ui.modal=null; renderModal(); }
+  if((e.key==='Enter'||e.key===' ') && e.target.dataset?.a==='pvPick'){ e.preventDefault(); e.target.click(); }
+});
+document.addEventListener('focusout', e=>{ if(e.target.id==='rn') commitRename(e.target,true); });
+
+/* ---------- drag and drop ---------- */
+let drag = null;
+const clearMarks = () => document.querySelectorAll('.drop-on,.drop-before,.drop-after').forEach(n=>n.classList.remove('drop-on','drop-before','drop-after'));
+document.addEventListener('dragstart', e=>{
+  const r = e.target.closest?.('[data-drag-key],[data-drag-item],[data-dragsec],[data-dragtop],[data-dragit]');
+  if(!r || r.getAttribute('draggable')!=='true'){ return; }
+  if(r.dataset.dragKey!==undefined || r.dataset.dragItem!==undefined){
+    const added = addedSet();
+    const own = r.dataset.dragItem!==undefined ? [r.dataset.dragItem] : leaves(VIS[r.dataset.dragKey]).filter(i=>!added.has(i));
+    const ids = own.some(i=>ui.sel.has(i)) ? [...ui.sel] : own;
+    drag = {from:'lib',ids,courseId:ui.courseId};
+    e.dataTransfer.effectAllowed = 'copy';
+    document.getElementById('cv').classList.add('lib-dragging');
+  } else {
+    const type = r.dataset.dragsec ? 'sec' : r.dataset.dragtop ? 'top' : 'it';
+    drag = {from:'cv',type,id:r.dataset.dragsec||r.dataset.dragtop||r.dataset.dragit,parent:r.dataset.parent||null};
+    e.dataTransfer.effectAllowed = 'move';
+  }
+  e.dataTransfer.setData('text/plain', drag.from);
+});
+function cvTarget(e){
+  if(drag.type==='sec'){ const s=e.target.closest('[data-sec]'); return s && s.dataset.sec!==drag.id ? s : null; }
+  const sel = drag.type==='top' ? '[data-dragtop]' : '[data-dragit]';
+  const r = e.target.closest(sel);
+  if(!r || r.dataset.parent!==drag.parent) return null;
+  if((r.dataset.dragtop||r.dataset.dragit)===drag.id) return null;
+  return r;
+}
+document.addEventListener('dragover', e=>{
+  if(!drag) return;
+  if(drag.from==='lib'){
+    const t = e.target.closest('#cv [data-drop]'); clearMarks();
+    if(t){ e.preventDefault(); e.dataTransfer.dropEffect='copy'; t.classList.add('drop-on'); }
+    return;
+  }
+  const t = cvTarget(e); clearMarks();
+  if(!t) return;
+  e.preventDefault(); e.dataTransfer.dropEffect='move';
+  const box = t.getBoundingClientRect();
+  t.classList.add(e.clientY > box.top + box.height/2 ? 'drop-after' : 'drop-before');
+});
+document.addEventListener('drop', e=>{
+  if(!drag) return;
+  e.preventDefault();
+  if(drag.from==='lib'){
+    const t = e.target.closest('#cv [data-drop]');
+    if(t){ const place = t.dataset.drop; addItems(drag.ids, place, drag.courseId); }
+  } else {
+    const t = cvTarget(e);
+    if(t){
+      const after = t.classList.contains('drop-after');
+      const toId = t.dataset.sec || t.dataset.dragtop || t.dataset.dragit;
+      const arr = drag.type==='sec' ? pg.sections : drag.type==='top' ? findSec(drag.parent).topics : findSub(drag.parent).b.items;
+      const i = arr.findIndex(x=>x.id===drag.id); const [m] = arr.splice(i,1);
+      let j = arr.findIndex(x=>x.id===toId); if(after) j++; arr.splice(j,0,m);
+      renderAll();
+    }
+  }
+  clearMarks();
+});
+document.addEventListener('dragend', ()=>{ drag=null; clearMarks(); document.getElementById('cv').classList.remove('lib-dragging'); });
+
+/* ---------- boot ---------- */
+shape();
+document.getElementById('cname').value = pg.name || '';
+renderAll(true);
+</script>

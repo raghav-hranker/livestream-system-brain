@@ -1,0 +1,704 @@
+group,copies,id,name,status,customer,classes,coursePlacements,apxPlacements,pdfs,shorts,ebooks,questions,testPapers,paperParts,paperCutoffs,questionMaps,apxSeriesMaps,aiTestPatterns,assignedQuestions,savedQuestions,reportedQuestions,libraryTags,scores,answers,courses,topics,total
+advance,2,6a9023049a9d53af06e3bf8e,ADVANCE,1,472,1,628,,1,,,1,,,,,,,,0,0,,3,3,3,15,637
+advance,2,6a9047fb0bcee98f4c7f6696,Advance,1,472,1,441,,,,,,,,,,,,,0,0,,0,0,2,8,442
+arithmetic,5,6a9d0afa3aed5ba9f3f0395d,Arithmetic,1,0,,,,,,,367,,,,,,,,0,0,,57,1832,,2,2256
+arithmetic,5,6a885af03aed5ba9f3a20fe4,Arithmetic,1,0,,,,,,,146,29,115,,29,,2,,3,0,,81,1400,,2,1805
+arithmetic,5,6a9023049a9d53af06e3bf8f,ARITHMETIC,1,472,4,686,,,,,,,,,,,,,0,0,,0,0,4,25,690
+arithmetic,5,6a9047fb0bcee98f4c7f6697,Arithmetic,1,472,1,491,,,,,,,,,,,,,0,0,,0,0,3,14,492
+arithmetic,5,6a885af03aed5ba9f3a20f98,Arithmetic,1,1,1,,,1,,,166,1,3,,1,,,,0,0,,0,0,,,173
+biology,2,6a885af03aed5ba9f3a20f27,Biology,1,0,,,,,,,78,1,1,,2,,,,0,0,,2,4,,38,88
+biology,2,6a914daa709253fd90707de4,Biology,1,472,,18,,,,,,,,,,,,,0,0,,0,0,1,1,18
+bs & e sectional test,2,6a3d2ac13aed5ba9f3fe6c06,BS & E Sectional Test,1,472,,,,,,,585,34,34,,,,,,0,1,,828,32193,,1,33675
+bs & e sectional test,2,6ab434565b97b9154439e2d1,BS & E Sectional Test,1,472,,,,,,,135,,,,,,,,0,0,,0,40,,1,175
+chemistry,2,6a885af03aed5ba9f3a20f28,Chemistry,1,0,,,,,,,53,,,,1,,,,0,0,,0,0,,3,54
+chemistry,2,6a455d36ebb42f585d9cd357,Chemistry,1,472,,52,,,,,,,,,,,,,0,0,,0,0,2,7,52
+classes,2,6a4558d6ebb42f585d9a91ab,Classes,1,472,1951,2,2,2958,,,,,,,,,,,0,0,,0,0,2,344,4913
+classes,2,6a455e7cebb42f585d9d5553,CLASSES,1,472,37,,,29,,,,,,,,,,,0,0,,0,0,,29,66
+computer,3,6a45591cebb42f585d9ac3d3,Computer,1,472,97,250,,78,,,,,,,,,,,0,0,,0,0,4,11,425
+computer,3,6a885af03aed5ba9f3a20f17,Computer,1,0,,,,,,,1,,,,,,,,0,0,,0,0,,1,1
+computer,3,6a885af03aed5ba9f3a20f84,Computer,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+computer knowledge,5,6a885af03aed5ba9f3a20fba,Computer Knowledge,1,0,,,,,,,465,,,,,,,,40,1,,1118,13300,,1,14924
+computer knowledge,5,6a885af03aed5ba9f3a20f21,Computer Knowledge,1,0,,,,,,,291,,7,,7,,,,1,1,,202,1046,,15,1555
+computer knowledge,5,6a885af03aed5ba9f3a20fb0,Computer Knowledge,0,0,,,,,,,20,,,,,,,,,,,,,,,20
+computer knowledge,5,6a885af03aed5ba9f3a20fae,Computer Knowledge,0,0,,,,,,,,,,,,,,,,,,,,,,0
+computer knowledge,5,6a885af03aed5ba9f3a20faf,Computer Knowledge,0,0,,,,,,,,,,,,,,,,,,,,,,0
+current affairs,2,6a3d2ac13aed5ba9f3fe6c0c,Current Affairs,1,472,231,253,,24,,,,,,,,,,,0,0,,0,0,7,3,508
+current affairs,2,6a885af03aed5ba9f3a20f9c,Current Affairs,1,0,2,,,,,,,,,,,,,,0,0,,0,0,,1,2
+e-book,2,6a4cdfdf42211ae83977d84d,E-BOOK,1,472,,,,35,,,130,13,13,,,12,,,1,0,,752,7520,,7,8476
+e-book,2,6a946eb629f16f98cfd7caea,E-Book,1,472,,,,13,,,,,,,,,,,0,0,,0,0,,,13
+english,2,6a4d1f003e29123ffb5eb0e5,English,1,472,121,244,,,,,775,10,31,,,30,,,,,,,,2,2,1211
+english,2,6a885af03aed5ba9f3a20f85,English,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+general awareness,5,6a4558c8ebb42f585d9a8801,General Awareness,1,472,199,347,,192,,,2036,25,76,,,,,,0,1,,21879,1061594,5,13,1086349
+general awareness,5,6a885af03aed5ba9f3a20f19,General Awareness,1,0,,,,,,,11919,14314,14315,,14912,,7,,454,14,,15867,223622,,138,295424
+general awareness,5,6ab433b95b97b9154439d900,General Awareness,1,472,,,,,,,1148,,,,,,,,413,6,,10302,139190,,1,151059
+general awareness,5,6a455e17ebb42f585d9d2e6c,GENERAL AWARENESS,1,472,196,757,4,129,,,10,,,,,,,,0,0,,0,0,1,83,1096
+general awareness,5,6ab42193f5441565c1f27dfe,General Awareness,1,0,,,,,,,2,,,,,,,,0,0,,0,0,,,2
+general knowledge and current affairs,2,6a885af03aed5ba9f3a20fa8,General Knowledge and Current Affairs,1,0,,,,,,,220,,,,,,,,0,0,,18,20,,1,258
+general knowledge and current affairs,2,6a885af03aed5ba9f3a20f5f,General Knowledge and Current Affairs,1,0,,,,,,,40,,,,,,,,0,0,,5,0,,,45
+general science,3,6a885af03aed5ba9f3a20f2a,General Science,1,0,,,,,,,2891,6198,14739,,6260,,4,,597,36,,15920,487923,,3,534568
+general science,3,6a9211ea6708f6e9bcfa334c,GENERAL SCIENCE,1,472,,,,,,,2231,,,,,,,,1335,30,,10318,512607,,1,526521
+general science,3,6a45605debb42f585d9e0e4c,General Science,1,472,,327,8,,,,,,,,,,,,0,0,,1,1,1,41,337
+gk/gs weekly sectional test,2,6a3d2ac13aed5ba9f3fe6c09,GK/GS Weekly Sectional Test,1,472,,,,,,,525,34,34,,,,,,4,0,,7371,228617,,1,236585
+gk/gs weekly sectional test,2,6ab434d75b97b9154439eb7d,GK/GS Weekly Sectional Test,1,472,,,,,,,150,,,,,,,,0,0,,0,45,,1,195
+history,3,6a455d3eebb42f585d9cd648,History,1,472,,287,,,,,,,,,,,,,0,0,,0,0,3,8,287
+history,3,6a885af03aed5ba9f3a20f26,History,1,0,,,,,,,130,,,,,,,,0,0,,0,9,,3,139
+history,3,6a916a83e4114180890befde,HISTORY,1,472,,105,,,,,,,,,,,,,0,0,,0,0,1,3,105
+introduction,2,6a8d68ddad4789cb1b01fa1c,Introduction,1,472,19,4,,,,,,,,,,,,,0,0,,0,0,1,1,23
+introduction,2,6a3d2ac13aed5ba9f3fe6c15,INTRODUCTION,1,472,9,5,,,,,,,,,,,,,0,0,,0,0,4,2,14
+logical reasoning,2,6a91697d0ec8510cb6e0281c,Logical Reasoning,1,472,,14,,,,,2317,,,,,,,,787,202,,10317,558354,1,1,571991
+logical reasoning,2,6a885af03aed5ba9f3a20f1b,Logical Reasoning,1,0,,,,4,,,11987,3846,12829,,4156,,9,,364,27,,14939,312205,,131,360366
+maths,4,6a3d2ac13aed5ba9f3fe6c0e,Maths,1,472,1228,3960,1,538,,,,,,,,,,,0,0,,0,0,28,151,5727
+maths,4,6a4ca8613e29123ffb5e1141,maths,1,472,,,,,,,338,11,12,,,13,,,2,1,,154,3875,,1,4406
+maths,4,6a885af03aed5ba9f3a20f1f,Maths,1,0,,,,,,,177,,4,,8,,,,0,0,,0,127,,21,316
+maths,4,6a91f62edce17876b773972c,MATHS,1,472,1,2,,,,,,,,,,,,,0,0,,0,0,1,1,3
+maths sectional test,2,6a3d2ac13aed5ba9f3fe6c0a,Maths Sectional Test,1,472,,,,,,,703,40,40,,,,,,30,5,,40537,1228065,,1,1269420
+maths sectional test,2,6ab434e25b97b9154439eea9,Maths Sectional Test,1,472,,,,,,,92,,,,,,,,0,0,,0,176,,1,268
+miscellaneous,2,6a9047fb0bcee98f4c7f6698,Miscellaneous,1,472,,195,,,,,,,,,,,,,,,,,,2,4,195
+miscellaneous,2,6aad1a2cea342a1e027519b3,Miscellaneous,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+physics,3,6a885af03aed5ba9f3a20f1e,Physics,1,0,,,,,,,165,,11,,1,,,,2,0,,0,499,,17,678
+physics,3,6a455d33ebb42f585d9cd1f3,Physics,1,472,,67,,,,,,,,,,,,,0,0,,0,0,2,9,67
+physics,3,6a885af03aed5ba9f3a20f29,Physics,1,0,,,,,,,10,,,,1,,,,0,0,,0,0,,8,11
+quantitative aptitude,2,6a885af03aed5ba9f3a20f1a,Quantitative Aptitude,1,0,,1,,2,,,14457,6504,15336,,7147,,7,,,,,,,1,61,43454
+quantitative aptitude,2,6a71d830a7507c01f2c3f4d7,Quantitative Aptitude,1,695,,,,,,,,,,,,,,,,,,,,,1,0
+reasoning,4,6a4558c2ebb42f585d9a8333,Reasoning,1,472,627,1580,1,527,,,2379,69,105,,,,,,7,3,,21415,1012183,23,72,1038896
+reasoning,4,6ab42f555c6b06f491007bb0,Reasoning,1,472,,,,,,,461,,,,,,,,0,0,,0,103,,1,564
+reasoning,4,6a455e06ebb42f585d9d27d7,REASONING,1,472,2,222,,,,,,,,,,,,,0,0,,0,0,1,39,224
+reasoning,4,6a885af03aed5ba9f3a20f86,Reasoning,1,0,,,,,,,,,5,,,,,,0,0,,0,0,,1,5
+reasoning classes,2,6a455ea3ebb42f585d9d6383,Reasoning Classes,1,472,22,719,13,10,,,,,,,,,,,,,,,,4,46,764
+reasoning classes,2,6a455ef2ebb42f585d9d8203,REASONING CLASSES,1,472,,,,,,,,,,,,,,,,,,,,,,0
+reasoning sectional test,2,6a3d2ac13aed5ba9f3fe6c07,Reasoning Sectional Test,1,472,,,,,,,706,41,41,,,,,,1,2,,3892,124117,,1,128800
+reasoning sectional test,2,6ab434955b97b9154439e5ed,Reasoning Sectional Test,1,472,,,,,,,112,,,,,,,,0,0,,0,84,,1,196
+science,3,6a4558c2ebb42f585d9a8376,Science,1,472,215,429,2,81,,,694,2,33,,,,,,0,0,,15356,463165,9,38,479977
+science,3,6ab435085b97b9154439f1a7,Science,1,472,,,,,,,117,,,,,,,,0,0,,0,7,,1,124
+science,3,6a885af03aed5ba9f3a20fa4,Science,1,0,,,,,,,80,,,,8,,,,0,0,,0,0,,,88
+science sectional test,2,6a3d2ac13aed5ba9f3fe6c08,Science Sectional Test,1,472,,,,,,,756,42,42,,,,,,16,2,,4796,125954,,1,131608
+science sectional test,2,6ab434c05b97b9154439e902,Science Sectional Test,1,472,,,,,,,84,,,,,,,,0,1,,0,117,,1,202
+section iii,2,6a885af03aed5ba9f3a20f74,Section III,1,0,,,,,,,,,,,,,,,,,,,,,,0
+section iii,2,6a885af03aed5ba9f3a20f75,Section III,1,0,,,,,,,,,,,,,,,,,,,,,,0
+static gk,2,6a455d42ebb42f585d9cd77b,Static GK,1,472,79,198,,2,,,,,,,,,,,,,,,,3,1,279
+static gk,2,6a3d2ac13aed5ba9f3fe6c0b,STATIC GK,1,472,,,,,,,,,,,,,,,,,,,,,,0
+static gk / ca,2,6a4558c3ebb42f585d9a83fb,Static GK / CA,1,472,4,,,4,,,,,,,,,,,0,0,,0,0,,,8
+static gk / ca,2,6a4558c2ebb42f585d9a8348,Static Gk / CA,1,472,1,1,,1,,,,,,,,,,,0,0,,0,0,1,1,3
+statistics,3,6a885af03aed5ba9f3a20f61,Statistics,1,0,,,,,,,,,,,,,,,,,,,,,,0
+statistics,3,6a885af03aed5ba9f3a20f62,Statistics,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+statistics,3,6a885af03aed5ba9f3a20f63,Statistics,1,0,,,,,,,,,,,,,,,,,,,,,,0
+test,2,6a885af03aed5ba9f3a20f97,Test,1,0,,,,,,,,,5,,,,,,,,,,,,1,5
+test,2,6a3d2ac13aed5ba9f3fe6c04,test,1,472,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a3d2ac13aed5ba9f3fe6c14,(Classes +Pdf),1,472,90,179,,127,,,,,,,,,,,,,,,,3,25,396
+,1,6a455ec8ebb42f585d9d726d,🔴🔴 Special Announcement,1,472,3,1,,1,,,,,,,,,,,,,,,,1,1,5
+,1,6a4e00805e07b0ff130aedec,🟥 Free E-Book Pdfs,1,472,,,,1,,,,,,,,,,,,,,,,,,1
+,1,6a455975ebb42f585d9afd2f,1. Analytical and Mathematical Capability,1,472,9,641,8,14,2,,,,,,,,,,,,,,,1,48,674
+,1,6a455996ebb42f585d9b0fcb,2. Logical Capability,1,472,113,110,,103,,,,,,,,,,,,,,,,1,13,326
+,1,6a914daa709253fd90707de3,2026 Topic Wise Questions,1,472,1,53,,,,,,,,,,,,,,,,,,1,3,54
+,1,6a45599debb42f585d9b1479,3. Mental Reasoning,1,472,49,60,8,48,1,,,,,,,,,,,,,,,1,7,166
+,1,6a455d28ebb42f585d9ccdb4,6 दिन  8 Topics,1,472,,5,,,1,,,,,,,,,,,,,,,1,1,6
+,1,6a885af03aed5ba9f3a20f90,abc,0,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20fa0,Abstract Reasoning,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20fa2,Accountancy and Book Keeping,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20f3f,ACIO Grade II,1,0,2,,,,,,,,,,,,,,,,,,,,1,2
+,1,6a885af03aed5ba9f3a20fe6,Advance Maths,1,0,1,,,,,,,,,,,,,,,,,,,,2,1
+,1,6a885af03aed5ba9f3a20f2b,AFCAT,1,0,,,,,,,98,,,,,,,,,,,,,,,98
+,1,6a4cf2963e29123ffb5e6c18,"Age, Partnership, Mixture Sectional Test (7th Nov)",1,472,,,,,,,20,1,1,,,,,,,,,,,,1,22
+,1,6a885af03aed5ba9f3a20f4c,Agriculture,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a4ce8f23e29123ffb5e6146,"Agriculture, Famous Cities, and Cities and Rivers Sectional Test (10th OCT)",1,472,,,,,,,12,2,2,,,1,,,,,,,,,1,17
+,1,6a455ec8ebb42f585d9d7283,Akash Sir ( Reasoning ),1,472,,3,,,,,,,,,,,,,,,,,,1,1,3
+,1,6a4ceef63e29123ffb5e6924,Algebra (13 Feb),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a4d24913e29123ffb5eb9fa,ALP CBT-2 (PART-A),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d24ec3e29123ffb5ebad9,ALP CBT-2 PART-A TEST-02,1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a455decebb42f585d9d1d7d,ALP EXpected Paper,1,472,8,7,,1,,,,,,,,,,,,,,,,1,2,16
+,1,6a4cfb703e29123ffb5e7587,Analogy Test,1,472,,,,,,,25,1,1,,,,,,,,,,,,1,27
+,1,6a885af03aed5ba9f3a20f9f,Analytical and Logical Reasoning,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20fe1,Animal Husbandary,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20fbe,Arithmetical and Numerical Ability,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a4cfb4d3e29123ffb5e7548,Assumption and Argument (25th July),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a4cfb143e29123ffb5e74ff,"ASSUMPTIONS, ARGUMENTS & ACTIONS Mock Test (1st AUGUST)",1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a455c70ebb42f585d9c7fbd,automobile part,1,472,10,10,,10,,,,,,,,,,,,,,,,1,1,30
+,1,6a4cf53b3e29123ffb5e6f0c,Average Sectional test - (8th Aug),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a455fdeebb42f585d9dddd2,Average To Master (ATM) Full BATCH,1,472,,1161,188,2,,,,,,,,,,,,,,,,2,108,1351
+,1,6a885af03aed5ba9f3a20f64,Bankingblog,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20f7d,Basic Knowledge of Computers,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20f5c,Basic Law or Constitution or General Knowledge,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a904948667262eda00e0278,Basic Science,1,472,1,242,,,,,,,,,,,,,,,,,,3,12,243
+,1,6a455b80ebb42f585d9c154f,BASIC SCIENCE & ENG DRAWING PRACTICE,1,472,117,208,,64,,,,,,,,,,,,,,,,3,23,389
+,1,6a4561a4ebb42f585d9e8b2b,Basic Science & Engineering Drawing,1,472,,100,32,,,,,,,,,,,,,,,,,1,20,132
+,1,6a45609bebb42f585d9e25a5,BASICS OF COMPUTER APPLICATION,1,472,,175,,,,,,,,,,,,,,,,,,2,4,175
+,1,6a885af03aed5ba9f3a20fb2,Bihar SI,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a4cfd263e29123ffb5e7a73,Biology -Respiratory System + Nervous System   Chemistry - Acid Base And Metals(17th Oct),1,472,,,,,,,30,1,1,,,1,,,,,,,,,1,33
+,1,6a4cfcf83e29123ffb5e7a0c,Biology -Respiratory System + Nervous System   Chemistry - Acid Base And Metals(24h Oct),1,472,,,,,,,40,1,1,,,1,,,,,,,,,1,43
+,1,6a455b66ebb42f585d9c08e0,Biology ( जीव विज्ञान ),1,472,,150,1,2,,,,,,,,,,,,,,,,2,15,153
+,1,6a4cfd8b3e29123ffb5e7b80,biology chemistry,1,472,,,,,,,50,1,1,,,,,,,,,,,,1,52
+,1,6a455b6eebb42f585d9c0ce3,Biology/जीव विज्ञान (NCERT BASED),1,472,71,,,70,,,,,,,,,,,,,,,,,,141
+,1,6a455ec9ebb42f585d9d7303,Bk Mama Sir ( Hindi ),1,472,,1,,,,,,,,,,,,,,,,,,1,1,1
+,1,6a4cfda33e29123ffb5e7bfb,BLOOD CIRCULATION AND PERIODIC TABLE SECTIONAL TEST (19th Sept),1,472,,,,,,,50,1,1,,,1,,,,,,,,,1,53
+,1,6a4cf9cd3e29123ffb5e739c,"BLOOD RELATION , CLOCK , DICE Sectional Test (5th Sep)",1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a4cfa193e29123ffb5e73e5,BLOOD RELATION Sectional  Test (29th Aug),1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a4cf0dc3e29123ffb5e6a9e,Boat & Stream (2 Jan),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a885af03aed5ba9f3a20f52,BOTANY(SEC A),1,0,,,,,,,,,,,,,,,,,,,,,25,0
+,1,6a885af03aed5ba9f3a20f53,BOTANY(SEC B),1,0,,,,,,,,,,,,,,,,,,,,,25,0
+,1,6a885af03aed5ba9f3a20fc3,BPSC,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a904948667262eda00e0279,BS & E Foundation Mastery Batch (ALP),1,472,2,2,,,,,,,,,,,,,,,,,,1,1,4
+,1,6a885af03aed5ba9f3a20fb1,BSSC,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a3d2ac13aed5ba9f3fe6c1b,BSSC MATHS,1,472,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a4cea153e29123ffb5e6311,Buddhism in India Mock Test (1st August),1,472,,,,,,,10,1,1,,,1,,,,,,,,,1,13
+,1,6a885af03aed5ba9f3a20fd5,Calculation,1,0,,,,,,,,,,,,,,,,,,,,,8,0
+,1,6a4cfa9b3e29123ffb5e7477,Calendar Section Mock Test (15 Aug),1,472,,,,,,,20,1,1,,,,,,,,,,,,1,22
+,1,6a885af03aed5ba9f3a20f6b,CBT,1,0,,,,,,,20229,1,8,,288,,,,,,,,,,4,20526
+,1,6a885af03aed5ba9f3a20f56,CBT - 2,1,0,,,,,,,3811,,,,34,,,,,,,,,,1,3845
+,1,6a885af03aed5ba9f3a20f22,CBT -1,1,0,,,,,,,14740,,11,,182,,,,,,,,,,39,14933
+,1,6a9bc16f6a0334598a77b822,CBT1,1,0,,,,,,,,27165,27165,,27165,,,,,,,,,,,81495
+,1,6a9bc17e6a0334598a77b823,CBT2,1,0,,,,,,,1,663,663,,663,,,,,,,,,,,1990
+,1,6a885af03aed5ba9f3a20f89,CET Book Reasoning,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a3d2ac13aed5ba9f3fe6c1a,CET MATHS,1,472,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a3d2ac13aed5ba9f3fe6c1c,CGL MATHS,1,472,2,,,,,,,,,,,,,,,,,,,,40,2
+,1,6a885af03aed5ba9f3a20f43,Chem (sec 1),1,0,,,,,,,,,,,,,,,,,,,,,3,0
+,1,6a885af03aed5ba9f3a20f44,Chem (sec 2),1,0,,,,,,,,,,,,,,,,,,,,,3,0
+,1,6a885af03aed5ba9f3a20f45,Chem (sec 3),1,0,,,,,,,,,,,,,,,,,,,,,3,0
+,1,6a885af03aed5ba9f3a20f50,CHEM(NEET-SEC A),1,0,,,,,,,,,,,,,,,,,,,,,3,0
+,1,6a885af03aed5ba9f3a20f51,CHEM(NEET-SEC B),1,0,,,,,,,,,7,,,,,,,,,,,,3,7
+,1,6a455b6aebb42f585d9c0b0f,Chemistry ( रसायन विज्ञान ),1,472,,79,,,,,,,,,,,,,,,,,,2,1,79
+,1,6a885af03aed5ba9f3a20f3d,Chemistry (Section B),1,0,,,,,,,,,,,,,,,,,,,,,3,0
+,1,6a4cfce03e29123ffb5e7991,Chemistry And Biology Complete Sectional Test (7th Nov),1,472,,,,,,,50,1,1,,,1,,,,,,,,,1,53
+,1,6a7c6ecef8924219f2dd40c1,Chemistry E-book,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a455b73ebb42f585d9c0f65,Chemistry/रसायन विज्ञान (NCERT BASED),1,472,44,,,44,,,,,,,,,,,,,,,,,,88
+,1,6a4cfd3f3e29123ffb5e7ac6,CHEMISTRY+BIO (10 OCT 2024),1,472,,,,,,,30,1,1,,,1,,,,,,,,,1,33
+,1,6a885af03aed5ba9f3a20fd4,Child Pedagogy,1,0,,,,,,,,,,,,,,,,,,,,,2,0
+,1,6a4cf2ae3e29123ffb5e6c57,CI and Age Sectional Test (24th Oct),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a885af03aed5ba9f3a20f1d,Civil Engineering,1,0,,,,,,,26,,,,2,,,,,,,,,,13,28
+,1,6a455e59ebb42f585d9d47fb,Class,1,472,,285,,,,,,,,,,,,,,,,,,1,26,285
+,1,6a4cfad93e29123ffb5e74b6,Clock Analogy Statment Based Test -(8th Aug),1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a4cfbce3e29123ffb5e7619,Clock Test-1,1,472,,,,,,,25,1,1,,,,,,,,,,,,1,27
+,1,6a4cf8ab3e29123ffb5e7239,CODING DECODING SECTIONAL TEST (10th OCT),1,472,,,,,,,20,1,1,,,,,,,,,,,,1,22
+,1,6a885af03aed5ba9f3a20f23,Commerce,1,0,,,,,,,145,,,,1,,,,,,,,,,10,146
+,1,6a455c6cebb42f585d9c7e32,COMMON PART,1,472,2,58,2,48,,,,,,,,,,,,,,,,2,1,110
+,1,6a4cfe1d3e29123ffb5e7d2d,Complete physics sectional test (29th Aug),1,472,,,,,,,40,1,1,,,1,,,,,,,,,1,43
+,1,6a4cfde83e29123ffb5e7cda,Complete physics sectional test (5th Sep),1,472,,,,,,,30,1,1,,,1,,,,,,,,,1,33
+,1,6a455bceebb42f585d9c3691,Complete Practice (ATM) Batch,1,472,581,612,35,529,,,,,,,,,,,,,,,,5,92,1757
+,1,6a4cfbf13e29123ffb5e7666,Complete science mock test ATM batch (2 Jan)),1,472,,,,,,,40,1,1,,,1,,,,,,,,,1,43
+,1,6a4cf2f63e29123ffb5e6c96,Compound Interest (17th Oct),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6ab42193f5441565c1f27e01,Computer Awareness,1,0,,,,,,,1,,,,,,,,,,,,,,,1
+,1,6a455a80ebb42f585d9b92d4,Computer Foundation Batch,1,472,,128,,,,,,,,,,,,,,,,,,2,8,128
+,1,6a455baaebb42f585d9c275b,Computer MCQs,1,472,,81,,24,,,,,,,,,,,,,,,,3,1,105
+,1,6a885af03aed5ba9f3a20f88,Computer Science,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a4ce8c43e29123ffb5e60e8,Constituent Assembly and Sources of Indian Constitution,1,472,,,,,,,12,1,1,,,,,,,,,,,,1,14
+,1,6a512e33d21b8ab52e5aeb95,"Council of Ministers, Governor & Judiciary (21st Nov)",1,472,,,,,,,12,1,1,,,1,,,,,,,,,1,15
+,1,6a92bbbe10324f60e5d9b91e,Course Information,1,472,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a91696bec00f604bd5a1114,CYBER SECURITY,1,472,,8,,,,,,,,,,,,,,,,,,1,1,8
+,1,6a9023049a9d53af06e3bf90,Data Analysis & Interpretation (DI),1,472,,92,,,,,,,,,,,,,,,,,,2,9,92
+,1,6a885af03aed5ba9f3a20fe5,Data Interpretation,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a91696bec00f604bd5a1115,DBMS,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a3d2ac13aed5ba9f3fe6c17,DEMO,1,472,1,1,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a946e2429f16f98cfd7c8ad,DEMO (Deleted),1,472,,,,1,,,,,,,,,,,,,,,,,,1
+,1,6a946e3b29f16f98cfd7c911,DEMO CLASES  (Deleted),1,472,,,,1,,,,,,,,,,,,,,,,,,1
+,1,6a455de5ebb42f585d9d1aa6,DEMO CLASS,1,472,4,4,,2,,,1,,,,,,,,,,,,,1,1,11
+,1,6a4560a2ebb42f585d9e2812,DEMO CLASSES,1,472,,2,15,,,,,,,,,,,,,,,,,1,10,17
+,1,6a4e371b209421909ee3ab07,DFCCIL PRE 2025,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a4cfa3f3e29123ffb5e742e,Dice Sectional Mock Test (22th Aug),1,472,,,,,,,26,1,1,,,1,,,,,,,,,1,29
+,1,6a455c71ebb42f585d9c8067,DIESEL PART,1,472,1,30,,24,,,,,,,,,,,,,,,,1,1,55
+,1,6a4cf8cf3e29123ffb5e7278,Direction Sectional Test (4TH OCT),1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a885af03aed5ba9f3a20fb4,Discipline 1,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20fb5,Discipline 2,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20fb6,Discipline 3,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20fb7,Discipline 4,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20fb8,Discipline 5,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20f8f,Divya Testing,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a4deec7409692fa4d33992c,E Book,1,472,,,,8,,,,,,,,,,,,,,,,,,8
+,1,6a455d44ebb42f585d9cd86b,Economics,1,472,,94,,,,,,,,,,,,,,,,,,3,1,94
+,1,6a9169c46edec3b0ca2f1dfd,Economics (LIVE),1,472,,4,,,,,,,,,,,,,,,,,,1,1,4
+,1,6a455b65ebb42f585d9c08bf,Economics Demo,1,472,,1,,,,,,,,,,,,,,,,,,1,1,1
+,1,6a9169c46edec3b0ca2f1dfc,Economics- Concept,1,472,,24,,,,,,,,,,,,,,,,,,1,1,24
+,1,6a455b7aebb42f585d9c12db,Electrician / wireman,1,472,56,53,,53,,,,,,,,,,,,,,,,1,1,162
+,1,6a4cfe513e29123ffb5e7d94,Electricity Sectional Mock Test (22th Aug),1,472,,,,,,,30,1,1,,,1,,,,,,,,,1,33
+,1,6a885af03aed5ba9f3a20fcb,Elementary Mathematics,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a512d55d21b8ab52e5aeaff,Emergency and NITI Aayog/ Planning Commission,1,472,,,,,,,15,1,1,,,,,,,,,,,,1,17
+,1,6a4dfe9a5e07b0ff130adf7b,End Game,1,472,,,,53,,,,,,,,,,,,,,,,,3,53
+,1,6a4ce8dc3e29123ffb5e6117,Energy Resources and Major Industries in India (17th Oct),1,472,,,,,,,12,1,1,,,1,,,,,,,,,1,15
+,1,6a916957c499842eb1414b4f,Engineering,1,472,,162,8,,,,,,,,,,,,,,,,,2,5,170
+,1,6a455cb0ebb42f585d9c9a87,Engineering Drawing,1,472,,42,,,,,,,,,,,,,,,,,,2,6,42
+,1,6a455b7febb42f585d9c14db,ENGINEERING DRAWING (free),1,472,8,48,,16,,,,,,,,,,,,,,,,6,2,72
+,1,6a3d2ac13aed5ba9f3fe6c13,English ( Arun G Sir ),1,472,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20f83,English and GA,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20f2f,english class viii,0,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a455eadebb42f585d9d6760,English Classes,1,472,209,413,2,185,,,,,,,,,,,,,,,,2,27,809
+,1,6a885af03aed5ba9f3a20fe7,English Comprehension,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a455eacebb42f585d9d674b,ENGLISH DEMO,1,472,1,1,1,1,,,,,,,,,,,,,,,,1,1,4
+,1,6a885af03aed5ba9f3a20f18,English Language,1,0,,,,,,,481,,,,151,,,,,,,,,,94,632
+,1,6a885af03aed5ba9f3a20fc0,English Language and Comprehension,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a4dee81409692fa4d339847,English PDF,1,472,,,,1,,,,,,,,,,,,,,,,,,1
+,1,6a885af03aed5ba9f3a20f35,english vi,0,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20f30,english vii,0,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a455f4bebb42f585d9da26e,Environment,1,472,,32,,,,,,,,,,,,,,,,,,1,7,32
+,1,6a455f10ebb42f585d9d8c6d,Environment -पर्यावरण,1,472,,63,,,,,,,,,,,,,,,,,,2,8,63
+,1,6a92120de59b944de33c1e36,Environment ( पर्यावरण अध्ययन ),1,472,,11,,,,,,,,,,,,,,,,,,1,1,11
+,1,6a455b7aebb42f585d9c1283,Environment/पर्यावरण अध्ययन (NCERT BASED),1,472,9,8,,7,,,,,,,,,,,,,,,,1,1,24
+,1,6a885af03aed5ba9f3a20f60,Everyday Physical Science,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20f2c,EVS,0,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20f2d,evs 7th,0,0,,,,,,,123,,,,,,,,,,,,,,1,123
+,1,6a455b6cebb42f585d9c0c02,Expected Question Papers,1,472,,74,1,,,,,,,,,,,,,,,,,2,1,75
+,1,6a455c9febb42f585d9c9330,Extra Free Content,1,472,,,,,,,,,,,,,,,,,,,,,4,0
+,1,6a45594bebb42f585d9ae413,Extra Youtube Content,1,472,1,944,,43,,,,,,,,,,,,,,,,11,5,988
+,1,6a4cf7783e29123ffb5e70fe,Figure Based Mock Test (12th  Dec),1,472,,,,,,,25,1,1,,,,,,,,,,,,1,27
+,1,6a4cf8613e29123ffb5e71f0,Figure Counting(17th Oct),1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a91696bec00f604bd5a1116,FILE SYSTEM,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a4ce5ea3e29123ffb5e5f92,Five Year Plans (26th Dec),1,472,,,,,,,12,1,1,,,,,,,,,,,,1,14
+,1,6a455c99ebb42f585d9c90b7,Formula Revision,1,472,,18,,,,,1,,,,,,,,,,,,,6,1,19
+,1,6a4dee85409692fa4d339854,Free Crash Course,1,472,,,,43,,,,,,,,,,,,,,,,,3,43
+,1,6a4e36be209421909ee3a9a6,Free E-book,1,472,,,,6,,,,,,,,,,,,,,,,,2,6
+,1,6a455f15ebb42f585d9d8e3f,Free Marathon Classes,1,472,,19,2,,,,,,,,,,,,,,,,,2,1,21
+,1,6a4ce8af3e29123ffb5e60b9,"Fundamental Rights, DPSP & Fundamental Duties Sectional Test (7th Nov)",1,472,,,,,,,12,1,1,,,1,,,,,,,,,1,15
+,1,6a4558c9ebb42f585d9a88fb,General,1,472,19,,,19,,,,,,,,,,,,,,,,,,38
+,1,6a885af03aed5ba9f3a20fcc,General Arithmetic,1,0,1,,,,,,,,,,,,,,,,,,,,,1
+,1,6a885af03aed5ba9f3a20fcf,General Awareness and Current Affairs,1,0,,,,,,,787,5,12,,5,,1,,,,,,,,,810
+,1,6a885af03aed5ba9f3a20fa3,General Economics,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20f7b,General English,1,0,,,,,,,,,,,,,,,,,,,,,2,0
+,1,6a885af03aed5ba9f3a20fdf,General Geography of Goa,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20f59,General Hindi,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20fa9,General Hindi and Computer Knowledge,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20fe9,General History of Goa,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20fb9,General Intelligence,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a4cffd73e29123ffb5e812d,General Intelligence & Reasoning,1,472,,,,,,,275,8,11,,,11,,,,,,,,,1,305
+,1,6a885af03aed5ba9f3a20f7c,General Intelligence and Reasoning,1,0,,,,,,,635,,,,7,,,,,,,,,,1,642
+,1,6a885af03aed5ba9f3a20fbd,General Intelligence and Reasoning Ability,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20fcd,"General Intelligence, Reasoning and Numerical Aptitude",1,0,,,,,,,,,,,,,,,,,,,,,2,0
+,1,6a885af03aed5ba9f3a20f71,General Knowledge,1,0,,,,,,,,,5,,,,,,,,,,,,1,5
+,1,6a885af03aed5ba9f3a20f77,General Mental Ability,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20fc2,General Science and Maths,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20f9b,General Studies,1,0,,,,,,,,,,,,,,,,,,,,,11,0
+,1,6a4d1ee23e29123ffb5eb08e,Genral Awareness,1,472,,,,,,,270,10,11,,,10,,,,,,,,,1,301
+,1,6a4ce9ae3e29123ffb5e6259,Geographic Location and Mountain Ranges in India Sectional Test (29th Aug),1,472,,,,,,,12,1,1,,,1,,,,,,,,,1,15
+,1,6a455d47ebb42f585d9cd982,Geography,1,472,2,191,,,,,,,,,,,,,,,,,,2,4,193
+,1,6a3d2ac13aed5ba9f3fe6c12,Geography (Vikas Sir),1,472,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a4558c2ebb42f585d9a8354,GK,1,472,227,218,,101,,,,,,,,,,,,,,,,6,9,546
+,1,6a455b25ebb42f585d9beaae,GK + GS,1,472,2,525,,,,,,,,,,,,,,,,,,2,44,527
+,1,6a456077ebb42f585d9e17f3,Gk Classes,1,472,3,413,4,22,,,,,,,,,,,,,,,,1,42,442
+,1,6a4559a2ebb42f585d9b1718,GK/GS,1,472,398,828,,95,,,,,,,,,,,,,,,,6,13,1321
+,1,6a4558f1ebb42f585d9aa51f,GK/GS Combo,1,472,,,,,,,,,,,,,,,,,,,,,4,0
+,1,6a455b65ebb42f585d9c08b0,Gk/Gs New Faculty Demo,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a4ceeb93e29123ffb5e68f9,GRAPH BASED QUESTION,1,472,,,,,,,10,1,1,,,1,,,,,,,,,1,13
+,1,6a4cff1f3e29123ffb5e7fea,Gravitation + Mechanics,1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a4cff013e29123ffb5e7f83,Gravitation + Pressure,1,472,,,,,,,40,1,1,,,1,,,,,,,,,1,43
+,1,6a9f4b8bb6966685db838662,Group D 2025-26 Answer Key (Latest Papers),1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a4e386b209421909ee3b053,HAND WRITTEN NOTES,1,472,,,,171,,,,,,,,,,,,,,,,,2,171
+,1,6a455ec8ebb42f585d9d7298,Harish sir ( Gk/ Gs ),1,472,,15,,2,,,,,,,,,,,,,,,,1,3,17
+,1,6a4cfd593e29123ffb5e7b19,Harmones  Chemical Reaction Sectional Test (3rd oct 2024),1,472,,,,,,,40,1,1,,,1,,,,,,,,,1,43
+,1,6a885af03aed5ba9f3a20fe3,Haryana CET,1,0,,,,,,,1,,,,,,,,,,,,,,1,1
+,1,6a885af03aed5ba9f3a20f4b,Haryana GK,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a4ce6593e29123ffb5e6054,Health & Sanitation & Financial Schemes (30 Jan),1,472,,,,,,,12,1,1,,,,,,,,,,,,1,14
+,1,6a4cfee53e29123ffb5e7f1c,"Heat, Thermodynamics And Sound (25th July)",1,472,,,,,,,40,1,1,,,1,,,,,,,,,1,43
+,1,6a92123ef13d42f58e63f86b,Hindi,1,472,,1,2,,,,,,,,,,,,,,,,,1,31,3
+,1,6a3d2ac13aed5ba9f3fe6c10,Hindi ( Arun Sir),1,472,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20f38,Hindi Language,1,0,,,,,,,,,,,,,,,,,,,,,46,0
+,1,6a885af03aed5ba9f3a20fbf,Hindi Language and Comprehension,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a4dee7e409692fa4d33983d,Hindi PDF,1,472,,,,1,,,,,,,,,,,,,,,,,,1
+,1,6a3d2ac13aed5ba9f3fe6c0f,History ( Jeet Sir ),1,472,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a455ef3ebb42f585d9d824e,HISTORY- इतिहास  BY BHAWANI SIR,1,472,,316,2,,,,,,,,,,,,,,,,,2,5,318
+,1,6a92c8a60cadd59db485b796,Home,1,472,1,18,,,,,,,,,,,,,,,,,,10,1,19
+,1,6a455cafebb42f585d9c9a3f,I.T. Literacy,1,472,,4,,4,,,,,,,,,,,,,,,,1,1,8
+,1,6a885af03aed5ba9f3a20fc9,IB,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20fa5,IB ACIO,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a4e38be209421909ee3b191,IMP chapterwise mcq,1,472,,,,70,,,,,,,,,,,,,,,,,,70
+,1,6a512d9fd21b8ab52e5aeb33,Important Amendments & Commissions,1,472,,,,,,,12,1,1,,,1,,,,,,,,,1,15
+,1,6a91f8e6c662e58a33d9f451,Important Classes & Announcement,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a946eb429f16f98cfd7cac7,Important for Railway Section Controller,1,472,,,,2,,,,,,,,,,,,,,,,,2,2
+,1,6a4ce9503e29123ffb5e61c6,"India: Dams, Natural Vegetation & Soil Sectional Test (19th Sept)",1,472,,,,,,,15,1,1,,,,,,,,,,,,1,17
+,1,6a455f08ebb42f585d9d89b0,Indian Constitution and Indian Polity -   भारतीय संविधान एवं भारतीय राजव्यवस्था,1,472,1,69,,,,,,,,,,,,,,,,,,1,11,70
+,1,6a455f0eebb42f585d9d8bbc,Indian Economics -भारतीय अर्थशास्त्र,1,472,,29,,,,,,,,,,,,,,,,,,1,1,29
+,1,6a4cea633e29123ffb5e63a6,Indian Freedom Struggle- 1928-1931 (11th July),1,472,,,,,,,10,1,1,,,1,,,,,,,,,1,13
+,1,6a916a83e4114180890befdf,Indian Geography,1,472,,148,,,,,,,,,,,,,,,,,,2,1,148
+,1,6a455f04ebb42f585d9d882d,INDIAN GEOGRAPHY - भारतीय भूगोल,1,472,1,49,2,,,,,,,,,,,,,,,,,1,12,52
+,1,6ab41ddaddaf6164c0eebc24,Indian History,1,0,,,,,,,1,,,,,,,,,,,,,,,1
+,1,6a455d42ebb42f585d9cd78a,Indian Polity,1,472,,273,,,,,,,,,,,,,,,,,,4,1,273
+,1,6a4cea2f3e29123ffb5e633c,Indus Valley Civilisation (25th July),1,472,,,,,,,15,1,1,,,1,,,,,,,,,1,18
+,1,6a4ce6173e29123ffb5e5ff0,Industries in India (16 Jan),1,472,,,,,,,12,1,1,,,1,,,,,,,,,1,15
+,1,6a885af03aed5ba9f3a20f8b,Intelligence,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20f8c,Intelligence Test,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a4558ceebb42f585d9a8beb,Introduction & Orientation,1,472,7,7,,8,,,,,,,,,,,,,,,,3,1,22
+,1,6a455ea8ebb42f585d9d658e,Introduction Class,1,472,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a455ea8ebb42f585d9d656c,Introduction Classes,1,472,3,,,,,,,,,,,,,,,,,,,,,3
+,1,6a455b65ebb42f585d9c08d4,INTRODUCTION OF BATCH (Science कैसे पढ़ेंगे),1,472,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a455ca1ebb42f585d9c9428,Introdution,1,472,1,1,,1,,,,,,,,,,,,,,,,1,1,3
+,1,6a4ce9fb3e29123ffb5e62e6,Jainism in India-(8th Aug),1,472,,,,,,,10,1,1,,,1,,,,,,,,,1,13
+,1,6a885af03aed5ba9f3a20f78,JK Constable,1,0,,,,,,,1,,,,,,,,,,,,,,1,1
+,1,6a885af03aed5ba9f3a20f72,JKSI,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20f3b,Knowledge Test,1,0,,,,,,,1,,,,,,,,,,,,,,41,1
+,1,6a885af03aed5ba9f3a20f73,Kolkata SI,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20fc5,Konkani,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a4ce9383e29123ffb5e6197,Land Transport in India Sectional Test (26th Sept),1,472,,,,,,,12,1,1,,,1,,,,,,,,,1,15
+,1,6a885af03aed5ba9f3a20fb3,Language,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a4cf5153e29123ffb5e6ecd,LCM & HCF Sectional Mock test (15th Aug),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a4cf4ed3e29123ffb5e6e8e,LCM & HCF Sectional Mock test (22th Aug),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a4cfe913e29123ffb5e7e4e,Light - Sectional Mock Test (8 Aug),1,472,,,,,,,40,1,1,,,1,,,,,,,,,1,43
+,1,6a885af03aed5ba9f3a20f5e,Logical and Analytical Reasoning,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20f4a,Logical Reasoning and Data Interpretation,1,0,,,,,,,25,,,,,,,,,,,,,,4,25
+,1,6a92d813dd9581feb0674ee4,Machine Input output,1,472,,7,,,,,,,,,,,,,,,,,,1,1,7
+,1,6a4e35e9209421909ee3a6da,Marathon,1,472,,,,10,,,,,,,,,,,,,,,,,,10
+,1,6a465155c1c336296ea02b06,Math,1,472,,,,,,,3337,100,125,,,117,,,,,,,,,1,3679
+,1,6a455b8febb42f585d9c1c17,MATH EXPECTED PAPER (ALP CBT-2),1,472,61,211,,71,,,,,,,,,,,,,,,,2,9,343
+,1,6a885af03aed5ba9f3a20f3a,Mathematics,1,0,,,,,,,,6,20,,6,,,,,,,,,,27,32
+,1,6a885af03aed5ba9f3a20f3e,Mathematics (Section B),1,0,,,,,,,,,,,,,,,,,,,,,27,0
+,1,6a455df1ebb42f585d9d1f87,MATHS ( LIVE + VOD ),1,472,1,306,,1,,,,,,,,,,,,,,,,1,27,308
+,1,6a885af03aed5ba9f3a20f46,Maths (sec 1),1,0,,,,,,,,,,,,,,,,,,,,,27,0
+,1,6a885af03aed5ba9f3a20f47,Maths (sec 2),1,0,,,,,,,,,,,,,,,,,,,,,27,0
+,1,6a885af03aed5ba9f3a20f48,Maths (sec 3),1,0,,,,,,,,,,,,,,,,,,,,,27,0
+,1,6a885af03aed5ba9f3a20f82,Maths and Reasoning,1,0,,,,,,,6,,7,,,,,,,,,,,,3,13
+,1,6a91f640d2dec7d5874f83c0,MATHS ARITHMETIC CLASS,1,472,1,2,,,,,,,,,,,,,,,,,,1,1,3
+,1,6a455cd5ebb42f585d9ca9a4,Maths ATM BAtch,1,472,1,254,,6,,,,,,,,,,,,,,,,1,39,261
+,1,6a455e9debb42f585d9d611f,Maths Classes,1,472,36,1665,69,1,,,,,,,,,,,,,,,,4,82,1771
+,1,6a4d20f13e29123ffb5eb694,Maths Test -02,1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a4d20a13e29123ffb5eb655,MATHS TEST WEEK-1,1,472,,,,,,,21,1,1,,,1,,,,,,,,,1,24
+,1,6a885af03aed5ba9f3a20f31,maths vi,0,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20f32,maths vii,0,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20f37,maths viii,0,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a4d21453e29123ffb5eb6d3,Maths Weekly Test -03,1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a4d21953e29123ffb5eb71c,Maths Weekly Test -04,1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a4d21d53e29123ffb5eb765,Maths Weekly Test -05,1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a4d22333e29123ffb5eb7ae,Maths Weekly Test -06,1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a4d22633e29123ffb5eb7f7,Maths Weekly Test -07,1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a4d22b13e29123ffb5eb840,Maths Weekly Test -08,1,472,,,,,,,26,1,1,,,1,,,,,,,,,1,29
+,1,6a4d23063e29123ffb5eb889,Maths Weekly Test -09,1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a4d23523e29123ffb5eb8d2,Maths Weekly Test -10,1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a4d23a63e29123ffb5eb91b,Maths Weekly Test -11,1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a4d23f23e29123ffb5eb964,Maths Weekly Test -12,1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a4d243c3e29123ffb5eb9ad,Maths Weekly Test -13,1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a3d2ac13aed5ba9f3fe6c16,MATHS(LIVE + VOD),1,472,79,,,6,,,,,,,,,,,,,,,,,1,85
+,1,6a4ce9e03e29123ffb5e62b7,Mauryan & Gupta Empire Sectional test (15th Aug),1,472,,,,,,,79,1,1,,1,1,,,,,,,,,1,83
+,1,6a4ce9c93e29123ffb5e6288,"Mauryan, Gupta and Post- Gupta Empire Sectional Mock Test (22th  Aug)",1,472,,,,,,,12,1,1,,,1,,,,,,,,,1,15
+,1,6a4cff353e29123ffb5e8029,Mechanics + Newton Law of Motion,1,472,,,,,,,40,1,1,,,,,,,,,,,,1,42
+,1,6a4cfec53e29123ffb5e7eb5,"mechanics, Sound,Gravity,Heat & Pressure (1st AUGUST)",1,472,,,,,,,4306,1,1,,233,1,,,,,,,,,5,4542
+,1,6a455d4aebb42f585d9cda9e,Medieval History,1,472,1,1,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a4cf0373e29123ffb5e6a20,Mensuration (23 Jan),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a4cefe93e29123ffb5e69e1,Mensuration (30 Jan),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a4cefa73e29123ffb5e69a2,Mensuration (6 Feb),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a885af03aed5ba9f3a20fa6,Mental Ability & Reasoning,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20fbb,Mental Ability and Reasoning,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20fa7,"Mental Aptitude, IQ and Reasoning Ability",1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a4cf7023e29123ffb5e7076,Miscellaneous  Mock Test (2 Jan),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a512d0bd21b8ab52e5aeacb,Miscellaneous Schemes (20 Feb),1,472,,,,,,,15,1,1,,,1,,,,,,,,,1,18
+,1,6a4cf81a3e29123ffb5e71a7,MISSING NUMBER SECTIONAL TEST (24th OCT),1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a4cfcc93e29123ffb5e7916,Mix 50 McQueen (14th Nov ),1,472,,,,,,,50,1,1,,,,,,,,,,,,1,52
+,1,6a4cfcb23e29123ffb5e78bc,Mix  MCQ (21 Nov ),1,472,,,,,,,41,2,2,,,1,,,,,,,,,1,46
+,1,6a4cfc803e29123ffb5e7855,Mix MCQ (28 Nov ),1,472,,,,,,,40,1,1,,,1,,,,,,,,,1,43
+,1,6a455d3debb42f585d9cd5c3,Mix Type New Science MCQ,1,472,,19,,1,,,,,,,,,,,,,,,,1,1,20
+,1,6a4cea493e29123ffb5e6371,Modern History - 1940 to 1950.,1,472,,,,,,,15,1,1,,,1,,,,,,,,,1,18
+,1,6a4cea953e29123ffb5e6406,Modern History Test- 1885 to 1918,1,472,,,,,,,15,1,1,,,1,,,,,,,,,1,18
+,1,6a4cea7b3e29123ffb5e63d1,Modern Indian History- 1916-1922,1,472,,,,,,,15,1,1,,,1,,,,,,,,,1,18
+,1,6a885af03aed5ba9f3a20fce,MP Police,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a91696bec00f604bd5a1117,MS OFFICE,1,472,,27,,,,,,,,,,,,,,,,,,1,3,27
+,1,6a885af03aed5ba9f3a20f66,NDA GAT - Part A - English,1,0,,,,,,,,,,,,,,,,,,,,,8,0
+,1,6a885af03aed5ba9f3a20f67,NDA GAT - Part B - General Knowledge,1,0,,,,,,,1,,,,,,,,,,,,,,8,1
+,1,6a885af03aed5ba9f3a20f68,NDA Mathematics,1,0,,,,,,,,,,,,,,,,,,,,,16,0
+,1,6a885af03aed5ba9f3a20f24,NET Paper-1,1,0,,,,,,,25,,,,,,,,,,,,,,10,25
+,1,6a91696bec00f604bd5a1118,NETWORK & INTERNET,1,472,,11,,,,,,,,,,,,,,,,,,1,1,11
+,1,6a54b955297c0baa73ef4964,New Classes (unfiled),1,472,17,,,399,,,,,,,,,,,,,,,,,,416
+,1,6a7c6bbff8924219f2dd2ebb,New PDFs (unfiled),1,472,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a91697d0ec8510cb6e0281d,Non-Verbal Reasoning,1,472,,39,,,,,,,,,,,,,,,,,,1,8,39
+,1,6a4d1a8a3e29123ffb5ea818,NTPC All India Mock Test (24th Aug),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6aa155cff7eeead2a3d4dffd,NTPC test,1,472,8,,,,,,,,,,,,,,,,,,,,1,8
+,1,6a4e377d209421909ee3abdd,NTPC UG CBT-2 2025,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a4cfb9c3e29123ffb5e75d0,Number Analogy Test,1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a4cf9733e29123ffb5e730a,NUMBER SERIES SECTIONAL  TEST (19th Sept),1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a4cf7343e29123ffb5e70b5,NUMBER SERIES TEST (26th Dec),1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a9047fb0bcee98f4c7f6699,Number System,1,472,,194,,,,,,,,,,,,,,,,,,2,5,194
+,1,6a5131e0bb47f2be48dab329,Number System Sectional Test-1,1,472,1,,,,,,20,1,1,,,1,,,,,,,,,1,24
+,1,6a4cf64e3e29123ffb5e7008,Number System Sectional Test-2,1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a885af03aed5ba9f3a20f39,Numerical Ability,1,0,,,,,,,,,,,,,,,,,,,,,2,0
+,1,6a885af03aed5ba9f3a20fbc,Numerical Ability and Data Interpretation,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20fca,Numerical and Logical and Analytical Ability and Reasoning,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20f5a,Numerical and Mental Ability,1,0,,,,,,,,,,,,,,,,,,,,,3,0
+,1,6a885af03aed5ba9f3a20f99,Numerical Aptitude,1,0,,,,,,,,,,,,,,,,,,,,,13,0
+,1,6a455c68ebb42f585d9c7c9c,ONE SHOT एक नज़र,1,472,1,4,,6,,,,,,,,,,,,,,,,4,1,11
+,1,6a4cf9a13e29123ffb5e7353,Order and Ranking Sectional Test (12th  Sept),1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a4e3738209421909ee3ab4e,OSSC CGL Mains 29 March 2025,1,472,,,,1,,,,,,,,,,,,,,,,,,1
+,1,6a885af03aed5ba9f3a20f1c,Other,0,0,,,,,,,48,,,,,,,,,,,,,,1,48
+,1,6a885af03aed5ba9f3a20f4d,others,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a512de9d21b8ab52e5aeb61,"Panchayati Raj System, Election Commission & Attorney General of India Sectional Test (5th Dec)",1,472,,,,,,,15,1,1,,,,,,,,,,,,1,17
+,1,6a885af03aed5ba9f3a20f7e,Paper III,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20f7f,Paper IV,1,0,,,,,,,2,,,,,,,,,,,,,,1,2
+,1,6a885af03aed5ba9f3a20f80,Paper V,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20f81,Paper VI,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20fe8,Part - 1,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20fd0,Part - 2,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20fd1,Part - 3,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20fd6,Part - 4,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20fac,Part - I (Language),1,0,,,,,,,,,,,,,,,,,,,,,2,0
+,1,6a885af03aed5ba9f3a20fe0,Part - II (General Studies),1,0,,,,,,,1,,,,,,,,,,,,,,1,1
+,1,6a885af03aed5ba9f3a20fad,Part - III,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20faa,Part A,1,0,,,,,,,,,,,,,,,,,,,,,4,0
+,1,6a885af03aed5ba9f3a20fab,Part B,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20fd7,Part I – Child Development and Teaching Methods,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20fd8,Part II – Hindi (Language – I),1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20fd9,Part III – English (Optional Language – II),1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20fda,Part IV – Mathematics,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20fdd,Part IV – Mathematics and Science,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20fdc,Part IV – Social Studies,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20fdb,Part V – Environmental Studies,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a4ce14f42211ae83977dc80,Pdfs,1,472,,,,15,,,,,,,,,,,,,,,,,,15
+,1,6a4ce16f42211ae83977dce8,Pdfs (A4 Size),1,472,,,,4,,,,,,,,,,,,,,,,,,4
+,1,6a4cf4323e29123ffb5e6dd1,Percentage Sectional Test (12thSep),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a885af03aed5ba9f3a20f4e,PHY(NEET-SEC A),1,0,,,,,,,2,,,,,,,,,,,,,,31,2
+,1,6a885af03aed5ba9f3a20f4f,PHY(NEET-SEC B),1,0,,,,,,,,,,,,,,,,,,,,,31,0
+,1,6a92120de59b944de33c1e37,Physics ( भौतिक विज्ञान ),1,472,,55,,,,,,,,,,,,,,,,,,1,8,55
+,1,6a885af03aed5ba9f3a20f40,Physics (sec 1),1,0,,,,,,,,,,,,,,,,,,,,,30,0
+,1,6a885af03aed5ba9f3a20f41,Physics (sec 2),1,0,,,,,,,,,,,,,,,,,,,,,30,0
+,1,6a885af03aed5ba9f3a20f42,Physics (sec 3),1,0,,,,,,,,,,,,,,,,,,,,,30,0
+,1,6a885af03aed5ba9f3a20f3c,Physics (Section B),1,0,,,,,,,,,,,,,,,,,,,,,17,0
+,1,6a4cfe693e29123ffb5e7de7,Physics Complete Sectional Mock Test (15 Aug),1,472,,,,,,,40,1,1,,,1,,,,,,,,,1,43
+,1,6a455b76ebb42f585d9c10f4,Physics/भौतिक विज्ञान (NCERT BASED),1,472,35,48,,33,,,,,,,,,,,,,,,,1,1,116
+,1,6a4ce9963e29123ffb5e622a,Physiographic Division of India Sectional Test (5th Sept),1,472,,,,,,,12,1,1,,,1,,,,,,,,,1,15
+,1,6a455d28ebb42f585d9ccdab,Planning & Syllabus,1,472,,3,,3,,,,,,,,,,,,,,,,3,1,6
+,1,6a455d0eebb42f585d9cc037,Planning Syllabus,1,472,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20f25,Political Science,1,0,,,,,,,1,,,,1,,,,,,,,,,10,2
+,1,6a4ce6013e29123ffb5e5fc1,"Population, Urbanisation, Poverty & unemployment (2 Jan)",1,472,,,,,,,12,1,1,,,,,,,,,,,,1,14
+,1,6a4559c2ebb42f585d9b2b71,Practice Papers For ACIO - ll,1,472,8,8,,7,,,,,,,,,,,,,,,,1,1,23
+,1,6a4ce19842211ae83977dd7d,PRACTICE PDFS,1,472,,,,6,,,,,,,,,,,,,,,,,,6
+,1,6a4e36ac209421909ee3a8ee,Practice Questions,1,472,,10,,1,,,,,,,,,,,,,,,,1,1,11
+,1,6a4dfc7b5e07b0ff130add5c,Practice Sessions: CTM | CTR | CTG | CTS,1,472,,,,69,,,,,,,,,,,,,,,,,4,69
+,1,6a455da2ebb42f585d9cffb4,Practice Set,1,472,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a4e3b3c209421909ee3b8bf,Practice Sheets,1,472,,,,44,,,,,,,,,,,,,,,,,1,44
+,1,6a455cafebb42f585d9c9a60,practise session,1,472,,6,,,,,,,,,,,,,,,,,,1,1,6
+,1,6a512e79d21b8ab52e5aebc3,President & Parliament Test(14th Nov),1,472,,,,,,,12,1,1,,,1,,,,,,,,,1,15
+,1,6ab4bba4ad5093a2dfa2a515,Previous year papers Answer Key,1,472,,,,1,,,,,,,,,,,,,,,,,,1
+,1,6a4cf40d3e29123ffb5e6d92,Profit & Loss Sectional Test (19th Sept),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a4cf3d33e29123ffb5e6d53,Profit & Loss Sectional Test (26th Sept),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a3d2ac13aed5ba9f3fe6c05,Psycho,1,472,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a4cf7c13e29123ffb5e7147,Puzzle Test (14th Nov),1,472,,,,,,,10,1,1,,,1,,,,,,,,,1,13
+,1,6a885af03aed5ba9f3a20f87,Quant,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20f76,Quantitative Reasoning,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a465155c1c336296ea02b02,Qunatitative Apptitude,1,472,,,,,,,470,12,20,,,16,,,,,,,,,1,518
+,1,6a4cf0a33e29123ffb5e6a5f,Race (16 Jan),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a885af03aed5ba9f3a20f20,RAGA,1,0,,,,,,,52,,4,,5,,,,,,,,,,5,61
+,1,6a4d0c133e29123ffb5e8f85,Railway All India Mock test,1,472,,,,,,,330,6,6,,,5,,,,,,,,,1,347
+,1,6a4561b3ebb42f585d9e906a,Railway ALP Maths Selection Booster Batch,1,472,,37,,,,,,,,,,,,,,,,,,1,3,37
+,1,6a456166ebb42f585d9e717b,RAILWAY GENERAL SCIENCE  FOUNDATION BATCH,1,472,,324,37,5,,,,,,,,,,,,,,,,1,43,366
+,1,6a456187ebb42f585d9e7e66,Railway Gk Foundation Batch,1,472,,316,107,6,,,,,,,,,,,,,,,,1,42,429
+,1,6a455bacebb42f585d9c2834,Railway GK/GS Complete Foundation,1,472,3,460,,114,,,,,,,,,,,,,,,,1,12,577
+,1,6a455c29ebb42f585d9c60eb,Railway Maths Complete Foundation,1,472,5,508,21,100,,,,,,,,,,,,,,,,1,54,634
+,1,6a456110ebb42f585d9e511c,RAILWAY MATHS FOUNDATION BATCH,1,472,1,615,104,,,,,,,,,,,,,,,,,1,62,720
+,1,6a4559a2ebb42f585d9b1750,Railway Prime Batches 2026,1,472,,16,,16,,,,,,,,,,,,,,,,1,1,32
+,1,6a455c0bebb42f585d9c523c,Railway Reasoning Complete Foundation,1,472,226,216,9,188,,,,,,,,,,,,,,,,1,41,639
+,1,6a456153ebb42f585d9e6a5e,RAILWAY REASONING FOUNDATION BATCH,1,472,,226,15,,,,,,,,,,,,,,,,,1,42,241
+,1,6a455bddebb42f585d9c3d0e,Railway Science Complete Foundation,1,472,348,372,3,343,,,,,,,,,,,,,,,,1,49,1066
+,1,6a3d2ac13aed5ba9f3fe6c19,Rajasthan VDO Mains/MTS/BSSC,1,472,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a4cf47f3e29123ffb5e6e10,Ratio & percentage Sectional Test (5th Sept),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a4cf4b13e29123ffb5e6e4f,Ration and Proportion Sectional Test (29th Aug),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a3d2ac13aed5ba9f3fe6c11,Reasoning ( Bhusan Sir ),1,472,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a4cf6b83e29123ffb5e704b,Reasoning Analogy Test,1,472,,,,,,,10,1,1,,,1,,,,,,,,,1,13
+,1,6a885af03aed5ba9f3a20fc4,Reasoning and Logical Aptitude,1,0,,,,,,,4,,,,,,,,,,,,,,1,4
+,1,6a885af03aed5ba9f3a20f9a,Reasoning Aptitude,1,0,,,,,,,1,,5,,,,,,,,,,,,1,6
+,1,6a455cebebb42f585d9cb1fd,Reasoning ATM Batch,1,472,3,255,2,1,,,,,,,,,,,,,,,,2,31,261
+,1,6a3d2ac13aed5ba9f3fe6c0d,Reasoning By Akash sir,1,472,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a9023049a9d53af06e3bf65,REASONING COMPLETE FOUNDATION BATCH (SSC CHSL/CGL/POLICE),1,472,1,225,,,,,,,1,,,,,,,,,,,1,40,227
+,1,6a4cdfe642211ae83977d887,Reasoning e-Book,1,472,,,,23,,,3800,35,35,,,36,,,,,,,,,2,3929
+,1,6a455b8bebb42f585d9c1a47,REASONING EXPECTED PAPER ( ALP CBT - 2 ),1,472,49,98,,43,,,,,,,,,,,,,,,,2,3,190
+,1,6a455ef3ebb42f585d9d8232,REASONING SPEED BOOSTER CLASSES ( FREE),1,472,1,,,,,,,,,,,,,,,,,,,,,1
+,1,6a4ce9683e29123ffb5e61fb,RIVERS & LAKES in India Sectional Test (12th Sept),1,472,,,,,,,12,1,1,,,1,,,,,,,,,1,15
+,1,6a885af03aed5ba9f3a20fe2,Road Safety and Environmental Pollution,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a4e3736209421909ee3ab44,RPF Constable 2025,1,472,,,,1,,,,,,,,,,,,,,,,,1,1
+,1,6a4e3748209421909ee3ab7a,RPF SI 2024,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a4e3742209421909ee3ab69,RRB ALP CBT - 1 2024,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a946ea129f16f98cfd7ca76,RRB ALP CBT - 2 2025,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a4e378c209421909ee3ac32,RRB ALP CBT 1,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a4d1c653e29123ffb5eab94,RRB ALP CBT 1 MOCK TEST (27th JULY),1,472,,,,,,,75,1,1,,,1,,,,,,,,,1,78
+,1,6a4d17b23e29123ffb5ea342,RRB ALP CBT 1  MOCK TEST (5th Oct 2024),1,472,,,,,,,75,1,1,,,1,,,,,,,,,1,78
+,1,6a4d15723e29123ffb5ea005,RRB ALP CBT 1 MOCK TEST (9th Nov),1,472,,,,,,,75,1,1,,,,,,,,,,,,1,77
+,1,6a4d25743e29123ffb5ebbb8,RRB ALP CBT-2 MOCK TEST-03 (28th Dec),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d25db3e29123ffb5ebc97,RRB ALP CBT-2 MOCK TEST-04 (4 Jan),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d26473e29123ffb5ebd76,RRB ALP CBT-2 MOCK TEST-05 (18 Jan),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d26ad3e29123ffb5ebe55,RRB ALP CBT-2 MOCK TEST-06 (25 Jan),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d272c3e29123ffb5ebf34,RRB ALP CBT-2 MOCK TEST-07 (1 Feb),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d27993e29123ffb5ec013,RRB ALP CBT-2 MOCK TEST-08 (8 Feb),1,472,,,,,,,,,,,,1,,,,,,,,,,1
+,1,6a4d27ad3e29123ffb5ec021,RRB ALP CBT-2 MOCK TEST-09 (15 Feb),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d28113e29123ffb5ec100,RRB ALP CBT-2 MOCK TEST-10 (22 Feb) (Only Maths and Reasoning) (This Week Only),1,472,,,,,,,50,1,1,,,1,,,,,,,,,1,53
+,1,6a4d285e3e29123ffb5ec17b,RRB ALP CBT-2 MOCK TEST-11 (1 Mar),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d28f03e29123ffb5ec25a,RRB ALP CBT-2 MOCK TEST-12 (8 Mar),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d29b63e29123ffb5ec339,RRB ALP CBT-2 MOCK TEST-13 (12 Mar),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d2a4c3e29123ffb5ec418,RRB ALP CBT-2 MOCK TEST-14 (15 Mar),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d2b0e3e29123ffb5ec4f7,RRB ALP CBT-2 MOCK TEST-15 (17 Mar),1,472,,,,,,,101,1,1,,,2,,,,,,,,,1,105
+,1,6a4d0bfd3e29123ffb5e8f77,RRB ALP MOCK TEST,1,472,,,,,,,,,,,,1,,,,,,,,,,1
+,1,6a4d1a1c3e29123ffb5ea76b,RRB ALP MOCK TEST (31st August),1,472,,,,,,,75,1,1,,,1,,,,,,,,,1,78
+,1,6a4d1e173e29123ffb5eaede,RRB ALP MOCK TEST-1,1,472,,,,,,,75,1,1,,,1,,,,,,,,,1,78
+,1,6a4560e8ebb42f585d9e42d8,RRB  GENERAL AWARENESS FOUNDATION BATCH (CBT 1 & CBT 2),1,472,,346,107,24,,,,,,,,,,,,,,,,1,12,477
+,1,6a4e3766209421909ee3abbe,RRB Group D,1,472,,,,4,,,,,,,,,,,,,,,,,,4
+,1,6a4d1cd13e29123ffb5eac41,RRB Group D CBT Exam,1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d11423e29123ffb5e983b,RRB Group D CBT Exam (15 March),1,472,,,,,,,100,1,1,,,,,,,,,,,,1,102
+,1,6a4d0ca33e29123ffb5e9064,RRB Group D CBT Exam (25 Jan),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d183f3e29123ffb5ea3ef,RRB Group D CBT Exam (28th Sept),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d13133e29123ffb5e9bb7,RRB Group D CBT Exam (4 Jan),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d0d6d3e29123ffb5e9222,RRB Group D CBT Exam (8 Feb),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d0b923e29123ffb5e8e98,RRB Group D MOCK TEST (12 April),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d1b143e29123ffb5ea8f7,RRB Group D Mock Test (17th Aug),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d0fbb3e29123ffb5e959e,RRB Group D MOCK TEST (29 March),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a3d2ac13aed5ba9f3fe6c18,RRB Group-D,1,472,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a4e374d209421909ee3ab8b,RRB JE CBT - 1 2024,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a4e3785209421909ee3ac10,RRB JE CBT -1 2025,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a4d138b3e29123ffb5e9c96,RRB JE CBT-1 Mock Test (07th Dec),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d19283e29123ffb5ea5ad,RRB JE CBT-1 Mock Test (14th Sept),1,472,,,,,,,100,1,1,,,,,,,,,,,,1,102
+,1,6a4d16823e29123ffb5ea191,RRB JE CBT-1 Mock Test (19th Oct),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d146d3e29123ffb5e9e54,RRB JE CBT-1 Mock Test (23 Nov),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d1bf43e29123ffb5eaab5,RRB JE CBT-1 Mock Test (3August),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d1d493e29123ffb5ead20,RRB NTPC 2024 TEST (13th JULY),1,472,,,,,,,200,2,2,,,2,,,,,,,,,1,206
+,1,6a4e3794209421909ee3ac54,RRB NTPC 2025,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a4e3709209421909ee3aaf6,RRB NTPC CBT - 1 Graduate level 2025,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a4e372a209421909ee3ab22,RRB NTPC CBT - 1 UG 2025,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a4e379a209421909ee3ac65,RRB NTPC CBT - 1 UG 2026,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a4e377f209421909ee3abee,RRB NTPC CBT - 2 Graduate level 2025,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a4d38853e29123ffb5f0671,RRB NTPC CBT -1,1,472,,,,,,,2090,21,21,,,20,,,,,,,,,1,2152
+,1,6a4d18a73e29123ffb5ea4ce,RRB NTPC CBT-1 MOCK TEST (21st Sept),1,472,,,,,,,200,2,2,,,2,,,,,,,,,1,206
+,1,6a4d15ea3e29123ffb5ea0b2,RRB NTPC CBT-1 MOCK TEST (26st Oct),1,472,,,,,,,200,2,2,,,1,,,,,,,,,1,205
+,1,6a946ea129f16f98cfd7ca67,RRB NTPC CBT-2 2026 Graduate,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a9952003aed5ba9f3e4afc4,RRB NTPC GRADUATE CBT 1,1,0,,,,,,,100,,3,,1,,,,,,,,,,,104
+,1,6a4d0d023e29123ffb5e9143,RRB NTPC MOCK TEST (1 Feb),1,472,,,,,,,200,2,2,,,,,,,,,,,,1,204
+,1,6a4d0dd73e29123ffb5e9301,RRB NTPC MOCK TEST (15 Feb),1,472,,,,,,,200,2,2,,,1,,,,,,,,,1,205
+,1,6a4d10cc3e29123ffb5e975c,RRB NTPC MOCK TEST (18 Jan),1,472,,,,,,,200,2,2,,,2,,,,,,,,,1,206
+,1,6a4d0f2e3e29123ffb5e94bf,RRB NTPC MOCK TEST (22 March),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d129b3e29123ffb5e9ad8,RRB NTPC MOCK TEST (28 Dec),1,472,,,,,,,200,2,2,,,2,,,,,,,,,1,206
+,1,6a4d10543e29123ffb5e967d,RRB NTPC MOCK TEST (5 April),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d0e813e29123ffb5e93e0,RRB NTPC MOCK TEST (8 March),1,472,,,,,,,200,2,2,,,2,,,,,,,,,1,206
+,1,6a4e3782209421909ee3abff,RRB Section Controller,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a4d1b903e29123ffb5ea9d6,RRB TECHNICIAN EXPECTED MOCK TEST (GR-III) (10th Aug 2024),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d199e3e29123ffb5ea68c,RRB TECHNICIAN EXPECTED MOCK TEST (GR-III)(5th Sep),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4e3788209421909ee3ac21,RRB Technician Grade ||| 2025,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a4e3759209421909ee3abad,RRB Technician Grade I 2024,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a4e378f209421909ee3ac43,RRB Technician Grade I 2025,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a4d14e93e29123ffb5e9f33,RRB TECHNICIAN GRADE III  (16th Nov),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4e3754209421909ee3ab9c,RRB Technician Grade III 2024,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a4d1dba3e29123ffb5eadff,RRB TECHNICIAN GRADE III CBT,1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d17163e29123ffb5ea263,RRB TECHNICIAN GRADE III CBT (12th Oct),1,472,,,,,,,100,1,1,,,,,,,,,,,,1,102
+,1,6a4d13f33e29123ffb5e9d75,RRB TECHNICIAN GRADE III CBT (30 Nov),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d11d83e29123ffb5e991a,RRB TECHNICIAN MOCK TEST,1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a4d12313e29123ffb5e99f9,RRB TECHNICIAN MOCK TEST (21 DEC),1,472,,,,,,,100,1,1,,,1,,,,,,,,,1,103
+,1,6a885af03aed5ba9f3a20f70,Rural Development and Rural Society,1,0,,,,,,,1,,,,,,,,,,,,,,1,1
+,1,6a455ec8ebb42f585d9d7276,Sahil Sir ( Maths ),1,472,,1,,,,,,,,,,,,,,,,,,1,1,1
+,1,6a4cfdd03e29123ffb5e7c76,Science (Chemistry + biology) Sectional Test (12th Sept),1,472,,,,,,,45,2,2,,7,1,,,,,,,,,1,57
+,1,6a455cf5ebb42f585d9cb61a,Science ATM Batch,1,472,2,160,10,12,,,,,,,,,,,,,,,,2,33,184
+,1,6a885af03aed5ba9f3a20f2e,science class viii,0,0,,,,,,,234,,,,,,,,,,,,,,1,234
+,1,6a4cfc0a3e29123ffb5e76cd,Science Expected MCQ Test (26 Dec),1,472,,,,,,,40,1,1,,,1,,,,,,,,,1,43
+,1,6a4cfc543e29123ffb5e779b,SCIENCE EXPECTED QUESTIONS TEST,1,472,1,,,,,,40,1,1,,,,,,,,,,,,1,43
+,1,6a4cfc263e29123ffb5e7734,Science Mix test (19 Dec),1,472,,,,,,,40,1,1,,,1,,,,,,,,,1,43
+,1,6a4ceb0f3e29123ffb5e64e0,Science Weekly Test,1,472,,,,,,,365,18,18,,,16,,,,,,,,,1,417
+,1,6a4ceaae3e29123ffb5e643e,Science Weekly Test - 01 (29 March),1,472,,,,,,,10,1,1,,,1,,,,,,,,,1,13
+,1,6a4ceadb3e29123ffb5e6469,Science Weekly Test - 02 (6 April),1,472,,,,,,,40,2,2,,,2,,,,,,,,,1,46
+,1,6a4cf7f63e29123ffb5e7172,Seating Arrangement Sectional  Test (7th Nov),1,472,,,,,,,16,1,1,,,1,,,,,,,,,1,19
+,1,6a885af03aed5ba9f3a20f91,Section I - Maths and Reasoning,1,0,,,,,,,,,,,,,,,,,,,,,2,0
+,1,6a885af03aed5ba9f3a20f92,Section II - English and GK,1,0,,,,,,,1,,,,,,,,,,,,,,2,1
+,1,6a885af03aed5ba9f3a20f93,Section III - Computer Knowledge,1,0,,,,,,,,,,,,,,,,,,,,,2,0
+,1,6a4cfc6a3e29123ffb5e7802,Sectional test 05/12/2024,1,472,,,,,,,30,1,1,,,1,,,,,,,,,1,33
+,1,6a920dbb8a9fef1ff3b890d5,Selection Specific Batch,1,472,,1,,,,,,,,,,,,,,,,,,1,1,1
+,1,6a885af03aed5ba9f3a20f8d,Session I,1,0,,,,,,,,,,,,,,,,,,,,,2,0
+,1,6a885af03aed5ba9f3a20f8e,Session II,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6aa80552510bba15d0b9c5cd,Shorts,1,472,3,,,,1,,,,,,,,,,,,,,,,1,4
+,1,6a4cf3523e29123ffb5e6cd5,Simple interest Sectional Test (10TH Oct 2024),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a4cf39a3e29123ffb5e6d14,Simple interest Sectional Test (3rd Oct 2024),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a455cb1ebb42f585d9c9b1d,Simple Machine And Lever,1,472,,6,,3,,,,,,,,,,,,,,,,1,1,9
+,1,6a4cf55f3e29123ffb5e6f4b,Simplification And Average Mock Test (1st AUGUST),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a4cf6133e29123ffb5e6fc9,Simplification Test (18th JULY),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a4cf5b53e29123ffb5e6f8a,Simplification Test (25th JULY),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a885af03aed5ba9f3a20f6a,sk jha,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20f6c,SKJ,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20f6d,SKJ1,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20f6e,SKJ2,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20f6f,SKJ3,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20f8a,Social Studies,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20f69,Spark JAA,1,0,,,,,,,,,4,,,,,,,,,,,,8,4
+,1,6a455da1ebb42f585d9cff50,SSC CGL / CHSL MAINS PREPARATION,1,472,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a4e3732209421909ee3ab33,SSC CGL Mains Jan 2025,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a4e373b209421909ee3ab58,SSC CHSL Pre 2024,1,472,,,,2,,,,,,,,,,,,,,,,,,2
+,1,6a91f658027d474477fabbb7,SSC GD,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a455ec1ebb42f585d9d6fd0,SSC GD 2023-24  MATH SPECIAL BATCH,1,472,43,69,,45,,,,,,,,,,,,,,,,1,13,157
+,1,6a455ec9ebb42f585d9d7313,SSC GD 60 Days Plan Complete Batch,1,472,63,189,,48,,,,,,,,,,,,,,,,1,52,300
+,1,6a885af03aed5ba9f3a20f34,sst vi,0,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20f36,sst vii,0,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20f33,sst viii,0,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a9169c46edec3b0ca2f1dff,Static GK Live,1,472,,10,,,,,,,,,,,,,,,,,,1,1,10
+,1,6a9169c46edec3b0ca2f1dfe,Static GK- Static Part,1,472,,99,,,,,,,,,,,,,,,,,,1,1,99
+,1,6a455d01ebb42f585d9cbaf4,Static GK/GA ATM Batch,1,472,2,162,,3,,,,,,,,,,,,,,,,2,8,167
+,1,6a455f5febb42f585d9da9e9,Strategy & Planning,1,472,1,,,,,,,,,,,,,,,,,,,,,1
+,1,6a512cc4d21b8ab52e5aea9d,Sustainable Development - Schemes (13 Feb),1,472,,,,,,,12,1,1,,,1,,,,,,,,,1,15
+,1,6a4deeb5409692fa4d3398d8,Syllabus,1,472,,,,8,,,,,,,,,,,,,,,,,,8
+,1,6a901373a9d718bb620120f4,TARGET ENGLISH BATCH (SSC CHSL/CGL 2024),1,472,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a901373a9d718bb620120f5,TARGET GK BATCH (SSC CHSL/CGL 2024),1,472,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a901373a9d718bb620120f6,TARGET MATHS BATCH (SSC CHSL/CGL 2024),1,472,,,,,,,,,,,,,,,,,,,,,20,0
+,1,6a901373a9d718bb620120f7,TARGET REASONING BATCH (SSC CHSL/CGL 2024),1,472,,,,,,,,,,,,,,,,,,,,,2,0
+,1,6a885af03aed5ba9f3a20fc1,Teaching Methodology,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a455d32ebb42f585d9cd1ba,Test Discussion,1,472,,9,,,,,,,,,,,,,,,,,,1,1,9
+,1,6a885af03aed5ba9f3a20fd2,Test of Basic Knowledge of Constitution of India,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20fde,Test of Data Interpretation,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a885af03aed5ba9f3a20fc7,Test of English and Comprehension,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20fc8,Test of Konkani Language,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20fd3,Test of Marathi Language,1,0,1,,,,,,,,,,,,,,,,,,,,1,1
+,1,6a885af03aed5ba9f3a20fc6,Test of Numerical Ability,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20f5b,Test of Reasoning,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a914dbb9ca3affbf499b621,testing,1,472,,3,,,,,,,,,,,,,,,,,,1,1,3
+,1,6a7ad51c13bb930f22cb77d7,Testing Course,0,472,3,,,4,,,,,,,,,,,,,,,,,1,7
+,1,6aa0122d760321fa9a3d25a1,Testing-1,0,472,1,,,,,,4,,,,,,,,,,,,,,1,5
+,1,6a4cf1de3e29123ffb5e6b5b,"Time , Speed & Distance Sectional Test (5th Dec)",1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a4cf2463e29123ffb5e6bd9,Time & work Sectional Test (14th Nov),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a4cf20e3e29123ffb5e6b9a,"Time & work, Pipe & Cistern (21st Nov 2024)",1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a4cf18c3e29123ffb5e6b1c,Time Speed Distance,1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a4ce6433e29123ffb5e601f,Topic- Schemes on Agriculture & Education in India (23 Jan),1,472,,,,,,,15,1,1,,,1,,,,,,,,,1,18
+,1,6a4666a17a2cff41291a1391,TRADE,1,472,,,,,,,7125,98,98,,,88,,,,,,,,,1,7409
+,1,6a455c6eebb42f585d9c7ed7,TRADE PART,1,472,25,28,,49,,,,,,,,,,,,,,,,1,2,102
+,1,6a4cf1453e29123ffb5e6add,Train Sectional Test (26th Dec),1,472,,,,,,,20,1,1,,,1,,,,,,,,,1,23
+,1,6a4cef413e29123ffb5e6963,Trigonometry (20 Feb),1,472,,,,,,,20,1,1,,,,,,,,,,,,1,22
+,1,6a455c69ebb42f585d9c7cb8,turner / machinist,1,472,,47,,44,,,,,,,,,,,,,,,,1,2,91
+,1,6a4cff633e29123ffb5e8090,Unit & Measurement & Motion,1,472,,,,,,,35,1,1,,,1,,,,,,,,,1,38
+,1,6a885af03aed5ba9f3a20f65,UP Police Constable,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20f58,UP SI,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a4e3725209421909ee3ab18,UPSC CSAT 2025,1,472,,,,1,,,1,,,,,,,,,,,,,,,2
+,1,6a4cf9103e29123ffb5e72c1,Venn Diagram Sectional Test (26th Sept),1,472,,,,,,,25,1,1,,,1,,,,,,,,,1,28
+,1,6a885af03aed5ba9f3a20f49,Verbal Aptitude and Reading Comprehension,1,0,,,,,,,,,,,,,,,,,,,,,4,0
+,1,6a91697d0ec8510cb6e0281e,Verbal Reasoning,1,472,,182,,,,,,,,,,,,,,,,,,1,17,182
+,1,6a885af03aed5ba9f3a20fa1,Verbal Usage and Reading Comprehension,1,0,,,,,,,,,,,,,,,,,,,,,,0
+,1,6a4ce9093e29123ffb5e6168,"Waterways, Major Ports,  States and UTs in India Sectional Test(03rd Oct 2024)",1,472,,,,,,,12,1,1,,,1,,,,,,,,,1,15
+,1,6a885af03aed5ba9f3a20f57,WB SI,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20f79,WBCS,1,0,,,,,,,,,,,,,,,,,,,,,13,0
+,1,6a885af03aed5ba9f3a20f7a,WBCS Mains,1,0,,,,,,,4,,,,,,,,,,,,,,4,4
+,1,6a885af03aed5ba9f3a20f9d,WBCS Misc,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20f5d,WBP Excise,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20f96,WBP Warder,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20f9e,WBPSC Clerkship,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a885af03aed5ba9f3a20f95,WBPSC Food SI,1,0,,,,,,,,,,,,,,,,,,,,,1,0
+,1,6a4ce69d3e29123ffb5e6083,Women and Child Development & Employment Schemes (6 Feb),1,472,,,,,,,12,1,1,,,1,,,,,,,,,1,15
+,1,6a455f12ebb42f585d9d8d59,World Geography,1,472,,161,,,,,,,,,,,,,,,,,,3,2,161
+,1,6a885af03aed5ba9f3a20f94,Written Test,1,0,,,,,,,3,,,,,,,,,,,,,,4,3
+,1,6a4dff875e07b0ff130ae85c,youtube practice pdf,1,472,,,,32,,,,,,,,,,,,,,,,,,32
+,1,6a885af03aed5ba9f3a20f54,Zoology(SEC A),1,0,,,,,,,,,,,,,,,,,,,,,26,0
+,1,6a885af03aed5ba9f3a20f55,Zoology(SEC B),1,0,,,,,,,,,,,,,,,,,,,,,26,0
+,1,6a92ca1a38bd8ad9d0586a39,अनेक शब्दों के लिए एक शब्द,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a92ca1a38bd8ad9d0586a3a,अनेकार्थी शब्द,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a92ca1a38bd8ad9d0586a3b,अव्‍यय,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a92ca1a38bd8ad9d0586a3c,उपसर्ग,1,472,,4,,,,,,,,,,,,,,,,,,1,1,4
+,1,6a92ca1a38bd8ad9d0586a3d,कारक,1,472,,1,,,,,,,,,,,,,,,,,,1,1,1
+,1,6a92ca1a38bd8ad9d0586a3e,काल,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a92ca1a38bd8ad9d0586a3f,काव्य,1,472,,1,,,,,,,,,,,,,,,,,,1,1,1
+,1,6a92ca1a38bd8ad9d0586a40,क्रिया,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a92ca1a38bd8ad9d0586a41,छंद,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a455d3aebb42f585d9cd494,जीव विज्ञान -Biology,1,472,1,346,2,1,,,,,,,,,,,,,,,,3,22,350
+,1,6a92ca1a38bd8ad9d0586a42,तत्सम तद्भव शब्द,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a92ca1a38bd8ad9d0586a43,पर्यायवाची,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a455cacebb42f585d9c992b,पर्यावरण शिक्षा (Environmental education),1,472,,32,,,,,,,,,,,,,,,,,,1,7,32
+,1,6a92ca1a38bd8ad9d0586a44,प्रत्यय  MCQ,1,472,,1,,,,,,,,,,,,,,,,,,1,1,1
+,1,6a455c64ebb42f585d9c7ab9,फ़िटर ट्रेड fitter trade,1,472,48,47,,52,,,,,,,,,,,,,,,,1,2,147
+,1,6a92ca1a38bd8ad9d0586a45,भाषा और बोली,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a455f29ebb42f585d9d959c,भौतिक विज्ञान ( Phyiscs),1,472,,79,,,,,,,,,,,,,,,,,,1,12,79
+,1,6a455f44ebb42f585d9d9fb9,भौतिक विज्ञान ( Physics),1,472,,94,,,,,,,,,,,,,,,,,,1,12,94
+,1,6a92ca1a38bd8ad9d0586a46,मुहावरा,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a92ca1a38bd8ad9d0586a47,रस,1,472,,3,,,,,,,,,,,,,,,,,,1,1,3
+,1,6a455f21ebb42f585d9d92d8,रसायन विज्ञान (Chemistry),1,472,,193,,,,,,,,,,,,,,,,,,2,10,193
+,1,6a92ca1a38bd8ad9d0586a48,लिंग,1,472,,1,,,,,,,,,,,,,,,,,,1,1,1
+,1,6a92ca1a38bd8ad9d0586a49,लोकोक्ति,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a92ca1a38bd8ad9d0586a4a,वचन,1,472,,1,,,,,,,,,,,,,,,,,,1,1,1
+,1,6a92ca1a38bd8ad9d0586a4b,वर्णमाला,1,472,,4,,,,,,,,,,,,,,,,,,1,1,4
+,1,6a92ca1a38bd8ad9d0586a4c,वर्तनी,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a92ca1a38bd8ad9d0586a4d,वाक्य,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a92ca1a38bd8ad9d0586a4e,वाच्य,1,472,,1,,,,,,,,,,,,,,,,,,1,1,1
+,1,6a92ca1a38bd8ad9d0586a4f,विराम चिन्ह,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a92ca1a38bd8ad9d0586a50,विलोम शब्द,1,472,,1,,,,,,,,,,,,,,,,,,1,1,1
+,1,6a92ca1a38bd8ad9d0586a51,विशेषण,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a455cafebb42f585d9c9a21,व्यावसायिक संरक्षा एवं स्वास्थ्य (Occupational safety and health),1,472,3,3,,3,,,,,,,,,,,,,,,,1,1,9
+,1,6a92ca1a38bd8ad9d0586a52,संज्ञा,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a92ca1a38bd8ad9d0586a53,संधि,1,472,,3,,,,,,,,,,,,,,,,,,1,1,3
+,1,6a92ca1a38bd8ad9d0586a54,समास,1,472,,4,,,,,,,,,,,,,,,,,,1,1,4
+,1,6a92ca1a38bd8ad9d0586a55,सर्वनाम,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a455ca7ebb42f585d9c96d2,सामान्य भौतिकी (General Physics),1,472,32,65,,26,,,,,,,,,,,,,,,,1,9,123
+,1,6a92ca1a38bd8ad9d0586a56,हिंदी अशुद्ध शुद्ध वाक्य,1,472,,2,,,,,,,,,,,,,,,,,,1,1,2
+,1,6a92ca1a38bd8ad9d0586a57,हिंदी शब्द की उत्पत्ति,1,472,,1,,,,,,,,,,,,,,,,,,1,1,1
