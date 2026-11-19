@@ -3,7 +3,8 @@
 Status 2026-11-19: **deployed, default on** (vidyagram-admin ab56b36c5, pm2 92, 17:20 IST). Folders follow the regular topics
 unless the caller sends `includePdfFolders=0`. 5 Sections + 62 Topics created (ids in the system-brain `prod-data-changes` memory);
 the 07:00 IST cron adds new ones daily. A folder uses customer 781's Sections only, names compared ignoring case, and the Sections
-the course's own classes use come first. Tenant: Vidyagram only. The rest of this doc is the 11-05 build record.
+the course's own classes use come first. A folder sits among its own section's topics, placed by PDF order (AppX order
+inside a section), else after that section's last topic, else at the end. Tenant: Vidyagram only. The rest of this doc is the 11-05 build record.
 
 ## Goal
 
