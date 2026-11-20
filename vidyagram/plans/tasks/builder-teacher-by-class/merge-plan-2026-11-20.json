@@ -1,0 +1,718 @@
+{
+ "pairs": [
+  {
+   "name": "Algebra",
+   "section": "Advance",
+   "keep": "6af686ba94392f7fb3fa3293",
+   "merge": [
+    "6ad5f9c8308a95d039c32948"
+   ],
+   "aNames": [
+    "Algebra (बीजगणित)"
+   ],
+   "bClasses": 21,
+   "aClasses": 20,
+   "old": [
+    3,
+    3
+   ],
+   "raw": 3.0,
+   "new": 5.0,
+   "rem": 0.6666666666666679
+  },
+  {
+   "name": "Co-ordinate Geometry",
+   "section": "Advance",
+   "keep": "6af6c7058db130698bfcf30a",
+   "merge": [
+    "6ad5f9c9308a95d039c32970"
+   ],
+   "aNames": [
+    "Co-Ordinate Geometry.."
+   ],
+   "bClasses": 7,
+   "aClasses": 7,
+   "old": [
+    1,
+    1
+   ],
+   "raw": 1.0,
+   "new": 2.0,
+   "rem": 0.5555555555555554
+  },
+  {
+   "name": "Geometry",
+   "section": "Advance",
+   "keep": "6af6c7058db130698bfcf30b",
+   "merge": [
+    "6ad5f9c9308a95d039c32961"
+   ],
+   "aNames": [
+    "GEOMETRY (ज्यामिति)"
+   ],
+   "bClasses": 31,
+   "aClasses": 47,
+   "old": [
+    4.5,
+    5.5
+   ],
+   "raw": 5.0,
+   "new": 8.5,
+   "rem": 0.7777777777777786
+  },
+  {
+   "name": "Height & Distance",
+   "section": "Advance",
+   "keep": "6af686bb94392f7fb3fa329d",
+   "merge": [
+    "6ad5f9c9308a95d039c3295c"
+   ],
+   "aNames": [
+    "HEIGHT & DISTANCE"
+   ],
+   "bClasses": 3,
+   "aClasses": 5,
+   "old": [
+    0.5,
+    0.5
+   ],
+   "raw": 0.5,
+   "new": 1.0,
+   "rem": 0.7777777777777777
+  },
+  {
+   "name": "Mensuration 2D",
+   "section": "Advance",
+   "keep": "6af6c7058db130698bfcf30c",
+   "merge": [
+    "6ad5f9c9308a95d039c32966"
+   ],
+   "aNames": [
+    "MENSURATION 2D."
+   ],
+   "bClasses": 12,
+   "aClasses": 14,
+   "old": [
+    1.5,
+    2
+   ],
+   "raw": 1.75,
+   "new": 3.0,
+   "rem": 0.22222222222222232
+  },
+  {
+   "name": "Mensuration 3D",
+   "section": "Advance",
+   "keep": "6af6c7058db130698bfcf30d",
+   "merge": [
+    "6ad5f9c9308a95d039c3296b"
+   ],
+   "aNames": [
+    "MENSURATION 3D."
+   ],
+   "bClasses": 15,
+   "aClasses": 21,
+   "old": [
+    2,
+    3
+   ],
+   "raw": 2.5,
+   "new": 4.5,
+   "rem": 0.8888888888888893
+  },
+  {
+   "name": "Probability",
+   "section": "Advance",
+   "keep": "6af91cf65cd48309101c4845",
+   "merge": [
+    "6ad5f9c9308a95d039c32975"
+   ],
+   "aNames": [
+    "Probability."
+   ],
+   "bClasses": 6,
+   "aClasses": 9,
+   "old": [
+    1,
+    1.5
+   ],
+   "raw": 1.25,
+   "new": 2.5,
+   "rem": 0.44444444444444464
+  },
+  {
+   "name": "Statistics",
+   "section": "Advance",
+   "keep": "6af686bb94392f7fb3fa32a2",
+   "merge": [
+    "6ad5f9ca308a95d039c32984"
+   ],
+   "aNames": [
+    "Statistics (सांख्यिकी)."
+   ],
+   "bClasses": 5,
+   "aClasses": 5,
+   "old": [
+    0.5,
+    0.5
+   ],
+   "raw": 0.5,
+   "new": 1.0,
+   "rem": 0.7777777777777777
+  },
+  {
+   "name": "Trigonometry",
+   "section": "Advance",
+   "keep": "6af686ba94392f7fb3fa3298",
+   "merge": [
+    "6ad5f9c8308a95d039c32952"
+   ],
+   "aNames": [
+    "TRIGONOMETRY"
+   ],
+   "bClasses": 18,
+   "aClasses": 23,
+   "old": [
+    2.5,
+    3
+   ],
+   "raw": 2.75,
+   "new": 5.0,
+   "rem": 0.7777777777777786
+  },
+  {
+   "name": "Age",
+   "section": "Arithmetic",
+   "keep": "6af686ba94392f7fb3fa3275",
+   "merge": [
+    "6ad5f9c4308a95d039c327ab"
+   ],
+   "aNames": [
+    "Ages"
+   ],
+   "bClasses": 2,
+   "aClasses": 3,
+   "old": [
+    0.5,
+    0.5
+   ],
+   "raw": 0.5,
+   "new": 1.0,
+   "rem": 0.7777777777777777
+  },
+  {
+   "name": "Alligation",
+   "section": "Arithmetic",
+   "keep": "6af686ba94392f7fb3fa327f",
+   "merge": [
+    "6ad5f9c4308a95d039c327ba"
+   ],
+   "aNames": [
+    "Alligation"
+   ],
+   "bClasses": 4,
+   "aClasses": 5,
+   "old": [
+    0.5,
+    0.5
+   ],
+   "raw": 0.5,
+   "new": 1.0,
+   "rem": 0.7777777777777777
+  },
+  {
+   "name": "AP & GP & HP",
+   "section": "Arithmetic",
+   "keep": "6af686ba94392f7fb3fa328b",
+   "merge": [
+    "6ad5f9c8308a95d039c3293e"
+   ],
+   "aNames": [
+    "Arithmetic and Geometric Progression (AP & GP)"
+   ],
+   "bClasses": 3,
+   "aClasses": 4,
+   "old": [
+    0.5,
+    0.5
+   ],
+   "raw": 0.5,
+   "new": 1.0,
+   "rem": 0.7777777777777777
+  },
+  {
+   "name": "Average",
+   "section": "Arithmetic",
+   "keep": "6af50ea218e98c6518eebd46",
+   "merge": [
+    "6ad5f9c7308a95d039c3292a"
+   ],
+   "aNames": [
+    "Average (New)"
+   ],
+   "bClasses": 11,
+   "aClasses": 15,
+   "old": [
+    1.5,
+    2
+   ],
+   "raw": 1.75,
+   "new": 3.0,
+   "rem": 0.22222222222222232
+  },
+  {
+   "name": "Compound Interest",
+   "section": "Arithmetic",
+   "keep": "6af686ba94392f7fb3fa3270",
+   "merge": [
+    "6ad5f9c6308a95d039c328fa"
+   ],
+   "aNames": [
+    "Compound Interest (चक्रवृद्धि ब्याज)"
+   ],
+   "bClasses": 12,
+   "aClasses": 16,
+   "old": [
+    1.5,
+    2
+   ],
+   "raw": 1.75,
+   "new": 3.0,
+   "rem": 0.22222222222222232
+  },
+  {
+   "name": "LCM & HCF",
+   "section": "Arithmetic",
+   "keep": "6af50ea218e98c6518eebd4b",
+   "merge": [
+    "6ad5f9c8308a95d039c32943"
+   ],
+   "aNames": [
+    "HCF & LCM."
+   ],
+   "bClasses": 12,
+   "aClasses": 8,
+   "old": [
+    1.5,
+    1
+   ],
+   "raw": 1.25,
+   "new": 2.5,
+   "rem": 0.44444444444444464
+  },
+  {
+   "name": "Mixture",
+   "section": "Arithmetic",
+   "keep": "6af686ba94392f7fb3fa327a",
+   "merge": [
+    "6ad5f9c4308a95d039c327b5"
+   ],
+   "aNames": [
+    "Mixture"
+   ],
+   "bClasses": 6,
+   "aClasses": 8,
+   "old": [
+    1,
+    1
+   ],
+   "raw": 1.0,
+   "new": 2.0,
+   "rem": 0.5555555555555554
+  },
+  {
+   "name": "Number System",
+   "section": "Arithmetic",
+   "keep": "6af50ea218e98c6518eebd41",
+   "merge": [
+    "6ad5f9c8308a95d039c32939"
+   ],
+   "aNames": [
+    "Number System (संख्या पद्धति)"
+   ],
+   "bClasses": 20,
+   "aClasses": 24,
+   "old": [
+    3,
+    3.5
+   ],
+   "raw": 3.25,
+   "new": 5.5,
+   "rem": 0.5555555555555554
+  },
+  {
+   "name": "Partnership",
+   "section": "Arithmetic",
+   "keep": "6af50ea118e98c6518eebd03",
+   "merge": [
+    "6ad5f9c4308a95d039c327b0"
+   ],
+   "aNames": [
+    "Partnership"
+   ],
+   "bClasses": 3,
+   "aClasses": 7,
+   "old": [
+    0.5,
+    1
+   ],
+   "raw": 0.75,
+   "new": 1.5,
+   "rem": 0.666666666666667
+  },
+  {
+   "name": "Percentage",
+   "section": "Arithmetic",
+   "keep": "6af50ea118e98c6518eebd08",
+   "merge": [
+    "6ad5f9c2308a95d039c32774"
+   ],
+   "aNames": [
+    "Percentage (प्रतिशत)"
+   ],
+   "bClasses": 10,
+   "aClasses": 17,
+   "old": [
+    1.5,
+    2.5
+   ],
+   "raw": 2.0,
+   "new": 3.5,
+   "rem": 0.11111111111111072
+  },
+  {
+   "name": "Permutation and Combination",
+   "section": "Arithmetic",
+   "keep": "6af686ba94392f7fb3fa3286",
+   "merge": [
+    "6ad5f9c9308a95d039c3297a"
+   ],
+   "aNames": [
+    "Permutation & Combination"
+   ],
+   "bClasses": 3,
+   "aClasses": 5,
+   "old": [
+    0.5,
+    0.5
+   ],
+   "raw": 0.5,
+   "new": 1.0,
+   "rem": 0.7777777777777777
+  },
+  {
+   "name": "Profit & Loss & Discount.",
+   "section": "Arithmetic",
+   "keep": "6af6c7058db130698bfcf309",
+   "merge": [
+    "6ad5f9c5308a95d039c328eb",
+    "6ad5f9c5308a95d039c328f0"
+   ],
+   "aNames": [
+    "Profit & Loss (लाभ और हानि)",
+    "Discount (बट्टा)"
+   ],
+   "bClasses": 14,
+   "aClasses": 23,
+   "old": [
+    2,
+    3.5
+   ],
+   "raw": 2.75,
+   "new": 5.0,
+   "rem": 0.11111111111111072
+  },
+  {
+   "name": "Ratio & Proportion",
+   "section": "Arithmetic",
+   "keep": "6af50ea218e98c6518eebd12",
+   "merge": [
+    "6ad5f9c7308a95d039c32918",
+    "6ad5f9c7308a95d039c3291d"
+   ],
+   "aNames": [
+    "RATIO (अनुपात)",
+    "PROPORTION (समानुपात)"
+   ],
+   "bClasses": 13,
+   "aClasses": 15,
+   "old": [
+    2,
+    2.0
+   ],
+   "raw": 2.0,
+   "new": 3.5,
+   "rem": 0.22222222222222232
+  },
+  {
+   "name": "Simple Interest",
+   "section": "Arithmetic",
+   "keep": "6af50ea218e98c6518eebd17",
+   "merge": [
+    "6ad5f9c5308a95d039c328f5"
+   ],
+   "aNames": [
+    "Simple Interest (साधारण ब्याज)"
+   ],
+   "bClasses": 11,
+   "aClasses": 17,
+   "old": [
+    1.5,
+    2.5
+   ],
+   "raw": 2.0,
+   "new": 3.5,
+   "rem": 0.11111111111111072
+  },
+  {
+   "name": "Simplification",
+   "section": "Arithmetic",
+   "keep": "6af50ea218e98c6518eebd1c",
+   "merge": [
+    "6ad5f9c7308a95d039c3292f"
+   ],
+   "aNames": [
+    "SIMPLIFICATION"
+   ],
+   "bClasses": 5,
+   "aClasses": 11,
+   "old": [
+    0.5,
+    1.5
+   ],
+   "raw": 1.0,
+   "new": 2.0,
+   "rem": 0.5555555555555554
+  },
+  {
+   "name": "Surds & Indices",
+   "section": "Arithmetic",
+   "keep": "6af91cf65cd48309101c483f",
+   "merge": [
+    "6ad5f9c7308a95d039c32934"
+   ],
+   "aNames": [
+    "SURDS & INDICES"
+   ],
+   "bClasses": 6,
+   "aClasses": 9,
+   "old": [
+    1,
+    1.5
+   ],
+   "raw": 1.25,
+   "new": 2.5,
+   "rem": 0.44444444444444464
+  },
+  {
+   "name": "Time & Work",
+   "section": "Arithmetic",
+   "keep": "6af50ea218e98c6518eebd21",
+   "merge": [
+    "6ad5f9c3308a95d039c32792"
+   ],
+   "aNames": [
+    "Time & Work"
+   ],
+   "bClasses": 23,
+   "aClasses": 8,
+   "old": [
+    3,
+    1
+   ],
+   "raw": 2.0,
+   "new": 3.5,
+   "rem": 0.11111111111111072
+  },
+  {
+   "name": "Time, Speed & Distance",
+   "section": "Arithmetic",
+   "keep": "6af50ea218e98c6518eebd3c",
+   "merge": [
+    "6ad5f9c2308a95d039c32779"
+   ],
+   "aNames": [
+    "Time, Speed & Distance"
+   ],
+   "bClasses": 14,
+   "aClasses": 9,
+   "old": [
+    2,
+    1.5
+   ],
+   "raw": 1.75,
+   "new": 3.0,
+   "rem": 0.22222222222222232
+  }
+ ],
+ "single": [
+  {
+   "name": "Maxima & Minima (Trigonometry)",
+   "section": "Advance",
+   "keep": "6ad5f9c8308a95d039c32957",
+   "merge": [],
+   "raw": 0.5,
+   "old": [
+    0.5
+   ],
+   "cls": 2,
+   "src": "A",
+   "new": 1.0,
+   "rem": 0.7777777777777777
+  },
+  {
+   "name": "15 Min. 25 Questions.",
+   "section": "Arithmetic",
+   "keep": "6ad5f9ca308a95d039c3298e",
+   "merge": [],
+   "raw": 3.0,
+   "old": [
+    3
+   ],
+   "cls": 20,
+   "src": "A",
+   "new": 5.0,
+   "rem": 0.6666666666666679
+  },
+  {
+   "name": "Boat & Stream",
+   "section": "Arithmetic",
+   "keep": "6ad5f9c3308a95d039c32783",
+   "merge": [],
+   "raw": 0.5,
+   "old": [
+    0.5
+   ],
+   "cls": 4,
+   "src": "A",
+   "new": 1.0,
+   "rem": 0.7777777777777777
+  },
+  {
+   "name": "Calculation Videos",
+   "section": "Arithmetic",
+   "keep": "6ad5f9c2308a95d039c3276f",
+   "merge": [],
+   "raw": 1.0,
+   "old": [
+    1
+   ],
+   "cls": 8,
+   "src": "A",
+   "new": 2.0,
+   "rem": 0.5555555555555554
+  },
+  {
+   "name": "Circular Motion",
+   "section": "Arithmetic",
+   "keep": "6ad5f9c3308a95d039c3278d",
+   "merge": [],
+   "raw": 0.5,
+   "old": [
+    0.5
+   ],
+   "cls": 1,
+   "src": "A",
+   "new": 1.0,
+   "rem": 0.7777777777777777
+  },
+  {
+   "name": "Data Interpretation (D.I)",
+   "section": "Arithmetic",
+   "keep": "6ad5f9ca308a95d039c3297f",
+   "merge": [],
+   "raw": 2.0,
+   "old": [
+    2
+   ],
+   "cls": 16,
+   "src": "A",
+   "new": 3.5,
+   "rem": 0.11111111111111072
+  },
+  {
+   "name": "Pipe & Cistern",
+   "section": "Arithmetic",
+   "keep": "6ad5f9c3308a95d039c32797",
+   "merge": [],
+   "raw": 0.5,
+   "old": [
+    0.5
+   ],
+   "cls": 3,
+   "src": "A",
+   "new": 1.0,
+   "rem": 0.7777777777777777
+  },
+  {
+   "name": "Quadratic Equation",
+   "section": "Arithmetic",
+   "keep": "6ad5f9c8308a95d039c3294d",
+   "merge": [],
+   "raw": 0.5,
+   "old": [
+    0.5
+   ],
+   "cls": 2,
+   "src": "A",
+   "new": 1.0,
+   "rem": 0.7777777777777777
+  },
+  {
+   "name": "RACE .",
+   "section": "Arithmetic",
+   "keep": "6ad5f9c3308a95d039c32788",
+   "merge": [],
+   "raw": 0.5,
+   "old": [
+    0.5
+   ],
+   "cls": 3,
+   "src": "A",
+   "new": 1.0,
+   "rem": 0.7777777777777777
+  },
+  {
+   "name": "SSC NEW PATTERN CONCEPTS",
+   "section": "Arithmetic",
+   "keep": "6ad5f9ca308a95d039c32989",
+   "merge": [],
+   "raw": 0.5,
+   "old": [
+    0.5
+   ],
+   "cls": 2,
+   "src": "A",
+   "new": 1.0,
+   "rem": 0.7777777777777777
+  },
+  {
+   "name": "Train",
+   "section": "Arithmetic",
+   "keep": "6ad5f9c3308a95d039c3277e",
+   "merge": [],
+   "raw": 0.5,
+   "old": [
+    0.5
+   ],
+   "cls": 5,
+   "src": "A",
+   "new": 1.0,
+   "rem": 0.7777777777777777
+  },
+  {
+   "name": "Work & Wages",
+   "section": "Arithmetic",
+   "keep": "6ad5f9c3308a95d039c3279c",
+   "merge": [],
+   "raw": 0.5,
+   "old": [
+    0.5
+   ],
+   "cls": 1,
+   "src": "A",
+   "new": 1.0,
+   "rem": 0.7777777777777777
+  }
+ ]
+}
